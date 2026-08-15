@@ -183,16 +183,26 @@ jobs:
             --title "Bulk crawl objects $(date -u +%Y-%m-%d) (run ${RUN_ID})" \
             --notes "$objects content-addressed objects from a chunked crawl of ${SEEDS_FILE}. Tar paths match manifest.jsonl object_path values. ${note}" \
             $assets
+          # DURABLY_ARCHIVED means the asset verifiably exists.
+          asset_count=$(gh release view "$tag" --json assets --jq '.assets | length')
+          if [ "$asset_count" -lt 1 ]; then
+            echo "Release $tag has no assets — durability NOT confirmed."
+            exit 1
+          fi
+          echo "Release $tag confirmed with $asset_count asset(s)."
 
-      - name: Commit manifest and ledger
+      - name: Commit manifest, ledger, queue, metrics
         run: |
+          python3 queue.py --queue-out queue.jsonl --limit 0 || true
+          python3 metrics.py --release-verified || true
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add manifest.jsonl ledger.jsonl
+          git add queue.jsonl metrics.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No manifest changes to commit."
             exit 0
           fi
-          git commit -m "Bulk chunked crawl $(date -u +%Y-%m-%d): update manifest and change ledger"
+          git commit -m "Bulk chunked crawl $(date -u +%Y-%m-%d): update manifest, ledger, queue, metrics"
           git pull --rebase origin main
           git push origin HEAD:main

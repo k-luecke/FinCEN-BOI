@@ -1,0 +1,126 @@
+name: Collect pending queue
+
+# Daily bounded collection + gap retry: rebuild the durable queue from
+# the append-only logs, take up to `limit` pending URLs (never-
+# attempted first, then retry-eligible 429/5xx/network failures),
+# crawl them, verify hashes, publish bytes to a durable release,
+# verify the release exists, and only then commit updated state.
+# Idempotent: a run with no pending work exits green having changed
+# nothing; an interrupted run changes nothing on main, and the next
+# run recomputes the same pending set.
+
+on:
+  schedule:
+    - cron: "47 10 * * *"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Max URLs this run"
+        default: "4000"
+        type: string
+      delay:
+        description: "Seconds between requests"
+        default: "1.0"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-crawl
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build queue and select pending work
+        id: plan
+        env:
+          LIMIT: ${{ inputs.limit || '4000' }}
+        run: |
+          python3 queue.py \
+            --queue-out queue.jsonl \
+            --pending-out pending-seeds.txt \
+            --limit "$LIMIT"
+          count=$(grep -c . pending-seeds.txt || true)
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          echo "Pending this run: $count"
+
+      - name: Crawl pending URLs
+        if: steps.plan.outputs.count != '0'
+        env:
+          DELAY: ${{ inputs.delay || '1.0' }}
+        run: >
+          python3 archive.py
+          --seeds pending-seeds.txt
+          --delay "$DELAY"
+          --out archive
+          --manifest run-manifest.jsonl
+
+      - name: Verify fetched objects
+        if: steps.plan.outputs.count != '0'
+        run: python3 verify.py --manifest run-manifest.jsonl
+
+      - name: Archive objects to durable release storage
+        if: steps.plan.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          ok=$(python3 -c "import json,sys; print(sum(1 for l in open('run-manifest.jsonl') if json.loads(l).get('sha256')))")
+          if [ "$ok" = "0" ]; then
+            echo "No successful retrievals — nothing to publish; failing so the gap is visible."
+            exit 1
+          fi
+          tag="objects-run-${RUN_ID}"
+          tarball="objects-${RUN_ID}.tar.zst"
+          tar --zstd -cf "$tarball" archive
+          size=$(stat -c%s "$tarball")
+          objects=$(find archive/objects -type f | wc -l)
+          if [ "$size" -gt 1900000000 ]; then
+            split -d -b 1900M "$tarball" "$tarball.part"
+            assets="$tarball".part*
+            note="Split tarball: reassemble with \`cat $tarball.part* > $tarball\`."
+          else
+            assets="$tarball"
+            note="Single tarball."
+          fi
+          gh release create "$tag" \
+            --title "Pending-queue crawl $(date -u +%Y-%m-%d) (run ${RUN_ID})" \
+            --notes "$objects content-addressed objects from the pending queue. Tar paths match manifest.jsonl object_path values. ${note}" \
+            $assets
+          # DURABLY_ARCHIVED means the asset verifiably exists, not
+          # that an upload command ran.
+          asset_count=$(gh release view "$tag" --json assets --jq '.assets | length')
+          if [ "$asset_count" -lt 1 ]; then
+            echo "Release $tag has no assets — durability NOT confirmed."
+            exit 1
+          fi
+          echo "Release $tag confirmed with $asset_count asset(s)."
+
+      - name: Commit manifest, ledger, queue, metrics
+        if: steps.plan.outputs.count != '0'
+        run: |
+          cat run-manifest.jsonl >> manifest.jsonl
+          python3 ledger.py --manifest manifest.jsonl --out ledger.jsonl
+          python3 queue.py --queue-out queue.jsonl --limit 0
+          python3 metrics.py --release-verified
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add manifest.jsonl ledger.jsonl queue.jsonl metrics.json
+          if git diff --cached --quiet; then
+            echo "No state changes to commit."
+            exit 0
+          fi
+          git commit -m "Pending-queue crawl $(date -u +%Y-%m-%d): update manifest, ledger, queue, metrics"
+          git pull --rebase origin main
+          git push origin HEAD:main

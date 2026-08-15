@@ -1,0 +1,25 @@
+{
+  "timestamp_utc": "2026-08-15T04:07:28.925935+00:00",
+  "git_sha_main": "c1173be8883b2eac7ff3534375085982905582aa",
+  "manifest_record_count": 0,
+  "manifest_note": "no manifest.jsonl on main yet: runs 1-2 cancelled, run 3 crashed pre-commit (fixed in PR #9), run 4 cancelled as redundant",
+  "discovered_url_count": 38758,
+  "successfully_archived_url_count": 0,
+  "unique_object_count": 0,
+  "total_archived_bytes": 0,
+  "durably_archived_bytes": 0,
+  "release_count": 0,
+  "pending_url_count": 38749,
+  "failure_count": 0,
+  "active_collectors": [
+    {
+      "kind": "github-actions",
+      "workflow": "bulk-crawl.yml",
+      "run_id": 31863450182,
+      "status": "queued",
+      "queue": "discovered-seeds.txt (38,749 URLs, host-aligned chunks, max-parallel 4, delay 1.0s)"
+    }
+  ],
+  "local_disk_free_bytes": 32184639488,
+  "environment_note": "interactive session runs in an ephemeral cloud container behind an egress proxy that blocks target hosts; all fetching happens on GitHub Actions runners"
+}

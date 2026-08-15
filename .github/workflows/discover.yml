@@ -2,9 +2,10 @@ name: Scheduled URL discovery
 
 on:
   schedule:
-    # Weekly, Mondays. Discovery only reads robots.txt, sitemap XML,
-    # and the Federal Register JSON API — no record content.
-    - cron: "41 7 * * 1"
+    # Daily. Discovery only reads robots.txt, sitemap XML, and the
+    # Federal Register JSON API — no record content. New URLs feed
+    # the daily collect-pending run.
+    - cron: "41 7 * * *"
   workflow_dispatch:
 
 permissions:

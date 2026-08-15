@@ -1,0 +1,61 @@
+name: Verify archived objects
+
+# Weekly durability audit: download the most recent objects-run
+# release, reassemble if split, extract, and re-hash every object
+# against its content-addressed path. Fails loudly on any mismatch,
+# on a release with no assets, or if zero objects were verified — a
+# green run means bytes provably survive at rest.
+
+on:
+  schedule:
+    - cron: "11 11 * * 3"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to verify (default: newest objects-run-*)"
+        default: ""
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG_INPUT: ${{ inputs.tag }}
+        run: |
+          set -euo pipefail
+          if [ -n "$TAG_INPUT" ]; then
+            tag="$TAG_INPUT"
+          else
+            tag=$(gh release list --limit 100 --json tagName \
+              --jq '[.[].tagName | select(startswith("objects-run-"))][0] // empty')
+          fi
+          if [ -z "$tag" ]; then
+            echo "No objects-run releases exist yet — nothing durable to verify."
+            echo "This is a FAILURE state for an archive that believes it has collected data."
+            exit 1
+          fi
+          echo "Verifying release: $tag"
+          mkdir -p verify-work && cd verify-work
+          gh release download "$tag"
+          if ls *.part* >/dev/null 2>&1; then
+            base=$(ls *.part* | head -1 | sed 's/\.part.*//')
+            cat "$base".part* > "$base"
+            rm -f "$base".part*
+          fi
+          tar --zstd -xf *.tar.zst
+
+      - name: Re-hash every object against its content address
+        run: python3 verify_objects.py --root verify-work/archive

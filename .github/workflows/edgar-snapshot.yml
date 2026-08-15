@@ -1,0 +1,88 @@
+name: EDGAR bulk snapshot
+
+# Weekly snapshot of SEC's bulk data files (submissions.zip,
+# companyfacts.zip) — purpose-built public archival side channels for
+# the ownership graph. Streams to disk, hashes, verifies, publishes
+# to a durable release, confirms the release exists, then commits
+# manifest state. Snapshots are immutable dated objects; changed
+# bytes next week become a second object.
+
+on:
+  schedule:
+    - cron: "29 8 * * 2"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: edgar-snapshot
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch EDGAR bulk files (streamed + hashed)
+        run: >
+          python3 edgar_snapshot.py
+          --out archive
+          --manifest run-manifest.jsonl
+
+      - name: Verify fetched objects
+        run: python3 verify.py --manifest run-manifest.jsonl
+
+      - name: Archive objects to durable release storage
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          tag="objects-run-${RUN_ID}"
+          tarball="objects-${RUN_ID}.tar.zst"
+          # Bulk files are already compressed; low zstd level, speed over ratio.
+          tar -I 'zstd -1' -cf "$tarball" archive
+          size=$(stat -c%s "$tarball")
+          objects=$(find archive/objects -type f | wc -l)
+          if [ "$size" -gt 1900000000 ]; then
+            split -d -b 1900M "$tarball" "$tarball.part"
+            assets="$tarball".part*
+            note="Split tarball: reassemble with \`cat $tarball.part* > $tarball\`."
+          else
+            assets="$tarball"
+            note="Single tarball."
+          fi
+          gh release create "$tag" \
+            --title "EDGAR bulk snapshot $(date -u +%Y-%m-%d) (run ${RUN_ID})" \
+            --notes "$objects SEC EDGAR bulk-data objects (submissions.zip / companyfacts.zip snapshot). Tar paths match manifest.jsonl object_path values. ${note}" \
+            $assets
+          asset_count=$(gh release view "$tag" --json assets --jq '.assets | length')
+          if [ "$asset_count" -lt 1 ]; then
+            echo "Release $tag has no assets — durability NOT confirmed."
+            exit 1
+          fi
+          echo "Release $tag confirmed with $asset_count asset(s)."
+
+      - name: Commit manifest, ledger, queue, metrics
+        run: |
+          cat run-manifest.jsonl >> manifest.jsonl
+          python3 ledger.py --manifest manifest.jsonl --out ledger.jsonl
+          python3 queue.py --queue-out queue.jsonl --limit 0
+          python3 metrics.py --release-verified
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add manifest.jsonl ledger.jsonl queue.jsonl metrics.json
+          if git diff --cached --quiet; then
+            echo "No state changes to commit."
+            exit 0
+          fi
+          git commit -m "EDGAR bulk snapshot $(date -u +%Y-%m-%d): update manifest, ledger, queue, metrics"
+          git pull --rebase origin main
+          git push origin HEAD:main
