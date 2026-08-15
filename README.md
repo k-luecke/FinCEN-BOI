@@ -33,12 +33,23 @@ python3 archive.py --seeds seeds.txt
 
 Options:
 
-| Flag          | Default          | Meaning                          |
-|---------------|------------------|----------------------------------|
-| `--out`       | `archive`        | Object-store root directory      |
-| `--manifest`  | `manifest.jsonl` | Append-only retrieval ledger     |
-| `--delay`     | `2.0`            | Seconds between requests         |
-| `--max-bytes` | 100 MB           | Per-object size cap              |
+| Flag             | Default          | Meaning                          |
+|------------------|------------------|----------------------------------|
+| `--out`          | `archive`        | Object-store root directory      |
+| `--manifest`     | `manifest.jsonl` | Append-only retrieval ledger     |
+| `--delay`        | `2.0`            | Seconds between requests         |
+| `--max-bytes`    | 100 MB           | Per-object size cap              |
+| `--follow-links` | off              | Crawl same-allowlist HTML links  |
+| `--max-pages`    | `20000`          | Fetch cap when following links   |
+| `--max-depth`    | `32`             | Link depth cap from any seed     |
+
+With `--follow-links`, the crawler extracts `<a href>` links from every
+fetched HTML page and crawls, breadth-first to closure, any that stay
+on the host allowlist. Followed links honor `robots.txt` (explicit
+seeds are archival requests and are always fetched); disallowed URLs
+get a `robots_disallowed` manifest record instead of a fetch. Each
+record carries `parent_url` and `depth`, so the manifest doubles as a
+link graph.
 
 Verify archive integrity (re-hash every stored object against the
 manifest):
@@ -75,8 +86,15 @@ manual dispatch). Each run:
 3. Verifies the run's objects against their hashes.
 4. Appends the run manifest to the committed `manifest.jsonl` and
    rebuilds `ledger.jsonl`.
-5. Uploads the fetched bytes as a workflow artifact (bytes stay out of
-   git history) and commits the updated manifest and ledger.
+5. Publishes the fetched bytes as GitHub Release assets
+   (`objects-run-<id>`, no retention expiry; tar paths match
+   `object_path` in the manifest) and commits the updated manifest and
+   ledger. Bytes stay out of git history.
+
+Manual dispatch accepts `seeds_file`, `delay`, `follow_links`, and
+`max_pages` inputs, so a one-off bulk crawl (e.g. of
+`discovered-seeds.txt`, following links to closure) runs through the
+same pipeline without touching the daily schedule.
 
 If a public record disappears, the repo holds cryptographic evidence
 that these exact bytes were served from that government URL at that
@@ -166,7 +184,8 @@ provenance vocabulary is defined in [PROVENANCE.md](PROVENANCE.md).
 2. ~~Discovery: enumerate FinCEN sitemaps, the Federal Register's
    FinCEN collection, and a historical URL inventory.~~ Done — see
    `discover.py` and `.github/workflows/discover.yml`.
-3. Offload workflow-artifact object stores to durable bulk storage so
-   fetched bytes outlive the 90-day artifact retention window.
-4. Extend sitemap discovery to the other allowlisted hosts and add
-   same-domain link extraction from already-archived HTML.
+3. ~~Offload object stores to durable bulk storage.~~ Done — each crawl
+   run publishes its objects as GitHub Release assets.
+4. ~~Same-domain link extraction.~~ Done — `--follow-links` crawls
+   allowlisted HTML links breadth-first to closure.
+5. Extend sitemap discovery to the other allowlisted hosts.

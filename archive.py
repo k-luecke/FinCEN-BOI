@@ -25,10 +25,13 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+import urllib.robotparser
 import uuid
 
+from collections import deque
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Optional
 
@@ -89,6 +92,8 @@ class Record:
     sha256: Optional[str]
     object_path: Optional[str]
     error: Optional[str]
+    parent_url: Optional[str] = None
+    depth: int = 0
 
 
 def utc_now() -> str:
@@ -160,6 +165,98 @@ def parse_seed(line: str):
     return url, provenance, source
 
 
+class LinkExtractor(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.hrefs: list[str] = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == "a":
+            for name, value in attrs:
+                if name == "href" and value:
+                    self.hrefs.append(value)
+
+
+def extract_links(
+    html_bytes: bytes,
+    base_url: str,
+    allowed_hosts: set[str],
+) -> list[str]:
+    """Absolute, fragment-free, allowlisted links from one HTML page."""
+
+    parser = LinkExtractor()
+
+    try:
+        parser.feed(html_bytes.decode("utf-8", errors="replace"))
+    except Exception:
+        return []
+
+    links = []
+    seen = set()
+
+    for href in parser.hrefs:
+        absolute = urllib.parse.urljoin(base_url, href.strip())
+        absolute, _fragment = urllib.parse.urldefrag(absolute)
+
+        if not absolute.startswith(("http://", "https://")):
+            continue
+
+        if absolute in seen:
+            continue
+
+        seen.add(absolute)
+
+        if host_allowed(absolute, allowed_hosts):
+            links.append(absolute)
+
+    return links
+
+
+class RobotsCache:
+    """
+    robots.txt decisions for link-following, one fetch per host.
+
+    Explicitly seeded URLs are archival requests and fetched directly;
+    URLs reached by following links go through this check. Unreadable
+    robots (404 etc.) allows crawling; a 5xx conservatively disallows.
+    """
+
+    def __init__(self, user_agent: str) -> None:
+        self.user_agent = user_agent
+        self.parsers: dict[str, urllib.robotparser.RobotFileParser] = {}
+
+    def allowed(self, url: str) -> bool:
+        host = normalized_host(url)
+        parser = self.parsers.get(host)
+
+        if parser is None:
+            parser = urllib.robotparser.RobotFileParser()
+
+            request = urllib.request.Request(
+                f"https://{host}/robots.txt",
+                headers={"User-Agent": USER_AGENT},
+            )
+
+            try:
+                with urllib.request.urlopen(request, timeout=30) as response:
+                    parser.parse(
+                        response.read(1024 * 1024)
+                        .decode("utf-8", errors="replace")
+                        .splitlines()
+                    )
+            except urllib.error.HTTPError as exc:
+                if exc.code >= 500:
+                    parser.disallow_all = True
+                else:
+                    parser.allow_all = True
+            except Exception:
+                parser.allow_all = True
+
+            self.parsers[host] = parser
+
+        return parser.can_fetch(self.user_agent, url)
+
+
 def fetch(
     url: str,
     provenance: str,
@@ -168,11 +265,17 @@ def fetch(
     manifest: Path,
     allowed_hosts: set[str],
     max_bytes: int,
+    parent_url: Optional[str] = None,
+    depth: int = 0,
+    error: Optional[str] = None,
 ) -> Record:
 
     record_id = str(uuid.uuid4())
 
-    if not host_allowed(url, allowed_hosts):
+    if error is None and not host_allowed(url, allowed_hosts):
+        error = "host_not_allowlisted"
+
+    if error is not None:
         record = Record(
             record_id=record_id,
             retrieved_at=utc_now(),
@@ -185,7 +288,9 @@ def fetch(
             content_length=None,
             sha256=None,
             object_path=None,
-            error="host_not_allowlisted",
+            error=error,
+            parent_url=parent_url,
+            depth=depth,
         )
         append_jsonl(manifest, record)
         return record
@@ -246,6 +351,8 @@ def fetch(
                 sha256=digest,
                 object_path=str(object_path),
                 error=None,
+                parent_url=parent_url,
+                depth=depth,
             )
 
     except (
@@ -270,6 +377,8 @@ def fetch(
             sha256=None,
             object_path=None,
             error=str(exc),
+            parent_url=parent_url,
+            depth=depth,
         )
 
     append_jsonl(manifest, record)
@@ -289,6 +398,29 @@ def main() -> int:
         "--max-bytes",
         type=int,
         default=100 * 1024 * 1024,
+    )
+
+    parser.add_argument(
+        "--follow-links",
+        action="store_true",
+        help=(
+            "Extract <a href> links from fetched HTML and crawl any "
+            "that stay on the host allowlist, breadth-first to "
+            "closure. Followed links honor robots.txt; explicit "
+            "seeds are always fetched."
+        ),
+    )
+    parser.add_argument(
+        "--max-pages",
+        type=int,
+        default=20000,
+        help="Total fetch cap for a follow-links crawl",
+    )
+    parser.add_argument(
+        "--max-depth",
+        type=int,
+        default=32,
+        help="Link depth cap from any seed",
     )
 
     args = parser.parse_args()
@@ -311,8 +443,33 @@ def main() -> int:
 
     print(f"Loaded {len(seeds)} seeds.")
 
-    for index, (url, provenance, source) in enumerate(seeds, 1):
-        print(f"[{index}/{len(seeds)}] {url}")
+    # (url, provenance, source, parent_url, depth)
+    frontier = deque(
+        (url, provenance, source, None, 0)
+        for url, provenance, source in seeds
+    )
+    enqueued = {url for url, _provenance, _source in seeds}
+    robots = RobotsCache("FinCEN-BOI-Public-Archive")
+
+    fetched = 0
+    truncated = False
+
+    while frontier:
+        if fetched >= args.max_pages:
+            truncated = True
+            break
+
+        url, provenance, source, parent_url, depth = frontier.popleft()
+
+        print(f"[{fetched + 1}] depth={depth} "
+              f"(frontier {len(frontier)}) {url}")
+
+        # Followed links honor robots.txt; explicit seeds (depth 0)
+        # are archival requests and are fetched directly.
+        robots_error = None
+
+        if depth > 0 and not robots.allowed(url):
+            robots_error = "robots_disallowed"
 
         record = fetch(
             url=url,
@@ -322,6 +479,9 @@ def main() -> int:
             manifest=manifest,
             allowed_hosts=DEFAULT_ALLOWED_HOSTS,
             max_bytes=args.max_bytes,
+            parent_url=parent_url,
+            depth=depth,
+            error=robots_error,
         )
 
         if record.sha256:
@@ -333,8 +493,46 @@ def main() -> int:
         else:
             print(f"  ERROR: {record.error}")
 
-        if index != len(seeds):
-            time.sleep(args.delay)
+        if record.error != "robots_disallowed":
+            fetched += 1
+
+            if frontier or args.follow_links:
+                time.sleep(args.delay)
+
+        if (
+            args.follow_links
+            and record.sha256
+            and record.content_type
+            and "text/html" in record.content_type.lower()
+            and depth < args.max_depth
+        ):
+            data = Path(record.object_path).read_bytes()
+            base = record.final_url or url
+
+            for link in extract_links(
+                data, base, DEFAULT_ALLOWED_HOSTS
+            ):
+                if link not in enqueued:
+                    enqueued.add(link)
+                    frontier.append(
+                        (
+                            link,
+                            "GOV-PUBLIC",
+                            normalized_host(link),
+                            url,
+                            depth + 1,
+                        )
+                    )
+
+    if truncated:
+        print(
+            f"WARN: stopped at --max-pages={args.max_pages} with "
+            f"{len(frontier)} URLs still in the frontier; "
+            f"crawl is NOT complete",
+            file=sys.stderr,
+        )
+
+    print(f"Fetched {fetched} URLs ({len(enqueued)} discovered).")
 
     return 0
 

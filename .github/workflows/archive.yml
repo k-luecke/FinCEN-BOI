@@ -14,6 +14,14 @@ on:
         description: "Seconds between requests"
         default: "2.0"
         type: string
+      follow_links:
+        description: "Follow allowlisted same-host links from HTML to closure"
+        default: false
+        type: boolean
+      max_pages:
+        description: "Total fetch cap when following links"
+        default: "20000"
+        type: string
 
 permissions:
   contents: write
@@ -37,12 +45,19 @@ jobs:
         env:
           SEEDS_FILE: ${{ inputs.seeds_file || 'seeds.txt' }}
           DELAY: ${{ inputs.delay || '2.0' }}
-        run: >
-          python3 archive.py
-          --seeds "$SEEDS_FILE"
-          --delay "$DELAY"
-          --out archive
-          --manifest run-manifest.jsonl
+          FOLLOW_LINKS: ${{ inputs.follow_links && 'true' || 'false' }}
+          MAX_PAGES: ${{ inputs.max_pages || '20000' }}
+        run: |
+          EXTRA=""
+          if [ "$FOLLOW_LINKS" = "true" ]; then
+            EXTRA="--follow-links --max-pages $MAX_PAGES"
+          fi
+          python3 archive.py \
+            --seeds "$SEEDS_FILE" \
+            --delay "$DELAY" \
+            $EXTRA \
+            --out archive \
+            --manifest run-manifest.jsonl
 
       - name: Require at least one successful retrieval
         # A run where every fetch failed is a runner/network problem,
@@ -70,16 +85,35 @@ jobs:
           cat run-manifest.jsonl >> manifest.jsonl
           python3 ledger.py --manifest manifest.jsonl --out ledger.jsonl
 
-      - name: Preserve fetched objects as a workflow artifact
-        # Bytes stay out of git history; each run's object store is
-        # kept as an artifact keyed by run id for later offloading to
-        # bulk storage.
-        uses: actions/upload-artifact@v4
-        with:
-          name: archive-objects-${{ github.run_id }}
-          path: archive/
-          retention-days: 90
-          if-no-files-found: error
+      - name: Archive objects to durable release storage
+        # Bytes stay out of git history. Each run's content-addressed
+        # object store is published as release assets — durable, no
+        # retention expiry, and tar paths match the object_path values
+        # recorded in manifest.jsonl. Assets over the 2 GB per-file
+        # limit are split; reassemble with `cat`.
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.run_id }}
+          SEEDS_FILE: ${{ inputs.seeds_file || 'seeds.txt' }}
+        run: |
+          set -euo pipefail
+          tag="objects-run-${RUN_ID}"
+          tarball="objects-${RUN_ID}.tar.zst"
+          tar --zstd -cf "$tarball" archive
+          size=$(stat -c%s "$tarball")
+          objects=$(find archive/objects -type f | wc -l)
+          if [ "$size" -gt 1900000000 ]; then
+            split -d -b 1900M "$tarball" "$tarball.part"
+            assets="$tarball".part*
+            note="Split tarball: reassemble with \`cat $tarball.part* > $tarball\`."
+          else
+            assets="$tarball"
+            note="Single tarball."
+          fi
+          gh release create "$tag" \
+            --title "Archive objects $(date -u +%Y-%m-%d) (run ${RUN_ID})" \
+            --notes "$objects content-addressed objects crawled from ${SEEDS_FILE}. Tar paths match manifest.jsonl object_path values. ${note}" \
+            $assets
 
       - name: Commit manifest and ledger
         run: |
