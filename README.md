@@ -13,14 +13,23 @@ collecting U.S.-person BOI and deletes what was previously collected:
    [deletion-record/](deletion-record/README.md) (a dated ledger of
    the deletion itself).
 2. **Ownership reconstruction** —
-   [ownership-reconstruction/](ownership-reconstruction/README.md), an
-   entity-resolution dataset built from public records that
-   independently disclose ownership/control relationships (state
-   registries, SEC, courts, and other lawful public sources). The
-   CTA-filed BOI database itself is confidential and was never
-   publicly accessible; this reconstructs only what public records
-   separately establish, with every relationship traceable to
+   [ownership-reconstruction/](ownership-reconstruction/README.md), a
+   temporally versioned, source-addressable corporate-control graph
+   built from public records that independently disclose
+   ownership/control relationships (state registries and historical
+   filings, UCC, real estate, SEC EDGAR, procurement, IRS 990,
+   courts, licensing, enforcement, congressional/GAO material, web
+   archives). The CTA-filed BOI database itself is confidential and
+   was never publicly accessible; this reconstructs only what public
+   records separately establish, with every edge traceable to
    archived evidence.
+
+   A secondary objective follows from GAO's finding that the domestic
+   BOI exemption leaves an ownership-information gap because state
+   records are inconsistent: once enough side channels are ingested,
+   the graph can *quantify* that gap — for what share of U.S.
+   entities can public records identify a plausible natural-person
+   controller, at what evidence quality, in which jurisdictions.
 
 ```
 FinCEN-BOI/
