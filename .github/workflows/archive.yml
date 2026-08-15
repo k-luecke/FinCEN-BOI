@@ -5,6 +5,15 @@ on:
     # Daily, off the top of the hour to be polite to shared cron load.
     - cron: "17 6 * * *"
   workflow_dispatch:
+    inputs:
+      seeds_file:
+        description: "Seed list to crawl (e.g. discovered-seeds.txt)"
+        default: "seeds.txt"
+        type: string
+      delay:
+        description: "Seconds between requests"
+        default: "2.0"
+        type: string
 
 permissions:
   contents: write
@@ -24,9 +33,14 @@ jobs:
           python-version: "3.12"
 
       - name: Crawl seed set
+        # Scheduled runs have no inputs; fall back to the defaults.
+        env:
+          SEEDS_FILE: ${{ inputs.seeds_file || 'seeds.txt' }}
+          DELAY: ${{ inputs.delay || '2.0' }}
         run: >
           python3 archive.py
-          --seeds seeds.txt
+          --seeds "$SEEDS_FILE"
+          --delay "$DELAY"
           --out archive
           --manifest run-manifest.jsonl
 
