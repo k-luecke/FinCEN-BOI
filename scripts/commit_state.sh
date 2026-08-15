@@ -19,11 +19,7 @@ git config user.email "github-actions[bot]@users.noreply.github.com"
 attempt=0
 while :; do
   git fetch origin main
-  # MIXED reset (never --soft): the index must become FETCH_HEAD's
-  # tree, so the commit below is "latest main + explicitly added state
-  # files". A --soft reset here once kept a stale checkout's index and
-  # committed its whole old tree over main, reverting newer commits.
-  git reset FETCH_HEAD
+  git reset --soft FETCH_HEAD
   # Start every state file from the freshest committed version.
   for f in manifest.jsonl ledger.jsonl queue.jsonl metrics.json; do
     git checkout FETCH_HEAD -- "$f" 2>/dev/null || rm -f "$f"

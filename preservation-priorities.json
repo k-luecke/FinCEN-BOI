@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T20:14:35.124972+00:00",
+  "generated_at": "2026-08-15T22:34:10.263977+00:00",
   "sources": [
     {
       "source": "home.treasury.gov",
@@ -25,7 +25,7 @@
       "denominator_status": "ACCESS_LIMITED (bot mitigation; use API + govinfo twins)",
       "ceiling_hit": "no",
       "last_successful_capture": null,
-      "temporary_failures": 513,
+      "temporary_failures": 832,
       "access_restricted": 0,
       "historical_recovery": "NOT_STARTED"
     },
@@ -39,7 +39,7 @@
       "denominator_status": "ACCESS_LIMITED (unreachable from CI)",
       "ceiling_hit": "no",
       "last_successful_capture": "2026-08-15T14:39:47.896123+00:00",
-      "temporary_failures": 9,
+      "temporary_failures": 10,
       "access_restricted": 0,
       "historical_recovery": "NOT_STARTED"
     },
@@ -67,7 +67,7 @@
       "denominator_status": "KNOWN_COMPLETE (full sitemap, under cap)",
       "ceiling_hit": "no",
       "last_successful_capture": "2026-08-15T17:57:30.916853+00:00",
-      "temporary_failures": 6,
+      "temporary_failures": 7,
       "access_restricted": 0,
       "historical_recovery": "NOT_STARTED"
     },
@@ -86,20 +86,6 @@
       "historical_recovery": "NOT_STARTED"
     },
     {
-      "source": "www.govinfo.gov",
-      "tier": 1,
-      "discovered": 30317,
-      "archived": 2288,
-      "unarchived": 28029,
-      "bytes": 2693450376,
-      "denominator_status": "OPEN_ENDED (bulk collections exist)",
-      "ceiling_hit": "CEILING_HIT_30000",
-      "last_successful_capture": "2026-08-15T18:52:25.221908+00:00",
-      "temporary_failures": 11,
-      "access_restricted": 0,
-      "historical_recovery": "NOT_STARTED"
-    },
-    {
       "source": "www.justice.gov",
       "tier": 1,
       "discovered": 30000,
@@ -114,44 +100,16 @@
       "historical_recovery": "NOT_STARTED"
     },
     {
-      "source": "www.fdic.gov",
+      "source": "www.govinfo.gov",
       "tier": 1,
-      "discovered": 21249,
-      "archived": 5095,
-      "unarchived": 16154,
-      "bytes": 376745481,
-      "denominator_status": "ENUMERABLE",
-      "ceiling_hit": "CEILING_HIT_5000",
-      "last_successful_capture": "2026-08-15T14:55:56.434896+00:00",
-      "temporary_failures": 1,
-      "access_restricted": 0,
-      "historical_recovery": "NOT_STARTED"
-    },
-    {
-      "source": "oversight.house.gov",
-      "tier": 1,
-      "discovered": 19450,
-      "archived": 5189,
-      "unarchived": 14261,
-      "bytes": 439315205,
-      "denominator_status": "ENUMERABLE",
-      "ceiling_hit": "CEILING_HIT_5000",
-      "last_successful_capture": "2026-08-15T14:06:45.522074+00:00",
-      "temporary_failures": 0,
-      "access_restricted": 0,
-      "historical_recovery": "NOT_STARTED"
-    },
-    {
-      "source": "www.occ.gov",
-      "tier": 1,
-      "discovered": 15237,
-      "archived": 5627,
-      "unarchived": 9610,
-      "bytes": 1543515422,
-      "denominator_status": "ENUMERABLE",
-      "ceiling_hit": "CEILING_HIT_5000",
-      "last_successful_capture": "2026-08-15T12:56:37.030036+00:00",
-      "temporary_failures": 0,
+      "discovered": 30317,
+      "archived": 14286,
+      "unarchived": 16031,
+      "bytes": 3239260677,
+      "denominator_status": "OPEN_ENDED (bulk collections exist)",
+      "ceiling_hit": "CEILING_HIT_30000",
+      "last_successful_capture": "2026-08-15T18:52:25.221908+00:00",
+      "temporary_failures": 13,
       "access_restricted": 0,
       "historical_recovery": "NOT_STARTED"
     },
@@ -170,16 +128,30 @@
       "historical_recovery": "NOT_STARTED"
     },
     {
-      "source": "vault.fbi.gov",
+      "source": "www.fdic.gov",
       "tier": 1,
-      "discovered": 9535,
-      "archived": 5024,
-      "unarchived": 4511,
-      "bytes": 226351769,
+      "discovered": 21249,
+      "archived": 17073,
+      "unarchived": 4176,
+      "bytes": 1261747300,
       "denominator_status": "ENUMERABLE",
       "ceiling_hit": "CEILING_HIT_5000",
-      "last_successful_capture": "2026-08-15T11:10:23.842122+00:00",
-      "temporary_failures": 2,
+      "last_successful_capture": "2026-08-15T18:56:53.564009+00:00",
+      "temporary_failures": 1,
+      "access_restricted": 0,
+      "historical_recovery": "NOT_STARTED"
+    },
+    {
+      "source": "oversight.house.gov",
+      "tier": 1,
+      "discovered": 19450,
+      "archived": 16961,
+      "unarchived": 2489,
+      "bytes": 1169364395,
+      "denominator_status": "ENUMERABLE",
+      "ceiling_hit": "CEILING_HIT_5000",
+      "last_successful_capture": "2026-08-15T18:06:08.314664+00:00",
+      "temporary_failures": 0,
       "access_restricted": 0,
       "historical_recovery": "NOT_STARTED"
     },
@@ -268,6 +240,20 @@
       "historical_recovery": "NOT_STARTED"
     },
     {
+      "source": "vault.fbi.gov",
+      "tier": 1,
+      "discovered": 9535,
+      "archived": 9559,
+      "unarchived": 0,
+      "bytes": 325876267,
+      "denominator_status": "ENUMERABLE",
+      "ceiling_hit": "CEILING_HIT_5000",
+      "last_successful_capture": "2026-08-15T18:59:03.141457+00:00",
+      "temporary_failures": 2,
+      "access_restricted": 0,
+      "historical_recovery": "NOT_STARTED"
+    },
+    {
       "source": "www.congress.gov",
       "tier": 1,
       "discovered": 0,
@@ -324,16 +310,30 @@
       "historical_recovery": "NOT_STARTED"
     },
     {
+      "source": "www.occ.gov",
+      "tier": 1,
+      "discovered": 15237,
+      "archived": 15451,
+      "unarchived": 0,
+      "bytes": 3224990390,
+      "denominator_status": "ENUMERABLE",
+      "ceiling_hit": "CEILING_HIT_5000",
+      "last_successful_capture": "2026-08-15T16:38:42.276256+00:00",
+      "temporary_failures": 1,
+      "access_restricted": 0,
+      "historical_recovery": "NOT_STARTED"
+    },
+    {
       "source": "www.sec.gov",
       "tier": 2,
       "discovered": 30000,
-      "archived": 4991,
-      "unarchived": 25009,
-      "bytes": 6339700493,
+      "archived": 16978,
+      "unarchived": 13022,
+      "bytes": 10307139201,
       "denominator_status": "OPEN_ENDED (EDGAR bulk beyond web pages)",
       "ceiling_hit": "CEILING_HIT_30000",
-      "last_successful_capture": "2026-08-15T13:03:37.268071+00:00",
-      "temporary_failures": 4,
+      "last_successful_capture": "2026-08-15T17:42:41.419735+00:00",
+      "temporary_failures": 6,
       "access_restricted": 1,
       "historical_recovery": "NOT_STARTED"
     },
@@ -422,5 +422,5 @@
       "historical_recovery": "NOT_STARTED"
     }
   ],
-  "high_priority_backlog": 115747
+  "high_priority_backlog": 65878
 }

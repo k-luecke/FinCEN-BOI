@@ -1,6 +1,0 @@
-https://www.gao.gov/topics/financial-markets-institutions|GOV-PUBLIC|GAO topic listing (follow-links root)
-https://www.gao.gov/reports-testimonies|GOV-PUBLIC|GAO reports listing (follow-links root)
-https://www.gao.gov/products/gao-20-574|GOV-PUBLIC|GAO BOI verification report
-https://www.govinfo.gov/collection/chrg|GOV-PUBLIC|GovInfo hearings collection root
-https://www.govinfo.gov/collection/crpt|GOV-PUBLIC|GovInfo committee reports collection root
-https://www.govinfo.gov/app/collection/CHRG|GOV-PUBLIC|GovInfo hearings app listing

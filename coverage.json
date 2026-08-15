@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T20:14:32.765806+00:00",
+  "generated_at": "2026-08-15T22:34:06.966357+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -130,12 +130,12 @@
     {
       "host": "oversight.house.gov",
       "urls_discovered": 19450,
-      "urls_attempted": 5259,
-      "urls_archived": 5189,
+      "urls_attempted": 17101,
+      "urls_archived": 16961,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 439315205,
-      "median_object_bytes": 59600,
-      "p95_object_bytes": 65681,
+      "bytes": 1169364395,
+      "median_object_bytes": 60377,
+      "p95_object_bytes": 67998,
       "known_bulk_gaps": []
     },
     {
@@ -152,12 +152,12 @@
     {
       "host": "vault.fbi.gov",
       "urls_discovered": 9535,
-      "urls_attempted": 5026,
-      "urls_archived": 5024,
+      "urls_attempted": 9561,
+      "urls_archived": 9559,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 226351769,
-      "median_object_bytes": 21960,
-      "p95_object_bytes": 22775,
+      "bytes": 325876267,
+      "median_object_bytes": 21936,
+      "p95_object_bytes": 22453,
       "known_bulk_gaps": []
     },
     {
@@ -176,12 +176,12 @@
     {
       "host": "www.fdic.gov",
       "urls_discovered": 21249,
-      "urls_attempted": 5098,
-      "urls_archived": 5095,
+      "urls_attempted": 17076,
+      "urls_archived": 17073,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 376745481,
-      "median_object_bytes": 69296,
-      "p95_object_bytes": 91913,
+      "bytes": 1261747300,
+      "median_object_bytes": 68731,
+      "p95_object_bytes": 92227,
       "known_bulk_gaps": []
     },
     {
@@ -246,12 +246,12 @@
     {
       "host": "www.govinfo.gov",
       "urls_discovered": 30317,
-      "urls_attempted": 2295,
-      "urls_archived": 2288,
+      "urls_attempted": 14295,
+      "urls_archived": 14286,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 2693450376,
-      "median_object_bytes": 45324,
-      "p95_object_bytes": 1363171,
+      "bytes": 3239260677,
+      "median_object_bytes": 45331,
+      "p95_object_bytes": 95287,
       "known_bulk_gaps": [
         "GovInfo bulk data collections (FR XML, CFR, court opinions)"
       ]
@@ -281,23 +281,23 @@
     {
       "host": "www.occ.gov",
       "urls_discovered": 15237,
-      "urls_attempted": 5630,
-      "urls_archived": 5627,
+      "urls_attempted": 15455,
+      "urls_archived": 15451,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 1543515422,
-      "median_object_bytes": 66199,
-      "p95_object_bytes": 1158664,
+      "bytes": 3224990390,
+      "median_object_bytes": 60399,
+      "p95_object_bytes": 857585,
       "known_bulk_gaps": []
     },
     {
       "host": "www.sec.gov",
       "urls_discovered": 30000,
-      "urls_attempted": 5008,
-      "urls_archived": 4991,
+      "urls_attempted": 17008,
+      "urls_archived": 16978,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 6339700493,
-      "median_object_bytes": 132673,
-      "p95_object_bytes": 1615095,
+      "bytes": 10307139201,
+      "median_object_bytes": 56336,
+      "p95_object_bytes": 866259,
       "known_bulk_gaps": [
         "EDGAR companyfacts.zip (403 on 2026-08-15; weekly retry)",
         "EDGAR full filing archives (per-filing corpus far beyond web pages)",
