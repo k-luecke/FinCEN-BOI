@@ -1,0 +1,60 @@
+# ============================================================
+# FinCEN / Treasury
+# ============================================================
+
+https://www.fincen.gov/|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/boi|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/boi-faqs|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/boi/small-entity-compliance-guide|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/news-room|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/resources/statutes-regulations|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/resources/advisoriesbulletinsfact-sheets|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/foia|GOV-PUBLIC|FinCEN
+
+
+# ============================================================
+# Federal Register / GovInfo
+# ============================================================
+
+https://www.federalregister.gov/agencies/financial-crimes-enforcement-network|GOV-PUBLIC|Federal Register
+https://www.govinfo.gov/|GOV-PUBLIC|GPO
+
+
+# ============================================================
+# DOJ / FBI
+# ============================================================
+
+https://www.justice.gov/|GOV-PUBLIC|DOJ
+https://vault.fbi.gov/|GOV-PUBLIC|FBI
+
+
+# ============================================================
+# SAR public records
+#
+# Official public SAR-related material only: aggregate statistics,
+# filing forms/instructions, examiner guidance, oversight reports.
+# SAR filings themselves are confidential under 31 U.S.C. 5318(g)
+# and are never fetched; non-government sources about SARs are
+# referenced (not mirrored) in SAR-SOURCES.md.
+# ============================================================
+
+https://www.fincen.gov/reports/sar-stats|GOV-PUBLIC|FinCEN SAR Stats
+https://www.fincen.gov/resources/filing-information|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/resources/suspicious-activity-report-sar-advisories|GOV-PUBLIC|FinCEN
+https://bsaefiling.fincen.gov/main.html|GOV-PUBLIC|FinCEN BSA E-Filing
+https://bsaaml.ffiec.gov/manual|GOV-PUBLIC|FFIEC BSA/AML Manual
+https://www.ffiec.gov/|GOV-PUBLIC|FFIEC
+https://www.gao.gov/|GOV-PUBLIC|GAO
+https://www.occ.gov/topics/supervision-and-examination/bsa/index-bsa.html|GOV-PUBLIC|OCC
+https://www.fdic.gov/banker-resource-center/bank-secrecy-act-anti-money-laundering|GOV-PUBLIC|FDIC
+https://www.federalreserve.gov/supervisionreg/topics/bsa_aml.htm|GOV-PUBLIC|Federal Reserve
+https://www.ncua.gov/regulation-supervision/regulatory-compliance-resources/bank-secrecy-act-resources|GOV-PUBLIC|NCUA
+
+
+# ============================================================
+# Congress
+# ============================================================
+
+https://judiciary.house.gov/|CONGRESS|House Judiciary
+https://oversight.house.gov/|CONGRESS|House Oversight
+https://www.congress.gov/|CONGRESS|Congress

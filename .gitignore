@@ -1,0 +1,9 @@
+# Binary object store — content lives outside git history.
+# Manifests, seeds, and code are committed; fetched bytes are not.
+archive/
+
+# Per-run manifest produced in CI before being appended to manifest.jsonl.
+run-manifest.jsonl
+
+__pycache__/
+*.pyc
