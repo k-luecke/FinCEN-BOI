@@ -1,0 +1,198 @@
+name: Bulk chunked crawl
+
+# Crawl a large seed list (e.g. the full discovered-seeds.txt) split
+# into host-aligned chunks that run as parallel jobs, each within the
+# 6-hour job limit. Hosts are never split across chunks, so parallel
+# jobs never hit the same site and per-host rate limits hold. A final
+# job merges all chunk manifests, rebuilds the ledger, publishes one
+# combined durable release, and commits.
+
+on:
+  workflow_dispatch:
+    inputs:
+      seeds_file:
+        description: "Seed list to crawl"
+        default: "discovered-seeds.txt"
+        type: string
+      delay:
+        description: "Seconds between requests (per chunk = per host set)"
+        default: "1.0"
+        type: string
+      target_chunk_size:
+        description: "Approximate URLs per chunk"
+        default: "4000"
+        type: string
+      follow_links:
+        description: "Follow allowlisted same-host links from HTML"
+        default: false
+        type: boolean
+      max_pages:
+        description: "Per-chunk fetch cap when following links"
+        default: "8000"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bulk-crawl
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.chunk.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Partition seeds into host-aligned chunks
+        id: chunk
+        env:
+          SEEDS_FILE: ${{ inputs.seeds_file }}
+          TARGET: ${{ inputs.target_chunk_size }}
+        run: |
+          matrix=$(python3 chunk_seeds.py \
+            --seeds "$SEEDS_FILE" \
+            --out-dir chunks \
+            --target "$TARGET" \
+            --print-matrix)
+          echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seed-chunks
+          path: chunks/
+          if-no-files-found: error
+
+  crawl:
+    needs: plan
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    strategy:
+      fail-fast: false
+      # Modest parallelism; chunks are host-disjoint so this never
+      # concentrates load on one site.
+      max-parallel: 4
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: seed-chunks
+          path: chunks/
+
+      - name: Crawl chunk
+        env:
+          CHUNK: ${{ matrix.chunk }}
+          DELAY: ${{ inputs.delay }}
+          FOLLOW_LINKS: ${{ inputs.follow_links && 'true' || 'false' }}
+          MAX_PAGES: ${{ inputs.max_pages }}
+        run: |
+          EXTRA=""
+          if [ "$FOLLOW_LINKS" = "true" ]; then
+            EXTRA="--follow-links --max-pages $MAX_PAGES"
+          fi
+          python3 archive.py \
+            --seeds "chunks/$CHUNK.txt" \
+            --delay "$DELAY" \
+            $EXTRA \
+            --out archive \
+            --manifest "run-manifest-$CHUNK.jsonl"
+
+      - name: Verify chunk objects
+        run: python3 verify.py --manifest "run-manifest-${{ matrix.chunk }}.jsonl"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: crawl-${{ matrix.chunk }}
+          path: |
+            run-manifest-${{ matrix.chunk }}.jsonl
+            archive/
+          if-no-files-found: error
+
+  aggregate:
+    needs: crawl
+    # Run even if some chunks failed, so completed chunks still land;
+    # the guard below requires at least one successful retrieval.
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: crawl-chunk-*
+          merge-multiple: true
+
+      - name: Merge chunk manifests and rebuild ledger
+        run: |
+          cat run-manifest-chunk-*.jsonl > run-manifest.jsonl
+          python3 - <<'EOF'
+          import json, sys
+
+          ok = 0
+          total = 0
+          with open("run-manifest.jsonl", encoding="utf-8") as f:
+              for line in f:
+                  total += 1
+                  if json.loads(line).get("sha256"):
+                      ok += 1
+
+          print(f"Merged {total} records, {ok} successful retrievals")
+          sys.exit(0 if ok else 1)
+          EOF
+          python3 verify.py --manifest run-manifest.jsonl
+          cat run-manifest.jsonl >> manifest.jsonl
+          python3 ledger.py --manifest manifest.jsonl --out ledger.jsonl
+
+      - name: Archive objects to durable release storage
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.run_id }}
+          SEEDS_FILE: ${{ inputs.seeds_file }}
+        run: |
+          set -euo pipefail
+          tag="objects-run-${RUN_ID}"
+          tarball="objects-${RUN_ID}.tar.zst"
+          tar --zstd -cf "$tarball" archive
+          size=$(stat -c%s "$tarball")
+          objects=$(find archive/objects -type f | wc -l)
+          if [ "$size" -gt 1900000000 ]; then
+            split -d -b 1900M "$tarball" "$tarball.part"
+            assets="$tarball".part*
+            note="Split tarball: reassemble with \`cat $tarball.part* > $tarball\`."
+          else
+            assets="$tarball"
+            note="Single tarball."
+          fi
+          gh release create "$tag" \
+            --title "Bulk crawl objects $(date -u +%Y-%m-%d) (run ${RUN_ID})" \
+            --notes "$objects content-addressed objects from a chunked crawl of ${SEEDS_FILE}. Tar paths match manifest.jsonl object_path values. ${note}" \
+            $assets
+
+      - name: Commit manifest and ledger
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add manifest.jsonl ledger.jsonl
+          if git diff --cached --quiet; then
+            echo "No manifest changes to commit."
+            exit 0
+          fi
+          git commit -m "Bulk chunked crawl $(date -u +%Y-%m-%d): update manifest and change ledger"
+          git pull --rebase origin main
+          git push origin HEAD:main
