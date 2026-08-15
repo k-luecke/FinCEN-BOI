@@ -32,10 +32,17 @@ from pathlib import Path
 from archive import (
     DEFAULT_ALLOWED_HOSTS,
     Record,
-    USER_AGENT,
     append_jsonl,
     host_allowed,
     utc_now,
+)
+
+# SEC's automated-access policy asks for a declared User-Agent with
+# contact information; the repository is the contact point.
+USER_AGENT = (
+    "FinCEN-BOI-Public-Archive/0.1 "
+    "(+https://github.com/k-luecke/FinCEN-BOI; "
+    "public-record preservation)"
 )
 
 BULK_FILES = [
@@ -166,7 +173,7 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", default="archive")
     parser.add_argument("--manifest", default="run-manifest.jsonl")
-    parser.add_argument("--delay", type=float, default=5.0)
+    parser.add_argument("--delay", type=float, default=30.0)
     parser.add_argument(
         "--max-bytes", type=int, default=8 * 1024 * 1024 * 1024
     )
