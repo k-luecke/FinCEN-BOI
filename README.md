@@ -92,9 +92,27 @@ manual dispatch). Each run:
    ledger. Bytes stay out of git history.
 
 Manual dispatch accepts `seeds_file`, `delay`, `follow_links`, and
-`max_pages` inputs, so a one-off bulk crawl (e.g. of
-`discovered-seeds.txt`, following links to closure) runs through the
-same pipeline without touching the daily schedule.
+`max_pages` inputs, so a one-off crawl runs through the same pipeline
+without touching the daily schedule.
+
+## Bulk chunked crawls
+
+For seed lists too large for one 6-hour job (the full
+`discovered-seeds.txt` after multi-host discovery),
+`.github/workflows/bulk-crawl.yml` splits the crawl across parallel
+jobs:
+
+1. `chunk_seeds.py` partitions the seed list into host-aligned chunks
+   (~4,000 URLs each by default). **Hosts are never split across
+   chunks**, so parallel jobs never hit the same site and each chunk's
+   `--delay` remains a true per-host rate limit.
+2. Chunk jobs crawl and verify independently (`fail-fast: false`,
+   `max-parallel: 4`) — one bad chunk doesn't kill the rest.
+3. An aggregate job merges every chunk manifest, re-verifies, appends
+   to `manifest.jsonl`, rebuilds `ledger.jsonl`, publishes the merged
+   object store as a durable `objects-run-<id>` release, and commits.
+   The content-addressed layout makes merging chunk object stores a
+   simple union.
 
 If a public record disappears, the repo holds cryptographic evidence
 that these exact bytes were served from that government URL at that
