@@ -1,0 +1,111 @@
+{
+  "by_family": {
+    "congress": {
+      "ACCESS_RESTRICTED": 1
+    },
+    "doj": {
+      "UNRESOLVED_CHALLENGE": 4317
+    },
+    "federal_register": {
+      "RECOVERED_OFFICIAL_MIRROR": 317,
+      "UNRESOLVED_CHALLENGE": 2
+    },
+    "fincen": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 2
+    },
+    "gao": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1
+    },
+    "govinfo": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1
+    },
+    "other": {
+      "ACCESS_RESTRICTED": 2
+    },
+    "sec": {
+      "ACCESS_RESTRICTED": 1,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 4
+    }
+  },
+  "by_host": {
+    "bsaaml.ffiec.gov": {
+      "ACCESS_RESTRICTED": 1
+    },
+    "bsaefiling.fincen.gov": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1
+    },
+    "www.congress.gov": {
+      "ACCESS_RESTRICTED": 1
+    },
+    "www.federalregister.gov": {
+      "RECOVERED_OFFICIAL_MIRROR": 317,
+      "UNRESOLVED_CHALLENGE": 2
+    },
+    "www.ffiec.gov": {
+      "ACCESS_RESTRICTED": 1
+    },
+    "www.fincen.gov": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1
+    },
+    "www.gao.gov": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1
+    },
+    "www.govinfo.gov": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1
+    },
+    "www.justice.gov": {
+      "UNRESOLVED_CHALLENGE": 4317
+    },
+    "www.sec.gov": {
+      "ACCESS_RESTRICTED": 1,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 4
+    }
+  },
+  "challenge_observations": 4648,
+  "document_identities": 4648,
+  "document_identity_coverage": {
+    "ACCESS_RESTRICTED": 4,
+    "NON_CONTENT_TECHNICAL_RESPONSE": 8,
+    "RECOVERED_OFFICIAL_MIRROR": 317,
+    "UNRESOLVED_CHALLENGE": 4319
+  },
+  "generated_at": "2026-08-15T14:55:40.902827+00:00",
+  "identities_resolved": 4625,
+  "recovery_links": 317,
+  "recovery_links_by_method": {
+    "federal_register_api_inventory_crossref": 317
+  },
+  "recovery_links_by_relationship": {
+    "OFFICIAL_MIRROR": 317
+  },
+  "requested_url_coverage": {
+    "ACCESS_RESTRICTED": 4,
+    "NON_CONTENT_TECHNICAL_RESPONSE": 8,
+    "RECOVERED_OFFICIAL_MIRROR": 317,
+    "UNRESOLVED_CHALLENGE": 4319
+  },
+  "semantics_note": "BOT_CHALLENGE / non-content captures are never counted as ARCHIVED_CONTENT. RECOVERED_* states preserve the distinction between original publisher and retrieval host; original challenge observations are retained.",
+  "top_fingerprints": {
+    "ACCESS_INTERSTITIAL|redirect_to_interstitial_endpoint": 319,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2400": 59,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2409": 91,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2411": 51,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2417": 85,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2422": 63,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2431": 51,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2433": 77,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2444": 68,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2455": 62,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2466": 57,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2477": 70,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2488": 59,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2510": 50,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2576": 57
+  },
+  "unresolved": 4331,
+  "unresolved_by_tier": {
+    "0": 4,
+    "1": 2544,
+    "2": 1783
+  }
+}

@@ -1,5 +1,7 @@
 {
   "access_restricted": 4,
+  "archived_content_urls": 34038,
+  "archived_note": "archived_urls counts every URL with stored bytes; archived_content_urls excludes captures the challenge detector classified as bot challenges/interstitials/app shells (see recovery/)",
   "archived_urls": 38365,
   "attempted_urls": 38781,
   "by_host": {
@@ -27,10 +29,10 @@
     "CONGRESS": 5002,
     "GOV-PUBLIC": 33780
   },
-  "discovered_urls": 38761,
-  "durability_note": "release assets verified this run",
-  "durably_archived_urls": 38365,
-  "generated_at": "2026-08-15T08:58:48.880454+00:00",
+  "discovered_urls": 188003,
+  "durability_note": "not verified this run \u2014 see releases for durable copies",
+  "durably_archived_urls": 0,
+  "generated_at": "2026-08-15T14:59:47.965738+00:00",
   "graph_entities": 0,
   "graph_people": 0,
   "ledger_change_types": {
@@ -40,17 +42,39 @@
   },
   "manual_review": 0,
   "modified_urls": 1,
+  "non_content_technical_responses": 4327,
   "not_found_urls": 87,
   "ownership_bearing_documents": 0,
   "queue_states": {
     "ACCESS_RESTRICTED": 4,
-    "ARCHIVED": 38365,
+    "ARCHIVED": 34048,
+    "DISCOVERED": 149240,
+    "NON_CONTENT_TECHNICAL_RESPONSE": 4317,
     "NOT_FOUND": 87,
     "TEMPORARY_ERROR": 325
   },
-  "queued_urls": 0,
+  "queued_urls": 149240,
   "rate_limited": 0,
   "raw_observations": 38782,
+  "recovery": {
+    "challenge_observations": 4648,
+    "document_identity_coverage": {
+      "ACCESS_RESTRICTED": 4,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 8,
+      "RECOVERED_OFFICIAL_MIRROR": 317,
+      "UNRESOLVED_CHALLENGE": 4319
+    },
+    "recovery_links_by_relationship": {
+      "OFFICIAL_MIRROR": 317
+    },
+    "requested_url_coverage": {
+      "ACCESS_RESTRICTED": 4,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 8,
+      "RECOVERED_OFFICIAL_MIRROR": 317,
+      "UNRESOLVED_CHALLENGE": 4319
+    },
+    "unresolved": 4331
+  },
   "robots_disallowed": 0,
   "temporary_errors": 325,
   "total_bytes": 8697961368,

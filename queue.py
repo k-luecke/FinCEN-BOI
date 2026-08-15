@@ -11,6 +11,12 @@ States per URL:
 
     DISCOVERED         known, never attempted -> pending
     ARCHIVED           latest attempt succeeded (bytes hashed+stored)
+    NON_CONTENT_TECHNICAL_RESPONSE
+                       latest attempt "succeeded" but the bytes are a
+                       bot challenge / interstitial / application
+                       shell (per recovery/challenge-observations.jsonl)
+                       -> owned by the recovery pipeline, never counted
+                       as archived content, never re-hammered here
     NOT_FOUND          latest attempt 404/410 -> observation, no retry
     ACCESS_RESTRICTED  latest attempt 401/403 -> recorded gap, never
                        evaded, no retry
@@ -44,15 +50,58 @@ from discover import seed_label, seed_provenance
 RETRYABLE = {"RATE_LIMITED", "TEMPORARY_ERROR"}
 NO_RETRY = {
     "ARCHIVED",
+    "NON_CONTENT_TECHNICAL_RESPONSE",
     "NOT_FOUND",
     "ACCESS_RESTRICTED",
     "ROBOTS_DISALLOWED",
     "MANUAL_REVIEW",
 }
 
+# Challenge-detector states whose "successful" capture is not content.
+NON_CONTENT_CLASSIFICATIONS = {
+    "BOT_CHALLENGE",
+    "ACCESS_INTERSTITIAL",
+    "APPLICATION_SHELL",
+    "REDIRECT_STUB",
+}
 
-def classify(record: dict) -> str:
+
+def load_challenged_urls(path: Path) -> set[str]:
+    """URLs whose latest capture is a non-content technical response."""
+
+    challenged: set[str] = set()
+
+    if not path.exists():
+        return challenged
+
+    with path.open("r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+
+            if not line:
+                continue
+
+            try:
+                row = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+
+            if row.get("classification") in NON_CONTENT_CLASSIFICATIONS:
+                challenged.add(sanitize_url(row.get("url", "")))
+
+    return challenged
+
+
+def classify(record: dict, challenged: set[str] = frozenset()) -> str:
     if record.get("sha256"):
+        if sanitize_url(record.get("url", "")) in challenged:
+            # 200-with-bytes that the challenge detector classified as
+            # a bot challenge / interstitial / app shell. The recovery
+            # pipeline owns these on a low-frequency cadence; the
+            # ordinary queue neither counts them as archived nor
+            # re-hammers them.
+            return "NON_CONTENT_TECHNICAL_RESPONSE"
+
         return "ARCHIVED"
 
     error = (record.get("error") or "").lower()
@@ -160,10 +209,20 @@ def main() -> int:
     parser.add_argument("--pending-out", default=None)
     parser.add_argument("--limit", type=int, default=4000)
     parser.add_argument("--max-attempts", type=int, default=5)
+    parser.add_argument(
+        "--challenge-observations",
+        default="recovery/challenge-observations.jsonl",
+        help=(
+            "Challenge-detector observations; captures classified as "
+            "non-content there are reported as "
+            "NON_CONTENT_TECHNICAL_RESPONSE instead of ARCHIVED"
+        ),
+    )
     args = parser.parse_args()
 
     known = load_known_urls(Path(args.inventory), Path(args.seeds))
     attempts = load_attempts(Path(args.manifest))
+    challenged = load_challenged_urls(Path(args.challenge_observations))
 
     # URLs seen only in the manifest (e.g. link-following) are still
     # part of the queue's world view.
@@ -191,7 +250,7 @@ def main() -> int:
             last_status = None
             last_at = None
         else:
-            state = classify(entry["last"])
+            state = classify(entry["last"], challenged)
             count = entry["count"]
             last_status = entry["last"].get("http_status")
             last_at = entry["last"].get("retrieved_at")

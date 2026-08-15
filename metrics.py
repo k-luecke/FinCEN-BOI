@@ -58,6 +58,8 @@ def main() -> int:
     parser.add_argument("--queue", default="queue.jsonl")
     parser.add_argument("--ledger", default="ledger.jsonl")
     parser.add_argument("--graph-root", default="ownership-reconstruction")
+    parser.add_argument("--recovery-metrics",
+                        default="recovery/metrics.json")
     parser.add_argument("--out", default="metrics.json")
     parser.add_argument(
         "--release-verified",
@@ -102,6 +104,43 @@ def main() -> int:
     discovered = sum(1 for _ in iter_jsonl(Path(args.inventory)))
     graph = Path(args.graph_root)
 
+    # Challenge-aware coverage: a URL whose latest capture is a bot
+    # challenge / interstitial / app shell is NOT archived content.
+    recovery_path = Path(args.recovery_metrics)
+    recovery: dict = {}
+
+    if recovery_path.exists():
+        try:
+            recovery_full = json.loads(
+                recovery_path.read_text(encoding="utf-8")
+            )
+            recovery = {
+                "challenge_observations": recovery_full.get(
+                    "challenge_observations", 0
+                ),
+                "requested_url_coverage": recovery_full.get(
+                    "requested_url_coverage", {}
+                ),
+                "document_identity_coverage": recovery_full.get(
+                    "document_identity_coverage", {}
+                ),
+                "recovery_links_by_relationship": recovery_full.get(
+                    "recovery_links_by_relationship", {}
+                ),
+                "unresolved": recovery_full.get("unresolved", 0),
+            }
+        except (json.JSONDecodeError, OSError):
+            recovery = {}
+
+    non_content = (
+        recovery.get("requested_url_coverage", {}) or {}
+    )
+    non_content_total = sum(
+        count for state, count in non_content.items()
+        if state in ("UNRESOLVED_CHALLENGE",
+                     "NON_CONTENT_TECHNICAL_RESPONSE")
+    )
+
     metrics = {
         "generated_at": __import__("datetime").datetime.now(
             __import__("datetime").timezone.utc
@@ -110,6 +149,15 @@ def main() -> int:
         "queued_urls": queue_counts.get("DISCOVERED", 0),
         "attempted_urls": len(attempted_urls),
         "archived_urls": len(archived_urls),
+        "archived_content_urls": len(archived_urls) - non_content_total,
+        "non_content_technical_responses": non_content_total,
+        "archived_note": (
+            "archived_urls counts every URL with stored bytes; "
+            "archived_content_urls excludes captures the challenge "
+            "detector classified as bot challenges/interstitials/app "
+            "shells (see recovery/)"
+        ),
+        "recovery": recovery,
         "durably_archived_urls": (
             len(archived_urls) if args.release_verified else 0
         ),

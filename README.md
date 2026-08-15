@@ -158,6 +158,59 @@ If a public record disappears, the repo holds cryptographic evidence
 that these exact bytes were served from that government URL at that
 timestamp — plus the later observation that the URL changed or vanished.
 
+## Challenge-aware lawful recovery
+
+A 200 response is not content. Some hosts front public records with
+bot challenges (justice.gov serves per-URL tokenized ~2.5 KB Akamai
+interstitials; federalregister.gov redirects to an `unblock.`
+endpoint). The recovery layer detects these, refuses to count them as
+captured records, and routes around them through **other lawful public
+representations** — never by defeating the protection itself. No
+CAPTCHA solving, no proxy/identity rotation, no fingerprint spoofing,
+no rate-limit circumvention, no hidden or authenticated endpoints.
+
+Pipeline (`challenge_detector.py`, `challenge_scan.py`, `recover.py`,
+`recovery_report.py`):
+
+1. **Detect + classify** every latest observation:
+   `REAL_CONTENT | THIN_REAL_CONTENT | BOT_CHALLENGE |
+   ACCESS_INTERSTITIAL | APPLICATION_SHELL | REDIRECT_STUB |
+   ERROR_RESPONSE | UNKNOWN_RESPONSE` — multi-signal (vendor
+   fingerprints, expected-format mismatch, tokenized host patterns,
+   app-shell markup), never by byte size alone. Original challenge
+   observations are preserved, never deleted.
+2. **Resolve document identity** (`recovery/document-identities.jsonl`)
+   from Federal Register API metadata already in the inventory, URL
+   slugs, and archived index pages — recovery operates on documents,
+   not on endlessly retrying one URL.
+3. **Alternate-source resolution**, most-official first: same-agency
+   ordinary retry probe → official APIs/feeds → GovInfo / FR API →
+   public web archives (classified separately as `WEB-ARCHIVE`) →
+   later ordinary retry on a 7-day cadence.
+4. **Recovery graph** (`recovery/recovery-links.jsonl`): every link
+   records original URL, challenge observation hash, alternate URL,
+   relationship (`SAME_DOCUMENT | OFFICIAL_MIRROR |
+   DERIVED_REPRESENTATION | ARCHIVED_VERSION | POSSIBLE_MATCH`),
+   discovery method, recovered SHA-256, and keeps *original
+   publisher* distinct from *retrieval host*. Only `SAME_DOCUMENT`
+   and `OFFICIAL_MIRROR` count as direct recovery.
+5. **Coverage semantics**: challenged captures surface as
+   `NON_CONTENT_TECHNICAL_RESPONSE` in `queue.jsonl`, are excluded
+   from `archived_content_urls` in `metrics.json`, and
+   `recovery/metrics.json` reports requested-URL coverage separately
+   from document-identity coverage.
+
+Retry posture for challenged endpoints: no immediate retry; at most a
+`PROBE_SAMPLE`-sized ordinary probe per run; a second 429 stops the
+host for the whole run; 403 is recorded, never evaded.
+
+`.github/workflows/recovery.yml` runs the pipeline on a daily
+low-frequency cadence (and on dispatch), verifies every recovered
+object's SHA-256, publishes recovered bytes as durable release assets
+(`objects-recovery-<run id>`), and commits recovery state.
+`RECOVERY-REPORT.md` answers what was challenged, what was recovered
+through which route, and what remains access-limited.
+
 ## Discovery
 
 `discover.py` builds a historical inventory of what public FinCEN
