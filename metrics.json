@@ -1,0 +1,41 @@
+{
+  "access_restricted": 1,
+  "archived_urls": 1,
+  "attempted_urls": 2,
+  "by_host": {
+    "www.sec.gov": 2
+  },
+  "by_provenance": {
+    "GOV-PUBLIC": 2
+  },
+  "discovered_urls": 38758,
+  "durability_note": "release assets verified this run",
+  "durably_archived_urls": 1,
+  "generated_at": "2026-08-15T04:19:15.334129+00:00",
+  "graph_entities": 0,
+  "graph_people": 0,
+  "ledger_change_types": {
+    "ADDED": 1,
+    "UNAVAILABLE": 1
+  },
+  "manual_review": 0,
+  "modified_urls": 0,
+  "not_found_urls": 0,
+  "ownership_bearing_documents": 0,
+  "queue_states": {
+    "ACCESS_RESTRICTED": 1,
+    "ARCHIVED": 1,
+    "DISCOVERED": 38779
+  },
+  "queued_urls": 38779,
+  "rate_limited": 0,
+  "raw_observations": 2,
+  "robots_disallowed": 0,
+  "temporary_errors": 0,
+  "total_bytes": 1557858712,
+  "unique_objects": 1,
+  "unresolved_entities": 0,
+  "validated_graph_edges": 0,
+  "verification_note": "objects are hash-verified at capture (verify.py) before manifests merge; periodic re-verification via verify-archive workflow",
+  "verified_objects": 1
+}

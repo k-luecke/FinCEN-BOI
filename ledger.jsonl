@@ -1,0 +1,2 @@
+{"change_type": "UNAVAILABLE", "current_sha256": null, "first_seen": null, "http_status": 403, "last_seen": null, "previous_sha256": null, "url": "https://www.sec.gov/Archives/edgar/daily-index/bulkdata/companyfacts.zip"}
+{"change_type": "ADDED", "current_sha256": "ec07d8cefcbdcd638dac3f7c5d91b6a71759d08190c62d44485851bba5058746", "first_seen": "2026-08-15T04:14:50.731225+00:00", "http_status": 200, "last_seen": "2026-08-15T04:14:50.731225+00:00", "previous_sha256": null, "url": "https://www.sec.gov/Archives/edgar/daily-index/bulkdata/submissions.zip"}
