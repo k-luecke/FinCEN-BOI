@@ -1,0 +1,6 @@
+# Binary object store — content lives outside git history.
+# Manifests, seeds, and code are committed; fetched bytes are not.
+archive/
+
+__pycache__/
+*.pyc

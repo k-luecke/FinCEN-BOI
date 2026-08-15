@@ -1,0 +1,37 @@
+# ============================================================
+# FinCEN / Treasury
+# ============================================================
+
+https://www.fincen.gov/|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/boi|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/boi-faqs|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/boi/small-entity-compliance-guide|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/news-room|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/resources/statutes-regulations|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/resources/advisoriesbulletinsfact-sheets|GOV-PUBLIC|FinCEN
+https://www.fincen.gov/foia|GOV-PUBLIC|FinCEN
+
+
+# ============================================================
+# Federal Register / GovInfo
+# ============================================================
+
+https://www.federalregister.gov/agencies/financial-crimes-enforcement-network|GOV-PUBLIC|Federal Register
+https://www.govinfo.gov/|GOV-PUBLIC|GPO
+
+
+# ============================================================
+# DOJ / FBI
+# ============================================================
+
+https://www.justice.gov/|GOV-PUBLIC|DOJ
+https://vault.fbi.gov/|GOV-PUBLIC|FBI
+
+
+# ============================================================
+# Congress
+# ============================================================
+
+https://judiciary.house.gov/|CONGRESS|House Judiciary
+https://oversight.house.gov/|CONGRESS|House Oversight
+https://www.congress.gov/|CONGRESS|Congress
