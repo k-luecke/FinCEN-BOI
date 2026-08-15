@@ -1,75 +1,145 @@
 # Ownership-reconstruction source catalog
 
-Sources that publicly and lawfully disclose entity↔person
-ownership/control relationships. Policy for every source:
+Ten ingestion families plus web-archive evidence. Every family writes
+the same universal edge format (see [../SCHEMA.md](../SCHEMA.md)), and
+every ingested document is archived (hashed bytes + manifest) before
+extraction so each edge's `source_sha256` points at preserved
+evidence.
 
-- Public access only — no authentication, no bypassing access controls
-  or paywalls.
-- Prefer **official bulk-data products and APIs** over scraping search
-  interfaces; a source whose terms prohibit bulk collection is
-  cataloged reference-only.
-- Every ingested document is archived (hashed bytes + manifest) before
-  extraction, so each relationship's `sha256` points at preserved
-  evidence.
+Standing policy for all sources: public access only; no
+authentication; no bypassing access controls or paywalls; official
+bulk-data products preferred over scraping search interfaces; sources
+whose terms prohibit collection are reference-only. Documents are
+preserved whole — extraction never substitutes for the document.
 
-## 1. State corporate registries
+## 1. State corporate registries + historical filings (priority #1)
 
-The highest-value layer. Per GAO's 2026 review, most states collect
-*some* ownership/control information — officers, directors, LLC
-managers or members — but requirements vary substantially by state and
-those people are **not necessarily CTA beneficial owners**. That is
-why the schema keeps registry roles (`MANAGER`, `MEMBER`, `OFFICER`,
-`REGISTERED_AGENT`, …) distinct from `BENEFICIAL_OWNER_REPORTED`.
+Not just current entity-search results: formation documents, annual
+reports, amendments, mergers, dissolutions, reinstatements, and
+foreign registrations. **Every historical role is retained** (closed
+with `valid_to`), never overwritten by current state. Per GAO, most
+states collect some officer/director/manager/member information, but
+it varies by jurisdiction and is not equivalent to beneficial
+ownership — which is why registry roles stay distinct from
+`BENEFICIAL_OWNER` in the schema. Renames feed the `names/` history
+table.
 
-Per-state onboarding checklist (work through before ingesting):
+Per-state onboarding checklist: official bulk/API availability; which
+roles the state discloses; terms permitting archival; historical
+depth of amendments/annual reports. Track findings as
+`sources/state-<XX>.md`. All jurisdictions currently `RESEARCH`.
 
-1. Does the state publish an official bulk download or API?
-2. What roles does the state actually collect and disclose?
-3. Do the terms of use permit archival/bulk retrieval?
-4. Historical depth — are amendments/annual reports retrievable?
+## 2. UCC filings
 
-| State onboarding status | Meaning |
-|-------------------------|---------|
-| `RESEARCH`              | Not yet assessed (initial state for all 50 states + DC + territories) |
-| `BULK`                  | Official bulk data available — ingest via bulk product |
-| `API`                   | Official API — ingest via API within its terms |
-| `PORTAL-ONLY`           | Search portal only — assess terms before any collection |
-| `REFERENCE-ONLY`        | Terms prohibit collection — cite, do not ingest |
+Debtor / secured-party relationships expose commercial links invisible
+in corporate registration — a shell with no public footprint connects
+to a lender, affiliate, address, or individual through a financing
+statement. Own ingestion family per state UCC system (many are
+searchable through the same Secretary of State infrastructure; assess
+bulk availability alongside family 1). Edges: `DEBTOR`,
+`SECURED_PARTY`, plus address nodes from filing addresses.
 
-All jurisdictions currently `RESEARCH`. Track per-state findings as
-`sources/state-<XX>.md` files as they are assessed.
+## 3. Real estate
 
-## 2. Federal datasets
+County recorder / register-of-deeds records, assessor parcels,
+transfer deeds, mortgages/deeds of trust, and state-level transfer
+records. An LLC buying property yields addresses, dates,
+counterparties, signatories, and mailing addresses that can resolve an
+otherwise opaque entity. Edges: `PROPERTY_OWNER`, `SIGNATORY`,
+`SHARED_ADDRESS`. Highly fragmented (3,000+ counties) — onboard
+opportunistically, bulk-first. FinCEN's Residential Real Estate
+reporting regime's public rules/guidance/data artifacts are preserved
+separately under `policy-history/` (distinct regime from CTA/BOSS).
 
-| Source | What it discloses | Access | Status |
-|--------|-------------------|--------|--------|
-| SEC EDGAR (sec.gov — allowlisted) | Officers/directors, 5%+ ownership (Schedules 13D/13G), insider ownership (Forms 3/4/5), subsidiaries (Ex-21) | Official full-text + bulk data | Ready to onboard |
-| Federal Register / GovInfo (allowlisted) | Rulemakings; ownership disclosures embedded in notices | Already being archived | Active |
-| Court records via GovInfo (allowlisted) | Opinions and public filings that establish ownership/control | Free official mirror of opinions | Ready to onboard |
-| FEC bulk data (fec.gov) | Committee officers/treasurers, corporate connections | Official bulk downloads | RESEARCH — host not yet allowlisted |
-| IRS Form 990 series (irs.gov) | Nonprofit officers/directors/key employees | Official bulk e-file data | RESEARCH — host not yet allowlisted |
-| SAM.gov entity registrations | Federal contractor entity data | Official API/extracts | RESEARCH — host not yet allowlisted |
-| USAspending | Contract/grant recipient ownership fields (highly-compensated officers) | Official API/bulk | RESEARCH — host not yet allowlisted |
-| OFAC sanctions lists (treasury.gov — allowlisted) | Designated persons and their entities, with ownership rationale | Official data files | Ready to onboard |
-| Bankruptcy filings | Statements of financial affairs disclose ownership | PACER is paywalled — use free official sources and RECAP references only | RESEARCH |
-| County property/business records | Deeds, fictitious-name filings | Varies wildly | RESEARCH |
+## 4. SEC EDGAR — exhibits, not just XBRL
 
-Hosts get added to the crawler allowlist when their connector is
-built, not before.
+Ownership disclosures (Schedules 13D/13G), insider filings (Forms
+3/4/5), Form D, subsidiaries exhibits (Ex-21), merger agreements,
+credit agreements, and organizational charts connect enormous numbers
+of legal entities. SEC publishes nightly bulk `submissions.zip` and
+`companyfacts.zip` — purpose-built archival side channels: snapshot
+the bulk files, archive them hashed, extract edges from the archived
+copy. sec.gov is already on the crawler allowlist. Edges:
+`BENEFICIAL_OWNER` (13D/G are genuinely DIRECT), `OFFICER`,
+`DIRECTOR`, `PARENT`, `SUBSIDIARY`.
 
-## 3. Reference-only (never ingested as ground truth)
+## 5. Federal procurement (SAM / USAspending)
 
-| Source | Why reference-only |
-|--------|--------------------|
-| CourtListener / RECAP | Unofficial mirror; cite as `SECONDARY`, prefer official copies |
-| OpenCorporates and similar aggregators | Secondary aggregation; use to *find* primary records, never as evidence themselves |
-| Journalism (ICIJ, etc.) | `PRESS-REPORT`/`RESEARCH_INFERENCE` at most — see PROVENANCE.md |
+Legal names, UEIs, historical names, addresses, parent/recipient
+relationships, awards, agencies. **Preserve snapshots** (monthly
+extracts archived and hashed), never query the live API on demand —
+`ACME HOLDINGS LLC → UEI → recipient → award → agency` becomes a
+reproducible evidence path only if the snapshot is preserved. Edges:
+`CONTRACT_RECIPIENT`, `PARENT`; name history from historical-name
+fields.
 
-## 4. Related but separate: Residential Real Estate regime
+## 6. IRS nonprofit data (Form 990 series)
 
-FinCEN's Residential Real Estate reporting regime (transferee
-entity/trust beneficial-ownership reporting on covered transfers, with
-reporting persons retaining certifications for five years) is a
-**different reporting regime from CTA/BOSS**. Its public guidance and
-rulemaking record are preserved under `policy-history/`, not mingled
-into this dataset.
+Officers, directors, trustees, key/highly-compensated employees,
+related organizations (Schedule R), and transactions with related
+entities. IRS publishes the actual e-file corpus in bulk XML (current
+and historical downloads). Foundations/charities bridge people and
+entities that otherwise appear disconnected. Edges: `OFFICER`,
+`DIRECTOR`, `TRUSTEE`, `RELATED_ORGANIZATION`.
+
+## 7. Courts + bankruptcy
+
+Opinions and pleadings from free official sources (govinfo — already
+allowlisted), DOJ exhibits, state court records, and bankruptcy
+documents available through lawful public channels. Bankruptcy
+schedules and adversary proceedings are particularly revealing about
+counterparties and affiliated entities. PACER's paywall is respected —
+no fee-bypass; RECAP/CourtListener are reference-only pointers to
+primary documents. **Preserve the documents, not merely extracted
+names.**
+
+## 8. Regulatory licensing
+
+FINRA/SEC investment-adviser data (Form ADV discloses control
+persons), NMLS where publicly available, state insurance regulators,
+state professional/business licenses, FCC, FERC, transportation
+regulators, healthcare provider/entity datasets. Licensing regimes
+frequently require identifying control persons that incorporation
+records don't. Edges: `OFFICER`, `DIRECTOR`, `BENEFICIAL_OWNER` where
+the regime directly reports it.
+
+## 9. Enforcement + sanctions
+
+DOJ, SEC, CFTC, FTC, CFPB, OFAC, FinCEN enforcement actions, state
+AGs, banking regulators. Enforcement documents frequently contain the
+exact sentence a graph needs — "X, which was owned and controlled by
+Y" — and that is ingested as a `BENEFICIAL_OWNER` edge with
+`evidence_class: DIRECT` backed by the archived document, never
+inferred from address matching. OFAC list files additionally provide
+structured ownership rationales.
+
+## 10. Congressional + GAO material
+
+Crawled aggressively (broader than the FinCEN-centric seed set): GAO
+reports (including the June 2026 report establishing that FinCEN
+collected BOI from early 2024 and that six federal agencies were
+searching the system), committee exhibits, hearing records, and
+investigation releases — congressional publication can transform
+otherwise inaccessible information into an independently public
+government record. Hosts already allowlisted; congress.gov and
+gao.gov exposed no sitemap to discovery, so seed their listing pages
+directly and expand.
+
+## Web archives (`CORPORATE-PUBLIC` / `WEB-ARCHIVE`)
+
+Corporate websites historically carried management biographies,
+portfolio-company lists, office addresses, privacy-policy legal
+entities, and acquisition announcements that later disappear. Archive
+current corporate pages as `CORPORATE-PUBLIC` and historical snapshots
+(e.g. Wayback Machine captures) as `WEB-ARCHIVE` — **never treated as
+equivalent to government evidence**: edges extracted from them are at
+most `OFFICIAL_INFERENCE`/`RESEARCH_INFERENCE` with the snapshot URL
+and hash preserved.
+
+## Reference-only (never ground truth)
+
+| Source | Why |
+|--------|-----|
+| CourtListener / RECAP | Unofficial mirror; pointer to primary documents |
+| OpenCorporates and similar aggregators | Use to find primary records, never as evidence |
+| Journalism | `PRESS-REPORT`; at most `RESEARCH_INFERENCE` |

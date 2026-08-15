@@ -1,31 +1,42 @@
 #!/usr/bin/env python3
 """
-Schema and validator for the ownership-reconstruction dataset.
+Schema and validator for the ownership-reconstruction dataset:
+a temporally versioned, source-addressable corporate-control graph
+built from lawful public records only.
 
-The dataset reconstructs, from public records only, pieces of the
-company -> natural-person ownership/control graph that those records
-independently disclose. It does NOT contain CTA-filed beneficial
-ownership information, which is confidential and not publicly
-available.
+The dataset does NOT contain CTA-filed beneficial ownership
+information, which is confidential and not publicly available. It
+records what public sources independently disclose.
 
-Three record types, stored as JSONL under ownership-reconstruction/:
+Node types (JSONL under ownership-reconstruction/):
 
-    entities/*.jsonl        legal entities
-    people/*.jsonl          natural persons (as named in sources)
-    relationships/*.jsonl   evidence-backed entity<->person links
+    entities/*.jsonl    legal entities
+    people/*.jsonl      natural persons as named in sources
+    addresses/*.jsonl   normalized addresses — first-class graph nodes
+    names/*.jsonl       entity name history (LEGAL/FORMER/DBA/...)
 
-Core rules this validator enforces:
+Edge type:
 
-1. Role vocabulary is closed. A relationship's role is what the source
-   document actually establishes — MEMBER, MANAGER, DIRECTOR,
-   REGISTERED_AGENT, etc. are never promoted to
-   BENEFICIAL_OWNER_REPORTED. That role is reserved for sources that
-   themselves directly report the person as a beneficial owner, and
-   requires evidence_level DIRECT.
-2. Every relationship carries provenance: source_url and retrieved_at
-   are mandatory; sha256 should reference an object in the archive.
-3. Referential integrity: relationships may only reference entity_ids
-   and person_ids that exist in the dataset.
+    edges/*.jsonl       universal evidence edges: subject, assertion,
+                        object, validity window, provenance, evidence
+                        class, confidence
+
+Core rules enforced here:
+
+1. Closed assertion vocabulary. An edge asserts exactly what its
+   source establishes. BENEFICIAL_OWNER is reserved for sources that
+   themselves state ownership/control (a registry BO field, an SEC
+   ownership filing, an enforcement document saying "owned and
+   controlled by") and requires evidence_class DIRECT. Managers,
+   registered agents, shared addresses, etc. are never promoted.
+2. SHARED_ADDRESS never implies common ownership; it must connect at
+   least one address node and is weighting input, not a conclusion.
+3. Conflicting edges are never collapsed: if one source says X
+   manages, another says Y owns, and a third says Z controls, all
+   three edges are retained with their dates and sources. The
+   validator checks records, not consistency of the world.
+4. Every edge carries provenance: source_url and retrieved_at are
+   mandatory; source_sha256 should reference archived bytes.
 """
 
 from __future__ import annotations
@@ -36,39 +47,55 @@ import re
 import sys
 from pathlib import Path
 
-ROLES = {
-    "BENEFICIAL_OWNER_REPORTED",
+ASSERTIONS = {
+    # ownership / reported control
+    "BENEFICIAL_OWNER",
+    # corporate roles as sources state them
     "MEMBER",
     "MANAGER",
-    "DIRECTOR",
     "OFFICER",
+    "DIRECTOR",
     "ORGANIZER",
     "INCORPORATOR",
-    "REGISTERED_AGENT",
-    "SIGNATORY",
     "TRUSTEE",
+    "SIGNATORY",
+    "REGISTERED_AGENT",
     "UNKNOWN_CONTROL_ROLE",
+    # inter-entity structure
+    "PARENT",
+    "SUBSIDIARY",
+    "RELATED_ORGANIZATION",
+    # commercial / asset relationships
+    "SECURED_PARTY",
+    "DEBTOR",
+    "PROPERTY_OWNER",
+    "CONTRACT_RECIPIENT",
+    # co-location (weighting input, never ownership)
+    "SHARED_ADDRESS",
 }
 
-EVIDENCE_LEVELS = {
+EVIDENCE_CLASSES = {
     # The source document itself states the relationship.
     "DIRECT",
-    # Inferred from an official record that implies but does not state
-    # it (e.g. the same person signs as manager across filings).
+    # Implied by official records without being stated.
     "OFFICIAL_INFERENCE",
-    # Inferred from secondary research; weakest tier.
+    # Secondary research; weakest tier.
     "RESEARCH_INFERENCE",
 }
+
+NAME_TYPES = {"LEGAL", "FORMER", "DBA", "FOREIGN_REGISTRATION"}
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}")
 
 ENTITY_REQUIRED = ("entity_id", "legal_name", "jurisdiction")
 PERSON_REQUIRED = ("person_id", "normalized_name")
-RELATIONSHIP_REQUIRED = (
-    "entity_id",
-    "person_id",
-    "role",
-    "evidence_level",
+ADDRESS_REQUIRED = ("address_id", "normalized")
+NAME_REQUIRED = ("entity_id", "name", "name_type", "source_url")
+EDGE_REQUIRED = (
+    "subject_id",
+    "assertion",
+    "object_id",
+    "evidence_class",
     "source_url",
     "retrieved_at",
 )
@@ -114,32 +141,85 @@ def validate_person(record: dict, where: str, problems: Problems):
         problems.report(where, "name_variants must be a list")
 
 
-def validate_relationship(
+def validate_address(record: dict, where: str, problems: Problems):
+    check_required(record, ADDRESS_REQUIRED, where, problems)
+
+
+def validate_name(
     record: dict,
     where: str,
     problems: Problems,
     entity_ids: set[str],
-    person_ids: set[str],
 ):
-    check_required(record, RELATIONSHIP_REQUIRED, where, problems)
+    check_required(record, NAME_REQUIRED, where, problems)
 
-    role = record.get("role")
+    name_type = record.get("name_type")
 
-    if role is not None and role not in ROLES:
-        problems.report(where, f"unknown role {role!r}")
+    if name_type is not None and name_type not in NAME_TYPES:
+        problems.report(where, f"unknown name_type {name_type!r}")
 
-    level = record.get("evidence_level")
+    for field in ("valid_from", "valid_to"):
+        check_date(record, field, where, problems)
 
-    if level is not None and level not in EVIDENCE_LEVELS:
-        problems.report(where, f"unknown evidence_level {level!r}")
+    entity_id = record.get("entity_id")
 
-    if role == "BENEFICIAL_OWNER_REPORTED" and level != "DIRECT":
+    if entity_id and entity_ids and entity_id not in entity_ids:
+        problems.report(where, f"unknown entity_id {entity_id!r}")
+
+
+def validate_edge(
+    record: dict,
+    where: str,
+    problems: Problems,
+    node_ids: set[str],
+    address_ids: set[str],
+):
+    check_required(record, EDGE_REQUIRED, where, problems)
+
+    assertion = record.get("assertion")
+
+    if assertion is not None and assertion not in ASSERTIONS:
+        problems.report(where, f"unknown assertion {assertion!r}")
+
+    evidence_class = record.get("evidence_class")
+
+    if evidence_class is not None and evidence_class not in EVIDENCE_CLASSES:
+        problems.report(
+            where, f"unknown evidence_class {evidence_class!r}"
+        )
+
+    if assertion == "BENEFICIAL_OWNER" and evidence_class != "DIRECT":
         problems.report(
             where,
-            "BENEFICIAL_OWNER_REPORTED requires evidence_level DIRECT: "
-            "a source must itself report the person as a beneficial "
-            "owner; control roles are never promoted",
+            "BENEFICIAL_OWNER requires evidence_class DIRECT: the "
+            "source must itself state ownership/control; other roles "
+            "and co-location are never promoted",
         )
+
+    subject_id = record.get("subject_id")
+    object_id = record.get("object_id")
+
+    if assertion == "SHARED_ADDRESS" and address_ids:
+        if (
+            subject_id not in address_ids
+            and object_id not in address_ids
+        ):
+            problems.report(
+                where,
+                "SHARED_ADDRESS must connect at least one address "
+                "node; co-location is weighting input, not ownership",
+            )
+
+    confidence = record.get("confidence")
+
+    if confidence is not None:
+        if (
+            not isinstance(confidence, (int, float))
+            or not 0 <= confidence <= 1
+        ):
+            problems.report(
+                where, f"confidence out of range [0,1]: {confidence!r}"
+            )
 
     percent = record.get("ownership_percent")
 
@@ -149,18 +229,12 @@ def validate_relationship(
                 where, f"ownership_percent out of range: {percent!r}"
             )
 
-    for field in ("start_date", "end_date", "source_date"):
+    for field in ("valid_from", "valid_to", "source_date"):
         check_date(record, field, where, problems)
 
-    entity_id = record.get("entity_id")
-
-    if entity_id and entity_ids and entity_id not in entity_ids:
-        problems.report(where, f"unknown entity_id {entity_id!r}")
-
-    person_id = record.get("person_id")
-
-    if person_id and person_ids and person_id not in person_ids:
-        problems.report(where, f"unknown person_id {person_id!r}")
+    for field, value in (("subject_id", subject_id), ("object_id", object_id)):
+        if value and node_ids and value not in node_ids:
+            problems.report(where, f"unknown {field} {value!r}")
 
 
 def iter_jsonl(directory: Path):
@@ -180,67 +254,84 @@ def iter_jsonl(directory: Path):
                     yield where, exc
 
 
+def collect(
+    root: Path,
+    subdir: str,
+    id_field: str,
+    validator,
+    problems: Problems,
+) -> tuple[int, set[str]]:
+    ids: set[str] = set()
+    count = 0
+
+    for where, record in iter_jsonl(root / subdir):
+        if isinstance(record, Exception):
+            problems.report(where, f"malformed JSON: {record}")
+            continue
+
+        count += 1
+        validator(record, where, problems)
+
+        record_id = record.get(id_field)
+
+        if record_id:
+            if record_id in ids:
+                problems.report(
+                    where, f"duplicate {id_field} {record_id!r}"
+                )
+            ids.add(record_id)
+
+    return count, ids
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--root",
         default="ownership-reconstruction",
-        help="Dataset root containing entities/, people/, relationships/",
+        help="Dataset root",
     )
     args = parser.parse_args()
 
     root = Path(args.root)
     problems = Problems()
 
-    entity_ids: set[str] = set()
-    person_ids: set[str] = set()
+    n_entities, entity_ids = collect(
+        root, "entities", "entity_id", validate_entity, problems
+    )
+    n_people, person_ids = collect(
+        root, "people", "person_id", validate_person, problems
+    )
+    n_addresses, address_ids = collect(
+        root, "addresses", "address_id", validate_address, problems
+    )
 
-    counts = {"entities": 0, "people": 0, "relationships": 0}
+    node_ids = entity_ids | person_ids | address_ids
 
-    for where, record in iter_jsonl(root / "entities"):
+    n_names = 0
+
+    for where, record in iter_jsonl(root / "names"):
         if isinstance(record, Exception):
             problems.report(where, f"malformed JSON: {record}")
             continue
 
-        counts["entities"] += 1
-        validate_entity(record, where, problems)
+        n_names += 1
+        validate_name(record, where, problems, entity_ids)
 
-        if record.get("entity_id"):
-            if record["entity_id"] in entity_ids:
-                problems.report(
-                    where, f"duplicate entity_id {record['entity_id']!r}"
-                )
-            entity_ids.add(record["entity_id"])
+    n_edges = 0
 
-    for where, record in iter_jsonl(root / "people"):
+    for where, record in iter_jsonl(root / "edges"):
         if isinstance(record, Exception):
             problems.report(where, f"malformed JSON: {record}")
             continue
 
-        counts["people"] += 1
-        validate_person(record, where, problems)
-
-        if record.get("person_id"):
-            if record["person_id"] in person_ids:
-                problems.report(
-                    where, f"duplicate person_id {record['person_id']!r}"
-                )
-            person_ids.add(record["person_id"])
-
-    for where, record in iter_jsonl(root / "relationships"):
-        if isinstance(record, Exception):
-            problems.report(where, f"malformed JSON: {record}")
-            continue
-
-        counts["relationships"] += 1
-        validate_relationship(
-            record, where, problems, entity_ids, person_ids
-        )
+        n_edges += 1
+        validate_edge(record, where, problems, node_ids, address_ids)
 
     print(
-        f"Validated {counts['entities']} entities, "
-        f"{counts['people']} people, "
-        f"{counts['relationships']} relationships"
+        f"Validated {n_entities} entities, {n_people} people, "
+        f"{n_addresses} addresses, {n_names} name records, "
+        f"{n_edges} edges"
     )
     print(f"Problems: {problems.count}")
 

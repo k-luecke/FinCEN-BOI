@@ -34,6 +34,19 @@ Published journalism.
 Citation/metadata describing leaked confidential material. The
 confidential source material itself is not mirrored.
 
+## CORPORATE-PUBLIC
+
+Content a company itself published publicly (its own website,
+announcements). Not government evidence; edges extracted from it are
+never `DIRECT` government-grade assertions.
+
+## WEB-ARCHIVE
+
+Historical snapshot of a public web page (e.g. Wayback Machine
+capture) preserving content that has since changed or disappeared.
+Cite the snapshot URL and capture date; never treated as equivalent
+to a government record.
+
 ## SECONDARY
 
 Other public secondary research.

@@ -66,9 +66,16 @@ https://www.ncua.gov/regulation-supervision/regulatory-compliance-resources/bank
 
 
 # ============================================================
-# Congress
+# Congress / GAO
+#
+# Crawled aggressively: congressional publication can turn
+# otherwise inaccessible material into an independently public
+# government record. congress.gov and gao.gov exposed no sitemap
+# to discovery, so their listing pages are seeded directly.
 # ============================================================
 
 https://judiciary.house.gov/|CONGRESS|House Judiciary
 https://oversight.house.gov/|CONGRESS|House Oversight
 https://www.congress.gov/|CONGRESS|Congress
+https://www.gao.gov/reports-testimonies|GOV-PUBLIC|GAO
+https://www.gao.gov/topics|GOV-PUBLIC|GAO

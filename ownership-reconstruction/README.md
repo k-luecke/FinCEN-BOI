@@ -22,10 +22,19 @@ dataset's deletion.
 ownership-reconstruction/
 ├── entities/        # legal entities, one JSONL record each
 ├── people/          # natural persons as named in sources
-├── relationships/   # evidence-backed entity<->person links
+├── addresses/       # normalized addresses — first-class graph nodes
+├── names/           # entity name history (LEGAL/FORMER/DBA/...)
+├── edges/           # universal evidence edges (one shape, all sources)
 ├── sources/         # source catalog and per-source onboarding notes
 └── unresolved/      # ambiguous matches awaiting resolution
 ```
+
+The result is a **temporally versioned, source-addressable
+corporate-control graph**: conflicting assertions are all retained
+with their dates and sources (a registry saying X manages, an SEC
+exhibit saying Y owns 100%, a court filing saying Z controls — three
+edges, never collapsed), and analysis happens over preserved evidence
+rather than over ingestion-time judgment calls.
 
 Records are JSONL, validated by `ownership_schema.py` at the repo root:
 
@@ -39,13 +48,15 @@ python3 ownership_schema.py --root ownership-reconstruction
    `source_url`, `retrieved_at`, and (whenever the source is archived)
    the `sha256` of the exact bytes, so each edge in the graph is
    traceable to a preserved document.
-2. **Roles are what the source says.** A registered agent is a
-   `REGISTERED_AGENT`. An LLC manager is a `MANAGER`.
-   `BENEFICIAL_OWNER_REPORTED` is reserved for sources that themselves
-   directly report the person as a beneficial owner, and the validator
-   rejects it at any evidence level other than `DIRECT`. Promoting
-   control roles to ownership is how a corporate graph becomes
-   confidently wrong — the schema makes it a validation error instead.
+2. **Assertions are what the source says.** A registered agent is a
+   `REGISTERED_AGENT`. An LLC manager is a `MANAGER`. Co-located
+   companies get `SHARED_ADDRESS` — which must touch an address node
+   and never implies common ownership. `BENEFICIAL_OWNER` is reserved
+   for sources that themselves state ownership/control, and the
+   validator rejects it at any evidence class other than `DIRECT`.
+   Promoting control roles to ownership is how a corporate graph
+   becomes confidently wrong — the schema makes it a validation error
+   instead.
 3. **Public, lawful sources only.** No authentication, no bypassing
    access controls or paywalls, official bulk-data products preferred
    over scraping search interfaces. Sources that prohibit bulk
