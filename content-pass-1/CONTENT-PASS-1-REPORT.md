@@ -317,11 +317,13 @@ copies in git carry identical content, `gzip -n`):
 
 See that file for all 22 digests. Headline artifacts:
 
-- `derived/` tree tarball (533 MB → 105 MB zstd):
-  `3c92d42a7aee85c58d1a5211b0f2d3891986715dff50a80f759727782aa896a4`
-  (`derived-content-pass-1-local.tar.zst`; the reproducibility workflow
-  publishes an equivalent release — content-identical text files,
-  wall-clock timestamp fields differ by design in status records).
+- `derived/` tree tarball (533 MB → 95.4 MB, zstd -19), **committed in
+  split parts under `derived-release-staging/`** with per-part digests:
+  `d7eba7dae5a8f1ed26c00a1ad8e9d411b93012f0f75f53262c7b795ebd2b1fff`
+  (reassembled). The reproducibility workflow publishes an equivalent
+  release post-merge — content-identical text files, wall-clock
+  timestamp fields differ by design in status records — after which the
+  staging directory can be deleted (see its README).
 - All 38,242 source objects verified against `manifest.jsonl` before
   scanning; source bytes untouched.
 
