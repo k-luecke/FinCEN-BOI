@@ -319,6 +319,34 @@ class PipelineTest(unittest.TestCase):
         )
         self.assertIsNone(record2)
 
+    def test_degraded_host_is_stopped_after_repeated_failures(self):
+        # A host failing at the transport layer (timeouts/TLS/5xx) is
+        # stopped for the run instead of being knocked for hours.
+        run = RecoveryRun(recovery_args(self.root, network=True))
+
+        def fake_timeout(request, url, record_id, provenance,
+                         source, out, manifest, allowed_hosts,
+                         max_bytes, parent_url, depth):
+            raise archive._Retryable(TimeoutError("timed out"))
+
+        with mock.patch.object(archive, "_fetch_once",
+                               side_effect=fake_timeout), \
+             mock.patch.object(archive.time, "sleep"):
+            for i in range(recover.MAX_TRANSPORT_FAILURES_PER_HOST):
+                record, *_ = run.polite_fetch(
+                    f"https://web.archive.org/web/x{i}",
+                    "WEB-ARCHIVE", "test",
+                )
+                self.assertIsNotNone(record)
+
+        self.assertIn("web.archive.org", run.host_stopped)
+        record, *_ = run.polite_fetch(
+            "https://web.archive.org/web/y", "WEB-ARCHIVE", "test",
+        )
+        self.assertIsNone(record)
+        # Other hosts are unaffected.
+        self.assertNotIn("www.govinfo.gov", run.host_stopped)
+
     def test_fetch_budget_is_enforced(self):
         run = RecoveryRun(recovery_args(self.root, network=True,
                                         max_fetches=0))

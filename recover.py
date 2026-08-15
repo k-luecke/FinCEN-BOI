@@ -74,6 +74,10 @@ FR_API_DOC = "https://www.federalregister.gov/api/v1/documents/{docnum}.json"
 RETRY_CADENCE = timedelta(days=7)
 PROBE_SAMPLE = 3
 
+# Consecutive transport-layer failures (timeout/TLS/5xx) after which a
+# host is considered degraded and is not contacted again this run.
+MAX_TRANSPORT_FAILURES_PER_HOST = 5
+
 DIRECT = "SAME_DOCUMENT"
 OFFICIAL_MIRROR = "OFFICIAL_MIRROR"
 DERIVED = "DERIVED_REPRESENTATION"
@@ -174,7 +178,8 @@ class RecoveryRun:
         self.fetches = 0
         self.last_fetch_by_host: dict[str, float] = {}
         self.host_still_challenged: dict[str, bool] = {}
-        self.host_stopped: set[str] = set()   # 429'd this run
+        self.host_stopped: set[str] = set()   # 429'd/degraded this run
+        self.host_transport_failures: dict[str, int] = {}
         self.stats = {
             "links_created": 0,
             "official_mirror": 0,
@@ -238,6 +243,29 @@ class RecoveryRun:
             print(f"  429 from {host}; stopping host for this run",
                   file=sys.stderr)
             self.host_stopped.add(host)
+
+        # A host that keeps failing at the transport layer (timeouts,
+        # TLS handshake failures, 5xx) is overloaded or unreachable —
+        # stop contacting it for the rest of the run instead of
+        # knocking every couple of minutes for hours. The queue keeps
+        # the work for a later run.
+        transport_failure = record.sha256 is None and (
+            record.http_status is None
+            or (record.http_status >= 500
+                and record.http_status != 429)
+        )
+        if transport_failure:
+            count = self.host_transport_failures.get(host, 0) + 1
+            self.host_transport_failures[host] = count
+            if count >= MAX_TRANSPORT_FAILURES_PER_HOST:
+                print(
+                    f"  {count} consecutive transport failures from "
+                    f"{host}; stopping host for this run",
+                    file=sys.stderr,
+                )
+                self.host_stopped.add(host)
+        elif record.sha256 is not None:
+            self.host_transport_failures[host] = 0
 
         body = None
         if record.object_path:
