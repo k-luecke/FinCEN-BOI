@@ -20,6 +20,7 @@ import argparse
 import hashlib
 import json
 import os
+import random
 import sys
 import time
 import urllib.error
@@ -284,6 +285,7 @@ def fetch(
     parent_url: Optional[str] = None,
     depth: int = 0,
     error: Optional[str] = None,
+    max_retries: int = 3,
 ) -> Record:
 
     record_id = str(uuid.uuid4())
@@ -320,6 +322,98 @@ def fetch(
         },
     )
 
+    # Bounded retry with exponential backoff + jitter for transient
+    # failures: 429 (honoring Retry-After), 5xx, timeouts, and
+    # network errors. Other statuses are observations, not retries:
+    # 404/410 record disappearance, 401/403 record an access
+    # restriction that is never evaded.
+    attempt = 0
+
+    while True:
+        try:
+            return _fetch_once(
+                request, url, record_id, provenance, source, out,
+                manifest, allowed_hosts, max_bytes, parent_url, depth,
+            )
+        except _Retryable as retryable:
+            attempt += 1
+
+            if attempt > max_retries:
+                record = _error_record(
+                    record_id, url, provenance, source,
+                    retryable.status, str(retryable.cause),
+                    parent_url, depth,
+                )
+                append_jsonl(manifest, record)
+                return record
+
+            delay = min(2.0 * (2 ** (attempt - 1)), 60.0)
+
+            if retryable.retry_after:
+                delay = max(delay, min(retryable.retry_after, 120.0))
+
+            delay += random.uniform(0.0, 1.0)
+            print(
+                f"  retry {attempt}/{max_retries} in {delay:.1f}s "
+                f"({retryable.cause})",
+                file=sys.stderr,
+            )
+            time.sleep(delay)
+        except Exception as exc:
+            record = _error_record(
+                record_id, url, provenance, source,
+                getattr(exc, "code", None), str(exc),
+                parent_url, depth,
+            )
+            append_jsonl(manifest, record)
+            return record
+
+
+class _Retryable(Exception):
+    def __init__(self, cause, status=None, retry_after=None):
+        super().__init__(str(cause))
+        self.cause = cause
+        self.status = status
+        self.retry_after = retry_after
+
+
+def _error_record(
+    record_id, url, provenance, source, status, error, parent_url, depth
+) -> Record:
+    return Record(
+        record_id=record_id,
+        retrieved_at=utc_now(),
+        url=url,
+        final_url=None,
+        provenance=provenance,
+        source=source,
+        http_status=status,
+        content_type=None,
+        content_length=None,
+        sha256=None,
+        object_path=None,
+        error=error,
+        parent_url=parent_url,
+        depth=depth,
+    )
+
+
+def _parse_retry_after(exc) -> Optional[float]:
+    value = None
+
+    if getattr(exc, "headers", None) is not None:
+        value = exc.headers.get("Retry-After")
+
+    try:
+        return float(value) if value else None
+    except ValueError:
+        return None
+
+
+def _fetch_once(
+    request, url, record_id, provenance, source, out, manifest,
+    allowed_hosts, max_bytes, parent_url, depth,
+) -> Record:
     try:
         with urllib.request.urlopen(request, timeout=60) as response:
             final_url = response.geturl()
@@ -372,30 +466,23 @@ def fetch(
                 depth=depth,
             )
 
-    # A single bad URL must never kill an archival crawl thousands of
-    # pages in: record the failure and keep going. (A followed link
-    # once crashed the whole run via http.client.InvalidURL, which the
-    # previous narrow tuple didn't catch.)
-    except Exception as exc:
+    except urllib.error.HTTPError as exc:
+        if exc.code == 429:
+            raise _Retryable(
+                exc, status=429, retry_after=_parse_retry_after(exc)
+            )
 
-        status = getattr(exc, "code", None)
+        if exc.code >= 500:
+            raise _Retryable(exc, status=exc.code)
 
-        record = Record(
-            record_id=record_id,
-            retrieved_at=utc_now(),
-            url=url,
-            final_url=None,
-            provenance=provenance,
-            source=source,
-            http_status=status,
-            content_type=None,
-            content_length=None,
-            sha256=None,
-            object_path=None,
-            error=str(exc),
-            parent_url=parent_url,
-            depth=depth,
+        # 4xx are observations (404/410 disappearance, 401/403 access
+        # restriction — recorded, never evaded), not retries.
+        record = _error_record(
+            record_id, url, provenance, source, exc.code, str(exc),
+            parent_url, depth,
         )
+    except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
+        raise _Retryable(exc)
 
     append_jsonl(manifest, record)
     return record
@@ -437,6 +524,15 @@ def main() -> int:
         type=int,
         default=32,
         help="Link depth cap from any seed",
+    )
+    parser.add_argument(
+        "--max-retries",
+        type=int,
+        default=3,
+        help=(
+            "Transient-failure retries per URL (429/5xx/timeout/"
+            "network) with exponential backoff and jitter"
+        ),
     )
 
     args = parser.parse_args()
@@ -498,6 +594,7 @@ def main() -> int:
             parent_url=parent_url,
             depth=depth,
             error=robots_error,
+            max_retries=args.max_retries,
         )
 
         if record.sha256:

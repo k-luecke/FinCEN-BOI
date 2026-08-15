@@ -114,6 +114,13 @@ jobs:
             --title "Archive objects $(date -u +%Y-%m-%d) (run ${RUN_ID})" \
             --notes "$objects content-addressed objects crawled from ${SEEDS_FILE}. Tar paths match manifest.jsonl object_path values. ${note}" \
             $assets
+          # DURABLY_ARCHIVED means the asset verifiably exists.
+          asset_count=$(gh release view "$tag" --json assets --jq '.assets | length')
+          if [ "$asset_count" -lt 1 ]; then
+            echo "Release $tag has no assets — durability NOT confirmed."
+            exit 1
+          fi
+          echo "Release $tag confirmed with $asset_count asset(s)."
 
       - name: Commit manifest and ledger
         run: |
