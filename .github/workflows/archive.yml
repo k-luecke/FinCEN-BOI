@@ -125,4 +125,8 @@ jobs:
             exit 0
           fi
           git commit -m "Archive crawl $(date -u +%Y-%m-%d): update manifest and change ledger"
-          git push
+          # main may have advanced during a long crawl (e.g. a
+          # discovery commit); rebase our manifest/ledger commit on top
+          # so the push isn't rejected as non-fast-forward.
+          git pull --rebase origin main
+          git push origin HEAD:main
