@@ -51,6 +51,7 @@ from archive import (
     host_allowed,
     normalized_host,
     parse_seed,
+    sanitize_url,
 )
 
 # Canonical (www/primary) variant of every allowlisted host; apex
@@ -230,6 +231,8 @@ def discover_sitemap_host(
                     file=sys.stderr,
                 )
                 break
+
+            page = sanitize_url(page)
 
             if host_allowed(page, DEFAULT_ALLOWED_HOSTS):
                 urls.setdefault(page, f"sitemap:{host}")

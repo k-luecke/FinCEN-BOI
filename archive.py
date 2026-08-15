@@ -108,6 +108,17 @@ def normalized_host(url: str) -> str:
     return (urllib.parse.urlparse(url).hostname or "").lower()
 
 
+def sanitize_url(url: str) -> str:
+    """
+    Percent-encode characters that make http.client reject a request
+    (spaces, control characters) without double-encoding existing
+    escapes. Real government pages link to files like
+    ".../FOIA Regs 2019.pdf"; those hrefs must be quoted, not fatal.
+    """
+
+    return urllib.parse.quote(url, safe=":/?#[]@!$&'()*+,;=%")
+
+
 def host_allowed(url: str, allowed_hosts: set[str]) -> bool:
     host = normalized_host(url)
     return host in allowed_hosts
@@ -195,8 +206,13 @@ def extract_links(
     seen = set()
 
     for href in parser.hrefs:
-        absolute = urllib.parse.urljoin(base_url, href.strip())
+        try:
+            absolute = urllib.parse.urljoin(base_url, href.strip())
+        except ValueError:
+            continue
+
         absolute, _fragment = urllib.parse.urldefrag(absolute)
+        absolute = sanitize_url(absolute)
 
         if not absolute.startswith(("http://", "https://")):
             continue
@@ -271,6 +287,7 @@ def fetch(
 ) -> Record:
 
     record_id = str(uuid.uuid4())
+    url = sanitize_url(url)
 
     if error is None and not host_allowed(url, allowed_hosts):
         error = "host_not_allowlisted"
@@ -355,12 +372,11 @@ def fetch(
                 depth=depth,
             )
 
-    except (
-        urllib.error.HTTPError,
-        urllib.error.URLError,
-        RuntimeError,
-        TimeoutError,
-    ) as exc:
+    # A single bad URL must never kill an archival crawl thousands of
+    # pages in: record the failure and keep going. (A followed link
+    # once crashed the whole run via http.client.InvalidURL, which the
+    # previous narrow tuple didn't catch.)
+    except Exception as exc:
 
         status = getattr(exc, "code", None)
 
@@ -506,7 +522,13 @@ def main() -> int:
             and "text/html" in record.content_type.lower()
             and depth < args.max_depth
         ):
-            data = Path(record.object_path).read_bytes()
+            try:
+                data = Path(record.object_path).read_bytes()
+            except OSError as exc:
+                print(f"  WARN: could not re-read object: {exc}",
+                      file=sys.stderr)
+                data = b""
+
             base = record.final_url or url
 
             for link in extract_links(
