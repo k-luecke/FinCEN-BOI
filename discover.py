@@ -53,9 +53,38 @@ from archive import (
     parse_seed,
 )
 
+# Canonical (www/primary) variant of every allowlisted host; apex
+# duplicates are omitted since sites sitemap one canonical hostname.
 DEFAULT_SITEMAP_HOSTS = [
     "www.fincen.gov",
+    "bsaefiling.fincen.gov",
+    "home.treasury.gov",
+    "www.treasury.gov",
+    "oig.treasury.gov",
+    "www.ffiec.gov",
+    "bsaaml.ffiec.gov",
+    "www.gao.gov",
+    "www.occ.gov",
+    "www.fdic.gov",
+    "www.ncua.gov",
+    "www.federalreserve.gov",
+    "www.govinfo.gov",
+    "www.federalregister.gov",
+    "www.justice.gov",
+    "vault.fbi.gov",
+    "www.congress.gov",
+    "judiciary.house.gov",
+    "oversight.house.gov",
+    "www.sec.gov",
 ]
+
+# Provenance label per host for candidate seeds (default GOV-PUBLIC).
+HOST_PROVENANCE = {
+    "www.congress.gov": "CONGRESS",
+    "congress.gov": "CONGRESS",
+    "judiciary.house.gov": "CONGRESS",
+    "oversight.house.gov": "CONGRESS",
+}
 
 FEDERAL_REGISTER_API = "https://www.federalregister.gov/api/v1/documents.json"
 FEDERAL_REGISTER_AGENCY = "financial-crimes-enforcement-network"
@@ -354,6 +383,10 @@ def seed_label(record: dict) -> str:
     return record.get("host", "")
 
 
+def seed_provenance(record: dict) -> str:
+    return HOST_PROVENANCE.get(record.get("host", ""), "GOV-PUBLIC")
+
+
 def write_candidate_seeds(
     path: Path,
     inventory: dict[str, dict],
@@ -372,13 +405,14 @@ def write_candidate_seeds(
             "# Review, then either promote lines into seeds.txt or "
             "crawl directly:\n"
             "#   python3 archive.py --seeds discovered-seeds.txt\n"
-            "# All URLs are on the crawler's public-host allowlist; "
-            "provenance GOV-PUBLIC.\n\n"
+            "# All URLs are on the crawler's public-host allowlist.\n\n"
         )
 
         for record in candidates:
             f.write(
-                f"{record['url']}|GOV-PUBLIC|{seed_label(record)}\n"
+                f"{record['url']}"
+                f"|{seed_provenance(record)}"
+                f"|{seed_label(record)}\n"
             )
 
     return len(candidates)

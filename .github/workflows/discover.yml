@@ -37,4 +37,7 @@ jobs:
             exit 0
           fi
           git commit -m "URL discovery $(date -u +%Y-%m-%d): update inventory and candidate seeds"
-          git push
+          # Rebase in case main advanced while discovery ran (e.g. a
+          # crawl committing its manifest), so the push isn't rejected.
+          git pull --rebase origin main
+          git push origin HEAD:main

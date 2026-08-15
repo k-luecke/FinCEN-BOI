@@ -112,8 +112,13 @@ python3 discover.py
 Two modes, both restricted to the crawler's existing host allowlist:
 
 - **Sitemap enumeration** — reads `robots.txt` for `Sitemap:` entries
-  (falling back to `/sitemap.xml`) on configured hosts (default:
-  `www.fincen.gov`), recurses sitemap indexes, and collects page URLs.
+  (falling back to `/sitemap.xml`) on every allowlisted host (canonical
+  variants; override with `--hosts`), recurses sitemap indexes, and
+  collects page URLs. Per-host caps (`--max-sitemaps`,
+  `--max-urls-per-host`) keep giant hosts (congress.gov, sec.gov,
+  justice.gov) bounded — truncation is logged loudly, and repeated runs
+  keep growing the inventory. Congressional hosts get `CONGRESS`
+  provenance in candidate seeds; everything else `GOV-PUBLIC`.
 - **Federal Register enumeration** — walks the public documents API for
   every Federal Register document published by FinCEN, collecting both
   HTML and govinfo.gov PDF URLs plus document metadata.
@@ -188,4 +193,5 @@ provenance vocabulary is defined in [PROVENANCE.md](PROVENANCE.md).
    run publishes its objects as GitHub Release assets.
 4. ~~Same-domain link extraction.~~ Done — `--follow-links` crawls
    allowlisted HTML links breadth-first to closure.
-5. Extend sitemap discovery to the other allowlisted hosts.
+5. ~~Extend sitemap discovery to the other allowlisted hosts.~~ Done —
+   all canonical allowlisted hosts are enumerated by default.
