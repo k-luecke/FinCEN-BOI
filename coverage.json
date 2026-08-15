@@ -1,0 +1,241 @@
+{
+  "generated_at": "2026-08-15T13:25:15.448769+00:00",
+  "discovery_ceilings": {
+    "sitemap_urls_per_host": 5000,
+    "sitemap_fetches_per_host": 50,
+    "federal_register_pages": 50
+  },
+  "hosts": [
+    {
+      "host": "bsaaml.ffiec.gov",
+      "urls_discovered": 0,
+      "urls_attempted": 1,
+      "urls_archived": 0,
+      "ceiling_hit": "no",
+      "bytes": 0,
+      "median_object_bytes": null,
+      "p95_object_bytes": null,
+      "known_bulk_gaps": []
+    },
+    {
+      "host": "bsaefiling.fincen.gov",
+      "urls_discovered": 0,
+      "urls_attempted": 1,
+      "urls_archived": 0,
+      "ceiling_hit": "no",
+      "bytes": 0,
+      "median_object_bytes": null,
+      "p95_object_bytes": null,
+      "known_bulk_gaps": []
+    },
+    {
+      "host": "home.treasury.gov",
+      "urls_discovered": 5000,
+      "urls_attempted": 5001,
+      "urls_archived": 5001,
+      "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
+      "bytes": 604445437,
+      "median_object_bytes": 110296,
+      "p95_object_bytes": 173731,
+      "known_bulk_gaps": []
+    },
+    {
+      "host": "judiciary.house.gov",
+      "urls_discovered": 0,
+      "urls_attempted": 1,
+      "urls_archived": 1,
+      "ceiling_hit": "no",
+      "bytes": 55008,
+      "median_object_bytes": 55008,
+      "p95_object_bytes": 55008,
+      "known_bulk_gaps": []
+    },
+    {
+      "host": "oig.treasury.gov",
+      "urls_discovered": 72,
+      "urls_attempted": 72,
+      "urls_archived": 72,
+      "ceiling_hit": "no",
+      "bytes": 2383761,
+      "median_object_bytes": 30142,
+      "p95_object_bytes": 43747,
+      "known_bulk_gaps": []
+    },
+    {
+      "host": "oversight.house.gov",
+      "urls_discovered": 5000,
+      "urls_attempted": 5000,
+      "urls_archived": 4930,
+      "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
+      "bytes": 301022999,
+      "median_object_bytes": 59544,
+      "p95_object_bytes": 64620,
+      "known_bulk_gaps": []
+    },
+    {
+      "host": "vault.fbi.gov",
+      "urls_discovered": 5000,
+      "urls_attempted": 5001,
+      "urls_archived": 5001,
+      "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
+      "bytes": 108329755,
+      "median_object_bytes": 21960,
+      "p95_object_bytes": 22731,
+      "known_bulk_gaps": []
+    },
+    {
+      "host": "www.congress.gov",
+      "urls_discovered": 0,
+      "urls_attempted": 1,
+      "urls_archived": 0,
+      "ceiling_hit": "no",
+      "bytes": 0,
+      "median_object_bytes": null,
+      "p95_object_bytes": null,
+      "known_bulk_gaps": [
+        "congress.gov API corpus (bills, reports, hearings; needs API key connector)"
+      ]
+    },
+    {
+      "host": "www.fdic.gov",
+      "urls_discovered": 5000,
+      "urls_attempted": 5001,
+      "urls_archived": 5000,
+      "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
+      "bytes": 363689157,
+      "median_object_bytes": 69259,
+      "p95_object_bytes": 91350,
+      "known_bulk_gaps": []
+    },
+    {
+      "host": "www.federalregister.gov",
+      "urls_discovered": 317,
+      "urls_attempted": 319,
+      "urls_archived": 0,
+      "ceiling_hit": "no",
+      "bytes": 0,
+      "median_object_bytes": null,
+      "p95_object_bytes": null,
+      "known_bulk_gaps": [
+        "Full FR document XML via API (only FinCEN-agency docs enumerated)"
+      ]
+    },
+    {
+      "host": "www.federalreserve.gov",
+      "urls_discovered": 0,
+      "urls_attempted": 1,
+      "urls_archived": 0,
+      "ceiling_hit": "no",
+      "bytes": 0,
+      "median_object_bytes": null,
+      "p95_object_bytes": null,
+      "known_bulk_gaps": []
+    },
+    {
+      "host": "www.ffiec.gov",
+      "urls_discovered": 0,
+      "urls_attempted": 1,
+      "urls_archived": 0,
+      "ceiling_hit": "no",
+      "bytes": 0,
+      "median_object_bytes": null,
+      "p95_object_bytes": null,
+      "known_bulk_gaps": []
+    },
+    {
+      "host": "www.fincen.gov",
+      "urls_discovered": 2870,
+      "urls_attempted": 2874,
+      "urls_archived": 2871,
+      "ceiling_hit": "no",
+      "bytes": 103969173,
+      "median_object_bytes": 32760,
+      "p95_object_bytes": 55160,
+      "known_bulk_gaps": []
+    },
+    {
+      "host": "www.gao.gov",
+      "urls_discovered": 0,
+      "urls_attempted": 3,
+      "urls_archived": 3,
+      "ceiling_hit": "no",
+      "bytes": 257069,
+      "median_object_bytes": 122070,
+      "p95_object_bytes": 131693,
+      "known_bulk_gaps": [
+        "GAO reports corpus (no sitemap; needs listing-page/API enumeration)"
+      ]
+    },
+    {
+      "host": "www.govinfo.gov",
+      "urls_discovered": 499,
+      "urls_attempted": 499,
+      "urls_archived": 498,
+      "ceiling_hit": "no",
+      "bytes": 134425797,
+      "median_object_bytes": 192504,
+      "p95_object_bytes": 546057,
+      "known_bulk_gaps": [
+        "GovInfo bulk data collections (FR XML, CFR, court opinions)"
+      ]
+    },
+    {
+      "host": "www.justice.gov",
+      "urls_discovered": 5000,
+      "urls_attempted": 5001,
+      "urls_archived": 5001,
+      "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
+      "bytes": 79527411,
+      "median_object_bytes": 2494,
+      "p95_object_bytes": 98703,
+      "known_bulk_gaps": []
+    },
+    {
+      "host": "www.ncua.gov",
+      "urls_discovered": 0,
+      "urls_attempted": 1,
+      "urls_archived": 1,
+      "ceiling_hit": "no",
+      "bytes": 65845,
+      "median_object_bytes": 65845,
+      "p95_object_bytes": 65845,
+      "known_bulk_gaps": []
+    },
+    {
+      "host": "www.occ.gov",
+      "urls_discovered": 5003,
+      "urls_attempted": 5001,
+      "urls_archived": 5000,
+      "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
+      "bytes": 1416445434,
+      "median_object_bytes": 67868,
+      "p95_object_bytes": 1164314,
+      "known_bulk_gaps": []
+    },
+    {
+      "host": "www.sec.gov",
+      "urls_discovered": 5000,
+      "urls_attempted": 5002,
+      "urls_archived": 4986,
+      "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
+      "bytes": 6337854210,
+      "median_object_bytes": 132658,
+      "p95_object_bytes": 1618682,
+      "known_bulk_gaps": [
+        "EDGAR companyfacts.zip (403 on 2026-08-15; weekly retry)",
+        "EDGAR full filing archives (per-filing corpus far beyond web pages)",
+        "EDGAR full-text search corpus"
+      ]
+    }
+  ],
+  "not_yet_onboarded_bulk_sources": [
+    "IRS Form 990 e-file bulk XML (irs.gov)",
+    "SAM.gov entity registration extracts",
+    "USAspending award/recipient bulk data",
+    "FEC bulk data",
+    "50-state corporate registries + UCC (all jurisdictions at RESEARCH)",
+    "County recorder/assessor records",
+    "Regulatory licensing datasets (Form ADV, NMLS, FCC, FERC, ...)"
+  ],
+  "interpretation_note": "Hosts at the sitemap cap are bounded by DISCOVERY BUDGET, not by the natural end of their collections; archive size is not a proxy for share-of-corpus preserved. The CTA-filed BOI database is confidential, not publicly downloadable, and is not represented in any byte count here."
+}
