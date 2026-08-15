@@ -82,6 +82,39 @@ If a public record disappears, the repo holds cryptographic evidence
 that these exact bytes were served from that government URL at that
 timestamp — plus the later observation that the URL changed or vanished.
 
+## Discovery
+
+`discover.py` builds a historical inventory of what public FinCEN
+material actually exists, instead of hand-writing more seeds:
+
+```sh
+python3 discover.py
+```
+
+Two modes, both restricted to the crawler's existing host allowlist:
+
+- **Sitemap enumeration** — reads `robots.txt` for `Sitemap:` entries
+  (falling back to `/sitemap.xml`) on configured hosts (default:
+  `www.fincen.gov`), recurses sitemap indexes, and collects page URLs.
+- **Federal Register enumeration** — walks the public documents API for
+  every Federal Register document published by FinCEN, collecting both
+  HTML and govinfo.gov PDF URLs plus document metadata.
+
+Discovery fetches only metadata (robots, sitemap XML, API JSON), never
+record content, and produces:
+
+- `url-inventory.jsonl` — one record per URL ever discovered, with
+  `first_discovered` / `last_confirmed` timestamps, host, and discovery
+  method. URLs are never dropped: a page that vanishes from a sitemap
+  keeps its record, its `last_confirmed` just stops advancing — so the
+  inventory doubles as a disappearance signal.
+- `discovered-seeds.txt` — seed-format candidates not already in
+  `seeds.txt`, ready for review. Archiving them stays an explicit step:
+  `python3 archive.py --seeds discovered-seeds.txt`.
+
+`.github/workflows/discover.yml` re-runs discovery weekly and commits
+the updated inventory and candidate list.
+
 ## SAR material
 
 SAR filings themselves are confidential under 31 U.S.C. § 5318(g) and
@@ -130,9 +163,10 @@ provenance vocabulary is defined in [PROVENANCE.md](PROVENANCE.md).
 
 1. ~~Scheduled re-crawls of the seed set producing a change ledger.~~
    Done — see `.github/workflows/archive.yml` and `ledger.py`.
-2. Discovery: enumerate FinCEN sitemaps, same-domain public links, the
-   Federal Register's FinCEN collection, and a historical URL inventory —
-   systematically determining what public FinCEN material exists, rather
-   than hand-writing more seeds.
+2. ~~Discovery: enumerate FinCEN sitemaps, the Federal Register's
+   FinCEN collection, and a historical URL inventory.~~ Done — see
+   `discover.py` and `.github/workflows/discover.yml`.
 3. Offload workflow-artifact object stores to durable bulk storage so
    fetched bytes outlive the 90-day artifact retention window.
+4. Extend sitemap discovery to the other allowlisted hosts and add
+   same-domain link extraction from already-archived HTML.
