@@ -21211,7 +21211,6 @@ https://www.fincen.gov/news/news-releases/fincen-penalizes-texas-bank-violations
 https://www.fincen.gov/news/news-releases/fincen-penalizes-us-bank-national-association-violations-anti-money-laundering|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-penalizes-us-bank-official-corporate-anti-money-laundering-failures|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-penalizes-west-virginia-bank-serious-bsa-violations-and-actions-branch|GOV-PUBLIC|www.fincen.gov
-https://www.fincen.gov/news/news-releases/fincen-permanently-ends-beneficial-ownership-reporting-requirements-millions|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-permits-banks-use-alternative-collection-method-obtaining-tin-information|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-proposed-rule-seeks-greater-transparency-prepaid-access-help-curb-money|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-proposes-amend-definition-broker-dealer-securities-include-funding|GOV-PUBLIC|www.fincen.gov
@@ -29845,6 +29844,7 @@ https://www.occ.gov/news-issuances/federal-register/2025/90fr55048.pdf|GOV-PUBLI
 https://www.occ.gov/news-issuances/federal-register/2025/90fr55240.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2025/90fr55248.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2025/90fr59744 .pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/federal-register/2025/90fr59744%20.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2025/90fr61084.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2025/90fr61093.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2025/90fr61099.pdf|GOV-PUBLIC|www.occ.gov
@@ -32623,9 +32623,11 @@ https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2023/wb-082020
 https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2023/wb-08272023-09022023.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2023/wb-09032023-09092023.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2023/wb-09102023 - 09162023.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2023/wb-09102023%20-%2009162023.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2023/wb-09172023-09232023.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2023/wb-09242023-09302023.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2023/wb-10012023 -10072023.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2023/wb-10012023%20-10072023.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2023/wb-10082023-10142023.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2023/wb-10152023-10212023.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2023/wb-10222023-10282023.pdf|GOV-PUBLIC|www.occ.gov
