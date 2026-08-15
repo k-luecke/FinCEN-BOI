@@ -1,0 +1,40 @@
+name: Scheduled URL discovery
+
+on:
+  schedule:
+    # Weekly, Mondays. Discovery only reads robots.txt, sitemap XML,
+    # and the Federal Register JSON API — no record content.
+    - cron: "41 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: url-discovery
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Enumerate sitemaps and Federal Register collection
+        run: python3 discover.py
+
+      - name: Commit inventory and candidate seeds
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add url-inventory.jsonl discovered-seeds.txt
+          if git diff --cached --quiet; then
+            echo "No discovery changes to commit."
+            exit 0
+          fi
+          git commit -m "URL discovery $(date -u +%Y-%m-%d): update inventory and candidate seeds"
+          git push
