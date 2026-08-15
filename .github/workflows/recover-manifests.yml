@@ -1,0 +1,73 @@
+name: Recover chunk manifests
+
+# Recovery for a chunked crawl whose chunks succeeded (objects durable
+# in artifacts/release) but whose aggregate failed to commit state:
+# downloads the run's crawl-chunk-* artifacts, re-verifies every
+# object hash, confirms the durable release exists, and merges the
+# chunk manifests into committed state via commit_state.sh. Safe to
+# re-run: appending the same records twice only adds duplicate
+# observations of identical hashes; ledger/queue/metrics are pure
+# functions of the manifest.
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "Workflow run whose crawl-chunk-* artifacts to recover"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: archive-crawl
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: crawl-chunk-*
+          merge-multiple: true
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ github.token }}
+
+      - name: Merge and re-verify recovered chunk manifests
+        run: |
+          cat run-manifest-chunk-*.jsonl > run-manifest.jsonl
+          echo "Recovered $(wc -l < run-manifest.jsonl) manifest records"
+          python3 verify.py --manifest run-manifest.jsonl
+
+      - name: Confirm durable release exists for this run
+        id: durable
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ inputs.run_id }}
+        run: |
+          asset_count=$(gh release view "objects-run-${RUN_ID}" --json assets --jq '.assets | length' 2>/dev/null || echo 0)
+          echo "assets=$asset_count" >> "$GITHUB_OUTPUT"
+          if [ "$asset_count" -ge 1 ]; then
+            echo "flags=--release-verified" >> "$GITHUB_OUTPUT"
+            echo "Release objects-run-${RUN_ID} confirmed ($asset_count assets)."
+          else
+            echo "flags=" >> "$GITHUB_OUTPUT"
+            echo "WARNING: no release assets found — committing state without durable flag."
+          fi
+
+      - name: Commit recovered state
+        env:
+          METRICS_FLAGS: ${{ steps.durable.outputs.flags }}
+        run: >
+          ./scripts/commit_state.sh run-manifest.jsonl
+          "Recover chunked crawl ${{ inputs.run_id }}: merge chunk manifests into state"
