@@ -24,7 +24,9 @@ CANDIDATE_PATTERNS = {
             r"|owner(?:ship)?|stake|shareholder)\b", I)),
         ("ownership_interest", re.compile(r"\b(?:ownership|equity|controlling|membership)\s+interests?\b", I)),
         ("sole_majority_owner", re.compile(r"\b(?:sole|majority|minority|principal|part|co-)\s*owner(?:s|ship)?\b", I)),
-        ("shareholder_of", re.compile(r"\b(?:sole\s+)?(?:shareholder|stockholder|member)\s+of\b", I)),
+        # Bare "member of" is overwhelmingly non-ownership usage (committee
+        # member, member of the bar/military/family) — QC-driven tightening.
+        ("shareholder_of", re.compile(r"\b(?:(?:sole|majority|minority|principal|controlling)\s+)?(?:shareholder|stockholder)s?\s+of\b|\b(?:sole|managing|founding|majority)\s+members?\s+of\b", I)),
         ("owner_of", re.compile(r"\bowners?\s+of\b[^.\n]{0,80}\b(?:LLC|L\.L\.C\.|Inc\.?|Corp\.?|Company|Ltd\.?|LP\b|LLP\b)", I)),
     ],
     "CONTROL_EXPLICIT": [
@@ -33,7 +35,9 @@ CANDIDATE_PATTERNS = {
         ("exercises_control", re.compile(r"\bexercis\w+\s+(?:substantial\s+|significant\s+)?control\b", I)),
         ("substantial_control", re.compile(r"\bsubstantial\s+control\b", I)),
         ("controlling_person", re.compile(r"\bcontrolling\s+(?:person|party|shareholder|stockholder|member|entity)s?\b", I)),
-        ("controls_entity", re.compile(r"\bcontrols?\b[^.\n]{0,60}\b(?:LLC|L\.L\.C\.|Inc\.?|Corp(?:oration)?\.?|Company|Ltd\.?|entit(?:y|ies)|compan(?:y|ies))\b", I)),
+        # Verb form or "control of/over" only — bare "Control" collides with
+        # agency names (Office of Foreign Assets Control) — QC-driven.
+        ("controls_entity", re.compile(r"\b(?:controls|controlling|control\s+(?:of|over))\b[^.\n]{0,60}\b(?:LLC|L\.L\.C\.|Inc\.?|Corp(?:oration)?\.?|Company|Ltd\.?|entit(?:y|ies)|compan(?:y|ies))\b", I)),
     ],
     "PARENT_SUBSIDIARY": [
         ("wholly_owned_sub", re.compile(r"\bwholly[- ]owned\s+subsidiar(?:y|ies)\b", I)),

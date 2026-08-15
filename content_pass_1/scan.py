@@ -39,7 +39,7 @@ from .patterns import (
     ENTITY_SUFFIX, PCT, PERSON_NAME, STRUCTURAL_PATTERNS,
 )
 
-SCANNER_VERSION = "1.1.0"
+SCANNER_VERSION = "1.2.0"
 BOILER_DIR = os.path.join(RECON_ROOT, "boilerplate")
 CLASSES_PATH = os.path.join(OUT_ROOT, "document-classes.jsonl")
 CANDIDATES_PATH = os.path.join(OUT_ROOT, "evidence-candidates.jsonl")
@@ -178,6 +178,10 @@ def rank_candidate(cat_list, para, rec, matched_text):
     if len(matched_text) < 40 and not ENTITY_SUFFIX.search(para):
         score -= 1
         feats["short_generic"] = -1
+    # Table-of-contents leaders / table captions (QC-driven downranking).
+    if re.search(r"\.{5,}|\bTable\s+\d+:", para):
+        score -= 2
+        feats["table_or_toc"] = -2
     return score, feats
 
 
