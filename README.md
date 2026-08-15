@@ -1,8 +1,39 @@
 # FinCEN-BOI public-record archive
 
-A deliberately boring, provenance-first archival crawler for **publicly
-accessible** FinCEN / Treasury / Federal Register / DOJ / Congressional
-records.
+Two complementary preservation products around the Corporate
+Transparency Act's beneficial ownership dataset — which, under the
+final rule of August 11, 2026 (effective August 14, 2026), stops
+collecting U.S.-person BOI and deletes what was previously collected:
+
+1. **Government record preservation** — a deliberately boring,
+   provenance-first archival crawler for publicly accessible FinCEN /
+   Treasury / Federal Register / DOJ / Congressional records, plus
+   [policy-history/](policy-history/README.md) (the evidence chain
+   proving what the federal dataset was) and
+   [deletion-record/](deletion-record/README.md) (a dated ledger of
+   the deletion itself).
+2. **Ownership reconstruction** —
+   [ownership-reconstruction/](ownership-reconstruction/README.md), an
+   entity-resolution dataset built from public records that
+   independently disclose ownership/control relationships (state
+   registries, SEC, courts, and other lawful public sources). The
+   CTA-filed BOI database itself is confidential and was never
+   publicly accessible; this reconstructs only what public records
+   separately establish, with every relationship traceable to
+   archived evidence.
+
+```
+FinCEN-BOI/
+├── archive/                  # object store (not in git; releases)
+├── ownership-reconstruction/ # entities / people / relationships
+├── policy-history/           # what the federal dataset was
+├── deletion-record/          # dated ledger of the deletion
+├── manifest.jsonl            # append-only retrieval ledger
+├── ledger.jsonl              # per-URL change ledger
+└── url-inventory.jsonl       # discovery inventory
+```
+
+## The crawler
 
 What it does:
 
