@@ -4,7 +4,8 @@
       "ACCESS_RESTRICTED": 1
     },
     "doj": {
-      "UNRESOLVED_CHALLENGE": 4317
+      "RECOVERED_WEB_ARCHIVE": 53,
+      "UNRESOLVED_CHALLENGE": 4264
     },
     "federal_register": {
       "RECOVERED_OFFICIAL_MIRROR": 317,
@@ -54,7 +55,8 @@
       "NON_CONTENT_TECHNICAL_RESPONSE": 1
     },
     "www.justice.gov": {
-      "UNRESOLVED_CHALLENGE": 4317
+      "RECOVERED_WEB_ARCHIVE": 53,
+      "UNRESOLVED_CHALLENGE": 4264
     },
     "www.sec.gov": {
       "ACCESS_RESTRICTED": 1,
@@ -67,22 +69,28 @@
     "ACCESS_RESTRICTED": 4,
     "NON_CONTENT_TECHNICAL_RESPONSE": 8,
     "RECOVERED_OFFICIAL_MIRROR": 317,
-    "UNRESOLVED_CHALLENGE": 4319
+    "RECOVERED_WEB_ARCHIVE": 53,
+    "UNRESOLVED_CHALLENGE": 4266
   },
-  "generated_at": "2026-08-15T14:55:40.902827+00:00",
+  "generated_at": "2026-08-15T23:13:13.362277+00:00",
   "identities_resolved": 4625,
-  "recovery_links": 317,
+  "recovery_links": 687,
   "recovery_links_by_method": {
-    "federal_register_api_inventory_crossref": 317
+    "federal_register_api": 317,
+    "federal_register_api_inventory_crossref": 317,
+    "wayback_cdx": 53
   },
   "recovery_links_by_relationship": {
+    "ARCHIVED_VERSION": 53,
+    "DERIVED_REPRESENTATION": 317,
     "OFFICIAL_MIRROR": 317
   },
   "requested_url_coverage": {
     "ACCESS_RESTRICTED": 4,
     "NON_CONTENT_TECHNICAL_RESPONSE": 8,
     "RECOVERED_OFFICIAL_MIRROR": 317,
-    "UNRESOLVED_CHALLENGE": 4319
+    "RECOVERED_WEB_ARCHIVE": 53,
+    "UNRESOLVED_CHALLENGE": 4266
   },
   "semantics_note": "BOT_CHALLENGE / non-content captures are never counted as ARCHIVED_CONTENT. RECOVERED_* states preserve the distinction between original publisher and retrieval host; original challenge observations are retained.",
   "top_fingerprints": {
@@ -102,10 +110,10 @@
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2510": 50,
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2576": 57
   },
-  "unresolved": 4331,
+  "unresolved": 4278,
   "unresolved_by_tier": {
     "0": 4,
-    "1": 2544,
+    "1": 2491,
     "2": 1783
   }
 }

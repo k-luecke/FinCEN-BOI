@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T15:05:15.539780+00:00",
+  "generated_at": "2026-08-15T23:13:14.790265+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -111,6 +111,19 @@
       "known_bulk_gaps": []
     },
     {
+      "host": "web.archive.org",
+      "urls_discovered": 0,
+      "urls_attempted": 275,
+      "urls_archived": 144,
+      "non_content_captures": 0,
+      "urls_with_content": 144,
+      "ceiling_hit": "no",
+      "bytes": 5247544,
+      "median_object_bytes": 254,
+      "p95_object_bytes": 101556,
+      "known_bulk_gaps": []
+    },
+    {
       "host": "www.congress.gov",
       "urls_discovered": 0,
       "urls_attempted": 1,
@@ -141,14 +154,14 @@
     {
       "host": "www.federalregister.gov",
       "urls_discovered": 317,
-      "urls_attempted": 319,
-      "urls_archived": 0,
+      "urls_attempted": 636,
+      "urls_archived": 317,
       "non_content_captures": 0,
-      "urls_with_content": 0,
+      "urls_with_content": 317,
       "ceiling_hit": "no",
-      "bytes": 0,
-      "median_object_bytes": null,
-      "p95_object_bytes": null,
+      "bytes": 1663986,
+      "median_object_bytes": 4337,
+      "p95_object_bytes": 8339,
       "known_bulk_gaps": [
         "Full FR document XML via API (only FinCEN-agency docs enumerated)"
       ]
@@ -230,7 +243,7 @@
       "non_content_captures": 4317,
       "urls_with_content": 684,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 79527411,
+      "bytes": 79527398,
       "median_object_bytes": 2494,
       "p95_object_bytes": 98703,
       "known_bulk_gaps": []
