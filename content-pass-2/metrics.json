@@ -1,0 +1,146 @@
+{
+  "acquisition": {
+    "congress_queue": 12,
+    "dispatched_runs": [
+      31891026640,
+      31891027794
+    ],
+    "doj_recovery_queue": 4317,
+    "edgar_batch1_seeds": 8000,
+    "edgar_matched_ciks": 172,
+    "edgar_targets_already_archived": 0,
+    "edgar_targets_discovered": 32313,
+    "gao_queue": 48,
+    "govinfo_queue": 39,
+    "historical_fincen_queue": 173,
+    "newly_archived_note": "crawl runs in progress on Actions at metrics time; durable counts land in root metrics.json via the standard commit_state pipeline"
+  },
+  "amount_bearing_flow_observations": 97,
+  "assertions_by_family": {
+    "CONGRESS_OVERSIGHT": 3,
+    "FDIC": 35,
+    "FINCEN": 3,
+    "GOVINFO": 4,
+    "OCC": 154,
+    "SEC": 18,
+    "TREASURY": 43
+  },
+  "assertions_by_posture": {
+    "ADMINISTRATIVE_DESIGNATION": 43,
+    "CONGRESSIONAL_ASSERTION": 3,
+    "COURT_ALLEGATION": 3,
+    "GOVERNMENT_ALLEGATION": 15,
+    "GOVERNMENT_FINDING": 196
+  },
+  "assertions_by_provenance": {
+    "CONGRESS": 3,
+    "GOV-PUBLIC": 257
+  },
+  "assertions_by_type": {
+    "CONTROL": 18,
+    "OWNERSHIP": 81,
+    "PARENT_SUBSIDIARY": 160,
+    "SHELL_NOMINEE": 1
+  },
+  "assertions_by_year": {
+    "1927": 1,
+    "1933": 2,
+    "1955": 2,
+    "1997": 5,
+    "2000": 1,
+    "2005": 1,
+    "2006": 4,
+    "2007": 1,
+    "2008": 2,
+    "2009": 1,
+    "2010": 2,
+    "2011": 5,
+    "2012": 6,
+    "2013": 1,
+    "2014": 1,
+    "2015": 9,
+    "2017": 10,
+    "2018": 1,
+    "2019": 5,
+    "2020": 7,
+    "2021": 10,
+    "2022": 3,
+    "2023": 30,
+    "2024": 2,
+    "2025": 23,
+    "2026": 81,
+    "?": 44
+  },
+  "assertions_reported_speech": 11,
+  "control_edges": 18,
+  "edges_by_assertion": {
+    "BENEFICIAL_OWNER": 46,
+    "PARENT": 38,
+    "UNKNOWN_CONTROL_ROLE": 18
+  },
+  "edges_by_posture": {
+    "ADMINISTRATIVE_DESIGNATION": 24,
+    "CONGRESSIONAL_ASSERTION": 3,
+    "COURT_ALLEGATION": 2,
+    "GOVERNMENT_ALLEGATION": 13,
+    "GOVERNMENT_FINDING": 60
+  },
+  "entities_ambiguous": 0,
+  "entities_probable_match": 12,
+  "entities_unresolved": 142,
+  "financial_flow_observations": 97,
+  "generated_at": "2026-08-15T15:03:07.231676+00:00",
+  "normalized_assertions": 260,
+  "ocr_priority": {
+    "HIGH": 5,
+    "LOW": 6,
+    "MEDIUM": 190
+  },
+  "ownership_edges": 46,
+  "parent_subsidiary_edges": 38,
+  "pass_version": "content-pass-2/1.0.0",
+  "people_note": "no automatic person resolution performed by design",
+  "people_resolved": 0,
+  "percentage_bearing_ownership": 12,
+  "qualitative_ownership_descriptions": 134,
+  "raw_observations": 357,
+  "raw_observations_by_family": {
+    "CONGRESS_OVERSIGHT": 6,
+    "DOJ": 7,
+    "FDIC": 35,
+    "FINCEN": 14,
+    "GOVINFO": 4,
+    "OCC": 154,
+    "SEC": 93,
+    "TREASURY": 44
+  },
+  "raw_observations_by_posture": {
+    "ADMINISTRATIVE_DESIGNATION": 44,
+    "CONGRESSIONAL_ASSERTION": 6,
+    "COURT_ALLEGATION": 12,
+    "GOVERNMENT_ALLEGATION": 88,
+    "GOVERNMENT_FINDING": 207
+  },
+  "raw_observations_by_tier": {
+    "A_OWNERSHIP": 81,
+    "B_CONTROL": 18,
+    "C_PARENT_SUBSIDIARY": 160,
+    "D_SHELL_NOMINEE": 1,
+    "E_FINANCIAL_FLOW": 97
+  },
+  "sec_13dg_note": "no 13D/G filings archived yet; targeted EDGAR batch dispatched \u2014 SEC_13D_G regime extraction is next-batch work",
+  "sec_beneficial_ownership_edges": 0,
+  "shell_nominee_observations": 1,
+  "unique_entities": 154,
+  "unique_person_candidates_and_other_actors": 57,
+  "validated_edges": 102,
+  "validation_sample": {
+    "locator_correct": 94,
+    "total": 94,
+    "verdicts": {
+      "correct": 67,
+      "partial": 18,
+      "wrong": 9
+    }
+  }
+}

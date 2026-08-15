@@ -25,19 +25,47 @@ from content_pass_1.common import OUT_ROOT, REPO_ROOT, log, read_jsonl, text_dis
 from .postures import assign_posture
 
 PASS2_VERSION = "content-pass-2/1.0.0"
-PARSER_VERSION = "observe/1.0.0"
+PARSER_VERSION = "observe/1.4.0"
 CP2 = os.path.join(REPO_ROOT, "content-pass-2")
 OUT = os.path.join(CP2, "raw-observations.jsonl")
 ERRS = os.path.join(CP2, "extraction-errors.jsonl")
 
 # ---- name fragments -------------------------------------------------------
-ENT = (r"(?:[A-Z][A-Za-z0-9&.'’\-]*(?:\s+[A-Za-z0-9&.'’\-]+){0,7}?[,]?\s+"
-       r"(?:LLC|L\.L\.C\.|Inc\.?|Corp\.?|Corporation|Company|Co\.|Ltd\.?|LP|L\.P\.|"
-       r"LLP|PLLC|Holdings?|Group|Trust|Bank|N\.A\.|S\.?A\.?R\.?L\.?|Partners(?:hip)?))")
+SUFFIX = (r"(?:LLC|L\.L\.C\.|Inc\.?|Corp\.?|Corporation|Company|Co\.|Ltd\.?|LP|"
+          r"L\.P\.|LLP|PLLC|Holdings?|Group|Trust|Bank|N\.A\.|S\.?A\.?R\.?L\.?|"
+          r"Partners(?:hip)?|Fund|Ventures?|Capital|Financial|Investments?)")
+# Interior name tokens must be capitalized (or one of a small set of
+# legitimate lowercase name words) so captures cannot cross relative
+# clauses ("Ripple Labs that was incorporated as …"). Interior tokens
+# may not carry trailing periods (which are sentence boundaries —
+# "Bank Tejarat. Bank" must not fuse); initials like "N.A."/"U.S." are
+# matched explicitly.
+NAMEWORD = (r"(?:[A-Z]\.(?:[A-Z]\.?)+|[A-Z][A-Za-z0-9&'’\-]*|"
+            r"of|the|de|la|del|van|von|and|&|en|for)")
+ENT = (r"(?:(?:the\s+)?[A-Z][A-Za-z0-9&.'’\-]*(?:\s+" + NAMEWORD + r"){0,7}?[,]?\s+"
+       + SUFFIX + r")")
+# Parent-position entity names may carry internal commas
+# ("Reynolds, Teague, Thurman Financial Corp.").
+ENT_COMMA = (r"(?:(?:the\s+)?[A-Z][A-Za-z0-9&.'’\-]*"
+             r"(?:,?\s+" + NAMEWORD + r"){0,7}?,?\s+" + SUFFIX + r")")
+# Post-capture extension: suffix-anchored lazy matches stop at the first
+# suffix word ("Revolut Holdings" in "Revolut Holdings US Inc").
+NAME_EXT = re.compile(
+    r"^(?:\s+(?:US|USA|N\.?A\.?|II|III|IV|[A-Z][A-Za-z&.'’\-]*)){0,3}?"
+    r"\s+(?:LLC|L\.L\.C\.|Inc\.?|Corp\.?|Corporation|Ltd\.?|LP|LLP|PLLC|"
+    r"Company|Bank|Trust|Fund(?:ing)?)\b")
 PERSON = r"(?:[A-Z][a-z]+(?:\s+[A-Z]\.?)?(?:\s+[A-Z][a-z]+){1,2})"
+# Defined terms and short handles ("the Venture", "the FDIC–Receiver",
+# "MCHI", "CS-3", bare surname "Tabaja") — acceptable in the by/of
+# position of an explicit construct; preserved raw, resolved later.
+DEFTERM = r"(?:the\s+[A-Z][A-Za-z\-–]+(?:\s+[A-Z][A-Za-z\-–]+){0,3})"
+ABBR = r"(?:[A-Z]{2,6}(?:-\d+)?)"
+SURNAME = r"(?:[A-Z][a-z]{2,})"
 ACTOR = f"(?:{ENT}|{PERSON})"
+BYACTOR = f"(?:{ENT_COMMA}|{PERSON}|{DEFTERM}|{ABBR}|{SURNAME})"
 PCT = r"(\d{1,3}(?:\.\d+)?)\s?(?:%|percent)"
 QUAL = r"(sole|majority|minority|principal|controlling|co-|part|50/50|indirect|beneficial)"
+AMT = r"\$\s?([\d,]+(?:\.\d{2})?)\s*(million|billion)?"
 
 # Tier A — ownership. Each: (name, regex, mapping of group->slot)
 TIER_A = [
@@ -48,11 +76,19 @@ TIER_A = [
         rf"({ACTOR})"),
      {"object": 1, "subject": 2}),
     ("owns_pct_of", re.compile(
-        rf"({ACTOR})\s+(?:currently\s+|indirectly\s+|directly\s+)?"
+        rf"({ENT}|{PERSON}|{DEFTERM}|{ABBR}|{SURNAME})\s+"
+        rf"(?:(?:also|now|then|currently|still|collectively|indirectly|directly)\s+)?"
         rf"(?:owns?|owned|holds?|held|acquired)\s+"
         rf"(?:approximately\s+|about\s+|at\s+least\s+|up\s+to\s+)?{PCT}\s+of\s+"
-        rf"(?:the\s+)?(?:[\w\s-]{{0,40}}?\s+)?(?:shares?|stock|equity|interests?|units|"
-        rf"membership\s+interests?|ownership)?\s*(?:of|in)?\s*({ENT})"),
+        rf"(?:the\s+)?(?:(?:[a-z][\w-]*\s+){{0,5}})?(?:shares?|stock|equity|interests?|"
+        rf"units|membership\s+interests?|ownership)?\s*(?:of|in)?\s*"
+        rf"({ENT}|{ABBR}|{DEFTERM})"),
+     {"subject": 1, "percentage": 2, "object": 3}),
+    ("controlling_interest_in", re.compile(
+        rf"(?:({ENT}|{PERSON}|{DEFTERM}|{ABBR})\s[^.\n]{{0,60}}?)?"
+        rf"(?:acquir\w+|holds?|held|obtain\w*|purchas\w+|give|gave|grant\w*)\s+"
+        rf"an?\s+(?:{PCT}\s+)?controlling\s+interest\s+in\s+"
+        rf"({ENT_COMMA}|{ABBR}|{DEFTERM})"),
      {"subject": 1, "percentage": 2, "object": 3}),
     ("owner_of", re.compile(
         rf"({PERSON})\s*,?\s*(?:is|was|as)?\s*(?:the|a)\s+{QUAL}?\s*owner"
@@ -72,6 +108,33 @@ TIER_A = [
     ("holds_shares_of", re.compile(
         rf"({ENT})\s+holds\s+{PCT}\s+of\s+the\s+shares"),
      {"subject": 1, "percentage": 2, "object": None}),
+    ("owned_by_appositive", re.compile(
+        rf"({ENT})\s*(?:\([^)]{{0,50}}\)\s*)?,\s*(?:an?\s+)?"
+        rf"(?:newly\s+formed\s+)?(?:entity|company|corporation|firm|fund|venture)"
+        rf"[^.\n]{{0,40}}?\s+(?:wholly\s+|beneficially\s+|indirectly\s+|directly\s+)?"
+        rf"owned(?:\s+(?:and|or)\s+(?:controlled|operated|managed))?\s+by\s+({BYACTOR})"),
+     {"object": 1, "subject": 2}),
+    ("acquires_pct_interest_in", re.compile(
+        rf"({BYACTOR})\s*(?:\([^)]{{0,50}}\)\s*)?,?[^.\n]{{0,120}}?"
+        rf"(?:paid|will\s+pay)\s+{AMT}\s+for\s+an?\s+{PCT}\s+"
+        rf"(?:equity|ownership|membership)?\s*interest\s+in\s+({ENT})"),
+     {"subject": 1, "amount": 2, "amount_scale": 3, "percentage": 4, "object": 5}),
+    ("retains_pct_interest_in", re.compile(
+        rf"({BYACTOR})\s+(?:will\s+)?(?:retains?|retained|holds?|held|acquires?|"
+        rf"acquired|receives?|received|purchases?|purchased)\s+"
+        rf"(?:an?\s+)?{PCT}\s+(?:equity|ownership|membership)?\s*interest\s+in\s+"
+        rf"(?:each\s+)?({ENT}|{DEFTERM})"),
+     {"subject": 1, "percentage": 2, "object": 3}),
+    ("owned_controlled_by_loose", re.compile(
+        rf"({ENT})\s*(?:\([^)]{{0,50}}\)\s*)?[^.;:\n]{{0,60}}?"
+        rf"\b(?:owned\s+(?:and|or)\s+controlled|owned)\s+by\b[^.;:\n]{{0,40}}?"
+        rf"({BYACTOR})"),
+     {"object": 1, "subject": 2}),
+    ("majority_shareholder_of", re.compile(
+        rf"({ENT}|{ABBR}|{PERSON})\s+(?:is|was|remains?)\s+the\s+"
+        rf"(majority|sole|controlling|principal|largest)\s+"
+        rf"(?:shareholder|stockholder|member|owner)\s+of\s+({ENT_COMMA})"),
+     {"subject": 1, "qualifier": 2, "object": 3}),
 ]
 
 TIER_B = [
@@ -94,6 +157,26 @@ TIER_B = [
         rf"({ACTOR})\s+exercise[sd]?\s+(?:substantial\s+|significant\s+|complete\s+)?"
         rf"control\s+over\s+({ENT})"),
      {"subject": 1, "object": 2}),
+    ("controlled_by_appositive", re.compile(
+        rf"({ENT}|{ABBR})\s*(?:\([^)]{{0,50}}\)\s*)?,?\s*"
+        rf"(?:an?\s+)?(?:entit(?:y|ies)|compan(?:y|ies)|private\s+company|"
+        rf"corporation)?\s*(?:that\s+(?:is|was|were|are)\s+)?"
+        rf"(?:in)?directly\s+(?:owned\s+and\s+)?controlled\s+by\s+({BYACTOR})"),
+     {"object": 1, "subject": 2}),
+    ("entity_controlled_by", re.compile(
+        rf"({ENT})\s*(?:\([^)]{{0,50}}\)\s*)?,?\s*"
+        rf"(?:an?\s+)?(?:entit(?:y|ies)|compan(?:y|ies)|private\s+company|"
+        rf"Canadian\s+company|corporation)\s*,?\s+"
+        rf"(?:owned\s+and\s+)?controlled\s+by\s+({BYACTOR})"),
+     {"object": 1, "subject": 2}),
+    ("that_x_controlled", re.compile(
+        rf"({ENT}|{DEFTERM})\s+that\s+({PERSON}|{SURNAME})\s+"
+        rf"(?:owned\s+and\s+)?controlled"),
+     {"object": 1, "subject": 2}),
+    ("owned_and_controlled_by", re.compile(
+        rf"({ENT})\s*(?:\([^)]{{0,50}}\)\s*)?,?[^.\n]{{0,60}}?"
+        rf"owned\s+and\s+controlled\s+by\s+({BYACTOR})"),
+     {"object": 1, "subject": 2}),
 ]
 
 TIER_C = [
@@ -113,6 +196,19 @@ TIER_C = [
         rf"({ENT})[^.\n]{{0,60}}?operates\s+through\s+({ENT})\s*,?\s+"
         rf"(?:its|a)\s+(wholly[- ]?\s*owned)?\s*subsidiary"),
      {"subject": 1, "object": 2, "qualifier": 3}),
+    ("appositive_subsidiary_of", re.compile(
+        rf"({ENT}|{DEFTERM}|Bank)\s*(?:\([^)]{{0,50}}\)\s*)?,?\s+"
+        rf"(?:is\s+|was\s+|(?:which|that)\s+(?:is|was)\s+)?an?\s+"
+        rf"(wholly[- ]\s?owned|indirect|direct|majority[- ]owned)?\s*"
+        rf"(?:special[- ]purpose\s+)?subsidiar(?:y|ies)\s+of\s+"
+        rf"({ENT_COMMA}|{DEFTERM}|{ABBR})"),
+     {"object": 1, "qualifier": 2, "subject": 3}),
+    ("subsidiaries_list", re.compile(
+        rf"({ENT_COMMA}|{ABBR}|{DEFTERM})(?:['’]s)\s+"
+        rf"(?:three|four|five|two|several|various)?\s*"
+        rf"(wholly[- ]\s?owned)?\s*subsidiar(?:y|ies)\s*,\s+"
+        rf"([A-Z][^.;\n]{{10,220}}?)(?:\s+engaged|\s+were|\s+which|\.|;)"),
+     {"subject": 1, "qualifier": 2, "object": 3}),
 ]
 
 TIER_D = [
@@ -130,23 +226,40 @@ TIER_D = [
         rf"({ACTOR})\s*,?\s*(?:acted|acting|served|serving)\s+as\s+"
         rf"(?:a\s+)?nominee\s+(?:owner\s+)?(?:for|of)\s+({ACTOR})"),
      {"subject": 1, "object": 2, "qualifier": None}),
+    ("front_for", re.compile(
+        rf"({ENT}|{ABBR}|{SURNAME})\s+(?:acts?|acted|serves?|served|operates?|"
+        rf"operated|functions?|functioned)\s+as\s+a\s+(front|shell|nominee|conduit)\s+"
+        rf"(?:compan(?:y|ies)|corporation|entit(?:y|ies))?\s*for\s+"
+        rf"[^.\n]{{0,60}}?({ENT_COMMA}|{ABBR}|{DEFTERM}|{PERSON})"),
+     {"subject": 1, "qualifier": 2, "object": 3}),
 ]
 
-AMT = r"\$\s?([\d,]+(?:\.\d{2})?)\s*(million|billion)?"
+# Flow actors may be defendants-groups, abbreviations, defined terms, or
+# possessive kin references; flows are observations (never edges), so the
+# object capture is looser and confidence is scored accordingly.
+FLOWACT = (rf"(?:{ENT_COMMA}|{PERSON}|{DEFTERM}|{ABBR}|{SURNAME}|"
+           rf"the\s+[A-Z][A-Za-z]+\s+Defendants?)")
+FLOWOBJ = rf"(?:{FLOWACT}[’']s\s+[a-z]{{3,12}}|{FLOWACT}|[\w\s]{{0,30}}account[\w\s]{{0,30}})"
 TIER_E = [
     ("transferred_to", re.compile(
-        rf"({ACTOR})\s+(?:wired|transferred|sent|paid|funneled|diverted|deposited)\s+"
+        rf"({FLOWACT})\s+(?:(?:also|then|subsequently|later)\s+)?"
+        rf"(?:wired|transferred|sent|paid|funneled|diverted|deposited|remitted)\s+"
         rf"(?:approximately\s+|about\s+|at\s+least\s+|more\s+than\s+)?{AMT}"
-        rf"[^.\n]{{0,60}}?\s+(?:to|into)\s+({ACTOR}|[\w\s]{{0,30}}account[\w\s]{{0,30}})"),
+        rf"[^.\n]{{0,60}}?\s+(?:to|into)\s+({FLOWOBJ})"),
      {"subject": 1, "amount": 2, "amount_scale": 3, "object": 4}),
+    ("transferred_recipient_first", re.compile(
+        rf"({FLOWACT})\s+(?:(?:also|then|subsequently|later)\s+)?"
+        rf"(?:wired|transferred|sent|paid|funneled|diverted|remitted)\s+to\s+"
+        rf"({FLOWOBJ})\s+(?:approximately\s+|about\s+|at\s+least\s+|more\s+than\s+)?{AMT}"),
+     {"subject": 1, "object": 2, "amount": 3, "amount_scale": 4}),
     ("received_from", re.compile(
-        rf"({ACTOR})\s+(?:received|obtained|collected|raised)\s+"
+        rf"({FLOWACT})\s+(?:received|obtained|collected|raised)\s+"
         rf"(?:approximately\s+|about\s+|at\s+least\s+|more\s+than\s+)?{AMT}\s+"
-        rf"(?:from|through)\s+({ACTOR}|[\d,]+\s+investors)"),
+        rf"(?:from|through)\s+({FLOWOBJ}|[\d,]+\s+investors)"),
      {"object": 1, "amount": 2, "amount_scale": 3, "subject": 4}),
     ("wire_from_to", re.compile(
-        rf"wire\s+transfer\s+of\s+{AMT}\s+from\s+({ACTOR}|[\w\s]{{0,40}}account)"
-        rf"\s+to\s+({ACTOR}|[\w\s]{{0,40}}account)"),
+        rf"wire\s+transfers?\s+of\s+{AMT}\s+from\s+({FLOWOBJ})"
+        rf"\s+to\s+({FLOWOBJ})"),
      {"amount": 1, "amount_scale": 2, "subject": 3, "object": 4}),
 ]
 
@@ -184,10 +297,28 @@ def sentence_bounds(text: str, start: int, end: int):
     return left, right
 
 
+# Capitalized sentence-starters that signal a capture crossed a heading
+# or sentence boundary ("Proposed Operations The Bank").
+BOUNDARY_TOKENS = re.compile(
+    r"\s+(?:The|This|These|That|Until|Additionally|Please|Proposed|"
+    r"Shareholders|Business|Further|For\s+example|IT\s+IS)\s+")
+# Reported-speech cue: the sentence attributes the proposition to a third
+# party ("a Telegram channel claimed that…"). Flagged, never dropped.
+REPORTED_SPEECH = re.compile(
+    r"\b(?:claim(?:ed|s)?|alleg\w+|purport\w+|according\s+to|reportedly|"
+    r"said\s+to\s+be|described\s+as)\b", re.I)
+
+
 def clean_name(s):
     if not s:
         return None
-    return re.sub(r"\s+", " ", s).strip(" ,;:.")
+    s = re.sub(r"\s+", " ", s)
+    # Truncate at a sentence-starter appearing mid-name (boundary crossing);
+    # keep the head, which is where the anchored name began.
+    m = BOUNDARY_TOKENS.search(s, 1)
+    if m and m.start() > 3:
+        s = s[:m.start()]
+    return s.strip(" ,;:.")
 
 
 def load_bucket(path):
@@ -264,8 +395,20 @@ def main():
                         except Exception:
                             return None
 
-                    subject_raw = clean_name(grp(slots.get("subject")))
-                    object_raw = clean_name(grp(slots.get("object")))
+                    def name_grp(idx):
+                        """Group text, extended past a premature suffix stop
+                        ("Revolut Holdings" -> "Revolut Holdings US Inc")."""
+                        val = grp(idx)
+                        if not val:
+                            return None
+                        try:
+                            ext = NAME_EXT.match(sent[m.end(idx):])
+                        except Exception:
+                            ext = None
+                        return val + ext.group(0) if ext else val
+
+                    subject_raw = clean_name(name_grp(slots.get("subject")))
+                    object_raw = clean_name(name_grp(slots.get("object")))
                     pct_raw = grp(slots.get("percentage"))
                     qual_raw = clean_name(grp(slots.get("qualifier")))
                     amount_raw = grp(slots.get("amount"))
@@ -276,6 +419,7 @@ def main():
                     rm = ROLE_RE.search(sent)
                     seq[sha] += 1
                     both = bool(subject_raw and object_raw)
+                    reported = bool(REPORTED_SPEECH.search(sent))
                     obs = {
                         "observation_id": f"obs:{sha[:16]}:{seq[sha]:04d}",
                         "tier": tier_name,
@@ -309,6 +453,7 @@ def main():
                         "parser_version": PARSER_VERSION,
                         "extraction_method": "REGEX_SENTENCE_GRAMMAR",
                         "extraction_confidence": 0.9 if both else 0.55,
+                        "reported_speech": reported,
                         "candidate_id": cand["candidate_id"],
                         "pass_version": PASS2_VERSION,
                     }
