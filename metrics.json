@@ -35,10 +35,10 @@
     "CONGRESS": 5005,
     "GOV-PUBLIC": 54779
   },
-  "discovered_urls": 38761,
+  "discovered_urls": 188003,
   "durability_note": "release assets verified this run",
   "durably_archived_urls": 53979,
-  "generated_at": "2026-08-15T18:53:46.476744+00:00",
+  "generated_at": "2026-08-15T20:14:30.785219+00:00",
   "graph_entities": 0,
   "graph_people": 0,
   "ledger_change_types": {
@@ -54,11 +54,12 @@
   "queue_states": {
     "ACCESS_RESTRICTED": 64,
     "ARCHIVED": 53979,
+    "DISCOVERED": 145200,
     "NOT_FOUND": 623,
     "ROBOTS_DISALLOWED": 2,
     "TEMPORARY_ERROR": 512
   },
-  "queued_urls": 0,
+  "queued_urls": 145200,
   "rate_limited": 0,
   "raw_observations": 59784,
   "robots_disallowed": 2,
