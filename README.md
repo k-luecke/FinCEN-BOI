@@ -50,6 +50,48 @@ python3 verify.py --manifest manifest.jsonl
 Exits non-zero if any object is missing or its bytes no longer match the
 recorded SHA-256.
 
+Rebuild the per-URL change ledger from the manifest:
+
+```sh
+python3 ledger.py --manifest manifest.jsonl --out ledger.jsonl
+```
+
+Each URL that has ever been crawled gets one entry with
+`previous_sha256`, `current_sha256`, `first_seen`, `last_seen`, the
+latest HTTP status, and a
+`change_type` of `ADDED | MODIFIED | REMOVED | UNCHANGED | UNAVAILABLE`.
+Because the manifest is append-only, the ledger is a pure function of it
+and can always be rebuilt.
+
+## Scheduled crawls
+
+`.github/workflows/archive.yml` re-runs the seed set daily (and on
+manual dispatch). Each run:
+
+1. Crawls `seeds.txt` into a fresh per-run manifest and object store.
+2. Fails loudly if *every* fetch failed (runner/network problem, not
+   evidence that all records vanished), so the ledger isn't poisoned
+   with false `REMOVED` entries.
+3. Verifies the run's objects against their hashes.
+4. Appends the run manifest to the committed `manifest.jsonl` and
+   rebuilds `ledger.jsonl`.
+5. Uploads the fetched bytes as a workflow artifact (bytes stay out of
+   git history) and commits the updated manifest and ledger.
+
+If a public record disappears, the repo holds cryptographic evidence
+that these exact bytes were served from that government URL at that
+timestamp — plus the later observation that the URL changed or vanished.
+
+## SAR material
+
+SAR filings themselves are confidential under 31 U.S.C. § 5318(g) and
+are never gathered. [SAR-SOURCES.md](SAR-SOURCES.md) catalogs the
+split: official public SAR material (statistics, forms, examiner
+guidance, oversight reports) is mirrored via `seeds.txt`; non-government
+or unofficial sources — including FinCEN Files journalism and leak
+mirrors — are referenced by citation only and are outside the crawler's
+allowlist.
+
 ## Layout
 
 ```
@@ -86,10 +128,11 @@ provenance vocabulary is defined in [PROVENANCE.md](PROVENANCE.md).
 
 ## Roadmap
 
-1. Scheduled re-crawls of the seed set producing a change ledger
-   (`ADDED | MODIFIED | REMOVED | UNCHANGED` per URL, with previous and
-   current SHA-256, first/last seen).
+1. ~~Scheduled re-crawls of the seed set producing a change ledger.~~
+   Done — see `.github/workflows/archive.yml` and `ledger.py`.
 2. Discovery: enumerate FinCEN sitemaps, same-domain public links, the
    Federal Register's FinCEN collection, and a historical URL inventory —
    systematically determining what public FinCEN material exists, rather
    than hand-writing more seeds.
+3. Offload workflow-artifact object stores to durable bulk storage so
+   fetched bytes outlive the 90-day artifact retention window.

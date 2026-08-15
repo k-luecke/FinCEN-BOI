@@ -1,0 +1,80 @@
+name: Scheduled archive crawl
+
+on:
+  schedule:
+    # Daily, off the top of the hour to be polite to shared cron load.
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-crawl
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Crawl seed set
+        run: >
+          python3 archive.py
+          --seeds seeds.txt
+          --out archive
+          --manifest run-manifest.jsonl
+
+      - name: Require at least one successful retrieval
+        # A run where every fetch failed is a runner/network problem,
+        # not evidence that every public record vanished at once.
+        # Fail loudly instead of poisoning the ledger with REMOVED.
+        run: |
+          python3 - <<'EOF'
+          import json, sys
+
+          ok = 0
+          with open("run-manifest.jsonl", encoding="utf-8") as f:
+              for line in f:
+                  if json.loads(line).get("sha256"):
+                      ok += 1
+
+          print(f"Successful retrievals this run: {ok}")
+          sys.exit(0 if ok else 1)
+          EOF
+
+      - name: Verify this run's objects
+        run: python3 verify.py --manifest run-manifest.jsonl
+
+      - name: Append run to manifest and rebuild ledger
+        run: |
+          cat run-manifest.jsonl >> manifest.jsonl
+          python3 ledger.py --manifest manifest.jsonl --out ledger.jsonl
+
+      - name: Preserve fetched objects as a workflow artifact
+        # Bytes stay out of git history; each run's object store is
+        # kept as an artifact keyed by run id for later offloading to
+        # bulk storage.
+        uses: actions/upload-artifact@v4
+        with:
+          name: archive-objects-${{ github.run_id }}
+          path: archive/
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Commit manifest and ledger
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add manifest.jsonl ledger.jsonl
+          if git diff --cached --quiet; then
+            echo "No manifest changes to commit."
+            exit 0
+          fi
+          git commit -m "Archive crawl $(date -u +%Y-%m-%d): update manifest and change ledger"
+          git push
