@@ -10,6 +10,18 @@ on:
   schedule:
     # Daily, low-frequency cadence; off the top of the hour.
     - cron: "41 9 * * *"
+  push:
+    # Development branch only: lets recovery run before the workflow
+    # file lands on main (API dispatch needs the file on the default
+    # branch). Commits made by the workflow itself use GITHUB_TOKEN
+    # and never retrigger a run.
+    branches:
+      - claude/challenge-aware-recovery-h3ples
+    paths:
+      - "recover.py"
+      - "challenge_scan.py"
+      - "challenge_detector.py"
+      - ".github/workflows/recovery.yml"
   workflow_dispatch:
     inputs:
       max_fetches:
