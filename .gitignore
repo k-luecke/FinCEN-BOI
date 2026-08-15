@@ -2,6 +2,11 @@
 # Manifests, seeds, and code are committed; fetched bytes are not.
 archive/
 
+# Derived text/metadata from Content Pass 1 — reproducible from archived
+# bytes (see content-pass-1/CONTENT-PASS-1-REPORT.md), published as
+# release assets, not committed to git history.
+derived/
+
 # Per-run manifests produced in CI before being appended to manifest.jsonl.
 run-manifest.jsonl
 run-manifest-*.jsonl
