@@ -78,9 +78,32 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--inventory", default="url-inventory.jsonl")
     parser.add_argument("--manifest", default="manifest.jsonl")
+    parser.add_argument("--challenge-observations",
+                        default="recovery/challenge-observations.jsonl")
     parser.add_argument("--out-json", default="coverage.json")
     parser.add_argument("--out-md", default="COVERAGE.md")
     args = parser.parse_args()
+
+    # Non-content captures (bot challenges / interstitials / app
+    # shells) per host: archived bytes that are NOT the record.
+    non_content_by_host = defaultdict(int)
+    challenge_path = Path(args.challenge_observations)
+
+    if challenge_path.exists():
+        with challenge_path.open(encoding="utf-8") as f:
+            for line in f:
+                if not line.strip():
+                    continue
+
+                row = json.loads(line)
+
+                if row.get("classification") in (
+                    "BOT_CHALLENGE", "ACCESS_INTERSTITIAL",
+                    "APPLICATION_SHELL", "REDIRECT_STUB",
+                ) and row.get("response_sha256"):
+                    non_content_by_host[
+                        normalized_host(row.get("url", ""))
+                    ] += 1
 
     discovered = defaultdict(int)
     discovered_by_sitemap = defaultdict(int)
@@ -142,6 +165,11 @@ def main() -> int:
             "urls_discovered": discovered.get(host, 0),
             "urls_attempted": len(attempted.get(host, set())),
             "urls_archived": per_host_archived.get(host, 0),
+            "non_content_captures": non_content_by_host.get(host, 0),
+            "urls_with_content": (
+                per_host_archived.get(host, 0)
+                - non_content_by_host.get(host, 0)
+            ),
             "ceiling_hit": ceiling,
             "bytes": per_host_bytes.get(host, 0),
             "median_object_bytes": int(statistics.median(sizes)) if sizes else None,
@@ -187,14 +215,21 @@ def main() -> int:
         "Archive size is never a proxy for share-of-BOI preserved: the "
         "CTA-filed database is confidential and not publicly downloadable.",
         "",
-        "| Host | Discovered | Attempted | Archived | Ceiling hit? | Bytes | Median obj | p95 obj |",
-        "|------|-----------:|----------:|---------:|--------------|------:|-----------:|--------:|",
+        "**Non-content**: captures the challenge detector classified as "
+        "bot challenges / interstitials / application shells — bytes we "
+        "hold that are *not* the requested record (see "
+        "RECOVERY-REPORT.md for lawful alternate-route recovery).",
+        "",
+        "| Host | Discovered | Attempted | Archived | Non-content | With content | Ceiling hit? | Bytes | Median obj | p95 obj |",
+        "|------|-----------:|----------:|---------:|------------:|-------------:|--------------|------:|-----------:|--------:|",
     ]
 
     for row in rows:
         lines.append(
             f"| {row['host']} | {fmt(row['urls_discovered'])} | "
             f"{fmt(row['urls_attempted'])} | {fmt(row['urls_archived'])} | "
+            f"{fmt(row['non_content_captures'])} | "
+            f"{fmt(row['urls_with_content'])} | "
             f"{row['ceiling_hit']} | {fmt(row['bytes'])} | "
             f"{fmt(row['median_object_bytes'])} | {fmt(row['p95_object_bytes'])} |"
         )
