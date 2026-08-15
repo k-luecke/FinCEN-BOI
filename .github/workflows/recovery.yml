@@ -81,9 +81,12 @@ jobs:
           if [ "$ARCHIVE_FR_API" = "true" ]; then
             EXTRA="--archive-fr-api"
           fi
+          # Wall-clock fetch budget (150 min) < job timeout (340 min):
+          # slow upstreams must never starve verify/publish/commit.
           python3 recover.py \
             --network \
             --max-fetches "$MAX_FETCHES" \
+            --max-seconds 9000 \
             --delay "$DELAY" \
             $EXTRA \
             --out archive \

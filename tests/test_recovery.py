@@ -126,6 +126,7 @@ def recovery_args(root: Path, network=False, max_fetches=10):
         run_manifest=str(root / "run-manifest.jsonl"),
         delay=0.0,
         max_fetches=max_fetches,
+        max_seconds=9000,
         max_bytes=10 * 1024 * 1024,
         network=network,
         archive_fr_api=False,

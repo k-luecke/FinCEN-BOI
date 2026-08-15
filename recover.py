@@ -133,6 +133,8 @@ def link_key(original_url: str, alternate_url: str,
 class RecoveryRun:
     def __init__(self, args):
         self.args = args
+        self.started_monotonic = time.monotonic()
+        self.time_budget_reported = False
         self.out = Path(args.out)
         self.run_manifest = Path(args.run_manifest)
         self.recovery_dir = Path(args.recovery_dir)
@@ -194,6 +196,20 @@ class RecoveryRun:
         response validated as content for the expected family.
         """
         if self.fetches >= self.args.max_fetches:
+            return None, None, False, None
+        # Wall-clock budget: slow upstreams (archive.org under load can
+        # take tens of seconds per response) must never eat the time
+        # the run needs to verify, publish, and commit its results.
+        elapsed = time.monotonic() - self.started_monotonic
+        if elapsed > self.args.max_seconds:
+            if not self.time_budget_reported:
+                print(
+                    f"  wall-clock budget exhausted after "
+                    f"{int(elapsed)}s; stopping fetches to leave time "
+                    f"for verify/publish/commit",
+                    file=sys.stderr,
+                )
+                self.time_budget_reported = True
             return None, None, False, None
         host = (urlparse(url).hostname or "").lower()
         if host in self.host_stopped:
@@ -744,6 +760,10 @@ def main() -> int:
     parser.add_argument("--delay", type=float, default=2.0)
     parser.add_argument("--max-fetches", type=int, default=1500,
                         help="Total network fetch budget for this run")
+    parser.add_argument("--max-seconds", type=int, default=9000,
+                        help="Wall-clock fetch budget; fetching stops "
+                             "after this so the run always has time "
+                             "to verify, publish, and commit")
     parser.add_argument("--max-bytes", type=int,
                         default=100 * 1024 * 1024)
     parser.add_argument("--network", action="store_true",
