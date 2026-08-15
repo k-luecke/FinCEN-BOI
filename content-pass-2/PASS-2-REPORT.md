@@ -116,6 +116,20 @@ per-host delay, scaled across six independent hosts. State commits and
 durable releases flow through the standing `commit_state.sh` pipeline;
 the 4,000/day maintenance schedules remain untouched.
 
+**Landed (as of 2026-08-15T20:12Z):** the follow-links run completed
+green at 18:54Z — crawl → verify → durable release → state commit
+(main @ `8afa191`). It archived **2,715 new gao.gov URLs and 926 new
+govinfo.gov URLs** (+ 4 misc). GAO coverage went from **3 objects at
+the Pass 1 baseline to 4,222**; govinfo from 494 to 2,288 — the
+congressional-oversight gap identified in Pass 1 §16 is substantially
+closed pending next-pass extraction. The 12,589-URL targeted batch
+(EDGAR/DOJ/FinCEN) waits in the bulk-crawl concurrency group behind the
+parallel session's pending-queue crawl (run 31887678820, 9 chunks, five
+already complete) and starts automatically when that run's aggregate
+finishes; its per-host outcomes will land in the root manifest/ledger
+via the same pipeline. DOJ challenge-retry outcomes are therefore not
+yet measurable — recorded when the batch lands.
+
 **OCR backlog** ranked (Part XVI): 5 HIGH (SEC complaint scans) /
 190 MEDIUM / 6 LOW in `ocr-priority.jsonl`. No bulk OCR run; HIGH tier
 is the next targeted extraction step after acquisition lands.
