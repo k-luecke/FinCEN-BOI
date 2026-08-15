@@ -51,6 +51,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Fast-forward to newest branch state
+        # A queued run may have been triggered by an older sha; start
+        # from the freshest committed recovery/queue state so this
+        # run never re-fetches work a previous run already recovered.
+        run: |
+          git fetch origin "${{ github.ref_name }}"
+          git reset --hard FETCH_HEAD
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -133,6 +141,14 @@ jobs:
             for f in manifest.jsonl ledger.jsonl queue.jsonl metrics.json; do
               git checkout FETCH_HEAD -- "$f" 2>/dev/null || true
             done
+            # Recovery links are append-only observations: union this
+            # run's links with the freshest committed set so a stale
+            # checkout can never drop links another run recorded.
+            git show FETCH_HEAD:recovery/recovery-links.jsonl \
+              > base-links.jsonl 2>/dev/null || : > base-links.jsonl
+            python3 scripts/merge_recovery_links.py \
+              base-links.jsonl recovery/recovery-links.jsonl \
+              recovery/recovery-links.jsonl
 
             if [ -s run-manifest-recovery.jsonl ]; then
               cat run-manifest-recovery.jsonl >> manifest.jsonl

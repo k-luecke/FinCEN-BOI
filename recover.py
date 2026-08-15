@@ -316,6 +316,55 @@ class RecoveryRun:
     # Federal Register: FR API record + GovInfo official bytes
     # ================================================================
 
+    def has_link(self, url: str, relationship: str) -> bool:
+        return any(
+            link["original_url"] == url
+            and link["relationship"] == relationship
+            and link.get("retrieved_sha256")
+            for link in self.existing_links
+        )
+
+    def fetch_fr_api_record(self, url: str, docnum: str,
+                            obs_sha: str | None) -> str | None:
+        """Archive the FR API JSON identity record for one document.
+
+        Returns the official representation URL the record points at
+        (FR_API_RECORD --REPRESENTS--> GOVINFO_DOCUMENT), or None.
+        """
+        api_url = FR_API_DOC.format(docnum=quote(docnum))
+        record, body, ok, _cls = self.polite_fetch(
+            api_url, "GOV-PUBLIC",
+            "Federal Register API document record",
+            expect_family="federal_register",
+        )
+        if not (record and ok and body):
+            return None
+        represents = None
+        try:
+            payload = json.loads(body)
+            represents = (
+                payload.get("pdf_url") or payload.get("body_html_url")
+            )
+        except (json.JSONDecodeError, AttributeError):
+            pass
+        self.add_link(
+            original_url=url,
+            identity_id=None,
+            alternate_url=api_url,
+            alternate_family="federal_register_api",
+            relationship=DERIVED,
+            confidence="HIGH",
+            discovery_method="federal_register_api",
+            retrieved_sha256=record.sha256,
+            retrieval_time=record.retrieved_at,
+            original_observation_sha256=obs_sha,
+            publisher="Office of the Federal Register",
+            retrieval_host="www.federalregister.gov",
+            manual_review_required=False,
+            represents=represents,
+        )
+        return represents
+
     def recover_federal_register(self) -> None:
         rows = self.load_queue("federal-register")
         if not rows:
@@ -323,13 +372,23 @@ class RecoveryRun:
         print(f"\n=== Federal Register: {len(rows)} queued ===")
 
         for row in rows:
-            if row.get("state", "PENDING") not in ("PENDING",
-                                                   "RETRY_LATER"):
-                continue
             url = row["url"]
+            state = row.get("state", "PENDING")
             identity = self.identities.get(row.get("identity_id") or "")
             docnum = (identity or {}).get("document_number")
             obs_sha = row.get("observation_sha256")
+
+            if state not in ("PENDING", "RETRY_LATER"):
+                # Already recovered via GovInfo: still preserve the FR
+                # API's own JSON identity record once, so both
+                # identities survive (FR_API_RECORD --REPRESENTS-->
+                # GOVINFO_DOCUMENT).
+                if (state == "RECOVERED_OFFICIAL_MIRROR" and docnum
+                        and self.args.network
+                        and self.args.archive_fr_api
+                        and not self.has_link(url, DERIVED)):
+                    self.fetch_fr_api_record(url, docnum, obs_sha)
+                continue
 
             if not docnum:
                 # A search/listing page, not a document — identity is
@@ -364,73 +423,43 @@ class RecoveryRun:
 
             # Route 1: the FR API's own JSON record for this document
             # (metadata identity; also yields canonical GovInfo URL).
-            if self.args.network and not recovered or (
-                self.args.network and self.args.archive_fr_api
-            ):
-                api_url = FR_API_DOC.format(docnum=quote(docnum))
-                record, body, ok, cls = self.polite_fetch(
-                    api_url, "GOV-PUBLIC",
-                    "Federal Register API document record",
-                    expect_family="federal_register",
+            if self.args.network and (not recovered
+                                      or self.args.archive_fr_api):
+                represents = self.fetch_fr_api_record(
+                    url, docnum, obs_sha
                 )
-                if record and ok and body:
-                    represents = None
-                    try:
-                        payload = json.loads(body)
-                        represents = (
-                            payload.get("pdf_url")
-                            or payload.get("body_html_url")
+                # If GovInfo bytes were not yet archived, fetch the
+                # official PDF the API record points at.
+                if not recovered and represents and (
+                    (urlparse(represents).hostname or "")
+                    .endswith("govinfo.gov")
+                ):
+                    pdf_record, _pdf_body, pdf_ok, _ = (
+                        self.polite_fetch(
+                            represents, "GOV-PUBLIC",
+                            f"GovInfo FR PDF {docnum}",
+                            expect_family="govinfo",
                         )
-                    except (json.JSONDecodeError, AttributeError):
-                        pass
-                    self.add_link(
-                        original_url=url,
-                        identity_id=row.get("identity_id"),
-                        alternate_url=api_url,
-                        alternate_family="federal_register_api",
-                        relationship=DERIVED,
-                        confidence="HIGH",
-                        discovery_method="federal_register_api",
-                        retrieved_sha256=record.sha256,
-                        retrieval_time=record.retrieved_at,
-                        original_observation_sha256=obs_sha,
-                        publisher="Office of the Federal Register",
-                        retrieval_host="www.federalregister.gov",
-                        manual_review_required=False,
-                        represents=represents,
                     )
-                    # If GovInfo bytes were not yet archived, fetch
-                    # the official PDF the API record points at.
-                    if not recovered and represents and (
-                        (urlparse(represents).hostname or "")
-                        .endswith("govinfo.gov")
-                    ):
-                        pdf_record, pdf_body, pdf_ok, _ = (
-                            self.polite_fetch(
-                                represents, "GOV-PUBLIC",
-                                f"GovInfo FR PDF {docnum}",
-                                expect_family="govinfo",
-                            )
+                    if pdf_record and pdf_ok:
+                        self.add_link(
+                            original_url=url,
+                            identity_id=row.get("identity_id"),
+                            alternate_url=represents,
+                            alternate_family="govinfo",
+                            relationship=OFFICIAL_MIRROR,
+                            confidence="HIGH",
+                            discovery_method="federal_register_api",
+                            retrieved_sha256=pdf_record.sha256,
+                            retrieval_time=pdf_record.retrieved_at,
+                            original_observation_sha256=obs_sha,
+                            publisher=(
+                                "Office of the Federal Register"
+                            ),
+                            retrieval_host="www.govinfo.gov",
+                            manual_review_required=False,
                         )
-                        if pdf_record and pdf_ok:
-                            self.add_link(
-                                original_url=url,
-                                identity_id=row.get("identity_id"),
-                                alternate_url=represents,
-                                alternate_family="govinfo",
-                                relationship=OFFICIAL_MIRROR,
-                                confidence="HIGH",
-                                discovery_method="federal_register_api",
-                                retrieved_sha256=pdf_record.sha256,
-                                retrieval_time=pdf_record.retrieved_at,
-                                original_observation_sha256=obs_sha,
-                                publisher=(
-                                    "Office of the Federal Register"
-                                ),
-                                retrieval_host="www.govinfo.gov",
-                                manual_review_required=False,
-                            )
-                            recovered = True
+                        recovered = True
 
             row["attempts"] = row.get("attempts", 0) + 1
             row["last_attempt_at"] = utc_now()
