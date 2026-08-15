@@ -1,0 +1,68 @@
+name: Audit archived object sample
+
+# Downloads a durable objects release and content-classifies a sample
+# of one host's small archived objects (real content vs. bot
+# challenges / app shells / error pages), so expansion decisions are
+# made on evidence. Read-only; never modifies the archive.
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "objects-run-* release holding the objects"
+        required: true
+        type: string
+      host:
+        description: "Host substring to audit"
+        default: "www.justice.gov"
+        type: string
+      max_size:
+        description: "Only sample objects at or below this many bytes"
+        default: "4096"
+        type: string
+      sample:
+        description: "Sample size"
+        default: "150"
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download and extract release objects
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.release_tag }}
+        run: |
+          set -euo pipefail
+          mkdir -p audit-work && cd audit-work
+          gh release download "$TAG"
+          if ls *.part* >/dev/null 2>&1; then
+            base=$(ls *.part* | head -1 | sed 's/\.part.*//')
+            cat "$base".part* > "$base" && rm -f "$base".part*
+          fi
+          tar --zstd -xf *.tar.zst
+          rm -f *.tar.zst
+
+      - name: Classify sample
+        env:
+          HOST: ${{ inputs.host }}
+          MAX_SIZE: ${{ inputs.max_size }}
+          SAMPLE: ${{ inputs.sample }}
+        run: >
+          python3 audit_objects.py
+          --manifest manifest.jsonl
+          --root audit-work
+          --host "$HOST"
+          --max-size "$MAX_SIZE"
+          --sample "$SAMPLE"

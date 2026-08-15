@@ -31,8 +31,11 @@ while :; do
   # METRICS_FLAGS may carry --release-verified when the caller has
   # confirmed durable release assets exist.
   python3 metrics.py ${METRICS_FLAGS:-}
+  python3 coverage.py || true
+  python3 priorities.py || true
 
   git add manifest.jsonl ledger.jsonl queue.jsonl metrics.json
+  git add coverage.json COVERAGE.md preservation-priorities.json PRESERVATION-PRIORITIES.md 2>/dev/null || true
   if git diff --cached --quiet; then
     echo "No state changes to commit."
     exit 0
