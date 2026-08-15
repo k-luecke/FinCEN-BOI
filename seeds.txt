@@ -29,6 +29,20 @@ https://vault.fbi.gov/|GOV-PUBLIC|FBI
 
 
 # ============================================================
+# Policy history / deletion record
+#
+# Primary sources for the CTA/BOI evidence chain: what was
+# collected, access, retention, the 2026-08-11 final rule ending
+# U.S. reporting, and deletion of previously collected U.S.-person
+# BOI. See policy-history/README.md and deletion-record/README.md.
+# ============================================================
+
+https://www.fincen.gov/news/news-releases/fincen-permanently-ends-beneficial-ownership-reporting-requirements-millions|GOV-PUBLIC|FinCEN
+https://home.treasury.gov/news/press-releases/sb0603|GOV-PUBLIC|Treasury
+https://www.federalregister.gov/documents/search?conditions%5Bterm%5D=beneficial+ownership+information&conditions%5Bagencies%5D%5B%5D=financial-crimes-enforcement-network|GOV-PUBLIC|Federal Register
+
+
+# ============================================================
 # SAR public records
 #
 # Official public SAR-related material only: aggregate statistics,
