@@ -10,17 +10,9 @@ name: Bulk chunked crawl
 on:
   workflow_dispatch:
     inputs:
-      pending_only:
-        description: "Crawl only never-attempted/retry-eligible URLs from the queue"
-        default: true
-        type: boolean
       seeds_file:
-        description: "Seed list when pending_only is off"
+        description: "Seed list to crawl"
         default: "discovered-seeds.txt"
-        type: string
-      exclude_hosts:
-        description: "Comma-separated hosts to hold back (e.g. pending audit)"
-        default: ""
         type: string
       delay:
         description: "Seconds between requests (per chunk = per host set)"
@@ -35,8 +27,8 @@ on:
         default: false
         type: boolean
       max_pages:
-        description: "Per-chunk fetch cap (bounded checkpoint; remainder stays pending)"
-        default: "12000"
+        description: "Per-chunk fetch cap when following links"
+        default: "8000"
         type: string
 
 permissions:
@@ -61,24 +53,13 @@ jobs:
       - name: Partition seeds into host-aligned chunks
         id: chunk
         env:
-          PENDING_ONLY: ${{ inputs.pending_only && 'true' || 'false' }}
           SEEDS_FILE: ${{ inputs.seeds_file }}
-          EXCLUDE: ${{ inputs.exclude_hosts }}
           TARGET: ${{ inputs.target_chunk_size }}
         run: |
-          if [ "$PENDING_ONLY" = "true" ]; then
-            python3 queue.py \
-              --queue-out queue-plan.jsonl \
-              --pending-out plan-seeds.txt \
-              --limit 500000
-          else
-            cp "$SEEDS_FILE" plan-seeds.txt
-          fi
           matrix=$(python3 chunk_seeds.py \
-            --seeds plan-seeds.txt \
+            --seeds "$SEEDS_FILE" \
             --out-dir chunks \
             --target "$TARGET" \
-            --exclude-hosts "$EXCLUDE" \
             --print-matrix)
           echo "matrix=$matrix" >> "$GITHUB_OUTPUT"
 
@@ -94,10 +75,9 @@ jobs:
     timeout-minutes: 350
     strategy:
       fail-fast: false
-      # Chunks are host-disjoint, so parallelism scales throughput
-      # across independent hosts without concentrating load on any
-      # one site — per-host rate stays one polite crawler.
-      max-parallel: 6
+      # Modest parallelism; chunks are host-disjoint so this never
+      # concentrates load on one site.
+      max-parallel: 4
       matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
     steps:
       - uses: actions/checkout@v4
@@ -118,13 +98,9 @@ jobs:
           FOLLOW_LINKS: ${{ inputs.follow_links && 'true' || 'false' }}
           MAX_PAGES: ${{ inputs.max_pages }}
         run: |
-          # --max-pages always applies: an oversized single-host chunk
-          # crawls a bounded batch, checkpoints durably, and leaves the
-          # remainder pending for the next dispatch — instead of
-          # blowing the job timeout with nothing preserved.
-          EXTRA="--max-pages $MAX_PAGES"
+          EXTRA=""
           if [ "$FOLLOW_LINKS" = "true" ]; then
-            EXTRA="$EXTRA --follow-links"
+            EXTRA="--follow-links --max-pages $MAX_PAGES"
           fi
           python3 archive.py \
             --seeds "chunks/$CHUNK.txt" \

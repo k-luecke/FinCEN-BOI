@@ -86,28 +86,9 @@ def main() -> int:
         action="store_true",
         help='Print {"chunk": [...]} JSON for a GitHub Actions matrix',
     )
-    parser.add_argument(
-        "--exclude-hosts",
-        default="",
-        help="Comma-separated hosts to leave out of this crawl",
-    )
     args = parser.parse_args()
 
     by_host = load_seed_lines(Path(args.seeds))
-
-    excluded = {
-        h.strip().lower()
-        for h in args.exclude_hosts.split(",")
-        if h.strip()
-    }
-
-    for host in list(by_host):
-        if host in excluded:
-            dropped = len(by_host.pop(host))
-            print(
-                f"excluded {host}: {dropped} URLs held back",
-                file=sys.stderr,
-            )
     total = sum(len(lines) for lines in by_host.values())
 
     if not total:

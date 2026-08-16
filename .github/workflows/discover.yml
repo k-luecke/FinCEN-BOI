@@ -7,15 +7,6 @@ on:
     # the daily collect-pending run.
     - cron: "41 7 * * *"
   workflow_dispatch:
-    inputs:
-      max_urls_per_host:
-        description: "Sitemap URL ceiling per host (deep runs: 30000+)"
-        default: "5000"
-        type: string
-      max_sitemaps:
-        description: "Sitemap fetches per host"
-        default: "50"
-        type: string
 
 permissions:
   contents: write
@@ -35,13 +26,7 @@ jobs:
           python-version: "3.12"
 
       - name: Enumerate sitemaps and Federal Register collection
-        env:
-          MAX_URLS: ${{ inputs.max_urls_per_host || '5000' }}
-          MAX_SITEMAPS: ${{ inputs.max_sitemaps || '50' }}
-        run: >
-          python3 discover.py
-          --max-urls-per-host "$MAX_URLS"
-          --max-sitemaps "$MAX_SITEMAPS"
+        run: python3 discover.py
 
       - name: Commit inventory and candidate seeds
         run: |
