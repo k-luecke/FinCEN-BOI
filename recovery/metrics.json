@@ -4,8 +4,8 @@
       "ACCESS_RESTRICTED": 1
     },
     "doj": {
-      "RECOVERED_WEB_ARCHIVE": 53,
-      "UNRESOLVED_CHALLENGE": 4264
+      "RECOVERED_WEB_ARCHIVE": 126,
+      "UNRESOLVED_CHALLENGE": 4191
     },
     "federal_register": {
       "RECOVERED_OFFICIAL_MIRROR": 317,
@@ -26,6 +26,9 @@
     "sec": {
       "ACCESS_RESTRICTED": 1,
       "NON_CONTENT_TECHNICAL_RESPONSE": 4
+    },
+    "web_archive": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 131
     }
   },
   "by_host": {
@@ -34,6 +37,9 @@
     },
     "bsaefiling.fincen.gov": {
       "NON_CONTENT_TECHNICAL_RESPONSE": 1
+    },
+    "web.archive.org": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 131
     },
     "www.congress.gov": {
       "ACCESS_RESTRICTED": 1
@@ -55,42 +61,42 @@
       "NON_CONTENT_TECHNICAL_RESPONSE": 1
     },
     "www.justice.gov": {
-      "RECOVERED_WEB_ARCHIVE": 53,
-      "UNRESOLVED_CHALLENGE": 4264
+      "RECOVERED_WEB_ARCHIVE": 126,
+      "UNRESOLVED_CHALLENGE": 4191
     },
     "www.sec.gov": {
       "ACCESS_RESTRICTED": 1,
       "NON_CONTENT_TECHNICAL_RESPONSE": 4
     }
   },
-  "challenge_observations": 4648,
-  "document_identities": 4648,
+  "challenge_observations": 4779,
+  "document_identities": 4779,
   "document_identity_coverage": {
     "ACCESS_RESTRICTED": 4,
-    "NON_CONTENT_TECHNICAL_RESPONSE": 8,
+    "NON_CONTENT_TECHNICAL_RESPONSE": 139,
     "RECOVERED_OFFICIAL_MIRROR": 317,
-    "RECOVERED_WEB_ARCHIVE": 53,
-    "UNRESOLVED_CHALLENGE": 4266
+    "RECOVERED_WEB_ARCHIVE": 126,
+    "UNRESOLVED_CHALLENGE": 4193
   },
-  "generated_at": "2026-08-15T23:13:13.362277+00:00",
-  "identities_resolved": 4625,
-  "recovery_links": 687,
+  "generated_at": "2026-08-16T01:45:45.921496+00:00",
+  "identities_resolved": 4661,
+  "recovery_links": 760,
   "recovery_links_by_method": {
     "federal_register_api": 317,
     "federal_register_api_inventory_crossref": 317,
-    "wayback_cdx": 53
+    "wayback_cdx": 126
   },
   "recovery_links_by_relationship": {
-    "ARCHIVED_VERSION": 53,
+    "ARCHIVED_VERSION": 126,
     "DERIVED_REPRESENTATION": 317,
     "OFFICIAL_MIRROR": 317
   },
   "requested_url_coverage": {
     "ACCESS_RESTRICTED": 4,
-    "NON_CONTENT_TECHNICAL_RESPONSE": 8,
+    "NON_CONTENT_TECHNICAL_RESPONSE": 139,
     "RECOVERED_OFFICIAL_MIRROR": 317,
-    "RECOVERED_WEB_ARCHIVE": 53,
-    "UNRESOLVED_CHALLENGE": 4266
+    "RECOVERED_WEB_ARCHIVE": 126,
+    "UNRESOLVED_CHALLENGE": 4193
   },
   "semantics_note": "BOT_CHALLENGE / non-content captures are never counted as ARCHIVED_CONTENT. RECOVERED_* states preserve the distinction between original publisher and retrieval host; original challenge observations are retained.",
   "top_fingerprints": {
@@ -107,13 +113,13 @@
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2466": 57,
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2477": 70,
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2488": 59,
-    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2510": 50,
-    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2576": 57
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2576": 57,
+    "ERROR_RESPONSE|transport_error:<urlopen error [Errno 111] Connection refused>": 121
   },
-  "unresolved": 4278,
+  "unresolved": 4336,
   "unresolved_by_tier": {
     "0": 4,
-    "1": 2491,
+    "1": 2549,
     "2": 1783
   }
 }

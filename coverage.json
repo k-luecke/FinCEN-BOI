@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-15T23:13:14.790265+00:00",
+  "generated_at": "2026-08-16T01:45:47.546549+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -113,14 +113,14 @@
     {
       "host": "web.archive.org",
       "urls_discovered": 0,
-      "urls_attempted": 275,
-      "urls_archived": 144,
+      "urls_attempted": 365,
+      "urls_archived": 306,
       "non_content_captures": 0,
-      "urls_with_content": 144,
+      "urls_with_content": 306,
       "ceiling_hit": "no",
-      "bytes": 5247544,
-      "median_object_bytes": 254,
-      "p95_object_bytes": 101556,
+      "bytes": 12439923,
+      "median_object_bytes": 256,
+      "p95_object_bytes": 101148,
       "known_bulk_gaps": []
     },
     {
@@ -243,7 +243,7 @@
       "non_content_captures": 4317,
       "urls_with_content": 684,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 79527398,
+      "bytes": 79527390,
       "median_object_bytes": 2494,
       "p95_object_bytes": 98703,
       "known_bulk_gaps": []
