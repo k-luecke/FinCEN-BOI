@@ -308,6 +308,11 @@ def main() -> int:
     for url in sorted(latest):
         record = latest[url]
         family = source_family(url)
+        if family == "web_archive":
+            # web.archive.org URLs are recovery-retrieval
+            # infrastructure, not requested public records; their
+            # transport failures are run telemetry, not challenges.
+            continue
         body = read_body(record, objects_root)
         cls = classify_record(record, body, patterns)
         counts[cls.kind] += 1

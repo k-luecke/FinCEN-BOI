@@ -1,6 +1,6 @@
 {
   "access_restricted": 4,
-  "archived_content_urls": 34714,
+  "archived_content_urls": 34787,
   "archived_note": "archived_urls counts every URL with stored bytes; archived_content_urls excludes captures the challenge detector classified as bot challenges/interstitials/app shells (see recovery/)",
   "archived_urls": 38988,
   "attempted_urls": 39463,
@@ -32,9 +32,9 @@
     "WEB-ARCHIVE": 461
   },
   "discovered_urls": 188003,
-  "durability_note": "release assets verified this run",
-  "durably_archived_urls": 38988,
-  "generated_at": "2026-08-16T01:45:45.749102+00:00",
+  "durability_note": "not verified this run \u2014 see releases for durable copies",
+  "durably_archived_urls": 0,
+  "generated_at": "2026-08-17T00:28:08.537547+00:00",
   "graph_entities": 0,
   "graph_people": 0,
   "ledger_change_types": {
@@ -44,7 +44,7 @@
   },
   "manual_review": 0,
   "modified_urls": 8,
-  "non_content_technical_responses": 4274,
+  "non_content_technical_responses": 4201,
   "not_found_urls": 87,
   "ownership_bearing_documents": 0,
   "queue_states": {
@@ -64,11 +64,11 @@
       "ACCESS_RESTRICTED": 4,
       "NON_CONTENT_TECHNICAL_RESPONSE": 8,
       "RECOVERED_OFFICIAL_MIRROR": 317,
-      "RECOVERED_WEB_ARCHIVE": 53,
-      "UNRESOLVED_CHALLENGE": 4266
+      "RECOVERED_WEB_ARCHIVE": 126,
+      "UNRESOLVED_CHALLENGE": 4193
     },
     "recovery_links_by_relationship": {
-      "ARCHIVED_VERSION": 53,
+      "ARCHIVED_VERSION": 126,
       "DERIVED_REPRESENTATION": 317,
       "OFFICIAL_MIRROR": 317
     },
@@ -76,10 +76,10 @@
       "ACCESS_RESTRICTED": 4,
       "NON_CONTENT_TECHNICAL_RESPONSE": 8,
       "RECOVERED_OFFICIAL_MIRROR": 317,
-      "RECOVERED_WEB_ARCHIVE": 53,
-      "UNRESOLVED_CHALLENGE": 4266
+      "RECOVERED_WEB_ARCHIVE": 126,
+      "UNRESOLVED_CHALLENGE": 4193
     },
-    "unresolved": 4278
+    "unresolved": 4205
   },
   "robots_disallowed": 0,
   "temporary_errors": 384,

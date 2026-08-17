@@ -1,6 +1,6 @@
 # Coverage report
 
-Generated 2026-08-16T01:45:47.546549+00:00 from committed inventory + manifest.
+Generated 2026-08-17T00:28:10.316703+00:00 from committed inventory + manifest.
 
 **Reading this table:** a host at the sitemap cap (5000 URLs/host) is bounded by *discovery budget*, not by the end of its collection — those rows are a first slice. Archive size is never a proxy for share-of-BOI preserved: the CTA-filed database is confidential and not publicly downloadable.
 

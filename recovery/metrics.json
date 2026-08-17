@@ -26,9 +26,6 @@
     "sec": {
       "ACCESS_RESTRICTED": 1,
       "NON_CONTENT_TECHNICAL_RESPONSE": 4
-    },
-    "web_archive": {
-      "NON_CONTENT_TECHNICAL_RESPONSE": 131
     }
   },
   "by_host": {
@@ -37,9 +34,6 @@
     },
     "bsaefiling.fincen.gov": {
       "NON_CONTENT_TECHNICAL_RESPONSE": 1
-    },
-    "web.archive.org": {
-      "NON_CONTENT_TECHNICAL_RESPONSE": 131
     },
     "www.congress.gov": {
       "ACCESS_RESTRICTED": 1
@@ -69,17 +63,17 @@
       "NON_CONTENT_TECHNICAL_RESPONSE": 4
     }
   },
-  "challenge_observations": 4779,
-  "document_identities": 4779,
+  "challenge_observations": 4648,
+  "document_identities": 4648,
   "document_identity_coverage": {
     "ACCESS_RESTRICTED": 4,
-    "NON_CONTENT_TECHNICAL_RESPONSE": 139,
+    "NON_CONTENT_TECHNICAL_RESPONSE": 8,
     "RECOVERED_OFFICIAL_MIRROR": 317,
     "RECOVERED_WEB_ARCHIVE": 126,
     "UNRESOLVED_CHALLENGE": 4193
   },
-  "generated_at": "2026-08-16T01:45:45.921496+00:00",
-  "identities_resolved": 4661,
+  "generated_at": "2026-08-17T00:28:00.836178+00:00",
+  "identities_resolved": 4625,
   "recovery_links": 760,
   "recovery_links_by_method": {
     "federal_register_api": 317,
@@ -93,7 +87,7 @@
   },
   "requested_url_coverage": {
     "ACCESS_RESTRICTED": 4,
-    "NON_CONTENT_TECHNICAL_RESPONSE": 139,
+    "NON_CONTENT_TECHNICAL_RESPONSE": 8,
     "RECOVERED_OFFICIAL_MIRROR": 317,
     "RECOVERED_WEB_ARCHIVE": 126,
     "UNRESOLVED_CHALLENGE": 4193
@@ -113,13 +107,13 @@
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2466": 57,
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2477": 70,
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2488": 59,
-    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2576": 57,
-    "ERROR_RESPONSE|transport_error:<urlopen error [Errno 111] Connection refused>": 121
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2510": 50,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2576": 57
   },
-  "unresolved": 4336,
+  "unresolved": 4205,
   "unresolved_by_tier": {
     "0": 4,
-    "1": 2549,
+    "1": 2418,
     "2": 1783
   }
 }

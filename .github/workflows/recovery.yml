@@ -138,7 +138,11 @@ jobs:
           attempt=0
           while :; do
             git fetch origin "$BRANCH"
-            git reset --soft FETCH_HEAD
+            # Mixed reset: HEAD and index move to the freshest branch
+            # state while the working tree keeps this run's outputs.
+            # (--soft kept the triggering sha's stale index and made
+            # bot commits silently revert code pushed mid-run.)
+            git reset FETCH_HEAD
             # Start shared state files from the freshest committed
             # version, then re-apply this run's records.
             for f in manifest.jsonl ledger.jsonl queue.jsonl metrics.json; do

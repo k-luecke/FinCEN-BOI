@@ -1,11 +1,11 @@
 # Recovery report — challenge-aware lawful recovery
 
-Generated 2026-08-16T01:45:45.921496+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
+Generated 2026-08-17T00:28:00.836178+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
 
 ## 1. Challenge / non-content responses
 
-- **4779** challenge/non-content observations across the corpus (latest observation per URL).
-- Requested-URL coverage states: UNRESOLVED_CHALLENGE: 4193, RECOVERED_OFFICIAL_MIRROR: 317, NON_CONTENT_TECHNICAL_RESPONSE: 139, RECOVERED_WEB_ARCHIVE: 126, ACCESS_RESTRICTED: 4
+- **4648** challenge/non-content observations across the corpus (latest observation per URL).
+- Requested-URL coverage states: UNRESOLVED_CHALLENGE: 4193, RECOVERED_OFFICIAL_MIRROR: 317, RECOVERED_WEB_ARCHIVE: 126, NON_CONTENT_TECHNICAL_RESPONSE: 8, ACCESS_RESTRICTED: 4
 
 ## 2. Hosts generating them
 
@@ -13,7 +13,6 @@ Generated 2026-08-16T01:45:45.921496+00:00 from committed recovery state. No CAP
 |------|--------|
 | bsaaml.ffiec.gov | ACCESS_RESTRICTED: 1 |
 | bsaefiling.fincen.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
-| web.archive.org | NON_CONTENT_TECHNICAL_RESPONSE: 131 |
 | www.congress.gov | ACCESS_RESTRICTED: 1 |
 | www.federalregister.gov | RECOVERED_OFFICIAL_MIRROR: 317, UNRESOLVED_CHALLENGE: 2 |
 | www.ffiec.gov | ACCESS_RESTRICTED: 1 |
@@ -25,8 +24,8 @@ Generated 2026-08-16T01:45:45.921496+00:00 from committed recovery state. No CAP
 
 ## 3. Document identities
 
-- 4779 identities built; 4661 resolved via API metadata or URL-slug derivation.
-- Document-identity coverage: UNRESOLVED_CHALLENGE: 4193, RECOVERED_OFFICIAL_MIRROR: 317, NON_CONTENT_TECHNICAL_RESPONSE: 139, RECOVERED_WEB_ARCHIVE: 126, ACCESS_RESTRICTED: 4
+- 4648 identities built; 4625 resolved via API metadata or URL-slug derivation.
+- Document-identity coverage: UNRESOLVED_CHALLENGE: 4193, RECOVERED_OFFICIAL_MIRROR: 317, RECOVERED_WEB_ARCHIVE: 126, NON_CONTENT_TECHNICAL_RESPONSE: 8, ACCESS_RESTRICTED: 4
 
 ## 4–7. Recovery outcomes
 
@@ -34,7 +33,7 @@ Generated 2026-08-16T01:45:45.921496+00:00 from committed recovery state. No CAP
 - Official government mirrors (`OFFICIAL_MIRROR`): 317
 - Public web archive (`ARCHIVED_VERSION`): 126
 - Derived representations (API metadata records): 317
-- Still unresolved: **4336** (by tier: {0: 4, 1: 2549, 2: 1783})
+- Still unresolved: **4205** (by tier: {0: 4, 1: 2418, 2: 1783})
 
 ## 8. Highest-value challenged collections
 
@@ -57,7 +56,6 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 ## 12. Challenge fingerprints observed
 
 - `ACCESS_INTERSTITIAL|redirect_to_interstitial_endpoint` × 319
-- `ERROR_RESPONSE|transport_error:<urlopen error [Errno 111] Connection refused>` × 121
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2409` × 91
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2417` × 85
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2433` × 77
@@ -71,6 +69,7 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2466` × 57
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2411` × 51
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2431` × 51
+- `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2510` × 50
 
 ## 13. Most effective alternate routes
 
