@@ -11,11 +11,11 @@ Validated clean by `ownership_schema.py` (0 problems).
 
 | Table | Records |
 |---|---|
-| entities | 660 |
-| people | 254 |
-| edges | 966 (228 BENEFICIAL_OWNER · 704 PARENT · 23 UNKNOWN_CONTROL_ROLE · 11 RELATED_ORGANIZATION) |
-| names (DBA/FORMER/LEGAL history) | 311 |
-| unresolved | 342 (+ 26 merge candidates) |
+| entities | 743 |
+| people | 237 |
+| edges | 1,022 |
+| names (DBA/FORMER/LEGAL history) | 313 |
+| unresolved | 291 (+ 41 merge candidates) |
 
 213 person aliases (a/k/a spellings, d/b/a trade names) are recorded
 on person nodes as `name_variants` / `dba_names`-style variants, not as
@@ -82,6 +82,21 @@ Coverage: 871/1220 documents publication-dated (533 by EDGAR
 metadata), 224 event-dated; 761/959 edges (79%) carry `source_date`,
 331 (34%) carry `valid_from`; 234/391 unique relationships (59%) have
 a temporal envelope.
+
+## In-document defined-term resolution
+
+Legal documents define short references once and use them throughout
+(`Wells Fargo Bank, N.A. ("WFB" or the "Bank")`). `content_pass_2.
+defined_terms` extracts 8,944 such definitions across 953 documents
+(quoted definitions + initials-verified acronyms; terms defined twice
+with different full names are ambiguous and resolve nothing). The
+builder resolves party names strictly within their own document,
+records the as-stated wording on the edge
+(`subject_as_stated`/`object_as_stated`, `resolution: defined-term`),
+and restores confidence (0.75) for generic parties that resolved —
+recovering 60+ previously sub-threshold observations ("the Bank" in
+OCC/SEC material) and dissolving acronym nodes (WFB) into their full
+entities.
 
 ## Cross-document entity resolution
 
