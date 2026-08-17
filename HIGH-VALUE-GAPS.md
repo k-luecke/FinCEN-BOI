@@ -43,9 +43,12 @@ close.
 
 ## Watch items
 
-- The June 2026 GAO report on BOI collection/sharing and six-agency
+- ~~The June 2026 GAO report on BOI collection/sharing and six-agency
   access: locate the report landing page + PDF on gao.gov and seed
   them explicitly (gao.gov's lack of sitemap means discovery will not
-  find it automatically).
+  find it automatically).~~ Done: GAO-26-108182 ("Illicit Finance:
+  Status of Treasury's Safeguards for Providing Access to Information
+  on Corporate Ownership", released 2026-06-23) — landing page and
+  full-report PDF are now in `seeds.txt` under Congress / GAO.
 - FinCEN deletion implementation notices: as published, seed same-day
   (see deletion-record/README.md).

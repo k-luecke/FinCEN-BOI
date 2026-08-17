@@ -79,3 +79,11 @@ https://oversight.house.gov/|CONGRESS|House Oversight
 https://www.congress.gov/|CONGRESS|Congress
 https://www.gao.gov/reports-testimonies|GOV-PUBLIC|GAO
 https://www.gao.gov/topics|GOV-PUBLIC|GAO
+
+# GAO-26-108182 (released 2026-06-23): "Illicit Finance: Status of
+# Treasury's Safeguards for Providing Access to Information on
+# Corporate Ownership" — the June 2026 report on BOI collection/
+# sharing and six-agency access. Seeded explicitly because gao.gov
+# exposes no sitemap (see HIGH-VALUE-GAPS.md watch items).
+https://www.gao.gov/products/gao-26-108182|GOV-PUBLIC|GAO BOI access report
+https://www.gao.gov/assets/890/886927.pdf|GOV-PUBLIC|GAO BOI access report PDF
