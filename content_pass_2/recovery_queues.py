@@ -98,8 +98,10 @@ def mine_citations():
     known = set()
     for rec in read_jsonl(os.path.join(REPO_ROOT, "ledger.jsonl")):
         known.add((rec.get("url") or "").rstrip("/"))
-    found = defaultdict(lambda: {"count": 0, "topical": 0, "sources": set()})
-    gao_reports = defaultdict(lambda: {"count": 0, "topical": 0, "sources": set()})
+    found = defaultdict(lambda: {"count": 0, "topical": 0, "sources": set(),
+                                 "edges": []})
+    gao_reports = defaultdict(lambda: {"count": 0, "topical": 0,
+                                       "sources": set(), "edges": []})
     for rec in inv:
         tp = text_disk_path(rec["sha256"])
         if not os.path.isfile(tp):
@@ -118,6 +120,15 @@ def mine_citations():
             e["topical"] += 1 if TOPIC_RE.search(ctx) else 0
             if len(e["sources"]) < 5:
                 e["sources"].add(rec["sha256"])
+            # The citation edge that causes an acquisition is itself
+            # evidence: SOURCE_DOCUMENT --CITES--> DISCOVERED_DOCUMENT,
+            # with the exact locator in the source.
+            if len(e["edges"]) < 10:
+                e["edges"].append({
+                    "citing_sha256": rec["sha256"],
+                    "citing_url": rec.get("url"),
+                    "char_start": m.start(),
+                    "context": " ".join(ctx.split())[:160]})
         for m in GAO_NUM_RE.finditer(text):
             num = f"GAO-{m.group(1)}-{m.group(2)}"
             ctx = text[max(0, m.start() - 200):m.end() + 200]
@@ -126,6 +137,12 @@ def mine_citations():
             e["topical"] += 1 if TOPIC_RE.search(ctx) else 0
             if len(e["sources"]) < 5:
                 e["sources"].add(rec["sha256"])
+            if len(e["edges"]) < 10:
+                e["edges"].append({
+                    "citing_sha256": rec["sha256"],
+                    "citing_url": rec.get("url"),
+                    "char_start": m.start(),
+                    "context": " ".join(ctx.split())[:160]})
     return found, gao_reports
 
 
@@ -178,6 +195,35 @@ def emit_queues(found, gao_reports):
     return qs
 
 
+def emit_citation_edges(found, gao_reports):
+    """acquisition/citation-edges.jsonl.gz: one row per preserved
+    citation edge (capped 10 per cited target), so every acquisition is
+    traceable to the exact place in the archived document that cited
+    it — distinguishing independent discovery from documents reached
+    through a specific investigation or administrative record."""
+    import gzip
+    path = os.path.join(ACQ_ROOT, "citation-edges.jsonl.gz")
+    n = 0
+    with gzip.open(path, "wt", encoding="utf-8") as fh:
+        for cited, e in sorted(found.items()):
+            for edge in e["edges"]:
+                fh.write(json.dumps(
+                    {"assertion": "CITES", "cited_url": cited, **edge,
+                     "pass_version": PASS2_VERSION},
+                    sort_keys=True, ensure_ascii=False) + "\n")
+                n += 1
+        for num, e in sorted(gao_reports.items()):
+            for edge in e["edges"]:
+                fh.write(json.dumps(
+                    {"assertion": "CITES",
+                     "cited_url": f"https://www.gao.gov/products/{num}",
+                     "cited_gao_report": num, **edge,
+                     "pass_version": PASS2_VERSION},
+                    sort_keys=True, ensure_ascii=False) + "\n")
+                n += 1
+    log(f"citation-edges.jsonl.gz: {n} citation edges")
+
+
 def emit_seeds(challenges, qs, retry_limit=4500):
     """One combined recovery seed file, host-diverse by construction."""
     lines = []
@@ -205,6 +251,7 @@ def main():
     challenges = classify_doj_challenges()
     found, gao_reports = mine_citations()
     qs = emit_queues(found, gao_reports)
+    emit_citation_edges(found, gao_reports)
     emit_seeds(challenges, qs)
 
 

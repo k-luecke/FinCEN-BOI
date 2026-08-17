@@ -70,6 +70,7 @@ jobs:
           set -euo pipefail
           python3 build_ownership_graph.py
           python3 ownership_schema.py --root ownership-reconstruction
+          python3 analyze_graph.py
 
       - name: Commit pass-2 outputs
         env:
