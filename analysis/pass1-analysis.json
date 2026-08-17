@@ -1,0 +1,661 @@
+{
+ "generated_from": "content-pass-1 outputs of 2026-08-15T13:53:44.662429+00:00",
+ "sample_seed": 20260817,
+ "reconciliation": {
+  "candidates_total": {
+   "computed": 98780,
+   "baseline": 98780
+  },
+  "documents_ownership_bearing_raw_note": "baseline counts sidebar-affected docs; see cleaned figures",
+  "near_duplicate_groups": {
+   "computed": 1529,
+   "baseline": 1529
+  }
+ },
+ "treasury_sidebar_boilerplate_candidates": 5000,
+ "near_duplicate_docs_removed": 6385,
+ "candidates_by_category": {
+  "BOI_CTA": {
+   "raw": 2592,
+   "boilerplate_removed": 2592,
+   "dedup_adjusted": 2538
+  },
+  "CONTROL_EXPLICIT": {
+   "raw": 2654,
+   "boilerplate_removed": 2654,
+   "dedup_adjusted": 2569
+  },
+  "FINANCIAL_FLOW": {
+   "raw": 10250,
+   "boilerplate_removed": 10250,
+   "dedup_adjusted": 9817
+  },
+  "FORMATION_DISSOLUTION": {
+   "raw": 4261,
+   "boilerplate_removed": 4261,
+   "dedup_adjusted": 3967
+  },
+  "OWNERSHIP_EXPLICIT": {
+   "raw": 6763,
+   "boilerplate_removed": 6763,
+   "dedup_adjusted": 6514
+  },
+  "PARENT_SUBSIDIARY": {
+   "raw": 17014,
+   "boilerplate_removed": 17014,
+   "dedup_adjusted": 16094
+  },
+  "ROLE_TITLE": {
+   "raw": 8850,
+   "boilerplate_removed": 8850,
+   "dedup_adjusted": 8246
+  },
+  "SAR_BSA": {
+   "raw": 42453,
+   "boilerplate_removed": 37453,
+   "dedup_adjusted": 35529
+  },
+  "SHELL_NOMINEE": {
+   "raw": 3804,
+   "boilerplate_removed": 3804,
+   "dedup_adjusted": 3643
+  },
+  "STRUCTURED": {
+   "raw": 139,
+   "boilerplate_removed": 139,
+   "dedup_adjusted": 122
+  }
+ },
+ "documents_with_any_candidate_clean": 9842,
+ "ownership_bearing_documents_clean": 4024,
+ "ownership_bearing_documents_dedup": 3816,
+ "ownership_bearing_by_family": [
+  {
+   "source_family": "FBI_VAULT",
+   "documents_scanned": 5001,
+   "ownership_bearing_docs": 0,
+   "ownership_bearing_docs_dedup": 0,
+   "ownership_bearing_rate": 0.0
+  },
+  {
+   "source_family": "TREASURY",
+   "documents_scanned": 5001,
+   "ownership_bearing_docs": 675,
+   "ownership_bearing_docs_dedup": 643,
+   "ownership_bearing_rate": 0.135
+  },
+  {
+   "source_family": "FDIC",
+   "documents_scanned": 5000,
+   "ownership_bearing_docs": 422,
+   "ownership_bearing_docs_dedup": 411,
+   "ownership_bearing_rate": 0.0844
+  },
+  {
+   "source_family": "CONGRESS_OVERSIGHT",
+   "documents_scanned": 4912,
+   "ownership_bearing_docs": 40,
+   "ownership_bearing_docs_dedup": 38,
+   "ownership_bearing_rate": 0.0081
+  },
+  {
+   "source_family": "OCC",
+   "documents_scanned": 4875,
+   "ownership_bearing_docs": 1540,
+   "ownership_bearing_docs_dedup": 1453,
+   "ownership_bearing_rate": 0.3159
+  },
+  {
+   "source_family": "SEC",
+   "documents_scanned": 4603,
+   "ownership_bearing_docs": 624,
+   "ownership_bearing_docs_dedup": 585,
+   "ownership_bearing_rate": 0.1356
+  },
+  {
+   "source_family": "FINCEN",
+   "documents_scanned": 2872,
+   "ownership_bearing_docs": 519,
+   "ownership_bearing_docs_dedup": 485,
+   "ownership_bearing_rate": 0.1807
+  },
+  {
+   "source_family": "DOJ",
+   "documents_scanned": 684,
+   "ownership_bearing_docs": 40,
+   "ownership_bearing_docs_dedup": 39,
+   "ownership_bearing_rate": 0.0585
+  },
+  {
+   "source_family": "GOVINFO",
+   "documents_scanned": 494,
+   "ownership_bearing_docs": 157,
+   "ownership_bearing_docs_dedup": 156,
+   "ownership_bearing_rate": 0.3178
+  },
+  {
+   "source_family": "TREASURY_OIG",
+   "documents_scanned": 72,
+   "ownership_bearing_docs": 6,
+   "ownership_bearing_docs_dedup": 5,
+   "ownership_bearing_rate": 0.0833
+  },
+  {
+   "source_family": "GAO",
+   "documents_scanned": 2,
+   "ownership_bearing_docs": 0,
+   "ownership_bearing_docs_dedup": 0,
+   "ownership_bearing_rate": 0.0
+  },
+  {
+   "source_family": "CONGRESS_JUDICIARY",
+   "documents_scanned": 1,
+   "ownership_bearing_docs": 0,
+   "ownership_bearing_docs_dedup": 0,
+   "ownership_bearing_rate": 0.0
+  },
+  {
+   "source_family": "OTHER_GOV",
+   "documents_scanned": 1,
+   "ownership_bearing_docs": 1,
+   "ownership_bearing_docs_dedup": 1,
+   "ownership_bearing_rate": 1.0
+  }
+ ],
+ "candidates_by_family_clean": {
+  "FINCEN": 28712,
+  "OCC": 28391,
+  "GOVINFO": 12555,
+  "SEC": 9707,
+  "TREASURY": 8838,
+  "FDIC": 4408,
+  "DOJ": 776,
+  "CONGRESS_OVERSIGHT": 269,
+  "TREASURY_OIG": 78,
+  "OTHER_GOV": 46
+ },
+ "document_years_clean": {
+  "1900": 10,
+  "1904": 45,
+  "1905": 1,
+  "1909": 3,
+  "1913": 3,
+  "1914": 1,
+  "1915": 13,
+  "1919": 1,
+  "1921": 3,
+  "1928": 1,
+  "1933": 338,
+  "1934": 889,
+  "1935": 1,
+  "1937": 1,
+  "1938": 1,
+  "1939": 1,
+  "1940": 18,
+  "1941": 5,
+  "1946": 1,
+  "1947": 1,
+  "1948": 1,
+  "1950": 6,
+  "1951": 2,
+  "1955": 1,
+  "1956": 3,
+  "1959": 2,
+  "1960": 3,
+  "1961": 9,
+  "1962": 7,
+  "1963": 1,
+  "1964": 3,
+  "1966": 1,
+  "1968": 3,
+  "1969": 1,
+  "1970": 8,
+  "1971": 1,
+  "1972": 1,
+  "1973": 1,
+  "1974": 75,
+  "1975": 1,
+  "1977": 2,
+  "1978": 5,
+  "1979": 2,
+  "1980": 31,
+  "1981": 1,
+  "1982": 1,
+  "1983": 5,
+  "1984": 5,
+  "1985": 1,
+  "1986": 1,
+  "1988": 15,
+  "1989": 14,
+  "1990": 7,
+  "1991": 5,
+  "1992": 12,
+  "1993": 6,
+  "1994": 10,
+  "1995": 13,
+  "1996": 47,
+  "1997": 56,
+  "1998": 41,
+  "1999": 58,
+  "2000": 107,
+  "2001": 78,
+  "2002": 158,
+  "2003": 152,
+  "2004": 147,
+  "2005": 173,
+  "2006": 188,
+  "2007": 169,
+  "2008": 292,
+  "2009": 696,
+  "2010": 709,
+  "2011": 874,
+  "2012": 546,
+  "2013": 346,
+  "2014": 328,
+  "2015": 1044,
+  "2016": 1489,
+  "2017": 1057,
+  "2018": 841,
+  "2019": 733,
+  "2020": 654,
+  "2021": 956,
+  "2022": 450,
+  "2023": 456,
+  "2024": 539,
+  "2025": 461,
+  "2026": 5263
+ },
+ "ownership_doc_years_clean": {
+  "1900": 5,
+  "1904": 13,
+  "1905": 1,
+  "1913": 1,
+  "1933": 41,
+  "1934": 144,
+  "1937": 1,
+  "1940": 2,
+  "1950": 5,
+  "1955": 1,
+  "1969": 1,
+  "1970": 5,
+  "1974": 10,
+  "1975": 1,
+  "1977": 1,
+  "1983": 1,
+  "1984": 1,
+  "1988": 6,
+  "1989": 8,
+  "1990": 2,
+  "1991": 1,
+  "1992": 2,
+  "1993": 1,
+  "1994": 2,
+  "1995": 2,
+  "1996": 12,
+  "1997": 14,
+  "1998": 8,
+  "1999": 15,
+  "2000": 18,
+  "2001": 12,
+  "2002": 17,
+  "2003": 22,
+  "2004": 29,
+  "2005": 14,
+  "2006": 36,
+  "2007": 32,
+  "2008": 48,
+  "2009": 83,
+  "2010": 92,
+  "2011": 75,
+  "2012": 76,
+  "2013": 48,
+  "2014": 85,
+  "2015": 59,
+  "2016": 69,
+  "2017": 70,
+  "2018": 73,
+  "2019": 218,
+  "2020": 218,
+  "2021": 167,
+  "2022": 140,
+  "2023": 153,
+  "2024": 187,
+  "2025": 184,
+  "2026": 562
+ },
+ "documents_with_unparseable_or_junk_date": 35,
+ "top_ownership_control_candidates": [
+  {
+   "candidate_id": "16f2844f3ae5cd93-0003",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "20 Percent Equity",
+   "source_family": "FDIC",
+   "source_url": "https://www.fdic.gov/news/press-releases/2023/pr23105.html",
+   "document_date": "2026-06-02",
+   "span_verified": true,
+   "snippet": "arch FDIC.gov  Search  Advanced Search  Home  News  Press Releases  2023  FDIC Signature Bridge Bank Receivership Sells 20 Percent Equity Interest in Entity Holding $16.8 Billion of Commercial Real Estate Loans  December 14, 2023  Share on Facebook  Share o"
+  },
+  {
+   "candidate_id": "16f2844f3ae5cd93-0004",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "Equity Interest",
+   "source_family": "FDIC",
+   "source_url": "https://www.fdic.gov/news/press-releases/2023/pr23105.html",
+   "document_date": "2026-06-02",
+   "span_verified": true,
+   "snippet": "ov  Search  Advanced Search  Home  News  Press Releases  2023  FDIC Signature Bridge Bank Receivership Sells 20 Percent Equity Interest in Entity Holding $16.8 Billion of Commercial Real Estate Loans  December 14, 2023  Share on Facebook  Share on X Share"
+  },
+  {
+   "candidate_id": "16f2844f3ae5cd93-0005",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "owned by",
+   "source_family": "FDIC",
+   "source_url": "https://www.fdic.gov/news/press-releases/2023/pr23105.html",
+   "document_date": "2026-06-02",
+   "span_verified": true,
+   "snippet": " paid $1.2 billion for a 20 percent equity interest in SIG CRE 2023 Venture LLC (Venture), a newly formed entity wholly owned by the FDIC\u2013Receiver. The FDIC\u2013Receiver will retain an 80 percent equity interest in the Venture. The FDIC\u2013Receiver contri"
+  },
+  {
+   "candidate_id": "16f2844f3ae5cd93-0006",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "20 percent equity",
+   "source_family": "FDIC",
+   "source_url": "https://www.fdic.gov/news/press-releases/2023/pr23105.html",
+   "document_date": "2026-06-02",
+   "span_verified": true,
+   "snippet": "idco L.L.C. (Hancock), an entity indirectly controlled by Blackstone, Inc. and other investors, paid $1.2 billion for a 20 percent equity interest in SIG CRE 2023 Venture LLC (Venture), a newly formed entity wholly owned by the FDIC\u2013Receiver. The FDIC\u2013Recei"
+  },
+  {
+   "candidate_id": "16f2844f3ae5cd93-0007",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "80 percent equity",
+   "source_family": "FDIC",
+   "source_url": "https://www.fdic.gov/news/press-releases/2023/pr23105.html",
+   "document_date": "2026-06-02",
+   "span_verified": true,
+   "snippet": "E 2023 Venture LLC (Venture), a newly formed entity wholly owned by the FDIC\u2013Receiver. The FDIC\u2013Receiver will retain an 80 percent equity interest in the Venture. The FDIC\u2013Receiver contributed to the Venture approximately $16.8 billion in CRE loans collater"
+  },
+  {
+   "candidate_id": "16f2844f3ae5cd93-0008",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "equity interest",
+   "source_family": "FDIC",
+   "source_url": "https://www.fdic.gov/news/press-releases/2023/pr23105.html",
+   "document_date": "2026-06-02",
+   "span_verified": true,
+   "snippet": " (Hancock), an entity indirectly controlled by Blackstone, Inc. and other investors, paid $1.2 billion for a 20 percent equity interest in SIG CRE 2023 Venture LLC (Venture), a newly formed entity wholly owned by the FDIC\u2013Receiver. The FDIC\u2013Receiver will "
+  },
+  {
+   "candidate_id": "16f2844f3ae5cd93-0009",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "equity interest",
+   "source_family": "FDIC",
+   "source_url": "https://www.fdic.gov/news/press-releases/2023/pr23105.html",
+   "document_date": "2026-06-02",
+   "span_verified": true,
+   "snippet": "ure LLC (Venture), a newly formed entity wholly owned by the FDIC\u2013Receiver. The FDIC\u2013Receiver will retain an 80 percent equity interest in the Venture. The FDIC\u2013Receiver contributed to the Venture approximately $16.8 billion in CRE loans collateralized by"
+  },
+  {
+   "candidate_id": "1cd046dad630e1d4-0001",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "75 percent of the shares",
+   "source_family": "TREASURY",
+   "source_url": "https://home.treasury.gov/news/press-releases/sm1037",
+   "document_date": null,
+   "span_verified": true,
+   "snippet": "ian pound ($52.7 million equivalent at time of announcement) joint venture in which Damascus Cham Holding Company holds 75 percent of the shares. Damascus Cham Holding Company provided in-kind (land) advances worth 17.3 billion Syrian pounds ($39.6 million equival"
+  },
+  {
+   "candidate_id": "36ab5d0affb19d4d-0003",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "95 percent equity",
+   "source_family": "FDIC",
+   "source_url": "https://www.fdic.gov/news/press-releases/2023/pr23106.html",
+   "document_date": "2026-06-02",
+   "span_verified": true,
+   "snippet": "n 1974 to provide financial resources to stabilize and revitalize underserved communities. The FDIC-Receiver retained a 95 percent equity interest in each Venture. The FDIC-Receiver contributed to the Ventures a total of approximately $5.8 billion of loans "
+  },
+  {
+   "candidate_id": "36ab5d0affb19d4d-0004",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "equity interest",
+   "source_family": "FDIC",
+   "source_url": "https://www.fdic.gov/news/press-releases/2023/pr23106.html",
+   "document_date": "2026-06-02",
+   "span_verified": true,
+   "snippet": " In a pair of transactions, the FDIC-Receiver established two newly formed ventures (Ventures), and sold a five percent equity interest in each Venture to Community Preservation Corporation (CPC). CPC is a nonprofit multifamily finance company that was fo"
+  },
+  {
+   "candidate_id": "36ab5d0affb19d4d-0005",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "equity interest",
+   "source_family": "FDIC",
+   "source_url": "https://www.fdic.gov/news/press-releases/2023/pr23106.html",
+   "document_date": "2026-06-02",
+   "span_verified": true,
+   "snippet": "rovide financial resources to stabilize and revitalize underserved communities. The FDIC-Receiver retained a 95 percent equity interest in each Venture. The FDIC-Receiver contributed to the Ventures a total of approximately $5.8 billion of loans collatera"
+  },
+  {
+   "candidate_id": "71f2f7c92dcda694-0001",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "owns 50 percent",
+   "source_family": "TREASURY",
+   "source_url": "https://home.treasury.gov/news/press-releases/sm1072",
+   "document_date": null,
+   "span_verified": true,
+   "snippet": "aa Hotel in Damascus, paying the government 2.25 billion Syrian pounds ($5 million) a year for 25 years. Al Qattan also owns 50 percent of Adam Trading and Investment LLC, which acquired a contract from the Damascus governorate in August 2018 to develop a"
+  },
+  {
+   "candidate_id": "89559cf2baa90477-0003",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "11 percent stake",
+   "source_family": "TREASURY",
+   "source_url": "https://home.treasury.gov/news/press-releases/hp1220",
+   "document_date": null,
+   "span_verified": true,
+   "snippet": "lic of Congo (DRC) \u2013 Kalukundi Equity \u2013 August 29, 2007 : The IFC approved this equity investment of $15 million for an 11 percent stake in Africo Resources Ltd, a junior mining company focusing on cobalt and copper exploration activities in the Kolwezi Di"
+  },
+  {
+   "candidate_id": "89559cf2baa90477-0004",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "15 percent ownership",
+   "source_family": "TREASURY",
+   "source_url": "https://home.treasury.gov/news/press-releases/hp1220",
+   "document_date": null,
+   "span_verified": true,
+   "snippet": "a \u2013 Lydian Resource Company; $2 million equity investment; June 28, 2007: The IFC approved this equity investment for a 15 percent ownership interest in Lydian Resource Company, a mining company focused on finding and acquiring deposits in Eastern Europe and C"
+  },
+  {
+   "candidate_id": "89559cf2baa90477-0005",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "ownership interest",
+   "source_family": "TREASURY",
+   "source_url": "https://home.treasury.gov/news/press-releases/hp1220",
+   "document_date": null,
+   "span_verified": true,
+   "snippet": "Resource Company; $2 million equity investment; June 28, 2007: The IFC approved this equity investment for a 15 percent ownership interest in Lydian Resource Company, a mining company focused on finding and acquiring deposits in Eastern Europe and Central As"
+  },
+  {
+   "candidate_id": "907a02db968f2bc2-0001",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "owner of Relief Defendant All American Capital Corp.",
+   "source_family": "SEC",
+   "source_url": "https://www.sec.gov/file/judg10-cv-00568dies",
+   "document_date": "2010-06-14",
+   "span_verified": true,
+   "snippet": "n until May 2009, when he resigned to become a consultant to the company. Id. \u00b6 10. Thomas is also the sole officer and owner of Relief Defendant All American Capital Corp. Id. From July 2007 through at least November 2009, UAV raised at least $10 million from approximately 100 investors thr"
+  },
+  {
+   "candidate_id": "98ee33827d540e1c-0003",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "20 Percent Equity",
+   "source_family": "FDIC",
+   "source_url": "https://www.fdic.gov/news/press-releases/2023/pr23107.html",
+   "document_date": "2026-06-02",
+   "span_verified": true,
+   "snippet": "enu  Search FDIC.gov  Search  Advanced Search  Home  News  Press Releases  2023  FDIC Signature Bank Receivership Sells 20 Percent Equity Interest in Entity Holding $9 Billion Rent\u2013Stabilized / Rent\u2013Controlled Multifamily Loans  December 20, 2023  Share on "
+  },
+  {
+   "candidate_id": "98ee33827d540e1c-0004",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "Equity Interest",
+   "source_family": "FDIC",
+   "source_url": "https://www.fdic.gov/news/press-releases/2023/pr23107.html",
+   "document_date": "2026-06-02",
+   "span_verified": true,
+   "snippet": " FDIC.gov  Search  Advanced Search  Home  News  Press Releases  2023  FDIC Signature Bank Receivership Sells 20 Percent Equity Interest in Entity Holding $9 Billion Rent\u2013Stabilized / Rent\u2013Controlled Multifamily Loans  December 20, 2023  Share on Facebook "
+  },
+  {
+   "candidate_id": "98ee33827d540e1c-0005",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "20 percent equity",
+   "source_family": "FDIC",
+   "source_url": "https://www.fdic.gov/news/press-releases/2023/pr23107.html",
+   "document_date": "2026-06-02",
+   "span_verified": true,
+   "snippet": ", New York  .  SBNA Investor LLC (SBNA), an entity directly controlled by Santander Bank, N.A., paid $1.1 billion for a 20 percent equity interest in SIG RCRS A/B MF 2023 Venture LLC (Venture), a newly formed entity wholly owned by the FDIC\u2013Receiver. The FD"
+  },
+  {
+   "candidate_id": "98ee33827d540e1c-0006",
+   "review_priority": 18.0,
+   "category": [
+    "OWNERSHIP_EXPLICIT"
+   ],
+   "matched_text": "equity interest",
+   "source_family": "FDIC",
+   "source_url": "https://www.fdic.gov/news/press-releases/2023/pr23107.html",
+   "document_date": "2026-06-02",
+   "span_verified": true,
+   "snippet": " .  SBNA Investor LLC (SBNA), an entity directly controlled by Santander Bank, N.A., paid $1.1 billion for a 20 percent equity interest in SIG RCRS A/B MF 2023 Venture LLC (Venture), a newly formed entity wholly owned by the FDIC\u2013Receiver. The FDIC\u2013Receiv"
+  }
+ ],
+ "span_verification": {
+  "checked": 25,
+  "verified": 25,
+  "missing_text_file": 0
+ },
+ "pass2_grammar_miss_diagnosis": {
+  "A_OWNERSHIP": {
+   "sampled": 40,
+   "features": {
+    "no_verb_nearby": 15,
+    "nav_or_list_context": 17,
+    "title_or_caps_span": 4
+   },
+   "example_spans": [
+    "beneficial owners",
+    "20 percent equity",
+    "own qualifying shares"
+   ]
+  },
+  "B_CONTROL": {
+   "sampled": 40,
+   "features": {
+    "no_verb_nearby": 2,
+    "nav_or_list_context": 18,
+    "title_or_caps_span": 0
+   },
+   "example_spans": [
+    "controlling persons",
+    "controlled by",
+    "controlling shareholder"
+   ]
+  },
+  "C_PARENT_SUBSIDIARY": {
+   "sampled": 40,
+   "features": {
+    "no_verb_nearby": 29,
+    "nav_or_list_context": 21,
+    "title_or_caps_span": 8
+   },
+   "example_spans": [
+    "subsidiaries",
+    "subsidiary of",
+    "subsidiary of"
+   ]
+  },
+  "D_SHELL_NOMINEE": {
+   "sampled": 40,
+   "features": {
+    "no_verb_nearby": 27,
+    "nav_or_list_context": 20,
+    "title_or_caps_span": 5
+   },
+   "example_spans": [
+    "shell companies",
+    "intermediary",
+    "intermediaries"
+   ]
+  },
+  "E_FINANCIAL_FLOW": {
+   "sampled": 40,
+   "features": {
+    "no_verb_nearby": 29,
+    "nav_or_list_context": 13,
+    "title_or_caps_span": 0
+   },
+   "example_spans": [
+    "$120,000 pursuant to",
+    "$2,436,266.35 to",
+    "wire transfers"
+   ]
+  }
+ }
+}
