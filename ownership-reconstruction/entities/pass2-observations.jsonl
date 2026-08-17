@@ -1,5 +1,4 @@
 {"entity_id": "obs-ent:012455fa722699dd", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Discover Bank"}
-{"entity_id": "obs-ent:01698ce1dc071ffe", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Spa"}
 {"entity_id": "obs-ent:07a5f228dfe185bd", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Huione Group"}
 {"entity_id": "obs-ent:09719d51eb38d229", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Consent of Defendants Gen-See Capital Corporation"}
 {"entity_id": "obs-ent:0b1621c50e492ae7", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Mian, Inc"}
@@ -9,6 +8,8 @@
 {"entity_id": "obs-ent:13e717fc6f43ca16", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "A&S World Trading, Inc"}
 {"entity_id": "obs-ent:1719eb8b49108938", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "PIW"}
 {"entity_id": "obs-ent:179cd312dfb8d706", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Intercam Futures, Inc"}
+{"entity_id": "obs-ent:1823182d27f749d8", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Africa Middle East Investment Holding SAL"}
+{"entity_id": "obs-ent:18640e38f277a2b6", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "IPC"}
 {"entity_id": "obs-ent:1960d5f8776b4d19", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Company B"}
 {"entity_id": "obs-ent:19bfac7f5bf346b0", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "ECAM, LLC"}
 {"entity_id": "obs-ent:1aacf6cdb837988e", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "In the Matter of Greenville Riverboat, LLC"}
@@ -17,11 +18,11 @@
 {"entity_id": "obs-ent:1df9a0d557c2502f", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Trans Merits Co. Ltd"}
 {"entity_id": "obs-ent:209d443e080edf8e", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Bond Street Holdings"}
 {"entity_id": "obs-ent:254823fd36a29572", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "In the Matter of Lady Luck Mississippi, Inc"}
-{"entity_id": "obs-ent:25851aeda5082994", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Nunns, Lucas, McNaul, Kilgariff and their affiliated entities"}
 {"entity_id": "obs-ent:25d886500cce4634", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Carver State Bank"}
 {"entity_id": "obs-ent:2acef0fcae138e07", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "MIP GLOBAL, INC"}
 {"entity_id": "obs-ent:2e0730c8ff06c25c", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "ISC, Inc"}
 {"entity_id": "obs-ent:30ac9095488565b8", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Al-Mutafaq Commercial Company"}
+{"entity_id": "obs-ent:31482014fa7a5e51", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "AMG"}
 {"entity_id": "obs-ent:317ffb678e5dff6e", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Business In the Matter of Sahara Dunes Casino, LP"}
 {"entity_id": "obs-ent:33a16e13fd92f0b9", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Lilaboc, LLC"}
 {"entity_id": "obs-ent:3418b7ca6273d055", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Federal Savings Bank"}
@@ -33,6 +34,7 @@
 {"entity_id": "obs-ent:3b480dc67bc25232", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Naftiran Intertrade Company"}
 {"entity_id": "obs-ent:3d91ce05aaf810fb", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "DHB Industries, Inc"}
 {"entity_id": "obs-ent:3da76498bd22699e", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "CIT Bank"}
+{"entity_id": "obs-ent:401e1cb1f722e353", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "EN+ Group"}
 {"entity_id": "obs-ent:4139c8571268665f", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "President of Gen-See Capital Corporation"}
 {"entity_id": "obs-ent:4166d6d5d556eeb6", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "BLUEJAY INVESTMENT LLC"}
 {"entity_id": "obs-ent:46c4c8b4332345a6", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Mehr Eqtesad Iranian Investment Company"}
@@ -43,6 +45,7 @@
 {"entity_id": "obs-ent:499a5e0d7a3d41f5", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Enterprise Technology Group"}
 {"entity_id": "obs-ent:49ab2aedb88c8143", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "South Atlantic International Bank, Limited"}
 {"entity_id": "obs-ent:4a11665c6619e486", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "First International Trust of Grenada International Depositors' Reinsurance Corporation"}
+{"entity_id": "obs-ent:4bb0730150114df8", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Volga Group"}
 {"entity_id": "obs-ent:4d69e4970266b40f", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Chemical Bank"}
 {"entity_id": "obs-ent:4e1be418abf49ead", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "DIME 17 CAPITAL LLC"}
 {"entity_id": "obs-ent:4e51bf887d031dff", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Damascus Cham Holding"}
@@ -55,40 +58,56 @@
 {"entity_id": "obs-ent:555decc95c09e4cb", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "OOD"}
 {"entity_id": "obs-ent:5a6846cdd63c2669", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "BitGo Holdings"}
 {"entity_id": "obs-ent:5c2c8f6de24aced0", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Mard Inc"}
+{"entity_id": "obs-ent:5ee2f44fb3fb4ac3", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "M Finans"}
+{"entity_id": "obs-ent:6070509025f82e18", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "King Romans Company Limited"}
+{"entity_id": "obs-ent:63322002820eff33", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Serigraphiclab"}
 {"entity_id": "obs-ent:6481a35259506e12", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Wise US Holdings"}
 {"entity_id": "obs-ent:66f312a7e1096704", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "LCB"}
 {"entity_id": "obs-ent:685b8319fd845f14", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Mid-Kan"}
 {"entity_id": "obs-ent:686898dd282274b4", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Interactive Brokers Group, Inc"}
 {"entity_id": "obs-ent:6893aaebc5471554", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Receiver for Rex Venture Group LLC"}
+{"entity_id": "obs-ent:69b06854b391688e", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "EuroSibEnergo"}
 {"entity_id": "obs-ent:6ac9ec28c21db7cb", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Bunyan"}
+{"entity_id": "obs-ent:6ae5cb8629798f8c", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "XPCC"}
+{"entity_id": "obs-ent:6b6b91ac82cd612a", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "NPV Engineering Open Joint Stock Company"}
 {"entity_id": "obs-ent:6d7dbb22ba517c55", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Development Group"}
 {"entity_id": "obs-ent:6db67ddbf0c9afdc", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Skyline"}
 {"entity_id": "obs-ent:71875dfa62ba9cf8", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Intrust PLC"}
-{"entity_id": "obs-ent:72ca296a4d08bb1b", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Forrest"}
 {"entity_id": "obs-ent:730049d444493b9a", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Pardo Trust"}
 {"entity_id": "obs-ent:770e7dfcaeeadb21", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Tara Steel Trading GmbH"}
 {"entity_id": "obs-ent:781e56c8dfecfd97", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "NIOC"}
 {"entity_id": "obs-ent:788b7fc843f9f36e", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "BILLION COUPONS, INC"}
+{"entity_id": "obs-ent:788cdfb47ecfbbae", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Euro African Group LTD"}
 {"entity_id": "obs-ent:7c0fb25cdb73d463", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "U.S.-based Freeport-McMoRan Copper & Gold Inc"}
 {"entity_id": "obs-ent:7cda5617b07e8b1c", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Nabah"}
 {"entity_id": "obs-ent:7ea9232b9a995329", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "PAROPES CORPORATION"}
 {"entity_id": "obs-ent:7f2626069b85f054", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "EDX Trust"}
 {"entity_id": "obs-ent:81226f6306cb5b10", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Prime Bank"}
 {"entity_id": "obs-ent:81eb9550c387d5d7", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Panda Bank"}
+{"entity_id": "obs-ent:828e2b4b81315ede", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Novyi Vek - Media"}
 {"entity_id": "obs-ent:83606e967a06b5dd", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Atlantic Stewardship Bank"}
 {"entity_id": "obs-ent:8362ea0d4606d7d5", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "New York Community Bancorp"}
+{"entity_id": "obs-ent:836c2fc214dde623", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Moonstorm Enterprises LTD"}
 {"entity_id": "obs-ent:84487c4489af9670", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Bank Sepah International Plc"}
+{"entity_id": "obs-ent:84e2d4c743e50320", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Iran's Naval Defence Missile Industry Group"}
 {"entity_id": "obs-ent:85dfbf4d815771a9", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "BitGo Trust"}
 {"entity_id": "obs-ent:881e78f5c991fd4f", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "OTC Markets Group"}
 {"entity_id": "obs-ent:891a48691e64919e", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "FIRST FINANCIAL PLANNING CORPORATION"}
 {"entity_id": "obs-ent:89ca3448b6a5f4b3", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Global Interface Company"}
 {"entity_id": "obs-ent:8ca6a74f60807565", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Premier American Bank, N.A"}
+{"entity_id": "obs-ent:8e9b70ed29b3abc3", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "ForEnt Technik GmbH"}
+{"entity_id": "obs-ent:8ebc9f0b19687cea", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Basic Element Limited"}
 {"entity_id": "obs-ent:8ef1fdac6b2ba8bd", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Wise plc"}
+{"entity_id": "obs-ent:90f5089301153e07", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Limited Liability Company Concord Management and Consulting and Concord Catering"}
 {"entity_id": "obs-ent:943ea164ade2a645", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Atlantic Stewardship Insurance Company, LLC"}
 {"entity_id": "obs-ent:947b1ae3aa91f1ba", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Point Blank Solutions, Inc"}
 {"entity_id": "obs-ent:95214d607cad75c1", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Titan Bank"}
+{"entity_id": "obs-ent:95d1885a92163a92", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Off Shore, an import/export company"}
 {"entity_id": "obs-ent:960c5ed29d91bfa5", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "South Dakota in 2019. Anchorage Trust"}
+{"entity_id": "obs-ent:98328bf941472b01", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Ladoga Menedzhment, OOO"}
 {"entity_id": "obs-ent:98472b769c6edf02", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Washington Mutual, Inc"}
+{"entity_id": "obs-ent:98f4270f09c07130", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Cosmo"}
+{"entity_id": "obs-ent:9a0d5002fe01f946", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Renova Group"}
 {"entity_id": "obs-ent:9a2f67a15038aa6f", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "SunTrust Bank"}
 {"entity_id": "obs-ent:9c908572e2428f4b", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "In the Matter of Sparks Nugget, Inc"}
 {"entity_id": "obs-ent:9e126f61b53a0b21", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "First-Citizens Bank & Trust Company with CIT Group, Inc"}
@@ -99,14 +118,18 @@
 {"entity_id": "obs-ent:a3ee8d51e64fe645", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Allwaste Onsite LLC"}
 {"entity_id": "obs-ent:a41950b9c2495e70", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "ATLANTA CAPITAL LLC"}
 {"entity_id": "obs-ent:a54ace0bf1a902a3", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Anchorage Trust"}
+{"entity_id": "obs-ent:a55c2c67879672b3", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Top Technologies SARL"}
 {"entity_id": "obs-ent:a59abef38710b7e5", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Long Term-Short Term, Inc"}
 {"entity_id": "obs-ent:a74132bcbb70453e", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "New Day Atlanta, LLC"}
 {"entity_id": "obs-ent:a777ff503fdf9b39", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "FutureGen Company"}
 {"entity_id": "obs-ent:aa5c9eda2d62c9f5", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Company A"}
+{"entity_id": "obs-ent:aa782c0f6496ec3d", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Alel"}
 {"entity_id": "obs-ent:abaf48f30aac5f9b", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Chemical Financial Corp"}
 {"entity_id": "obs-ent:aee0c0c106a5a919", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "BSQRD Limited"}
 {"entity_id": "obs-ent:b1193719c8f9e03b", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Old Dutch Mustard Company"}
 {"entity_id": "obs-ent:b2185d879d858638", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "TFM"}
+{"entity_id": "obs-ent:b24ffbd8ae298637", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Premier Investment Group SAL Offshore"}
+{"entity_id": "obs-ent:b3be87289710a0d0", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Gazprom Burenie, OOO"}
 {"entity_id": "obs-ent:b43b0442f776f321", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Civil Action No. SEISMA OIL RESEARCH, LLC"}
 {"entity_id": "obs-ent:b4e78f1caf934167", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Warren"}
 {"entity_id": "obs-ent:b6430745e2af5f50", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Esquire Bank"}
@@ -118,7 +141,9 @@
 {"entity_id": "obs-ent:b82a50cd07125d30", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "CHETAN KAPUR AND LILABOC, LLC"}
 {"entity_id": "obs-ent:b88b0c26b8152156", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Silicon Valley Bridge Bank, N.A"}
 {"entity_id": "obs-ent:bc87caddea431b7f", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Washington Mutual Bank"}
+{"entity_id": "obs-ent:bd3bf2126380f88d", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "GAZ Group"}
 {"entity_id": "obs-ent:bed12a61aa3fd736", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "TRUE NORTH FINANCE CORPORATION"}
+{"entity_id": "obs-ent:c3f320cfeeca7eb7", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Elemento Solutions Limited"}
 {"entity_id": "obs-ent:c65a8c9149830692", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "TwinSpan"}
 {"entity_id": "obs-ent:cae987ff049c6a03", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Embedi"}
 {"entity_id": "obs-ent:cf768b2fcd3ec73f", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "NFS GROUP, LLC"}
@@ -135,6 +160,7 @@
 {"entity_id": "obs-ent:db4c94c3ae1b1623", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "BW Holdings"}
 {"entity_id": "obs-ent:ddc4f21a330c3617", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "MIRATH S.A.L. Mirath"}
 {"entity_id": "obs-ent:df71a8247a633cf1", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "EDX Holding"}
+{"entity_id": "obs-ent:e040394a3f1c24a3", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Al-Bilad Islamic Bank"}
 {"entity_id": "obs-ent:e05d774e299f4a40", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "SKY CAPITAL LLC"}
 {"entity_id": "obs-ent:e17ec1a59ca8f6ac", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "President of Carver Development CDE, LLC"}
 {"entity_id": "obs-ent:e707fff46e2b9a14", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "PICCOLI Defendants Gen-See Capital Corporation"}
@@ -145,10 +171,9 @@
 {"entity_id": "obs-ent:ee52337f0cab1bdb", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Old Dutch Mustard Company, Inc"}
 {"entity_id": "obs-ent:f23b68ef3ed76692", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "XRP II, LLC"}
 {"entity_id": "obs-ent:f2bfe4f0c8329508", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Investments, Ltd"}
-{"entity_id": "obs-ent:f8e2bc6bcc7c76e1", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "T&D"}
+{"entity_id": "obs-ent:f8c80d6b4ae487e4", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Luzy"}
 {"entity_id": "obs-ent:f9ad3e9e47b853be", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Siguro EOOD"}
 {"entity_id": "obs-ent:f9ce266885edbe22", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "National Lottery AD"}
-{"entity_id": "obs-ent:fa3339589f7c4f8b", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Krause, Lucas, McNaul and their affiliated entities"}
 {"entity_id": "obs-ent:fc7d3a7e15d20920", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Atlas Holding"}
 {"entity_id": "obs-ent:fe7d664f9b9dba82", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Real Estates Int Ltd EOOD"}
 {"entity_id": "obs-ent:fed0a039cf366743", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Ancient Heritage AD"}

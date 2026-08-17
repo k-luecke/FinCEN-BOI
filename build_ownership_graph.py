@@ -42,6 +42,7 @@ from collections import Counter, defaultdict
 REPO = os.path.dirname(os.path.abspath(__file__))
 OBS = os.path.join(REPO, "content-pass-2", "raw-observations.jsonl")
 ROOT = os.path.join(REPO, "ownership-reconstruction")
+TEXT_ROOT = os.path.join(REPO, "derived", "text")
 SUFFIX = "pass2-observations"
 
 # ---- predicate -> handling ------------------------------------------------
@@ -85,7 +86,16 @@ STOPNAMES = {s.lower() for s in (
       "federal reserve", "comptroller of the currency",
       # demographic groups from minority-owned-institution reporting
       "asian americans", "african americans", "native americans",
-      "hispanic americans", "women", "minorities", "veterans"}
+      "hispanic americans", "women", "minorities", "veterans",
+      # jurisdictions and venue words that leak out of "based in …" clauses
+      "british virgin islands", "virgin islands", "cayman islands",
+      "hong kong", "jersey", "spa", "hotel", "resort", "casino"}
+# Count phrases and generic plurals name a set, not a party.
+GENERIC_PLURAL_RE = re.compile(
+    r"(?:^(?:one|two|three|four|five|six|seven|eight|nine|ten|all|both|"
+    r"several|these|those|following)\b.*|.*\b(?:entities|companies|firms|"
+    r"individuals)$)", re.I)
+PRONOUN_START_RE = re.compile(r"^(?:he|she|it|they|we|who|whose)\b", re.I)
 
 # Sentence fragments and footnote references glued onto a name by
 # upstream sentence-window matching.
@@ -149,6 +159,12 @@ def gate(name):
         return "name too short to identify a party"
     if all(w in _BARE_SUFFIX_WORDS for w in norm(name).split()):
         return "bare corporate-suffix token(s), not a name"
+    if GENERIC_PLURAL_RE.match(name):
+        return "count phrase / generic plural, not a named party"
+    if PRONOUN_START_RE.match(name):
+        return "clause fragment, not a name"
+    if all(len(t) <= 2 for t in name.split()):
+        return "initials-only fragment"
     return None
 
 
@@ -180,6 +196,69 @@ def maybe_split_owner_list(name: str):
         return [p for p in parts
                 if "affiliated entities" not in p.lower()] or [name]
     return [name]
+
+
+# ---- designation-counterparty resolution ----------------------------------
+# OFAC narratives state "<Entity> is being designated for being owned or
+# controlled by <Controller>", but the sentence window that produced the
+# observation often opens after <Entity>. When the derived text tree is
+# available, re-read a 500-char window ending at the observation span and
+# take the LAST designation clause — the one the observation came from.
+# `[^.\n]` keeps the captured name inside one sentence; names containing
+# periods (e.g. "Co., Ltd.") deliberately fail and stay unresolved rather
+# than resolve wrongly.
+_DESIG_RE = re.compile(
+    r"([A-Z][^.\n]{2,90}?)\s*(?:\([^)]{0,80}\)\s*)?,?\s*"
+    r"(?:along\s+with[^,]{0,80},\s*)?"
+    r"(?:is|are|was|were)\s+(?:also\s+)?(?:being\s+)?(?:concurrently\s+)?"
+    r"designated\b[^.]{0,220}?for\s+being\s+owned\s+or\s+controlled\s+by")
+_DESIG_TRAIL_RE = re.compile(
+    r",?\s*(?:along\s+with\b.*|based\s+in\b.*|located\s+in\b.*|which\b.*|"
+    r"while\b.*|registered\s+in\b.*|(?:is\s+)?an\s+entity\b.*|whose\b.*)$",
+    re.I | re.S)
+_DESIG_LEAD_RE = re.compile(
+    r"^(?:Concurrent(?:ly)?\s+(?:to|with)[^,]{0,60},\s*|"
+    r"(?:Today|In\s+addition|Additionally|Finally|Also|Separately)\s*,\s*|"
+    r"[A-Z][a-z]+-based\s+|the\s+)+")
+
+
+def resolve_designated(o):
+    """Return the designated-entity name for a designation_controller
+    observation, or None if it cannot be resolved strictly."""
+    sha = o.get("source_sha256")
+    if not sha:
+        return None
+    path = os.path.join(TEXT_ROOT, sha[:2], sha[2:] + ".txt")
+    try:
+        with open(path, encoding="utf-8") as fh:
+            text = fh.read()
+    except OSError:
+        return None
+    s, e = o["character_start"], o["character_end"]
+    window = text[max(0, s - 500):e]
+    matches = list(_DESIG_RE.finditer(window))
+    if not matches:
+        return None
+    m = matches[-1]
+    # The clause must be the observation's own: the stated controller
+    # appears shortly after "controlled by".
+    subj_tok = (o.get("subject_raw") or "").split()
+    if subj_tok and window.find(subj_tok[-1][:14], m.end(), m.end() + 200) < 0:
+        return None
+    name = _DESIG_TRAIL_RE.sub("", m.group(1)).strip(" ,;:")
+    name = re.sub(r"\s*\([^)]{0,60}\)", "", name)
+    name = _DESIG_LEAD_RE.sub("", name).strip(" ,;:")
+    # Drop any leading lower-case clause fragment before the name proper.
+    words = name.split()
+    while words and not words[0][:1].isupper():
+        words.pop(0)
+    name = " ".join(words)
+    # List glue that still contains the controller ("X, and Y are being
+    # designated…") resolves nothing attributable — leave unresolved.
+    subj = o.get("subject_raw") or ""
+    if subj and re.search(re.escape(subj) + r"\s*,", name):
+        return None
+    return name or None
 
 
 def iso_source_date(date_raw):
@@ -275,7 +354,8 @@ def main():
                                f"{o.get('line_start')}-{o.get('line_end')}"),
         }
 
-    def emit_edge(o, assertion, subj_name, subj_role, obj_name, obj_role):
+    def emit_edge(o, assertion, subj_name, subj_role, obj_name, obj_role,
+                  conf=None, extra=None):
         subj_name, obj_name = sanitize(subj_name), sanitize(obj_name)
         for nm, why in ((subj_name, "subject"), (obj_name, "object")):
             reason = gate(nm)
@@ -299,9 +379,10 @@ def main():
             "object_id": obj_id,
             "ownership_percent": pct,
             "evidence_class": "DIRECT",
-            "confidence": o.get("extraction_confidence"),
+            "confidence": conf if conf is not None else o.get("extraction_confidence"),
             "evidentiary_posture": o.get("evidentiary_posture"),
             "predicate_raw": o["predicate_raw"],
+            **(extra or {}),
             **provenance(o)})
         stats[f"edge:{assertion}"] += 1
 
@@ -314,6 +395,14 @@ def main():
             continue
         if pred in NEEDS_COUNTERPARTY_MISSING or (
                 pred not in ALIAS and not objn):
+            resolved = (resolve_designated(o)
+                        if pred in NEEDS_COUNTERPARTY_MISSING else None)
+            if resolved:
+                for owned in maybe_split_owner_list(resolved):
+                    emit_edge(o, "BENEFICIAL_OWNER", subj, "owner",
+                              owned, "owned", conf=0.7,
+                              extra={"resolution": "designation-window"})
+                continue
             to_unresolved(o, "counterparty not in sentence window "
                              "(controller known, controlled party upstream)")
             continue

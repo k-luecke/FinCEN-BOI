@@ -11,11 +11,11 @@ Validated clean by `ownership_schema.py` (0 problems).
 
 | Table | Records |
 |---|---|
-| entities | 156 |
-| people | 104 |
-| edges | 101 (55 BENEFICIAL_OWNER · 41 PARENT · 4 UNKNOWN_CONTROL_ROLE · 1 RELATED_ORGANIZATION) |
+| entities | 181 |
+| people | 147 |
+| edges | 158 (113 BENEFICIAL_OWNER · 41 PARENT · 3 UNKNOWN_CONTROL_ROLE · 1 RELATED_ORGANIZATION) |
 | names (DBA/FORMER/LEGAL history) | 126 |
-| unresolved | 139 |
+| unresolved | 84 |
 
 117 person aliases (a/k/a spellings, d/b/a trade names) are recorded
 on person nodes as `name_variants` / `dba_names`-style variants, not as
@@ -47,18 +47,29 @@ the closed vocabulary describes them — and remain in `content-pass-2/`.
   is one node; no identity resolution beyond that is attempted, and
   entity `jurisdiction` is `UNKNOWN` pending registry joins.
 
-## What goes to `unresolved/` (139)
+## Designation-window resolution
 
-- 86 — controller stated but the controlled party sits outside the
-  sentence window (OFAC "designated for being owned or controlled by
-  X" narratives; the designated entity needs paragraph-level
-  resolution — top of the follow-up list, since each names a real
-  controller).
+When `derived/text` is present, a second stage re-reads a 500-char
+window before each OFAC "designated for being owned or controlled by
+X" observation and extracts the designated entity from the same
+designation clause (strict single-sentence pattern; the controller
+must appear after "controlled by"; list glue, count phrases, clause
+fragments, and jurisdiction leaks are gated out). This resolved 60 of
+the 86 counterparty-missing observations into BENEFICIAL_OWNER edges
+at confidence 0.7, tagged `"resolution": "designation-window"` — the
+Deripaska, Rotenberg, Bazzi, Tesic, and Tatulian networks among them.
+
+## What goes to `unresolved/` (84)
+
+- 16 — controller stated but the controlled party still outside even
+  the widened window (or the name failed strict capture, e.g. contains
+  "Co., Ltd." periods).
 - 22 — sub-threshold extraction confidence (document-generic parties
   like "the Bank" needing in-document resolution).
-- 31 — name-quality rejections: generic references, heading glue,
-  stop-listed places/agencies/demographic groups, bare suffix tokens,
-  self-loops after sanitation.
+- 46 — name-quality rejections: generic references, count phrases and
+  generic plurals, heading glue, clause fragments, stop-listed
+  places/agencies/demographic groups, bare suffix tokens, self-loops
+  after sanitation.
 
 ## Known limits
 
