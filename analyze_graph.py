@@ -165,6 +165,14 @@ def main():
     L.append("Regenerate with `python3 analyze_graph.py`. Posture weights "
              "are analysis-time parameters (see script header); the graph "
              "itself stores evidence, not judgments.\n")
+    dated = [e for e in edges if e.get("source_date")]
+    vf = [e for e in edges if e.get("valid_from")]
+    if dated:
+        span = sorted(e["source_date"] for e in dated)
+        L.append(f"\nTemporal coverage: {len(dated)}/{len(edges)} edges "
+                 f"carry a document date ({span[0]} … {span[-1]}); "
+                 f"{len(vf)} additionally carry a sentence-stated event "
+                 f"date in `valid_from`.\n")
 
     L.append(f"\n## 1. Multi-hop ownership/control chains "
              f"({len(chains)} maximal distinct node paths of length ≥ 2)\n")

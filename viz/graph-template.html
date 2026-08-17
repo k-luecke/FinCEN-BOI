@@ -427,7 +427,7 @@ function edgeCard(e, focusId) {
   return `<div class="pedge">
     <div class="rel"><span class="assert">${esc(e.a)}</span> ${dirTxt} ${e.pct != null ? `<span class="mono">${e.pct}%</span>` : ''}</div>
     <div class="quote">“${esc(e.quote)}”</div>
-    <div class="meta">${esc(e.posture || '')} · confidence ${e.conf ?? '—'} ·
+    <div class="meta">${e.date ? esc(e.date) + ' · ' : ''}${esc(e.posture || '')} · confidence ${e.conf ?? '—'} ·
       <a href="${esc(e.url)}" target="_blank" rel="noopener">archived source ↗</a></div>
   </div>`;
 }

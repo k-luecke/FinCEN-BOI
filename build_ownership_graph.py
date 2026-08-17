@@ -496,9 +496,22 @@ def write_jsonl(path, records):
             fh.write(json.dumps(rec, sort_keys=True, ensure_ascii=False) + "\n")
 
 
+def load_doc_dates():
+    """sha256 -> (iso_date, basis) from content_pass_2.doc_dates output."""
+    path = os.path.join(REPO, "content-pass-2", "document-dates.jsonl")
+    dates = {}
+    if os.path.isfile(path):
+        for line in open(path, encoding="utf-8"):
+            r = json.loads(line)
+            if r.get("document_date"):
+                dates[r["sha256"]] = (r["document_date"], r["basis"])
+    return dates
+
+
 def main():
     obs = [json.loads(l) for l in open(OBS, encoding="utf-8")]
     obs.sort(key=lambda r: r["observation_id"])
+    doc_dates = load_doc_dates()
 
     nodes = Nodes()
     edges, names, unresolved = [], [], []
@@ -519,10 +532,17 @@ def main():
             **extra})
 
     def provenance(o):
+        # source_date is the DOCUMENT's date (dateline / EDGAR header /
+        # 13D-G event date / URL — basis recorded). A full date stated in
+        # the evidence sentence itself is the relationship's event date
+        # and goes to valid_from instead; the two are never conflated.
+        doc_date, basis = doc_dates.get(o.get("source_sha256"), (None, None))
         return {
             "source_id": o["observation_id"],
             "source_url": o["source_url"],
-            "source_date": iso_source_date(o.get("date_raw")),
+            "source_date": doc_date,
+            "source_date_basis": basis,
+            "valid_from": iso_source_date(o.get("date_raw")),
             "retrieved_at": o["retrieval_date"],
             "source_sha256": o["source_sha256"],
             "source_locator": (f"chars {o['character_start']}-"

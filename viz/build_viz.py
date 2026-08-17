@@ -63,6 +63,7 @@ def main():
                       "a": e["assertion"], "pct": e.get("ownership_percent"),
                       "posture": e.get("evidentiary_posture"),
                       "conf": e.get("confidence"), "url": e["source_url"],
+                      "date": e.get("source_date"),
                       "quote": " ".join((o.get("raw_text") or "").split())[:260]})
 
     ledger = []

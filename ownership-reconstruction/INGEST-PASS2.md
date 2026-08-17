@@ -59,6 +59,17 @@ fragments, and jurisdiction leaks are gated out). At full-corpus scale this reso
 at confidence 0.7, tagged `"resolution": "designation-window"` — the
 Deripaska, Rotenberg, Bazzi, Tesic, and Tatulian networks among them.
 
+## Dates
+
+`source_date` on an edge is the source DOCUMENT's date, extracted
+deterministically by `content_pass_2.doc_dates` (dateline / EDGAR SGML
+header / 13D-G event-date block / URL; basis recorded per edge in
+`source_date_basis`). A full date stated in the evidence sentence
+itself is the relationship's event date and lands in `valid_from`.
+Documents whose head carries no extractable date stay undated rather
+than borrowing a date from body text. Current coverage: 486/959 edges
+dated (1996–2026), 70 with sentence-stated event dates.
+
 ## Cross-document entity resolution
 
 Two-tier policy, per the dataset ground rule that ambiguity is
