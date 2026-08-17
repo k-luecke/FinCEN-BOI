@@ -65,6 +65,12 @@ jobs:
       - name: Run observation extraction
         run: python3 -m content_pass_2.observe
 
+      - name: Build and validate ownership graph
+        run: |
+          set -euo pipefail
+          python3 build_ownership_graph.py
+          python3 ownership_schema.py --root ownership-reconstruction
+
       - name: Commit pass-2 outputs
         env:
           TAG: ${{ inputs.derived_release_tag }}
@@ -73,13 +79,13 @@ jobs:
           mkdir -p /tmp/pass2-out
           cp content-pass-2/*.jsonl content-pass-2/*.json /tmp/pass2-out/
           # Restore the working tree to committed state, keeping only the
-          # freshly produced pass-2 outputs.
+          # freshly produced pass-2 + graph outputs.
           git checkout -- content-pass-1/ content-pass-2/ 2>/dev/null || true
           git clean -fdq content-pass-1/ content-pass-2/ derived/ || true
           cp /tmp/pass2-out/* content-pass-2/
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content-pass-2/
+          git add content-pass-2/ ownership-reconstruction/
           if git diff --cached --quiet; then
             echo "FATAL: pass produced no changes — refusing to report success."
             exit 1
