@@ -1,25 +1,25 @@
 # Ingest: content-pass-2 observations → graph (`pass2-observations` files)
 
 **Built 2026-08-17** by `build_ownership_graph.py` (repo root) from the
-530 raw observations in `content-pass-2/raw-observations.jsonl`
-(observe/1.1.0 over the 2026-08-15 corpus snapshot). Deterministic and
-re-runnable; re-run after each observation refresh — the full-corpus
-observation set will replace these files via the same command.
+1,977 raw observations in `content-pass-2/raw-observations.jsonl`
+(observe/1.1.0 over the FULL 133k-object corpus — derived release
+`derived-pass1-run-32040221002`; the earlier 530-observation build used
+the 2026-08-15 38k-object snapshot). Deterministic and re-runnable.
 Validated clean by `ownership_schema.py` (0 problems).
 
 ## Counts
 
 | Table | Records |
 |---|---|
-| entities | 181 |
-| people | 147 |
-| edges | 158 (113 BENEFICIAL_OWNER · 41 PARENT · 3 UNKNOWN_CONTROL_ROLE · 1 RELATED_ORGANIZATION) |
-| names (DBA/FORMER/LEGAL history) | 126 |
-| unresolved | 84 |
+| entities | 667 |
+| people | 257 |
+| edges | 968 (229 BENEFICIAL_OWNER · 705 PARENT · 23 UNKNOWN_CONTROL_ROLE · 11 RELATED_ORGANIZATION) |
+| names (DBA/FORMER/LEGAL history) | 311 |
+| unresolved | 340 |
 
-117 person aliases (a/k/a spellings, d/b/a trade names) are recorded
+213 person aliases (a/k/a spellings, d/b/a trade names) are recorded
 on person nodes as `name_variants` / `dba_names`-style variants, not as
-fabricated entities. 55 observations (financial flows, shell-status
+fabricated entities. 156 observations (financial flows, shell-status
 statements) are out of scope for the ownership graph — no assertion in
 the closed vocabulary describes them — and remain in `content-pass-2/`.
 
@@ -54,22 +54,22 @@ window before each OFAC "designated for being owned or controlled by
 X" observation and extracts the designated entity from the same
 designation clause (strict single-sentence pattern; the controller
 must appear after "controlled by"; list glue, count phrases, clause
-fragments, and jurisdiction leaks are gated out). This resolved 60 of
-the 86 counterparty-missing observations into BENEFICIAL_OWNER edges
+fragments, and jurisdiction leaks are gated out). At full-corpus scale this resolved 70 of
+86 counterparty-missing observations into BENEFICIAL_OWNER edges
 at confidence 0.7, tagged `"resolution": "designation-window"` — the
 Deripaska, Rotenberg, Bazzi, Tesic, and Tatulian networks among them.
 
-## What goes to `unresolved/` (84)
+## What goes to `unresolved/` (340)
 
 - 16 — controller stated but the controlled party still outside even
-  the widened window (or the name failed strict capture, e.g. contains
-  "Co., Ltd." periods).
-- 22 — sub-threshold extraction confidence (document-generic parties
-  like "the Bank" needing in-document resolution).
-- 46 — name-quality rejections: generic references, count phrases and
-  generic plurals, heading glue, clause fragments, stop-listed
-  places/agencies/demographic groups, bare suffix tokens, self-loops
-  after sanitation.
+  the widened window (or the name failed strict capture).
+- 132 — sub-threshold extraction confidence (document-generic parties
+  like "the Bank" needing in-document resolution — mostly OCC/FDIC
+  decisions at full-corpus scale).
+- 192 — name-quality rejections: generic references, count phrases,
+  jurisdiction-form phrases ("Delaware corporation"), heading glue,
+  clause fragments, stop-listed non-parties, bare suffix tokens,
+  self-loops after sanitation.
 
 ## Known limits
 

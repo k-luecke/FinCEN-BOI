@@ -250,7 +250,7 @@ function layoutComponent(members) {
   return { members, w: maxX - minX + pad * 2, h: maxY - minY + pad * 2, minX, minY, pad };
 }
 const boxes = comps.map(layoutComponent).sort((a, b) => (b.w * b.h) - (a.w * a.h));
-const WORLD_W = 2350;
+const WORLD_W = Math.max(1900, Math.round(95 * Math.sqrt(nodes.length)) + 800);
 let cx = 0, cy = 0, rowH = 0, totalH = 0;
 for (const b of boxes) {
   if (cx + b.w > WORLD_W && cx > 0) { cx = 0; cy += rowH; rowH = 0; }
@@ -332,7 +332,9 @@ function place() {
 place();
 
 /* ---------- viewport ---------- */
-let vb = { x: -10, y: -10, w: WORLD_W + 20, h: totalH + 40 };
+const _ratio = (svg.clientHeight || 500) / (svg.clientWidth || 1200);
+let vb = { x: -10, y: -10, w: WORLD_W + 20,
+           h: Math.min(totalH + 40, (WORLD_W + 20) * _ratio) };
 function applyVB() { svg.setAttribute('viewBox', `${vb.x} ${vb.y} ${vb.w} ${vb.h}`); }
 applyVB();
 svg.addEventListener('wheel', ev => {
