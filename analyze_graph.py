@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from collections import defaultdict
 
 REPO = os.path.dirname(os.path.abspath(__file__))
@@ -118,15 +119,42 @@ def main():
                     stack.append(h["t"])
         return seen
 
+    def host_of(u):
+        m = re.match(r"https?://(?:www\.|home\.)?([^/]+)/", u or "")
+        return m.group(1) if m else "?"
+
     central = []
     for nid, hs in uniq_out.items():
+        es_all = [e for h in hs for e in pair_edges[(nid, h["t"])]]
         w = sum(ew(h["best"]) for h in hs)
         central.append({"id": nid, "name": name(nid),
                         "held": len(hs),
                         "evidence": sum(h["n_sources"] for h in hs),
+                        "postures": len({e.get("evidentiary_posture")
+                                         for e in es_all}),
+                        "families": len({host_of(e.get("source_url"))
+                                         for e in es_all}),
                         "weighted": round(w, 2),
                         "reach": len(descendants(nid))})
     central.sort(key=lambda r: (-r["weighted"], -r["reach"], r["id"]))
+    cscore = {r["id"]: r["weighted"] for r in central}
+
+    # ---- 2b. relationship persistence ---------------------------------
+    persistence = []
+    for (s, t), es in pair_edges.items():
+        docs = {e.get("source_sha256") for e in es}
+        if len(docs) < 2:
+            continue
+        dates = sorted(e["source_date"] for e in es if e.get("source_date"))
+        persistence.append({
+            "s": s, "t": t, "assertion": es[0]["assertion"],
+            "n_docs": len(docs),
+            "first_seen": dates[0] if dates else None,
+            "last_seen": dates[-1] if dates else None,
+            "n_dated": len(dates),
+            "postures": sorted({e.get("evidentiary_posture") for e in es}),
+            "families": sorted({host_of(e.get("source_url")) for e in es})})
+    persistence.sort(key=lambda r: (-r["n_docs"], r["s"]))
 
     # ---- 3. competing-control detection -------------------------------
     competing = []
@@ -165,6 +193,14 @@ def main():
     L.append("Regenerate with `python3 analyze_graph.py`. Posture weights "
              "are analysis-time parameters (see script header); the graph "
              "itself stores evidence, not judgments.\n")
+    dated = [e for e in edges if e.get("source_date")]
+    vf = [e for e in edges if e.get("valid_from")]
+    if dated:
+        span = sorted(e["source_date"] for e in dated)
+        L.append(f"\nTemporal coverage: {len(dated)}/{len(edges)} edges "
+                 f"carry a document date ({span[0]} … {span[-1]}); "
+                 f"{len(vf)} additionally carry a sentence-stated event "
+                 f"date in `valid_from`.\n")
 
     L.append(f"\n## 1. Multi-hop ownership/control chains "
              f"({len(chains)} maximal distinct node paths of length ≥ 2)\n")
@@ -180,14 +216,57 @@ def main():
         srcs = " · ".join(sorted({(h["best"].get('source_sha256') or '')[:12] for h in ch}))
         L.append(f"  <br>sources: `{srcs}`")
 
-    L.append("\n## 2. Controller centrality (posture-weighted)\n")
+    L.append("\n## 2. Controller centrality: structural reach vs "
+             "evidentiary breadth\n")
     L.append("`held` = distinct owned/controlled parties; `evidence` = "
-             "distinct supporting documents across those relationships.\n")
-    L.append("| Controller | Held | Evidence docs | Weighted score | Reach |")
-    L.append("|---|---|---|---|---|")
+             "distinct supporting documents; `postures`/`families` = "
+             "evidentiary breadth (independent assertion types and source "
+             "hosts). A controller supported across several agencies and "
+             "postures is corroborated; one supported by many documents "
+             "from one source is merely persistent.\n")
+    L.append("| Controller | Held | Evidence docs | Postures | Source "
+             "families | Weighted score | Reach |")
+    L.append("|---|---|---|---|---|---|---|")
     for r in central[:20]:
         L.append(f"| {r['name']} | {r['held']} | {r['evidence']} | "
+                 f"{r['postures']} | {r['families']} | "
                  f"{r['weighted']} | {r['reach']} |")
+
+    L.append(f"\n## 2b. Relationship persistence "
+             f"({len(persistence)} relationships with multi-document "
+             f"evidence)\n")
+    L.append("Repeated public declaration over time is information: "
+             "first/last seen use document publication dates.\n")
+    for r in persistence[:12]:
+        span = (f"{r['first_seen']} → {r['last_seen']}"
+                if r["first_seen"] else "undated")
+        L.append(f"- **{name(r['s'])}** —[{r['assertion']}]→ "
+                 f"**{name(r['t'])}** · {r['n_docs']} documents "
+                 f"({r['n_dated']} dated: {span}) · "
+                 f"postures: {', '.join(p for p in r['postures'] if p)} · "
+                 f"sources: {', '.join(r['families'])}")
+
+    # ---- alias review queue -------------------------------------------
+    cand_path = os.path.join(ROOT, "unresolved", "pass2-merge-candidates.jsonl")
+    queue = []
+    if os.path.isfile(cand_path):
+        for line in open(cand_path, encoding="utf-8"):
+            c = json.loads(line)
+            score = max(cscore.get(c["a_id"], 0), cscore.get(c["b_id"], 0))
+            if score > 0:
+                queue.append({**c, "max_centrality": round(score, 2)})
+        queue.sort(key=lambda c: -c["max_centrality"])
+    L.append(f"\n## 2c. Alias review queue "
+             f"({len(queue)} merge candidates touching active controllers)\n")
+    L.append("Merge candidates ranked by the centrality of their most "
+             "central member — resolving one high-degree alias improves "
+             "more of the graph than resolving many leaf nodes. Review "
+             "decisions belong to a human; nothing here is auto-merged.\n")
+    L.append("| Candidate pair | Kind | Max centrality |")
+    L.append("|---|---|---|")
+    for c in queue[:12]:
+        L.append(f"| {c['a_key']} ~ {c['b_key']} | {c['candidate_kind']} | "
+                 f"{c['max_centrality']} |")
 
     L.append(f"\n## 3. Competing control assertions across documents "
              f"({len(competing)} nodes)\n")

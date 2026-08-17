@@ -460,6 +460,18 @@ def cross_document_resolution(nodes, edges, names, stats):
                 break
             if len(tb) > len(ta):
                 cands.append(("prefix-containment", ka, kb))
+    # acronym vs initials ("wfb" ~ "wells fargo bank") — candidate only:
+    # initials collide easily, so this is a review queue, never a merge.
+    _stoptok = {"of", "the", "and", "de", "la", "for"}
+    initials = defaultdict(list)
+    for k in ent_keys:
+        toks = [t for t in k.split() if t not in _stoptok]
+        if len(toks) >= 2:
+            initials["".join(t[0] for t in toks)].append(k)
+    for k in ent_keys:
+        if " " not in k and 2 <= len(k) <= 5 and k.isalpha():
+            for full in sorted(initials.get(k, [])):
+                cands.append(("acronym-initials", k, full))
     ppl_by_last = defaultdict(list)
     for k in nodes.people:
         toks = k.split()
@@ -496,9 +508,21 @@ def write_jsonl(path, records):
             fh.write(json.dumps(rec, sort_keys=True, ensure_ascii=False) + "\n")
 
 
+def load_doc_dates():
+    """sha256 -> document-date record from content_pass_2.doc_dates."""
+    path = os.path.join(REPO, "content-pass-2", "document-dates.jsonl")
+    dates = {}
+    if os.path.isfile(path):
+        for line in open(path, encoding="utf-8"):
+            r = json.loads(line)
+            dates[r["sha256"]] = r
+    return dates
+
+
 def main():
     obs = [json.loads(l) for l in open(OBS, encoding="utf-8")]
     obs.sort(key=lambda r: r["observation_id"])
+    doc_dates = load_doc_dates()
 
     nodes = Nodes()
     edges, names, unresolved = [], [], []
@@ -519,10 +543,24 @@ def main():
             **extra})
 
     def provenance(o):
+        # Three dates, never conflated: source_date is when the DOCUMENT
+        # was published/filed; valid_from is when the relationship applies
+        # (a full date stated in the evidence sentence, else the filing's
+        # own event/report-period date); retrieved_at is when we archived
+        # it. Bases are recorded for both extracted dates.
+        dd = doc_dates.get(o.get("source_sha256")) or {}
+        vf = iso_source_date(o.get("date_raw"))
+        vf_basis = "sentence-stated" if vf else None
+        if not vf and dd.get("event_date"):
+            vf, vf_basis = dd["event_date"], dd.get("event_basis")
         return {
             "source_id": o["observation_id"],
             "source_url": o["source_url"],
-            "source_date": iso_source_date(o.get("date_raw")),
+            "source_date": dd.get("publication_date"),
+            "source_date_basis": dd.get("publication_basis"),
+            "valid_from": vf,
+            "valid_from_basis": vf_basis,
+            "source_form": dd.get("form"),
             "retrieved_at": o["retrieval_date"],
             "source_sha256": o["source_sha256"],
             "source_locator": (f"chars {o['character_start']}-"
