@@ -57,7 +57,14 @@ def classify_doj_challenges():
         if os.path.isfile(disk):
             with open(disk, "rb") as fh:
                 head = fh.read(2048)
-        is_challenge = b"bm-verify" in head or b"interstitial" in head
+        if head:
+            is_challenge = b"bm-verify" in head or b"interstitial" in head
+        else:
+            # Raw bytes not on this machine (text-only checkout): the
+            # interstitial class is EMPTY-extraction justice.gov captures
+            # of ~2.5 KB (content pages are far larger) — see
+            # CONTENT-PASS-1-REPORT §16.
+            is_challenge = 0 < (rec.get("size_bytes") or 0) < 6000
         challenges.append({
             "sha256": s["sha256"],
             "url": rec.get("url"),
