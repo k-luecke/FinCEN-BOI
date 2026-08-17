@@ -61,14 +61,27 @@ Deripaska, Rotenberg, Bazzi, Tesic, and Tatulian networks among them.
 
 ## Dates
 
-`source_date` on an edge is the source DOCUMENT's date, extracted
-deterministically by `content_pass_2.doc_dates` (dateline / EDGAR SGML
-header / 13D-G event-date block / URL; basis recorded per edge in
-`source_date_basis`). A full date stated in the evidence sentence
-itself is the relationship's event date and lands in `valid_from`.
-Documents whose head carries no extractable date stay undated rather
-than borrowing a date from body text. Current coverage: 486/959 edges
-dated (1996–2026), 70 with sentence-stated event dates.
+Three dates per edge, never conflated: `source_date` = when the
+document was published/filed; `valid_from` = when the relationship
+applies (a full date stated in the evidence sentence, else the
+filing's own event/report-period date); `retrieved_at` = when we
+archived it. Both extracted dates carry a basis
+(`source_date_basis` / `valid_from_basis`); SEC forms also carry
+`source_form`.
+
+`content_pass_2.doc_dates` extracts them deterministically. For SEC
+EDGAR documents the authoritative source is the archived
+submissions.zip bulk snapshot (per-CIK metadata joined by accession —
+pass `--edgar-zip` or set `EDGAR_SUBMISSIONS_ZIP`; object sha
+`ec07d8ce…` in release `objects-run-31863924882`). Text datelines,
+13D/G event blocks, and URL dates are fallbacks; a document whose head
+carries no extractable date stays undated rather than borrowing a
+body date.
+
+Coverage: 871/1220 documents publication-dated (533 by EDGAR
+metadata), 224 event-dated; 761/959 edges (79%) carry `source_date`,
+331 (34%) carry `valid_from`; 234/391 unique relationships (59%) have
+a temporal envelope.
 
 ## Cross-document entity resolution
 
