@@ -1,0 +1,506 @@
+<title>Ownership Reconstruction</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f6f5f2; --panel: #fdfcfa; --panel-2: #efeee9;
+    --ink: #201e1a; --ink-2: #605c53; --ink-3: #96917f;
+    --line: #e3e0d8; --line-2: #d2cfc4;
+    --own: #2a78d6; --parent: #eb6834; --ctrl: #1baf7a; --rel: #96917f;
+    --node-fill: #fdfcfa; --halo: rgba(42,120,214,.16);
+    --shadow: 0 10px 30px rgba(32,30,26,.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #1a1a19; --panel: #222221; --panel-2: #292927;
+      --ink: #f4f3ec; --ink-2: #c3c2b7; --ink-3: #8b897e;
+      --line: #35342e; --line-2: #45443c;
+      --own: #3987e5; --parent: #d95926; --ctrl: #199e70; --rel: #8b897e;
+      --node-fill: #262624; --halo: rgba(57,135,229,.22);
+      --shadow: 0 10px 30px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #1a1a19; --panel: #222221; --panel-2: #292927;
+    --ink: #f4f3ec; --ink-2: #c3c2b7; --ink-3: #8b897e;
+    --line: #35342e; --line-2: #45443c;
+    --own: #3987e5; --parent: #d95926; --ctrl: #199e70; --rel: #8b897e;
+    --node-fill: #262624; --halo: rgba(57,135,229,.22);
+    --shadow: 0 10px 30px rgba(0,0,0,.5);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.55 -apple-system, "Segoe UI", system-ui, sans-serif;
+  }
+  .serif { font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif; }
+  .mono { font-family: ui-monospace, "SF Mono", "Cascadia Code", Consolas, Menlo, monospace; }
+
+  header { padding: 34px 28px 0; max-width: 1280px; margin: 0 auto; }
+  .eyebrow { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 10px; }
+  h1 { font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+       font-size: clamp(30px, 4.4vw, 44px); font-weight: 500; margin: 0 0 6px; letter-spacing: -.01em; text-wrap: balance; }
+  .dek { color: var(--ink-2); max-width: 68ch; margin: 0 0 22px; }
+  .dek a { color: inherit; }
+
+  .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 18px; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+          padding: 10px 16px 8px; min-width: 108px; }
+  .stat b { display: block; font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums;
+            font-family: ui-monospace, "SF Mono", Consolas, monospace; letter-spacing: -.02em; }
+  .stat span { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+
+  .board { max-width: 1280px; margin: 0 auto; padding: 0 28px 28px; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; padding: 10px 0; }
+  .toolbar input[type=search] {
+    background: var(--panel); color: var(--ink); border: 1px solid var(--line-2); border-radius: 6px;
+    padding: 7px 12px; font: inherit; font-size: 13.5px; width: 290px;
+  }
+  .toolbar input[type=search]:focus-visible, .chip:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--own); outline-offset: 2px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip { display: inline-flex; align-items: center; gap: 7px; cursor: pointer; user-select: none;
+          background: var(--panel); border: 1px solid var(--line-2); border-radius: 99px;
+          padding: 5px 12px; font-size: 12.5px; color: var(--ink-2); }
+  .chip.off { opacity: .38; }
+  .chip svg { flex: none; }
+  .hint { font-size: 12px; color: var(--ink-3); margin-left: auto; }
+
+  .canvas-wrap { position: relative; background: var(--panel); border: 1px solid var(--line);
+                 border-radius: 8px; overflow: hidden; }
+  #canvas { display: block; width: 100%; height: 66vh; min-height: 430px; cursor: grab; touch-action: none; }
+  #canvas.dragging { cursor: grabbing; }
+
+  .nlabel { font: 10.5px ui-monospace, "SF Mono", Consolas, monospace; fill: var(--ink-2); pointer-events: none; }
+  .elabel { font: 600 9.5px ui-monospace, "SF Mono", Consolas, monospace; fill: var(--ink); pointer-events: none;
+            paint-order: stroke; stroke: var(--panel); stroke-width: 3px; stroke-linejoin: round; }
+  .node { cursor: pointer; }
+  .node .shape { fill: var(--node-fill); stroke: var(--ink-2); stroke-width: 1.4; }
+  .node.person .shape { stroke-width: 1.4; }
+  .node:hover .shape, .node.sel .shape { stroke: var(--ink); stroke-width: 2.4; }
+  .node.dim, .edge.dim { opacity: .13; }
+  .node.hit .shape { stroke: var(--own); stroke-width: 2.6; }
+  .halo { fill: var(--halo); }
+  .edge path { fill: none; stroke-width: 1.8; }
+  .edge:hover path.core, .edge.sel path.core { stroke-width: 3; }
+  .edge path.hit-area { stroke: transparent; stroke-width: 12; }
+  .e-BENEFICIAL_OWNER path.core { stroke: var(--own); }
+  .e-PARENT path.core { stroke: var(--parent); }
+  .e-UNKNOWN_CONTROL_ROLE path.core { stroke: var(--ctrl); stroke-dasharray: 6 4; }
+  .e-RELATED_ORGANIZATION path.core { stroke: var(--rel); stroke-dasharray: 2 4; stroke-linecap: round; }
+
+  #tip { position: absolute; pointer-events: none; z-index: 5; max-width: 340px; display: none;
+         background: var(--panel); border: 1px solid var(--line-2); border-radius: 7px; box-shadow: var(--shadow);
+         padding: 10px 12px; font-size: 12.5px; color: var(--ink-2); }
+  #tip b { color: var(--ink); font-size: 13px; }
+  #tip .q { font-style: italic; margin-top: 6px; color: var(--ink-2); }
+  #tip .k { font-size: 10.5px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); }
+
+  #panel { position: absolute; top: 12px; right: 12px; bottom: 12px; width: min(390px, 88%);
+           background: var(--panel); border: 1px solid var(--line-2); border-radius: 8px; box-shadow: var(--shadow);
+           padding: 16px 18px; overflow: auto; display: none; z-index: 6; }
+  #panel.open { display: block; }
+  #panel h2 { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+              font-size: 21px; font-weight: 500; margin: 0 34px 2px 0; }
+  #panel .kind { font-size: 11px; letter-spacing: .11em; text-transform: uppercase; color: var(--ink-3); }
+  #panel .alias { font-size: 12.5px; color: var(--ink-2); margin: 8px 0 0; }
+  #panel .alias em { color: var(--ink-3); font-style: normal; font-size: 11px; letter-spacing: .06em; }
+  .pedge { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 12px; font-size: 13px; }
+  .pedge .rel { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .pedge .assert { font: 600 10.5px ui-monospace, Consolas, monospace; letter-spacing: .05em; padding: 2px 7px;
+                   border-radius: 4px; border: 1px solid var(--line-2); color: var(--ink-2); }
+  .pedge .quote { font-style: italic; color: var(--ink-2); margin: 7px 0 5px; font-size: 12.5px; }
+  .pedge .meta { font-size: 11.5px; color: var(--ink-3); }
+  .pedge a { color: var(--own); text-decoration: none; }
+  .pedge a:hover { text-decoration: underline; }
+  #panel .close { position: absolute; top: 10px; right: 10px; border: 1px solid var(--line-2); background: var(--panel-2);
+                  color: var(--ink-2); border-radius: 6px; width: 28px; height: 28px; cursor: pointer; font-size: 14px; line-height: 1; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 12px 4px 2px; font-size: 12.5px; color: var(--ink-2); align-items: center; }
+  .legend .li { display: inline-flex; align-items: center; gap: 8px; }
+
+  section.tables { max-width: 1280px; margin: 0 auto; padding: 6px 28px 60px; }
+  details { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); margin-top: 16px; }
+  summary { cursor: pointer; padding: 13px 18px; font-weight: 600; font-size: 14px; }
+  summary .n { color: var(--ink-3); font-weight: 400; }
+  .tbl-wrap { overflow-x: auto; padding: 0 18px 16px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th { text-align: left; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3);
+       border-bottom: 1px solid var(--line-2); padding: 6px 14px 6px 0; }
+  td { border-bottom: 1px solid var(--line); padding: 6px 14px 6px 0; vertical-align: top; }
+  td.mono, .mono td { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 12.5px; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  footer { max-width: 1280px; margin: 0 auto; padding: 0 28px 44px; color: var(--ink-3); font-size: 12.5px; }
+  footer a { color: inherit; }
+  @media (prefers-reduced-motion: no-preference) {
+    .node .shape, .edge path.core { transition: stroke-width .12s ease; }
+  }
+</style>
+
+<header>
+  <p class="eyebrow">FinCEN-BOI archive · pass-2 evidence layer · 2026-08-17</p>
+  <h1>Ownership Reconstruction</h1>
+  <p class="dek">Every edge below is a sentence in an archived government record — an SEC complaint, an OFAC
+  designation, a prudential-regulator order — stating who owns, controls, or contains whom. Nothing is inferred:
+  hover an edge to read the sentence it cites; click a node to see its full evidence. Clusters are separate documents'
+  disclosures; joining them across documents is the next pass.</p>
+  <div class="stats" id="stats"></div>
+</header>
+
+<div class="board">
+  <div class="toolbar">
+    <input id="q" type="search" placeholder="Search names — try “EIKO” or “Nunns”" aria-label="Search nodes">
+    <div class="chips" id="chips"></div>
+    <span class="hint">drag background to pan · scroll to zoom · drag nodes to untangle</span>
+  </div>
+  <div class="canvas-wrap">
+    <svg id="canvas" preserveAspectRatio="xMidYMin meet" role="img" aria-label="Force-directed ownership graph: 143 parties connected by 101 evidence edges"></svg>
+    <div id="tip"></div>
+    <aside id="panel" aria-live="polite"><button class="close" aria-label="Close details">×</button><div id="panel-body"></div></aside>
+  </div>
+  <div class="legend" id="legend"></div>
+</div>
+
+<section class="tables">
+  <details>
+    <summary>Alias ledger — d/b/a, a/k/a and former names not yet joined to the graph <span class="n" id="ledger-n"></span></summary>
+    <div class="tbl-wrap"><table class="mono" id="ledger"><thead><tr><th>Named party</th><th>Alias type</th><th>Alias</th></tr></thead><tbody></tbody></table></div>
+  </details>
+  <details>
+    <summary>Held out of the graph — recorded in <code>unresolved/</code>, never guessed in <span class="n" id="unres-n"></span></summary>
+    <div class="tbl-wrap"><table id="unres"><thead><tr><th>Reason</th><th class="num">Observations</th></tr></thead><tbody></tbody></table></div>
+  </details>
+</section>
+
+<footer>
+  Built from <span class="mono">ownership-reconstruction/*/pass2-observations.jsonl</span> (branch
+  <span class="mono">claude/data-analysis-readiness-vt1b5y</span>), validated by <span class="mono">ownership_schema.py</span> — 0 problems.
+  Assertions are what each source states; control is never promoted to ownership. Contains no CTA-filed BOI data —
+  public records only, each edge traceable to archived bytes by SHA-256.
+</footer>
+
+<script>
+const DATA = {"edges": [{"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Forrest is owned by Nunns, Lucas, McNaul, Kilgariff and their affiliated entities. Forrest provided oil-and-gas drilling equipment to certain of the Consolidated purported joint ventures and also leased equipment from such purported ventures. 29.", "s": "obs-ent:25851aeda5082994", "t": "obs-ent:72ca296a4d08bb1b", "url": "https://www.sec.gov/file/complaint08-c-v01159tallman"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Technotar Engineering, which is an engineering firm owned by Mehr Eqtesad Iranian Investment Company, specializes in the production of refueling equipment, but it has recently purchased Taktar Investment Company. Taktar Investment Company in turn purchased", "s": "obs-ent:46c4c8b4332345a6", "t": "p:obs-6be789274090b67c", "url": "https://home.treasury.gov/news/press-releases/sm524"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": 60.0, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Valued at 15.2 billion Syrian pounds ($34.8 million equivalent) at the time of its creation, Damascus Cham Holding holds 60 percent of the shares in Bunyan, which will develop two mixed-use properties on expropriated land in Marota City with a total built-up a", "s": "obs-ent:4e51bf887d031dff", "t": "obs-ent:6ac9ec28c21db7cb", "url": "https://home.treasury.gov/news/press-releases/sm1037"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": 51.0, "posture": "GOVERNMENT_FINDING", "quote": "Additionally, LCB is the majority shareholder of Prime Bank Limited, a private commercial bank and the LCB subsidiary located in Serrekunda, Gambia.6 LCB owns 51% of Prime Bank while the remaining shares are held by local and Lebanese partners.", "s": "obs-ent:66f312a7e1096704", "t": "obs-ent:81226f6306cb5b10", "url": "https://www.govinfo.gov/content/pkg/FR-2011-02-17/pdf/2011-3346.pdf"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Until final approval is granted, the OCC has the right to modify, suspend or rescind this preliminary conditional approval should the OCC deem any interim development to warrant such action. The Proposed Bank The Bank would be a wholly owned subsidiary of IBG ", "s": "obs-ent:686898dd282274b4", "t": "obs-ent:d09a40251b7ea6cd", "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1373.pdf"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "IBG LLC is owned by Interactive Brokers Group, Inc.", "s": "obs-ent:686898dd282274b4", "t": "obs-ent:ec67cdde5f407d8e", "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1373.pdf"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "BM Systems EAD, Int Invest EOOD, Inttrafik EOOD, and Real Estates Int Ltd EOOD are owned or controlled by Intrust PLC EAD.", "s": "obs-ent:71875dfa62ba9cf8", "t": "obs-ent:fe7d664f9b9dba82", "url": "https://home.treasury.gov/news/press-releases/jy0208"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "TFM is owned by U.S.-based Freeport-McMoRan Copper & Gold Inc., Canada-based Lundin Mining Corporation, and DRC-owned Gecamines.", "s": "obs-ent:7c0fb25cdb73d463", "t": "obs-ent:b2185d879d858638", "url": "https://home.treasury.gov/news/press-releases/hp1220"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Its common stock is quoted on OTC Link, which is owned and operated by OTC Markets Group (formerly known as Pink OTC Markets Inc.).", "s": "obs-ent:881e78f5c991fd4f", "t": "p:obs-80fc106eb997e9dd", "url": "https://www.sec.gov/file/complaint13-cv-06526zankowski"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": 25.0, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "For example, if Company A acquired a 25 percent ownership interest in Company B on July 1, but its right to control Company B was deferred until after CFIUS reviews the transaction, the “completion date” for the transaction is July 1.", "s": "obs-ent:aa5c9eda2d62c9f5", "t": "obs-ent:1960d5f8776b4d19", "url": "https://home.treasury.gov/cfius-faq-item/international-affairs/how-does-cfius-determine-the-completion-date-in-assessing-when-a-mandatory-filing-should-be-submitted-where-the-foreign-person-first-acquires-equity-interest-but-will-not-receive-control-or-covered-investment-rights"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "MEDICAL EQUIPMENT & DRUGS INTERNATIONAL CORPORATION (MEDIC) Medic is owned or controlled by Atlas Holding.", "s": "obs-ent:fc7d3a7e15d20920", "t": "obs-ent:d6a65e53e15d6e00", "url": "https://home.treasury.gov/news/press-releases/sm917"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "SHAHED PHARM Shahed Pharm is owned or controlled by Atlas Holding.", "s": "obs-ent:fc7d3a7e15d20920", "t": "p:obs-2a79d0a35eb985fe", "url": "https://home.treasury.gov/news/press-releases/sm917"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "AL KAWTHAR Al Kawthar is owned or controlled by Atlas Holding.", "s": "obs-ent:fc7d3a7e15d20920", "t": "p:obs-9683e9bc417fa17c", "url": "https://home.treasury.gov/news/press-releases/sm917"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Eurobet OOD is owned or controlled by Eurobet Partners OOD.", "s": "obs-ent:ffb2d2807c9d980c", "t": "p:obs-e61de182be831db8", "url": "https://home.treasury.gov/news/press-releases/jy0208"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Vabo Systems EOOD, Vato 2002 EOOD, Nove Development EOOD, Property-VB OOD, Trans Nove OOD, Nove Partners OOD, Adler BG AD, Efbet Partners OOD, and Internews 98 OOD are owned or controlled by Nove Internal EOOD.", "s": "p:obs-024cb6143f331c5d", "t": "obs-ent:555decc95c09e4cb", "url": "https://home.treasury.gov/news/press-releases/jy0208"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "The Limited Liability Company Investment Company Abros is owned or controlled by Bank Rossiya.", "s": "p:obs-038ddc2e4b58a10c", "t": "obs-ent:528c8735a802996e", "url": "https://home.treasury.gov/news/press-releases/jl2369"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Pardo Family Holdings, Ltd., a wholly-owned subsidiary of the Pardo Family Trust (“Pardo Trust”), sold Life Partners stock for Pardo, the beneficial owner of the Pardo Trust, as follows: Date 2/12/2007 5/18/2007 6/25/2007 10/17/2007 10/18/2007 7/25/2008 8/11/2", "s": "p:obs-10d52613eed0f86a", "t": "obs-ent:730049d444493b9a", "url": "https://www.sec.gov/file/complaint12-cv-00033pardo"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Liibaan Trading and Al-Mutafaq Commercial Company were designated for being owned or controlled by Mire Ali.", "s": "p:obs-1148ad447c32c5d2", "t": "obs-ent:30ac9095488565b8", "url": "https://home.treasury.gov/news/press-release/sm0284"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Hesco Engineering is owned by George Haswani, one of the Syrian regime’s middlemen for dealings between the Government of Syria and ISIS.", "s": "p:obs-1e719d4522690a2f", "t": "p:obs-39d77a628fa1eaad", "url": "https://home.treasury.gov/news/press-releases/sm474"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Atlas Exchange is owned by Mohammad Vakili, who resides in the UAE and collaborated with Assadollah Seifi to use two UAE-based companies – the Best Leader General Trading and Golden Commodities General Trading – to evade sanctions.", "s": "p:obs-26beb07ff2155dd8", "t": "p:obs-3d0b29f90a9a7d4c", "url": "https://home.treasury.gov/news/press-releases/sm639"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": 99.0, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Al-Arabi owns 99 percent of the UK-incorporated company Technology and Development Group Limited (TDG), which in turn owns TMG Engineering Limited.", "s": "p:obs-292872a0d12b1e15", "t": "obs-ent:6d7dbb22ba517c55", "url": "https://home.treasury.gov/news/press-releases/js2100"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "As of May 2017, Embedi was owned or controlled by Digital Security.", "s": "p:obs-2ec6c7486a5aad57", "t": "obs-ent:cae987ff049c6a03", "url": "https://home.treasury.gov/news/press-releases/sm0410"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Ancient Heritage AD is owned or controlled by Thrace Foundation.", "s": "p:obs-3e985d7d72796222", "t": "obs-ent:fed0a039cf366743", "url": "https://home.treasury.gov/news/press-releases/jy0208"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Eurobet Partners OOD is owned or controlled by Digital Services EAD.", "s": "p:obs-415d5fd460d8f6e3", "t": "p:obs-e5fbc60b10766473", "url": "https://home.treasury.gov/news/press-releases/jy0208"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Lana TV is owned or controlled by Samer Foz and is being designated pursuant to E.O.", "s": "p:obs-4ac6ff9b2e2eb127", "t": "p:obs-9184ba34b62a421f", "url": "https://home.treasury.gov/news/press-releases/sm704"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "BSQRD Limited was designated for being owned or controlled by Wael Bazzi.", "s": "p:obs-56e1656147ccb35d", "t": "obs-ent:aee0c0c106a5a919", "url": "https://home.treasury.gov/news/press-releases/sm668"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Evrobet - Rumania EOOD and Old Games EOOD are owned or controlled by Games Unlimited OOD.", "s": "p:obs-5d326e1ebba6184f", "t": "obs-ent:d96d7696fe7842a1", "url": "https://home.treasury.gov/news/press-releases/jy0208"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "MIRATH S.A.L. Mirath is owned or controlled by Jawad Nur-al-Din.", "s": "p:obs-655fd8b5ee56a87f", "t": "obs-ent:ddc4f21a330c3617", "url": "https://home.treasury.gov/news/press-releases/sm917"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "PIW is owned by Lucas, Nunns and McNaul through their respective LLC’s.", "s": "p:obs-6caaee6aa5b6c9f4", "t": "obs-ent:1719eb8b49108938", "url": "https://www.sec.gov/file/complaint08-c-v01159tallman"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Mid-Kan is owned and controlled by Lucas, Nunns and McNaul through their respective LLC’s.", "s": "p:obs-6caaee6aa5b6c9f4", "t": "obs-ent:685b8319fd845f14", "url": "https://www.sec.gov/file/complaint08-c-v01159tallman"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Mid-Kan is owned and controlled by Lucas, Nunns and McNaul through their respective LLC’s.", "s": "p:obs-6caaee6aa5b6c9f4", "t": "obs-ent:685b8319fd845f14", "url": "https://www.sec.gov/file/complaint08-c-v01159tallman"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Warren is owned by Lucas, Nunns and McNaul through their respective", "s": "p:obs-6caaee6aa5b6c9f4", "t": "obs-ent:b4e78f1caf934167", "url": "https://www.sec.gov/file/complaint08-c-v01159tallman"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "National Lottery AD is owned or controlled by Nove Development EOOD.", "s": "p:obs-6fb763a7c2b2ba0d", "t": "obs-ent:f9ce266885edbe22", "url": "https://home.treasury.gov/news/press-releases/jy0208"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "PIW is owned by Lucas, Nunns and McNaul through their respective LLC’s.", "s": "p:obs-7cadab457ad8d811", "t": "obs-ent:1719eb8b49108938", "url": "https://www.sec.gov/file/complaint08-c-v01159tallman"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Mid-Kan is owned and controlled by Lucas, Nunns and McNaul through their respective LLC’s.", "s": "p:obs-7cadab457ad8d811", "t": "obs-ent:685b8319fd845f14", "url": "https://www.sec.gov/file/complaint08-c-v01159tallman"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Mid-Kan is owned and controlled by Lucas, Nunns and McNaul through their respective LLC’s.", "s": "p:obs-7cadab457ad8d811", "t": "obs-ent:685b8319fd845f14", "url": "https://www.sec.gov/file/complaint08-c-v01159tallman"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Warren is owned by Lucas, Nunns and McNaul through their respective", "s": "p:obs-7cadab457ad8d811", "t": "obs-ent:b4e78f1caf934167", "url": "https://www.sec.gov/file/complaint08-c-v01159tallman"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Mriya Resort and Spa is owned by Liability Company Garant-SV, an entity that is ultimately owned by Sberbank.", "s": "p:obs-7f8ee37fe0c0945f", "t": "obs-ent:01698ce1dc071ffe", "url": "https://home.treasury.gov/news/press-releases/sm543"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Nabah is owned or controlled by Ashraf Seed Ahmed Al-Cardinal (Al-Cardinal) and is registered in the United Kingdom.", "s": "p:obs-893a1331805f1ac2", "t": "obs-ent:7cda5617b07e8b1c", "url": "https://home.treasury.gov/news/press-releases/sm1122"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Tetrix Financial is a Delaware corporation owned by Defendant Pawel", "s": "p:obs-8a48935e24d35bb9", "t": "p:obs-cf76fb9a26acccbd", "url": "https://www.sec.gov/file/complaint09-cv-00361dynkowski"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Ihab Makhluf, the Vice Chairman of Syrian mobile phone provider Syriatel, which is owned by Rami Makhluf and was previously designated by OFAC, has helped Rami Makhluf evade sanctions by moving his assets overseas.", "s": "p:obs-b34e368d9fb0ddef", "t": "obs-ent:0b96f47ca57e973e", "url": "https://home.treasury.gov/news/press-release/sm0087"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Ihab Makhluf, the Vice Chairman of Syrian mobile phone provider Syriatel, which is owned by Rami Makhluf and was previously designated by OFAC, has helped Rami Makhluf evade sanctions by moving his assets overseas.", "s": "p:obs-b34e368d9fb0ddef", "t": "obs-ent:0b96f47ca57e973e", "url": "https://home.treasury.gov/news/press-releases/sm0087"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Stewardship Financial is the sole shareholder of Atlantic Stewardship Bank and has determined the Bank Merger to be in the best interest of Stewardship Financial and of its own shareholders.", "s": "p:obs-bcab77db62c07fe0", "t": "obs-ent:83606e967a06b5dd", "url": "https://www.occ.gov/topics/charters-and-licensing/public-comment/merger-app-columbia-bnk-and-atlantic-stewardship-bnk.pdf"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "However, Skyline was owned and controlled by Joseph Nelson and was therefore not a “third party” company as represented to investors.", "s": "p:obs-c4cde1f7d5c9b7a1", "t": "obs-ent:6db67ddbf0c9afdc", "url": "https://www.sec.gov/file/complaint11-cv-01219wilcox"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "However, Skyline was owned and controlled by Joseph Nelson and was therefore not a “third party” company as represented to investors.", "s": "p:obs-c4cde1f7d5c9b7a1", "t": "obs-ent:6db67ddbf0c9afdc", "url": "https://www.sec.gov/file/complaint11-cv-01219wilcox"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "COURT_ALLEGATION", "quote": "Barton, age 47, previously of Atlanta, Georgia, is the founder, principal control person, and, through Barton Asset Management, the majority owner of TwinSpan .", "s": "p:obs-d13e884bc9c1d8f2", "t": "obs-ent:c65a8c9149830692", "url": "https://www.sec.gov/file/judg08-cv-01917barton"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Siguro EOOD is owned or controlled by Eurogroup Engineering EAD.", "s": "p:obs-d1fdfd4e87d6b070", "t": "obs-ent:f9ad3e9e47b853be", "url": "https://home.treasury.gov/news/press-releases/jy0208"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Eurosadruzhie OOD and Decart OOD are owned or controlled by Vabo Systems EOOD.", "s": "p:obs-d46d0d3fb215c81b", "t": "p:obs-8e7ca67edfa8a20d", "url": "https://home.treasury.gov/news/press-releases/jy0208"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "SMART is owned or controlled by Ismael Tash. Tash is the owner of SMART.", "s": "p:obs-d7abc40e3e17f0bf", "t": "obs-ent:544e2d6145f6ea1d", "url": "https://home.treasury.gov/news/press-releases/sm772"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "SMART is owned or controlled by Ismael Tash. Tash is the owner of SMART.", "s": "p:obs-d7abc40e3e17f0bf", "t": "obs-ent:544e2d6145f6ea1d", "url": "https://home.treasury.gov/news/featured-stories/treasury-targets-wide-range-of-terrorists-and-their-supporters-using-enhanced-counterterrorism-sanctions-authorities-0"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Vihrogonika AD is owned or controlled by Vabo Management EOOD.", "s": "p:obs-e02d9a2ff0838e4a", "t": "obs-ent:b6f037b5197587d9", "url": "https://home.treasury.gov/news/press-releases/jy0208"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "PIW is owned by Lucas, Nunns and McNaul through their respective LLC’s.", "s": "p:obs-f46dab93abf646de", "t": "obs-ent:1719eb8b49108938", "url": "https://www.sec.gov/file/complaint08-c-v01159tallman"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Mid-Kan is owned and controlled by Lucas, Nunns and McNaul through their respective LLC’s.", "s": "p:obs-f46dab93abf646de", "t": "obs-ent:685b8319fd845f14", "url": "https://www.sec.gov/file/complaint08-c-v01159tallman"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Mid-Kan is owned and controlled by Lucas, Nunns and McNaul through their respective LLC’s.", "s": "p:obs-f46dab93abf646de", "t": "obs-ent:685b8319fd845f14", "url": "https://www.sec.gov/file/complaint08-c-v01159tallman"}, {"a": "BENEFICIAL_OWNER", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Warren is owned by Lucas, Nunns and McNaul through their respective", "s": "p:obs-f46dab93abf646de", "t": "obs-ent:b4e78f1caf934167", "url": "https://www.sec.gov/file/complaint08-c-v01159tallman"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "For example, a post from @hwdbgs, a now-deleted Huione Guarantee-affiliated Telegram channel, claimed that Panda Bank was a subsidiary of Huione Group.", "s": "obs-ent:07a5f228dfe185bd", "t": "obs-ent:81eb9550c387d5d7", "url": "https://www.govinfo.gov/content/pkg/FR-2026-06-25/pdf/2026-12794.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Premier American Bank, N.A. is a subsidiary of Bond Street Holdings, LLC, Naples, Florida. On Monday, January 25, 2010, the former Premier American Bank locations will reopen as branches of Premier American Bank, N.A. Checks that were drawn on Premier American", "s": "obs-ent:209d443e080edf8e", "t": "obs-ent:8ca6a74f60807565", "url": "https://www.fdic.gov/resources/resolutions/bank-failures/failed-bank-list/premieramerican.html"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Iran Mobin Electronic Development Company, a direct subsidiary of EIKO involved in telecommunications, and Barkat Ventures, a direct subsidiary of EIKO that serves as a pillar of EIKO’s investments into cyberspace and information technology. EIKO is being desi", "s": "obs-ent:3520dec341dd185d", "t": "obs-ent:a1d586486c503f03", "url": "https://home.treasury.gov/news/press-releases/sm1234"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Pardo Family Holdings, Ltd., a wholly-owned subsidiary of the Pardo Family Trust (“Pardo Trust”), sold Life Partners stock for Pardo, the beneficial owner of the Pardo Trust, as follows: Date 2/12/2007 5/18/2007 6/25/2007 10/17/2007 10/18/2007 7/25/2008 8/11/2", "s": "obs-ent:4f897c3fef7215af", "t": "obs-ent:a13e7fcc4639081c", "url": "https://www.sec.gov/file/complaint12-cv-00033pardo"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "As indicated in your letter of December 22, 2021, the dividend will be provided to the Bank’s holding company, Home Bancorp, Inc., to fund the acquisition of Friendswood Capital Corporation and its wholly-owned subsidiary, Texan Bank, National Association. Thi", "s": "obs-ent:51985842f634b85f", "t": "obs-ent:4884f92926055523", "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2022/crad228.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Anchorage Trust was chartered as a non-depository public trust company by the state of South Dakota in 2019. Anchorage Trust is a wholly owned subsidiary of Anchor Labs, Inc., (Anchor Labs) a Delaware corporation headquartered in San Francisco, California.", "s": "obs-ent:52b7563f12cdbd96", "t": "obs-ent:960c5ed29d91bfa5", "url": "https://www.occ.gov/news-issuances/news-releases/2021/nr-occ-2021-6a.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Anchorage Trust was chartered as a non-depository public trust company by the state of South Dakota in 2019. Anchorage Trust is a wholly owned subsidiary of Anchor Labs, Inc., (Anchor Labs) a Delaware corporation headquartered in San Francisco, California.", "s": "obs-ent:52b7563f12cdbd96", "t": "obs-ent:960c5ed29d91bfa5", "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2021/ca1257.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Anchorage Trust is a wholly owned subsidiary of Anchor Labs, Inc., (Anchor Labs) a Delaware corporation headquartered in San Francisco, California.", "s": "obs-ent:52b7563f12cdbd96", "t": "obs-ent:a54ace0bf1a902a3", "url": "https://www.occ.gov/news-issuances/news-releases/2021/nr-occ-2021-6a.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Anchorage Trust is a wholly owned subsidiary of Anchor Labs, Inc., (Anchor Labs) a Delaware corporation headquartered in San Francisco, California.", "s": "obs-ent:52b7563f12cdbd96", "t": "obs-ent:a54ace0bf1a902a3", "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2021/ca1257.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "BitGo Trust is a wholly-owned subsidiary of BitGo Holdings, Inc., a Delaware corporation headquartered in Palo Alto, California.", "s": "obs-ent:5a6846cdd63c2669", "t": "obs-ent:85dfbf4d815771a9", "url": "https://www.occ.gov/news-issuances/news-releases/2025/nr-occ-2025-125c.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "BitGo Trust is a wholly-owned subsidiary of BitGo Holdings, Inc., a Delaware corporation headquartered in Palo Alto, California.", "s": "obs-ent:5a6846cdd63c2669", "t": "obs-ent:85dfbf4d815771a9", "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/ca1353.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Triliance has also facilitated the sale of millions of dollars’ worth of petroleum products involving Naftiran Intertrade Company, a subsidiary of NIOC, to companies in China.", "s": "obs-ent:781e56c8dfecfd97", "t": "obs-ent:3b480dc67bc25232", "url": "https://home.treasury.gov/news/press-releases/sm885"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "As a result of the Merger and the Bank Merger, Columbia Bank will become the sole shareholder of Atlantic Stewardship Insurance Company, LLC, a wholly-owned subsidiary of Atlantic Stewardship Bank that engages in insurance activities.", "s": "obs-ent:83606e967a06b5dd", "t": "obs-ent:943ea164ade2a645", "url": "https://www.occ.gov/topics/charters-and-licensing/public-comment/merger-app-columbia-bnk-and-atlantic-stewardship-bnk.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": ", until March 19 when it entered into a purchase and assumption agreement with Flagstar Bank, a subsidiary of New York Community Bancorp, Inc., Westbury, New York, to", "s": "obs-ent:8362ea0d4606d7d5", "t": "obs-ent:b71038e45a63f018", "url": "https://www.fdic.gov/news/press-releases/2023/pr23033.html"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Tsai is also the general manager of Trans Merits Co. Ltd., a subsidiary of Global Interface Company Inc. that has been designated for being owned or controlled by Global Interface Company Inc. Alex H.T.", "s": "obs-ent:89ca3448b6a5f4b3", "t": "obs-ent:1df9a0d557c2502f", "url": "https://home.treasury.gov/news/press-releases/hp1359"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "The OCC would expect any subsequent application to charter a national trust bank to satisfactorily address the reasons for this action and otherwise be consistent with the statutory and regulatory factors for approval of the proposed bank. Proposed Bank and Bu", "s": "obs-ent:8ef1fdac6b2ba8bd", "t": "obs-ent:6481a35259506e12", "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1381.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "If you are an equity shareholder, your shares are in Washington Mutual, Inc., the holding company for Washington Mutual Bank, and not the Bank.", "s": "obs-ent:98472b769c6edf02", "t": "obs-ent:bc87caddea431b7f", "url": "https://www.fdic.gov/resources/resolutions/bank-failures/failed-bank-list/wamu.html"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "§§ 5.34(e)(3) and 5.38(e)(3) (requirements governing operating subsidiaries of national banks and Federal savings associations); see also https://www.fincen.gov/resources/statutesregulations/guidance/interagency-interpretive-guidance-customer-identification fo", "s": "obs-ent:9a2f67a15038aa6f", "t": "obs-ent:a01af43e0b42ec10", "url": "https://www.occ.gov/news-issuances/bulletins/2020/bulletin-2020-88a.PDF"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "tion for interagency FAQs describing the applicability of the CIP rules to bank subsidiaries. 4 This ORDER does not apply to life insurance policies, annuity contracts or any other insurance product with features of cash value or investment. 5 The consortium i", "s": "obs-ent:9a2f67a15038aa6f", "t": "obs-ent:a01af43e0b42ec10", "url": "https://www.occ.gov/news-issuances/bulletins/2020/bulletin-2020-88a.PDF"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "annuity contracts or any other insurance product with features of cash value or investment. 5 The consortium included the following banks: Pacific Enterprise Bank; BankDirect Capital Finance, LLC – BankDirect Capital Finance, a Division of Texas Capital Bank, ", "s": "obs-ent:9a2f67a15038aa6f", "t": "obs-ent:a01af43e0b42ec10", "url": "https://www.occ.gov/news-issuances/bulletins/2020/bulletin-2020-88a.PDF"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "WASHINGTON — The Federal Deposit Insurance Corporation (FDIC) has reopened and extended until February 22, 2021, the public comment period for the proposed mergers of First-Citizens Bank & Trust Company with CIT Group, Inc., and its subsidiary, CIT Bank, Natio", "s": "obs-ent:9e126f61b53a0b21", "t": "obs-ent:3da76498bd22699e", "url": "https://www.fdic.gov/news/press-releases/2021/pr21007.html"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Chemical Bank is a wholly-owned subsidiary of Chemical Financial Corporation, Detroit, Michigan, a registered financial holding company. Chemical Financial Corporation submitted an application with the Federal Reserve Bank of Chicago to acquire TCF Financial C", "s": "obs-ent:abaf48f30aac5f9b", "t": "obs-ent:4d69e4970266b40f", "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2019/crad197.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "To help simplify the bidding process and expand the pool of potential bidders, the FDIC will allow parties to submit separate bids for Silicon Valley Bridge Bank, N.A., and its subsidiary Silicon Valley Private Bank.", "s": "obs-ent:b88b0c26b8152156", "t": "obs-ent:ff538dfd756e05ff", "url": "https://www.fdic.gov/news/press-releases/2023/pr23022.html"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Tara Steel Trading GmbH is a wholly owned subsidiary of Mobarakeh Steel Company engaged in the wholesale of metals and metal ores in Europe.", "s": "obs-ent:d1150432d24e9fc2", "t": "obs-ent:770e7dfcaeeadb21", "url": "https://home.treasury.gov/news/press-releases/sm1044"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Titan Bank is a wholly owned subsidiary of BMC Bancshares, Inc.", "s": "obs-ent:d9e33976c88430b5", "t": "obs-ent:95214d607cad75c1", "url": "https://www.occ.gov/topics/consumers-and-communities/cra/titan-bank.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Fennell (Chief Risk Officer) • Andrew Ridenour (General Counsel) • Nataliya Manina (Chief Compliance Officer) • Koushik Subramanian (Chief Information Security Officer) • Sachin Suresh (Chief Technology Officer) EDX Trust will be a wholly-owned subsidiary of E", "s": "obs-ent:df71a8247a633cf1", "t": "obs-ent:7f2626069b85f054", "url": "https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/edx-trust.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Fennell (Chief Risk Officer) • Andrew Ridenour (General Counsel) • Nataliya Manina (Chief Compliance Officer) • Koushik Subramanian (Chief Information Security Officer) • Sachin Suresh (Chief Technology Officer) EDX Trust will be a wholly-owned subsidiary of E", "s": "obs-ent:df71a8247a633cf1", "t": "obs-ent:7f2626069b85f054", "url": "https://www.occ.gov/topics/charters-and-licensing/public-comment/edx-markets-holding-company.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Discover Bank reported $147.8 billion in total assets as of December 31, 2024. Discover Bank is a wholly owned subsidiary of Discover Financial Services (DFS), a Delaware corporation and a financial holding company with its headquarters in Riverwoods, Illinois", "s": "p:obs-00ddb6df8a073f8e", "t": "obs-ent:012455fa722699dd", "url": "https://www.occ.gov/news-issuances/news-releases/2025/nr-occ-2025-36a.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Discover Bank is a wholly owned subsidiary of Discover Financial Services (DFS), a Delaware corporation and a financial holding company with its headquarters in Riverwoods, Illinois.", "s": "p:obs-00ddb6df8a073f8e", "t": "obs-ent:012455fa722699dd", "url": "https://www.occ.gov/news-issuances/news-releases/2025/nr-occ-2025-36a.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Discover Bank reported $147.8 billion in total assets as of December 31, 2024. Discover Bank is a wholly owned subsidiary of Discover Financial Services (DFS), a Delaware corporation and a financial holding company with its headquarters in Riverwoods, Illinois", "s": "p:obs-00ddb6df8a073f8e", "t": "obs-ent:012455fa722699dd", "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2025/ca1337.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Discover Bank is a wholly owned subsidiary of Discover Financial Services (DFS), a Delaware corporation and a financial holding company with its headquarters in Riverwoods, Illinois.", "s": "p:obs-00ddb6df8a073f8e", "t": "obs-ent:012455fa722699dd", "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2025/ca1337.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Market Street, Greenwood, DE 19950, into Capital One, National Association (“CONA”), main office located at 1680 Capital One Drive, McLean, VA 22102 (the “Bank Merger”), with CONA as the surviving bank. Discover Bank is a wholly owned subsidiary of Discover Fi", "s": "p:obs-00ddb6df8a073f8e", "t": "obs-ent:012455fa722699dd", "url": "https://www.occ.gov/topics/charters-and-licensing/public-comment/capital-one-merger.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "XRP II, LLC is a wholly-owned subsidiary of Ripple Labs that was incorporated as XRP Fund II, LLC in South Carolina on July 1, 2013; the company changed its name to XRP II in July 2014.", "s": "p:obs-074d2667c75af7ae", "t": "obs-ent:f23b68ef3ed76692", "url": "https://www.fincen.gov/news/news-releases/fincen-fines-ripple-labs-inc-first-civil-enforcement-action-against-virtual"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "The Department of the Treasury today designated Bank Sepah, a state-owned Iranian financial institution for providing support and services to designated Iranian proliferation firms. Bank Sepah International Plc, a wholly-owned subsidiary of Bank Sepah in the U", "s": "p:obs-3f2b8ba47f97e8d3", "t": "obs-ent:84487c4489af9670", "url": "https://home.treasury.gov/news/press-releases/20071912133219686"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Bank Sepah International Plc, a wholly-owned subsidiary of Bank Sepah in the United Kingdom, and Ahmad Derakhshandeh, Bank Sepah's Chairman and Director, were also designated today.Bank Sepah is the financial linchpin of Iran's missile procurement network and ", "s": "p:obs-3f2b8ba47f97e8d3", "t": "obs-ent:84487c4489af9670", "url": "https://home.treasury.gov/news/press-releases/20071912133219686"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "(Archived Content) HP-219 The Department of the Treasury today designated Bank Sepah, a state-owned Iranian financial institution for providing support and services to designated Iranian proliferation firms. Bank Sepah International Plc, a wholly-owned subsidi", "s": "p:obs-3f2b8ba47f97e8d3", "t": "obs-ent:84487c4489af9670", "url": "https://home.treasury.gov/news/press-releases/hp219"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Bank Sepah International Plc, a wholly-owned subsidiary of Bank Sepah in the United Kingdom, and Ahmad Derakhshandeh, Bank Sepah's Chairman and Director, were also designated today. Bank Sepah is the financial linchpin of Iran's missile procurement network and", "s": "p:obs-3f2b8ba47f97e8d3", "t": "obs-ent:84487c4489af9670", "url": "https://home.treasury.gov/news/press-releases/hp219"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "It is a wholly-owned subsidiary of BancWest Holding Inc. (“BW Holding”), a Delaware corporation also located in San Francisco, California. BW Holdings is a wholly-owned subsidiary of BNP Paribas, S.A., a foreign financial holding company based in Paris, France", "s": "p:obs-56046651cb41a568", "t": "obs-ent:db4c94c3ae1b1623", "url": "https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2023/crad230.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "It is a wholly-owned subsidiary of BancWest Holding Inc. (“BW Holding”), a Delaware corporation also located in San Francisco, California. BW Holdings is a wholly-owned subsidiary of BNP Paribas, S.A., a foreign financial holding company based in Paris, France", "s": "p:obs-56046651cb41a568", "t": "obs-ent:db4c94c3ae1b1623", "url": "https://www.occ.gov/news-issuances/news-releases/2023/nr-occ-2023-8a.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "Provide a copy of the proposed lease when available. DNTB will be located in segregated space in premises subleased by Dakota Platform, Inc., a subsidiary of Dakota Ridge.", "s": "p:obs-85e5d39b1d586722", "t": "obs-ent:10f895751d1fc1d9", "url": "https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/dakota-national-trust.pdf"}, {"a": "PARENT", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "as Vice President of Trading at Cheniere International, Inc., a subsidiary of Cheniere.", "s": "p:obs-8eb0bbe1344c78f4", "t": "obs-ent:0fc6271c7b52b520", "url": "https://www.sec.gov/file/sec-complaint-21"}, {"a": "RELATED_ORGANIZATION", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_FINDING", "quote": "James, II leverages his experiences in banking, law, real estate development, and consulting to generate positive impacts in communities that are often overlooked. A native of Savannah, Georgia, Robert is President of Carver Development CDE, LLC, an affiliate ", "s": "obs-ent:e17ec1a59ca8f6ac", "t": "obs-ent:25d886500cce4634", "url": "https://www.fdic.gov/events/fintech-bridge"}, {"a": "UNKNOWN_CONTROL_ROLE", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "T&D is controlled by Krause, Lucas, McNaul and their affiliated entities.", "s": "obs-ent:fa3339589f7c4f8b", "t": "obs-ent:f8e2bc6bcc7c76e1", "url": "https://www.sec.gov/file/complaint08-c-v01159tallman"}, {"a": "UNKNOWN_CONTROL_ROLE", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Blackstone was controlled by Don McGhan and was used as an intermediary to move", "s": "p:obs-18235513d7ffba9d", "t": "obs-ent:5388a5a5ac0868b9", "url": "https://www.sec.gov/file/complaint11-cv-00074mcghan"}, {"a": "UNKNOWN_CONTROL_ROLE", "conf": 0.9, "pct": null, "posture": "GOVERNMENT_ALLEGATION", "quote": "Blackstone was controlled by Don McGhan and was used as an intermediary to move money from", "s": "p:obs-18235513d7ffba9d", "t": "obs-ent:5388a5a5ac0868b9", "url": "https://www.sec.gov/file/complaint11-cv-00075maloney"}, {"a": "UNKNOWN_CONTROL_ROLE", "conf": 0.9, "pct": null, "posture": "ADMINISTRATIVE_DESIGNATION", "quote": "Arturo Quinonez Ltda., which does business in Cali as Restaurante Santa Colombia, is controlled by Benedicto Quinones, a long-time accountant for Ramirez Abadia.", "s": "p:obs-ce4941eb396e9569", "t": "p:obs-f30cb8797e770a5e", "url": "https://home.treasury.gov/news/press-releases/hp986"}], "ledger": [{"alias": "Fine Fragrance", "name": "A&S World Trading, Inc", "type": "DBA"}, {"alias": "Adley Wahab", "name": "Abdulwahab", "type": "AKA"}, {"alias": "Muhammad Ali Abd Allah", "name": "Abu Yasir", "type": "AKA"}, {"alias": "d/b/a Adam Service", "name": "Adam", "type": "AKA"}, {"alias": "Adley Wahab", "name": "Adley H. Abdulwahab", "type": "AKA"}, {"alias": "d/b/a Onsite Environmental", "name": "Allwaste Onsite", "type": "AKA"}, {"alias": "Onsite Environmental", "name": "Allwaste Onsite LLC", "type": "DBA"}, {"alias": "Onsite Environmental", "name": "Allwaste Onsite LLC", "type": "DBA"}, {"alias": "Onsite Environmental No", "name": "Allwaste Onsite LLC", "type": "DBA"}, {"alias": "Onsite Environmental No", "name": "Allwaste Onsite LLC", "type": "DBA"}, {"alias": "Onsite Environmental Pretreatment Bypassing", "name": "Allwaste Onsite LLC", "type": "DBA"}, {"alias": "Onsite Environmental Wastewater Treatment Bypass", "name": "Allwaste Onsite LLC", "type": "DBA"}, {"alias": "ERIC YERUSALEM SWARTZ", "name": "ARIC YERUSALEM SWARTZ", "type": "AKA"}, {"alias": "CAPITAL FUND", "name": "ATLANTA CAPITAL LLC", "type": "DBA"}, {"alias": "CAPITAL FUND", "name": "ATLANTA CAPITAL LLC", "type": "DBA"}, {"alias": "CAPITAL FUND", "name": "ATLANTA CAPITAL LLC", "type": "DBA"}, {"alias": "Drake", "name": "Aubrey Drake Graham", "type": "AKA"}, {"alias": "BILLION COUPONS INVESTMENT", "name": "BILLION COUPONS, INC", "type": "DBA"}, {"alias": "VINTAGE", "name": "BLUEJAY INVESTMENT LLC", "type": "DBA"}, {"alias": "Lake Elsinore Hotel", "name": "Business In the Matter of Sahara Dunes Casino, LP", "type": "DBA"}, {"alias": "Artichoke Joe’s Casino", "name": "California Corporation", "type": "DBA"}, {"alias": "Artichoke Joe’s Casino", "name": "California Corporation", "type": "DBA"}, {"alias": "Artichoke Joe’s Casino", "name": "California Corporation", "type": "DBA"}, {"alias": "Artichoke Joe’s Casino", "name": "California Corporation", "type": "DBA"}, {"alias": "CARLOS GOODSPEED", "name": "Carlos Goodspeed", "type": "AKA"}, {"alias": "Golden Child", "name": "Carlos Goodspeed", "type": "AKA"}, {"alias": "SEAN PHILLIPS", "name": "Carlos Goodspeed", "type": "AKA"}, {"alias": "Sean Phillips", "name": "Carlos Goodspeed", "type": "AKA"}, {"alias": "Cantor Gaming", "name": "CG Technology, L.P", "type": "DBA"}, {"alias": "THINKSTRA TEGY", "name": "CHETAN KAPUR AND LILABOC, LLC", "type": "DBA"}, {"alias": "SEISMA ENERGY RESEARCH, LLC", "name": "Civil Action No. SEISMA OIL RESEARCH, LLC", "type": "DBA"}, {"alias": "LORD DAVID CONTEMPT AGAINST NONGREENE", "name": "CIVIL DAVID GREENE", "type": "AKA"}, {"alias": "Complete Management, Inc", "name": "CMI Capital Corp", "type": "DBA"}, {"alias": "Gen Unlimited", "name": "Consent of Defendants Gen-See Capital Corporation", "type": "DBA"}, {"alias": "Gen Unlimited", "name": "Consent of Defendants Gen-See Capital Corporation", "type": "DBA"}, {"alias": "YATALIE CAPITAL, INC", "name": "Creato Funds L.P", "type": "DBA"}, {"alias": "Yatalie Capital", "name": "Creato Funds L.P", "type": "DBA"}, {"alias": "Yatalie Capital Management Co", "name": "Creato Funds L.P", "type": "DBA"}, {"alias": "Yatalie Capital, Inc", "name": "Creato Funds L.P", "type": "DBA"}, {"alias": "ENOETICS", "name": "CV-321-Y 4D CIRCLE LLC", "type": "DBA"}, {"alias": "ENOETICS", "name": "CV-321-Y 4D CIRCLE LLC", "type": "DBA"}, {"alias": "ENOETICS", "name": "CV-321-Y 4D CIRCLE LLC", "type": "DBA"}, {"alias": "David Greene", "name": "DAVID GREENE", "type": "AKA"}, {"alias": "LORD DAVID GREENE", "name": "DAVID GREENE", "type": "AKA"}, {"alias": "Lord David", "name": "DAVID GREENE", "type": "AKA"}, {"alias": "David Praise", "name": "DAVID PRAISE", "type": "AKA"}, {"alias": "MUSA MOHAMED", "name": "DAVID PRAISE", "type": "AKA"}, {"alias": "Musa Mohamed", "name": "DAVID PRAISE", "type": "AKA"}, {"alias": "SmartBiz Loans", "name": "Delaware corporation", "type": "DBA"}, {"alias": "Point Blank Solutions, Inc", "name": "DHB Industries, Inc", "type": "DBA"}, {"alias": "DIME FX", "name": "DIME 17 CAPITAL LLC", "type": "DBA"}, {"alias": "Jennifer Lewis-Dodge", "name": "Dodge", "type": "AKA"}, {"alias": "Oxton Real Estate of Douglas, LLC", "name": "Douglas, LLC", "type": "DBA"}, {"alias": "Mahmut E", "name": "Durmaz", "type": "AKA"}, {"alias": "Hennessey Financial Monthly Inc", "name": "DWF-JJK Capital Solutions Monthly Income Fund, LP", "type": "FORMER"}, {"alias": "FAIRHILLS CAP IT AL", "name": "E-LIONHEART AS SOCIATES, LLC", "type": "DBA"}, {"alias": "EMPIRE CAPITAL ASSET MANAGEMENT", "name": "ECAM, LLC", "type": "DBA"}, {"alias": "ELIJAH BHANG", "name": "ELIJAH BANG", "type": "AKA"}, {"alias": "Elijah Bang", "name": "ELIJAH BANG", "type": "AKA"}, {"alias": "Elijah Bhang", "name": "ELIJAH BANG", "type": "AKA"}, {"alias": "Ameritrust", "name": "Enterprise Technology Group", "type": "DBA"}, {"alias": "Eric Beltran", "name": "Eric Lovy", "type": "AKA"}, {"alias": "Esquire Financial Holdings", "name": "Esquire Bank", "type": "DBA"}, {"alias": "Katirina Tracy", "name": "Evelyn Katirina Pattison", "type": "AKA"}, {"alias": "USAA Investment Management Agency", "name": "Federal Savings Bank", "type": "DBA"}, {"alias": "Eric Zheng", "name": "Feng Zheng", "type": "AKA"}, {"alias": "WESTERN FINANCIAL PLANNING CORP", "name": "FIRST FINANCIAL PLANNING CORPORATION", "type": "DBA"}, {"alias": "International Deposit Insurance Corp", "name": "First International Trust of Grenada International Depositors' Reinsurance Corporation", "type": "DBA"}, {"alias": "Fitch Ratings", "name": "Fitch, Inc", "type": "DBA"}, {"alias": "Fitch Ratings", "name": "Fitch, Inc", "type": "DBA"}, {"alias": "FREDERIC ELMALEH", "name": "FREDERIC ELM", "type": "AKA"}, {"alias": "FutureGen", "name": "FutureGen Company", "type": "DBA"}, {"alias": "FutureGen Capital", "name": "FutureGen Company", "type": "DBA"}, {"alias": "Gen Unlimited", "name": "Gen-See Capital Corporation", "type": "DBA"}, {"alias": "Gen Unlimited", "name": "Gen-See Capital Corporation", "type": "DBA"}, {"alias": "Gen Unlimited", "name": "Gen-See Capital Corporation", "type": "DBA"}, {"alias": "Gen Unlimited", "name": "Gen-See Capital Corporation", "type": "DBA"}, {"alias": "David Green", "name": "Greene", "type": "AKA"}, {"alias": "d/b/a Golden Summit Group", "name": "Gregg Gibbs", "type": "AKA"}, {"alias": "Jimmy He", "name": "Hao He", "type": "AKA"}, {"alias": "d/b/a Helix", "name": "Harmon", "type": "AKA"}, {"alias": "Lighthouse Point Casino", "name": "In the Matter of Greenville Riverboat, LLC", "type": "DBA"}, {"alias": "Lighthouse Point Casino", "name": "In the Matter of Greenville Riverboat, LLC", "type": "DBA"}, {"alias": "Lighthouse Point Casino", "name": "In the Matter of Greenville Riverboat, LLC", "type": "DBA"}, {"alias": "Copa Casino", "name": "In the Matter of Gulfside Casino Partnership", "type": "DBA"}, {"alias": "Copa Casino", "name": "In the Matter of Gulfside Casino Partnership", "type": "DBA"}, {"alias": "Copa Casino", "name": "In the Matter of Gulfside Casino Partnership", "type": "DBA"}, {"alias": "Lady Luck Natchez", "name": "In the Matter of Lady Luck Mississippi, Inc", "type": "DBA"}, {"alias": "Lady Luck Natchez", "name": "In the Matter of Lady Luck Mississippi, Inc", "type": "DBA"}, {"alias": "Lady Luck Natchez", "name": "In the Matter of Lady Luck Mississippi, Inc", "type": "DBA"}, {"alias": "Lake Elsinore Hotel", "name": "In the Matter of Sahara Dunes Casino, LP", "type": "DBA"}, {"alias": "Lake Elsinore Hotel", "name": "In the Matter of Sahara Dunes Casino, LP", "type": "DBA"}, {"alias": "Lake Elsinore Hotel", "name": "In the Matter of Sahara Dunes Casino, LP", "type": "DBA"}, {"alias": "John Ascuaga’s Nugget", "name": "In the Matter of Sparks Nugget, Inc", "type": "DBA"}, {"alias": "John Ascuaga’s Nugget", "name": "In the Matter of Sparks Nugget, Inc", "type": "DBA"}, {"alias": "John Ascuaga’s Nugget", "name": "In the Matter of Sparks Nugget, Inc", "type": "DBA"}, {"alias": "Intercam FX", "name": "Intercam Futures, Inc", "type": "DBA"}, {"alias": "ProphetMax", "name": "Investment Intelligence Corporation", "type": "DBA"}, {"alias": "Tinian Dynasty Hotel", "name": "Investments, Ltd", "type": "DBA"}, {"alias": "Tinian Dynasty Hotel", "name": "Investments, Ltd", "type": "DBA"}, {"alias": "Tinian Dynasty Hotel", "name": "Investments, Ltd", "type": "DBA"}, {"alias": "Tinian Dynasty Hotel", "name": "Investments, Ltd", "type": "DBA"}, {"alias": "Tinian Dynasty Hotel", "name": "Investments, Ltd", "type": "DBA"}, {"alias": "Insurance Service Center", "name": "ISC, Inc", "type": "DBA"}, {"alias": "Tre Brandenberg", "name": "John Abio", "type": "AKA"}, {"alias": "Donovan Kelly", "name": "Joseph Vitale", "type": "AKA"}, {"alias": "Green Mountain Coffee Roasters, Inc", "name": "Keurig Green Mountain, Inc", "type": "FORMER"}, {"alias": "Green Mountain Coffee Roasters, Inc", "name": "Keurig Green Mountain, Inc", "type": "FORMER"}, {"alias": "Kevin Slattery McCarthy", "name": "Kevin McCarthy", "type": "AKA"}, {"alias": "FEDERAL EMPLOYEE BENEFIT COUNSELORS", "name": "KEYSTONE CAPITAL PARTNERS, INC", "type": "DBA"}, {"alias": "CHEN TANG", "name": "KING CHUEN TANG", "type": "AKA"}, {"alias": "Chen Tang", "name": "KING CHUEN TANG", "type": "AKA"}, {"alias": "King Chuen Tang", "name": "KING CHUEN TANG", "type": "AKA"}, {"alias": "d/b/a Helix", "name": "Larry Dean Harmon", "type": "AKA"}, {"alias": "d/b/a New Castle Energy, LLC", "name": "LeBoeuf", "type": "AKA"}, {"alias": "Alex Parvizian", "name": "Leon Ali Parvizian", "type": "AKA"}, {"alias": "ThinkStrategy Capital Management, LLC", "name": "Lilaboc, LLC", "type": "DBA"}, {"alias": "BetterTrades", "name": "Long Term-Short Term, Inc", "type": "DBA"}, {"alias": "BetterTrades", "name": "Long Term-Short Term, Inc", "type": "DBA"}, {"alias": "BetterTrades", "name": "Long Term-Short Term, Inc", "type": "DBA"}, {"alias": "KiOR, Inc", "name": "Mard Inc", "type": "FORMER"}, {"alias": "KiOR, Inc", "name": "Mard Inc", "type": "FORMER"}, {"alias": "KiOR, Inc", "name": "Mard Inc", "type": "FORMER"}, {"alias": "KiOR, Inc", "name": "Mard Inc", "type": "FORMER"}, {"alias": "KiOR, Inc", "name": "Mard Inc", "type": "FORMER"}, {"alias": "KiOR, Inc", "name": "Mard Inc", "type": "FORMER"}, {"alias": "Kior, Inc", "name": "Mard Inc", "type": "FORMER"}, {"alias": "Gary Inman", "name": "McDuff", "type": "AKA"}, {"alias": "Tower Package Store", "name": "Mian, Inc", "type": "DBA"}, {"alias": "MILAN", "name": "Milan Group, Inc", "type": "DBA"}, {"alias": "Milan Trading Group", "name": "Milan Group, Inc", "type": "DBA"}, {"alias": "Milan Trading Group", "name": "Milan Group, Inc", "type": "DBA"}, {"alias": "Ming Xu", "name": "MING XU", "type": "AKA"}, {"alias": "PHIL MING XU", "name": "MING XU", "type": "AKA"}, {"alias": "Phil Ming Xu", "name": "MING XU", "type": "AKA"}, {"alias": "MOSAIC INVESTMENT PARTNERS", "name": "MIP GLOBAL, INC", "type": "DBA"}, {"alias": "d/b/a Isle of Capri-Vicksburg", "name": "Mississippi-Vicksburg", "type": "AKA"}, {"alias": "X Tax Pros", "name": "MJ Moore & Company LLC", "type": "DBA"}, {"alias": "d/b/a Halal Depot", "name": "Mohamed Abukar Sufi", "type": "AKA"}, {"alias": "David Praise Edwards", "name": "Musa Mohamed", "type": "AKA"}, {"alias": "NDA Financial, LLC", "name": "New Day Atlanta, LLC", "type": "DBA"}, {"alias": "NOVERS FINANCIAL", "name": "NFS GROUP, LLC", "type": "DBA"}, {"alias": "NOVERS FINANCIAL", "name": "NFS GROUP, LLC", "type": "DBA"}, {"alias": "d/b/a Oaks Club", "name": "Oaks Card Club", "type": "AKA"}, {"alias": "Pilgrim Foods Company", "name": "Old Dutch Mustard Company", "type": "DBA"}, {"alias": "Pilgrim Foods Company", "name": "Old Dutch Mustard Company, Inc", "type": "DBA"}, {"alias": "Pilgrim Foods Company", "name": "Old Dutch Mustard Company, Inc", "type": "DBA"}, {"alias": "Pilgrim Foods Company", "name": "Old Dutch Mustard Company, Inc", "type": "DBA"}, {"alias": "Pilgrim Foods Company", "name": "Old Dutch Mustard Company, Inc", "type": "DBA"}, {"alias": "Pilgrim Foods Company", "name": "Old Dutch Mustard Company, Inc", "type": "DBA"}, {"alias": "d/b/a Halal Depot", "name": "Omar Abukar Sufi", "type": "AKA"}, {"alias": "BROOKSTONE CAPITAL, INC", "name": "PAROPES CORPORATION", "type": "FORMER"}, {"alias": "BROOKSTONE CAPITAL, INC", "name": "PAROPES CORPORATION", "type": "FORMER"}, {"alias": "BROOKSTONE CAPITAL, INC", "name": "PAROPES CORPORATION", "type": "FORMER"}, {"alias": "Khanh Sengpraseuth", "name": "PATRIC KEN BACCAM", "type": "AKA"}, {"alias": "Patric Ken Baccam", "name": "PATRIC KEN BACCAM", "type": "AKA"}, {"alias": "FRANK LORENZO", "name": "PAVLICO III", "type": "AKA"}, {"alias": "Gen Unlimited", "name": "PICCOLI Defendants Gen-See Capital Corporation", "type": "DBA"}, {"alias": "DHB Industries Inc", "name": "Point Blank Solutions, Inc", "type": "FORMER"}, {"alias": "Gen Unlimited", "name": "President of Gen-See Capital Corporation", "type": "DBA"}, {"alias": "d/b/a American Integrity", "name": "Prime Rate", "type": "AKA"}, {"alias": "ZeekRewards.com", "name": "Receiver for Rex Venture Group LLC", "type": "DBA"}, {"alias": "USA", "name": "Retirement Management Services", "type": "AKA"}, {"alias": "Sameer P", "name": "Sethi Petroleum, LLC", "type": "FORMER"}, {"alias": "Tony Akerman", "name": "SHEZAD AKBAR", "type": "AKA"}, {"alias": "d/b/a Jackpot Junction Casino Hotel", "name": "Sioux Indian Community", "type": "AKA"}, {"alias": "d/b/a Jackpot Junction Casino Hotel of Morton", "name": "Sioux Indian Community", "type": "AKA"}, {"alias": "GRANT A CAPITAL LLC", "name": "SKY CAPITAL LLC", "type": "DBA"}, {"alias": "GRANT A CAPITAL LLC", "name": "SKY CAPITAL LLC", "type": "DBA"}, {"alias": "GRANT A CAPITAL LLC", "name": "SKY CAPITAL LLC", "type": "DBA"}, {"alias": "GRANTA CAPITAL LLC", "name": "SKY CAPITAL LLC", "type": "DBA"}, {"alias": "GRANTA CAPITAL LLC", "name": "SKY CAPITAL LLC", "type": "DBA"}, {"alias": "GRANTA CAPITAL LLC", "name": "SKY CAPITAL LLC", "type": "DBA"}, {"alias": "GRANTA CAPITAL LLC", "name": "SKY CAPITAL LLC", "type": "DBA"}, {"alias": "GRANTA CAPITAL LLC", "name": "SKY CAPITAL LLC", "type": "DBA"}, {"alias": "GRANTA CAPITAL LLC", "name": "SKY CAPITAL LLC", "type": "DBA"}, {"alias": "Americapital International", "name": "South Atlantic International Bank, Limited", "type": "FORMER"}, {"alias": "Steve Vogel", "name": "Stephen Vogel", "type": "AKA"}, {"alias": "THOMAS SCHROEPFER BAETSEN", "name": "THOMAS SCHROEPFER", "type": "AKA"}, {"alias": "John Abio", "name": "Tre Brandenberg", "type": "AKA"}, {"alias": "CS FINANCING CORP", "name": "TRUE NORTH FINANCE CORPORATION", "type": "FORMER"}, {"alias": "CS FINANCING CORP", "name": "TRUE NORTH FINANCE CORPORATION", "type": "FORMER"}, {"alias": "CS Financing Corp", "name": "TRUE NORTH FINANCE CORPORATION", "type": "FORMER"}, {"alias": "Mason Hill", "name": "Utah corporation", "type": "DBA"}, {"alias": "Mason Hill", "name": "Utah corporation", "type": "DBA"}, {"alias": "ROGER BLISS AND ASSOCIATES CLUB LLC", "name": "Utah Limited Liability Company", "type": "DBA"}, {"alias": "VINAY KUMAR", "name": "VINAY KUMAR NEVATIA", "type": "AKA"}, {"alias": "Hans-Joachim Woltemas", "name": "Woltemas", "type": "AKA"}, {"alias": "d/b/a Bay View Fund", "name": "Working Capital Finance", "type": "AKA"}, {"alias": "LISA WANG", "name": "XIN WANG", "type": "AKA"}, {"alias": "YATALIE CAPITAL MANAGEMENT CO", "name": "YATALIE CAPITAL MANAGEMENT", "type": "AKA"}, {"alias": "EDDIE YU", "name": "YING KIT YU", "type": "AKA"}, {"alias": "Eddie Yu", "name": "YING KIT YU", "type": "AKA"}, {"alias": "Ying Kit Yu", "name": "YING KIT YU", "type": "AKA"}, {"alias": "IZHA CK ZIGDON", "name": "YITZCHA K ZIGDON", "type": "AKA"}, {"alias": "IZHACK ZIGD ON", "name": "YITZCHAK ZIGDON", "type": "AKA"}, {"alias": "IZHACK ZIGDON", "name": "YITZCHAK ZIGDON", "type": "AKA"}, {"alias": "LANA VELAZQUEZ", "name": "YOLANDA C. VELAZQUEZ", "type": "AKA"}, {"alias": "BELIEVE LIN", "name": "YU-CHENG LIN", "type": "AKA"}], "nodes": [{"aliases": [], "deg": 5, "id": "obs-ent:012455fa722699dd", "kind": "entity", "name": "Discover Bank"}, {"aliases": [], "deg": 1, "id": "obs-ent:01698ce1dc071ffe", "kind": "entity", "name": "Spa"}, {"aliases": [], "deg": 1, "id": "obs-ent:07a5f228dfe185bd", "kind": "entity", "name": "Huione Group"}, {"aliases": [], "deg": 2, "id": "obs-ent:0b96f47ca57e973e", "kind": "entity", "name": "Syriatel"}, {"aliases": [], "deg": 1, "id": "obs-ent:0fc6271c7b52b520", "kind": "entity", "name": "Vice President of Trading at Cheniere International, Inc"}, {"aliases": [], "deg": 1, "id": "obs-ent:10f895751d1fc1d9", "kind": "entity", "name": "Dakota Platform, Inc"}, {"aliases": [], "deg": 3, "id": "obs-ent:1719eb8b49108938", "kind": "entity", "name": "PIW"}, {"aliases": [], "deg": 1, "id": "obs-ent:1960d5f8776b4d19", "kind": "entity", "name": "Company B"}, {"aliases": [], "deg": 1, "id": "obs-ent:1df9a0d557c2502f", "kind": "entity", "name": "Trans Merits Co. Ltd"}, {"aliases": [], "deg": 1, "id": "obs-ent:209d443e080edf8e", "kind": "entity", "name": "Bond Street Holdings"}, {"aliases": [], "deg": 1, "id": "obs-ent:25851aeda5082994", "kind": "entity", "name": "Nunns, Lucas, McNaul, Kilgariff and their affiliated entities"}, {"aliases": [], "deg": 1, "id": "obs-ent:25d886500cce4634", "kind": "entity", "name": "Carver State Bank"}, {"aliases": [], "deg": 1, "id": "obs-ent:30ac9095488565b8", "kind": "entity", "name": "Al-Mutafaq Commercial Company"}, {"aliases": [], "deg": 1, "id": "obs-ent:3520dec341dd185d", "kind": "entity", "name": "EIKO"}, {"aliases": [], "deg": 1, "id": "obs-ent:3b480dc67bc25232", "kind": "entity", "name": "Naftiran Intertrade Company"}, {"aliases": [], "deg": 1, "id": "obs-ent:3da76498bd22699e", "kind": "entity", "name": "CIT Bank"}, {"aliases": [], "deg": 1, "id": "obs-ent:46c4c8b4332345a6", "kind": "entity", "name": "Mehr Eqtesad Iranian Investment Company"}, {"aliases": [], "deg": 1, "id": "obs-ent:4884f92926055523", "kind": "entity", "name": "Texan Bank"}, {"aliases": [], "deg": 1, "id": "obs-ent:4d69e4970266b40f", "kind": "entity", "name": "Chemical Bank"}, {"aliases": [], "deg": 1, "id": "obs-ent:4e51bf887d031dff", "kind": "entity", "name": "Damascus Cham Holding"}, {"aliases": [], "deg": 1, "id": "obs-ent:4f897c3fef7215af", "kind": "entity", "name": "Pardo Family Trust"}, {"aliases": [], "deg": 1, "id": "obs-ent:51985842f634b85f", "kind": "entity", "name": "Friendswood Capital Corporation"}, {"aliases": [], "deg": 1, "id": "obs-ent:528c8735a802996e", "kind": "entity", "name": "Limited Liability Company Investment Company Abros"}, {"aliases": [], "deg": 4, "id": "obs-ent:52b7563f12cdbd96", "kind": "entity", "name": "Anchor Labs, Inc"}, {"aliases": [], "deg": 2, "id": "obs-ent:5388a5a5ac0868b9", "kind": "entity", "name": "Blackstone"}, {"aliases": [], "deg": 2, "id": "obs-ent:544e2d6145f6ea1d", "kind": "entity", "name": "SMART"}, {"aliases": [], "deg": 1, "id": "obs-ent:555decc95c09e4cb", "kind": "entity", "name": "OOD"}, {"aliases": [], "deg": 2, "id": "obs-ent:5a6846cdd63c2669", "kind": "entity", "name": "BitGo Holdings"}, {"aliases": [], "deg": 1, "id": "obs-ent:6481a35259506e12", "kind": "entity", "name": "Wise US Holdings"}, {"aliases": [], "deg": 1, "id": "obs-ent:66f312a7e1096704", "kind": "entity", "name": "LCB"}, {"aliases": [], "deg": 6, "id": "obs-ent:685b8319fd845f14", "kind": "entity", "name": "Mid-Kan"}, {"aliases": [], "deg": 2, "id": "obs-ent:686898dd282274b4", "kind": "entity", "name": "Interactive Brokers Group, Inc"}, {"aliases": [], "deg": 1, "id": "obs-ent:6ac9ec28c21db7cb", "kind": "entity", "name": "Bunyan"}, {"aliases": [], "deg": 1, "id": "obs-ent:6d7dbb22ba517c55", "kind": "entity", "name": "Development Group"}, {"aliases": [], "deg": 2, "id": "obs-ent:6db67ddbf0c9afdc", "kind": "entity", "name": "Skyline"}, {"aliases": [], "deg": 1, "id": "obs-ent:71875dfa62ba9cf8", "kind": "entity", "name": "Intrust PLC"}, {"aliases": [], "deg": 1, "id": "obs-ent:72ca296a4d08bb1b", "kind": "entity", "name": "Forrest"}, {"aliases": [], "deg": 1, "id": "obs-ent:730049d444493b9a", "kind": "entity", "name": "Pardo Trust"}, {"aliases": [], "deg": 1, "id": "obs-ent:770e7dfcaeeadb21", "kind": "entity", "name": "Tara Steel Trading GmbH"}, {"aliases": [], "deg": 1, "id": "obs-ent:781e56c8dfecfd97", "kind": "entity", "name": "NIOC"}, {"aliases": [], "deg": 1, "id": "obs-ent:7c0fb25cdb73d463", "kind": "entity", "name": "U.S.-based Freeport-McMoRan Copper & Gold Inc"}, {"aliases": [], "deg": 1, "id": "obs-ent:7cda5617b07e8b1c", "kind": "entity", "name": "Nabah"}, {"aliases": [], "deg": 2, "id": "obs-ent:7f2626069b85f054", "kind": "entity", "name": "EDX Trust"}, {"aliases": [], "deg": 1, "id": "obs-ent:81226f6306cb5b10", "kind": "entity", "name": "Prime Bank"}, {"aliases": [], "deg": 1, "id": "obs-ent:81eb9550c387d5d7", "kind": "entity", "name": "Panda Bank"}, {"aliases": [], "deg": 2, "id": "obs-ent:83606e967a06b5dd", "kind": "entity", "name": "Atlantic Stewardship Bank"}, {"aliases": [], "deg": 1, "id": "obs-ent:8362ea0d4606d7d5", "kind": "entity", "name": "New York Community Bancorp"}, {"aliases": [], "deg": 4, "id": "obs-ent:84487c4489af9670", "kind": "entity", "name": "Bank Sepah International Plc"}, {"aliases": [], "deg": 2, "id": "obs-ent:85dfbf4d815771a9", "kind": "entity", "name": "BitGo Trust"}, {"aliases": [], "deg": 1, "id": "obs-ent:881e78f5c991fd4f", "kind": "entity", "name": "OTC Markets Group"}, {"aliases": [], "deg": 1, "id": "obs-ent:89ca3448b6a5f4b3", "kind": "entity", "name": "Global Interface Company"}, {"aliases": [], "deg": 1, "id": "obs-ent:8ca6a74f60807565", "kind": "entity", "name": "Premier American Bank, N.A"}, {"aliases": [], "deg": 1, "id": "obs-ent:8ef1fdac6b2ba8bd", "kind": "entity", "name": "Wise plc"}, {"aliases": [], "deg": 1, "id": "obs-ent:943ea164ade2a645", "kind": "entity", "name": "Atlantic Stewardship Insurance Company, LLC"}, {"aliases": [], "deg": 1, "id": "obs-ent:95214d607cad75c1", "kind": "entity", "name": "Titan Bank"}, {"aliases": [], "deg": 2, "id": "obs-ent:960c5ed29d91bfa5", "kind": "entity", "name": "South Dakota in 2019. Anchorage Trust"}, {"aliases": [], "deg": 1, "id": "obs-ent:98472b769c6edf02", "kind": "entity", "name": "Washington Mutual, Inc"}, {"aliases": [], "deg": 3, "id": "obs-ent:9a2f67a15038aa6f", "kind": "entity", "name": "SunTrust Bank"}, {"aliases": [], "deg": 1, "id": "obs-ent:9e126f61b53a0b21", "kind": "entity", "name": "First-Citizens Bank & Trust Company with CIT Group, Inc"}, {"aliases": [], "deg": 3, "id": "obs-ent:a01af43e0b42ec10", "kind": "entity", "name": "Premium Assignment Corporation"}, {"aliases": [], "deg": 1, "id": "obs-ent:a13e7fcc4639081c", "kind": "entity", "name": "Pardo Family Holdings, Ltd"}, {"aliases": [], "deg": 1, "id": "obs-ent:a1d586486c503f03", "kind": "entity", "name": "Iran Mobin Electronic Development Company"}, {"aliases": [], "deg": 2, "id": "obs-ent:a54ace0bf1a902a3", "kind": "entity", "name": "Anchorage Trust"}, {"aliases": [], "deg": 1, "id": "obs-ent:aa5c9eda2d62c9f5", "kind": "entity", "name": "Company A"}, {"aliases": [], "deg": 1, "id": "obs-ent:abaf48f30aac5f9b", "kind": "entity", "name": "Chemical Financial Corp"}, {"aliases": [], "deg": 1, "id": "obs-ent:aee0c0c106a5a919", "kind": "entity", "name": "BSQRD Limited"}, {"aliases": [], "deg": 1, "id": "obs-ent:b2185d879d858638", "kind": "entity", "name": "TFM"}, {"aliases": [], "deg": 3, "id": "obs-ent:b4e78f1caf934167", "kind": "entity", "name": "Warren"}, {"aliases": [], "deg": 1, "id": "obs-ent:b6f037b5197587d9", "kind": "entity", "name": "Vihrogonika AD"}, {"aliases": [], "deg": 1, "id": "obs-ent:b71038e45a63f018", "kind": "entity", "name": "Flagstar Bank"}, {"aliases": [], "deg": 1, "id": "obs-ent:b88b0c26b8152156", "kind": "entity", "name": "Silicon Valley Bridge Bank, N.A"}, {"aliases": [], "deg": 1, "id": "obs-ent:bc87caddea431b7f", "kind": "entity", "name": "Washington Mutual Bank"}, {"aliases": [], "deg": 1, "id": "obs-ent:c65a8c9149830692", "kind": "entity", "name": "TwinSpan"}, {"aliases": [], "deg": 1, "id": "obs-ent:cae987ff049c6a03", "kind": "entity", "name": "Embedi"}, {"aliases": [], "deg": 1, "id": "obs-ent:d09a40251b7ea6cd", "kind": "entity", "name": "IBG LLC. IBG LLC"}, {"aliases": [], "deg": 1, "id": "obs-ent:d1150432d24e9fc2", "kind": "entity", "name": "Mobarakeh Steel Company"}, {"aliases": [], "deg": 1, "id": "obs-ent:d6a65e53e15d6e00", "kind": "entity", "name": "Medic"}, {"aliases": [], "deg": 1, "id": "obs-ent:d96d7696fe7842a1", "kind": "entity", "name": "Old Games EOOD"}, {"aliases": [], "deg": 1, "id": "obs-ent:d9e33976c88430b5", "kind": "entity", "name": "BMC Bancshares"}, {"aliases": [], "deg": 2, "id": "obs-ent:db4c94c3ae1b1623", "kind": "entity", "name": "BW Holdings"}, {"aliases": [], "deg": 1, "id": "obs-ent:ddc4f21a330c3617", "kind": "entity", "name": "MIRATH S.A.L. Mirath"}, {"aliases": [], "deg": 2, "id": "obs-ent:df71a8247a633cf1", "kind": "entity", "name": "EDX Holding"}, {"aliases": [], "deg": 1, "id": "obs-ent:e17ec1a59ca8f6ac", "kind": "entity", "name": "President of Carver Development CDE, LLC"}, {"aliases": [], "deg": 1, "id": "obs-ent:ec67cdde5f407d8e", "kind": "entity", "name": "IBG LLC"}, {"aliases": [], "deg": 1, "id": "obs-ent:f23b68ef3ed76692", "kind": "entity", "name": "XRP II, LLC"}, {"aliases": [], "deg": 1, "id": "obs-ent:f8e2bc6bcc7c76e1", "kind": "entity", "name": "T&D"}, {"aliases": [], "deg": 1, "id": "obs-ent:f9ad3e9e47b853be", "kind": "entity", "name": "Siguro EOOD"}, {"aliases": [], "deg": 1, "id": "obs-ent:f9ce266885edbe22", "kind": "entity", "name": "National Lottery AD"}, {"aliases": [], "deg": 1, "id": "obs-ent:fa3339589f7c4f8b", "kind": "entity", "name": "Krause, Lucas, McNaul and their affiliated entities"}, {"aliases": [], "deg": 3, "id": "obs-ent:fc7d3a7e15d20920", "kind": "entity", "name": "Atlas Holding"}, {"aliases": [], "deg": 1, "id": "obs-ent:fe7d664f9b9dba82", "kind": "entity", "name": "Real Estates Int Ltd EOOD"}, {"aliases": [], "deg": 1, "id": "obs-ent:fed0a039cf366743", "kind": "entity", "name": "Ancient Heritage AD"}, {"aliases": [], "deg": 1, "id": "obs-ent:ff538dfd756e05ff", "kind": "entity", "name": "Silicon Valley Private Bank"}, {"aliases": [], "deg": 1, "id": "obs-ent:ffb2d2807c9d980c", "kind": "entity", "name": "Eurobet Partners"}, {"aliases": [], "deg": 5, "id": "p:obs-00ddb6df8a073f8e", "kind": "person", "name": "Discover Financial Services"}, {"aliases": [], "deg": 1, "id": "p:obs-024cb6143f331c5d", "kind": "person", "name": "Nove Internal"}, {"aliases": [], "deg": 1, "id": "p:obs-038ddc2e4b58a10c", "kind": "person", "name": "Bank Rossiya"}, {"aliases": [], "deg": 1, "id": "p:obs-074d2667c75af7ae", "kind": "person", "name": "Ripple Labs"}, {"aliases": [], "deg": 1, "id": "p:obs-10d52613eed0f86a", "kind": "person", "name": "Pardo"}, {"aliases": [], "deg": 1, "id": "p:obs-1148ad447c32c5d2", "kind": "person", "name": "Mire Ali"}, {"aliases": [], "deg": 2, "id": "p:obs-18235513d7ffba9d", "kind": "person", "name": "Don McGhan"}, {"aliases": [], "deg": 1, "id": "p:obs-1e719d4522690a2f", "kind": "person", "name": "George Haswani"}, {"aliases": [], "deg": 1, "id": "p:obs-26beb07ff2155dd8", "kind": "person", "name": "Mohammad Vakili"}, {"aliases": [], "deg": 1, "id": "p:obs-292872a0d12b1e15", "kind": "person", "name": "Al-Arabi"}, {"aliases": [], "deg": 1, "id": "p:obs-2a79d0a35eb985fe", "kind": "person", "name": "SHAHED PHARM Shahed Pharm"}, {"aliases": [], "deg": 1, "id": "p:obs-2ec6c7486a5aad57", "kind": "person", "name": "Digital Security"}, {"aliases": [], "deg": 1, "id": "p:obs-39d77a628fa1eaad", "kind": "person", "name": "Hesco Engineering"}, {"aliases": [], "deg": 1, "id": "p:obs-3d0b29f90a9a7d4c", "kind": "person", "name": "Atlas Exchange"}, {"aliases": [], "deg": 1, "id": "p:obs-3e985d7d72796222", "kind": "person", "name": "Thrace Foundation"}, {"aliases": [], "deg": 4, "id": "p:obs-3f2b8ba47f97e8d3", "kind": "person", "name": "Bank Sepah"}, {"aliases": [], "deg": 1, "id": "p:obs-415d5fd460d8f6e3", "kind": "person", "name": "Digital Services"}, {"aliases": [], "deg": 1, "id": "p:obs-4ac6ff9b2e2eb127", "kind": "person", "name": "Samer Foz"}, {"aliases": [], "deg": 2, "id": "p:obs-56046651cb41a568", "kind": "person", "name": "BNP Paribas"}, {"aliases": [], "deg": 1, "id": "p:obs-56e1656147ccb35d", "kind": "person", "name": "Wael Bazzi"}, {"aliases": [], "deg": 1, "id": "p:obs-5d326e1ebba6184f", "kind": "person", "name": "Games Unlimited"}, {"aliases": [], "deg": 1, "id": "p:obs-655fd8b5ee56a87f", "kind": "person", "name": "Jawad Nur-al-Din"}, {"aliases": [], "deg": 1, "id": "p:obs-6be789274090b67c", "kind": "person", "name": "Technotar Engineering"}, {"aliases": [], "deg": 4, "id": "p:obs-6caaee6aa5b6c9f4", "kind": "person", "name": "Nunns"}, {"aliases": [], "deg": 1, "id": "p:obs-6fb763a7c2b2ba0d", "kind": "person", "name": "Nove Development"}, {"aliases": [], "deg": 4, "id": "p:obs-7cadab457ad8d811", "kind": "person", "name": "Lucas"}, {"aliases": [], "deg": 1, "id": "p:obs-7f8ee37fe0c0945f", "kind": "person", "name": "Liability Company Garant-SV"}, {"aliases": [], "deg": 1, "id": "p:obs-80fc106eb997e9dd", "kind": "person", "name": "OTC Link"}, {"aliases": [], "deg": 1, "id": "p:obs-85e5d39b1d586722", "kind": "person", "name": "Dakota Ridge"}, {"aliases": [], "deg": 1, "id": "p:obs-893a1331805f1ac2", "kind": "person", "name": "Ashraf Seed Ahmed"}, {"aliases": [], "deg": 1, "id": "p:obs-8a48935e24d35bb9", "kind": "person", "name": "Pawel"}, {"aliases": [], "deg": 1, "id": "p:obs-8e7ca67edfa8a20d", "kind": "person", "name": "Decart OOD"}, {"aliases": [], "deg": 1, "id": "p:obs-8eb0bbe1344c78f4", "kind": "person", "name": "Cheniere"}, {"aliases": [], "deg": 1, "id": "p:obs-9184ba34b62a421f", "kind": "person", "name": "Lana TV"}, {"aliases": [], "deg": 1, "id": "p:obs-9683e9bc417fa17c", "kind": "person", "name": "AL KAWTHAR Al Kawthar"}, {"aliases": [], "deg": 2, "id": "p:obs-b34e368d9fb0ddef", "kind": "person", "name": "Rami Makhluf"}, {"aliases": [], "deg": 1, "id": "p:obs-bcab77db62c07fe0", "kind": "person", "name": "Stewardship Financial"}, {"aliases": [], "deg": 2, "id": "p:obs-c4cde1f7d5c9b7a1", "kind": "person", "name": "Joseph Nelson"}, {"aliases": [], "deg": 1, "id": "p:obs-ce4941eb396e9569", "kind": "person", "name": "Benedicto Quinones"}, {"aliases": [], "deg": 1, "id": "p:obs-cf76fb9a26acccbd", "kind": "person", "name": "Tetrix Financial"}, {"aliases": [], "deg": 1, "id": "p:obs-d13e884bc9c1d8f2", "kind": "person", "name": "Barton Asset Management"}, {"aliases": [], "deg": 1, "id": "p:obs-d1fdfd4e87d6b070", "kind": "person", "name": "Eurogroup Engineering"}, {"aliases": [], "deg": 1, "id": "p:obs-d46d0d3fb215c81b", "kind": "person", "name": "Vabo Systems"}, {"aliases": [], "deg": 2, "id": "p:obs-d7abc40e3e17f0bf", "kind": "person", "name": "Ismael Tash"}, {"aliases": [], "deg": 1, "id": "p:obs-e02d9a2ff0838e4a", "kind": "person", "name": "Vabo Management"}, {"aliases": [], "deg": 1, "id": "p:obs-e5fbc60b10766473", "kind": "person", "name": "Eurobet Partners OOD"}, {"aliases": [], "deg": 1, "id": "p:obs-e61de182be831db8", "kind": "person", "name": "Eurobet OOD"}, {"aliases": [], "deg": 1, "id": "p:obs-f30cb8797e770a5e", "kind": "person", "name": "Arturo Quinonez Ltda"}, {"aliases": [], "deg": 4, "id": "p:obs-f46dab93abf646de", "kind": "person", "name": "McNaul"}], "stats": {"edges": 101, "entities": 156, "names": 126, "people": 104, "unresolved": 139}, "unreasons": [["counterparty not in sentence window (controller known, controlled party upstream)", 86], ["sub-threshold extraction confidence", 22], ["object: document-generic reference", 13], ["stop-listed name (place/agency/group, not an owner party)", 5], ["bare corporate-suffix token(s), not a name", 3], ["object: name too short to identify a party", 2], ["object: bare corporate-suffix token(s), not a name", 2], ["name too short to identify a party", 2], ["subject: name too short to identify a party", 1], ["subject: stop-listed name (place/agency/group, not an owner party)", 1], ["object: stop-listed name (place/agency/group, not an owner party)", 1], ["subject and object normalize identically", 1]]};
+
+/* ---------- deterministic PRNG (no Math.random) ---------- */
+let _s = 42;
+function rnd() { _s = (_s * 1664525 + 1013904223) >>> 0; return _s / 4294967296; }
+
+/* ---------- graph prep ---------- */
+const nodes = DATA.nodes.map(n => ({...n}));
+const byId = new Map(nodes.map(n => [n.id, n]));
+const edges = DATA.edges.filter(e => byId.has(e.s) && byId.has(e.t));
+const adj = new Map(nodes.map(n => [n.id, []]));
+edges.forEach(e => { adj.get(e.s).push(e); adj.get(e.t).push(e); });
+
+/* components */
+const comp = new Map(); const comps = [];
+for (const n of nodes) {
+  if (comp.has(n.id)) continue;
+  const members = []; const stack = [n.id];
+  while (stack.length) {
+    const id = stack.pop();
+    if (comp.has(id)) continue;
+    comp.set(id, comps.length); members.push(byId.get(id));
+    adj.get(id).forEach(e => { stack.push(e.s); stack.push(e.t); });
+  }
+  comps.push(members);
+}
+
+/* per-component force layout, then shelf packing */
+function layoutComponent(members) {
+  const R = 26 * Math.sqrt(members.length) + 10;
+  members.forEach((m, i) => {
+    const a = (i / members.length) * Math.PI * 2 + rnd() * 0.5;
+    m.x = Math.cos(a) * R * (0.4 + 0.6 * rnd());
+    m.y = Math.sin(a) * R * (0.4 + 0.6 * rnd());
+  });
+  const inComp = new Set(members.map(m => m.id));
+  const cedges = edges.filter(e => inComp.has(e.s));
+  for (let it = 0; it < 260; it++) {
+    const t = 1 - it / 260;
+    for (let i = 0; i < members.length; i++) for (let j = i + 1; j < members.length; j++) {
+      const a = members[i], b = members[j];
+      let dx = b.x - a.x, dy = b.y - a.y;
+      let d2 = dx * dx + dy * dy || 0.01, d = Math.sqrt(d2);
+      const rep = 1600 / d2;
+      dx /= d; dy /= d;
+      a.x -= dx * rep * t; a.y -= dy * rep * t;
+      b.x += dx * rep * t; b.y += dy * rep * t;
+    }
+    for (const e of cedges) {
+      const a = byId.get(e.s), b = byId.get(e.t);
+      let dx = b.x - a.x, dy = b.y - a.y;
+      const d = Math.sqrt(dx * dx + dy * dy) || 0.01;
+      const f = (d - 74) * 0.02 * t;
+      dx /= d; dy /= d;
+      a.x += dx * f * d * 0.02 + dx * f; a.y += dy * f * d * 0.02 + dy * f;
+      b.x -= dx * f * d * 0.02 + dx * f; b.y -= dy * f * d * 0.02 + dy * f;
+    }
+    for (const m of members) { m.x *= 0.995; m.y *= 0.995; }
+  }
+  let minX = 1e9, minY = 1e9, maxX = -1e9, maxY = -1e9;
+  for (const m of members) {
+    minX = Math.min(minX, m.x); maxX = Math.max(maxX, m.x);
+    minY = Math.min(minY, m.y); maxY = Math.max(maxY, m.y);
+  }
+  const pad = 66;
+  return { members, w: maxX - minX + pad * 2, h: maxY - minY + pad * 2, minX, minY, pad };
+}
+const boxes = comps.map(layoutComponent).sort((a, b) => (b.w * b.h) - (a.w * a.h));
+const WORLD_W = 2350;
+let cx = 0, cy = 0, rowH = 0, totalH = 0;
+for (const b of boxes) {
+  if (cx + b.w > WORLD_W && cx > 0) { cx = 0; cy += rowH; rowH = 0; }
+  for (const m of b.members) { m.x = m.x - b.minX + b.pad + cx; m.y = m.y - b.minY + b.pad + cy; }
+  cx += b.w; rowH = Math.max(rowH, b.h); totalH = Math.max(totalH, cy + b.h);
+}
+
+/* ---------- render ---------- */
+const svg = document.getElementById('canvas');
+const NS = 'http://www.w3.org/2000/svg';
+const el = (t, at, parent) => { const e = document.createElementNS(NS, t);
+  for (const k in at) e.setAttribute(k, at[k]); if (parent) parent.appendChild(e); return e; };
+
+const ASSERT = [
+  ['BENEFICIAL_OWNER', 'Owns (source states it)', 'var(--own)', ''],
+  ['PARENT', 'Parent → subsidiary', 'var(--parent)', ''],
+  ['UNKNOWN_CONTROL_ROLE', 'Controls (capacity unclear)', 'var(--ctrl)', '6 4'],
+  ['RELATED_ORGANIZATION', 'Related organization', 'var(--rel)', '2 4'],
+];
+
+const defs = el('defs', {}, svg);
+for (const [key, , color] of ASSERT) {
+  const mk = el('marker', { id: 'arr-' + key, viewBox: '0 0 10 10', refX: 9, refY: 5,
+    markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, defs);
+  el('path', { d: 'M0,1 L9,5 L0,9 z', fill: color, style: `fill:${color}` }, mk);
+}
+const world = el('g', {}, svg);
+const edgeLayer = el('g', {}, world);
+const nodeLayer = el('g', {}, world);
+
+const edgeEls = edges.map((e, i) => {
+  const a = byId.get(e.s), b = byId.get(e.t);
+  const g = el('g', { 'class': 'edge e-' + e.a }, edgeLayer);
+  const hit = el('path', { 'class': 'hit-area' }, g);
+  const core = el('path', { 'class': 'core' }, g);
+  if (e.a !== 'RELATED_ORGANIZATION') core.setAttribute('marker-end', 'url(#arr-' + e.a + ')');
+  let lbl = null;
+  if (e.pct != null) lbl = el('text', { 'class': 'elabel', 'text-anchor': 'middle' }, g);
+  if (lbl) lbl.textContent = e.pct + '%';
+  g.addEventListener('pointerenter', ev => showTipEdge(ev, e));
+  g.addEventListener('pointermove', ev => moveTip(ev));
+  g.addEventListener('pointerleave', hideTip);
+  g.addEventListener('click', ev => { ev.stopPropagation(); if (suppressClick) { suppressClick = false; return; } openEdge(e); });
+  return { e, g, core, hit, lbl, a, b };
+});
+
+const nodeEls = nodes.map(n => {
+  const g = el('g', { 'class': 'node ' + n.kind, tabindex: 0, role: 'button',
+    'aria-label': n.name + ' (' + n.kind + ')' }, nodeLayer);
+  el('circle', { 'class': 'halo', r: 15, cx: 0, cy: 0, opacity: 0 }, g);
+  const shape = n.kind === 'person'
+    ? el('circle', { 'class': 'shape', r: 7.5 }, g)
+    : el('rect', { 'class': 'shape', x: -7.5, y: -7.5, width: 15, height: 15, rx: 3.2 }, g);
+  const lbl = el('text', { 'class': 'nlabel', y: 21, 'text-anchor': 'middle' }, g);
+  lbl.textContent = n.name.length > 22 ? n.name.slice(0, 21) + '…' : n.name;
+  g.addEventListener('pointerenter', ev => showTipNode(ev, n));
+  g.addEventListener('pointermove', ev => moveTip(ev));
+  g.addEventListener('pointerleave', hideTip);
+  g.addEventListener('click', ev => { ev.stopPropagation(); if (suppressClick) { suppressClick = false; return; } openNode(n); });
+  g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openNode(n); } });
+  return { n, g, shape };
+});
+const nodeElById = new Map(nodeEls.map(o => [o.n.id, o]));
+
+function place() {
+  for (const o of nodeEls) o.g.setAttribute('transform', `translate(${o.n.x},${o.n.y})`);
+  for (const o of edgeEls) {
+    const { a, b } = o;
+    const dx = b.x - a.x, dy = b.y - a.y, d = Math.sqrt(dx * dx + dy * dy) || 1;
+    const rA = 11, rB = 13.5;
+    const x1 = a.x + dx / d * rA, y1 = a.y + dy / d * rA;
+    const x2 = b.x - dx / d * rB, y2 = b.y - dy / d * rB;
+    const mx = (x1 + x2) / 2 - dy / d * 7, my = (y1 + y2) / 2 + dx / d * 7;
+    const path = `M${x1},${y1} Q${mx},${my} ${x2},${y2}`;
+    o.core.setAttribute('d', path); o.hit.setAttribute('d', path);
+    if (o.lbl) { o.lbl.setAttribute('x', mx); o.lbl.setAttribute('y', my - 3); }
+  }
+}
+place();
+
+/* ---------- viewport ---------- */
+let vb = { x: -10, y: -10, w: WORLD_W + 20, h: totalH + 40 };
+function applyVB() { svg.setAttribute('viewBox', `${vb.x} ${vb.y} ${vb.w} ${vb.h}`); }
+applyVB();
+svg.addEventListener('wheel', ev => {
+  ev.preventDefault();
+  const k = ev.deltaY > 0 ? 1.12 : 1 / 1.12;
+  const pt = clientToWorld(ev);
+  vb = { x: pt.x - (pt.x - vb.x) * k, y: pt.y - (pt.y - vb.y) * k, w: vb.w * k, h: vb.h * k };
+  applyVB();
+}, { passive: false });
+
+let drag = null;
+let suppressClick = false;
+svg.addEventListener('pointerdown', ev => {
+  const nodeG = ev.target.closest('.node');
+  if (nodeG) {
+    const o = nodeEls.find(o => o.g === nodeG);
+    drag = { kind: 'node', o, last: clientToWorld(ev), moved: 0 };
+  } else {
+    svg.setPointerCapture(ev.pointerId);
+    drag = { kind: 'pan', last: { cx: ev.clientX, cy: ev.clientY }, moved: 0 };
+    svg.classList.add('dragging');
+  }
+});
+svg.addEventListener('pointermove', ev => {
+  if (!drag) return;
+  if (drag.kind === 'node') {
+    const p = clientToWorld(ev);
+    drag.moved += Math.abs(p.x - drag.last.x) + Math.abs(p.y - drag.last.y);
+    drag.o.n.x += p.x - drag.last.x; drag.o.n.y += p.y - drag.last.y;
+    drag.last = p; place();
+  } else {
+    const scale = vb.w / svg.clientWidth;
+    vb.x -= (ev.clientX - drag.last.cx) * scale;
+    vb.y -= (ev.clientY - drag.last.cy) * scale;
+    drag.last = { cx: ev.clientX, cy: ev.clientY };
+    applyVB();
+  }
+});
+['pointerup', 'pointercancel'].forEach(t => svg.addEventListener(t, () => {
+  suppressClick = !!(drag && drag.moved > 3);
+  drag = null; svg.classList.remove('dragging');
+}));
+function clientToWorld(ev) {
+  const r = svg.getBoundingClientRect();
+  return { x: vb.x + (ev.clientX - r.left) / r.width * vb.w,
+           y: vb.y + (ev.clientY - r.top) / r.height * vb.h };
+}
+
+/* ---------- tooltip ---------- */
+const tip = document.getElementById('tip');
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function showTipNode(ev, n) {
+  const al = n.aliases && n.aliases.length
+    ? `<div class="q">${n.aliases.map(a => `<span class="k">${esc(a.type)}</span> ${esc(a.name)}`).join('<br>')}</div>` : '';
+  tip.innerHTML = `<b>${esc(n.name)}</b><br><span class="k">${n.kind} · ${n.deg} edge${n.deg === 1 ? '' : 's'}</span>${al}`;
+  tip.style.display = 'block'; moveTip(ev);
+}
+function showTipEdge(ev, e) {
+  const a = byId.get(e.s), b = byId.get(e.t);
+  tip.innerHTML = `<b>${esc(a.name)}</b> → <b>${esc(b.name)}</b><br>
+    <span class="k">${esc(e.a.replace(/_/g, ' '))}${e.pct != null ? ' · ' + e.pct + '%' : ''} · ${esc(e.posture || '')}</span>
+    <div class="q">“${esc(e.quote)}”</div>`;
+  tip.style.display = 'block'; moveTip(ev);
+}
+function moveTip(ev) {
+  const wrap = svg.parentElement.getBoundingClientRect();
+  let x = ev.clientX - wrap.left + 14, y = ev.clientY - wrap.top + 14;
+  x = Math.min(x, wrap.width - tip.offsetWidth - 10);
+  y = Math.min(y, wrap.height - tip.offsetHeight - 10);
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function hideTip() { tip.style.display = 'none'; }
+
+/* ---------- inspector ---------- */
+const panel = document.getElementById('panel');
+const panelBody = document.getElementById('panel-body');
+panel.querySelector('.close').addEventListener('click', () => closePanel());
+svg.addEventListener('click', () => { if (suppressClick) { suppressClick = false; return; } closePanel(); });
+function closePanel() {
+  panel.classList.remove('open');
+  nodeEls.forEach(o => o.g.classList.remove('sel'));
+  edgeEls.forEach(o => o.g.classList.remove('sel'));
+}
+function edgeCard(e, focusId) {
+  const a = byId.get(e.s), b = byId.get(e.t);
+  const other = focusId ? (e.s === focusId ? b : a) : null;
+  const dirTxt = focusId
+    ? (e.s === focusId ? `→ <b>${esc(other.name)}</b>` : `← <b>${esc(other.name)}</b>`)
+    : `<b>${esc(a.name)}</b> → <b>${esc(b.name)}</b>`;
+  return `<div class="pedge">
+    <div class="rel"><span class="assert">${esc(e.a)}</span> ${dirTxt} ${e.pct != null ? `<span class="mono">${e.pct}%</span>` : ''}</div>
+    <div class="quote">“${esc(e.quote)}”</div>
+    <div class="meta">${esc(e.posture || '')} · confidence ${e.conf ?? '—'} ·
+      <a href="${esc(e.url)}" target="_blank" rel="noopener">archived source ↗</a></div>
+  </div>`;
+}
+function openNode(n) {
+  closePanel();
+  nodeElById.get(n.id).g.classList.add('sel');
+  const es = adj.get(n.id);
+  const al = n.aliases && n.aliases.length
+    ? `<p class="alias">${n.aliases.map(a => `<em>${esc(a.type)}</em> ${esc(a.name)}`).join(' · ')}</p>` : '';
+  panelBody.innerHTML = `<span class="kind">${n.kind} · names-as-evidenced</span><h2>${esc(n.name)}</h2>${al}
+    ${es.map(e => edgeCard(e, n.id)).join('')}`;
+  panel.classList.add('open');
+}
+function openEdge(e) {
+  closePanel();
+  panelBody.innerHTML = `<span class="kind">evidence edge</span>
+    <h2 class="serif">${esc(byId.get(e.s).name)} → ${esc(byId.get(e.t).name)}</h2>${edgeCard(e, null)}`;
+  panel.classList.add('open');
+}
+
+/* ---------- filters & search ---------- */
+const active = new Set(ASSERT.map(a => a[0]));
+const chipsBox = document.getElementById('chips');
+for (const [key, label, color, dash] of ASSERT) {
+  const c = document.createElement('button');
+  c.className = 'chip'; c.type = 'button'; c.setAttribute('aria-pressed', 'true');
+  c.innerHTML = `<svg width="26" height="8" aria-hidden="true"><path d="M1,4 L25,4" stroke="${color}" stroke-width="2.4" ${dash ? `stroke-dasharray="${dash}"` : ''}/></svg>${label} <span class="mono">${edges.filter(e => e.a === key).length}</span>`;
+  c.addEventListener('click', () => {
+    if (active.has(key)) active.delete(key); else active.add(key);
+    c.classList.toggle('off', !active.has(key));
+    c.setAttribute('aria-pressed', active.has(key));
+    refresh();
+  });
+  chipsBox.appendChild(c);
+}
+const q = document.getElementById('q');
+q.addEventListener('input', refresh);
+function refresh() {
+  const term = q.value.trim().toLowerCase();
+  const liveNodes = new Set();
+  for (const o of edgeEls) {
+    const on = active.has(o.e.a);
+    o.g.classList.toggle('dim', !on);
+    if (on) { liveNodes.add(o.e.s); liveNodes.add(o.e.t); }
+  }
+  for (const o of nodeEls) {
+    const aliasText = (o.n.aliases || []).map(a => a.name).join(' ').toLowerCase();
+    const hit = term && (o.n.name.toLowerCase().includes(term) || aliasText.includes(term));
+    o.g.classList.toggle('hit', !!hit);
+    o.g.querySelector('.halo').setAttribute('opacity', hit ? 1 : 0);
+    o.g.classList.toggle('dim', !liveNodes.has(o.n.id) || (term && !hit &&
+      !adj.get(o.n.id).some(e => { const m = byId.get(e.s === o.n.id ? e.t : e.s);
+        return m.name.toLowerCase().includes(term); })));
+  }
+}
+refresh();
+
+/* ---------- legend, stats, tables ---------- */
+document.getElementById('legend').innerHTML =
+  `<span class="li"><svg width="15" height="15" aria-hidden="true"><rect x="1.5" y="1.5" width="12" height="12" rx="3" fill="var(--node-fill)" stroke="var(--ink-2)" stroke-width="1.5"/></svg>entity</span>
+   <span class="li"><svg width="15" height="15" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" fill="var(--node-fill)" stroke="var(--ink-2)" stroke-width="1.5"/></svg>person</span>
+   <span class="li" style="color:var(--ink-3)">arrows point owner → owned, parent → subsidiary · % labels are stated ownership</span>`;
+
+const S = DATA.stats;
+document.getElementById('stats').innerHTML = [
+  [S.entities, 'entities'], [S.people, 'people'], [S.edges, 'evidence edges'],
+  [S.names, 'name records'], [S.unresolved, 'held unresolved'],
+].map(([v, l]) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`).join('');
+
+const lt = document.querySelector('#ledger tbody');
+lt.innerHTML = DATA.ledger.map(r =>
+  `<tr><td>${esc(r.name)}</td><td>${esc(r.type)}</td><td>${esc(r.alias)}</td></tr>`).join('');
+document.getElementById('ledger-n').textContent = `(${DATA.ledger.length} records)`;
+const ut = document.querySelector('#unres tbody');
+ut.innerHTML = DATA.unreasons.map(([r, n]) =>
+  `<tr><td>${esc(r)}</td><td class="num mono">${n}</td></tr>`).join('');
+document.getElementById('unres-n').textContent = `(${DATA.stats.unresolved} observations)`;
+</script>
