@@ -106,7 +106,17 @@ _LEAD_CONNECTIVE_RE = re.compile(
 _BARE_SUFFIX_WORDS = {"limited", "ltd", "inc", "llc", "corp", "corporation",
                       "company", "co", "holdings", "holding", "group",
                       "bank", "fund", "association", "partners",
-                      "partnership", "trust"}
+                      "partnership", "trust", "savings", "national",
+                      "federal", "commercial", "banking", "state"}
+_US_STATES = {s.lower() for s in (
+    "Alabama Alaska Arizona Arkansas California Colorado Connecticut Delaware "
+    "Florida Georgia Hawaii Idaho Illinois Indiana Iowa Kansas Kentucky "
+    "Louisiana Maine Maryland Massachusetts Michigan Minnesota Mississippi "
+    "Missouri Montana Nebraska Nevada Ohio Oklahoma Oregon Pennsylvania "
+    "Tennessee Texas Utah Vermont Virginia Washington Wisconsin Wyoming".split()
+)} | {"new york", "new jersey", "new mexico", "new hampshire",
+      "north carolina", "north dakota", "south carolina", "south dakota",
+      "rhode island", "west virginia"}
 
 
 def sanitize(name):
@@ -118,6 +128,7 @@ def sanitize(name):
         if len(parts) > 1:
             name = parts[-1]
     name = _LEAD_CONNECTIVE_RE.sub("", name)
+    name = re.sub(r"^[A-Z][a-z]+(?:\s[A-Z][a-z]+)?-based\s+", "", name)
     return name.strip(" ,;:.") or None
 
 SUFFIX_RE = re.compile(
@@ -161,6 +172,10 @@ def gate(name):
         return "bare corporate-suffix token(s), not a name"
     if GENERIC_PLURAL_RE.match(name):
         return "count phrase / generic plural, not a named party"
+    toks = norm(name).split()
+    if (len(toks) >= 2 and toks[-1] in ("corporation", "company", "llc")
+            and " ".join(toks[:-1]) in _US_STATES):
+        return "jurisdiction-form phrase, not a party name"
     if PRONOUN_START_RE.match(name):
         return "clause fragment, not a name"
     if all(len(t) <= 2 for t in name.split()):
