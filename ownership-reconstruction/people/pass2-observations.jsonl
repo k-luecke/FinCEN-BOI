@@ -78,7 +78,6 @@
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["d/b/a Onsite Environmental"], "normalized_name": "Allwaste Onsite", "person_id": "p:obs-50daabe58b3355dc"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["ELIJAH BHANG", "Elijah Bang", "Elijah Bhang"], "normalized_name": "ELIJAH BANG", "person_id": "p:obs-519fb565c8651c9f"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["FOS"], "normalized_name": "Field Supervisor", "person_id": "p:obs-51dbe6f161e787ec"}
-{"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Issuer", "person_id": "p:obs-535c6f8eb511f5d9"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Lobaye Invest", "person_id": "p:obs-5363e2b2d281f8e6"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "BNP Paribas", "person_id": "p:obs-56046651cb41a568"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "merge_basis": ["a/k/a"], "merged_from": ["p:obs-68a7df2acfdb0292"], "name_variants": ["Oaks Club Room", "d/b/a Oaks Card Club", "d/b/a Oaks Card Club Emeryville", "d/b/a Oaks Club"], "normalized_name": "Oaks Card Club", "person_id": "p:obs-564eed30c81f2d01"}
@@ -105,7 +104,6 @@
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["Yoany Vaillant Fajardo"], "normalized_name": "Yoany Vaillant", "person_id": "p:obs-65770563233f72e2"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["Faith Ashford"], "normalized_name": "PHYLLIS RICCI QUINCOCES", "person_id": "p:obs-6670c01e75b0b417"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Sierra Pacific Resources", "person_id": "p:obs-6749991cd7ce8f7a"}
-{"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Reporting Person", "person_id": "p:obs-6925812f5657be26"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Pfizer", "person_id": "p:obs-69d9f7657d4a7ec0"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["d/b/a Ryba Marine Construction Co"], "normalized_name": "Wallace Construction", "person_id": "p:obs-6b431def16e78ddc"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Technotar Engineering", "person_id": "p:obs-6be789274090b67c"}

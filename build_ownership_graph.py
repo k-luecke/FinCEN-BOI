@@ -67,7 +67,9 @@ OWNED_CONTROLLED_RE = re.compile(
 GENERIC_RE = re.compile(
     r"^(?:(?:the|this|that|such)\s+)?(?:proposed\s+)?(?:bank|company|"
     r"corporation|trust|venture|fund|association|partnership|firm|"
-    r"institution|account|defendants?)$", re.I)
+    r"institution|account|defendants?|issuer|borrower|lender|guarantor|"
+    r"purchaser|seller|acquirer|depositor|servicer|sponsor|registrant|"
+    r"reporting\s+person)$", re.I)
 # A generic-definite tail ("… The Bank") marks OCC-decision heading glue —
 # the real party name needs in-document resolution.
 GENERIC_TAIL_RE = re.compile(

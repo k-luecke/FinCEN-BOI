@@ -21,7 +21,6 @@
 {"entity_id": "obs-ent:0a730d8f616b6f5f", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "M Images, Inc"}
 {"entity_id": "obs-ent:0ac88994abbf0e0c", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "JPMP Master Fund Manager, LP"}
 {"entity_id": "obs-ent:0b1621c50e492ae7", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Mian, Inc"}
-{"entity_id": "obs-ent:0b173a9a8cb807d6", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Keurig, Incorporated"}
 {"entity_id": "obs-ent:0b96f47ca57e973e", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Syriatel"}
 {"entity_id": "obs-ent:0bd58ac0b34aa073", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Affinion Group"}
 {"entity_id": "obs-ent:0c07bc609755c300", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "NYAG charged Pennsylvania-based payday lenders TC Services Corporation"}
@@ -184,7 +183,6 @@
 {"entity_id": "obs-ent:4f897c3fef7215af", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Pardo Family Trust"}
 {"entity_id": "obs-ent:505250667bc6c49e", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "GS Chemical Transportation Limited"}
 {"entity_id": "obs-ent:513329c1a5960f8d", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "GulfCo of Alabama, LLC"}
-{"entity_id": "obs-ent:51e3a1ea1517e834", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Certain employees of Silicon Valley Bank"}
 {"entity_id": "obs-ent:51e7484d9f4dfdd9", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Harley Davidson, Inc"}
 {"entity_id": "obs-ent:51f22bfd7798effe", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "FNFG Merger Sub, Inc"}
 {"entity_id": "obs-ent:525c01b7449a131a", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "King Romans Company Limited"}
@@ -515,7 +513,6 @@
 {"entity_id": "obs-ent:c372cc184250de65", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "NARSIS"}
 {"entity_id": "obs-ent:c3aaeafb87deb6d3", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "NationsBank"}
 {"entity_id": "obs-ent:c3f320cfeeca7eb7", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Elemento Solutions Limited"}
-{"entity_id": "obs-ent:c3f8b29b0aed0e2c", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Evercore LP"}
 {"entity_id": "obs-ent:c4003baa8e3487d5", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "KKR Fund"}
 {"entity_id": "obs-ent:c4289629b08bc4d6", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "PPP"}
 {"entity_id": "obs-ent:c47f5f2275946f5a", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "ICON INTERNATIONAL HOLDINGS, INC"}
@@ -616,7 +613,6 @@
 {"entity_id": "obs-ent:ee150a40aafd7928", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "FIRST FINANCIAL PLANNING CORPORATION"}
 {"entity_id": "obs-ent:ee42c5176f3f6070", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Sethi Petroleum, LLC"}
 {"entity_id": "obs-ent:ee6b73a1ff73c6e0", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Vanguard Group, Inc"}
-{"entity_id": "obs-ent:eed032ac344ca323", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Chief Executive Officer of info USA, Inc"}
 {"entity_id": "obs-ent:ef008594e6294f4d", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "Universal Processing Services of Wisconsin, LLC"}
 {"entity_id": "obs-ent:ef35004f999adc04", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "FE Management Inc"}
 {"entity_id": "obs-ent:f08f90af48f12ce9", "entity_type": null, "identity_basis": "name-as-evidenced (content-pass-2)", "jurisdiction": "UNKNOWN", "legal_name": "EHC"}
