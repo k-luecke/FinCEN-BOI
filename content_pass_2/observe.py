@@ -247,9 +247,12 @@ TIERS = [("A_OWNERSHIP", "ownership-candidates.jsonl", TIER_A),
          ("D_SHELL_NOMINEE", "shell-structure-candidates.jsonl", TIER_D),
          ("E_FINANCIAL_FLOW", "financial-flow-candidates.jsonl", TIER_E)]
 
+# Part IV priority families, plus the regulator families first present at
+# full-corpus scale (NCUA, FFIEC, Federal Reserve — enforcement/structure
+# material comparable to OCC/FDIC). FBI_VAULT stays out pending OCR.
 FAMILY_OK = {"SEC", "TREASURY", "TREASURY_OIG", "FINCEN", "OCC", "FDIC",
              "CONGRESS_OVERSIGHT", "CONGRESS_JUDICIARY", "CONGRESS_GOV", "DOJ",
-             "GOVINFO", "GAO"}
+             "GOVINFO", "GAO", "NCUA", "FFIEC", "FEDERAL_RESERVE"}
 
 DATE_RE = re.compile(
     r"\b(January|February|March|April|May|June|July|August|September|October|"
