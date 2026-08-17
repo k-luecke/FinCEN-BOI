@@ -508,6 +508,17 @@ def write_jsonl(path, records):
             fh.write(json.dumps(rec, sort_keys=True, ensure_ascii=False) + "\n")
 
 
+def load_defined_terms():
+    """sha256 -> {term_key: full_name} from content_pass_2.defined_terms."""
+    path = os.path.join(REPO, "content-pass-2", "defined-terms.jsonl")
+    terms = defaultdict(dict)
+    if os.path.isfile(path):
+        for line in open(path, encoding="utf-8"):
+            r = json.loads(line)
+            terms[r["sha256"]][r["term_key"]] = r["full_name"]
+    return terms
+
+
 def load_doc_dates():
     """sha256 -> document-date record from content_pass_2.doc_dates."""
     path = os.path.join(REPO, "content-pass-2", "document-dates.jsonl")
@@ -523,6 +534,7 @@ def main():
     obs = [json.loads(l) for l in open(OBS, encoding="utf-8")]
     obs.sort(key=lambda r: r["observation_id"])
     doc_dates = load_doc_dates()
+    defined_terms = load_defined_terms()
 
     nodes = Nodes()
     edges, names, unresolved = [], [], []
@@ -607,6 +619,33 @@ def main():
         if pred in OUT_OF_SCOPE:
             stats["skipped:out-of-scope (flows / entity properties)"] += 1
             continue
+
+        # In-document defined-term resolution: a party name matching a
+        # term this document itself defines ("the Bank", "WFB", a defined
+        # surname) resolves to the full name — strictly document-scoped.
+        # The as-stated wording is kept on the edge.
+        dterms = defined_terms.get(o.get("source_sha256")) or {}
+        dt_extra = {}
+
+        def resolve_term(nm, slot):
+            if not nm:
+                return nm
+            full = dterms.get(norm(sanitize(nm) or nm))
+            if full and norm(full) != norm(nm):
+                dt_extra[f"{slot}_as_stated"] = nm
+                stats["defined-term:resolved"] += 1
+                return full
+            return nm
+
+        subj = resolve_term(subj, "subject")
+        objn = resolve_term(objn, "object")
+        if dt_extra:
+            dt_extra["resolution"] = "defined-term"
+        # A generic party that just resolved regains graph-worthy
+        # confidence; the cap existed only because the name was generic.
+        dt_conf = (0.75 if dt_extra and
+                   (o.get("extraction_confidence") or 0) < 0.9 else None)
+
         if pred in NEEDS_COUNTERPARTY_MISSING or (
                 pred not in ALIAS and not objn):
             resolved = (resolve_designated(o)
@@ -615,12 +654,13 @@ def main():
                 for owned in maybe_split_owner_list(resolved):
                     emit_edge(o, "BENEFICIAL_OWNER", subj, "owner",
                               owned, "owned", conf=0.7,
-                              extra={"resolution": "designation-window"})
+                              extra={"resolution": "designation-window",
+                                     **dt_extra})
                 continue
             to_unresolved(o, "counterparty not in sentence window "
                              "(controller known, controlled party upstream)")
             continue
-        if (o.get("extraction_confidence") or 0) < 0.9:
+        if (o.get("extraction_confidence") or 0) < 0.9 and not dt_extra:
             to_unresolved(o, "sub-threshold extraction confidence; "
                              "party naming needs in-document resolution")
             continue
@@ -633,11 +673,14 @@ def main():
             else:
                 assertion = "UNKNOWN_CONTROL_ROLE"
             for owner in maybe_split_owner_list(subj or ""):
-                emit_edge(o, assertion, owner, "owner", objn, "owned")
+                emit_edge(o, assertion, owner, "owner", objn, "owned",
+                          conf=dt_conf, extra=dt_extra)
         elif pred in PARENT_PREDS:
-            emit_edge(o, "PARENT", subj, "owner", objn, "owned")
+            emit_edge(o, "PARENT", subj, "owner", objn, "owned",
+                      conf=dt_conf, extra=dt_extra)
         elif pred in RELATED:
-            emit_edge(o, "RELATED_ORGANIZATION", subj, "owned", objn, "owned")
+            emit_edge(o, "RELATED_ORGANIZATION", subj, "owned", objn, "owned",
+                      conf=dt_conf, extra=dt_extra)
         elif pred in ALIAS:
             subj, objn = sanitize(subj), sanitize(objn)
             reason = gate(subj) or gate(objn)
