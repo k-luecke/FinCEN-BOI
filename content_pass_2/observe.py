@@ -25,38 +25,93 @@ from content_pass_1.common import OUT_ROOT, REPO_ROOT, log, read_jsonl, text_dis
 from .postures import assign_posture
 
 PASS2_VERSION = "content-pass-2/1.0.0"
-PARSER_VERSION = "observe/1.0.0"
+PARSER_VERSION = "observe/1.1.0"
 CP2 = os.path.join(REPO_ROOT, "content-pass-2")
 OUT = os.path.join(CP2, "raw-observations.jsonl")
 ERRS = os.path.join(CP2, "extraction-errors.jsonl")
 
 # ---- name fragments -------------------------------------------------------
-ENT = (r"(?:[A-Z][A-Za-z0-9&.'’\-]*(?:\s+[A-Za-z0-9&.'’\-]+){0,7}?[,]?\s+"
-       r"(?:LLC|L\.L\.C\.|Inc\.?|Corp\.?|Corporation|Company|Co\.|Ltd\.?|LP|L\.P\.|"
-       r"LLP|PLLC|Holdings?|Group|Trust|Bank|N\.A\.|S\.?A\.?R\.?L\.?|Partners(?:hip)?))")
-PERSON = r"(?:[A-Z][a-z]+(?:\s+[A-Z]\.?)?(?:\s+[A-Z][a-z]+){1,2})"
-ACTOR = f"(?:{ENT}|{PERSON})"
+# Corporate suffixes are matched case-insensitively so ALL-CAPS court-caption
+# names ("ATLANTA CAPITAL LLC", "GEN-SEE CAPITAL CORPORATION") resolve.
+_SUFFIX = (r"(?i:LLC|L\.L\.C\.|Inc\.?|Corp\.?|Corporation|Company|Co\.|Ltd\.?|"
+           r"Limited|Incorporated|LP|L\.P\.|LLP|PLLC|PLC|GmbH|N\.V\.|"
+           r"Holdings?|Group|Trust|Bank|Bancorp|Bancshares|N\.A\.|"
+           r"S\.?A\.?R\.?L\.?|Partners(?:hip)?|Fund|Association)")
+# Interior tokens must not be clause connectives (which would let a name
+# swallow "…through another LLC") or a corporate suffix token (which would
+# let a name run across "IBG LLC. IBG LLC").
+_MIDSTOP = (r"(?:through|another|other|certain|various|his|her|their|its|such|"
+            r"any|each|that|which|who|whose|is|was|are|were|and|or|"
+            r"(?i:LLC|L\.L\.C\.|Inc\.?|Corp\.?|Ltd\.?|LP|LLP|PLLC|PLC|N\.A\.)"
+            r"(?=[\s.,]))")
+ENT = (r"(?:[A-Z][A-Za-z0-9&.'’\-]*(?:\s+(?!" + _MIDSTOP + r"\s)"
+       r"[A-Za-z0-9&.'’\-]+){0,7}?[,]?\s+" + _SUFFIX + r")")
+# Prefix-form entities common in OFAC material ("Limited Liability Company
+# Garant-SV", "OOO Gazprom Burenie").
+PREFIX_ENT = (r"(?:(?:(?:Limited\s+)?Liability\s+Compan(?:y|ies)|"
+              r"(?:Open|Closed|Public|Private)\s+Joint[- ]Stock\s+Company|"
+              r"Joint[- ]Stock\s+Company|OOO|OAO|ZAO|PAO)\s+"
+              r"[A-Z][A-Za-z0-9'’&.\-]*(?:\s+[A-Z][A-Za-z0-9'’&.\-]*){0,3})")
+# Definite generic references to a document-defined entity ("the Bank",
+# "the Company") — kept verbatim as raw wording; confidence is capped below.
+DEFENT = (r"(?:[Tt]he\s+(?:[Pp]roposed\s+)?(?:Bank|Company|Corporation|Trust|"
+          r"Venture|Fund|Association|Partnership|Firm|Institution))")
+# Surname tokens allow interior capitals (McGhan, DiSanto, O'Brien) but
+# must end lowercase so they never stop mid-word.
+PERSON = r"(?:[A-Z][a-z]+(?:\s+[A-Z]\.?)?(?:\s+[A-Z][A-Za-z'’\-]*[a-z]){1,2})"
+# ALL-CAPS person names from court captions ("MICHAEL W. SMITH").
+PERSON_CAPS = r"(?:[A-Z][A-Z'’\-]+(?:\s+[A-Z]\.?)?(?:\s+[A-Z][A-Z'’\-]+){1,2})"
+# Single document-defined surname ("Forrest", "Irby", "McNaul") — only used
+# inside strict verb frames, never as a general actor.
+SURNAME = r"(?:[A-Z][a-z]+[A-Za-z'’\-]*[a-z])"
+# Cooperating-source / confidential-witness style codes ("CS-2", "CW-1").
+CODE = r"(?:[A-Z]{1,4}-\d{1,3})"
+# Bounded proper-noun run ("Central Bank of Iran", "TIAA") for object slots
+# inside strict frames only.
+TITLECASE = (r"(?:[A-Z][A-Za-z0-9'’&.\-]*(?:\s+(?:of|the|de|la|del|al|el)\s+"
+             r"[A-Z][A-Za-z0-9'’&.\-]*|\s+[A-Z][A-Za-z0-9'’&.\-]*){0,6})")
+ACTOR = f"(?:{PREFIX_ENT}|{ENT}|{DEFENT}|{PERSON_CAPS}|{PERSON}|{CODE})"
+# Comma list of defined names ("Nunns, Lucas, McNaul, Kilgariff and their
+# affiliated entities") — captured verbatim as one raw slot.
+NAMELIST = (rf"(?:{SURNAME}|{PERSON})(?:,\s+(?:{SURNAME}|{PERSON})){{1,6}}"
+            rf"(?:,?\s+and\s+(?:{SURNAME}|{PERSON}|their\s+affiliated\s+entities))?")
 PCT = r"(\d{1,3}(?:\.\d+)?)\s?(?:%|percent)"
 QUAL = r"(sole|majority|minority|principal|controlling|co-|part|50/50|indirect|beneficial)"
+# Compound subsidiary qualifiers ("direct, wholly-owned").
+SUBQUAL = (r"((?:direct|indirect|wholly[- ]\s*owned|majority[- ]owned)"
+           r"(?:,?\s+(?:direct|indirect|wholly[- ]\s*owned|majority[- ]owned))*)")
 
 # Tier A — ownership. Each: (name, regex, mapping of group->slot)
 TIER_A = [
     ("owned_by", re.compile(
-        rf"({ENT})\s*(?:\([^)]{{0,60}}\)\s*)?(?:,\s*(?:which|and)\s+)?"
+        rf"({ENT}|{DEFENT}|{TITLECASE})\s*(?:\([^)]{{0,60}}\)\s*)?(?:,\s*(?:which|and)\s+)?"
         rf"(?:is|was|were|are)\s+(?:an?\s+[\w\s-]{{0,30}}\s+)?"
         rf"(?:beneficially\s+)?owned(?:\s+and\s+(?:operated|controlled|managed))?\s+by\s+"
-        rf"({ACTOR})"),
+        rf"({NAMELIST}|{ACTOR})"),
      {"object": 1, "subject": 2}),
     ("owns_pct_of", re.compile(
-        rf"({ACTOR})\s+(?:currently\s+|indirectly\s+|directly\s+)?"
-        rf"(?:owns?|owned|holds?|held|acquired)\s+"
+        rf"({ACTOR}|{TITLECASE})\s+(?:currently\s+|indirectly\s+|directly\s+)?"
+        rf"(?:owns?|owned|holds?|held|acquired|purchased|obtained|retains?|retained|"
+        rf"will\s+own|would\s+own)\s+"
         rf"(?:approximately\s+|about\s+|at\s+least\s+|up\s+to\s+)?{PCT}\s+of\s+"
         rf"(?:the\s+)?(?:[\w\s-]{{0,40}}?\s+)?(?:shares?|stock|equity|interests?|units|"
-        rf"membership\s+interests?|ownership)?\s*(?:of|in)?\s*({ENT})"),
+        rf"membership\s+interests?|ownership)?\s*(?:of|in)?\s*({ENT}|{DEFENT})"),
+     {"subject": 1, "percentage": 2, "object": 3}),
+    ("pct_interest_in", re.compile(
+        rf"({ACTOR}|{TITLECASE})\s+(?:currently\s+|indirectly\s+|directly\s+)?"
+        rf"(?:owns?|owned|holds?|held|acquired|purchased|obtained|retains?|retained|"
+        rf"will\s+own|would\s+own)\s+"
+        rf"(?:approximately\s+|about\s+|at\s+least\s+|up\s+to\s+)?(?:an?\s+)?{PCT}\s+"
+        rf"(?:ownership|equity|membership|profits?)\s+interests?\s+in\s+"
+        rf"(?:the\s+)?({ENT}|{DEFENT}|{TITLECASE})"),
      {"subject": 1, "percentage": 2, "object": 3}),
     ("owner_of", re.compile(
         rf"({PERSON})\s*,?\s*(?:is|was|as)?\s*(?:the|a)\s+{QUAL}?\s*owner"
         rf"(?:\s+and\s+[\w\s]{{0,25}})?\s+of\s+({ENT})"),
+     {"subject": 1, "qualifier": 2, "object": 3}),
+    ("owner_of_appositive", re.compile(
+        rf"({ACTOR}|{SURNAME})\s*,\s*(?:the|a)\s+{QUAL}?\s*"
+        rf"(?:beneficial\s+)?owner\s+of\s+(?:the\s+)?({ENT}|{DEFENT}|{TITLECASE})"),
      {"subject": 1, "qualifier": 2, "object": 3}),
     ("founder_sole_owner", re.compile(
         rf"({PERSON})\s+(?:is|was)\s+the\s+(?:founder\s+and\s+)?"
@@ -70,19 +125,27 @@ TIER_A = [
         rf"(?:[\w\s]{{0,30}}?)({ENT}|[\w\s]{{0,40}}account)"),
      {"subject": 1, "object": 2}),
     ("holds_shares_of", re.compile(
-        rf"({ENT})\s+holds\s+{PCT}\s+of\s+the\s+shares"),
-     {"subject": 1, "percentage": 2, "object": None}),
+        rf"({ENT})\s+holds\s+{PCT}\s+of\s+the\s+shares"
+        rf"(?:\s+(?:of|in)\s+(?:the\s+)?({ENT}|{TITLECASE}))?"),
+     {"subject": 1, "percentage": 2, "object": 3}),
 ]
 
 TIER_B = [
     ("controlled_by", re.compile(
-        rf"({ENT})\s*(?:,[^,]{{0,80}},)?\s*(?:is|was|were|are)\s+"
-        rf"(?:owned\s+(?:and/or\s+|or\s+|and\s+)?)?controlled\s+by\s+({ACTOR})"),
+        rf"({ENT}|{DEFENT}|{TITLECASE})\s*(?:,[^,]{{0,80}},)?\s*(?:is|was|were|are)\s+"
+        rf"(?:owned\s+(?:and/or\s+|or\s+|and\s+)?)?controlled\s+by\s+"
+        rf"({NAMELIST}|{ACTOR})"),
      {"object": 1, "subject": 2}),
     ("designated_owned_controlled", re.compile(
         rf"({ENT})\s+(?:was|is|were)\s+designated\s+for\s+being\s+owned\s+or\s+"
         rf"controlled\s+by\s+({ACTOR})"),
      {"object": 1, "subject": 2}),
+    ("designation_controller", re.compile(
+        rf"designated(?:\s+today)?(?:\s+pursuant\s+to[^,.]{{0,40}})?\s+"
+        rf"for\s+being\s+owned\s+or\s+controlled\s+by\s*"
+        rf"(?:,[^,]{{0,120}},)?\s*(?:directly\s+or\s+indirectly,\s*)?"
+        rf"({ACTOR}|{SURNAME})"),
+     {"subject": 1}),
     ("controls", re.compile(
         rf"({ACTOR})\s+(?:owns\s+and\s+)?controls\s+({ENT})"),
      {"subject": 1, "object": 2}),
@@ -98,13 +161,34 @@ TIER_B = [
 
 TIER_C = [
     ("subsidiary_of", re.compile(
-        rf"({ENT})\s*(?:\([^)]{{0,40}}\)\s*)?,?\s*(?:is|was|will\s+(?:be|remain)|"
-        rf"remains?|became)\s+an?\s+(wholly[- ]owned|wholly-\s*owned|indirect|direct|"
-        rf"majority[- ]owned)?\s*subsidiary\s+of\s+({ENT})"),
+        rf"({ENT}|{DEFENT})\s*(?:\([^)]{{0,40}}\)\s*)?,?\s*"
+        rf"(?:is|was|will\s+(?:be|remain)|would\s+(?:be|remain)|"
+        rf"remains?|became)\s+an?\s+{SUBQUAL}?\s*subsidiary\s+of\s+"
+        rf"(?:the\s+)?({ENT}|{DEFENT}|{TITLECASE})"),
+     {"object": 1, "qualifier": 2, "subject": 3}),
+    ("subsidiary_of_appositive", re.compile(
+        rf"({ENT})\s*(?:\([^)]{{0,60}}\)\s*)?,\s*an?\s+{SUBQUAL}?\s*"
+        rf"subsidiary\s+of\s+(?:the\s+)?({ENT}|{DEFENT}|{TITLECASE})"),
      {"object": 1, "qualifier": 2, "subject": 3}),
     ("parent_of", re.compile(
         rf"({ENT})\s*,?\s*(?:is|was)\s+the\s+parent\s+"
         rf"(?:company|corporation|holding\s+company)\s+of\s+({ENT})"),
+     {"subject": 1, "object": 2}),
+    ("holding_company_of", re.compile(
+        rf"({ENT})\s*(?:,\s*|\s+(?:is|was|became)\s+)(?:the|a)\s+"
+        rf"(?:bank\s+|savings\s+and\s+loan\s+|thrift\s+)?holding\s+company\s+"
+        rf"(?:of|for)\s+(?:the\s+)?({ENT}|{DEFENT})"),
+     {"subject": 1, "object": 2}),
+    ("affiliate_of", re.compile(
+        rf"({ENT})\s*(?:,\s*|\s+(?:is|was|remains?|became)\s+)an?\s+affiliate\s+of\s+"
+        rf"(?:the\s+)?({ENT}|{DEFENT})"),
+     {"subject": 1, "object": 2}),
+    # Slash forms and "doing business as" only: prose "also/formerly known
+    # as" renames non-corporate things too (holidays, programs, places).
+    ("alias_of", re.compile(
+        rf"({ACTOR}|{SURNAME})\s*,?\s+"
+        rf"(?:d/b/a|a/k/a|f/k/a|n/k/a|a/d/b/a|doing\s+business\s+as)\s+"
+        rf"({ENT}|{TITLECASE}|[A-Z][A-Z0-9&.,'’\s\-]{{2,60}})"),
      {"subject": 1, "object": 2}),
     ("its_subsidiary", re.compile(
         rf"({ENT})\s*,?\s+(?:and\s+)?its\s+(wholly[- ]owned\s+)?subsidiar(?:y|ies)\s*,?\s+({ENT})"),
@@ -132,17 +216,24 @@ TIER_D = [
      {"subject": 1, "object": 2, "qualifier": None}),
 ]
 
-AMT = r"\$\s?([\d,]+(?:\.\d{2})?)\s*(million|billion)?"
+# Amount: tolerates OCR-spaced thousands ("$695, 000"); an optional range
+# tail ("between $300,000 to $400,000") records the lower bound, and the
+# full range stays in raw_text.
+_NUM = r"\d{1,3}(?:,\s?\d{3})+(?:\.\d{2})?|[\d,]+(?:\.\d{2})?"
+AMT = (rf"\$\s?({_NUM})\s*(million|billion)?"
+       rf"(?:\s*(?:to|and|–|—|-)\s*\$?\s?(?:{_NUM})\s*(?:million|billion)?)?")
 TIER_E = [
     ("transferred_to", re.compile(
-        rf"({ACTOR})\s+(?:wired|transferred|sent|paid|funneled|diverted|deposited)\s+"
+        rf"({ACTOR}|{TITLECASE})\s+(?:wired|transferred|sent|paid|funneled|diverted|"
+        rf"deposited)\s+(?:between\s+)?"
         rf"(?:approximately\s+|about\s+|at\s+least\s+|more\s+than\s+)?{AMT}"
-        rf"[^.\n]{{0,60}}?\s+(?:to|into)\s+({ACTOR}|[\w\s]{{0,30}}account[\w\s]{{0,30}})"),
+        rf"[^.\n]{{0,120}}?\s+(?:to|into)\s+"
+        rf"({ACTOR}|{TITLECASE}|[\w\s]{{0,30}}account[\w\s]{{0,30}})"),
      {"subject": 1, "amount": 2, "amount_scale": 3, "object": 4}),
     ("received_from", re.compile(
-        rf"({ACTOR})\s+(?:received|obtained|collected|raised)\s+"
+        rf"({ACTOR}|{TITLECASE})\s+(?:received|obtained|collected|raised)\s+"
         rf"(?:approximately\s+|about\s+|at\s+least\s+|more\s+than\s+)?{AMT}\s+"
-        rf"(?:from|through)\s+({ACTOR}|[\d,]+\s+investors)"),
+        rf"(?:from|through)\s+({ACTOR}|{TITLECASE}|[\d,]+\s+investors)"),
      {"object": 1, "amount": 2, "amount_scale": 3, "subject": 4}),
     ("wire_from_to", re.compile(
         rf"wire\s+transfer\s+of\s+{AMT}\s+from\s+({ACTOR}|[\w\s]{{0,40}}account)"
@@ -167,6 +258,11 @@ ROLE_RE = re.compile(
     r"\b(president|chief executive officer|CEO|chief financial officer|CFO|"
     r"chairman|secretary|treasurer|director|officer|founder|managing member|"
     r"sole member|manager|general partner|principal)\b", re.I)
+# A definite generic reference ("the Bank") names a party only via the
+# document's own defined terms — cap confidence until resolution.
+GENERIC_NAME_RE = re.compile(
+    r"^(?:the\s+)?(?:proposed\s+)?(?:bank|company|corporation|trust|venture|"
+    r"fund|association|partnership|firm|institution)$", re.I)
 
 
 def sentence_bounds(text: str, start: int, end: int):
@@ -184,10 +280,15 @@ def sentence_bounds(text: str, start: int, end: int):
     return left, right
 
 
+_CAPTION_PREFIX = re.compile(
+    r"^(?:defendants?|plaintiffs?|relief\s+defendants?|respondents?)\s+", re.I)
+
+
 def clean_name(s):
     if not s:
         return None
-    return re.sub(r"\s+", " ", s).strip(" ,;:.")
+    s = re.sub(r"\s+", " ", s).strip(" ,;:.")
+    return _CAPTION_PREFIX.sub("", s) or None
 
 
 def load_bucket(path):
@@ -214,6 +315,7 @@ def main():
     posture_cache = {}
     stats = Counter()
     seq = Counter()
+    seen = set()  # overlapping candidate spans that hit the same sentence+grammar
     n_out = 0
     with open(OUT, "w", encoding="utf-8") as out, \
             open(ERRS, "w", encoding="utf-8") as errs:
@@ -248,12 +350,16 @@ def main():
                 posture, rationale = posture_cache[sha]
 
                 matched_any = False
-                for pname, pat, slots in [(n, p, s) for n, p, s in
-                                          [(g[0], g[1], g[2]) for g in grammars]]:
+                for pname, pat, slots in grammars:
                     m = pat.search(sent)
                     if not m:
                         continue
                     matched_any = True
+                    dedup_key = (tier_name, pname, sha, s0, m.start(), m.end())
+                    if dedup_key in seen:
+                        stats[f"{tier_name}:duplicate_span"] += 1
+                        break
+                    seen.add(dedup_key)
                     stats[f"{tier_name}:{pname}"] += 1
 
                     def grp(idx):
@@ -276,6 +382,10 @@ def main():
                     rm = ROLE_RE.search(sent)
                     seq[sha] += 1
                     both = bool(subject_raw and object_raw)
+                    confidence = 0.9 if both else 0.55
+                    if any(n and GENERIC_NAME_RE.match(n)
+                           for n in (subject_raw, object_raw)):
+                        confidence = 0.55
                     obs = {
                         "observation_id": f"obs:{sha[:16]}:{seq[sha]:04d}",
                         "tier": tier_name,
@@ -308,7 +418,7 @@ def main():
                         "parser": "content_pass_2.observe",
                         "parser_version": PARSER_VERSION,
                         "extraction_method": "REGEX_SENTENCE_GRAMMAR",
-                        "extraction_confidence": 0.9 if both else 0.55,
+                        "extraction_confidence": confidence,
                         "candidate_id": cand["candidate_id"],
                         "pass_version": PASS2_VERSION,
                     }
