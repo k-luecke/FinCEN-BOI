@@ -39,8 +39,8 @@
   "durability_note": "release assets verified this run",
   "durably_archived_urls": 128123,
   "generated_at": "2026-08-17T14:04:55.111188+00:00",
-  "graph_entities": 0,
-  "graph_people": 0,
+  "graph_entities": 667,
+  "graph_people": 257,
   "ledger_change_types": {
     "ADDED": 118697,
     "MODIFIED": 5828,
@@ -65,8 +65,8 @@
   "temporary_errors": 517,
   "total_bytes": 26543054690,
   "unique_objects": 133192,
-  "unresolved_entities": 0,
-  "validated_graph_edges": 0,
+  "unresolved_entities": 340,
+  "validated_graph_edges": 968,
   "verification_note": "objects are hash-verified at capture (verify.py) before manifests merge; periodic re-verification via verify-archive workflow",
   "verified_objects": 133192
 }
