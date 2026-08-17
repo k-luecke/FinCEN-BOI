@@ -21,7 +21,7 @@
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["Eric Beltran"], "normalized_name": "Eric Lovy", "person_id": "p:obs-149cdb8fdf1ce6e6"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Elemento Oil", "person_id": "p:obs-14a2ed73452b47ed"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["Rashid K"], "normalized_name": "Lee", "person_id": "p:obs-1508b697895abf03"}
-{"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["Tre Brandenberg"], "normalized_name": "John Abio", "person_id": "p:obs-160e900112427fe3"}
+{"identity_basis": "name-as-evidenced (content-pass-2)", "merge_basis": ["a/k/a"], "merged_from": ["p:obs-3fde8d35af901fde"], "name_variants": ["John Abio", "Tre Brandenberg"], "normalized_name": "John Abio", "person_id": "p:obs-160e900112427fe3"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Vice Media", "person_id": "p:obs-163801f733da8577"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Old National", "person_id": "p:obs-16407d33844ee890"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["USA"], "normalized_name": "Retirement Management Services", "person_id": "p:obs-17571d4aa83f49b8"}
@@ -63,7 +63,6 @@
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Wong", "person_id": "p:obs-3ed58504bfc04532"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Bank Sepah", "person_id": "p:obs-3f2b8ba47f97e8d3"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "OCEAN RADIANCE", "person_id": "p:obs-3f5b02d3b4adcd97"}
-{"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["John Abio"], "normalized_name": "Tre Brandenberg", "person_id": "p:obs-3fde8d35af901fde"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Freddie", "person_id": "p:obs-404d5354e1c63780"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Digital Services", "person_id": "p:obs-415d5fd460d8f6e3"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Sakarya", "person_id": "p:obs-45e24f1d85f00693"}
@@ -79,10 +78,9 @@
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["d/b/a Onsite Environmental"], "normalized_name": "Allwaste Onsite", "person_id": "p:obs-50daabe58b3355dc"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["ELIJAH BHANG", "Elijah Bang", "Elijah Bhang"], "normalized_name": "ELIJAH BANG", "person_id": "p:obs-519fb565c8651c9f"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["FOS"], "normalized_name": "Field Supervisor", "person_id": "p:obs-51dbe6f161e787ec"}
-{"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Issuer", "person_id": "p:obs-535c6f8eb511f5d9"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Lobaye Invest", "person_id": "p:obs-5363e2b2d281f8e6"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "BNP Paribas", "person_id": "p:obs-56046651cb41a568"}
-{"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["d/b/a Oaks Card Club", "d/b/a Oaks Card Club Emeryville"], "normalized_name": "Oaks Club Room", "person_id": "p:obs-564eed30c81f2d01"}
+{"identity_basis": "name-as-evidenced (content-pass-2)", "merge_basis": ["a/k/a"], "merged_from": ["p:obs-68a7df2acfdb0292"], "name_variants": ["Oaks Club Room", "d/b/a Oaks Card Club", "d/b/a Oaks Card Club Emeryville", "d/b/a Oaks Club"], "normalized_name": "Oaks Card Club", "person_id": "p:obs-564eed30c81f2d01"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Wael Bazzi", "person_id": "p:obs-56e1656147ccb35d"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Al-Cardinal", "person_id": "p:obs-58377049dcfcea82"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "JPMP SBIC", "person_id": "p:obs-59bb71f0e66dbcf2"}
@@ -97,7 +95,7 @@
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["Don Milton"], "normalized_name": "Milton Ayimadu", "person_id": "p:obs-6198d12cbf823627"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "People’s Capital", "person_id": "p:obs-635a6f9907628656"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Shahid Alamolhoda Industries", "person_id": "p:obs-639a8b23bc7f49ed"}
-{"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["David Praise", "MUSA MOHAMED", "Musa Mohamed"], "normalized_name": "DAVID PRAISE", "person_id": "p:obs-63e79bf2999b6cff"}
+{"identity_basis": "name-as-evidenced (content-pass-2)", "merge_basis": ["a/k/a"], "merged_from": ["p:obs-c62cae77f3c9f395"], "name_variants": ["David Praise", "David Praise Edwards", "MUSA MOHAMED", "Musa Mohamed"], "normalized_name": "DAVID PRAISE", "person_id": "p:obs-63e79bf2999b6cff"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "BRIGHT GOLD", "person_id": "p:obs-63ee9ebfc803fbd1"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["YATALIE CAPITAL MANAGEMENT CO"], "normalized_name": "YATALIE CAPITAL MANAGEMENT", "person_id": "p:obs-64218cd7e8d9e9c0"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Ruben Tatulian", "person_id": "p:obs-6443dfb608931bf1"}
@@ -106,8 +104,6 @@
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["Yoany Vaillant Fajardo"], "normalized_name": "Yoany Vaillant", "person_id": "p:obs-65770563233f72e2"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["Faith Ashford"], "normalized_name": "PHYLLIS RICCI QUINCOCES", "person_id": "p:obs-6670c01e75b0b417"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Sierra Pacific Resources", "person_id": "p:obs-6749991cd7ce8f7a"}
-{"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["d/b/a Oaks Club"], "normalized_name": "Oaks Card Club", "person_id": "p:obs-68a7df2acfdb0292"}
-{"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Reporting Person", "person_id": "p:obs-6925812f5657be26"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Pfizer", "person_id": "p:obs-69d9f7657d4a7ec0"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["d/b/a Ryba Marine Construction Co"], "normalized_name": "Wallace Construction", "person_id": "p:obs-6b431def16e78ddc"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Technotar Engineering", "person_id": "p:obs-6be789274090b67c"}
@@ -199,7 +195,6 @@
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "CON NV", "person_id": "p:obs-c49ddad1b50041e4"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Joseph Nelson", "person_id": "p:obs-c4cde1f7d5c9b7a1"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Fannie Mae", "person_id": "p:obs-c4fe98345289633c"}
-{"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["David Praise Edwards"], "normalized_name": "Musa Mohamed", "person_id": "p:obs-c62cae77f3c9f395"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["David Greene", "LORD DAVID GREENE", "Lord David"], "normalized_name": "DAVID GREENE", "person_id": "p:obs-c81bc99e5a4bc555"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": ["d/b/a Murphy Cattle Company"], "normalized_name": "Murphy", "person_id": "p:obs-ca700c8aa0b8566b"}
 {"identity_basis": "name-as-evidenced (content-pass-2)", "name_variants": null, "normalized_name": "Kyaw Win", "person_id": "p:obs-cc1ba804d0a2402f"}

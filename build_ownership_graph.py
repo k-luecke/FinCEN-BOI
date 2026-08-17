@@ -67,7 +67,9 @@ OWNED_CONTROLLED_RE = re.compile(
 GENERIC_RE = re.compile(
     r"^(?:(?:the|this|that|such)\s+)?(?:proposed\s+)?(?:bank|company|"
     r"corporation|trust|venture|fund|association|partnership|firm|"
-    r"institution|account|defendants?)$", re.I)
+    r"institution|account|defendants?|issuer|borrower|lender|guarantor|"
+    r"purchaser|seller|acquirer|depositor|servicer|sponsor|registrant|"
+    r"reporting\s+person)$", re.I)
 # A generic-definite tail ("… The Bank") marks OCC-decision heading glue —
 # the real party name needs in-document resolution.
 GENERIC_TAIL_RE = re.compile(
@@ -129,6 +131,9 @@ def sanitize(name):
             name = parts[-1]
     name = _LEAD_CONNECTIVE_RE.sub("", name)
     name = re.sub(r"^[A-Z][a-z]+(?:\s[A-Z][a-z]+)?-based\s+", "", name)
+    # SEC filing-header glue ("SCHEDULE 13G Exhibit 1 <name>").
+    name = re.sub(r"^(?:(?:SCHEDULE|FORM|EXHIBIT|ITEM|Exhibit|Item|Amendment)"
+                  r"\s+[\w./-]{1,10}\s+)+", "", name)
     return name.strip(" ,;:.") or None
 
 SUFFIX_RE = re.compile(
@@ -150,10 +155,20 @@ MONTHS = {m: i + 1 for i, m in enumerate(
 
 
 def norm(name: str) -> str:
+    """Matching key. Same-family suffix abbreviations canonicalize (Corp ≡
+    Corporation); cross-family pairs (Company vs Corp) deliberately do NOT —
+    those become merge candidates, never automatic merges."""
     n = re.sub(r"\s+", " ", name).strip(" ,;:.").lower()
     n = re.sub(r"[.,’']", "", n)
-    n = re.sub(r"\b(incorporated)\b", "inc", n)
-    n = re.sub(r"\b(limited)\b", "ltd", n)
+    n = re.sub(r"\bincorporated\b", "inc", n)
+    n = re.sub(r"\blimited\b", "ltd", n)
+    n = re.sub(r"\bcorporation\b", "corp", n)
+    n = re.sub(r"\bcompany\b", "co", n)
+    n = re.sub(r"\bcompanies\b", "cos", n)
+    n = re.sub(r"\bl\s?l\s?c\b", "llc", n)
+    n = re.sub(r"\bl\s?p\b", "lp", n)
+    n = re.sub(r"\bnational association\b", "na", n)
+    n = re.sub(r"\bn\s?a\b", "na", n)
     n = re.sub(r"^the\s+", "", n)
     return n
 
@@ -173,7 +188,9 @@ def gate(name):
     if GENERIC_PLURAL_RE.match(name):
         return "count phrase / generic plural, not a named party"
     toks = norm(name).split()
-    if (len(toks) >= 2 and toks[-1] in ("corporation", "company", "llc")
+    if (len(toks) >= 2
+            and toks[-1] in ("corporation", "corp", "company", "co", "llc",
+                             "bank", "trust")
             and " ".join(toks[:-1]) in _US_STATES):
         return "jurisdiction-form phrase, not a party name"
     if PRONOUN_START_RE.match(name):
@@ -328,6 +345,150 @@ class Nodes:
             rec["name_variants"] = merged or None
 
 
+# ---- cross-document entity resolution -------------------------------------
+# Nodes are names-as-evidenced; the same party recurs across documents under
+# spelling variants. Two-tier policy:
+#   MERGE (recorded on the surviving node as merged_from/merge_basis):
+#     - alias-evidenced unions: an f/k/a, n/k/a, d/b/a, or a/k/a record whose
+#       target exists as a separate same-kind node names the same party;
+#     - same-family suffix abbreviation unions happen upstream in norm().
+#   CANDIDATE ONLY (written to unresolved/, never merged automatically):
+#     - cross-family suffixes ("X Company" vs "X Corp" may differ legally);
+#     - prefix containment ("Wellington Group" vs "Wellington Management
+#       Group");
+#     - bare surname vs full person name ("Nunns" vs "John Nunns").
+_SUFFIXY_TOKENS = {"inc", "corp", "co", "cos", "ltd", "llc", "lp", "llp",
+                   "plc", "na", "trust", "bank", "group", "holdings",
+                   "holding", "fund", "association", "partners",
+                   "partnership", "sa", "ag", "gmbh", "nv"}
+
+
+def cross_document_resolution(nodes, edges, names, stats):
+    parent = {}
+
+    def find(k):
+        while parent.get(k, k) != k:
+            parent[k] = parent.get(parent[k], parent[k])
+            k = parent[k]
+        return k
+
+    def union(a, b, basis, bases):
+        ra, rb = find(a), find(b)
+        if ra == rb:
+            return
+        parent[max(ra, rb)] = min(ra, rb)
+        bases.setdefault(a, set()).add(basis)
+        bases.setdefault(b, set()).add(basis)
+        stats[f"merge:{basis}"] += 1
+
+    ekey_by_id = {r["entity_id"]: k for k, r in nodes.entities.items()}
+    bases = {}
+
+    for rec in names:
+        src_key = ekey_by_id.get(rec["entity_id"])
+        tgt_key = norm(rec["name"])
+        if src_key and tgt_key in nodes.entities and tgt_key != src_key:
+            basis = ("name-history f/k/a-n/k/a"
+                     if rec["name_type"] in ("FORMER", "LEGAL")
+                     else "name-history d/b/a")
+            union(("E", src_key), ("E", tgt_key), basis, bases)
+    for key, rec in nodes.people.items():
+        for v in rec.get("_extra_variants", []):
+            tgt = norm(re.sub(r"^d/b/a\s+", "", v))
+            if tgt in nodes.people and tgt != key:
+                union(("P", key), ("P", tgt), "a/k/a", bases)
+
+    # Apply unions: representative = smallest node id in the group.
+    groups = defaultdict(list)
+    for kind, table in (("E", nodes.entities), ("P", nodes.people)):
+        for key in table:
+            groups[find((kind, key))].append((kind, key))
+    idmap = {}
+    for rep, members in groups.items():
+        if len(members) < 2:
+            continue
+        kind = rep[0]
+        table = nodes.entities if kind == "E" else nodes.people
+        idf = "entity_id" if kind == "E" else "person_id"
+        members_kr = sorted(((k, table[k]) for _, k in members),
+                            key=lambda kr: kr[1][idf])
+        (keep_key, keep), absorbed = members_kr[0], members_kr[1:]
+        keep["merged_from"] = sorted(r[idf] for _, r in absorbed)
+        keep["merge_basis"] = sorted(
+            set().union(*(bases.get(m, set()) for m in members)) or {"variant"})
+        for a_key, r in absorbed:
+            idmap[r[idf]] = keep[idf]
+            nodes.variants[keep_key] += nodes.variants.pop(a_key)
+            if kind == "P":
+                keep.setdefault("_extra_variants", []).extend(
+                    r.get("_extra_variants", []))
+            del table[a_key]
+
+    kept_edges = []
+    for e in edges:
+        e["subject_id"] = idmap.get(e["subject_id"], e["subject_id"])
+        e["object_id"] = idmap.get(e["object_id"], e["object_id"])
+        if e["subject_id"] == e["object_id"]:
+            stats["merge:dropped-self-loop-edge"] += 1
+            continue
+        kept_edges.append(e)
+    edges[:] = kept_edges
+    for rec in names:
+        rec["entity_id"] = idmap.get(rec["entity_id"], rec["entity_id"])
+
+    # -- candidates: recorded, never merged --
+    cands = []
+    ent_keys = sorted(nodes.entities)
+    stems = defaultdict(list)
+    for k in ent_keys:
+        toks = k.split()
+        if len(toks) >= 2 and toks[-1] in _SUFFIXY_TOKENS:
+            stems[" ".join(toks[:-1])].append(k)
+        stems[k].append(k)
+    for stem, ks in sorted(stems.items()):
+        ks = sorted(set(ks))
+        if len(stem.split()) >= 2:
+            for i in range(len(ks)):
+                for j in range(i + 1, len(ks)):
+                    cands.append(("cross-family-suffix", ks[i], ks[j]))
+    toklists = [(k.split(), k) for k in ent_keys]
+    for i, (ta, ka) in enumerate(toklists):
+        if len(ta) < 2:
+            continue
+        for tb, kb in toklists[i + 1:]:
+            if tb[:len(ta)] != ta:
+                break
+            if len(tb) > len(ta):
+                cands.append(("prefix-containment", ka, kb))
+    ppl_by_last = defaultdict(list)
+    for k in nodes.people:
+        toks = k.split()
+        if len(toks) >= 2:
+            ppl_by_last[toks[-1]].append(k)
+    for k in sorted(nodes.people):
+        if " " not in k and k in ppl_by_last:
+            for full in sorted(ppl_by_last[k]):
+                cands.append(("surname-of", k, full))
+
+    out = []
+    seen = set()
+    for kind, a, b in cands:
+        ta = nodes.entities if kind != "surname-of" else nodes.people
+        ra, rb = ta.get(a), ta.get(b)
+        if not ra or not rb:
+            continue
+        idf = "entity_id" if kind != "surname-of" else "person_id"
+        pair = (kind, ra[idf], rb[idf])
+        if pair in seen:
+            continue
+        seen.add(pair)
+        out.append({"candidate_kind": kind, "a_id": ra[idf], "a_key": a,
+                    "b_id": rb[idf], "b_key": b,
+                    "note": "recorded for review; never merged automatically"})
+        stats[f"merge-candidate:{kind}"] += 1
+    return sorted(out, key=lambda r: (r["candidate_kind"], r["a_id"], r["b_id"]))
+
+
 def write_jsonl(path, records):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as fh:
@@ -478,6 +639,8 @@ def main():
         else:
             to_unresolved(o, f"no mapping for predicate {pred}")
 
+    merge_candidates = cross_document_resolution(nodes, edges, names, stats)
+
     nodes.finalize()
 
     ent_rows = sorted(nodes.entities.values(), key=lambda r: r["entity_id"])
@@ -494,9 +657,12 @@ def main():
     write_jsonl(os.path.join(ROOT, "edges", f"{SUFFIX}.jsonl"), edges)
     write_jsonl(os.path.join(ROOT, "names", f"{SUFFIX}.jsonl"), names)
     write_jsonl(os.path.join(ROOT, "unresolved", f"{SUFFIX}.jsonl"), unresolved)
+    write_jsonl(os.path.join(ROOT, "unresolved", "pass2-merge-candidates.jsonl"),
+                merge_candidates)
 
     print(f"entities={len(ent_rows)} people={len(ppl_rows)} "
-          f"edges={len(edges)} names={len(names)} unresolved={len(unresolved)}")
+          f"edges={len(edges)} names={len(names)} unresolved={len(unresolved)} "
+          f"merge_candidates={len(merge_candidates)}")
     for k, v in sorted(stats.items()):
         print(f"  {k}: {v}")
 

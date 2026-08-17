@@ -11,11 +11,11 @@ Validated clean by `ownership_schema.py` (0 problems).
 
 | Table | Records |
 |---|---|
-| entities | 667 |
-| people | 257 |
-| edges | 968 (229 BENEFICIAL_OWNER · 705 PARENT · 23 UNKNOWN_CONTROL_ROLE · 11 RELATED_ORGANIZATION) |
+| entities | 660 |
+| people | 254 |
+| edges | 966 (228 BENEFICIAL_OWNER · 704 PARENT · 23 UNKNOWN_CONTROL_ROLE · 11 RELATED_ORGANIZATION) |
 | names (DBA/FORMER/LEGAL history) | 311 |
-| unresolved | 340 |
+| unresolved | 342 (+ 26 merge candidates) |
 
 213 person aliases (a/k/a spellings, d/b/a trade names) are recorded
 on person nodes as `name_variants` / `dba_names`-style variants, not as
@@ -59,7 +59,26 @@ fragments, and jurisdiction leaks are gated out). At full-corpus scale this reso
 at confidence 0.7, tagged `"resolution": "designation-window"` — the
 Deripaska, Rotenberg, Bazzi, Tesic, and Tatulian networks among them.
 
-## What goes to `unresolved/` (340)
+## Cross-document entity resolution
+
+Two-tier policy, per the dataset ground rule that ambiguity is
+recorded, never guessed:
+
+- **Merged automatically** (recorded on the surviving node as
+  `merged_from` + `merge_basis`): same-family suffix abbreviations
+  unify at the matching key ("Bankmont Financial Corp" ≡
+  "…Corporation", Inc ≡ Incorporated, Co ≡ Company, LLC ≡ L.L.C.),
+  and alias-evidenced unions where an f/k/a, n/k/a, d/b/a, or a/k/a
+  record's target exists as a separate same-kind node. Edges that
+  become self-loops after a merge are dropped with a stat.
+- **Candidates only** (`unresolved/pass2-merge-candidates.jsonl`, 26
+  records): cross-family suffix pairs ("BMO Nesbitt Burns Corp" vs
+  "…Inc", "Washington Mutual Bank" vs "Washington Mutual, Inc" — may
+  be legally distinct entities), prefix containment ("Wellington
+  Group" vs "Wellington Group Holdings LLP"), and bare surnames vs
+  full person names. Recorded for review, never merged automatically.
+
+## What goes to `unresolved/` (342)
 
 - 16 — controller stated but the controlled party still outside even
   the widened window (or the name failed strict capture).
