@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T00:28:10.316703+00:00",
+  "generated_at": "2026-08-17T00:37:49.616546+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -113,14 +113,14 @@
     {
       "host": "web.archive.org",
       "urls_discovered": 0,
-      "urls_attempted": 365,
-      "urls_archived": 306,
+      "urls_attempted": 373,
+      "urls_archived": 308,
       "non_content_captures": 0,
-      "urls_with_content": 306,
+      "urls_with_content": 308,
       "ceiling_hit": "no",
-      "bytes": 12439923,
+      "bytes": 12440399,
       "median_object_bytes": 256,
-      "p95_object_bytes": 101148,
+      "p95_object_bytes": 101146,
       "known_bulk_gaps": []
     },
     {
@@ -213,7 +213,7 @@
       "non_content_captures": 0,
       "urls_with_content": 3,
       "ceiling_hit": "no",
-      "bytes": 257069,
+      "bytes": 257064,
       "median_object_bytes": 122070,
       "p95_object_bytes": 131693,
       "known_bulk_gaps": [
@@ -243,7 +243,7 @@
       "non_content_captures": 4317,
       "urls_with_content": 684,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 79527390,
+      "bytes": 79527383,
       "median_object_bytes": 2494,
       "p95_object_bytes": 98703,
       "known_bulk_gaps": []

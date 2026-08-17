@@ -1,1 +1,1 @@
-{"classification": "ERROR_RESPONSE", "identity_id": "3eeb28d3f086e7e1", "observation_sha256": null, "recovery_routes": ["govinfo_package", "web_archive", "later_ordinary_retry"], "state": "PENDING", "tier": 2, "url": "https://www.congress.gov/"}
+{"attempts": 1, "classification": "ERROR_RESPONSE", "identity_id": "3eeb28d3f086e7e1", "last_attempt_at": "2026-08-17T00:37:39.889949+00:00", "observation_sha256": null, "recovery_routes": ["govinfo_package", "web_archive", "later_ordinary_retry"], "state": "PENDING", "tier": 2, "url": "https://www.congress.gov/"}

@@ -1,6 +1,6 @@
 # Recovery report — challenge-aware lawful recovery
 
-Generated 2026-08-17T00:28:00.836178+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
+Generated 2026-08-17T00:37:48.390774+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
 
 ## 1. Challenge / non-content responses
 
