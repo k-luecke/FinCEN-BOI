@@ -116,19 +116,32 @@ per-host delay, scaled across six independent hosts. State commits and
 durable releases flow through the standing `commit_state.sh` pipeline;
 the 4,000/day maintenance schedules remain untouched.
 
-**Landed (as of 2026-08-15T20:12Z):** the follow-links run completed
-green at 18:54Z — crawl → verify → durable release → state commit
-(main @ `8afa191`). It archived **2,715 new gao.gov URLs and 926 new
-govinfo.gov URLs** (+ 4 misc). GAO coverage went from **3 objects at
-the Pass 1 baseline to 4,222**; govinfo from 494 to 2,288 — the
-congressional-oversight gap identified in Pass 1 §16 is substantially
-closed pending next-pass extraction. The 12,589-URL targeted batch
-(EDGAR/DOJ/FinCEN) waits in the bulk-crawl concurrency group behind the
-parallel session's pending-queue crawl (run 31887678820, 9 chunks, five
-already complete) and starts automatically when that run's aggregate
-finishes; its per-host outcomes will land in the root manifest/ledger
-via the same pipeline. DOJ challenge-retry outcomes are therefore not
-yet measurable — recorded when the batch lands.
+**Landed — final acquisition outcome (verified 2026-08-17T15:20Z
+against origin/main ledger/manifest):**
+
+- **Follow-links run** (31891027794) completed green 08-15T18:54Z:
+  2,715 new gao.gov + 926 new govinfo.gov URLs (GAO **3 → 4,222**
+  objects; govinfo 494 → 2,288 at that point).
+- **Targeted batch** (31891026640) completed after the concurrency
+  group freed: **7,977 of 8,000 EDGAR document URLs archived (99.7%)**
+  — the evidence-guided SC 13D/G, EX-21-carrier, Forms 3/4/5/D batch is
+  in the archive with durable releases and state commits. Mined
+  FinCEN/GAO/GovInfo/Congress citations added a small residual
+  (+18/+35/+32/+1) beyond what follow-links had already captured.
+- **DOJ retry outcome — conclusive negative:** all **4,317 of 4,317**
+  ordinary re-retrievals returned challenge-sized (<4 KB, `bm-verify`)
+  responses again. Akamai consistently serves interstitials to Actions
+  runner IPs; ordinary retry is exhausted. DOJ recovery now depends on
+  the lawful alternate paths (the challenge-aware recovery workflow the
+  parallel session is building on PR #16, GovInfo/court-hosted
+  duplicates, official feeds). The 4,317 queue entries stay classified
+  NON_CONTENT_TECHNICAL_RESPONSE with full retrieval history retained.
+- **Two days of maintenance schedules ran undisturbed** through 08-17
+  (daily archive/discovery/pending-queue runs, all with releases and
+  state commits). Host totals as of 08-17: sec.gov **24,960** archived
+  URLs (Pass 1 baseline 4,906 objects), govinfo **14,318**, justice.gov
+  5,777, fincen.gov 4,112, gao.gov 4,257, congress.gov 4 (still the
+  hard gap — needs api.congress.gov with a key, not crawling).
 
 **OCR backlog** ranked (Part XVI): 5 HIGH (SEC complaint scans) /
 190 MEDIUM / 6 LOW in `ocr-priority.jsonl`. No bulk OCR run; HIGH tier
