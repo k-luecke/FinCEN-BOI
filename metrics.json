@@ -1,17 +1,17 @@
 {
   "access_restricted": 75,
-  "archived_urls": 124141,
-  "attempted_urls": 125594,
+  "archived_urls": 128123,
+  "attempted_urls": 129576,
   "by_host": {
     "bsaaml.ffiec.gov": 6,
-    "bsaefiling.fincen.gov": 28,
+    "bsaefiling.fincen.gov": 35,
     "congress.gov": 3,
-    "fincen.gov": 12,
+    "fincen.gov": 15,
     "gao.gov": 2,
-    "home.treasury.gov": 8947,
+    "home.treasury.gov": 8949,
     "judiciary.house.gov": 998,
     "justice.gov": 2,
-    "ncua.gov": 1572,
+    "ncua.gov": 5552,
     "occ.gov": 5,
     "oig.treasury.gov": 264,
     "oversight.house.gov": 17270,
@@ -22,27 +22,27 @@
     "www.federalregister.gov": 1288,
     "www.federalreserve.gov": 20,
     "www.ffiec.gov": 17,
-    "www.fincen.gov": 5431,
+    "www.fincen.gov": 5432,
     "www.gao.gov": 5795,
     "www.govinfo.gov": 15442,
-    "www.justice.gov": 10119,
+    "www.justice.gov": 10120,
     "www.ncua.gov": 9,
-    "www.occ.gov": 16453,
+    "www.occ.gov": 16455,
     "www.sec.gov": 25014,
-    "www.treasury.gov": 621
+    "www.treasury.gov": 625
   },
   "by_provenance": {
     "CONGRESS": 17023,
-    "GOV-PUBLIC": 119023
+    "GOV-PUBLIC": 123023
   },
-  "discovered_urls": 38761,
+  "discovered_urls": 43768,
   "durability_note": "release assets verified this run",
-  "durably_archived_urls": 124141,
-  "generated_at": "2026-08-17T07:32:47.999670+00:00",
+  "durably_archived_urls": 128123,
+  "generated_at": "2026-08-17T14:04:55.111188+00:00",
   "graph_entities": 0,
   "graph_people": 0,
   "ledger_change_types": {
-    "ADDED": 114715,
+    "ADDED": 118697,
     "MODIFIED": 5828,
     "UNAVAILABLE": 1453,
     "UNCHANGED": 3598
@@ -53,20 +53,20 @@
   "ownership_bearing_documents": 0,
   "queue_states": {
     "ACCESS_RESTRICTED": 75,
-    "ARCHIVED": 124141,
+    "ARCHIVED": 128123,
     "NOT_FOUND": 859,
     "ROBOTS_DISALLOWED": 2,
     "TEMPORARY_ERROR": 517
   },
   "queued_urls": 0,
   "rate_limited": 0,
-  "raw_observations": 136046,
+  "raw_observations": 140046,
   "robots_disallowed": 2,
   "temporary_errors": 517,
-  "total_bytes": 26271941798,
-  "unique_objects": 129273,
+  "total_bytes": 26543054690,
+  "unique_objects": 133192,
   "unresolved_entities": 0,
   "validated_graph_edges": 0,
   "verification_note": "objects are hash-verified at capture (verify.py) before manifests merge; periodic re-verification via verify-archive workflow",
-  "verified_objects": 129273
+  "verified_objects": 133192
 }
