@@ -6,38 +6,38 @@ Regenerate with `python3 analyze_graph.py`. Posture weights are analysis-time pa
 Temporal coverage: 807/1007 edges carry a document date (1996-03-13 … 2026-07-28); 351 additionally carry a sentence-stated event date in `valid_from`.
 
 
-## 1. Multi-hop ownership/control chains (15 maximal distinct node paths of length ≥ 2)
+## 1. Multi-hop ownership/control chains (15 maximal distinct node paths of length ≥ 2; 2 assembled across more than one source family)
 
 - Bank of Montreal —[PARENT·SELF_REPORTED×41]→ Bankmont Financial Corp —[PARENT·SELF_REPORTED×13]→ Harris Bank —[PARENT·SELF_REPORTED×3]→ Harris Bank Palatine, N.A
-  <br>sources: `0265e1135505 · 035a9f081389 · 404a8c8928af`
+  <br>families: sec.gov → sec.gov → sec.gov · sources: `0265e1135505 · 035a9f081389 · 404a8c8928af`
 - Fleet Boston Corp —[PARENT·GOVERNMENT_FIN]→ Fleet National Bank, Providence, Rhode Island —[PARENT·GOVERNMENT_FIN]→ Fleet Mortgage Corporation
-  <br>sources: `23d2280116f3 · 2d7c9bf0af5f`
+  <br>families: occ.gov → occ.gov · sources: `23d2280116f3 · 2d7c9bf0af5f`
 - Wells Fargo & Company —[BENEFICIAL_OWNER·GOVERNMENT_FIN×3]→ Wells Fargo Bank —[PARENT·GOVERNMENT_FIN]→ OmniPlus Capital Corporation
-  <br>sources: `8a00ebf52662 · cb8d0119f53b`
+  <br>families: occ.gov → occ.gov · sources: `8a00ebf52662 · cb8d0119f53b`
 - Wells Fargo & Company —[BENEFICIAL_OWNER·GOVERNMENT_FIN×3]→ Wells Fargo Bank —[PARENT·GOVERNMENT_FIN]→ Silver Asset Management Group
-  <br>sources: `8a00ebf52662 · e64009612ba8`
+  <br>families: occ.gov → occ.gov · sources: `8a00ebf52662 · e64009612ba8`
 - RBC USA Holdco Corp —[PARENT·GOVERNMENT_FIN]→ North Carolina —[BENEFICIAL_OWNER 100.0%·GOVERNMENT_FIN]→ First Union Commercial Corp
-  <br>sources: `0b4864d0d344 · e2933e312a49`
+  <br>families: occ.gov → occ.gov · sources: `0b4864d0d344 · e2933e312a49`
 - RBC USA Holdco Corp —[PARENT·GOVERNMENT_FIN]→ North Carolina —[PARENT·GOVERNMENT_FIN]→ NationsBank include data on NationsBanc Mortgage Corporation
-  <br>sources: `0691a188d954 · 0b4864d0d344`
+  <br>families: occ.gov → occ.gov · sources: `0691a188d954 · 0b4864d0d344`
 - Stewardship Financial Corporation —[BENEFICIAL_OWNER·GOVERNMENT_FIN]→ Atlantic Stewardship Bank —[PARENT·GOVERNMENT_FIN]→ Atlantic Stewardship Insurance Company, LLC
-  <br>sources: `30aa0c47249a`
+  <br>families: occ.gov → occ.gov · sources: `30aa0c47249a`
 - Jones Heward Investments Inc —[PARENT·SELF_REPORTED]→ Jones Heward Investment Management Inc —[PARENT·SELF_REPORTED]→ Jones Heward Investment Counsel Inc
-  <br>sources: `045757f2d8db · 5fb62d97a247`
+  <br>families: sec.gov → sec.gov · sources: `045757f2d8db · 5fb62d97a247`
 - George Haswani —[BENEFICIAL_OWNER·ADMINISTRATIVE]→ Hesco Engineering —[BENEFICIAL_OWNER·ADMINISTRATIVE]→ IPC
-  <br>sources: `f4b0b3de4004`
+  <br>families: treasury.gov → treasury.gov · sources: `f4b0b3de4004`
 - Yuri Kovalchuk —[BENEFICIAL_OWNER·ADMINISTRATIVE]→ Bank Rossiya —[BENEFICIAL_OWNER·ADMINISTRATIVE]→ Limited Liability Company Investment Company Abros
-  <br>sources: `94d4bc8d1234`
+  <br>families: treasury.gov → treasury.gov · sources: `94d4bc8d1234`
 - Evercore Inc. a Delaware corporation —[PARENT·SELF_REPORTED]→ Evercore LP —[BENEFICIAL_OWNER 86.0%·GOVERNMENT_FIN]→ Evercore Trust Company, National Association
-  <br>sources: `305f0300f3af · 696039e9af4c`
+  <br>families: sec.gov → occ.gov · sources: `305f0300f3af · 696039e9af4c`
 - Yuri Kovalchuk —[BENEFICIAL_OWNER·ADMINISTRATIVE]→ Bank Rossiya —[BENEFICIAL_OWNER·ADMINISTRATIVE]→ JSB Sobinbank
-  <br>sources: `94d4bc8d1234`
+  <br>families: treasury.gov → treasury.gov · sources: `94d4bc8d1234`
 - Yuri Kovalchuk —[BENEFICIAL_OWNER·ADMINISTRATIVE]→ Bank Rossiya —[BENEFICIAL_OWNER·ADMINISTRATIVE]→ CJSC Zest
-  <br>sources: `94d4bc8d1234`
+  <br>families: treasury.gov → treasury.gov · sources: `94d4bc8d1234`
 - New York Community Bancorp —[PARENT·GOVERNMENT_FIN]→ Flagstar Bank —[BENEFICIAL_OWNER·GOVERNMENT_ALL]→ Mortgage Servicing Rights
-  <br>sources: `270ecf6a5c13 · a6dbca5cf9a2`
+  <br>families: fdic.gov → sec.gov · sources: `270ecf6a5c13 · a6dbca5cf9a2`
 - management of United Financial Bancorp, Inc —[PARENT·GOVERNMENT_ALL]→ United Bank —[PARENT·SELF_REPORTED×7]→ UCB Securities, Inc
-  <br>sources: `2c0e739645a8 · 67c744645208`
+  <br>families: sec.gov → sec.gov · sources: `2c0e739645a8 · 67c744645208`
 
 ## 2. Controller centrality: structural reach vs evidentiary breadth
 

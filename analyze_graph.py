@@ -202,8 +202,16 @@ def main():
                  f"{len(vf)} additionally carry a sentence-stated event "
                  f"date in `valid_from`.\n")
 
+    def chain_families(ch):
+        """Per-hop source-family sequence — SEC→SEC→SEC is one issuer's
+        paperwork; SEC→DOJ→Treasury is independently assembled."""
+        return [host_of(h["best"].get("source_url")) for h in ch]
+
+    xfam_chains = [ch for ch in chains if len(set(chain_families(ch))) > 1]
     L.append(f"\n## 1. Multi-hop ownership/control chains "
-             f"({len(chains)} maximal distinct node paths of length ≥ 2)\n")
+             f"({len(chains)} maximal distinct node paths of length ≥ 2; "
+             f"{len(xfam_chains)} assembled across more than one source "
+             f"family)\n")
     for ch in chains[:20]:
         hops = [name(ch[0]["best"]["subject_id"])]
         for h in ch:
@@ -213,8 +221,9 @@ def main():
             hops.append(f"—[{e['assertion']}{pct}·{e.get('evidentiary_posture','?')[:14]}{multi}]→ "
                         f"{name(e['object_id'])}")
         L.append("- " + " ".join(hops))
+        fams = " → ".join(chain_families(ch))
         srcs = " · ".join(sorted({(h["best"].get('source_sha256') or '')[:12] for h in ch}))
-        L.append(f"  <br>sources: `{srcs}`")
+        L.append(f"  <br>families: {fams} · sources: `{srcs}`")
 
     L.append("\n## 2. Controller centrality: structural reach vs "
              "evidentiary breadth\n")
@@ -283,9 +292,72 @@ def main():
 
     with open(os.path.join(ROOT, "ANALYSIS.md"), "w", encoding="utf-8") as fh:
         fh.write("\n".join(L) + "\n")
-    print(f"chains>=2: {len(chains)} | centrality rows: {len(central)} | "
-          f"competing-control nodes: {len(competing)}")
-    print("wrote ownership-reconstruction/ANALYSIS.md")
+
+    # ---- permanent baseline checkpoint --------------------------------
+    # Negative results are data: each build's conclusions are recorded so
+    # build N -> acquisition -> build N+1 answers "which conclusions
+    # changed, and which new evidence changed them". Deterministic name
+    # from the edges-file content hash; graph_diff.py consumes these.
+    import hashlib
+    edges_path = os.path.join(ROOT, "edges", "pass2-observations.jsonl")
+    ehash = hashlib.sha256(open(edges_path, "rb").read()).hexdigest()
+    rels = []
+    for (s, t), es in sorted(pair_edges.items()):
+        rels.append({
+            "key": f"{name(s)}|{es[0]['assertion']}|{name(t)}",
+            "families": sorted({host_of(e.get("source_url")) for e in es}),
+            "postures": sorted({e.get("evidentiary_posture") or "?"
+                                for e in es}),
+            "n_docs": len({e.get("source_sha256") for e in es}),
+            "first_seen": min((e["source_date"] for e in es
+                               if e.get("source_date")), default=None),
+            "last_seen": max((e["source_date"] for e in es
+                              if e.get("source_date")), default=None)})
+    # connected components over the control graph (undirected)
+    parent = {}
+
+    def find(x):
+        while parent.setdefault(x, x) != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    for (s, t) in pair_edges:
+        parent[find(s)] = find(t)
+    n_components = len({find(x) for x in parent})
+
+    checkpoint = {
+        "edges_sha256": ehash,
+        "as_of": max(e.get("retrieved_at") or "" for e in edges),
+        "counts": {"entities": len(ents), "people": len(ppl),
+                   "edges": len(edges), "relationships": len(pair_edges),
+                   "components": n_components},
+        "assertions": dict(sorted(
+            __import__("collections").Counter(
+                e["assertion"] for e in edges).items())),
+        "cross_family_relationships": sum(
+            1 for r in rels if len(r["families"]) > 1),
+        "cross_family_chains": len(xfam_chains),
+        "competing_control_nodes": [
+            {"object": name(r["object"]),
+             "subjects": sorted({name(c["subject"]) for c in r["claims"]})}
+            for r in competing],
+        "entity_names": sorted(r.get("legal_name") or "" for r in ents.values()),
+        "person_names": sorted(r.get("normalized_name") or ""
+                               for r in ppl.values()),
+        "relationships": rels,
+    }
+    os.makedirs(os.path.join(ROOT, "baselines"), exist_ok=True)
+    cp_path = os.path.join(ROOT, "baselines", f"checkpoint-{ehash[:12]}.json")
+    with open(cp_path, "w", encoding="utf-8") as fh:
+        json.dump(checkpoint, fh, indent=1, sort_keys=True, ensure_ascii=False)
+        fh.write("\n")
+    print(f"chains>=2: {len(chains)} ({len(xfam_chains)} cross-family) | "
+          f"centrality rows: {len(central)} | "
+          f"competing-control nodes: {len(competing)} | "
+          f"cross-family relationships: "
+          f"{checkpoint['cross_family_relationships']}")
+    print(f"wrote ownership-reconstruction/ANALYSIS.md and {cp_path}")
 
 
 if __name__ == "__main__":
