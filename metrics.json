@@ -1,7 +1,7 @@
 {
   "access_restricted": 118,
-  "archived_urls": 131137,
-  "attempted_urls": 133182,
+  "archived_urls": 135593,
+  "attempted_urls": 137673,
   "by_host": {
     "bsaaml.ffiec.gov": 7,
     "bsaefiling.fincen.gov": 36,
@@ -23,8 +23,8 @@
     "www.federalreserve.gov": 21,
     "www.ffiec.gov": 18,
     "www.fincen.gov": 6036,
-    "www.gao.gov": 7298,
-    "www.govinfo.gov": 16943,
+    "www.gao.gov": 9298,
+    "www.govinfo.gov": 19443,
     "www.justice.gov": 14621,
     "www.ncua.gov": 10,
     "www.occ.gov": 16456,
@@ -33,40 +33,41 @@
   },
   "by_provenance": {
     "CONGRESS": 17080,
-    "GOV-PUBLIC": 131143
+    "GOV-PUBLIC": 135643
   },
-  "discovered_urls": 43768,
+  "discovered_urls": 48181,
   "durability_note": "release assets verified this run",
-  "durably_archived_urls": 131137,
-  "generated_at": "2026-08-18T07:14:37.761637+00:00",
+  "durably_archived_urls": 135593,
+  "generated_at": "2026-08-18T12:45:54.487032+00:00",
   "graph_entities": 743,
   "graph_people": 237,
   "ledger_change_types": {
-    "ADDED": 121650,
+    "ADDED": 126099,
     "MODIFIED": 5891,
-    "UNAVAILABLE": 2045,
-    "UNCHANGED": 3596
+    "UNAVAILABLE": 2080,
+    "UNCHANGED": 3603
   },
   "manual_review": 0,
   "modified_urls": 5891,
-  "not_found_urls": 1407,
+  "not_found_urls": 1434,
   "ownership_bearing_documents": 694,
   "queue_states": {
     "ACCESS_RESTRICTED": 118,
-    "ARCHIVED": 131137,
-    "NOT_FOUND": 1407,
+    "ARCHIVED": 135593,
+    "DISCOVERED": 4178,
+    "NOT_FOUND": 1434,
     "ROBOTS_DISALLOWED": 2,
-    "TEMPORARY_ERROR": 518
+    "TEMPORARY_ERROR": 526
   },
-  "queued_urls": 0,
+  "queued_urls": 4178,
   "rate_limited": 0,
-  "raw_observations": 148223,
+  "raw_observations": 152723,
   "robots_disallowed": 2,
-  "temporary_errors": 518,
-  "total_bytes": 26743111376,
-  "unique_objects": 139233,
+  "temporary_errors": 526,
+  "total_bytes": 45589082445,
+  "unique_objects": 142635,
   "unresolved_entities": 332,
   "validated_graph_edges": 1022,
   "verification_note": "objects are hash-verified at capture (verify.py) before manifests merge; periodic re-verification via verify-archive workflow",
-  "verified_objects": 139233
+  "verified_objects": 142635
 }
