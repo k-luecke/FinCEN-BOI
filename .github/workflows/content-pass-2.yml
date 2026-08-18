@@ -65,6 +65,11 @@ jobs:
       - name: Run observation extraction
         run: python3 -m content_pass_2.observe
 
+      - name: Extract document dates and defined terms
+        run: |
+          python3 -m content_pass_2.doc_dates
+          python3 -m content_pass_2.defined_terms
+
       - name: Build and validate ownership graph
         run: |
           set -euo pipefail
