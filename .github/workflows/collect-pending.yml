@@ -69,6 +69,14 @@ jobs:
         if: steps.plan.outputs.count != '0'
         run: python3 verify.py --manifest run-manifest.jsonl
 
+      - name: Preserve run manifest as artifact
+        if: steps.plan.outputs.count != '0'
+        uses: actions/upload-artifact@v4
+        with:
+          name: run-manifest-${{ github.run_id }}
+          path: run-manifest.jsonl
+          retention-days: 90
+
       - name: Archive objects to durable release storage
         if: steps.plan.outputs.count != '0'
         env:
