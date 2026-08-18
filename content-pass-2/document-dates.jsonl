@@ -40,6 +40,7 @@
 {"event_basis": "edgar-metadata-report-period", "event_date": "2025-12-31", "form": "10-K/A", "publication_basis": "edgar-metadata", "publication_date": "2026-02-20", "sha256": "06e780528801786f8d8f5fdf49d7a0b1c1f0a494e1074b1ff45171cdbf8fb3f4"}
 {"event_basis": null, "event_date": null, "form": null, "publication_basis": "document-dateline-numeric", "publication_date": "2026-03-09", "sha256": "06f27f5e23430a83dac4afff5e852a1f3175e6d9bb2cd10792eccef555a103ee"}
 {"event_basis": "edgar-metadata-report-period", "event_date": "2020-09-30", "form": "10-K", "publication_basis": "edgar-metadata", "publication_date": "2020-11-30", "sha256": "06fcc6ba12e2d018073b0b4ad41214256c7bf72b86408ed1efaf5ad1892b14d1"}
+{"event_basis": null, "event_date": null, "form": null, "publication_basis": null, "publication_date": null, "sha256": "082187fb7b2791edccf06f87a25d11a1f02c07e5af9f4c8f2fa0c51616fa4d13"}
 {"event_basis": null, "event_date": null, "form": null, "publication_basis": null, "publication_date": null, "sha256": "08384d52d484a7376f895b7d508d7207e690b68ac8a27aae4516ba0647cf6aa2"}
 {"event_basis": null, "event_date": null, "form": "SC 13G", "publication_basis": "edgar-metadata", "publication_date": "2007-06-07", "sha256": "0882dfe3ab853c821a10a9f354b6df508d41c6dd9a5bebbddd8206396c1376e7"}
 {"event_basis": "edgar-metadata-report-period", "event_date": "2013-12-31", "form": "10-K", "publication_basis": "edgar-metadata", "publication_date": "2014-03-14", "sha256": "08f11a44db98e558d231ae7929875a0c7524ebefdf37dab308d311693ac01ae6"}

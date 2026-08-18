@@ -541,6 +541,10 @@
 {"ambiguous": false, "full_name": "Tax Cuts and Jobs Act", "kind": "quoted-definition", "sha256": "06fcc6ba12e2d018073b0b4ad41214256c7bf72b86408ed1efaf5ad1892b14d1", "term": "Tax Act", "term_key": "tax act"}
 {"ambiguous": false, "full_name": "Tax Cuts and Jobs Act", "kind": "acronym", "sha256": "06fcc6ba12e2d018073b0b4ad41214256c7bf72b86408ed1efaf5ad1892b14d1", "term": "TCJA", "term_key": "tcja"}
 {"ambiguous": false, "full_name": "United States Department of Agriculture", "kind": "quoted-definition", "sha256": "06fcc6ba12e2d018073b0b4ad41214256c7bf72b86408ed1efaf5ad1892b14d1", "term": "USDA", "term_key": "usda"}
+{"ambiguous": false, "full_name": "Artificial Intelligence", "kind": "acronym", "sha256": "082187fb7b2791edccf06f87a25d11a1f02c07e5af9f4c8f2fa0c51616fa4d13", "term": "AI", "term_key": "ai"}
+{"ambiguous": false, "full_name": "Defense Finance and Accounting Service", "kind": "acronym", "sha256": "082187fb7b2791edccf06f87a25d11a1f02c07e5af9f4c8f2fa0c51616fa4d13", "term": "DFAS", "term_key": "dfas"}
+{"ambiguous": false, "full_name": "Foreign Currency Fluctuations Defense", "kind": "acronym", "sha256": "082187fb7b2791edccf06f87a25d11a1f02c07e5af9f4c8f2fa0c51616fa4d13", "term": "FCFD", "term_key": "fcfd"}
+{"ambiguous": false, "full_name": "Financial Management Regulation", "kind": "acronym", "sha256": "082187fb7b2791edccf06f87a25d11a1f02c07e5af9f4c8f2fa0c51616fa4d13", "term": "FMR", "term_key": "fmr"}
 {"ambiguous": false, "full_name": "Bureau of the Fiscal Service", "kind": "acronym", "sha256": "08384d52d484a7376f895b7d508d7207e690b68ac8a27aae4516ba0647cf6aa2", "term": "BFS", "term_key": "bfs"}
 {"ambiguous": false, "full_name": "Community Development Financial Institution", "kind": "acronym", "sha256": "08384d52d484a7376f895b7d508d7207e690b68ac8a27aae4516ba0647cf6aa2", "term": "CDFI", "term_key": "cdfi"}
 {"ambiguous": false, "full_name": "Center for Financial Management", "kind": "acronym", "sha256": "08384d52d484a7376f895b7d508d7207e690b68ac8a27aae4516ba0647cf6aa2", "term": "CFM", "term_key": "cfm"}
