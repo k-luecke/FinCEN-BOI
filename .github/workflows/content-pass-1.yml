@@ -60,7 +60,18 @@ jobs:
           # delete — bounds peak disk to extracted-objects + one release.
           for tag in $TAGS; do
             rm -rf restore && mkdir -p restore
-            gh release download "$tag" --repo "$GITHUB_REPOSITORY" --dir restore
+            for attempt in 1 2 3; do
+              if gh release download "$tag" --repo "$GITHUB_REPOSITORY" --dir restore; then
+                break
+              fi
+              if [ "$attempt" = 3 ]; then
+                echo "gh release download failed for $tag after 3 attempts" >&2
+                exit 1
+              fi
+              echo "gh release download failed for $tag (attempt $attempt/3), retrying..." >&2
+              rm -rf restore && mkdir -p restore
+              sleep $((attempt * 15))
+            done
             ( cd restore
               for stem in $(ls *.tar.zst.part00 2>/dev/null | sed 's/\.part00$//'); do
                 cat "$stem".part* > "$stem"
