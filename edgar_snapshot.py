@@ -51,7 +51,7 @@ BULK_FILES = [
         "SEC EDGAR bulk submissions",
     ),
     (
-        "https://www.sec.gov/Archives/edgar/daily-index/bulkdata/companyfacts.zip",
+        "https://www.sec.gov/Archives/edgar/daily-index/xbrl/companyfacts.zip",
         "SEC EDGAR bulk company facts",
     ),
 ]
