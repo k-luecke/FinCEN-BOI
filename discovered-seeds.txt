@@ -20006,6 +20006,13 @@ https://vault.fbi.gov/Spiro%20Agnew/Spiro%20Agnew%20Part%2020/view|GOV-PUBLIC|va
 https://vault.fbi.gov/Spiro%20Agnew/Spiro%20Agnew%20Part%2021/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/Spiro%20Agnew/Spiro%20Agnew%20Part%2022/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/Spiro%20Agnew/Spiro%20Agnew%20Part%2023%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/Stokely%20Carmichael/stokely-carmichael-part-06/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/Stokely%20Carmichael/stokely-carmichael-part-07/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/Stokely%20Carmichael/stokely-carmichael-part-08/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/Stokely%20Carmichael/stokely-carmichael-part-09/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/Stokely%20Carmichael/stokely-carmichael-part-10/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/Stokely%20Carmichael/stokely-carmichael-part-11/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/Stokely%20Carmichael/stokely-carmichael-part-12-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/Ted%20Bundy%20/Ted%20Bundy%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/Ted%20Bundy%20/Ted%20Bundy%20Part%2002/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/Ted%20Bundy%20/Ted%20Bundy%20Part%2003%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
@@ -20979,6 +20986,7 @@ https://vault.fbi.gov/edwin-wilson-and-frank-terpil/edwin-wilson-and-frank-terpi
 https://vault.fbi.gov/edwin-wilson-and-frank-terpil/edwin-wilson-and-frank-terpil-part-52/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/edwin-wilson-and-frank-terpil/edwin-wilson-and-frank-terpil-part-53/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/edwin-wilson-and-frank-terpil/edwin-wilson-and-frank-terpil-part-54/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/edwin-wilson-and-frank-terpil/edwin-wilson-and-frank-terpil-part-55/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/elaine-parent/Elaine%20Parent%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/electronic-recordkeeping-certification-policy-guide-0800pg/Electronic%20Recordkeeping%20Certification%20Policy%20Guide%200800PG%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/eliezer-wiesel/Eliezer%20Wiesel%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
