@@ -6,8 +6,8 @@
     "doj": {
       "ACCESS_RESTRICTED": 4,
       "NON_CONTENT_TECHNICAL_RESPONSE": 3,
-      "RECOVERED_WEB_ARCHIVE": 126,
-      "UNRESOLVED_CHALLENGE": 4241
+      "RECOVERED_WEB_ARCHIVE": 188,
+      "UNRESOLVED_CHALLENGE": 4179
     },
     "fbi": {
       "NON_CONTENT_TECHNICAL_RESPONSE": 2
@@ -100,8 +100,8 @@
     "www.justice.gov": {
       "ACCESS_RESTRICTED": 4,
       "NON_CONTENT_TECHNICAL_RESPONSE": 3,
-      "RECOVERED_WEB_ARCHIVE": 126,
-      "UNRESOLVED_CHALLENGE": 4241
+      "RECOVERED_WEB_ARCHIVE": 188,
+      "UNRESOLVED_CHALLENGE": 4179
     },
     "www.ncua.gov": {
       "NON_CONTENT_TECHNICAL_RESPONSE": 1
@@ -124,19 +124,19 @@
     "ACCESS_RESTRICTED": 118,
     "NON_CONTENT_TECHNICAL_RESPONSE": 1120,
     "RECOVERED_OFFICIAL_MIRROR": 317,
-    "RECOVERED_WEB_ARCHIVE": 126,
-    "UNRESOLVED_CHALLENGE": 4596
+    "RECOVERED_WEB_ARCHIVE": 188,
+    "UNRESOLVED_CHALLENGE": 4534
   },
-  "generated_at": "2026-08-19T14:26:53.737406+00:00",
+  "generated_at": "2026-08-19T16:59:13.349727+00:00",
   "identities_resolved": 5930,
-  "recovery_links": 760,
+  "recovery_links": 822,
   "recovery_links_by_method": {
     "federal_register_api": 317,
     "federal_register_api_inventory_crossref": 317,
-    "wayback_cdx": 126
+    "wayback_cdx": 188
   },
   "recovery_links_by_relationship": {
-    "ARCHIVED_VERSION": 126,
+    "ARCHIVED_VERSION": 188,
     "DERIVED_REPRESENTATION": 317,
     "OFFICIAL_MIRROR": 317
   },
@@ -144,8 +144,8 @@
     "ACCESS_RESTRICTED": 118,
     "NON_CONTENT_TECHNICAL_RESPONSE": 1120,
     "RECOVERED_OFFICIAL_MIRROR": 317,
-    "RECOVERED_WEB_ARCHIVE": 126,
-    "UNRESOLVED_CHALLENGE": 4596
+    "RECOVERED_WEB_ARCHIVE": 188,
+    "UNRESOLVED_CHALLENGE": 4534
   },
   "semantics_note": "BOT_CHALLENGE / non-content captures are never counted as ARCHIVED_CONTENT. RECOVERED_* states preserve the distinction between original publisher and retrieval host; original challenge observations are retained.",
   "top_fingerprints": {
@@ -165,10 +165,10 @@
     "ERROR_RESPONSE|http_status:403": 112,
     "UNKNOWN_RESPONSE|detection_mode:metadata_only|expected_document_got_html": 1043
   },
-  "unresolved": 5834,
+  "unresolved": 5772,
   "unresolved_by_tier": {
     "0": 159,
-    "1": 2460,
+    "1": 2398,
     "2": 3215
   }
 }
