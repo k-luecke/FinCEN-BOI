@@ -12,7 +12,7 @@ on:
     inputs:
       object_release_tags:
         description: "Space-separated objects-run-* release tags to restore"
-        default: "objects-run-31870874176 objects-run-31863924882 objects-run-31863450182"
+        default: "objects-run-31863450182 objects-run-31863924882 objects-run-31870874176 objects-run-31878498784 objects-run-31887678820 objects-run-31891026640 objects-run-31891027794 objects-run-31932912608 objects-run-31943091401 objects-run-32005819978 objects-run-32023003839 objects-recovery-31900590641 objects-recovery-31907896731 objects-recovery-31982149543"
         type: string
 
 permissions:
@@ -39,27 +39,54 @@ jobs:
           sudo apt-get install -y -q zstd poppler-utils
           pip install --quiet beautifulsoup4 lxml
 
+      - name: Free runner disk space
+        run: |
+          # The full corpus (~27 GB extracted) plus derived text does not fit
+          # beside the runner's preinstalled toolchains. Objects are
+          # content-addressed, so re-extracting overlapping releases is safe.
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc \
+            /usr/local/.ghcup /usr/local/share/boost \
+            /usr/local/share/powershell /usr/local/lib/node_modules || true
+          sudo docker image prune --all --force >/dev/null 2>&1 || true
+          df -h /
+
       - name: Restore archived objects from releases
         env:
           GH_TOKEN: ${{ github.token }}
           TAGS: ${{ inputs.object_release_tags }}
         run: |
           set -euo pipefail
-          mkdir -p restore && cd restore
+          # One release at a time: download, reassemble split parts, extract,
+          # delete — bounds peak disk to extracted-objects + one release.
           for tag in $TAGS; do
-            gh release download "$tag" --repo "$GITHUB_REPOSITORY" --dir .
-          done
-          # Reassemble any split tarballs, then extract all.
-          for stem in $(ls *.tar.zst.part00 2>/dev/null | sed 's/\.part00$//'); do
-            cat "$stem".part* > "$stem"
-            rm -f "$stem".part*
-          done
-          cd ..
-          for t in restore/*.tar.zst; do
-            zstd -dc "$t" | tar -x
-            rm -f "$t"
+            rm -rf restore && mkdir -p restore
+            for attempt in 1 2 3; do
+              if gh release download "$tag" --repo "$GITHUB_REPOSITORY" --dir restore; then
+                break
+              fi
+              if [ "$attempt" = 3 ]; then
+                echo "gh release download failed for $tag after 3 attempts" >&2
+                exit 1
+              fi
+              echo "gh release download failed for $tag (attempt $attempt/3), retrying..." >&2
+              rm -rf restore && mkdir -p restore
+              sleep $((attempt * 15))
+            done
+            ( cd restore
+              for stem in $(ls *.tar.zst.part00 2>/dev/null | sed 's/\.part00$//'); do
+                cat "$stem".part* > "$stem"
+                rm -f "$stem".part*
+              done )
+            for t in restore/*.tar.zst; do
+              zstd -dc "$t" | tar -x
+              rm -f "$t"
+            done
+            rm -rf restore
+            echo "restored $tag"
           done
           find archive/objects -type f | wc -l
+          du -sh archive
+          df -h /
 
       - name: Run Content Pass 1
         run: |

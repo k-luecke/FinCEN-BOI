@@ -36,6 +36,8 @@ from archive import (
     host_allowed,
     utc_now,
 )
+from proxy_pool import ProxyPool
+import proxy_pool as proxy_control
 
 # SEC's automated-access policy asks for a declared User-Agent with
 # contact information; the repository is the contact point.
@@ -51,7 +53,7 @@ BULK_FILES = [
         "SEC EDGAR bulk submissions",
     ),
     (
-        "https://www.sec.gov/Archives/edgar/daily-index/bulkdata/companyfacts.zip",
+        "https://www.sec.gov/Archives/edgar/daily-index/xbrl/companyfacts.zip",
         "SEC EDGAR bulk company facts",
     ),
 ]
@@ -66,13 +68,18 @@ def stream_fetch(
     source: str,
     max_bytes: int,
     max_retries: int,
+    proxy_pool: ProxyPool | None = None,
 ) -> bool:
     record_id = str(uuid.uuid4())
 
     for attempt in range(max_retries + 1):
         tmp = out / f".download-{record_id}.tmp"
+        proxy = proxy_pool.next() if proxy_pool else None
 
         try:
+            if proxy:
+                proxy_control.install(proxy)
+
             request = urllib.request.Request(
                 url, headers={"User-Agent": USER_AGENT, "Accept": "*/*"}
             )
@@ -137,6 +144,9 @@ def stream_fetch(
         except Exception as exc:
             tmp.unlink(missing_ok=True)
 
+            if proxy:
+                proxy_pool.mark_dead(proxy)
+
             if attempt < max_retries:
                 delay = min(30.0 * (2 ** attempt), 300.0)
                 delay += random.uniform(0.0, 5.0)
@@ -166,6 +176,10 @@ def stream_fetch(
             print(f"  ERROR: {exc}")
             return False
 
+        finally:
+            if proxy:
+                proxy_control.clear()
+
     return False
 
 
@@ -178,10 +192,33 @@ def main() -> int:
         "--max-bytes", type=int, default=8 * 1024 * 1024 * 1024
     )
     parser.add_argument("--max-retries", type=int, default=3)
+    parser.add_argument(
+        "--use-proxies",
+        action="store_true",
+        help=(
+            "Route fetches through a freshly built pool of free SOCKS5 "
+            "proxies, rotating to the next on failure. Use when sec.gov "
+            "is blocking the runner's own IP outright."
+        ),
+    )
+    parser.add_argument("--proxy-pool-size", type=int, default=8)
+    parser.add_argument("--proxy-validate-timeout", type=float, default=5.0)
     args = parser.parse_args()
 
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
+
+    proxy_pool = None
+    if args.use_proxies:
+        print("Building proxy pool from free SOCKS5 aggregators...")
+        proxy_pool = ProxyPool.build(
+            want=args.proxy_pool_size,
+            timeout=args.proxy_validate_timeout,
+        )
+        print(f"  {len(proxy_pool)} validated proxies")
+        if not len(proxy_pool):
+            print("No live free proxies found; aborting.", file=sys.stderr)
+            return 1
 
     successes = 0
 
@@ -195,6 +232,7 @@ def main() -> int:
             source,
             args.max_bytes,
             args.max_retries,
+            proxy_pool,
         ):
             successes += 1
 

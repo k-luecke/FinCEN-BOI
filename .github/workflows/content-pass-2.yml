@@ -1,0 +1,106 @@
+name: Content Pass 2 (raw observation extraction)
+
+# Runs content_pass_2.observe against a published derived-pass1-run-*
+# release (extracted text + candidate indexes) and commits the resulting
+# raw-observation layer to the dispatching branch. Touches no government
+# host: every input byte comes from this repository's own releases.
+
+on:
+  workflow_dispatch:
+    inputs:
+      derived_release_tag:
+        description: "derived-pass1-run-* release tag holding derived text + candidate indexes"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: content-pass-2
+  cancel-in-progress: false
+
+jobs:
+  pass2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q zstd
+
+      - name: Restore derived text and candidate indexes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ inputs.derived_release_tag }}
+        run: |
+          set -euo pipefail
+          mkdir -p restore
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --dir restore
+          ( cd restore
+            for stem in $(ls *.tar.zst.part00 2>/dev/null | sed 's/\.part00$//'); do
+              cat "$stem".part* > "$stem"
+              rm -f "$stem".part*
+            done )
+          # The indexes tarball overlays content-pass-1/ in the working tree
+          # with the release's (newer-corpus) candidate files; git state is
+          # restored before the commit step so only pass-2 outputs land.
+          for t in restore/*.tar.zst; do
+            zstd -dc "$t" | tar -x
+            rm -f "$t"
+          done
+          rm -rf restore
+          test -f content-pass-1/corpus-inventory.jsonl || {
+            gunzip -k content-pass-1/corpus-inventory.jsonl.gz; }
+          find derived/text -type f | wc -l
+          df -h /
+
+      - name: Run observation extraction
+        run: python3 -m content_pass_2.observe
+
+      - name: Extract document dates and defined terms
+        run: |
+          python3 -m content_pass_2.doc_dates
+          python3 -m content_pass_2.defined_terms
+
+      - name: Build and validate ownership graph
+        run: |
+          set -euo pipefail
+          python3 build_ownership_graph.py
+          python3 ownership_schema.py --root ownership-reconstruction
+          python3 analyze_graph.py
+
+      - name: Commit pass-2 outputs
+        env:
+          TAG: ${{ inputs.derived_release_tag }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/pass2-out
+          cp content-pass-2/*.jsonl content-pass-2/*.json /tmp/pass2-out/
+          # Restore the working tree to committed state, keeping only the
+          # freshly produced pass-2 + graph outputs.
+          git checkout -- content-pass-1/ content-pass-2/ 2>/dev/null || true
+          git clean -fdq content-pass-1/ content-pass-2/ derived/ || true
+          cp /tmp/pass2-out/* content-pass-2/
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content-pass-2/ ownership-reconstruction/
+          if git diff --cached --quiet; then
+            echo "FATAL: pass produced no changes — refusing to report success."
+            exit 1
+          fi
+          git commit -m "Content Pass 2 observe over ${TAG}"
+          for i in 1 2 3 4; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && \
+              git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep $((2**i))
+          done
+          echo "FATAL: push failed after retries."
+          exit 1

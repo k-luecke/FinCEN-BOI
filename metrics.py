@@ -102,6 +102,16 @@ def main() -> int:
     discovered = sum(1 for _ in iter_jsonl(Path(args.inventory)))
     graph = Path(args.graph_root)
 
+    # Distinct archived source documents contributing >=1 validated graph
+    # edge (by source_sha256; edges lacking a sha are counted by URL).
+    edge_sources = set()
+
+    for path in sorted((graph / "edges").glob("*.jsonl")):
+        for row in iter_jsonl(path):
+            edge_sources.add(row.get("source_sha256") or row.get("source_url"))
+
+    edge_sources.discard(None)
+
     metrics = {
         "generated_at": __import__("datetime").datetime.now(
             __import__("datetime").timezone.utc
@@ -133,7 +143,10 @@ def main() -> int:
         "rate_limited": queue_counts.get("RATE_LIMITED", 0),
         "robots_disallowed": queue_counts.get("ROBOTS_DISALLOWED", 0),
         "manual_review": queue_counts.get("MANUAL_REVIEW", 0),
-        "ownership_bearing_documents": 0,
+        # Distinct archived source documents contributing >=1 validated
+        # graph edge — NOT the (much larger) Pass 1 candidate-document
+        # count, which lives in content-pass-1/metrics.json.
+        "ownership_bearing_documents": len(edge_sources),
         "raw_observations": raw_observations,
         "validated_graph_edges": count_jsonl_dir(graph / "edges"),
         "unresolved_entities": count_jsonl_dir(graph / "unresolved"),

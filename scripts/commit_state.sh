@@ -19,11 +19,13 @@ git config user.email "github-actions[bot]@users.noreply.github.com"
 attempt=0
 while :; do
   git fetch origin main
-  git reset --soft FETCH_HEAD
-  # Start every state file from the freshest committed version.
-  for f in manifest.jsonl ledger.jsonl queue.jsonl metrics.json; do
-    git checkout FETCH_HEAD -- "$f" 2>/dev/null || rm -f "$f"
-  done
+  # HARD reset: the index and tracked tree must exactly match the
+  # freshest main before we layer this run's state on top. A soft
+  # reset here once kept the stale checkout's index and committed a
+  # silent revert of every file main had gained mid-run (caught only
+  # by the workflows-permission guard). Untracked run outputs
+  # (run-manifest, archive/) survive a hard reset.
+  git reset --hard FETCH_HEAD
 
   cat "$RUN_MANIFEST" >> manifest.jsonl
   python3 ledger.py --manifest manifest.jsonl --out ledger.jsonl
