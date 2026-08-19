@@ -1,0 +1,204 @@
+name: Challenge-aware recovery
+
+# Lawful recovery of documents hidden behind bot challenges /
+# interstitials: no CAPTCHA solving, no proxy or identity rotation,
+# no fingerprint spoofing, no rate-limit circumvention. Challenged
+# endpoints get a small ordinary probe; recovery routes around them
+# through official APIs, GovInfo, and public web archives.
+
+on:
+  schedule:
+    # Daily, low-frequency cadence; off the top of the hour.
+    - cron: "41 9 * * *"
+  push:
+    # Development branch only: lets recovery run before the workflow
+    # file lands on main (API dispatch needs the file on the default
+    # branch). Commits made by the workflow itself use GITHUB_TOKEN
+    # and never retrigger a run.
+    branches:
+      - claude/challenge-aware-recovery-h3ples
+    paths:
+      - "recover.py"
+      - "challenge_scan.py"
+      - "challenge_detector.py"
+      - ".github/workflows/recovery.yml"
+  workflow_dispatch:
+    inputs:
+      max_fetches:
+        description: "Total network fetch budget for this run"
+        default: "1200"
+        type: string
+      delay:
+        description: "Seconds between requests per host"
+        default: "2.0"
+        type: string
+      archive_fr_api:
+        description: "Archive FR API JSON records for recovered docs"
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: challenge-recovery
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fast-forward to newest branch state
+        # A queued run may have been triggered by an older sha; start
+        # from the freshest committed recovery/queue state so this
+        # run never re-fetches work a previous run already recovered.
+        run: |
+          git fetch origin "${{ github.ref_name }}"
+          git reset --hard FETCH_HEAD
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run detector and recovery invariants tests
+        run: python3 -m unittest discover tests
+
+      - name: Refresh challenge scan and recovery queues
+        # Pure function of committed state; merge preserves recovery
+        # progress already recorded in the queues.
+        run: python3 challenge_scan.py
+
+      - name: Run lawful recovery
+        env:
+          MAX_FETCHES: ${{ inputs.max_fetches || '1200' }}
+          DELAY: ${{ inputs.delay || '2.0' }}
+          ARCHIVE_FR_API: ${{ (inputs.archive_fr_api == '' || inputs.archive_fr_api) && 'true' || 'false' }}
+        run: |
+          EXTRA=""
+          if [ "$ARCHIVE_FR_API" = "true" ]; then
+            EXTRA="--archive-fr-api"
+          fi
+          # Wall-clock fetch budget (150 min) < job timeout (340 min):
+          # slow upstreams must never starve verify/publish/commit.
+          python3 recover.py \
+            --network \
+            --max-fetches "$MAX_FETCHES" \
+            --max-seconds 9000 \
+            --delay "$DELAY" \
+            $EXTRA \
+            --out archive \
+            --run-manifest run-manifest-recovery.jsonl
+
+      - name: Verify recovered objects
+        run: |
+          if [ -s run-manifest-recovery.jsonl ]; then
+            python3 verify.py --manifest run-manifest-recovery.jsonl
+          else
+            echo "No network fetches this run; nothing to verify."
+          fi
+
+      - name: Publish recovered objects to durable release storage
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          if [ ! -d archive/objects ]; then
+            echo "No objects fetched this run; skipping release."
+            echo "RELEASE_VERIFIED=" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          tag="objects-recovery-${RUN_ID}"
+          tarball="objects-recovery-${RUN_ID}.tar.zst"
+          tar --zstd -cf "$tarball" archive
+          objects=$(find archive/objects -type f | wc -l)
+          gh release create "$tag" \
+            --title "Recovery objects $(date -u +%Y-%m-%d) (run ${RUN_ID})" \
+            --notes "$objects content-addressed objects recovered via lawful alternate routes (official APIs, GovInfo, public web archives). Tar paths match manifest.jsonl object_path values. See recovery/recovery-links.jsonl for provenance." \
+            "$tarball"
+          asset_count=$(gh release view "$tag" --json assets --jq '.assets | length')
+          if [ "$asset_count" -lt 1 ]; then
+            echo "Release $tag has no assets — durability NOT confirmed."
+            exit 1
+          fi
+          echo "Release $tag confirmed with $asset_count asset(s)."
+          echo "RELEASE_VERIFIED=--release-verified" >> "$GITHUB_ENV"
+
+      - name: Commit recovery state
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          set -eu
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          attempt=0
+          while :; do
+            git fetch origin "$BRANCH"
+            # Mixed reset: HEAD and index move to the freshest branch
+            # state while the working tree keeps this run's outputs.
+            # (--soft kept the triggering sha's stale index and made
+            # bot commits silently revert code pushed mid-run.)
+            git reset FETCH_HEAD
+            # Start shared state files from the freshest committed
+            # version, then re-apply this run's records.
+            for f in manifest.jsonl ledger.jsonl queue.jsonl metrics.json; do
+              git checkout FETCH_HEAD -- "$f" 2>/dev/null || true
+            done
+            # Recovery links are append-only observations: union this
+            # run's links with the freshest committed set so a stale
+            # checkout can never drop links another run recorded.
+            git show FETCH_HEAD:recovery/recovery-links.jsonl \
+              > base-links.jsonl 2>/dev/null || : > base-links.jsonl
+            python3 scripts/merge_recovery_links.py \
+              base-links.jsonl recovery/recovery-links.jsonl \
+              recovery/recovery-links.jsonl
+
+            if [ -s run-manifest-recovery.jsonl ]; then
+              cat run-manifest-recovery.jsonl >> manifest.jsonl
+            fi
+            python3 ledger.py --manifest manifest.jsonl --out ledger.jsonl
+            python3 queue.py --queue-out queue.jsonl --limit 0
+            python3 metrics.py ${RELEASE_VERIFIED:-}
+            python3 recovery_report.py
+            python3 coverage.py || true
+
+            git add manifest.jsonl ledger.jsonl queue.jsonl metrics.json
+            # Explicit paths only: `git add <dir>` also stages
+            # deletions of files this run's stale worktree lacks,
+            # which would silently remove files other work added to
+            # those directories after this run's checkout forked.
+            git add \
+              recovery/challenge-observations.jsonl \
+              recovery/document-identities.jsonl \
+              recovery/recovery-links.jsonl \
+              recovery/unresolved-challenges.jsonl \
+              recovery/metrics.json \
+              acquisition/doj-recovery-queue.jsonl \
+              acquisition/federal-register-recovery-queue.jsonl \
+              acquisition/congress-recovery-queue.jsonl \
+              acquisition/gao-recovery-queue.jsonl \
+              RECOVERY-REPORT.md
+            git add coverage.json COVERAGE.md 2>/dev/null || true
+            if git diff --cached --quiet; then
+              echo "No recovery state changes to commit."
+              exit 0
+            fi
+            git commit -m "Recovery run $(date -u +%Y-%m-%d): lawful alternate-source recovery state"
+
+            if git push origin "HEAD:$BRANCH"; then
+              echo "Recovery state committed."
+              exit 0
+            fi
+
+            attempt=$((attempt+1))
+            if [ "$attempt" -ge 3 ]; then
+              echo "Push failed after 3 attempts." >&2
+              exit 1
+            fi
+            echo "Push race; retrying against newer $BRANCH ($attempt/3)."
+            sleep $((5 * attempt))
+          done

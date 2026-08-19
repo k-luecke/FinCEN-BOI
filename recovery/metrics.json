@@ -1,0 +1,174 @@
+{
+  "by_family": {
+    "congress": {
+      "ACCESS_RESTRICTED": 62
+    },
+    "doj": {
+      "ACCESS_RESTRICTED": 4,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 3,
+      "RECOVERED_WEB_ARCHIVE": 188,
+      "UNRESOLVED_CHALLENGE": 4179
+    },
+    "fbi": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 2
+    },
+    "federal_register": {
+      "RECOVERED_OFFICIAL_MIRROR": 317,
+      "UNRESOLVED_CHALLENGE": 135
+    },
+    "fincen": {
+      "ACCESS_RESTRICTED": 5,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 19
+    },
+    "gao": {
+      "ACCESS_RESTRICTED": 1,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1,
+      "UNRESOLVED_CHALLENGE": 54
+    },
+    "govinfo": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1054
+    },
+    "other": {
+      "ACCESS_RESTRICTED": 18,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 6
+    },
+    "sec": {
+      "ACCESS_RESTRICTED": 1,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 2,
+      "UNRESOLVED_CHALLENGE": 166
+    },
+    "treasury": {
+      "ACCESS_RESTRICTED": 27,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 33
+    }
+  },
+  "by_host": {
+    "bsaaml.ffiec.gov": {
+      "ACCESS_RESTRICTED": 3
+    },
+    "bsaefiling.fincen.gov": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 8
+    },
+    "congress.gov": {
+      "ACCESS_RESTRICTED": 3
+    },
+    "fincen.gov": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 3
+    },
+    "home.treasury.gov": {
+      "ACCESS_RESTRICTED": 27,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 7
+    },
+    "judiciary.house.gov": {
+      "ACCESS_RESTRICTED": 1,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1
+    },
+    "ncua.gov": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 2
+    },
+    "treasury.gov": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1
+    },
+    "vault.fbi.gov": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 2
+    },
+    "www.congress.gov": {
+      "ACCESS_RESTRICTED": 59
+    },
+    "www.fdic.gov": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1
+    },
+    "www.federalregister.gov": {
+      "RECOVERED_OFFICIAL_MIRROR": 317,
+      "UNRESOLVED_CHALLENGE": 135
+    },
+    "www.ffiec.gov": {
+      "ACCESS_RESTRICTED": 14
+    },
+    "www.fincen.gov": {
+      "ACCESS_RESTRICTED": 5,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 8
+    },
+    "www.gao.gov": {
+      "ACCESS_RESTRICTED": 1,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1,
+      "UNRESOLVED_CHALLENGE": 54
+    },
+    "www.govinfo.gov": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1054
+    },
+    "www.justice.gov": {
+      "ACCESS_RESTRICTED": 4,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 3,
+      "RECOVERED_WEB_ARCHIVE": 188,
+      "UNRESOLVED_CHALLENGE": 4179
+    },
+    "www.ncua.gov": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1
+    },
+    "www.occ.gov": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1
+    },
+    "www.sec.gov": {
+      "ACCESS_RESTRICTED": 1,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 2,
+      "UNRESOLVED_CHALLENGE": 166
+    },
+    "www.treasury.gov": {
+      "NON_CONTENT_TECHNICAL_RESPONSE": 25
+    }
+  },
+  "challenge_observations": 6277,
+  "document_identities": 6277,
+  "document_identity_coverage": {
+    "ACCESS_RESTRICTED": 118,
+    "NON_CONTENT_TECHNICAL_RESPONSE": 1120,
+    "RECOVERED_OFFICIAL_MIRROR": 317,
+    "RECOVERED_WEB_ARCHIVE": 188,
+    "UNRESOLVED_CHALLENGE": 4534
+  },
+  "generated_at": "2026-08-19T16:59:13.349727+00:00",
+  "identities_resolved": 5930,
+  "recovery_links": 822,
+  "recovery_links_by_method": {
+    "federal_register_api": 317,
+    "federal_register_api_inventory_crossref": 317,
+    "wayback_cdx": 188
+  },
+  "recovery_links_by_relationship": {
+    "ARCHIVED_VERSION": 188,
+    "DERIVED_REPRESENTATION": 317,
+    "OFFICIAL_MIRROR": 317
+  },
+  "requested_url_coverage": {
+    "ACCESS_RESTRICTED": 118,
+    "NON_CONTENT_TECHNICAL_RESPONSE": 1120,
+    "RECOVERED_OFFICIAL_MIRROR": 317,
+    "RECOVERED_WEB_ARCHIVE": 188,
+    "UNRESOLVED_CHALLENGE": 4534
+  },
+  "semantics_note": "BOT_CHALLENGE / non-content captures are never counted as ARCHIVED_CONTENT. RECOVERED_* states preserve the distinction between original publisher and retrieval host; original challenge observations are retained.",
+  "top_fingerprints": {
+    "ACCESS_INTERSTITIAL|redirect_to_interstitial_endpoint": 452,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2410": 93,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2419": 78,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2421": 59,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2432": 55,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2443": 66,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2454": 62,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2476": 47,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2487": 49,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2498": 49,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2509": 49,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2564": 58,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2586": 62,
+    "ERROR_RESPONSE|http_status:403": 112,
+    "UNKNOWN_RESPONSE|detection_mode:metadata_only|expected_document_got_html": 1043
+  },
+  "unresolved": 5772,
+  "unresolved_by_tier": {
+    "0": 159,
+    "1": 2398,
+    "2": 3215
+  }
+}
