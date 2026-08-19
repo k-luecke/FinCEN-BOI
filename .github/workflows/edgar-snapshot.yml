@@ -21,7 +21,13 @@ concurrency:
 
 jobs:
   snapshot:
-    runs-on: ubuntu-latest
+    # SEC 403s these bulk endpoints from GitHub-hosted (Azure) runner IPs
+    # regardless of URL correctness or User-Agent. Route through a
+    # self-hosted runner instead — register one on any machine with a
+    # non-GitHub egress IP (see README for setup) and label it
+    # "edgar-snapshot"; whichever registered runner is online picks up
+    # the job.
+    runs-on: [self-hosted, edgar-snapshot]
     timeout-minutes: 200
     steps:
       - uses: actions/checkout@v4
