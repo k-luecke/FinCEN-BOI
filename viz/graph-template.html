@@ -1,0 +1,508 @@
+<title>Ownership Reconstruction</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f6f5f2; --panel: #fdfcfa; --panel-2: #efeee9;
+    --ink: #201e1a; --ink-2: #605c53; --ink-3: #96917f;
+    --line: #e3e0d8; --line-2: #d2cfc4;
+    --own: #2a78d6; --parent: #eb6834; --ctrl: #1baf7a; --rel: #96917f;
+    --node-fill: #fdfcfa; --halo: rgba(42,120,214,.16);
+    --shadow: 0 10px 30px rgba(32,30,26,.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #1a1a19; --panel: #222221; --panel-2: #292927;
+      --ink: #f4f3ec; --ink-2: #c3c2b7; --ink-3: #8b897e;
+      --line: #35342e; --line-2: #45443c;
+      --own: #3987e5; --parent: #d95926; --ctrl: #199e70; --rel: #8b897e;
+      --node-fill: #262624; --halo: rgba(57,135,229,.22);
+      --shadow: 0 10px 30px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #1a1a19; --panel: #222221; --panel-2: #292927;
+    --ink: #f4f3ec; --ink-2: #c3c2b7; --ink-3: #8b897e;
+    --line: #35342e; --line-2: #45443c;
+    --own: #3987e5; --parent: #d95926; --ctrl: #199e70; --rel: #8b897e;
+    --node-fill: #262624; --halo: rgba(57,135,229,.22);
+    --shadow: 0 10px 30px rgba(0,0,0,.5);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.55 -apple-system, "Segoe UI", system-ui, sans-serif;
+  }
+  .serif { font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif; }
+  .mono { font-family: ui-monospace, "SF Mono", "Cascadia Code", Consolas, Menlo, monospace; }
+
+  header { padding: 34px 28px 0; max-width: 1280px; margin: 0 auto; }
+  .eyebrow { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 10px; }
+  h1 { font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+       font-size: clamp(30px, 4.4vw, 44px); font-weight: 500; margin: 0 0 6px; letter-spacing: -.01em; text-wrap: balance; }
+  .dek { color: var(--ink-2); max-width: 68ch; margin: 0 0 22px; }
+  .dek a { color: inherit; }
+
+  .stats { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 18px; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+          padding: 10px 16px 8px; min-width: 108px; }
+  .stat b { display: block; font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums;
+            font-family: ui-monospace, "SF Mono", Consolas, monospace; letter-spacing: -.02em; }
+  .stat span { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); }
+
+  .board { max-width: 1280px; margin: 0 auto; padding: 0 28px 28px; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; padding: 10px 0; }
+  .toolbar input[type=search] {
+    background: var(--panel); color: var(--ink); border: 1px solid var(--line-2); border-radius: 6px;
+    padding: 7px 12px; font: inherit; font-size: 13.5px; width: 290px;
+  }
+  .toolbar input[type=search]:focus-visible, .chip:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--own); outline-offset: 2px;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip { display: inline-flex; align-items: center; gap: 7px; cursor: pointer; user-select: none;
+          background: var(--panel); border: 1px solid var(--line-2); border-radius: 99px;
+          padding: 5px 12px; font-size: 12.5px; color: var(--ink-2); }
+  .chip.off { opacity: .38; }
+  .chip svg { flex: none; }
+  .hint { font-size: 12px; color: var(--ink-3); margin-left: auto; }
+
+  .canvas-wrap { position: relative; background: var(--panel); border: 1px solid var(--line);
+                 border-radius: 8px; overflow: hidden; }
+  #canvas { display: block; width: 100%; height: 66vh; min-height: 430px; cursor: grab; touch-action: none; }
+  #canvas.dragging { cursor: grabbing; }
+
+  .nlabel { font: 10.5px ui-monospace, "SF Mono", Consolas, monospace; fill: var(--ink-2); pointer-events: none; }
+  .elabel { font: 600 9.5px ui-monospace, "SF Mono", Consolas, monospace; fill: var(--ink); pointer-events: none;
+            paint-order: stroke; stroke: var(--panel); stroke-width: 3px; stroke-linejoin: round; }
+  .node { cursor: pointer; }
+  .node .shape { fill: var(--node-fill); stroke: var(--ink-2); stroke-width: 1.4; }
+  .node.person .shape { stroke-width: 1.4; }
+  .node:hover .shape, .node.sel .shape { stroke: var(--ink); stroke-width: 2.4; }
+  .node.dim, .edge.dim { opacity: .13; }
+  .node.hit .shape { stroke: var(--own); stroke-width: 2.6; }
+  .halo { fill: var(--halo); }
+  .edge path { fill: none; stroke-width: 1.8; }
+  .edge:hover path.core, .edge.sel path.core { stroke-width: 3; }
+  .edge path.hit-area { stroke: transparent; stroke-width: 12; }
+  .e-BENEFICIAL_OWNER path.core { stroke: var(--own); }
+  .e-PARENT path.core { stroke: var(--parent); }
+  .e-UNKNOWN_CONTROL_ROLE path.core { stroke: var(--ctrl); stroke-dasharray: 6 4; }
+  .e-RELATED_ORGANIZATION path.core { stroke: var(--rel); stroke-dasharray: 2 4; stroke-linecap: round; }
+
+  #tip { position: absolute; pointer-events: none; z-index: 5; max-width: 340px; display: none;
+         background: var(--panel); border: 1px solid var(--line-2); border-radius: 7px; box-shadow: var(--shadow);
+         padding: 10px 12px; font-size: 12.5px; color: var(--ink-2); }
+  #tip b { color: var(--ink); font-size: 13px; }
+  #tip .q { font-style: italic; margin-top: 6px; color: var(--ink-2); }
+  #tip .k { font-size: 10.5px; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-3); }
+
+  #panel { position: absolute; top: 12px; right: 12px; bottom: 12px; width: min(390px, 88%);
+           background: var(--panel); border: 1px solid var(--line-2); border-radius: 8px; box-shadow: var(--shadow);
+           padding: 16px 18px; overflow: auto; display: none; z-index: 6; }
+  #panel.open { display: block; }
+  #panel h2 { font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+              font-size: 21px; font-weight: 500; margin: 0 34px 2px 0; }
+  #panel .kind { font-size: 11px; letter-spacing: .11em; text-transform: uppercase; color: var(--ink-3); }
+  #panel .alias { font-size: 12.5px; color: var(--ink-2); margin: 8px 0 0; }
+  #panel .alias em { color: var(--ink-3); font-style: normal; font-size: 11px; letter-spacing: .06em; }
+  .pedge { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 12px; font-size: 13px; }
+  .pedge .rel { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .pedge .assert { font: 600 10.5px ui-monospace, Consolas, monospace; letter-spacing: .05em; padding: 2px 7px;
+                   border-radius: 4px; border: 1px solid var(--line-2); color: var(--ink-2); }
+  .pedge .quote { font-style: italic; color: var(--ink-2); margin: 7px 0 5px; font-size: 12.5px; }
+  .pedge .meta { font-size: 11.5px; color: var(--ink-3); }
+  .pedge a { color: var(--own); text-decoration: none; }
+  .pedge a:hover { text-decoration: underline; }
+  #panel .close { position: absolute; top: 10px; right: 10px; border: 1px solid var(--line-2); background: var(--panel-2);
+                  color: var(--ink-2); border-radius: 6px; width: 28px; height: 28px; cursor: pointer; font-size: 14px; line-height: 1; }
+
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 20px; padding: 12px 4px 2px; font-size: 12.5px; color: var(--ink-2); align-items: center; }
+  .legend .li { display: inline-flex; align-items: center; gap: 8px; }
+
+  section.tables { max-width: 1280px; margin: 0 auto; padding: 6px 28px 60px; }
+  details { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); margin-top: 16px; }
+  summary { cursor: pointer; padding: 13px 18px; font-weight: 600; font-size: 14px; }
+  summary .n { color: var(--ink-3); font-weight: 400; }
+  .tbl-wrap { overflow-x: auto; padding: 0 18px 16px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th { text-align: left; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3);
+       border-bottom: 1px solid var(--line-2); padding: 6px 14px 6px 0; }
+  td { border-bottom: 1px solid var(--line); padding: 6px 14px 6px 0; vertical-align: top; }
+  td.mono, .mono td { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 12.5px; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  footer { max-width: 1280px; margin: 0 auto; padding: 0 28px 44px; color: var(--ink-3); font-size: 12.5px; }
+  footer a { color: inherit; }
+  @media (prefers-reduced-motion: no-preference) {
+    .node .shape, .edge path.core { transition: stroke-width .12s ease; }
+  }
+</style>
+
+<header>
+  <p class="eyebrow">FinCEN-BOI archive · pass-2 evidence layer · 2026-08-17</p>
+  <h1>Ownership Reconstruction</h1>
+  <p class="dek">Every edge below is a sentence in an archived government record — an SEC complaint, an OFAC
+  designation, a prudential-regulator order — stating who owns, controls, or contains whom. Nothing is inferred:
+  hover an edge to read the sentence it cites; click a node to see its full evidence. Clusters are separate documents'
+  disclosures; joining them across documents is the next pass.</p>
+  <div class="stats" id="stats"></div>
+</header>
+
+<div class="board">
+  <div class="toolbar">
+    <input id="q" type="search" placeholder="Search names — try “EIKO” or “Nunns”" aria-label="Search nodes">
+    <div class="chips" id="chips"></div>
+    <span class="hint">drag background to pan · scroll to zoom · drag nodes to untangle</span>
+  </div>
+  <div class="canvas-wrap">
+    <svg id="canvas" preserveAspectRatio="xMidYMin meet" role="img" aria-label="Force-directed ownership graph: 143 parties connected by 101 evidence edges"></svg>
+    <div id="tip"></div>
+    <aside id="panel" aria-live="polite"><button class="close" aria-label="Close details">×</button><div id="panel-body"></div></aside>
+  </div>
+  <div class="legend" id="legend"></div>
+</div>
+
+<section class="tables">
+  <details>
+    <summary>Alias ledger — d/b/a, a/k/a and former names not yet joined to the graph <span class="n" id="ledger-n"></span></summary>
+    <div class="tbl-wrap"><table class="mono" id="ledger"><thead><tr><th>Named party</th><th>Alias type</th><th>Alias</th></tr></thead><tbody></tbody></table></div>
+  </details>
+  <details>
+    <summary>Held out of the graph — recorded in <code>unresolved/</code>, never guessed in <span class="n" id="unres-n"></span></summary>
+    <div class="tbl-wrap"><table id="unres"><thead><tr><th>Reason</th><th class="num">Observations</th></tr></thead><tbody></tbody></table></div>
+  </details>
+</section>
+
+<footer>
+  Built from <span class="mono">ownership-reconstruction/*/pass2-observations.jsonl</span> (branch
+  <span class="mono">claude/data-analysis-readiness-vt1b5y</span>), validated by <span class="mono">ownership_schema.py</span> — 0 problems.
+  Assertions are what each source states; control is never promoted to ownership. Contains no CTA-filed BOI data —
+  public records only, each edge traceable to archived bytes by SHA-256.
+</footer>
+
+<script>
+const DATA = __DATA__;
+
+/* ---------- deterministic PRNG (no Math.random) ---------- */
+let _s = 42;
+function rnd() { _s = (_s * 1664525 + 1013904223) >>> 0; return _s / 4294967296; }
+
+/* ---------- graph prep ---------- */
+const nodes = DATA.nodes.map(n => ({...n}));
+const byId = new Map(nodes.map(n => [n.id, n]));
+const edges = DATA.edges.filter(e => byId.has(e.s) && byId.has(e.t));
+const adj = new Map(nodes.map(n => [n.id, []]));
+edges.forEach(e => { adj.get(e.s).push(e); adj.get(e.t).push(e); });
+
+/* components */
+const comp = new Map(); const comps = [];
+for (const n of nodes) {
+  if (comp.has(n.id)) continue;
+  const members = []; const stack = [n.id];
+  while (stack.length) {
+    const id = stack.pop();
+    if (comp.has(id)) continue;
+    comp.set(id, comps.length); members.push(byId.get(id));
+    adj.get(id).forEach(e => { stack.push(e.s); stack.push(e.t); });
+  }
+  comps.push(members);
+}
+
+/* per-component force layout, then shelf packing */
+function layoutComponent(members) {
+  const R = 26 * Math.sqrt(members.length) + 10;
+  members.forEach((m, i) => {
+    const a = (i / members.length) * Math.PI * 2 + rnd() * 0.5;
+    m.x = Math.cos(a) * R * (0.4 + 0.6 * rnd());
+    m.y = Math.sin(a) * R * (0.4 + 0.6 * rnd());
+  });
+  const inComp = new Set(members.map(m => m.id));
+  const cedges = edges.filter(e => inComp.has(e.s));
+  for (let it = 0; it < 260; it++) {
+    const t = 1 - it / 260;
+    for (let i = 0; i < members.length; i++) for (let j = i + 1; j < members.length; j++) {
+      const a = members[i], b = members[j];
+      let dx = b.x - a.x, dy = b.y - a.y;
+      let d2 = dx * dx + dy * dy || 0.01, d = Math.sqrt(d2);
+      const rep = 1600 / d2;
+      dx /= d; dy /= d;
+      a.x -= dx * rep * t; a.y -= dy * rep * t;
+      b.x += dx * rep * t; b.y += dy * rep * t;
+    }
+    for (const e of cedges) {
+      const a = byId.get(e.s), b = byId.get(e.t);
+      let dx = b.x - a.x, dy = b.y - a.y;
+      const d = Math.sqrt(dx * dx + dy * dy) || 0.01;
+      const f = (d - 74) * 0.02 * t;
+      dx /= d; dy /= d;
+      a.x += dx * f * d * 0.02 + dx * f; a.y += dy * f * d * 0.02 + dy * f;
+      b.x -= dx * f * d * 0.02 + dx * f; b.y -= dy * f * d * 0.02 + dy * f;
+    }
+    for (const m of members) { m.x *= 0.995; m.y *= 0.995; }
+  }
+  let minX = 1e9, minY = 1e9, maxX = -1e9, maxY = -1e9;
+  for (const m of members) {
+    minX = Math.min(minX, m.x); maxX = Math.max(maxX, m.x);
+    minY = Math.min(minY, m.y); maxY = Math.max(maxY, m.y);
+  }
+  const pad = 66;
+  return { members, w: maxX - minX + pad * 2, h: maxY - minY + pad * 2, minX, minY, pad };
+}
+const boxes = comps.map(layoutComponent).sort((a, b) => (b.w * b.h) - (a.w * a.h));
+const WORLD_W = Math.max(1900, Math.round(95 * Math.sqrt(nodes.length)) + 800);
+let cx = 0, cy = 0, rowH = 0, totalH = 0;
+for (const b of boxes) {
+  if (cx + b.w > WORLD_W && cx > 0) { cx = 0; cy += rowH; rowH = 0; }
+  for (const m of b.members) { m.x = m.x - b.minX + b.pad + cx; m.y = m.y - b.minY + b.pad + cy; }
+  cx += b.w; rowH = Math.max(rowH, b.h); totalH = Math.max(totalH, cy + b.h);
+}
+
+/* ---------- render ---------- */
+const svg = document.getElementById('canvas');
+const NS = 'http://www.w3.org/2000/svg';
+const el = (t, at, parent) => { const e = document.createElementNS(NS, t);
+  for (const k in at) e.setAttribute(k, at[k]); if (parent) parent.appendChild(e); return e; };
+
+const ASSERT = [
+  ['BENEFICIAL_OWNER', 'Owns (source states it)', 'var(--own)', ''],
+  ['PARENT', 'Parent → subsidiary', 'var(--parent)', ''],
+  ['UNKNOWN_CONTROL_ROLE', 'Controls (capacity unclear)', 'var(--ctrl)', '6 4'],
+  ['RELATED_ORGANIZATION', 'Related organization', 'var(--rel)', '2 4'],
+];
+
+const defs = el('defs', {}, svg);
+for (const [key, , color] of ASSERT) {
+  const mk = el('marker', { id: 'arr-' + key, viewBox: '0 0 10 10', refX: 9, refY: 5,
+    markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, defs);
+  el('path', { d: 'M0,1 L9,5 L0,9 z', fill: color, style: `fill:${color}` }, mk);
+}
+const world = el('g', {}, svg);
+const edgeLayer = el('g', {}, world);
+const nodeLayer = el('g', {}, world);
+
+const edgeEls = edges.map((e, i) => {
+  const a = byId.get(e.s), b = byId.get(e.t);
+  const g = el('g', { 'class': 'edge e-' + e.a }, edgeLayer);
+  const hit = el('path', { 'class': 'hit-area' }, g);
+  const core = el('path', { 'class': 'core' }, g);
+  if (e.a !== 'RELATED_ORGANIZATION') core.setAttribute('marker-end', 'url(#arr-' + e.a + ')');
+  let lbl = null;
+  if (e.pct != null) lbl = el('text', { 'class': 'elabel', 'text-anchor': 'middle' }, g);
+  if (lbl) lbl.textContent = e.pct + '%';
+  g.addEventListener('pointerenter', ev => showTipEdge(ev, e));
+  g.addEventListener('pointermove', ev => moveTip(ev));
+  g.addEventListener('pointerleave', hideTip);
+  g.addEventListener('click', ev => { ev.stopPropagation(); if (suppressClick) { suppressClick = false; return; } openEdge(e); });
+  return { e, g, core, hit, lbl, a, b };
+});
+
+const nodeEls = nodes.map(n => {
+  const g = el('g', { 'class': 'node ' + n.kind, tabindex: 0, role: 'button',
+    'aria-label': n.name + ' (' + n.kind + ')' }, nodeLayer);
+  el('circle', { 'class': 'halo', r: 15, cx: 0, cy: 0, opacity: 0 }, g);
+  const shape = n.kind === 'person'
+    ? el('circle', { 'class': 'shape', r: 7.5 }, g)
+    : el('rect', { 'class': 'shape', x: -7.5, y: -7.5, width: 15, height: 15, rx: 3.2 }, g);
+  const lbl = el('text', { 'class': 'nlabel', y: 21, 'text-anchor': 'middle' }, g);
+  lbl.textContent = n.name.length > 22 ? n.name.slice(0, 21) + '…' : n.name;
+  g.addEventListener('pointerenter', ev => showTipNode(ev, n));
+  g.addEventListener('pointermove', ev => moveTip(ev));
+  g.addEventListener('pointerleave', hideTip);
+  g.addEventListener('click', ev => { ev.stopPropagation(); if (suppressClick) { suppressClick = false; return; } openNode(n); });
+  g.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); openNode(n); } });
+  return { n, g, shape };
+});
+const nodeElById = new Map(nodeEls.map(o => [o.n.id, o]));
+
+function place() {
+  for (const o of nodeEls) o.g.setAttribute('transform', `translate(${o.n.x},${o.n.y})`);
+  for (const o of edgeEls) {
+    const { a, b } = o;
+    const dx = b.x - a.x, dy = b.y - a.y, d = Math.sqrt(dx * dx + dy * dy) || 1;
+    const rA = 11, rB = 13.5;
+    const x1 = a.x + dx / d * rA, y1 = a.y + dy / d * rA;
+    const x2 = b.x - dx / d * rB, y2 = b.y - dy / d * rB;
+    const mx = (x1 + x2) / 2 - dy / d * 7, my = (y1 + y2) / 2 + dx / d * 7;
+    const path = `M${x1},${y1} Q${mx},${my} ${x2},${y2}`;
+    o.core.setAttribute('d', path); o.hit.setAttribute('d', path);
+    if (o.lbl) { o.lbl.setAttribute('x', mx); o.lbl.setAttribute('y', my - 3); }
+  }
+}
+place();
+
+/* ---------- viewport ---------- */
+const _ratio = (svg.clientHeight || 500) / (svg.clientWidth || 1200);
+let vb = { x: -10, y: -10, w: WORLD_W + 20,
+           h: Math.min(totalH + 40, (WORLD_W + 20) * _ratio) };
+function applyVB() { svg.setAttribute('viewBox', `${vb.x} ${vb.y} ${vb.w} ${vb.h}`); }
+applyVB();
+svg.addEventListener('wheel', ev => {
+  ev.preventDefault();
+  const k = ev.deltaY > 0 ? 1.12 : 1 / 1.12;
+  const pt = clientToWorld(ev);
+  vb = { x: pt.x - (pt.x - vb.x) * k, y: pt.y - (pt.y - vb.y) * k, w: vb.w * k, h: vb.h * k };
+  applyVB();
+}, { passive: false });
+
+let drag = null;
+let suppressClick = false;
+svg.addEventListener('pointerdown', ev => {
+  const nodeG = ev.target.closest('.node');
+  if (nodeG) {
+    const o = nodeEls.find(o => o.g === nodeG);
+    drag = { kind: 'node', o, last: clientToWorld(ev), moved: 0 };
+  } else {
+    svg.setPointerCapture(ev.pointerId);
+    drag = { kind: 'pan', last: { cx: ev.clientX, cy: ev.clientY }, moved: 0 };
+    svg.classList.add('dragging');
+  }
+});
+svg.addEventListener('pointermove', ev => {
+  if (!drag) return;
+  if (drag.kind === 'node') {
+    const p = clientToWorld(ev);
+    drag.moved += Math.abs(p.x - drag.last.x) + Math.abs(p.y - drag.last.y);
+    drag.o.n.x += p.x - drag.last.x; drag.o.n.y += p.y - drag.last.y;
+    drag.last = p; place();
+  } else {
+    const scale = vb.w / svg.clientWidth;
+    vb.x -= (ev.clientX - drag.last.cx) * scale;
+    vb.y -= (ev.clientY - drag.last.cy) * scale;
+    drag.last = { cx: ev.clientX, cy: ev.clientY };
+    applyVB();
+  }
+});
+['pointerup', 'pointercancel'].forEach(t => svg.addEventListener(t, () => {
+  suppressClick = !!(drag && drag.moved > 3);
+  drag = null; svg.classList.remove('dragging');
+}));
+function clientToWorld(ev) {
+  const r = svg.getBoundingClientRect();
+  return { x: vb.x + (ev.clientX - r.left) / r.width * vb.w,
+           y: vb.y + (ev.clientY - r.top) / r.height * vb.h };
+}
+
+/* ---------- tooltip ---------- */
+const tip = document.getElementById('tip');
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function showTipNode(ev, n) {
+  const al = n.aliases && n.aliases.length
+    ? `<div class="q">${n.aliases.map(a => `<span class="k">${esc(a.type)}</span> ${esc(a.name)}`).join('<br>')}</div>` : '';
+  tip.innerHTML = `<b>${esc(n.name)}</b><br><span class="k">${n.kind} · ${n.deg} edge${n.deg === 1 ? '' : 's'}</span>${al}`;
+  tip.style.display = 'block'; moveTip(ev);
+}
+function showTipEdge(ev, e) {
+  const a = byId.get(e.s), b = byId.get(e.t);
+  tip.innerHTML = `<b>${esc(a.name)}</b> → <b>${esc(b.name)}</b><br>
+    <span class="k">${esc(e.a.replace(/_/g, ' '))}${e.pct != null ? ' · ' + e.pct + '%' : ''} · ${esc(e.posture || '')}</span>
+    <div class="q">“${esc(e.quote)}”</div>`;
+  tip.style.display = 'block'; moveTip(ev);
+}
+function moveTip(ev) {
+  const wrap = svg.parentElement.getBoundingClientRect();
+  let x = ev.clientX - wrap.left + 14, y = ev.clientY - wrap.top + 14;
+  x = Math.min(x, wrap.width - tip.offsetWidth - 10);
+  y = Math.min(y, wrap.height - tip.offsetHeight - 10);
+  tip.style.left = x + 'px'; tip.style.top = y + 'px';
+}
+function hideTip() { tip.style.display = 'none'; }
+
+/* ---------- inspector ---------- */
+const panel = document.getElementById('panel');
+const panelBody = document.getElementById('panel-body');
+panel.querySelector('.close').addEventListener('click', () => closePanel());
+svg.addEventListener('click', () => { if (suppressClick) { suppressClick = false; return; } closePanel(); });
+function closePanel() {
+  panel.classList.remove('open');
+  nodeEls.forEach(o => o.g.classList.remove('sel'));
+  edgeEls.forEach(o => o.g.classList.remove('sel'));
+}
+function edgeCard(e, focusId) {
+  const a = byId.get(e.s), b = byId.get(e.t);
+  const other = focusId ? (e.s === focusId ? b : a) : null;
+  const dirTxt = focusId
+    ? (e.s === focusId ? `→ <b>${esc(other.name)}</b>` : `← <b>${esc(other.name)}</b>`)
+    : `<b>${esc(a.name)}</b> → <b>${esc(b.name)}</b>`;
+  return `<div class="pedge">
+    <div class="rel"><span class="assert">${esc(e.a)}</span> ${dirTxt} ${e.pct != null ? `<span class="mono">${e.pct}%</span>` : ''}</div>
+    <div class="quote">“${esc(e.quote)}”</div>
+    <div class="meta">${e.date ? esc(e.date) + ' · ' : ''}${esc(e.posture || '')} · confidence ${e.conf ?? '—'} ·
+      <a href="${esc(e.url)}" target="_blank" rel="noopener">archived source ↗</a></div>
+  </div>`;
+}
+function openNode(n) {
+  closePanel();
+  nodeElById.get(n.id).g.classList.add('sel');
+  const es = adj.get(n.id);
+  const al = n.aliases && n.aliases.length
+    ? `<p class="alias">${n.aliases.map(a => `<em>${esc(a.type)}</em> ${esc(a.name)}`).join(' · ')}</p>` : '';
+  panelBody.innerHTML = `<span class="kind">${n.kind} · names-as-evidenced</span><h2>${esc(n.name)}</h2>${al}
+    ${es.map(e => edgeCard(e, n.id)).join('')}`;
+  panel.classList.add('open');
+}
+function openEdge(e) {
+  closePanel();
+  panelBody.innerHTML = `<span class="kind">evidence edge</span>
+    <h2 class="serif">${esc(byId.get(e.s).name)} → ${esc(byId.get(e.t).name)}</h2>${edgeCard(e, null)}`;
+  panel.classList.add('open');
+}
+
+/* ---------- filters & search ---------- */
+const active = new Set(ASSERT.map(a => a[0]));
+const chipsBox = document.getElementById('chips');
+for (const [key, label, color, dash] of ASSERT) {
+  const c = document.createElement('button');
+  c.className = 'chip'; c.type = 'button'; c.setAttribute('aria-pressed', 'true');
+  c.innerHTML = `<svg width="26" height="8" aria-hidden="true"><path d="M1,4 L25,4" stroke="${color}" stroke-width="2.4" ${dash ? `stroke-dasharray="${dash}"` : ''}/></svg>${label} <span class="mono">${edges.filter(e => e.a === key).length}</span>`;
+  c.addEventListener('click', () => {
+    if (active.has(key)) active.delete(key); else active.add(key);
+    c.classList.toggle('off', !active.has(key));
+    c.setAttribute('aria-pressed', active.has(key));
+    refresh();
+  });
+  chipsBox.appendChild(c);
+}
+const q = document.getElementById('q');
+q.addEventListener('input', refresh);
+function refresh() {
+  const term = q.value.trim().toLowerCase();
+  const liveNodes = new Set();
+  for (const o of edgeEls) {
+    const on = active.has(o.e.a);
+    o.g.classList.toggle('dim', !on);
+    if (on) { liveNodes.add(o.e.s); liveNodes.add(o.e.t); }
+  }
+  for (const o of nodeEls) {
+    const aliasText = (o.n.aliases || []).map(a => a.name).join(' ').toLowerCase();
+    const hit = term && (o.n.name.toLowerCase().includes(term) || aliasText.includes(term));
+    o.g.classList.toggle('hit', !!hit);
+    o.g.querySelector('.halo').setAttribute('opacity', hit ? 1 : 0);
+    o.g.classList.toggle('dim', !liveNodes.has(o.n.id) || (term && !hit &&
+      !adj.get(o.n.id).some(e => { const m = byId.get(e.s === o.n.id ? e.t : e.s);
+        return m.name.toLowerCase().includes(term); })));
+  }
+}
+refresh();
+
+/* ---------- legend, stats, tables ---------- */
+document.getElementById('legend').innerHTML =
+  `<span class="li"><svg width="15" height="15" aria-hidden="true"><rect x="1.5" y="1.5" width="12" height="12" rx="3" fill="var(--node-fill)" stroke="var(--ink-2)" stroke-width="1.5"/></svg>entity</span>
+   <span class="li"><svg width="15" height="15" aria-hidden="true"><circle cx="7.5" cy="7.5" r="6" fill="var(--node-fill)" stroke="var(--ink-2)" stroke-width="1.5"/></svg>person</span>
+   <span class="li" style="color:var(--ink-3)">arrows point owner → owned, parent → subsidiary · % labels are stated ownership</span>`;
+
+const S = DATA.stats;
+document.getElementById('stats').innerHTML = [
+  [S.entities, 'entities'], [S.people, 'people'], [S.edges, 'evidence edges'],
+  [S.names, 'name records'], [S.unresolved, 'held unresolved'],
+].map(([v, l]) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`).join('');
+
+const lt = document.querySelector('#ledger tbody');
+lt.innerHTML = DATA.ledger.map(r =>
+  `<tr><td>${esc(r.name)}</td><td>${esc(r.type)}</td><td>${esc(r.alias)}</td></tr>`).join('');
+document.getElementById('ledger-n').textContent = `(${DATA.ledger.length} records)`;
+const ut = document.querySelector('#unres tbody');
+ut.innerHTML = DATA.unreasons.map(([r, n]) =>
+  `<tr><td>${esc(r)}</td><td class="num mono">${n}</td></tr>`).join('');
+document.getElementById('unres-n').textContent = `(${DATA.stats.unresolved} observations)`;
+</script>

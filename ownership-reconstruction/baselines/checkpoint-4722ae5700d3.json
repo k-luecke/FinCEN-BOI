@@ -1,0 +1,8124 @@
+{
+ "as_of": "2026-08-18T12:31:41.005888+00:00",
+ "assertions": {
+  "BENEFICIAL_OWNER": 302,
+  "PARENT": 863,
+  "UNKNOWN_CONTROL_ROLE": 39
+ },
+ "competing_control_nodes": [
+  {
+   "object": "BIOeCON Holding",
+   "subjects": [
+    "BIOeCON International Holding N.V",
+    "CON NV"
+   ]
+  }
+ ],
+ "counts": {
+  "components": 423,
+  "edges": 1204,
+  "entities": 1014,
+  "people": 345,
+  "relationships": 560
+ },
+ "cross_family_chains": 2,
+ "cross_family_relationships": 2,
+ "edges_sha256": "4722ae5700d3a2cc1e846666d983b15de675b22e92eae9e35a0ca04bf17ec56b",
+ "entity_names": [
+  "A&S World Trading, Inc",
+  "A.T. Kearney, Inc",
+  "ABN AMRO Insurance Services, Inc",
+  "ABS Capital Partners",
+  "AC BidCo, LLC",
+  "ADEA",
+  "AEIS. Columbia Management Investment Distributors, Inc",
+  "AFS IBEX Financial Services, LLC",
+  "AIG Federal Savings Bank",
+  "AKM LLC",
+  "ALSK Holdings",
+  "AMC",
+  "AMCORE",
+  "AMG",
+  "AMPF Holding",
+  "ANPI Business, LLC",
+  "AP Services, LLC",
+  "ARC Resources, Ltd",
+  "ASD Specialty Healthcare, LLC",
+  "ASG Solutions Corporation",
+  "ASI Partners",
+  "ASRC",
+  "AT&T Corp",
+  "AT&T Enterprises, Inc",
+  "AT&T Inc",
+  "AT&T Mobility II LLC",
+  "ATLANTA CAPITAL LLC",
+  "ATN International, Inc",
+  "Affinion Group",
+  "Affirmative Defenses of Respondents John Thomas Capital Management LLC",
+  "Africa Middle East Investment Holding SAL",
+  "Ag Supply, Inc",
+  "Al-Bilad Islamic Bank",
+  "Al-Mutafaq Commercial Company",
+  "Alel",
+  "AlixPartners, LLP",
+  "Allegheny Ludlum, LLC",
+  "Allwaste Onsite LLC",
+  "Alphaboost Merger Sub, LLC",
+  "Amazon.com, Inc",
+  "Amended Statement of Issues Regarding Sahara Dunes Casino, LP",
+  "Ameren Services Company on behalf of Union Electric Company",
+  "American Express Company",
+  "American Express National Bank",
+  "American Public Transportation Association",
+  "American Stock Exchange LLC",
+  "Ameriprise Financial Services, Inc",
+  "Ameriprise Financial, Inc",
+  "Anchor Labs, Inc",
+  "Anchorage Trust",
+  "Ancient Heritage AD",
+  "Anthony J., LLC",
+  "Application Filing Window36 Bristol Bay Area Health Corporation",
+  "Application Morgan Stanley Bank",
+  "Application for Change of Control of Winn Telephone Co",
+  "Application of AC BidCo, LLC",
+  "Application of Cellco Partnership",
+  "Applications of Cellco Partnership",
+  "Applied Botanics LLC",
+  "Apps4Android, Inc",
+  "Aquila Worldwide Marine Developments Corp",
+  "Archipelago Holdings",
+  "Archtop Holdings",
+  "Arden Angel Shipping Company",
+  "Argent Financial Group",
+  "Argent Trust Company",
+  "Assistant General Counsel of Hunt-Wesson Foods, Inc",
+  "Association, Easley, South Carolina",
+  "Association, Houston, Texas",
+  "Association, Sioux Falls, South Dakota",
+  "Atlantic Stewardship Bank",
+  "Atlantic Stewardship Insurance Company, LLC",
+  "Atlas Holding",
+  "Aurora Bank",
+  "Aurora Business Company",
+  "Aurora Loan Services LLC",
+  "Australian Retirement Trust",
+  "Automated Clearing House, Inc",
+  "BCI",
+  "BCI Financial Group",
+  "BF Labs, Inc",
+  "BILLION COUPONS, INC",
+  "BIOeCON Holding",
+  "BIOeCON International Holding N.V",
+  "BLUEJAY INVESTMENT LLC",
+  "BMC Bancshares",
+  "BMO Financial Corp",
+  "BMO Nesbitt Burns Corp",
+  "BMO Nesbitt Burns, Inc",
+  "BSQRD Limited",
+  "BW Holdings",
+  "Background Wing Lung Bank",
+  "Badische Anilin-& Soda Fabrik A. G",
+  "Bancorp, Inc. and its wholly-owned subsidiary, United Bank",
+  "Bank One Corporation",
+  "Bank Sepah International Plc",
+  "Bank of Montreal",
+  "Bank of the passivity agreement submitted by SOFTBANK Corporation",
+  "Bank proposes to acquire MFI Holding Company",
+  "BankBoston Corp",
+  "BankIowa",
+  "Bankmont Financial Corp",
+  "Barclays Bank PLC",
+  "Barclays PLC",
+  "Barton Asset Management, LLC",
+  "Basic Element Limited",
+  "Because LLC",
+  "BellSouth Telecommunications, LLC",
+  "Beneficial Bancorp",
+  "Beneficial Bank",
+  "Berkshire Hathaway Inc",
+  "Biloxi Casino Corp",
+  "BitGo Holdings",
+  "BitGo Trust",
+  "BlackRock TCP Capital Corp",
+  "Blackstone",
+  "Blackstone CQP Holdco LP",
+  "Blackstone Group",
+  "Blue Ridge Holdings",
+  "BlueWater Wisper Ventures LLC",
+  "Bond Street Holdings",
+  "Boundless Technologies Limited",
+  "Box Turtle Holdings, LLC",
+  "Brief in Support of Application of AutoChina International Limited",
+  "Brightspeed of Virginia, LLC",
+  "Bristol Bay Area Health Corporation",
+  "Broadband Ventures Six, LLC",
+  "Bunyan",
+  "Bureau grants an application filed by Winn Telephone Company",
+  "Burisma",
+  "Business In the Matter of Sahara Dunes Casino, LP",
+  "C4B LLC",
+  "CFG",
+  "CFG. The",
+  "CG Technology, L.P",
+  "CHETAN KAPUR AND LILABOC, LLC",
+  "CIT Bank",
+  "CMC",
+  "CMI Capital Corp",
+  "CNN",
+  "CONA",
+  "CSC Wireless, LLC",
+  "CSS",
+  "CV-321-Y 4D CIRCLE LLC",
+  "Cable One VoIP LLC",
+  "CableOne VoIP LLC",
+  "CableSouth Media III, LLC",
+  "Cadence Bancorp",
+  "Cadence Bank",
+  "Cameron Bell Corporation",
+  "Canadian Imperial Bank",
+  "Capital One Services, LLC",
+  "Capital Street Delaware LP",
+  "Carbite, Inc",
+  "Carver Federal Savings Bank",
+  "Carver State Bank",
+  "Catena Labs, Inc",
+  "Catena Trust Bank, National Association",
+  "Cellco Partnership",
+  "Central National Bank",
+  "Central of Kansas, Inc",
+  "Cequel Corp",
+  "Certificates",
+  "Chairman & CEO of Carver Bancorp, Inc",
+  "Chart of Delinquent Filings Energy Source, Inc",
+  "Chase Community Development Corporation",
+  "Chase Home Finance Inc",
+  "Chase Home Finance LLC",
+  "Chase Manhattan Corp",
+  "Chase Manhattan National Holding Company",
+  "Chase Supply, Inc",
+  "Chemical Bank",
+  "Chemical Financial Corp",
+  "Chemical Holding Delaware, Inc",
+  "Cheniere Energy, Inc",
+  "Chevrolet-Saturn of Harlem, Inc",
+  "Chief Executive Officer at City National Bank",
+  "Chief Executive Officer of City National Bank",
+  "Chief Executive Officer of Icahn Capital LP",
+  "Chief Executive Officer of The Vintage Group, Inc",
+  "Chief Litigation Officer Cellco Partnership",
+  "China Merchants Bank",
+  "China Mobile Limited",
+  "China National Petroleum Corp",
+  "CitiMortgage, Inc",
+  "Citibank, National Association, New York, New York",
+  "Citicorp Mortgage, Inc",
+  "Citizens Telecom Services Company, LLC",
+  "Civil Action No. SEISMA OIL RESEARCH, LLC",
+  "Civil Money Penalty against Sahara Dunes Casino, LP",
+  "Cogeco Connexion Inc",
+  "Coinbase Global, Inc",
+  "Coinbase, Inc",
+  "Collateral Support Collateral Support Mith-ih-kwuh Economic Development Corporation",
+  "Colombia company",
+  "Colorado Fund",
+  "Columbia Bank",
+  "Columbia Insurance Services, Inc",
+  "Commerce Bank",
+  "Commerce Services Co., Ltd",
+  "Commercebank Trust Company, National Association",
+  "Commission consent to transfer control of VTX Communications, LLC",
+  "Commodities Exchange, Inc",
+  "Common Stock held by the Voting Trust",
+  "Commonwealth Equity Services, LLP",
+  "Communications Corp",
+  "Company A",
+  "Company B",
+  "Company N",
+  "Company O",
+  "Company P",
+  "Connect Acquisition Sub 1 LLC",
+  "Connect Holding",
+  "Consent of Defendants Gen-See Capital Corporation",
+  "Consolidated Communications of Illinois Company, LLC",
+  "Consolidated Communications of Northern New England Company, LLC",
+  "Consolidated Communications of Pennsylvania Company, LLC",
+  "Consolidated Communications of Texas Company, LLC",
+  "Consolidated Communications of Vermont Company, LLC",
+  "Consumerinfo.com, Inc",
+  "Conventional Lending TCP Holding, LLC",
+  "Conversion Raymond James Trust Company",
+  "Corporation’’ means the Howard Hughes Corporation",
+  "Cosmo",
+  "Counsel for Pulaski-White Rural Telephone Cooperative Inc",
+  "Counsel to Cable One VoIP LLC",
+  "Creato Funds L.P",
+  "CrossFirst Bank",
+  "CrossFirst Investments, Inc",
+  "Crown Castle Operating Company",
+  "Crown Landing, LLC",
+  "D Marketing, Inc",
+  "DBES",
+  "DECISION KENTCO Corporation",
+  "DIME 17 CAPITAL LLC",
+  "DISH Wireless L.L.C",
+  "DMK LP",
+  "DSR",
+  "DTCC",
+  "DWF-JJK Capital Solutions Monthly Income Fund, LP",
+  "Dakota Platform, Inc",
+  "Damascus Cham Holding",
+  "Danaher Corp",
+  "Danville will merge into Holdings Purchaser, Inc",
+  "Dean Witter & Co",
+  "Dean Witter Venture, Inc",
+  "Delaware limited liability company",
+  "Delaware private corporation",
+  "Denied Ineligible Entities36 Rural Health Care, Inc",
+  "Depository Trust",
+  "Depository Trust Company",
+  "Depository Trust Corporation Depository Trust Company",
+  "Development Group",
+  "Discover Bank",
+  "Distributed Energy Systems Corp",
+  "Division as well as President of Crown Imports LLC",
+  "Douglas, LLC",
+  "E-LIONHEART AS SOCIATES, LLC",
+  "ECAM, LLC",
+  "EDS",
+  "EDX Markets Holding Company, Inc",
+  "EDX Trust, National Association",
+  "EKN Financial Services, Inc",
+  "EN+ Group",
+  "ENFORCEMENT NETWORK IN THE MATTER OF GREENVILLE RIVERBOAT, LLC",
+  "ERENE, Inc",
+  "ESPN Holding Company, Inc",
+  "EXECUTION OF IMAM KHOMEINI’S ORDER",
+  "Eaglemark Financial Service Inc",
+  "East Kentucky Network, LLC",
+  "East Valley Bank",
+  "EchoStar Corp",
+  "Elemento Solutions Limited",
+  "Embedi",
+  "Emerald Financial Services, LLC",
+  "EmployBridge Holding Company",
+  "Employment Solutions Group, Inc",
+  "Enhanced Communications of Northern New England, Inc",
+  "Enterprise Technology Group",
+  "Equifax Inc",
+  "Esquire Bank",
+  "Euro African Group LTD",
+  "EuroSibEnergo",
+  "Eurobet Partners",
+  "Evansville, Indiana",
+  "Evercore Inc. a Delaware corporation",
+  "Evercore LP",
+  "Evercore Trust Company, National Association",
+  "Evergreen Connect Corporation",
+  "FE Management Inc",
+  "FEADSHIP",
+  "FIRST FINANCIAL PLANNING CORPORATION",
+  "FMR LLC",
+  "FNFG",
+  "FNFG Merger Sub, Inc",
+  "FOR EX PARTE PURPOSES Cincinnati Bell Extended Territories LLC",
+  "FSB",
+  "FST",
+  "FT Interactive Data Corporation",
+  "FTAC Olympus Acquisition Corp., New Starship Parent, Inc",
+  "FTN Midwest Asset Management Corporation",
+  "Family Trust",
+  "Fargo Bank, National Association, San Francisco, California",
+  "Federal property to the United States Paralympics, Incorporated",
+  "FiberLight",
+  "FiberLight LLC",
+  "Fidelity Ban Corp",
+  "Fidelity Management & Research Company",
+  "Financial Bancorp, Inc",
+  "Financial Freedom Acquisition LLC",
+  "First Chester County Corp",
+  "First International Trust of Grenada International Depositors' Reinsurance Corporation",
+  "First Jersey Title Services, Inc",
+  "First Laurel Security Company",
+  "First Matrix Services Corp",
+  "First Merchant Bank",
+  "First Merchants Corp",
+  "First National Bank",
+  "First National Bank, Edinburg, Texas",
+  "First Niagara Associates, Inc",
+  "First Union Commercial Corp",
+  "First Union National Bank",
+  "First Union National Bank, Charlotte, North Carolina",
+  "First Union/HFC, L.P",
+  "First-Citizens Bank & Trust Company with CIT Group, Inc",
+  "Fitch, Inc",
+  "Flagstar Bank",
+  "Fleet Bank",
+  "Fleet Boston Corp",
+  "Fleet Mortgage Corporation",
+  "Fleet National Bank",
+  "Fleet National Bank, Providence, Rhode Island",
+  "FleetBoston Financial Corporation",
+  "FleetBoston will become subsidiaries of BAC.1 Fleet National Bank",
+  "Florida served by Bellsouth Telecommunications, LLC",
+  "Flurish, Inc",
+  "Foods, Inc",
+  "ForEnt Technik GmbH",
+  "Formal Agreement requiring Laredo National Bank",
+  "Fort Knox Financial Services Corporation",
+  "France Telecom Long Distance USA, LLC",
+  "Franklin Mutual Advisers, Inc",
+  "Franklin Resources, Inc",
+  "Freeport began when the owners of BASF Overzee N.V",
+  "Friendswood Capital Corporation",
+  "Fries, Inc",
+  "Frontier with France Merger Sub Inc",
+  "Fujisawa Healthcare, Inc",
+  "Fund VIII-A. Silicon Valley Bank",
+  "FutureGen Company",
+  "Futurum Communications Corporation",
+  "G JADES",
+  "G&C",
+  "G. AC BidCo, LLC",
+  "GAFS-R",
+  "GAZ Group",
+  "GCOF IV 123Net Aggregator, L.P",
+  "GCV Holding",
+  "GEICO Corporation",
+  "GI Manager LLC",
+  "GM Preferred Finance Co. Holdings Inc",
+  "GM. We",
+  "GMAC",
+  "GMAC Management LLC",
+  "GMAC Mortgage LLC",
+  "GMAC. Class C Interests",
+  "GPIMH. Guggenheim Capital, LLC",
+  "GS Chemical Transportation Limited",
+  "GU Smart Cities, LLC",
+  "Gallatin Wireless Internet, LLC",
+  "Gaynor Cranberry Company",
+  "Gazprom Burenie, OOO",
+  "Gen-See Capital Corporation",
+  "Generate-Ubiquity Smart Cities I, LLC",
+  "Geoff Bloss Chief Executive Officer PayG, LLC",
+  "Gjades Shipping Company",
+  "Glencore plc",
+  "Global Fortune Shipping Limited",
+  "Global Interface Company",
+  "Global Telesat Corp",
+  "Global Telesat Services Corp",
+  "Gnubrokers of Government, Inc",
+  "Gogo Inc",
+  "Golden VinzClortho, LLC",
+  "Google LLC",
+  "Grain Communications Opportunity Fund",
+  "Granted47 Early Delivery48 Bluum Corporation",
+  "Great Sail Shipping Limited",
+  "Green Forest Community Development, Inc",
+  "Green Mountain Coffee Roasters, Inc",
+  "Greene a/k/a David Green",
+  "Greenforest Community Baptist Church, Inc",
+  "Greenville Riverboat, LLC",
+  "Group is owned by Oppenheimer & Co., L.P",
+  "Grow America Fund",
+  "Guggenheim Corporate Funding, LLC",
+  "Gulf Coast Realty Services, Inc",
+  "GulfCo of Alabama, LLC",
+  "Gulfside Casino Partnership",
+  "H&R Block, Inc",
+  "HII",
+  "HII. Beneficial National Bank",
+  "HMTV",
+  "HNAH",
+  "HRB Tax Group, Inc",
+  "HRDC with responsibilities of administering a revolving loan fund",
+  "HSBC",
+  "HSBC Financial Services Corp",
+  "HSBC Holdings",
+  "HSBC USA Inc",
+  "HSBC plc",
+  "Hall Tees & Promotions, L.L.C",
+  "Hall Tees, Inc",
+  "Harley Davidson, Inc",
+  "Harris Bank",
+  "Harris Bank National Association, Chicago, Illinois",
+  "Harris Bank Palatine, N.A",
+  "Harris Bankcorp, Inc",
+  "Harris Financial Corp",
+  "Hawk Manufacturing Corporation",
+  "Headwaters Regional Finance Corporation",
+  "HealthBenefit Bank",
+  "Hibernia",
+  "Hibernia Corp",
+  "Hitachi Consulting Corp",
+  "Hoffman Law Group",
+  "Hoffman Law Group Irvine Web Works, Inc",
+  "Homeowners Loan Corp",
+  "Honor Capital Holdings",
+  "Horizon Acquisition Parent LLC",
+  "Horizon All West Holdings, Inc",
+  "Hospira Healthcare India Private Limited",
+  "Hospira Merger Sub Perkins Holding Company",
+  "Hospira, Inc",
+  "Household Finance Corporation",
+  "Huione Group",
+  "Huntington Bancshares",
+  "Huntington Bank",
+  "Huntington National Bank, Columbus, Ohio",
+  "I A Petitioner Holly Farms Corporation",
+  "IBG LLC",
+  "IBG LLC. IBG LLC",
+  "ICON INTERNATIONAL HOLDINGS, INC",
+  "IDEAL Group",
+  "II auction support awarded to Crystal Automation Systems, Inc",
+  "IMB Holdco LLC",
+  "IMCPE 2019 Inc",
+  "IMCPE Arbutus GP Inc",
+  "IN THE MATTER OF RAINBOW CASINO VICKSBURG PARTNERSHIP, L.P",
+  "INVESCO PLC",
+  "IPC",
+  "IPM agreement with ARC Resources U.S. Corp",
+  "IPM agreement with Tourmaline Oil Marketing Corp",
+  "ISC, Inc",
+  "ISPC Application Letter 5891 AST Telecom, LLC",
+  "Icahn Enterprises L.P",
+  "Identidad Advertising Development LLC",
+  "Illinois Bell Telephone, LLC",
+  "In the Matter of COMMONWEALTH EQUITY SERVICES, LLP",
+  "In the Matter of CSC Wireless, LLC",
+  "In the Matter of Cellco Partnership",
+  "In the Matter of Greenville Riverboat, LLC",
+  "In the Matter of Gulfside Casino Partnership",
+  "In the Matter of Lady Luck Mississippi, Inc",
+  "In the Matter of Palo Cooperative Telephone Association",
+  "In the Matter of PayG, LLC",
+  "In the Matter of Point Broadband Fiber Holding, LLC",
+  "In the Matter of Puerto Rico Telephone Company, Inc",
+  "In the Matter of Sahara Dunes Casino, LP",
+  "In the Matter of Southwestern Bell Telephone Company",
+  "In the Matter of Sparks Nugget, Inc",
+  "Inc .................. Dionysus Acquisition, LLC",
+  "Inmate Calling Solutions, LLC",
+  "Interactive Brokers Group, Inc",
+  "Intercam Futures, Inc",
+  "International Public Terminal LLC",
+  "International Transmission Company",
+  "Intrado Corporation",
+  "Intrust PLC",
+  "Invesco Ltd",
+  "Investment Intelligence Corporation",
+  "Investment Management Company",
+  "Investments, Ltd",
+  "Investor Source Group",
+  "Iowa limited liability company",
+  "Iran Mobin Electronic Development Company",
+  "Iran's Naval Defence Missile Industry Group",
+  "Island Peer Review Organization, Inc",
+  "Issue 11 Case Name Page CSC Wireless, LLC",
+  "JADES",
+  "JPMCB",
+  "JPMCB will acquire WF Auto Exchange, LLC",
+  "JPMP Master Fund Manager, LP",
+  "JPMTC",
+  "JSToogood, LLC",
+  "James Valley Cooperative Telephone Company",
+  "John Hancock Life Insurance Company",
+  "Jones Heward Investment Counsel Inc",
+  "Jones Heward Investment Management Inc",
+  "Jones Heward Investments Inc",
+  "KENTCO Corporation",
+  "KEYSTONE CAPITAL PARTNERS, INC",
+  "KKR Fund",
+  "KKR Holdings L.P",
+  "KKR Wand GP LLC",
+  "KKR Wand Investors L.P. KKR Wand GP LLC",
+  "Keurig filed suit against JBR, INC",
+  "Keurig, Incorporated",
+  "KiOR Columbus, LLC",
+  "Kinex",
+  "King Mail & Wireless Inc",
+  "King Romans Company Limited",
+  "L.P. Radiate Holdings GP, LLC",
+  "LCB",
+  "LFSC",
+  "LFSC. The",
+  "LISC",
+  "LLC BellSouth Telecommunications, LLC",
+  "LLC Orion Processing, LLC",
+  "LPB MHC LLC",
+  "LSF VIII International 2",
+  "LaSalle Bank",
+  "Ladoga Menedzhment, OOO",
+  "Lady Luck Mississippi, Inc",
+  "Laredo National Bank",
+  "Latam Telecommunications, LLC",
+  "Leasetec Corporation",
+  "LedgerX LLC",
+  "Leerink Partners LLC, now SVB Leerink Holdings LLC",
+  "Lenox Savings Bank",
+  "Leo Cable LLC",
+  "Letter from Counsel to CSC Wireless, LLC",
+  "LiLAC Ventures Ltd",
+  "Liberty Defense Holdings, Ltd",
+  "Liberty National Bank",
+  "Licensed IP to DH Technologies Development PTE Ltd",
+  "Licensee, LLC",
+  "Light Company BellSouth Telecommunications, LLC",
+  "Lilaboc, LLC",
+  "Limited Liability Company Concord Management and Consulting and Concord Catering",
+  "Limited Liability Company Investment Company Abros",
+  "Lipcon. 1 Atlantic Sounding Co., Inc",
+  "Living Trust",
+  "Lockheed Martin Corp",
+  "Logix Acquisition Company",
+  "Logix Holdings",
+  "Long Term-Short Term, Inc",
+  "Low Country Carriers, Inc",
+  "Lumen Technologies, Inc",
+  "Luzy",
+  "M Finans",
+  "M Images, Inc",
+  "M&I Zion Investment II Corp",
+  "M&INA wishes to retain M&I Zion Holdings, Inc",
+  "MADAJ Dezines, Ltd",
+  "MAG DS Corporation",
+  "MCO LP",
+  "MEDICAL EQUIPMENT & DRUGS INTERNATIONAL CORPORATION",
+  "MERSCORP Holdings",
+  "MERSCORP Holdings, Inc",
+  "MFI Insurance Agency, Inc",
+  "MIDAS",
+  "MIP GLOBAL, INC",
+  "MIRATH S.A.L. Mirath",
+  "MJ Moore & Company LLC",
+  "MLBUSA Community Development Corp",
+  "MSCS Financial Services, LLC",
+  "MTXC",
+  "Maddie LLC",
+  "Management LLC",
+  "Management of Constellation Brands, Inc. and subsidiaries",
+  "Manufacturers Life Insurance Company",
+  "Manufacturing, Inc",
+  "Mard Inc",
+  "Marketing, LLC",
+  "Matrix Bancorp, Inc",
+  "Matrix Financial Services Corporation",
+  "Mayflower Bank",
+  "McCarthy GP VIII, LLC",
+  "McCartney’s",
+  "McCollum’s bill singles out Pharmacia & Upjohn Company Inc",
+  "McGladrey & Pullen, LLP",
+  "McKesson Corporation",
+  "Mehr Eqtesad Iranian Investment Company",
+  "Merchants Trust Company, National Association",
+  "Merrill Lynch Bank, USA, Salt Lake City, Utah",
+  "Meta Platforms, Inc",
+  "MetaFund Corp",
+  "Metro Remittance Center, Incorporated",
+  "Metrobank Group",
+  "Mian, Inc",
+  "Mid-Kan Well Service, LLC",
+  "MidWisconsin Bank",
+  "Milan Group, Inc",
+  "Mississippi against AMCORE Consumer Finance Company, Inc",
+  "Missouri Network Alliance, LLC",
+  "Mitel Capital Corp",
+  "Mobarakeh Steel Company",
+  "Moonstorm Enterprises LTD",
+  "Morgan Stanley Domestic Holdings",
+  "Morrison & Co Infrastructure Partnership",
+  "Mortgage Company",
+  "Motherboard",
+  "Mountain Bank",
+  "Mountain Communications, LLC",
+  "Mozart Maritime Inc",
+  "Mr. Nadelman has been President of Ninety Holding",
+  "Mutual Advisers, LLC",
+  "N.A. Orion Processing, LLC",
+  "N.A., McLean, Virginia",
+  "NALH",
+  "NARSIS",
+  "NBC Mobil Money Mobil Money, LLC",
+  "NBGL. Household Bank",
+  "NBH Holdings",
+  "NBH National Bank",
+  "NBL",
+  "NBT Bancorp",
+  "NBT Bank, National Association, Norwich, New York",
+  "NEC Networks, LLC",
+  "NFS GROUP, LLC",
+  "NMS Newtek Merchant Solutions, LLC",
+  "NPV Engineering Open Joint Stock Company",
+  "NWF.10 ZFN provides service as the inc",
+  "NWF.11 ZFN provides service as the inc",
+  "NWF.16 Ziply Wireless",
+  "NYAG charged Pennsylvania-based payday lenders TC Services Corporation",
+  "NYBDC Local Development Corporation",
+  "NYSE Arca Holdings",
+  "NYSE Group",
+  "Nabah",
+  "Nadelman has been President of Ninety Holding",
+  "Naftiran Intertrade Company",
+  "National Association, Miami, Florida",
+  "National Iranian Oil Company",
+  "National Lottery AD",
+  "National Securities Clearing Corporation Fixed Income Clearing Corporation",
+  "National Securities Corporation",
+  "National Telecom, LLC",
+  "NationsBanc Mortgage Corporation",
+  "NationsBank include data on NationsBanc Mortgage Corporation",
+  "Nesbitt Burns Corp",
+  "Nesbitt Burns, Inc",
+  "Neuberger Berman LLC",
+  "Neuberger Berman, Inc",
+  "New Day Atlanta, LLC",
+  "New Ka'ena, Inc",
+  "New Markets Support Company",
+  "New Rez LLC",
+  "New York Community Bancorp",
+  "New York Mercantile Exchange, Inc",
+  "New York limited liability company",
+  "Newtek Bank",
+  "Newtek Business Credit Solutions SBL Small Business Lending, LLC",
+  "Newtek Business Lending, LLC",
+  "Newtek Business Services Corp",
+  "Newtek Business Services Holdco 1, Inc",
+  "Newtek Commercial Lending, Inc",
+  "NewtekOne, Inc",
+  "Nexsys Electronics Inc",
+  "NextEra Energy Duane Arnold, LLC",
+  "NextMetro, LLC",
+  "Noble Acquisition, Inc",
+  "Norcross works in business development at WWB Holdings LLC",
+  "North American Transit Services Association",
+  "Northeast Illinois Regional Commuter Railroad Corporation",
+  "Northern Valley Communications, LLC",
+  "Northgroup Preferred Capital Corporation",
+  "Norton Simon, Inc",
+  "Novacap Holdings",
+  "Novacap Management Inc",
+  "Novyi Vek - Media",
+  "OCC also approves the acquisition of Mid-Wisconsin Investment Corporation",
+  "OCC required The Laredo National Bank",
+  "OK, LLC",
+  "OOD",
+  "OTC Markets Group",
+  "OWB",
+  "Ocean Marvel Shipping Company",
+  "Off Shore, an import/export company",
+  "Oklahoma Forge, LLC",
+  "Old Dutch Mustard Company",
+  "Old Dutch Mustard Company, Inc",
+  "Old Games EOOD",
+  "OmniPlus Capital Corporation",
+  "On January 6, 2012, BMO Financial Corp",
+  "OneWest Bank",
+  "Onvoy, LLC",
+  "Open SAN Consulting, LLC",
+  "Oppenheimer",
+  "Oppenheimer & Co",
+  "Oppenheimer & Co., Inc",
+  "Oppenheimer Group, Inc",
+  "Opportunity Bancshares",
+  "Option One Mortgage Corporation",
+  "Optivon",
+  "Orange County Bank",
+  "Orion Processing, LLC",
+  "Ow Maritime Inc",
+  "Owl International Inc",
+  "PAROPES CORPORATION",
+  "PAYO Digital Bank, N.A",
+  "PCLC Vessel Owner I, Inc",
+  "PCLI. Telstra Holdings Pty Limited",
+  "PGEC Enterprises, LLC",
+  "PHCC LLC",
+  "PICCOLI Defendants Gen-See Capital Corporation",
+  "PMTWorks Payroll, LLC",
+  "PNA. Discussion A",
+  "PNC Bank",
+  "PNC Financial Services Group",
+  "PNC Preferred Funding LLC",
+  "PPC 1 Limited",
+  "PRG Holdings",
+  "PRIZIM Inc",
+  "PTI Pacifica Inc",
+  "Palo Cooperative Telephone Association",
+  "Pampa Beverages, LLC",
+  "Panda Bank",
+  "Panhandle Telecommunications Systems, Inc",
+  "Pardo Family Holdings, Ltd",
+  "Pardo Family Trust",
+  "Parent company of ISG Jet, LLC",
+  "Paris Bancshares, Inc",
+  "Pawnee Iron Works, LLC",
+  "PayEco the parent company",
+  "PayG, LLC",
+  "Payoneer Global Inc",
+  "Payoneer Global Inc. and its subsidiaries",
+  "Payoneer Global Inc.’s",
+  "Payoneer Inc",
+  "Payoneer US LLC",
+  "Pelsue Company",
+  "People’s Mortgage Investment Company",
+  "People’s United Bank",
+  "Perkins Holding Company",
+  "Permanent Insurance, Inc",
+  "Perpetual US, Inc",
+  "Perpetual, plc",
+  "Pfizer Inc",
+  "Pfizer NAI No Action Indicated NovaQuest NovaQuest Co-Investment Fund",
+  "Point Blank Solutions, Inc",
+  "Point Broadband Fiber Holding, LLC",
+  "Point-a-Pitre",
+  "Polar Tankers, Inc",
+  "Pole Attachment Complaint of Southwestern Bell Telephone Company",
+  "Policy Division Information Actions Taken Mountain Communications, LLC",
+  "Pooled Superannuation Trust",
+  "Popular Insurance, Inc",
+  "Post House Capital LLC",
+  "Post Road Digital Infrastructure Fund",
+  "Power Company",
+  "Premier American Bank, N.A",
+  "Premier Investment Group SAL Offshore",
+  "Premium Assignment Corporation",
+  "Premium Payment Plan, LLP",
+  "President of Carver Development CDE, LLC",
+  "President of Crown Imports LLC",
+  "President of Gen-See Capital Corporation",
+  "Prevezon",
+  "Prime Bank",
+  "Prime Capital Services, Inc",
+  "Prime Rate and Return, LLC",
+  "Prince Holding",
+  "Priority Window 7 Pleading Cycle Established for Cellco Partnership",
+  "Promontory will also rely on Promontory Risk Review, LLP",
+  "Proposal PNC Bank",
+  "Proton Energy Systems, Inc",
+  "Pte Ltd",
+  "Puerto Rico Telephone Company, Inc",
+  "Puerto Rico company",
+  "Pulaski-White Rural Telephone Cooperative, Inc",
+  "Putnam Investments, LLC",
+  "Putnam, LLC",
+  "QED Group LLC",
+  "Qwest Corporation",
+  "RBC USA Holdco Corp",
+  "REIT Preferred Stock offering of Northgroup Preferred Capital Corporation",
+  "RSI Insurance Agency, Inc",
+  "RSM McGladrey, Inc",
+  "Radiate Holdings GP, LLC",
+  "Rainbow Casino Vicksburg Partnership, L.P",
+  "Raymond James Bank, FSB",
+  "Raymond James Financial, Inc",
+  "Real Estate for Philips Electronics North America, Inc",
+  "Real Estates Int Ltd EOOD",
+  "Receiver for Rex Venture Group LLC",
+  "Regulation of Certain Subsidiaries SVB Leerink LLC",
+  "Regulatory Affiliates SVB Leerink LLC",
+  "Renova Group",
+  "Republic First Bancorp",
+  "Republic First Bank",
+  "Resultant Bank",
+  "Reverse Mortgage Solutions, Inc",
+  "Richardson, Texas",
+  "Riggs National Corp",
+  "Rigid Security Group, Inc",
+  "Rit",
+  "Robinhood Bank, N.A",
+  "Robinhood Markets, Inc",
+  "Rocket Mortgage, LLC",
+  "Rockville Bank",
+  "Rockville Bank Mortgage, Inc",
+  "Rockville Financial, Inc",
+  "Rolka Loube Saltzer Associates, LLC",
+  "Rosemont Seneca Partners",
+  "Rouse Company",
+  "Royal Bank",
+  "Royal Philips, N.V",
+  "Royce & Associates, LP",
+  "SBL Small Business Lending, LLC",
+  "SCCL. Optus Networks Pty Limited",
+  "SKY CAPITAL LLC",
+  "SMART",
+  "SOFTBANK Finance America Corp",
+  "SPAs with PetroChina International Company Limited",
+  "SPLNG. Cash",
+  "SPLNG. LNG revenues inc",
+  "SRC LLC",
+  "SVB Leerink Capital LLC",
+  "SVB Securities Capital LLC",
+  "SVB Securities LLC",
+  "Sabine Pass Tug Services, LLC",
+  "Sahara Dunes Casino, LP",
+  "Sandia Corporation",
+  "Sands Point Consulting, LLC",
+  "Sanswire Networks LLC",
+  "Schulz Brau Brewing, LLC",
+  "Second Bank & Trust",
+  "Section 214 authorization held by USCC Wireless Holdings, LLC",
+  "Security Agreement between NBL SPV I, LLC",
+  "Security Agreement between NBL SPV1, LLC",
+  "Security National Bank",
+  "Sedona Pacific Housing Partnership",
+  "See Application for Review of Southwestern Bell Telephone Company",
+  "See Commonwealth Equities, LLP",
+  "See Southwestern Bell Telephone Company",
+  "Seguro Medico LLC",
+  "Serigraphiclab",
+  "Servis One, Inc",
+  "Sethi Petroleum, LLC",
+  "Shares",
+  "Sierra Pacific Power Company",
+  "Siguro EOOD",
+  "Silicon Valley Bank",
+  "Silicon Valley Bridge Bank, N.A",
+  "Silicon Valley Private Bank",
+  "Silver Asset Management Group",
+  "SingTel EInvestments Pte Ltd",
+  "Singtel Optus Pty Limited",
+  "Skyline",
+  "Small Business Financial Solutions, LLC",
+  "Small Business Lending, LLC",
+  "So Fi Lending Corp",
+  "SoFi Lending Corp",
+  "Social Finance, Inc",
+  "Source One Mortgage Company",
+  "South Atlantic International Bank, Limited",
+  "South Dakota in 2019. Anchorage Trust",
+  "Southwestern Bell Telephone Company",
+  "Southwestern Bell Telephone Company, LLC",
+  "Sovereign Bank",
+  "Sovereign Bank, Wilmington, Delaware1",
+  "Sovereign Real Estate Investment Trust",
+  "Sparks Nugget, Inc",
+  "Spectrotel Holding Company, LLC",
+  "Splendid Lexy Trading Company",
+  "Square Funding LLC",
+  "Standard Finance Ltd",
+  "Starship Merger Sub I Inc",
+  "Station",
+  "Stewardship Financial Corporation",
+  "Stonepeak Associates IV LLC",
+  "Sub-Topco Limited",
+  "SubTopco Limited",
+  "Subchapter S corp",
+  "Subchapter S corporation unless the Holding Company",
+  "Subsequently HSBC North Amercia Holdings",
+  "Sumarrase, Inc",
+  "Sun Ocean Shipping Inc",
+  "SunTrust Bank",
+  "Sunshine Shopping Center, Inc",
+  "Syriatel",
+  "T-Mobile",
+  "T-Mobile US, Inc",
+  "T-Mobile USA, Inc",
+  "TALF borrowing by funds managed by FrontPoint LLC",
+  "TCT Holdings",
+  "TD Banknorth, N.A., Portland, ME",
+  "TDNA",
+  "TDNA US P&C Holdings",
+  "TFM",
+  "TPG Telecom Limited",
+  "TRUE NORTH FINANCE CORPORATION",
+  "TXO Production Corporation",
+  "Tara Steel Trading GmbH",
+  "Taurus Gas Company",
+  "Tax Product Services, LLC",
+  "Telephone Company, LLC",
+  "Televicentro of Puerto Rico, LLC",
+  "Telmex Holdings, LLC",
+  "Telstra International Holdings",
+  "Temple Securities, Ltd",
+  "Temple Trust, Ltd",
+  "Tempo Venture, Inc",
+  "Teodor Shipping L.L.C",
+  "Texan Bank",
+  "TierOne Bank",
+  "TierOne Corporation",
+  "Tim Ron Enterprises, LLC",
+  "Titan Bank, N.A",
+  "Top Technologies SARL",
+  "Tourmaline Oil Corp",
+  "TowerBrook’s Fund",
+  "Trans Merits Co. Ltd",
+  "Transfer of Control of Mountain Communications, LLC",
+  "Transfer of Control of Winn Telephone Company",
+  "Transmission Company",
+  "Transportation Alliance Bank",
+  "Trilegiant Corporation",
+  "Trump Taj Mahal Associates, LLC",
+  "TwinSpan Capital Management, LLC",
+  "Tyson Foods, Inc",
+  "U.S. Bancorp Community Development Corporation",
+  "U.S. Bank",
+  "U.S. corp",
+  "U.S.-Central America segment of Maya-1. AT&T Corp",
+  "U.S.-based Freeport-McMoRan Copper & Gold Inc",
+  "UB Properties, LLC",
+  "UCB Securities, Inc",
+  "USAA Federal Savings Bank",
+  "USAA Savings Bank",
+  "USCC Wireless Holdings, LLC",
+  "USX",
+  "UVNV, LLC",
+  "UW Trust Company",
+  "UWBK Fund Management, Inc",
+  "Unguaranteed Accrual 20212021-12-310001587987LaHoBa, LLC",
+  "Union Electric Company",
+  "United Bank",
+  "United Financial Bancorp, Inc",
+  "United Western Bancorp, Inc",
+  "United Western Bank",
+  "Universal Processing Services of Wisconsin, LLC",
+  "Uruguay company",
+  "Utah Limited Liability Company",
+  "VASLATI",
+  "VL Wallace Investments, LLC",
+  "VTA Telecom Corp",
+  "Vanguard Fiduciary Trust Company",
+  "Vanguard Group",
+  "Vanguard Group, Inc",
+  "Veinto Global Marine Inc",
+  "Verda Gas Co Ltd",
+  "Vero Broadband Holdings",
+  "Vero Broadband, LLC",
+  "Vice President of Business Development of First National Bank",
+  "Vice President of Trading at Cheniere International, Inc",
+  "Viettel Group",
+  "Vihrogonika AD",
+  "Virgina limited liability company",
+  "Virginia Financial Group",
+  "Virginia limited liability company",
+  "VoIP LLC",
+  "Volga Group",
+  "Vonage Business Inc",
+  "Vonage Holdings",
+  "WCTA Wireless, Inc",
+  "WFS Web Investments, Inc",
+  "WHEREAS, Lehman Brothers Holdings Inc",
+  "WOODBRID GE LUXURY HOMES OF CALIFORNI A, INC",
+  "WOODBRIDGE GROUP OF COMPANIES, LLC",
+  "WWB Holdings LLC",
+  "Wachovia Bank",
+  "Wachovia Corporation",
+  "Walt Disney Company",
+  "Warren Drilling, LLC",
+  "Washington Mutual Bank",
+  "Washington Mutual, Inc",
+  "Wecom Newco, Inc",
+  "Weeks Marine, Inc",
+  "Wellington Group",
+  "Wellington Group Holdings LLP",
+  "Wellington Investment Advisors Holdings LLP",
+  "Wellington Management Group",
+  "Wellington Trade, Inc",
+  "Wells Fargo & Company",
+  "Wells Fargo Bank",
+  "Wells Fargo Bank, N.A",
+  "Wells Fargo Home Mortgage, Inc",
+  "Wells Fargo Municipal Capital Strategies, LLC",
+  "West Technology Group",
+  "Western Consumer Services, Inc",
+  "Western Financial Bank",
+  "Westfin Insurance Agency, Inc",
+  "Wilshire Holdings I, Inc",
+  "Winn Telephone Company",
+  "Winnebago Cooperative Telecom Association",
+  "Wireless, LLC",
+  "Wisconsin; James Putman",
+  "Wise US Holdings",
+  "Wise plc",
+  "Women's Bank, N.A",
+  "WorldVu Satellites Limited",
+  "Worth Bancorporation, Inc",
+  "Worth National Bank, Lake Worth, Texas",
+  "XPCC",
+  "XRP II, LLC",
+  "Zippytech LLC",
+  "Zurich Insurance Company",
+  "acquiring bank",
+  "holdings of Lehman Brothers Asset Management LLC",
+  "management of United Financial Bancorp, Inc",
+  "shipping company Cora Lines Inc"
+ ],
+ "person_names": [
+  "AL KAWTHAR Al Kawthar",
+  "ARIC YERUSALEM SWARTZ",
+  "Abdulwahab",
+  "Abu Yasir",
+  "Act",
+  "Adam",
+  "Adley H. Abdulwahab",
+  "Advanced Tech Solutions",
+  "Advertising Development",
+  "Against Fabrice Polynice",
+  "Agroholding Kuban",
+  "Aiman Ammar",
+  "Ajaka",
+  "Ajay Ghanekar",
+  "Al Duais",
+  "Al-Arabi",
+  "Al-Cardinal",
+  "Alaska Native",
+  "Allwaste Onsite",
+  "Alphabet",
+  "Alphaboost Purchaser",
+  "Alpine Communications",
+  "Amir Katrangi",
+  "Angel Eduardo Torres",
+  "Anita Sands",
+  "Araneks DOO",
+  "Aras Habib",
+  "Arceo",
+  "Arturo Quinonez Ltda",
+  "Ashford University",
+  "Ashraf Seed Ahmed",
+  "Assembles",
+  "Atlas Exchange",
+  "Aubrey Drake Graham",
+  "BNP Paribas",
+  "BRIGHT GOLD",
+  "BTI Computer Systems",
+  "Bank Rossiya",
+  "Bank Sepah",
+  "Bazzi",
+  "Bazzoni",
+  "Bell Canada",
+  "Benedicto Quinones",
+  "Benjamin Twiggs",
+  "Bertolino",
+  "Brian D. Pardo",
+  "Bridgepoint Education",
+  "British Petro",
+  "Business Automation Technologies",
+  "CIVIL DAVID GREENE",
+  "CJSC Zest",
+  "CON NV",
+  "Cable Design",
+  "Cable One",
+  "Carbite Golf",
+  "Carlos Goodspeed",
+  "Carolina",
+  "Central Park West",
+  "Chambers Memorial Hospital",
+  "Charles Keinath",
+  "Charlotte",
+  "Chen",
+  "Chester Republican",
+  "China Mobile Hong",
+  "Citizens Telephone Cooperative",
+  "City National",
+  "Cleanup Oak Ridge",
+  "Cogeco Communications",
+  "Common Stock",
+  "Communications",
+  "Community Health Services",
+  "Concorde Wyvern Atlantic",
+  "Connect Topco",
+  "Connections Telehealth Consortium",
+  "ConocoPhillips",
+  "Coral Wireless",
+  "Credit Union",
+  "DAVID GREENE",
+  "DAVID PRAISE",
+  "Dakota Ridge",
+  "Davit Gasparyan",
+  "Decart OOD",
+  "Deerfield Media",
+  "Defense Finance",
+  "Delaware1",
+  "Denies Telplex Communications",
+  "Denis Katsyv",
+  "Deutsche Telekom",
+  "Digital Security",
+  "Digital Services",
+  "Discover Financial Services",
+  "Don McGhan",
+  "Douglas Kaden",
+  "Duane Arnold Energy Center",
+  "Durmaz",
+  "Dwayne Williams",
+  "ELIJAH BANG",
+  "El Paso",
+  "Electronic Broking",
+  "Elemento",
+  "Elemento Oil",
+  "Emerald Homes",
+  "Eric Lovy",
+  "Erik Duvall",
+  "Eurobet OOD",
+  "Eurobet Partners OOD",
+  "Eurogroup Engineering",
+  "Evelyn Katirina Pattison",
+  "Exchange Act",
+  "FREDERIC ELM",
+  "Fannie Mae",
+  "Federal Credit Union",
+  "Feng Zheng",
+  "Field Supervisor",
+  "Fleet",
+  "Franklin Resources",
+  "Freddie",
+  "Fujisawa Pharmaceutical Co",
+  "Futurum",
+  "GAS ENDURANCE",
+  "GAS STRENGTH",
+  "GREAT SAIL",
+  "Games Unlimited",
+  "Gary Dempze",
+  "General Motors",
+  "Gennaddy Timchenko",
+  "George Haswani",
+  "Global Trading Group NV",
+  "GlobeTel",
+  "Golden West",
+  "Goode",
+  "Grant County",
+  "Gregg Gibbs",
+  "Gridiron Fiber Licensee",
+  "Hamas",
+  "Hao He",
+  "Harmon",
+  "Hayim Hebrew Academy",
+  "Heidari",
+  "Hesco Engineering",
+  "Holdco",
+  "Household International",
+  "Howard Phillips",
+  "Hunter Biden",
+  "Hunter Communications",
+  "Hyundai Capital America",
+  "Idaho Potato Packers",
+  "Igor Rotenberg",
+  "ImOn",
+  "Indian Peak",
+  "Ireland",
+  "Island Public Radio",
+  "Ismael Tash",
+  "JPMP SBIC",
+  "JSB Sobinbank",
+  "Jacqueline Dawn Reses",
+  "James Doyle",
+  "James Kay",
+  "Jared Edward Jaurequi",
+  "Jawad Nur-al-Din",
+  "Jennifer L. Dodge",
+  "Jin Bei Casino",
+  "John Abio",
+  "John Gregg",
+  "Joseph Nelson",
+  "Joseph Vitale",
+  "KING CHUEN TANG",
+  "Kevin McCarthy",
+  "Kirill Shamalov",
+  "Kovalevskij",
+  "Kyaw Win",
+  "LStar Equity",
+  "LUNA LUSTER",
+  "Lana TV",
+  "Larry Dean Harmon",
+  "Last",
+  "Law",
+  "Lawrence Moses",
+  "LeBoeuf",
+  "Leal",
+  "Lee",
+  "Leisa Eckerle Hankins",
+  "Lembergs",
+  "Leon Ali Parvizian",
+  "Licensed Marks",
+  "Lobaye Invest",
+  "Lucas",
+  "Luis",
+  "Lumen",
+  "MIGHTY NAVIGATOR",
+  "MING XU",
+  "MIP V GP",
+  "Macquarie Infrastructure",
+  "Mammut Diesel",
+  "Mammut Industries",
+  "Marie Graziosi",
+  "Mary Pattison Brodess",
+  "Matrix Settlement",
+  "McCarthy Capital VIII",
+  "McDuff",
+  "McNaul",
+  "Michael Miller",
+  "Milton Ayimadu",
+  "Mire Ali",
+  "Mississippi-Vicksburg",
+  "Mohamed Abukar Sufi",
+  "Mohammad Vakili",
+  "Morgan Stanley",
+  "Mortgage Servicing Rights",
+  "Murphy",
+  "Mutual",
+  "NYSE Euronext",
+  "National Development Council",
+  "New KKR Parent",
+  "New Tang Dynasty",
+  "New York",
+  "New York City’s",
+  "Newtek",
+  "North Carolina",
+  "North Side School",
+  "Novacap",
+  "Nove Development",
+  "Nove Internal",
+  "Nunns",
+  "OCEAN RADIANCE",
+  "OCEAN WAVE",
+  "OFFISCOOP NV",
+  "OTC Link",
+  "Oaks Card Club",
+  "Old National",
+  "Oleg Deripaska",
+  "Omar Abukar Sufi",
+  "Optima Freight",
+  "PATRIC KEN BACCAM",
+  "PAVLICO III",
+  "PHYLLIS RICCI QUINCOCES",
+  "Pawel",
+  "People’s Capital",
+  "Perma Serve",
+  "Pharmacy Doctors Enterprises",
+  "Planet Capital",
+  "Polo Trading",
+  "Possession",
+  "President Obama",
+  "Price Waterhouse",
+  "Prigozhin",
+  "Profesyoneller Elektronik",
+  "Promontory",
+  "QUANTUM STAR",
+  "Rami Makhluf",
+  "Randy Green",
+  "Regatta Point Villas",
+  "ResCap",
+  "Retirement Management Services",
+  "Rich Dad",
+  "Richard Magnuson",
+  "Ripple Labs",
+  "Robinson",
+  "Ruben Tatulian",
+  "Rubin Chen",
+  "Russian Machines",
+  "Ryan Root",
+  "SHAHED PHARM Shahed Pharm",
+  "SHEZAD AKBAR",
+  "STRAWMAN FULL NAME",
+  "SVB Financial",
+  "SVB Leerink",
+  "SVB Securities",
+  "SWIFT FALCON",
+  "Safarriyeh",
+  "Sakarya",
+  "Samer Foz",
+  "Samuel Redick",
+  "See Kristen Selph",
+  "Senator William",
+  "Services",
+  "Seventh Avenue II",
+  "Shahid Alamolhoda Industries",
+  "Sierra Pacific Resources",
+  "Sioux Indian Community",
+  "Solutions",
+  "South Africa",
+  "Southern Nevada",
+  "Spectrotel",
+  "Stephen Vogel",
+  "Storefront School",
+  "Subsidiaries",
+  "Sunny Joseph Barkats",
+  "Support Agreements Shares",
+  "Syntrio",
+  "T-Mobile USA",
+  "THOMAS SCHROEPFER",
+  "Teachers Insurance",
+  "Technology Consortium Foundation",
+  "Technotar Engineering",
+  "Telxius Cable Am",
+  "Telxius Telecom",
+  "Tesic",
+  "Tetrix Financial",
+  "Texas RSA No",
+  "Thomas David King",
+  "Thrace Foundation",
+  "Time Warner",
+  "Todd P. Robinson",
+  "Torah Toras Yisroel",
+  "Tower Elite",
+  "Trustee",
+  "UScellular",
+  "United States Olympic Committee",
+  "United Western BankGeneral",
+  "VINAY KUMAR NEVATIA",
+  "VMTP Shares",
+  "Vabo Management",
+  "Vabo Systems",
+  "Valley Telephone",
+  "Vectura Trans DOO",
+  "Ventspils Freeport Authority",
+  "Verizon",
+  "Vesna Hotel",
+  "Vice Media",
+  "Vicksburg",
+  "Viktor Vekselberg",
+  "Voltra Transcor Energy BVBA",
+  "Wael Bazzi",
+  "Wallace Construction",
+  "Wave",
+  "Wells Fargo",
+  "Wilmington",
+  "Woltemas",
+  "Wong",
+  "Work Number",
+  "Working Capital Finance",
+  "XIN WANG",
+  "YATALIE CAPITAL MANAGEMENT",
+  "YING KIT YU",
+  "YITZCHA K ZIGDON",
+  "YITZCHAK ZIGDON",
+  "YOLANDA C. VELAZQUEZ",
+  "YU-CHENG LIN",
+  "Yevgeniy Prigozhin",
+  "Yoany Vaillant",
+  "Yuri Kovalchuk",
+  "Zepeda",
+  "Zhao Wei",
+  "Zlochevsky"
+ ],
+ "relationships": [
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": null,
+   "key": "First National Bank|PARENT|First National Bank, Edinburg, Texas",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-06-11",
+   "key": "GCOF IV 123Net Aggregator, L.P|PARENT|Delaware limited liability company",
+   "last_seen": "2024-06-11",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2003-10-29",
+   "key": "WHEREAS, Lehman Brothers Holdings Inc|BENEFICIAL_OWNER|Neuberger Berman, Inc",
+   "last_seen": "2003-10-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-10-07",
+   "key": "NWF.11 ZFN provides service as the inc|PARENT|Delaware limited liability company",
+   "last_seen": "2024-10-07",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-08-15",
+   "key": "Wecom Newco, Inc|PARENT|Delaware limited liability company",
+   "last_seen": "2024-08-15",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-04-21",
+   "key": "Golden VinzClortho, LLC|BENEFICIAL_OWNER|GCV Holding",
+   "last_seen": "2023-04-21",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "gao.gov"
+   ],
+   "first_seen": "2015-11-16",
+   "key": "Royal Philips, N.V|PARENT|Real Estate for Philips Electronics North America, Inc",
+   "last_seen": "2015-11-16",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1998-04-02",
+   "key": "BankBoston Corp|PARENT|acquiring bank",
+   "last_seen": "1998-04-02",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Tourmaline Oil Corp|PARENT|IPM agreement with Tourmaline Oil Marketing Corp",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Prince Holding|BENEFICIAL_OWNER|Jin Bei Casino",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-06-11",
+   "key": "Winnebago Cooperative Telecom Association|PARENT|WCTA Wireless, Inc",
+   "last_seen": "2024-06-11",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2007-03-20",
+   "key": "PNC Bank|PARENT|PNC Preferred Funding LLC",
+   "last_seen": "2007-03-20",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2026-06-25",
+   "key": "Huione Group|PARENT|Panda Bank",
+   "last_seen": "2026-06-25",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Pfizer NAI No Action Indicated NovaQuest NovaQuest Co-Investment Fund|PARENT|Hospira Merger Sub Perkins Holding Company",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2018-05-30",
+   "key": "AMPF Holding|PARENT|Ameriprise Financial Services, Inc",
+   "last_seen": "2018-05-30",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2024-12-31",
+   "key": "Payoneer Global Inc. and its subsidiaries|PARENT|Commerce Services Co., Ltd",
+   "last_seen": "2024-12-31",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2025-12-31",
+   "key": "Payoneer Global Inc. and its subsidiaries|BENEFICIAL_OWNER|Boundless Technologies Limited",
+   "last_seen": "2025-12-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-03-19",
+   "key": "Meta Platforms, Inc|PARENT|Delaware limited liability company",
+   "last_seen": "2025-03-19",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-01-28",
+   "key": "LSF VIII International 2|BENEFICIAL_OWNER|LStar Equity",
+   "last_seen": "2023-01-28",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2012-01-06",
+   "key": "On January 6, 2012, BMO Financial Corp|PARENT|Harris Bankcorp, Inc",
+   "last_seen": "2012-01-06",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2016-08-18",
+   "key": "Affinion Group|PARENT|Trilegiant Corporation",
+   "last_seen": "2016-08-18",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2015-02-25",
+   "key": "GPIMH. Guggenheim Capital, LLC|PARENT|Guggenheim Corporate Funding, LLC",
+   "last_seen": "2015-02-25",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2007-09-14",
+   "key": "Wachovia Corporation|PARENT|New York",
+   "last_seen": "2007-09-14",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-02-29",
+   "key": "Viettel Group|PARENT|VTA Telecom Corp",
+   "last_seen": "2024-02-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2017-12-31",
+   "key": "China National Petroleum Corp|PARENT|SPAs with PetroChina International Company Limited",
+   "last_seen": "2018-12-31",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2016-12-31",
+   "key": "Newtek Business Services Corp|PARENT|Wilshire Holdings I, Inc",
+   "last_seen": "2021-12-31",
+   "n_docs": 7,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2018-12-31",
+   "key": "Newtek Business Services Corp|PARENT|Newtek Business Services Holdco 1, Inc",
+   "last_seen": "2021-12-31",
+   "n_docs": 5,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2020-12-31",
+   "key": "Newtek Business Lending, LLC|PARENT|Security Agreement between NBL SPV1, LLC",
+   "last_seen": "2021-12-31",
+   "n_docs": 3,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-10-07",
+   "key": "NWF.16 Ziply Wireless|PARENT|Delaware limited liability company",
+   "last_seen": "2024-10-07",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-04-21",
+   "key": "Morrison & Co Infrastructure Partnership|BENEFICIAL_OWNER|MCO LP",
+   "last_seen": "2023-04-21",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1997-12-29",
+   "key": "First Union National Bank, Charlotte, North Carolina|PARENT|First Union/HFC, L.P",
+   "last_seen": "1997-12-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2012-07-17",
+   "key": "HSBC plc|UNKNOWN_CONTROL_ROLE|HNAH",
+   "last_seen": "2012-07-17",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "gao.gov"
+   ],
+   "first_seen": null,
+   "key": "Hitachi Consulting Corp|PARENT|PRIZIM Inc",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2009-10-22",
+   "key": "TDNA US P&C Holdings|BENEFICIAL_OWNER|TDNA",
+   "last_seen": "2009-10-22",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2007-12-31",
+   "key": "UWBK Fund Management, Inc|BENEFICIAL_OWNER|Colorado Fund",
+   "last_seen": "2007-12-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-06-02",
+   "key": "Maddie LLC|BENEFICIAL_OWNER|DSR",
+   "last_seen": "2025-06-02",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2010-06-09",
+   "key": "Wells Fargo Bank, N.A|PARENT|OmniPlus Capital Corporation",
+   "last_seen": "2010-06-09",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2010-01-22",
+   "key": "Bond Street Holdings|PARENT|National Association, Miami, Florida",
+   "last_seen": "2010-01-22",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fdic.gov"
+   ],
+   "first_seen": null,
+   "key": "Bond Street Holdings|PARENT|Premier American Bank, N.A",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-04-21",
+   "key": "James Valley Cooperative Telephone Company|PARENT|Northern Valley Communications, LLC",
+   "last_seen": "2023-04-21",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "American Express Company|PARENT|American Express National Bank",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-12-31",
+   "key": "Novacap Management Inc|PARENT|Horizon All West Holdings, Inc",
+   "last_seen": "2024-02-29",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-12-31",
+   "key": "Novacap Management Inc|PARENT|Novacap Holdings",
+   "last_seen": "2024-07-22",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2011-04-15",
+   "key": "Chase Home Finance Inc|PARENT|Chase Home Finance LLC",
+   "last_seen": "2011-04-15",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2007-12-20",
+   "key": "Invesco Ltd|PARENT|INVESCO PLC",
+   "last_seen": "2007-12-20",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2021-06-25",
+   "key": "FTAC Olympus Acquisition Corp., New Starship Parent, Inc|PARENT|Starship Merger Sub I Inc",
+   "last_seen": "2021-06-25",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": null,
+   "key": "OCC required The Laredo National Bank|PARENT|Homeowners Loan Corp",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2015-09-23",
+   "key": "American Public Transportation Association|PARENT|North American Transit Services Association",
+   "last_seen": "2015-09-23",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2011-04-06",
+   "key": "FNFG|PARENT|FNFG Merger Sub, Inc",
+   "last_seen": "2011-04-06",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2015-12-31",
+   "key": "Wellington Management Group|BENEFICIAL_OWNER|Wellington Group Holdings LLP",
+   "last_seen": "2022-12-30",
+   "n_docs": 17,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2008-12-31",
+   "key": "United Western Bancorp, Inc|PARENT|First Matrix Services Corp",
+   "last_seen": "2009-12-31",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2008-12-31",
+   "key": "United Western Bancorp, Inc|PARENT|UW Trust Company",
+   "last_seen": "2008-12-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "fdic.gov"
+   ],
+   "first_seen": null,
+   "key": "USAA Federal Savings Bank|PARENT|USAA Savings Bank",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2005-12-31",
+   "key": "United Bank|PARENT|UCB Securities, Inc",
+   "last_seen": "2013-12-31",
+   "n_docs": 7,
+   "postures": [
+    "GOVERNMENT_ALLEGATION",
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-03-19",
+   "key": "FiberLight LLC|PARENT|Virginia limited liability company",
+   "last_seen": "2025-03-19",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2004-07-06",
+   "key": "MetaFund Corp|PARENT|OK, LLC",
+   "last_seen": "2004-07-06",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2018-07-21",
+   "key": "Danaher Corp|PARENT|Licensed IP to DH Technologies Development PTE Ltd",
+   "last_seen": "2018-07-21",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1998-01-21",
+   "key": "Perpetual, plc|PARENT|Perpetual US, Inc",
+   "last_seen": "1998-01-21",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fdic.gov"
+   ],
+   "first_seen": null,
+   "key": "First Chester County Corp|PARENT|Vice President of Business Development of First National Bank",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-06-11",
+   "key": "McCarthy GP VIII, LLC|UNKNOWN_CONTROL_ROLE|McCarthy Capital VIII",
+   "last_seen": "2024-06-11",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2006-02-13",
+   "key": "Western Financial Bank|PARENT|Western Consumer Services, Inc",
+   "last_seen": "2006-02-13",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2006-02-13",
+   "key": "Western Financial Bank|PARENT|Westfin Insurance Agency, Inc",
+   "last_seen": "2006-02-13",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2006-02-13",
+   "key": "Western Financial Bank|PARENT|WFS Web Investments, Inc",
+   "last_seen": "2006-02-13",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1999-11-29",
+   "key": "Fleet Boston Corp|PARENT|Fleet National Bank, Providence, Rhode Island",
+   "last_seen": "1999-11-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "1996-03-27",
+   "key": "Bankmont Financial Corp|PARENT|Harris Bank",
+   "last_seen": "1998-02-18",
+   "n_docs": 13,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2004-06-22",
+   "key": "Central of Kansas, Inc|BENEFICIAL_OWNER|Central National Bank",
+   "last_seen": "2004-06-22",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Aquila Worldwide Marine Developments Corp|BENEFICIAL_OWNER|GAS ENDURANCE",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Mobarakeh Steel Company|PARENT|Tara Steel Trading GmbH",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Mehr Eqtesad Iranian Investment Company|BENEFICIAL_OWNER|Technotar Engineering",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2014-01-14",
+   "key": "China Merchants Bank|PARENT|Background Wing Lung Bank",
+   "last_seen": "2014-01-14",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "1997-02-04",
+   "key": "Group is owned by Oppenheimer & Co., L.P|PARENT|Oppenheimer & Co., Inc",
+   "last_seen": "1997-02-04",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2010-03-26",
+   "key": "First Niagara Associates, Inc|BENEFICIAL_OWNER|Premium Payment Plan, LLP",
+   "last_seen": "2010-03-26",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2000-08-28",
+   "key": "NBT Bancorp|PARENT|NBT Bank, National Association, Norwich, New York",
+   "last_seen": "2000-08-28",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "BMO Nesbitt Burns Corp|PARENT|BMO Nesbitt Burns, Inc",
+   "last_seen": null,
+   "n_docs": 161,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2026-05-18",
+   "key": "Catena Labs, Inc|PARENT|Catena Trust Bank, National Association",
+   "last_seen": "2026-05-18",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": null,
+   "key": "U.S. Bank|PARENT|U.S. Bancorp Community Development Corporation",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2011-09-23",
+   "key": "CONA|PARENT|Capital One Services, LLC",
+   "last_seen": "2011-09-23",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2011-11-08",
+   "key": "Sovereign Bank|BENEFICIAL_OWNER|Capital Street Delaware LP",
+   "last_seen": "2011-11-08",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "gao.gov"
+   ],
+   "first_seen": null,
+   "key": "Equifax Inc|BENEFICIAL_OWNER|Work Number",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "TowerBrook’s Fund|PARENT|Delaware limited liability company",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1997-12-29",
+   "key": "First Union National Bank|BENEFICIAL_OWNER|First Union Commercial Corp",
+   "last_seen": "1997-12-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2009-12-31",
+   "key": "Bancorp, Inc. and its wholly-owned subsidiary, United Bank|PARENT|UB Properties, LLC",
+   "last_seen": "2009-12-31",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2018-02-09",
+   "key": "Wells Fargo Municipal Capital Strategies, LLC|BENEFICIAL_OWNER|Shares",
+   "last_seen": "2018-02-16",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2018-09-18",
+   "key": "Wells Fargo Municipal Capital Strategies, LLC|BENEFICIAL_OWNER|VMTP Shares",
+   "last_seen": "2018-09-18",
+   "n_docs": 6,
+   "postures": [
+    "GOVERNMENT_ALLEGATION",
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "NALH|PARENT|Security Agreement between NBL SPV I, LLC",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-01-28",
+   "key": "HMTV|PARENT|Televicentro of Puerto Rico, LLC",
+   "last_seen": "2023-09-10",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1999-12-07",
+   "key": "Bank of the passivity agreement submitted by SOFTBANK Corporation|PARENT|SOFTBANK Finance America Corp",
+   "last_seen": "1999-12-07",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Newtek Bank|PARENT|SBL Small Business Lending, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Newtek Bank|PARENT|Newtek Business Credit Solutions SBL Small Business Lending, LLC",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2019-12-31",
+   "key": "NBL|PARENT|Security Agreement between NBL SPV1, LLC",
+   "last_seen": "2019-12-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2010-02-24",
+   "key": "NBH Holdings|PARENT|NBH National Bank",
+   "last_seen": "2010-02-24",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2019-01-01",
+   "key": "Leerink Partners LLC, now SVB Leerink Holdings LLC|PARENT|Regulatory Affiliates SVB Leerink LLC",
+   "last_seen": "2019-01-01",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2019-01-01",
+   "key": "Leerink Partners LLC, now SVB Leerink Holdings LLC|PARENT|SVB Leerink Capital LLC",
+   "last_seen": "2019-01-01",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "1999-02-12",
+   "key": "Nesbitt Burns Corp|PARENT|Nesbitt Burns, Inc",
+   "last_seen": "2000-02-11",
+   "n_docs": 25,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2004-02-24",
+   "key": "Fleet National Bank|PARENT|Fleet Bank",
+   "last_seen": "2004-02-24",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2023-01-17",
+   "key": "BMO Financial Corp|PARENT|Harris Bank National Association, Chicago, Illinois",
+   "last_seen": "2023-01-17",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-08-09",
+   "key": "Grain Communications Opportunity Fund|BENEFICIAL_OWNER|Hunter Communications",
+   "last_seen": "2023-08-09",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2022-02-04",
+   "key": "Friendswood Capital Corporation|PARENT|Texan Bank",
+   "last_seen": "2022-02-04",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1997-04-15",
+   "key": "Bank proposes to acquire MFI Holding Company|PARENT|MFI Insurance Agency, Inc",
+   "last_seen": "1997-04-15",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "NBC Mobil Money Mobil Money, LLC|PARENT|NMS Newtek Merchant Solutions, LLC",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Damascus Cham Holding|BENEFICIAL_OWNER|Bunyan",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Pardo Family Trust|PARENT|Pardo Family Holdings, Ltd",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2020-08-19",
+   "key": "NextEra Energy Duane Arnold, LLC|BENEFICIAL_OWNER|Duane Arnold Energy Center",
+   "last_seen": "2020-08-19",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "GS Chemical Transportation Limited|BENEFICIAL_OWNER|BRIGHT GOLD",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2009-06-19",
+   "key": "Merrill Lynch Bank, USA, Salt Lake City, Utah|PARENT|MLBUSA Community Development Corp",
+   "last_seen": "2009-06-19",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2000-08-20",
+   "key": "Harley Davidson, Inc|PARENT|Eaglemark Financial Service Inc",
+   "last_seen": "2000-08-20",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2020-12-31",
+   "key": "EDS|PARENT|A.T. Kearney, Inc",
+   "last_seen": "2020-12-31",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2021-01-13",
+   "key": "Anchor Labs, Inc|PARENT|Association, Sioux Falls, South Dakota",
+   "last_seen": "2021-01-13",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2021-01-13",
+   "key": "Anchor Labs, Inc|PARENT|South Dakota in 2019. Anchorage Trust",
+   "last_seen": "2021-01-13",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2021-01-13",
+   "key": "Anchor Labs, Inc|PARENT|Anchorage Trust",
+   "last_seen": "2021-01-13",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "FSB|BENEFICIAL_OWNER|Mortgage Servicing Rights",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2011-11-08",
+   "key": "Sovereign Bank, Wilmington, Delaware1|PARENT|Sovereign Real Estate Investment Trust",
+   "last_seen": "2011-11-08",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2005-06-28",
+   "key": "ABS Capital Partners|BENEFICIAL_OWNER|Common Stock held by the Voting Trust",
+   "last_seen": "2005-06-28",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2013-12-31",
+   "key": "Rockville Financial, Inc|PARENT|Rockville Bank",
+   "last_seen": "2013-12-31",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2007-04-06",
+   "key": "TD Banknorth, N.A., Portland, ME|PARENT|REIT Preferred Stock offering of Northgroup Preferred Capital Corporation",
+   "last_seen": "2007-04-06",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2007-04-06",
+   "key": "TD Banknorth, N.A., Portland, ME|PARENT|Northgroup Preferred Capital Corporation",
+   "last_seen": "2007-04-06",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2008-06-03",
+   "key": "Barton Asset Management, LLC|BENEFICIAL_OWNER|TwinSpan Capital Management, LLC",
+   "last_seen": "2008-06-03",
+   "n_docs": 1,
+   "postures": [
+    "COURT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Verda Gas Co Ltd|BENEFICIAL_OWNER|MIGHTY NAVIGATOR",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "fincen.gov"
+   ],
+   "first_seen": null,
+   "key": "Mountain Bank|PARENT|East Valley Bank",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2005-05-27",
+   "key": "First Laurel Security Company|BENEFICIAL_OWNER|Security National Bank",
+   "last_seen": "2005-05-27",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fincen.gov"
+   ],
+   "first_seen": "2008-04-10",
+   "key": "Standard Finance Ltd|BENEFICIAL_OWNER|First Merchant Bank",
+   "last_seen": "2008-04-10",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "H&R Block, Inc|PARENT|Emerald Financial Services, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2015-08-04",
+   "key": "H&R Block, Inc|PARENT|HRB Tax Group, Inc",
+   "last_seen": "2018-08-01",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2022-02-24",
+   "key": "Evercore Inc. a Delaware corporation|PARENT|Evercore LP",
+   "last_seen": "2022-02-24",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "Application of AC BidCo, LLC|PARENT|AC BidCo, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Veinto Global Marine Inc|BENEFICIAL_OWNER|GAS STRENGTH",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2025-12-12",
+   "key": "BitGo Holdings|PARENT|BitGo Trust",
+   "last_seen": "2025-12-12",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2002-12-31",
+   "key": "Matrix Bancorp, Inc|BENEFICIAL_OWNER|Certificates",
+   "last_seen": "2003-12-31",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2006-12-31",
+   "key": "United Western Bank|PARENT|Matrix Financial Services Corporation",
+   "last_seen": "2008-12-31",
+   "n_docs": 4,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2011-12-31",
+   "key": "Mard Inc|PARENT|KiOR Columbus, LLC",
+   "last_seen": "2012-12-31",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION",
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-10-29",
+   "key": "GU Smart Cities, LLC|PARENT|Generate-Ubiquity Smart Cities I, LLC",
+   "last_seen": "2023-10-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-10-29",
+   "key": "Panhandle Telecommunications Systems, Inc|BENEFICIAL_OWNER|Texas RSA No",
+   "last_seen": "2024-02-29",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "Cogeco Connexion Inc|BENEFICIAL_OWNER|Cogeco Communications",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Honor Capital Holdings|PARENT|AFS IBEX Financial Services, LLC",
+   "last_seen": null,
+   "n_docs": 3,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Great Sail Shipping Limited|BENEFICIAL_OWNER|GREAT SAIL",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2000-08-21",
+   "key": "Paris Bancshares, Inc|BENEFICIAL_OWNER|Liberty National Bank",
+   "last_seen": "2000-08-21",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Barclays PLC|PARENT|Barclays Bank PLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2011-01-28",
+   "key": "Green Mountain Coffee Roasters, Inc|PARENT|Keurig, Incorporated",
+   "last_seen": "2012-02-23",
+   "n_docs": 2,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2019-12-31",
+   "key": "Republic First Bancorp|PARENT|Republic First Bank",
+   "last_seen": "2020-12-31",
+   "n_docs": 3,
+   "postures": [
+    "GOVERNMENT_ALLEGATION",
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2004-02-19",
+   "key": "Commerce Bank|PARENT|Commercebank Trust Company, National Association",
+   "last_seen": "2004-02-19",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2004-12-31",
+   "key": "Norton Simon, Inc|PARENT|Assistant General Counsel of Hunt-Wesson Foods, Inc",
+   "last_seen": "2006-12-31",
+   "n_docs": 3,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Norton Simon, Inc|PARENT|Foods, Inc",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "gao.gov"
+   ],
+   "first_seen": "2016-04-14",
+   "key": "Aurora Bank|PARENT|Aurora Loan Services LLC",
+   "last_seen": "2016-04-14",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2009-04-03",
+   "key": "Wachovia Bank|PARENT|OmniPlus Capital Corporation",
+   "last_seen": "2009-04-03",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "ARC Resources, Ltd|PARENT|IPM agreement with ARC Resources U.S. Corp",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov",
+    "treasury.gov"
+   ],
+   "first_seen": "2011-02-17",
+   "key": "LCB|BENEFICIAL_OWNER|Prime Bank",
+   "last_seen": "2011-02-17",
+   "n_docs": 3,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION",
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2016-12-31",
+   "key": "SPLNG. LNG revenues inc|PARENT|Sabine Pass Tug Services, LLC",
+   "last_seen": "2016-12-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2026-05-05",
+   "key": "Interactive Brokers Group, Inc|BENEFICIAL_OWNER|IBG LLC. IBG LLC",
+   "last_seen": "2026-05-05",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2026-05-05",
+   "key": "Interactive Brokers Group, Inc|BENEFICIAL_OWNER|IBG LLC",
+   "last_seen": "2026-05-05",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2011-06-20",
+   "key": "M&INA wishes to retain M&I Zion Holdings, Inc|PARENT|M&I Zion Investment II Corp",
+   "last_seen": "2011-06-20",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2019-12-31",
+   "key": "BlackRock TCP Capital Corp|PARENT|Conventional Lending TCP Holding, LLC",
+   "last_seen": "2021-12-31",
+   "n_docs": 6,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2002-12-23",
+   "key": "First Merchants Corp|PARENT|Merchants Trust Company, National Association",
+   "last_seen": "2002-12-23",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-11-07",
+   "key": "Walt Disney Company|PARENT|ESPN Holding Company, Inc",
+   "last_seen": "2024-11-07",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Intrust PLC|BENEFICIAL_OWNER|Real Estates Int Ltd EOOD",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2003-07-16",
+   "key": "Riggs National Corp|PARENT|N.A., McLean, Virginia",
+   "last_seen": "2003-07-16",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1999-12-23",
+   "key": "Greenforest Community Baptist Church, Inc|PARENT|Green Forest Community Development, Inc",
+   "last_seen": "1999-12-23",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-09-29",
+   "key": "AT&T Inc|PARENT|AT&T Enterprises, Inc",
+   "last_seen": "2025-09-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-09-29",
+   "key": "AT&T Inc|PARENT|AT&T Corp",
+   "last_seen": "2025-09-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-04-13",
+   "key": "AT&T Inc|PARENT|U.S.-Central America segment of Maya-1. AT&T Corp",
+   "last_seen": "2024-04-13",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "AT&T Inc|PARENT|AT&T Mobility II LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Ow Maritime Inc|BENEFICIAL_OWNER|OCEAN WAVE",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2015-12-31",
+   "key": "Wellington Group|BENEFICIAL_OWNER|Wellington Investment Advisors Holdings LLP",
+   "last_seen": "2022-12-30",
+   "n_docs": 17,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2005-12-31",
+   "key": "Communications Corp|PARENT|Sanswire Networks LLC",
+   "last_seen": "2005-12-31",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Taurus Gas Company|BENEFICIAL_OWNER|QUANTUM STAR",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2012-05-31",
+   "key": "Archipelago Holdings|BENEFICIAL_OWNER|NYSE Arca Holdings",
+   "last_seen": "2012-05-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-09-29",
+   "key": "Vero Broadband Holdings|PARENT|Delaware limited liability company",
+   "last_seen": "2025-09-29",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Mozart Maritime Inc|BENEFICIAL_OWNER|FEADSHIP",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "EXECUTION OF IMAM KHOMEINI’S ORDER|PARENT|Iran Mobin Electronic Development Company",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "1996-06-13",
+   "key": "Tyson Foods, Inc|PARENT|I A Petitioner Holly Farms Corporation",
+   "last_seen": "1996-06-13",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "U.S.-based Freeport-McMoRan Copper & Gold Inc|BENEFICIAL_OWNER|TFM",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2018-05-30",
+   "key": "Ameriprise Financial, Inc|PARENT|AEIS. Columbia Management Investment Distributors, Inc",
+   "last_seen": "2018-05-30",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Company N|BENEFICIAL_OWNER|Company P",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Company N|BENEFICIAL_OWNER|Company O",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2011-01-19",
+   "key": "Blue Ridge Holdings|PARENT|Association, Easley, South Carolina",
+   "last_seen": "2011-01-19",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fdic.gov"
+   ],
+   "first_seen": null,
+   "key": "First-Citizens Bank & Trust Company with CIT Group, Inc|PARENT|CIT Bank",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1996-09-11",
+   "key": "Women's Bank, N.A|BENEFICIAL_OWNER|Mortgage Company",
+   "last_seen": "1996-09-11",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2000-03-30",
+   "key": "Evansville, Indiana|PARENT|Orange County Bank",
+   "last_seen": "2000-03-30",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1996-10-31",
+   "key": "CMC|PARENT|Chemical Holding Delaware, Inc",
+   "last_seen": "1996-10-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-05-15",
+   "key": "BCI|BENEFICIAL_OWNER|IMCPE Arbutus GP Inc",
+   "last_seen": "2024-05-15",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-05-15",
+   "key": "BCI|BENEFICIAL_OWNER|IMCPE 2019 Inc",
+   "last_seen": "2024-05-15",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2002-06-26",
+   "key": "HII. Beneficial National Bank|PARENT|Household Finance Corporation",
+   "last_seen": "2002-06-26",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2015-05-31",
+   "key": "Atlantic Stewardship Bank|PARENT|Atlantic Stewardship Insurance Company, LLC",
+   "last_seen": "2015-05-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fdic.gov"
+   ],
+   "first_seen": null,
+   "key": "New York Community Bancorp|PARENT|Flagstar Bank",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2008-11-14",
+   "key": "PNA. Discussion A|PARENT|Popular Insurance, Inc",
+   "last_seen": "2008-11-14",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Iran's Naval Defence Missile Industry Group|BENEFICIAL_OWNER|Shahid Alamolhoda Industries",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2005-12-31",
+   "key": "Distributed Energy Systems Corp|PARENT|Proton Energy Systems, Inc",
+   "last_seen": "2005-12-31",
+   "n_docs": 3,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2017-12-31",
+   "key": "SPLNG. Cash|PARENT|Sabine Pass Tug Services, LLC",
+   "last_seen": "2017-12-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1998-04-02",
+   "key": "Dean Witter & Co|PARENT|Dean Witter Venture, Inc",
+   "last_seen": "1998-04-02",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "OTC Markets Group|BENEFICIAL_OWNER|OTC Link",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2005-12-31",
+   "key": "Investor Source Group|BENEFICIAL_OWNER|Parent company of ISG Jet, LLC",
+   "last_seen": "2005-12-31",
+   "n_docs": 3,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2012-12-31",
+   "key": "People’s United Bank|PARENT|People’s Mortgage Investment Company",
+   "last_seen": "2013-12-31",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2015-09-30",
+   "key": "Fort Knox Financial Services Corporation|PARENT|Tax Product Services, LLC",
+   "last_seen": "2018-09-30",
+   "n_docs": 4,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Global Interface Company|PARENT|Trans Merits Co. Ltd",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "FMR LLC|PARENT|Fidelity Management & Research Company",
+   "last_seen": null,
+   "n_docs": 9,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2021-01-31",
+   "key": "Payoneer Inc|PARENT|Payoneer US LLC",
+   "last_seen": "2021-01-31",
+   "n_docs": 3,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2026-07-21",
+   "key": "Wise plc|PARENT|Wise US Holdings",
+   "last_seen": "2026-07-21",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2001-07-02",
+   "key": "CitiMortgage, Inc|PARENT|Source One Mortgage Company",
+   "last_seen": "2001-07-02",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Arden Angel Shipping Company|BENEFICIAL_OWNER|SWIFT FALCON",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": null,
+   "key": "LISC|PARENT|New Markets Support Company",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Company A|BENEFICIAL_OWNER|Company B",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Pfizer Inc|PARENT|Perkins Holding Company",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2015-07-21",
+   "key": "OWB|PARENT|Financial Freedom Acquisition LLC",
+   "last_seen": "2015-07-21",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2009-11-30",
+   "key": "G&C|PARENT|Prime Capital Services, Inc",
+   "last_seen": "2009-11-30",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "DTCC|PARENT|National Securities Clearing Corporation Fixed Income Clearing Corporation",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "DTCC|PARENT|Depository Trust Corporation Depository Trust Company",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1999-12-03",
+   "key": "Subchapter S corporation unless the Holding Company|BENEFICIAL_OWNER|Subchapter S corp",
+   "last_seen": "1999-12-03",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fincen.gov"
+   ],
+   "first_seen": null,
+   "key": "Metrobank Group|PARENT|Metro Remittance Center, Incorporated",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fdic.gov"
+   ],
+   "first_seen": null,
+   "key": "Washington Mutual, Inc|PARENT|Washington Mutual Bank",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2009-10-02",
+   "key": "Weeks Marine, Inc|PARENT|Lipcon. 1 Atlantic Sounding Co., Inc",
+   "last_seen": "2009-10-02",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2020-10-05",
+   "key": "SunTrust Bank|PARENT|Premium Assignment Corporation",
+   "last_seen": "2020-10-05",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2000-03-24",
+   "key": "AMCORE|PARENT|Mississippi against AMCORE Consumer Finance Company, Inc",
+   "last_seen": "2000-03-24",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2009-12-31",
+   "key": "Hall Tees, Inc|PARENT|Hall Tees & Promotions, L.L.C",
+   "last_seen": "2013-12-31",
+   "n_docs": 5,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-12-30",
+   "key": "Connect Holding|PARENT|Virginia limited liability company",
+   "last_seen": "2024-12-30",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fdic.gov"
+   ],
+   "first_seen": null,
+   "key": "CFG. The|PARENT|Resultant Bank",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": null,
+   "key": "HRDC with responsibilities of administering a revolving loan fund|PARENT|Headwaters Regional Finance Corporation",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Royal Bank|PARENT|Chief Executive Officer of City National Bank",
+   "last_seen": null,
+   "n_docs": 3,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2020-01-01",
+   "key": "Royal Bank|PARENT|Chief Executive Officer at City National Bank",
+   "last_seen": "2021-01-31",
+   "n_docs": 3,
+   "postures": [
+    "GOVERNMENT_ALLEGATION",
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-07-11",
+   "key": "T-Mobile US, Inc|PARENT|T-Mobile USA, Inc",
+   "last_seen": "2024-07-11",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Aurora Business Company|BENEFICIAL_OWNER|OCEAN RADIANCE",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2014-08-11",
+   "key": "TierOne Corporation|PARENT|TierOne Bank",
+   "last_seen": "2014-10-24",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "Lockheed Martin Corp|PARENT|Sandia Corporation",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2018-04-02",
+   "key": "BCI Financial Group|BENEFICIAL_OWNER|City National",
+   "last_seen": "2018-04-02",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2002-06-26",
+   "key": "HII|PARENT|Household Finance Corporation",
+   "last_seen": "2002-06-26",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "NewtekOne, Inc|PARENT|Wilshire Holdings I, Inc",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "NewtekOne, Inc|PARENT|Newtek Business Services Holdco 1, Inc",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1999-05-19",
+   "key": "LaSalle Bank|PARENT|ABN AMRO Insurance Services, Inc",
+   "last_seen": "1999-05-19",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-10-02",
+   "key": "PTI Pacifica Inc|PARENT|Connect Acquisition Sub 1 LLC",
+   "last_seen": "2023-10-02",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2017-04-13",
+   "key": "Social Finance, Inc|PARENT|SoFi Lending Corp",
+   "last_seen": "2017-04-13",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2017-01-12",
+   "key": "Social Finance, Inc|PARENT|So Fi Lending Corp",
+   "last_seen": "2017-01-12",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2004-10-13",
+   "key": "JPMCB|BENEFICIAL_OWNER|Automated Clearing House, Inc",
+   "last_seen": "2004-10-13",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2004-10-13",
+   "key": "JPMCB|PARENT|Chase Community Development Corporation",
+   "last_seen": "2004-10-13",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-05-06",
+   "key": "West Technology Group|PARENT|Intrado Corporation",
+   "last_seen": "2024-11-07",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fdic.gov"
+   ],
+   "first_seen": null,
+   "key": "Fidelity Ban Corp|BENEFICIAL_OWNER|BankIowa",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-09-10",
+   "key": "TPG Telecom Limited|PARENT|PPC 1 Limited",
+   "last_seen": "2023-09-10",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2007-09-07",
+   "key": "FTN Midwest Asset Management Corporation|PARENT|Because LLC",
+   "last_seen": "2007-09-07",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2019-06-20",
+   "key": "Chemical Financial Corp|PARENT|Chemical Bank",
+   "last_seen": "2019-06-20",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2015-02-26",
+   "key": "IMB Holdco LLC|PARENT|OneWest Bank",
+   "last_seen": "2015-02-26",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Columbia Bank|PARENT|RSI Insurance Agency, Inc",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Columbia Bank|PARENT|Columbia Insurance Services, Inc",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Columbia Bank|PARENT|First Jersey Title Services, Inc",
+   "last_seen": null,
+   "n_docs": 4,
+   "postures": [
+    "GOVERNMENT_ALLEGATION",
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2018-08-08",
+   "key": "New York Mercantile Exchange, Inc|PARENT|Commodities Exchange, Inc",
+   "last_seen": "2018-08-08",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2013-03-28",
+   "key": "MidWisconsin Bank|PARENT|OCC also approves the acquisition of Mid-Wisconsin Investment Corporation",
+   "last_seen": "2013-03-28",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2004-02-24",
+   "key": "FleetBoston Financial Corporation|PARENT|FleetBoston will become subsidiaries of BAC.1 Fleet National Bank",
+   "last_seen": "2004-02-24",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": null,
+   "key": "Robinhood Markets, Inc|BENEFICIAL_OWNER|Robinhood Bank, N.A",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "EchoStar Corp|PARENT|DISH Wireless L.L.C",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1997-06-26",
+   "key": "Leasetec Corporation|BENEFICIAL_OWNER|Mitel Capital Corp",
+   "last_seen": "1997-06-26",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Flagstar Bank|BENEFICIAL_OWNER|Mortgage Servicing Rights",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2009-03-20",
+   "key": "Formal Agreement requiring Laredo National Bank|PARENT|Homeowners Loan Corp",
+   "last_seen": "2009-03-20",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2018-10-04",
+   "key": "Cadence Bancorp|PARENT|Cadence Bank",
+   "last_seen": "2018-10-04",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov",
+    "oig.treasury.gov"
+   ],
+   "first_seen": "2005-05-25",
+   "key": "Wells Fargo & Company|BENEFICIAL_OWNER|Wells Fargo Bank",
+   "last_seen": "2005-05-25",
+   "n_docs": 3,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION",
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fdic.gov"
+   ],
+   "first_seen": null,
+   "key": "Silicon Valley Bridge Bank, N.A|PARENT|Silicon Valley Private Bank",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Coinbase Global, Inc|PARENT|Coinbase, Inc",
+   "last_seen": null,
+   "n_docs": 5,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2010-06-30",
+   "key": "Opportunity Bancshares|PARENT|Richardson, Texas",
+   "last_seen": "2010-06-30",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2000-02-11",
+   "key": "Jones Heward Investments Inc|PARENT|Jones Heward Investment Management Inc",
+   "last_seen": "2000-02-11",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-07-22",
+   "key": "Latam Telecommunications, LLC|PARENT|Telmex Holdings, LLC",
+   "last_seen": "2024-07-22",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-04-28",
+   "key": "Logix Acquisition Company|PARENT|Logix Holdings",
+   "last_seen": "2025-04-28",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-11-07",
+   "key": "Singtel Optus Pty Limited|PARENT|SCCL. Optus Networks Pty Limited",
+   "last_seen": "2024-11-07",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-09-29",
+   "key": "Vonage Holdings|PARENT|Vonage Business Inc",
+   "last_seen": "2025-09-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2001-03-10",
+   "key": "DBES|BENEFICIAL_OWNER|ASI Partners",
+   "last_seen": "2001-03-10",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2025-12-31",
+   "key": "Payoneer Global Inc.’s|BENEFICIAL_OWNER|PayEco the parent company",
+   "last_seen": "2025-12-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2025-12-31",
+   "key": "Payoneer Global Inc.’s|BENEFICIAL_OWNER|Boundless Technologies Limited",
+   "last_seen": "2025-12-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2022-12-31",
+   "key": "Living Trust|BENEFICIAL_OWNER|FE Management Inc",
+   "last_seen": "2022-12-31",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "1997-02-04",
+   "key": "Oppenheimer & Co|BENEFICIAL_OWNER|Oppenheimer Group, Inc",
+   "last_seen": "1997-02-04",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-03-19",
+   "key": "Amazon.com, Inc|PARENT|Delaware limited liability company",
+   "last_seen": "2025-03-19",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2009-05-20",
+   "key": "Wisconsin; James Putman|BENEFICIAL_OWNER|Management LLC",
+   "last_seen": "2009-05-20",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Glencore plc|PARENT|Pte Ltd",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Gjades Shipping Company|BENEFICIAL_OWNER|JADES",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Gjades Shipping Company|BENEFICIAL_OWNER|G JADES",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2009-04-10",
+   "key": "Evercore LP|BENEFICIAL_OWNER|Evercore Trust Company, National Association",
+   "last_seen": "2009-04-10",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2014-01-30",
+   "key": "KKR Fund|PARENT|KKR Wand GP LLC",
+   "last_seen": "2014-01-30",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2014-01-30",
+   "key": "KKR Fund|PARENT|KKR Wand Investors L.P. KKR Wand GP LLC",
+   "last_seen": "2014-01-30",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Hospira, Inc|PARENT|Hospira Healthcare India Private Limited",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2001-07-02",
+   "key": "Citibank, National Association, New York, New York|PARENT|Citicorp Mortgage, Inc",
+   "last_seen": "2001-07-02",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2008-12-31",
+   "key": "GMAC|PARENT|GMAC Management LLC",
+   "last_seen": "2008-12-31",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2015-09-24",
+   "key": "AMC|PARENT|American Stock Exchange LLC",
+   "last_seen": "2015-09-24",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fdic.gov"
+   ],
+   "first_seen": null,
+   "key": "LFSC. The|PARENT|Lenox Savings Bank",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "Crown Castle Operating Company|PARENT|New York limited liability company",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fincen.gov"
+   ],
+   "first_seen": null,
+   "key": "Canadian Imperial Bank|BENEFICIAL_OWNER|Oppenheimer",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2026-02-23",
+   "key": "Payoneer Global Inc|PARENT|PAYO Digital Bank, N.A",
+   "last_seen": "2026-02-23",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2015-07-27",
+   "key": "Icahn Enterprises L.P|PARENT|Chief Executive Officer of Icahn Capital LP",
+   "last_seen": "2015-07-27",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": null,
+   "key": "Wells Fargo Bank|PARENT|OmniPlus Capital Corporation",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2010-03-08",
+   "key": "Wells Fargo Bank|PARENT|Silver Asset Management Group",
+   "last_seen": "2010-03-08",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2014-02-14",
+   "key": "Huntington Bancshares|BENEFICIAL_OWNER|Huntington National Bank, Columbus, Ohio",
+   "last_seen": "2014-02-14",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2006-01-11",
+   "key": "Huntington Bancshares|PARENT|Huntington Bank",
+   "last_seen": "2006-01-11",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2004-06-23",
+   "key": "HSBC|PARENT|HSBC Financial Services Corp",
+   "last_seen": "2004-06-23",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-02-29",
+   "key": "LiLAC Ventures Ltd|BENEFICIAL_OWNER|Leo Cable LLC",
+   "last_seen": "2024-08-15",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2003-11-06",
+   "key": "Fargo Bank, National Association, San Francisco, California|PARENT|Wells Fargo Home Mortgage, Inc",
+   "last_seen": "2003-11-06",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-04-21",
+   "key": "Australian Retirement Trust|BENEFICIAL_OWNER|Pooled Superannuation Trust",
+   "last_seen": "2023-04-21",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Teodor Shipping L.L.C|PARENT|shipping company Cora Lines Inc",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "fdic.gov"
+   ],
+   "first_seen": null,
+   "key": "Chairman & CEO of Carver Bancorp, Inc|PARENT|Carver Federal Savings Bank",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2000-12-15",
+   "key": "Worth Bancorporation, Inc|BENEFICIAL_OWNER|Worth National Bank, Lake Worth, Texas",
+   "last_seen": "2000-12-15",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "Gogo Inc|PARENT|G. AC BidCo, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2023-12-31",
+   "key": "Franklin Resources, Inc|PARENT|Royce & Associates, LP",
+   "last_seen": "2023-12-31",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2000-01-18",
+   "key": "Franklin Resources, Inc|PARENT|Franklin Mutual Advisers, Inc",
+   "last_seen": "2004-12-31",
+   "n_docs": 4,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2012-01-11",
+   "key": "RBC USA Holdco Corp|PARENT|North Carolina",
+   "last_seen": "2012-01-11",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2008-12-31",
+   "key": "GMAC. Class C Interests|PARENT|GMAC Management LLC",
+   "last_seen": "2008-12-31",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2005-11-03",
+   "key": "HSBC Holdings|PARENT|Subsequently HSBC North Amercia Holdings",
+   "last_seen": "2005-11-03",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2016-02-11",
+   "key": "HSBC Holdings|PARENT|HSBC USA Inc",
+   "last_seen": "2016-02-11",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2020-01-01",
+   "key": "BMC Bancshares|PARENT|Titan Bank, N.A",
+   "last_seen": "2020-01-01",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2018-02-28",
+   "key": "Management of Constellation Brands, Inc. and subsidiaries|PARENT|President of Crown Imports LLC",
+   "last_seen": "2019-02-28",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION",
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2019-03-01",
+   "key": "Management of Constellation Brands, Inc. and subsidiaries|PARENT|Division as well as President of Crown Imports LLC",
+   "last_seen": "2019-03-01",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-11-07",
+   "key": "Telstra International Holdings|PARENT|PCLI. Telstra Holdings Pty Limited",
+   "last_seen": "2024-11-07",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2008-09-21",
+   "key": "Morgan Stanley Domestic Holdings|PARENT|Application Morgan Stanley Bank",
+   "last_seen": "2008-09-21",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2000-02-11",
+   "key": "Jones Heward Investment Management Inc|PARENT|Jones Heward Investment Counsel Inc",
+   "last_seen": "2000-02-11",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2018-12-21",
+   "key": "CrossFirst Bank|PARENT|CrossFirst Investments, Inc",
+   "last_seen": "2018-12-21",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2026-03-25",
+   "key": "EDX Markets Holding Company, Inc|PARENT|EDX Trust, National Association",
+   "last_seen": "2026-03-25",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2012-01-11",
+   "key": "PNC Financial Services Group|PARENT|Proposal PNC Bank",
+   "last_seen": "2012-01-11",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fincen.gov"
+   ],
+   "first_seen": "2005-01-01",
+   "key": "Depository Trust|PARENT|National Securities Corporation",
+   "last_seen": "2005-01-01",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2012-01-06",
+   "key": "Depository Trust|PARENT|Depository Trust Company",
+   "last_seen": "2012-01-06",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2019-02-13",
+   "key": "Beneficial Bancorp|PARENT|Beneficial Bank",
+   "last_seen": "2019-02-13",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Splendid Lexy Trading Company|BENEFICIAL_OWNER|VASLATI",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-12-07",
+   "key": "Argent Financial Group|PARENT|Argent Trust Company",
+   "last_seen": "2025-12-31",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2007-10-15",
+   "key": "Raymond James Financial, Inc|PARENT|Conversion Raymond James Trust Company",
+   "last_seen": "2007-10-15",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2012-01-13",
+   "key": "Raymond James Financial, Inc|PARENT|Raymond James Bank, FSB",
+   "last_seen": "2012-01-13",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2018-12-31",
+   "key": "management of United Financial Bancorp, Inc|PARENT|United Bank",
+   "last_seen": "2018-12-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "1993-10-01",
+   "key": "USX|PARENT|TXO Production Corporation",
+   "last_seen": "1993-10-01",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fdic.gov"
+   ],
+   "first_seen": null,
+   "key": "CFG|PARENT|Resultant Bank",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "ATN International, Inc|BENEFICIAL_OWNER|ALSK Holdings",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Cheniere Energy, Inc|PARENT|Vice President of Trading at Cheniere International, Inc",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2010-12-31",
+   "key": "Vanguard Group|PARENT|Vanguard Fiduciary Trust Company",
+   "last_seen": "2019-12-31",
+   "n_docs": 40,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": null,
+   "key": "Vanguard Group|PARENT|Vanguard Group, Inc",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "National Iranian Oil Company|PARENT|Naftiran Intertrade Company",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "1997-02-14",
+   "key": "Berkshire Hathaway Inc|PARENT|GEICO Corporation",
+   "last_seen": "1997-02-14",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-10-29",
+   "key": "Lumen Technologies, Inc|PARENT|Delaware limited liability company",
+   "last_seen": "2023-10-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Ocean Marvel Shipping Company|BENEFICIAL_OWNER|MIDAS",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "fdic.gov"
+   ],
+   "first_seen": null,
+   "key": "LFSC|PARENT|Lenox Savings Bank",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2008-12-31",
+   "key": "GM. We|PARENT|GM Preferred Finance Co. Holdings Inc",
+   "last_seen": "2008-12-31",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-08-09",
+   "key": "Post Road Digital Infrastructure Fund|UNKNOWN_CONTROL_ROLE|Archtop Holdings",
+   "last_seen": "2023-12-10",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "gao.gov"
+   ],
+   "first_seen": null,
+   "key": "Manufacturers Life Insurance Company|BENEFICIAL_OWNER|John Hancock Life Insurance Company",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-07-11",
+   "key": "NWF.10 ZFN provides service as the inc|PARENT|Delaware limited liability company",
+   "last_seen": "2024-07-11",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2015-05-31",
+   "key": "Stewardship Financial Corporation|BENEFICIAL_OWNER|Atlantic Stewardship Bank",
+   "last_seen": "2015-05-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2009-07-10",
+   "key": "EmployBridge Holding Company|PARENT|Employment Solutions Group, Inc",
+   "last_seen": "2009-07-10",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1996-09-11",
+   "key": "Chase Manhattan Corp|PARENT|Association, Houston, Texas",
+   "last_seen": "1996-09-11",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1996-10-31",
+   "key": "Chase Manhattan Corp|PARENT|Chase Manhattan National Holding Company",
+   "last_seen": "1996-10-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1997-10-20",
+   "key": "Hibernia Corp|BENEFICIAL_OWNER|Hibernia",
+   "last_seen": "1997-10-20",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2008-06-23",
+   "key": "Badische Anilin-& Soda Fabrik A. G|PARENT|Freeport began when the owners of BASF Overzee N.V",
+   "last_seen": "2008-06-23",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Sun Ocean Shipping Inc|BENEFICIAL_OWNER|NARSIS",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2007-09-04",
+   "key": "JPMTC|PARENT|JPMCB will acquire WF Auto Exchange, LLC",
+   "last_seen": "2007-09-04",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": null,
+   "key": "Laredo National Bank|PARENT|Homeowners Loan Corp",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2011-06-29",
+   "key": "BIOeCON International Holding N.V|UNKNOWN_CONTROL_ROLE|BIOeCON Holding",
+   "last_seen": "2014-08-18",
+   "n_docs": 8,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "1996-03-13",
+   "key": "Bank of Montreal|PARENT|Bankmont Financial Corp",
+   "last_seen": "1998-02-18",
+   "n_docs": 41,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2012-01-06",
+   "key": "Bank of Montreal|PARENT|Harris Financial Corp",
+   "last_seen": "2012-01-06",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "1999-02-12",
+   "key": "Harris Bank|PARENT|Harris Bank Palatine, N.A",
+   "last_seen": "2000-02-11",
+   "n_docs": 3,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-09-10",
+   "key": "Stonepeak Associates IV LLC|PARENT|Radiate Holdings GP, LLC",
+   "last_seen": "2023-09-10",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-09-10",
+   "key": "Stonepeak Associates IV LLC|PARENT|L.P. Radiate Holdings GP, LLC",
+   "last_seen": "2023-09-10",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "1997-02-21",
+   "key": "MTXC|PARENT|Chief Executive Officer of The Vintage Group, Inc",
+   "last_seen": "1997-02-21",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2001-02-12",
+   "key": "Fleet National Bank, Providence, Rhode Island|PARENT|Fleet Mortgage Corporation",
+   "last_seen": "2001-02-12",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-12-30",
+   "key": "New Ka'ena, Inc|PARENT|UVNV, LLC",
+   "last_seen": "2024-12-30",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "IDEAL Group|PARENT|Apps4Android, Inc",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Global Fortune Shipping Limited|BENEFICIAL_OWNER|LUNA LUSTER",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Atlas Holding|BENEFICIAL_OWNER|MEDICAL EQUIPMENT & DRUGS INTERNATIONAL CORPORATION",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Atlas Holding|BENEFICIAL_OWNER|SHAHED PHARM Shahed Pharm",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Atlas Holding|BENEFICIAL_OWNER|AL KAWTHAR Al Kawthar",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Eurobet Partners|BENEFICIAL_OWNER|Eurobet OOD",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2015-05-31",
+   "key": "Discover Financial Services|PARENT|Discover Bank",
+   "last_seen": "2025-04-18",
+   "n_docs": 3,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Kovalevskij|BENEFICIAL_OWNER|Optima Freight",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Nove Internal|BENEFICIAL_OWNER|OOD",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2026-07-15",
+   "key": "Gary Dempze|BENEFICIAL_OWNER|Gaynor Cranberry Company",
+   "last_seen": "2026-07-15",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Bank Rossiya|BENEFICIAL_OWNER|Limited Liability Company Investment Company Abros",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Bank Rossiya|BENEFICIAL_OWNER|JSB Sobinbank",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Bank Rossiya|BENEFICIAL_OWNER|CJSC Zest",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Oleg Deripaska|BENEFICIAL_OWNER|EN+ Group",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Oleg Deripaska|BENEFICIAL_OWNER|EuroSibEnergo",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Oleg Deripaska|BENEFICIAL_OWNER|Basic Element Limited",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Oleg Deripaska|BENEFICIAL_OWNER|GAZ Group",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Oleg Deripaska|BENEFICIAL_OWNER|Agroholding Kuban",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Oleg Deripaska|BENEFICIAL_OWNER|Russian Machines",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-01-28",
+   "key": "Telxius Telecom|PARENT|Uruguay company",
+   "last_seen": "2023-01-28",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-06-08",
+   "key": "Connect Topco|BENEFICIAL_OWNER|SubTopco Limited",
+   "last_seen": "2023-06-08",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-06-08",
+   "key": "Connect Topco|BENEFICIAL_OWNER|Sub-Topco Limited",
+   "last_seen": "2023-06-08",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "ImOn|PARENT|Danville will merge into Holdings Purchaser, Inc",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Elemento|BENEFICIAL_OWNER|Elemento Solutions Limited",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "fincen.gov"
+   ],
+   "first_seen": "2015-05-05",
+   "key": "Ripple Labs|PARENT|XRP II, LLC",
+   "last_seen": "2015-05-05",
+   "n_docs": 3,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "Senator William|BENEFICIAL_OWNER|Chester Republican",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Mire Ali|BENEFICIAL_OWNER|Al-Mutafaq Commercial Company",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Heidari|BENEFICIAL_OWNER|ForEnt Technik GmbH",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "Vice Media|BENEFICIAL_OWNER|Motherboard",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": null,
+   "key": "Old National|PARENT|Orange County Bank",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-03-19",
+   "key": "Gridiron Fiber Licensee|PARENT|Virgina limited liability company",
+   "last_seen": "2025-03-19",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2018-01-30",
+   "key": "Alaska Native|BENEFICIAL_OWNER|ASRC",
+   "last_seen": "2018-01-30",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Don McGhan|UNKNOWN_CONTROL_ROLE|Blackstone",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Kirill Shamalov|BENEFICIAL_OWNER|Ladoga Menedzhment, OOO",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-03-14",
+   "key": "New Tang Dynasty|UNKNOWN_CONTROL_ROLE|Station",
+   "last_seen": "2023-03-14",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": null,
+   "key": "Perma Serve|BENEFICIAL_OWNER|Permanent Insurance, Inc",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "George Haswani|BENEFICIAL_OWNER|Hesco Engineering",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-11-07",
+   "key": "UScellular|PARENT|Section 214 authorization held by USCC Wireless Holdings, LLC",
+   "last_seen": "2024-11-07",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "UScellular|PARENT|USCC Wireless Holdings, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Holdco|PARENT|Security Agreement between NBL SPV I, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-01-31",
+   "key": "Alpine Communications|PARENT|Iowa limited liability company",
+   "last_seen": "2024-02-29",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-12-07",
+   "key": "Valley Telephone|PARENT|Commission consent to transfer control of VTX Communications, LLC",
+   "last_seen": "2025-12-07",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Mohammad Vakili|BENEFICIAL_OWNER|Atlas Exchange",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1997-12-29",
+   "key": "North Carolina|BENEFICIAL_OWNER|First Union Commercial Corp",
+   "last_seen": "1997-12-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1999-02-19",
+   "key": "North Carolina|PARENT|NationsBank include data on NationsBanc Mortgage Corporation",
+   "last_seen": "1999-02-19",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Al-Arabi|BENEFICIAL_OWNER|Development Group",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "El Paso|BENEFICIAL_OWNER|ERENE, Inc",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-11-07",
+   "key": "Cable Design|PARENT|SingTel EInvestments Pte Ltd",
+   "last_seen": "2024-11-07",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2021-01-01",
+   "key": "Jacqueline Dawn Reses|UNKNOWN_CONTROL_ROLE|Post House Capital LLC",
+   "last_seen": "2021-01-01",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2021-12-22",
+   "key": "SVB Financial|PARENT|Fund VIII-A. Silicon Valley Bank",
+   "last_seen": "2021-12-22",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2021-12-22",
+   "key": "SVB Financial|PARENT|Silicon Valley Bank",
+   "last_seen": "2021-12-22",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Digital Security|BENEFICIAL_OWNER|Embedi",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2004-01-28",
+   "key": "Wells Fargo|PARENT|Option One Mortgage Corporation",
+   "last_seen": "2004-03-31",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Yuri Kovalchuk|BENEFICIAL_OWNER|Bank Rossiya",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2009-09-23",
+   "key": "Last|PARENT|McCollum’s bill singles out Pharmacia & Upjohn Company Inc",
+   "last_seen": "2009-09-23",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Hesco Engineering|BENEFICIAL_OWNER|IPC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Chen|BENEFICIAL_OWNER|XPCC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2026-04-27",
+   "key": "Randy Green|BENEFICIAL_OWNER|McCartney’s",
+   "last_seen": "2026-04-27",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Igor Rotenberg|BENEFICIAL_OWNER|Gazprom Burenie, OOO",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Igor Rotenberg|BENEFICIAL_OWNER|NPV Engineering Open Joint Stock Company",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2018-03-22",
+   "key": "Bridgepoint Education|BENEFICIAL_OWNER|Ashford University",
+   "last_seen": "2018-03-22",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "1998-03-31",
+   "key": "Marie Graziosi|UNKNOWN_CONTROL_ROLE|MADAJ Dezines, Ltd",
+   "last_seen": "1998-03-31",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Thrace Foundation|BENEFICIAL_OWNER|Ancient Heritage AD",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2021-01-01",
+   "key": "Anita Sands|UNKNOWN_CONTROL_ROLE|Sands Point Consulting, LLC",
+   "last_seen": "2021-01-01",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "oig.treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Wong|BENEFICIAL_OWNER|Emerald Homes",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Bank Sepah|PARENT|Bank Sepah International Plc",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2025-03-20",
+   "key": "Freddie|BENEFICIAL_OWNER|MERSCORP Holdings",
+   "last_seen": "2025-03-20",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-06-08",
+   "key": "Syntrio|PARENT|SRC LLC",
+   "last_seen": "2023-06-08",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Digital Services|BENEFICIAL_OWNER|Eurobet Partners OOD",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-10-29",
+   "key": "Lumen|PARENT|Delaware limited liability company",
+   "last_seen": "2023-10-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Sakarya|BENEFICIAL_OWNER|Profesyoneller Elektronik",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Brian D. Pardo|BENEFICIAL_OWNER|Family Trust",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2009-10-02",
+   "key": "ConocoPhillips|PARENT|Polar Tankers, Inc",
+   "last_seen": "2009-10-02",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Viktor Vekselberg|BENEFICIAL_OWNER|Renova Group",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-03-19",
+   "key": "Douglas Kaden|BENEFICIAL_OWNER|DMK LP",
+   "last_seen": "2025-03-19",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2012-05-31",
+   "key": "NYSE Euronext|BENEFICIAL_OWNER|NYSE Group",
+   "last_seen": "2012-05-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1997-12-29",
+   "key": "Charlotte|BENEFICIAL_OWNER|First Union Commercial Corp",
+   "last_seen": "1997-12-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Samer Foz|BENEFICIAL_OWNER|Lana TV",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Alphabet|PARENT|Google LLC",
+   "last_seen": null,
+   "n_docs": 3,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2018-04-10",
+   "key": "Rich Dad|BENEFICIAL_OWNER|Licensed Marks",
+   "last_seen": "2018-04-10",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2011-11-08",
+   "key": "Wilmington|BENEFICIAL_OWNER|Capital Street Delaware LP",
+   "last_seen": "2011-11-08",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2007-10-01",
+   "key": "British Petro|PARENT|Crown Landing, LLC",
+   "last_seen": "2007-10-01",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2023-01-17",
+   "key": "BNP Paribas|PARENT|BW Holdings",
+   "last_seen": "2023-01-17",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Wael Bazzi|BENEFICIAL_OWNER|BSQRD Limited",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Wael Bazzi|BENEFICIAL_OWNER|Voltra Transcor Energy BVBA",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Wael Bazzi|BENEFICIAL_OWNER|OFFISCOOP NV",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Al-Cardinal|BENEFICIAL_OWNER|Nabah",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2004-10-13",
+   "key": "JPMP SBIC|PARENT|JPMP Master Fund Manager, LP",
+   "last_seen": "2004-10-13",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-10-29",
+   "key": "Ajay Ghanekar|BENEFICIAL_OWNER|Box Turtle Holdings, LLC",
+   "last_seen": "2023-10-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Games Unlimited|BENEFICIAL_OWNER|Old Games EOOD",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "oversight.house.gov"
+   ],
+   "first_seen": "2023-07-31",
+   "key": "Zlochevsky|BENEFICIAL_OWNER|Burisma",
+   "last_seen": "2023-07-31",
+   "n_docs": 1,
+   "postures": [
+    "CONGRESSIONAL_ASSERTION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Zepeda|BENEFICIAL_OWNER|Luzy",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": null,
+   "key": "Fleet|PARENT|Fleet Mortgage Corporation",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "SVB Leerink|PARENT|Regulatory Affiliates SVB Leerink LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2018-12-31",
+   "key": "SVB Leerink|PARENT|SVB Leerink Capital LLC",
+   "last_seen": "2018-12-31",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION",
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2018-12-31",
+   "key": "SVB Leerink|PARENT|Regulation of Certain Subsidiaries SVB Leerink LLC",
+   "last_seen": "2018-12-31",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-12-07",
+   "key": "Angel Eduardo Torres|BENEFICIAL_OWNER|Tower Elite",
+   "last_seen": "2025-12-07",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "SVB Securities|PARENT|SVB Securities Capital LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "SVB Securities|PARENT|SVB Securities LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "gao.gov"
+   ],
+   "first_seen": "2007-12-01",
+   "key": "Morgan Stanley|BENEFICIAL_OWNER|TALF borrowing by funds managed by FrontPoint LLC",
+   "last_seen": "2007-12-01",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2015-02-06",
+   "key": "People’s Capital|PARENT|PCLC Vessel Owner I, Inc",
+   "last_seen": "2015-02-06",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Ruben Tatulian|BENEFICIAL_OWNER|Novyi Vek - Media",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Ruben Tatulian|BENEFICIAL_OWNER|Vesna Hotel",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Jawad Nur-al-Din|BENEFICIAL_OWNER|MIRATH S.A.L. Mirath",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-07-19",
+   "key": "Dwayne Williams|BENEFICIAL_OWNER|Sumarrase, Inc",
+   "last_seen": "2023-07-19",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-03-14",
+   "key": "John Gregg|BENEFICIAL_OWNER|BlueWater Wisper Ventures LLC",
+   "last_seen": "2023-03-14",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "Sierra Pacific Resources|PARENT|Sierra Pacific Power Company",
+   "last_seen": null,
+   "n_docs": 3,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-01-28",
+   "key": "New KKR Parent|PARENT|KKR Holdings L.P",
+   "last_seen": "2023-01-28",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2026-06-04",
+   "key": "Leisa Eckerle Hankins|BENEFICIAL_OWNER|Benjamin Twiggs",
+   "last_seen": "2026-06-04",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Nunns|BENEFICIAL_OWNER|Mid-Kan Well Service, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Nunns|BENEFICIAL_OWNER|Pawnee Iron Works, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Nunns|BENEFICIAL_OWNER|Warren Drilling, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-07-19",
+   "key": "Seventh Avenue II|BENEFICIAL_OWNER|PRG Holdings",
+   "last_seen": "2023-08-09",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Nove Development|BENEFICIAL_OWNER|National Lottery AD",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2008-10-10",
+   "key": "Carbite Golf|PARENT|Carbite, Inc",
+   "last_seen": "2008-10-10",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-06-11",
+   "key": "Macquarie Infrastructure|UNKNOWN_CONTROL_ROLE|MIP V GP",
+   "last_seen": "2024-06-11",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2003-03-31",
+   "key": "Household International|PARENT|NBGL. Household Bank",
+   "last_seen": "2003-03-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-12-10",
+   "key": "Cable One|PARENT|VoIP LLC",
+   "last_seen": "2024-05-06",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-08-15",
+   "key": "Planet Capital|BENEFICIAL_OWNER|Kinex",
+   "last_seen": "2024-08-15",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2004-12-31",
+   "key": "Central Park West|PARENT|Mr. Nadelman has been President of Ninety Holding",
+   "last_seen": "2004-12-31",
+   "n_docs": 2,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2004-12-31",
+   "key": "Central Park West|PARENT|Nadelman has been President of Ninety Holding",
+   "last_seen": "2004-12-31",
+   "n_docs": 2,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": "1997-02-17",
+   "key": "South Africa|BENEFICIAL_OWNER|U.S. corp",
+   "last_seen": "1997-02-17",
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Lucas|BENEFICIAL_OWNER|Mid-Kan Well Service, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Lucas|BENEFICIAL_OWNER|Pawnee Iron Works, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Lucas|BENEFICIAL_OWNER|Warren Drilling, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-12-07",
+   "key": "Spectrotel|PARENT|Spectrotel Holding Company, LLC",
+   "last_seen": "2025-12-07",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2019-12-31",
+   "key": "Newtek|PARENT|Newtek Commercial Lending, Inc",
+   "last_seen": "2021-12-31",
+   "n_docs": 4,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2002-12-31",
+   "key": "Matrix Settlement|PARENT|MSCS Financial Services, LLC",
+   "last_seen": "2003-12-31",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2014-12-31",
+   "key": "Franklin Resources|PARENT|Mutual Advisers, LLC",
+   "last_seen": "2014-12-31",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "1998-09-29",
+   "key": "Howard Phillips|BENEFICIAL_OWNER|Idaho Potato Packers",
+   "last_seen": "1998-09-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2008-12-31",
+   "key": "ResCap|PARENT|GMAC Mortgage LLC",
+   "last_seen": "2008-12-31",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2026-07-28",
+   "key": "Dakota Ridge|PARENT|Dakota Platform, Inc",
+   "last_seen": "2026-07-28",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Bazzoni|BENEFICIAL_OWNER|AMG",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Bazzoni|BENEFICIAL_OWNER|Serigraphiclab",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Bazzoni|BENEFICIAL_OWNER|Elemento Oil",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-01-28",
+   "key": "Richard Magnuson|UNKNOWN_CONTROL_ROLE|GI Manager LLC",
+   "last_seen": "2023-01-28",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Ashraf Seed Ahmed|BENEFICIAL_OWNER|Nabah",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "Pawel|BENEFICIAL_OWNER|Tetrix Financial",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-11-07",
+   "key": "Deutsche Telekom|UNKNOWN_CONTROL_ROLE|T-Mobile",
+   "last_seen": "2024-11-07",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-12-31",
+   "key": "Mutual|PARENT|Noble Acquisition, Inc",
+   "last_seen": "2023-12-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2009-05-30",
+   "key": "Exchange Act|BENEFICIAL_OWNER|Support Agreements Shares",
+   "last_seen": "2009-05-30",
+   "n_docs": 1,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "judiciary.house.gov"
+   ],
+   "first_seen": "2024-08-19",
+   "key": "Hunter Biden|BENEFICIAL_OWNER|Rosemont Seneca Partners",
+   "last_seen": "2024-08-19",
+   "n_docs": 1,
+   "postures": [
+    "CONGRESSIONAL_ASSERTION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-10-29",
+   "key": "T-Mobile USA|PARENT|T-Mobile USA, Inc",
+   "last_seen": "2023-10-29",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2008-03-31",
+   "key": "Mary Pattison Brodess|BENEFICIAL_OWNER|Rit",
+   "last_seen": "2008-03-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Ajaka|BENEFICIAL_OWNER|Top Technologies SARL",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2017-03-13",
+   "key": "Teachers Insurance|PARENT|TCT Holdings",
+   "last_seen": "2017-03-13",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2009-04-30",
+   "key": "President Obama|BENEFICIAL_OWNER|General Motors",
+   "last_seen": "2009-04-30",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-03-17",
+   "key": "James Kay|BENEFICIAL_OWNER|Indian Peak",
+   "last_seen": "2024-03-17",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2018-02-26",
+   "key": "Denis Katsyv|BENEFICIAL_OWNER|Prevezon",
+   "last_seen": "2018-02-26",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Leal|BENEFICIAL_OWNER|Cosmo",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Leal|BENEFICIAL_OWNER|Alel",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Leal|BENEFICIAL_OWNER|Luzy",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "Bell Canada|PARENT|Delaware private corporation",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2005-12-31",
+   "key": "GlobeTel|PARENT|Sanswire Networks LLC",
+   "last_seen": "2005-12-31",
+   "n_docs": 2,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2011-11-08",
+   "key": "Delaware1|BENEFICIAL_OWNER|Capital Street Delaware LP",
+   "last_seen": "2011-11-08",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "gao.gov"
+   ],
+   "first_seen": null,
+   "key": "New York City’s|BENEFICIAL_OWNER|FST",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "Verizon|PARENT|Frontier with France Merger Sub Inc",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Tesic|BENEFICIAL_OWNER|Moonstorm Enterprises LTD",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Tesic|BENEFICIAL_OWNER|Araneks DOO",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Tesic|BENEFICIAL_OWNER|Vectura Trans DOO",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "gao.gov"
+   ],
+   "first_seen": null,
+   "key": "Defense Finance|BENEFICIAL_OWNER|GAFS-R",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "fincen.gov"
+   ],
+   "first_seen": "2020-05-21",
+   "key": "Al Duais|BENEFICIAL_OWNER|King Mail & Wireless Inc",
+   "last_seen": "2020-05-21",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Bazzi|BENEFICIAL_OWNER|Africa Middle East Investment Holding SAL",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Bazzi|BENEFICIAL_OWNER|Off Shore, an import/export company",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Bazzi|BENEFICIAL_OWNER|Euro African Group LTD",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Bazzi|BENEFICIAL_OWNER|Premier Investment Group SAL Offshore",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Bazzi|BENEFICIAL_OWNER|Global Trading Group NV",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Rami Makhluf|BENEFICIAL_OWNER|Syriatel",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2009-09-21",
+   "key": "National Development Council|PARENT|Grow America Fund",
+   "last_seen": "2009-09-21",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Prigozhin|BENEFICIAL_OWNER|M Finans",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Prigozhin|BENEFICIAL_OWNER|Lobaye Invest",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-12-31",
+   "key": "Novacap|PARENT|Horizon Acquisition Parent LLC",
+   "last_seen": "2023-12-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2018-07-24",
+   "key": "Fujisawa Pharmaceutical Co|PARENT|Fujisawa Healthcare, Inc",
+   "last_seen": "2018-07-24",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2011-06-29",
+   "key": "CON NV|UNKNOWN_CONTROL_ROLE|BIOeCON Holding",
+   "last_seen": "2014-08-18",
+   "n_docs": 8,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2010-06-23",
+   "key": "Joseph Nelson|BENEFICIAL_OWNER|Skyline",
+   "last_seen": "2010-06-23",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "gao.gov"
+   ],
+   "first_seen": "2015-11-16",
+   "key": "Fannie Mae|BENEFICIAL_OWNER|CSS",
+   "last_seen": "2015-11-16",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2025-03-20",
+   "key": "Fannie Mae|BENEFICIAL_OWNER|MERSCORP Holdings",
+   "last_seen": "2025-03-20",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2024-06-11",
+   "key": "Luis|UNKNOWN_CONTROL_ROLE|Optivon",
+   "last_seen": "2024-06-11",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2009-12-31",
+   "key": "United Western BankGeneral|PARENT|Matrix Financial Services Corporation",
+   "last_seen": "2009-12-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "fincen.gov"
+   ],
+   "first_seen": "2003-11-25",
+   "key": "Kyaw Win|BENEFICIAL_OWNER|Mayflower Bank",
+   "last_seen": "2003-11-25",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Benedicto Quinones|UNKNOWN_CONTROL_ROLE|Arturo Quinonez Ltda",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Eurogroup Engineering|BENEFICIAL_OWNER|Siguro EOOD",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Vabo Systems|BENEFICIAL_OWNER|Decart OOD",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-04-21",
+   "key": "Michael Miller|BENEFICIAL_OWNER|FiberLight",
+   "last_seen": "2023-04-21",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2007-09-14",
+   "key": "Golden West|PARENT|New York",
+   "last_seen": "2007-09-14",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Ismael Tash|BENEFICIAL_OWNER|SMART",
+   "last_seen": null,
+   "n_docs": 2,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2007-02-05",
+   "key": "United States Olympic Committee|PARENT|Federal property to the United States Paralympics, Incorporated",
+   "last_seen": "2007-04-30",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-01-28",
+   "key": "Telxius Cable Am|PARENT|Puerto Rico company",
+   "last_seen": "2023-01-28",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-01-28",
+   "key": "Telxius Cable Am|PARENT|Colombia company",
+   "last_seen": "2023-01-28",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2018-05-25",
+   "key": "BTI Computer Systems|PARENT|Manufacturing, Inc",
+   "last_seen": "2018-05-25",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "1999-05-20",
+   "key": "Carolina|PARENT|NationsBanc Mortgage Corporation",
+   "last_seen": "1999-05-20",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Gennaddy Timchenko|BENEFICIAL_OWNER|Volga Group",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Vabo Management|BENEFICIAL_OWNER|Vihrogonika AD",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2023-10-02",
+   "key": "Alphaboost Purchaser|PARENT|Alphaboost Merger Sub, LLC",
+   "last_seen": "2023-10-02",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Zhao Wei|BENEFICIAL_OWNER|King Romans Company Limited",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2025-12-31",
+   "key": "China Mobile Hong|BENEFICIAL_OWNER|China Mobile Limited",
+   "last_seen": "2025-12-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Aras Habib|BENEFICIAL_OWNER|Al-Bilad Islamic Bank",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Lembergs|BENEFICIAL_OWNER|Ventspils Freeport Authority",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2009-10-02",
+   "key": "Price Waterhouse|UNKNOWN_CONTROL_ROLE|ADEA",
+   "last_seen": "2009-10-02",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Yevgeniy Prigozhin|BENEFICIAL_OWNER|Limited Liability Company Concord Management and Consulting and Concord Catering",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "Deerfield Media|PARENT|Licensee, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2008-12-11",
+   "key": "Services|PARENT|Zurich Insurance Company",
+   "last_seen": "2008-12-11",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Mammut Industries|BENEFICIAL_OWNER|Mammut Diesel",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "treasury.gov"
+   ],
+   "first_seen": null,
+   "key": "Amir Katrangi|BENEFICIAL_OWNER|Polo Trading",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "ADMINISTRATIVE_DESIGNATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "McNaul|BENEFICIAL_OWNER|Mid-Kan Well Service, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "McNaul|BENEFICIAL_OWNER|Pawnee Iron Works, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": null,
+   "key": "McNaul|BENEFICIAL_OWNER|Warren Drilling, LLC",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2015-11-19",
+   "key": "Act|BENEFICIAL_OWNER|Common Stock",
+   "last_seen": "2015-12-31",
+   "n_docs": 3,
+   "postures": [
+    "SELF_REPORTED"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": null,
+   "key": "Samuel Redick|BENEFICIAL_OWNER|Point-a-Pitre",
+   "last_seen": null,
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "occ.gov"
+   ],
+   "first_seen": "2011-08-31",
+   "key": "Promontory|PARENT|Promontory will also rely on Promontory Risk Review, LLP",
+   "last_seen": "2011-08-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "govinfo.gov"
+   ],
+   "first_seen": "2017-07-12",
+   "key": "Time Warner|BENEFICIAL_OWNER|CNN",
+   "last_seen": "2017-09-27",
+   "n_docs": 2,
+   "postures": [
+    "GOVERNMENT_FINDING"
+   ]
+  },
+  {
+   "families": [
+    "sec.gov"
+   ],
+   "first_seen": "2001-12-31",
+   "key": "Subsidiaries|PARENT|Mississippi against AMCORE Consumer Finance Company, Inc",
+   "last_seen": "2001-12-31",
+   "n_docs": 1,
+   "postures": [
+    "GOVERNMENT_ALLEGATION"
+   ]
+  }
+ ]
+}

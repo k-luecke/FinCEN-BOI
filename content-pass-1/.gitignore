@@ -1,0 +1,15 @@
+# Large indexes are committed as .gz (gzip -n, content-identical) and
+# published raw via the derived-artifacts release. sha256sums.txt holds
+# digests of the raw files.
+corpus-inventory.jsonl
+extraction-status.jsonl
+document-classes.jsonl
+evidence-candidates.jsonl
+ownership-candidates.jsonl
+control-candidates.jsonl
+parent-subsidiary-candidates.jsonl
+shell-structure-candidates.jsonl
+financial-flow-candidates.jsonl
+boi-cta-candidates.jsonl
+sar-bsa-candidates.jsonl
+congressional-candidates.jsonl

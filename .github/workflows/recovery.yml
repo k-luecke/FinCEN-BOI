@@ -167,7 +167,21 @@ jobs:
             python3 coverage.py || true
 
             git add manifest.jsonl ledger.jsonl queue.jsonl metrics.json
-            git add recovery acquisition RECOVERY-REPORT.md
+            # Explicit paths only: `git add <dir>` also stages
+            # deletions of files this run's stale worktree lacks,
+            # which would silently remove files other work added to
+            # those directories after this run's checkout forked.
+            git add \
+              recovery/challenge-observations.jsonl \
+              recovery/document-identities.jsonl \
+              recovery/recovery-links.jsonl \
+              recovery/unresolved-challenges.jsonl \
+              recovery/metrics.json \
+              acquisition/doj-recovery-queue.jsonl \
+              acquisition/federal-register-recovery-queue.jsonl \
+              acquisition/congress-recovery-queue.jsonl \
+              acquisition/gao-recovery-queue.jsonl \
+              RECOVERY-REPORT.md
             git add coverage.json COVERAGE.md 2>/dev/null || true
             if git diff --cached --quiet; then
               echo "No recovery state changes to commit."

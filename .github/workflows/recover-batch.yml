@@ -1,0 +1,117 @@
+name: Recovery crawl (batch seeds)
+
+# One-shot recovery acquisition from a committed seed file — DOJ
+# ordinary-retry URLs (later public retrieval attempts; NO bot-
+# protection circumvention of any kind, per
+# content_pass_2/recovery_queues.py policy) plus citation-mined
+# official-source URLs (congress.gov, gao.gov, govinfo.gov,
+# fincen.gov). Identical durability pipeline to collect-pending:
+# crawl -> verify hashes -> durable release -> verify release exists ->
+# only then commit state.
+
+on:
+  workflow_dispatch:
+    inputs:
+      seeds:
+        description: "Seed file (url|provenance|label per line)"
+        default: "acquisition/seeds-recovery-batch1.txt"
+        type: string
+      delay:
+        description: "Seconds between requests"
+        default: "1.5"
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: archive-crawl
+  cancel-in-progress: false
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Select seed work
+        id: plan
+        env:
+          SEEDS: ${{ inputs.seeds }}
+        run: |
+          cp "$SEEDS" pending-seeds.txt
+          count=$(grep -c . pending-seeds.txt || true)
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          echo "Recovery URLs this run: $count"
+
+      - name: Crawl recovery seeds
+        if: steps.plan.outputs.count != '0'
+        env:
+          DELAY: ${{ inputs.delay || '1.5' }}
+        run: >
+          python3 archive.py
+          --seeds pending-seeds.txt
+          --delay "$DELAY"
+          --out archive
+          --manifest run-manifest.jsonl
+
+      - name: Verify fetched objects
+        if: steps.plan.outputs.count != '0'
+        run: python3 verify.py --manifest run-manifest.jsonl
+
+      - name: Preserve run manifest as artifact
+        if: steps.plan.outputs.count != '0'
+        uses: actions/upload-artifact@v4
+        with:
+          name: run-manifest-${{ github.run_id }}
+          path: run-manifest.jsonl
+          retention-days: 90
+
+      - name: Archive objects to durable release storage
+        if: steps.plan.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          ok=$(python3 -c "import json,sys; print(sum(1 for l in open('run-manifest.jsonl') if json.loads(l).get('sha256')))")
+          if [ "$ok" = "0" ]; then
+            echo "No successful retrievals — nothing to publish; failing so the gap is visible."
+            exit 1
+          fi
+          tag="objects-run-${RUN_ID}"
+          tarball="objects-${RUN_ID}.tar.zst"
+          tar --zstd -cf "$tarball" archive
+          size=$(stat -c%s "$tarball")
+          objects=$(find archive/objects -type f | wc -l)
+          if [ "$size" -gt 1900000000 ]; then
+            split -d -b 1900M "$tarball" "$tarball.part"
+            assets="$tarball".part*
+            note="Split tarball: reassemble with \`cat $tarball.part* > $tarball\`."
+          else
+            assets="$tarball"
+            note="Single tarball."
+          fi
+          gh release create "$tag" \
+            --title "Recovery crawl $(date -u +%Y-%m-%d) (run ${RUN_ID})" \
+            --notes "$objects content-addressed objects from the recovery seed batch (DOJ ordinary retries + citation-mined official sources). Tar paths match manifest.jsonl object_path values. ${note}" \
+            $assets
+          asset_count=$(gh release view "$tag" --json assets --jq '.assets | length')
+          if [ "$asset_count" -lt 1 ]; then
+            echo "Release $tag has no assets — durability NOT confirmed."
+            exit 1
+          fi
+          echo "Release $tag confirmed with $asset_count asset(s)."
+
+      - name: Commit collection state
+        if: steps.plan.outputs.count != '0'
+        env:
+          METRICS_FLAGS: --release-verified
+        run: >
+          ./scripts/commit_state.sh run-manifest.jsonl
+          "Recovery crawl $(date -u +%Y-%m-%d): DOJ retries + citation-mined sources"
