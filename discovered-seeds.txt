@@ -21664,6 +21664,8 @@ https://vault.fbi.gov/james-ray/James%20Ray%20Part%2002%20%28Final%29/view|GOV-P
 https://vault.fbi.gov/james-robertson/James%20Robertson%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/james-schlesinger/James%20Schlesinger%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/james-thurmond/James%20Thurmond%20Part%2001%20%28Final%29v/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/james-thurmond/James%20Thurmond%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/james-thurmond/james-thurmond-part-02/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/james-wallace-laprade/James%20Wallace%20LaPrade%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/james-whitey-bulger/James%20%28Whitey%29%20Bulger%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/james-whitey-bulger/James%20%28Whitey%29%20Bulger%20Part%2002/view|GOV-PUBLIC|vault.fbi.gov
@@ -21890,6 +21892,9 @@ https://vault.fbi.gov/kathleen-ainsworth/kathleen-ainsworth-final/view|GOV-PUBLI
 https://vault.fbi.gov/kathy-boudin/Kathy%20Boudin%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/kathy-boudin/Kathy%20Boudin%20Part%2002/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/kathy-boudin/kathy-boudin-part-03-final/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/ken-mcelroy/ken-mcelroy-part-01/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/ken-mcelroy/ken-mcelroy-part-02/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/ken-mcelroy/ken-mcelroy-part-03-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/kenneth-starr/Kenneth%20Starr%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/kenneth-starr/kenneth-starr-part-02/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/kenneth-starr/kenneth-starr-part-03-final/view|GOV-PUBLIC|vault.fbi.gov
