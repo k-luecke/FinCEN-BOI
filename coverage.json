@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T12:36:33.331659+00:00",
+  "generated_at": "2026-08-29T14:52:11.774593+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -73,13 +73,13 @@
     },
     {
       "host": "home.treasury.gov",
-      "urls_discovered": 5000,
+      "urls_discovered": 9723,
       "urls_attempted": 8792,
       "urls_archived": 8745,
       "non_content_captures": 0,
       "urls_with_content": 8745,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 2886103594,
+      "bytes": 2886062510,
       "median_object_bytes": 113586,
       "p95_object_bytes": 598957,
       "known_bulk_gaps": []
@@ -92,7 +92,7 @@
       "non_content_captures": 0,
       "urls_with_content": 988,
       "ceiling_hit": "no",
-      "bytes": 632521241,
+      "bytes": 632521243,
       "median_object_bytes": 184343,
       "p95_object_bytes": 1200637,
       "known_bulk_gaps": []
@@ -112,7 +112,7 @@
     },
     {
       "host": "ncua.gov",
-      "urls_discovered": 9408,
+      "urls_discovered": 9422,
       "urls_attempted": 5551,
       "urls_archived": 5549,
       "non_content_captures": 0,
@@ -177,13 +177,13 @@
     },
     {
       "host": "vault.fbi.gov",
-      "urls_discovered": 5016,
+      "urls_discovered": 5063,
       "urls_attempted": 9561,
       "urls_archived": 9559,
       "non_content_captures": 0,
       "urls_with_content": 9559,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 325876717,
+      "bytes": 325876648,
       "median_object_bytes": 21936,
       "p95_object_bytes": 22453,
       "known_bulk_gaps": []
@@ -191,12 +191,12 @@
     {
       "host": "web.archive.org",
       "urls_discovered": 0,
-      "urls_attempted": 783,
-      "urls_archived": 670,
+      "urls_attempted": 784,
+      "urls_archived": 671,
       "non_content_captures": 0,
-      "urls_with_content": 670,
+      "urls_with_content": 671,
       "ceiling_hit": "no",
-      "bytes": 27212016,
+      "bytes": 27212259,
       "median_object_bytes": 255,
       "p95_object_bytes": 101128,
       "known_bulk_gaps": []
@@ -218,7 +218,7 @@
     },
     {
       "host": "www.fdic.gov",
-      "urls_discovered": 5000,
+      "urls_discovered": 5010,
       "urls_attempted": 17076,
       "urls_archived": 17073,
       "non_content_captures": 0,
@@ -272,13 +272,13 @@
     },
     {
       "host": "www.fincen.gov",
-      "urls_discovered": 2871,
+      "urls_discovered": 2874,
       "urls_attempted": 4854,
       "urls_archived": 4166,
       "non_content_captures": 0,
       "urls_with_content": 4166,
       "ceiling_hit": "no",
-      "bytes": 876939259,
+      "bytes": 876939429,
       "median_object_bytes": 34857,
       "p95_object_bytes": 823397,
       "known_bulk_gaps": []
@@ -291,7 +291,7 @@
       "non_content_captures": 54,
       "urls_with_content": 7619,
       "ceiling_hit": "no",
-      "bytes": 6715028102,
+      "bytes": 6715034960,
       "median_object_bytes": 93970,
       "p95_object_bytes": 5030953,
       "known_bulk_gaps": [
@@ -321,7 +321,7 @@
       "non_content_captures": 4367,
       "urls_with_content": 1410,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 191920929,
+      "bytes": 191921676,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101504,
       "known_bulk_gaps": []
@@ -341,13 +341,13 @@
     },
     {
       "host": "www.occ.gov",
-      "urls_discovered": 5010,
+      "urls_discovered": 5015,
       "urls_attempted": 15457,
       "urls_archived": 15453,
       "non_content_captures": 0,
       "urls_with_content": 15453,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3225744300,
+      "bytes": 3225745080,
       "median_object_bytes": 60405,
       "p95_object_bytes": 857400,
       "known_bulk_gaps": []

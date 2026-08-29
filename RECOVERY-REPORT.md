@@ -1,11 +1,11 @@
 # Recovery report — challenge-aware lawful recovery
 
-Generated 2026-08-20T12:36:29.784633+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
+Generated 2026-08-29T14:52:09.110750+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
 
 ## 1. Challenge / non-content responses
 
 - **6277** challenge/non-content observations across the corpus (latest observation per URL).
-- Requested-URL coverage states: UNRESOLVED_CHALLENGE: 4440, NON_CONTENT_TECHNICAL_RESPONSE: 1120, RECOVERED_OFFICIAL_MIRROR: 317, RECOVERED_WEB_ARCHIVE: 282, ACCESS_RESTRICTED: 118
+- Requested-URL coverage states: UNRESOLVED_CHALLENGE: 4439, NON_CONTENT_TECHNICAL_RESPONSE: 1120, RECOVERED_OFFICIAL_MIRROR: 317, RECOVERED_WEB_ARCHIVE: 282, ACCESS_RESTRICTED: 118, ARCHIVED_CONTENT: 1
 
 ## 2. Hosts generating them
 
@@ -25,7 +25,7 @@ Generated 2026-08-20T12:36:29.784633+00:00 from committed recovery state. No CAP
 | www.federalregister.gov | RECOVERED_OFFICIAL_MIRROR: 317, UNRESOLVED_CHALLENGE: 135 |
 | www.ffiec.gov | ACCESS_RESTRICTED: 14 |
 | www.fincen.gov | NON_CONTENT_TECHNICAL_RESPONSE: 8, ACCESS_RESTRICTED: 5 |
-| www.gao.gov | UNRESOLVED_CHALLENGE: 54, NON_CONTENT_TECHNICAL_RESPONSE: 1, ACCESS_RESTRICTED: 1 |
+| www.gao.gov | UNRESOLVED_CHALLENGE: 53, ARCHIVED_CONTENT: 1, NON_CONTENT_TECHNICAL_RESPONSE: 1, ACCESS_RESTRICTED: 1 |
 | www.govinfo.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1054 |
 | www.justice.gov | UNRESOLVED_CHALLENGE: 4085, RECOVERED_WEB_ARCHIVE: 282, ACCESS_RESTRICTED: 4, NON_CONTENT_TECHNICAL_RESPONSE: 3 |
 | www.ncua.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
@@ -36,15 +36,15 @@ Generated 2026-08-20T12:36:29.784633+00:00 from committed recovery state. No CAP
 ## 3. Document identities
 
 - 6277 identities built; 5930 resolved via API metadata or URL-slug derivation.
-- Document-identity coverage: UNRESOLVED_CHALLENGE: 4440, NON_CONTENT_TECHNICAL_RESPONSE: 1120, RECOVERED_OFFICIAL_MIRROR: 317, RECOVERED_WEB_ARCHIVE: 282, ACCESS_RESTRICTED: 118
+- Document-identity coverage: UNRESOLVED_CHALLENGE: 4439, NON_CONTENT_TECHNICAL_RESPONSE: 1120, RECOVERED_OFFICIAL_MIRROR: 317, RECOVERED_WEB_ARCHIVE: 282, ACCESS_RESTRICTED: 118, ARCHIVED_CONTENT: 1
 
 ## 4–7. Recovery outcomes
 
-- Same-agency recoveries (`SAME_DOCUMENT`): 0
+- Same-agency recoveries (`SAME_DOCUMENT`): 1
 - Official government mirrors (`OFFICIAL_MIRROR`): 317
 - Public web archive (`ARCHIVED_VERSION`): 282
 - Derived representations (API metadata records): 317
-- Still unresolved: **5678** (by tier: {0: 159, 1: 2304, 2: 3215})
+- Still unresolved: **5677** (by tier: {0: 159, 1: 2304, 2: 3214})
 
 ## 8. Highest-value challenged collections
 
@@ -62,7 +62,7 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 ## 11. Congress / GAO
 
 - Congress: ACCESS_RESTRICTED: 62
-- GAO: UNRESOLVED_CHALLENGE: 54, NON_CONTENT_TECHNICAL_RESPONSE: 1, ACCESS_RESTRICTED: 1
+- GAO: UNRESOLVED_CHALLENGE: 53, ARCHIVED_CONTENT: 1, NON_CONTENT_TECHNICAL_RESPONSE: 1, ACCESS_RESTRICTED: 1
 
 ## 12. Challenge fingerprints observed
 
@@ -72,7 +72,7 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2410` × 93
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2419` × 78
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2443` × 66
-- `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2586` × 62
+- `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2586` × 63
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2454` × 62
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2421` × 59
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2564` × 58
@@ -87,6 +87,7 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 - `federal_register_api_inventory_crossref`: 317 links
 - `federal_register_api`: 317 links
 - `wayback_cdx`: 282 links
+- `ordinary_retry_probe`: 1 links
 
 ## 14. Access-limited gaps
 
