@@ -9771,6 +9771,8 @@ https://ncua.gov/about/inspector-general/whistleblower-protection-your-rights|GO
 https://ncua.gov/about/inspector-general/whistleblower-protection-your-rights/ncua-annual-whistleblower-protection-prohibited-personnel-practice-notice|GOV-PUBLIC|ncua.gov
 https://ncua.gov/about/leadership|GOV-PUBLIC|ncua.gov
 https://ncua.gov/about/leadership/honorable-john-crews|GOV-PUBLIC|ncua.gov
+https://ncua.gov/about/leadership/honorable-john-crews/recent-news|GOV-PUBLIC|ncua.gov
+https://ncua.gov/about/leadership/honorable-john-crews/recent-speeches|GOV-PUBLIC|ncua.gov
 https://ncua.gov/about/leadership/honorable-kyle-s-hauptman/news-press|GOV-PUBLIC|ncua.gov
 https://ncua.gov/about/leadership/honorable-kyle-s-hauptman/newsletter-articles|GOV-PUBLIC|ncua.gov
 https://ncua.gov/about/leadership/honorable-kyle-s-hauptman/recent-speeches|GOV-PUBLIC|ncua.gov
@@ -15029,6 +15031,7 @@ https://ncua.gov/news/enforcement-actions/administrative-orders/2025/administrat
 https://ncua.gov/news/enforcement-actions/administrative-orders/2025/administrative-order-matter-treasury-employees-federal-credit-union|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2025/administrative-order-matter-tuskegee-federal-credit-union|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2025/administrative-order-matter-university-pennsylvania-students-federal-credit-union|GOV-PUBLIC|ncua.gov
+https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-aaron-steele|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-abbigail-iglesias|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-alan-kaufman|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-aneicia-ford|GOV-PUBLIC|ncua.gov
@@ -29388,6 +29391,7 @@ https://www.fdic.gov/analysis/2024-01/2023-summary-deposits-highlights|GOV-PUBLI
 https://www.fdic.gov/analysis/2024-01/us-industrial-transition-and-its-effect-metro-areas-and-community-banks|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/analysis/2026-02/bank-lending-nondepository-financial-institutions|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/analysis/findings-fdic-survey-bank-efforts-serve-unbanked-and-underbanked|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/asset-sales/events/cbt-26-sale-announcement|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/bank-failures/failed-bank-list/community-bank-and-trust-west-georgia|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/bank-failures/failed-bank-list/first-national-bank-lindsay|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/bank-failures/failed-bank-list/kentland-federal-savings-and-loan-association|GOV-PUBLIC|www.fdic.gov
@@ -29701,6 +29705,7 @@ https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-affordable-housi
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-alliance-economic-inclusion-meeting-austin-texas|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-banker-roundtable-aligning-account-access-bank-florida|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-building-financial-stability-hispanics|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-capital-and-capacity-community-development-forum|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-community-development-workshop-equity-equivalent|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-cra-training-fdic-supervised-banks-new-york-new-jersey|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-cra-webinar-fdic-supervised-banks-illinois-indiana|GOV-PUBLIC|www.fdic.gov
@@ -29754,6 +29759,7 @@ https://www.fdic.gov/consumer-resource-center/events/fdic-hud-and-usda-host-webi
 https://www.fdic.gov/consumer-resource-center/events/fdic-kansas-city-aei-host-future-financial-professionals-and-career|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-kansas-city-aei-host-workforce-development-programs-and|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-money-smart-homeownership-resources|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/consumer-resource-center/events/fdic-money-smart-key-trends-shaping-financial-education-schools|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-money-smart-strengthens-financial-skills-and-behaviors-key|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-money-smart-town-hall-national-disability-employment-awareness|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-occ-and-frb-kc-host-wyoming-banker-cra-roundtable|GOV-PUBLIC|www.fdic.gov
@@ -29955,6 +29961,7 @@ https://www.fdic.gov/news/board-matters/2026/board-meeting-2026-05-20-3notation|
 https://www.fdic.gov/news/board-matters/2026/board-meeting-2026-06-25-1open|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/board-matters/2026/board-meeting-2026-06-25-2closed|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/board-matters/2026/board-meeting-2026-07-31-3notation|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/news/board-matters/2026/board-meeting-2026-08-27-3notation|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/campaigns/know-your-risk/social-toolkit.html|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/disaster/fiona.html|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/disaster/florence.html|GOV-PUBLIC|www.fdic.gov
@@ -33296,11 +33303,15 @@ https://www.fdic.gov/node/131846|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/131871|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/131891|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/131911|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/131931|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/131936|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/131956|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132056|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132101|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132111|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132191|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132221|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132241|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26481|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26486|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26491|GOV-PUBLIC|www.fdic.gov
@@ -43628,7 +43639,12 @@ https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-36.html|GOV-PUBL
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-36a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-37.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-38.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-39.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-39a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-4.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-40.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-41.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-42.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-5.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-6.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-7.html|GOV-PUBLIC|www.occ.gov
@@ -45366,6 +45382,8 @@ https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-60.html|GOV-PUB
 https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-60a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-64.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-64a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-71.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-71a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-1.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-10.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-11.html|GOV-PUBLIC|www.occ.gov
@@ -45436,10 +45454,14 @@ https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-68.html|GOV-PU
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-69.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-7.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-70.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-72.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-72a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-7a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-8.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/ppm-5310-3.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/ppm-5400-11.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/speeches/2020/pub-speech-2020-112.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/speeches/2020/pub-speech-2020-41.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/speeches/2020/pub-speech-2020-96.pdf|GOV-PUBLIC|www.occ.gov
@@ -46148,6 +46170,7 @@ https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-appli
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/revolut-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/ripple-national-trust-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/world-liberty-trust-company.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/zerohash-national-trust%20bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/zerohash-national-trust-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/financial-institution-lists/index-financial-institution-lists.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/financial-institution-lists/national-by-name.pdf|GOV-PUBLIC|www.occ.gov
@@ -46596,6 +46619,7 @@ https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1384.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1385.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1386.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1387.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/int1189.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/int1191.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/int1192.pdf|GOV-PUBLIC|www.occ.gov
