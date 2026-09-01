@@ -6875,6 +6875,7 @@ https://home.treasury.gov/news/press-releases/sb0614|GOV-PUBLIC|home.treasury.go
 https://home.treasury.gov/news/press-releases/sb0615|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0616|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0617|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0618|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0004|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0013|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0014|GOV-PUBLIC|home.treasury.gov
@@ -15033,6 +15034,7 @@ https://ncua.gov/news/enforcement-actions/administrative-orders/2025/administrat
 https://ncua.gov/news/enforcement-actions/administrative-orders/2025/administrative-order-matter-university-pennsylvania-students-federal-credit-union|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-aaron-steele|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-abbigail-iglesias|GOV-PUBLIC|ncua.gov
+https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-ahmed-hamada|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-alan-kaufman|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-aneicia-ford|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-ashley-viken|GOV-PUBLIC|ncua.gov
@@ -15040,9 +15042,11 @@ https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrat
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-christopher-chelette|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-daniel-johnson|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-jacqueline-burns|GOV-PUBLIC|ncua.gov
+https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-jessie-wright|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-jordan-l-mccarthy|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-marilyn-sullins|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-melisa-biscayno|GOV-PUBLIC|ncua.gov
+https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-teresa-palmer|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/administrative-orders/2026/administrative-order-matter-tyra-brown|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/enforcement-actions/call-report-cycle-late-filers-list|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/events|GOV-PUBLIC|ncua.gov
@@ -17103,6 +17107,7 @@ https://ncua.gov/newsroom/press-release/2026/ncua-issues-voluntary-egrpra-review
 https://ncua.gov/newsroom/press-release/2026/ncua-prohibits-five-individuals-participating-affairs-any-federally-insured-depository-institution|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-prohibits-five-individuals-participating-affairs-any-federally-insured-depository-institution-may-2026|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-prohibits-one-individual-participating-affairs-any-federally-insured-depository-institution|GOV-PUBLIC|ncua.gov
+https://ncua.gov/newsroom/press-release/2026/ncua-prohibits-three-individuals-participating-affairs-any-federally-insured-depository-institution|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-prohibits-two-individuals-participating-affairs-any-federally-insured-depository-institution|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-proposes-rule-permitted-payment-stablecoin-issuer-applications|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-raises-america-250-flag-commemorate-nations-250th-anniversary|GOV-PUBLIC|ncua.gov
@@ -24805,6 +24810,25 @@ https://vault.fbi.gov/alan-belmont/Alan%20Belmont%20Part%2003/view|GOV-PUBLIC|va
 https://vault.fbi.gov/alan-belmont/Alan%20Belmont%20Part%2004/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/alan-belmont/Alan%20Belmont%20Part%2005%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/alan-cranston/Alan%20Cranston%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-01/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-02/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-03/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-04/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-05/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-06/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-07/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-08/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-09/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-10/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-11/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-12/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-13/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-14/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-15/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-16/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-17/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-18/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/alan-pilon-monte-pilon/alan-pilon-monte-pilon-part-19-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/albert-tocco/Albert%20Tocco%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/albert-wedemeyer/Albert%20Wedemeyer%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/albert-wohlstetter/albert-wohlstetter-final/view|GOV-PUBLIC|vault.fbi.gov
@@ -25097,6 +25121,7 @@ https://vault.fbi.gov/bison-dele/bison-dele-part-01/view|GOV-PUBLIC|vault.fbi.go
 https://vault.fbi.gov/bison-dele/bison-dele-part-02/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/bison-dele/bison-dele-part-03-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/bitcoin/bitcoin-final/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/black-brotherhood-improvement-association/black-brotherhood-improvement-association-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/black-identity-extremism/black-identity-extremism-part-01.pdf/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/black-identity-extremism/black-identity-extremism-part-02.pdf/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/black-identity-extremism/black-identity-extremism-part-03.pdf/view|GOV-PUBLIC|vault.fbi.gov
@@ -26647,6 +26672,7 @@ https://vault.fbi.gov/judith-coplon/Judith%20Coplon%20Part%2018%20%28Final%29/vi
 https://vault.fbi.gov/julius-hobson/julius-hobson-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/junius-scales/junius-scales-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/junius-scales/junius-scales-part-02-final/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/kaarlo-tuomi/kaarlo-tuomi-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/karol-wojtyla/karol-wojtyla-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/karol-wojtyla/karol-wojtyla-part-02/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/karol-wojtyla/karol-wojtyla-part-03/view|GOV-PUBLIC|vault.fbi.gov
@@ -26685,6 +26711,11 @@ https://vault.fbi.gov/kyle-jackson/kyle-jackson-final/view|GOV-PUBLIC|vault.fbi.
 https://vault.fbi.gov/kyle-wilson/kyle-wilson-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/laboratory-reference-firearms-collection-policy-ld0020d/Laboratory%20Reference%20Firearms%20Collection%20Policy%20LD0020D%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/lactation-support-program-policy-directive-1180d/Lactation%20Support%20Program%20Policy%20Directive%201180D%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/laquan-mcdonald/laquan-mcdonald-part-01/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/laquan-mcdonald/laquan-mcdonald-part-02/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/laquan-mcdonald/laquan-mcdonald-part-03/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/laquan-mcdonald/laquan-mcdonald-part-04/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/laquan-mcdonald/laquan-mcdonald-part-05/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/larry-ashbrook/Larry%20Ashbrook%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/larry-bell/larry-bell-part-01-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/larry-flynt/larry-flynt-part-01/view|GOV-PUBLIC|vault.fbi.gov
@@ -29206,6 +29237,7 @@ https://vault.fbi.gov/william-billy-graham/William%20%28Billy%29%20Graham%20Part
 https://vault.fbi.gov/william-blatty/William%20Blatty%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/william-brock/William%20Brock%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/william-bullitt/William%20Bullitt%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/william-burkett/william-burkett-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/william-casey/william-casey-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/william-casey/william-casey-part-02/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/william-casey/william-casey-part-03/view|GOV-PUBLIC|vault.fbi.gov
@@ -34619,6 +34651,7 @@ https://www.federalregister.gov/documents/2026/07/24/2026-15030/proposed-amendme
 https://www.federalregister.gov/documents/2026/07/29/2026-15318/agency-information-collection-activities-proposed-renewal-comment-request-renewal-without-change-of|GOV-PUBLIC|Federal Register
 https://www.federalregister.gov/documents/2026/08/11/2026-16365/geographic-targeting-order-imposing-recordkeeping-and-reporting-requirements-on-certain-financial|GOV-PUBLIC|Federal Register
 https://www.federalregister.gov/documents/2026/08/14/2026-16576/beneficial-ownership-information-reporting-requirement-revision|GOV-PUBLIC|Federal Register
+https://www.federalregister.gov/documents/2026/09/01/2026-17871/proposal-of-special-measure-regarding-banque-misr-uae-as-a-financial-institution-operating-outside|GOV-PUBLIC|Federal Register
 https://www.fincen.gov/1st-review-suspicious-activity-reporting-system-sars|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/2006-revisions-bank-secrecy-actanti-money-laundering-examination-manual-july-28-2006|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/about-fincen|GOV-PUBLIC|www.fincen.gov
@@ -37813,6 +37846,7 @@ https://www.govinfo.gov/content/pkg/FR-2026-07-24/pdf/2026-15030.pdf|GOV-PUBLIC|
 https://www.govinfo.gov/content/pkg/FR-2026-07-29/pdf/2026-15318.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/content/pkg/FR-2026-08-11/pdf/2026-16365.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/content/pkg/FR-2026-08-14/pdf/2026-16576.pdf|GOV-PUBLIC|Federal Register
+https://www.govinfo.gov/content/pkg/FR-2026-09-01/pdf/2026-17871.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/developers|GOV-PUBLIC|www.govinfo.gov
 https://www.govinfo.gov/developers/system-design|GOV-PUBLIC|www.govinfo.gov
 https://www.govinfo.gov/digital-preservation|GOV-PUBLIC|www.govinfo.gov
