@@ -6878,6 +6878,7 @@ https://home.treasury.gov/news/press-releases/sb0617|GOV-PUBLIC|home.treasury.go
 https://home.treasury.gov/news/press-releases/sb0618|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0619|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0620|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0621|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0004|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0013|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0014|GOV-PUBLIC|home.treasury.gov
@@ -13758,6 +13759,7 @@ https://ncua.gov/files/publications/cusos-at-a-glance-2020.pdf|GOV-PUBLIC|ncua.g
 https://ncua.gov/files/publications/cusos-at-a-glance-2022.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/cusos-at-a-glance-2023.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/cusos-at-a-glance-2024.pdf|GOV-PUBLIC|ncua.gov
+https://ncua.gov/files/publications/cusos-at-a-glance-2025.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/cybersecurity/access-ransomware-readiness-assessment.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/cybersecurity/acet-quick-install-guide.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/cybersecurity/acet-user-guide.pdf|GOV-PUBLIC|ncua.gov
@@ -14010,6 +14012,7 @@ https://ncua.gov/files/publications/no-fear-act/no-fear-statistics-fy-2025-3q.pd
 https://ncua.gov/files/publications/no-fear-act/no-fear-statistics-fy-2025-4q.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/no-fear-act/no-fear-statistics-fy-2026-1q.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/no-fear-act/no-fear-statistics-fy-2026-2q.pdf|GOV-PUBLIC|ncua.gov
+https://ncua.gov/files/publications/no-fear-act/no-fear-statistics-fy-2026-3q.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/nol-economic-scenario-background.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/oig-audit-ncua-closing-package-schedule.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/oig-evaluation-stabilization-fund-closure-setting-normal-operating-level.pdf|GOV-PUBLIC|ncua.gov
@@ -14171,6 +14174,7 @@ https://ncua.gov/files/publications/regulations/corporate-stabilization-fund-pre
 https://ncua.gov/files/publications/regulations/credit-union-profile-form-4501A-december-2024.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/regulations/credit-union-profile-form-4501A-march-2026.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/regulations/credit-union-profile-form-changes-4501A-december-2024.pdf|GOV-PUBLIC|ncua.gov
+https://ncua.gov/files/publications/regulations/credit-union-profile-form-instructions-4501A-2026-Q3.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/regulations/credit-union-profile-form-instructions-4501A-december-2024.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/regulations/credit-union-self-run-stress-test-instructions.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/regulations/cu-online-user-guide.pdf|GOV-PUBLIC|ncua.gov
@@ -25116,6 +25120,7 @@ https://vault.fbi.gov/benjamin-crowninshield-bradlee/Benjamin%20Crowninshield%20
 https://vault.fbi.gov/benjamin-demartino/Benjamin%20DeMartino%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/benjamin-hecht/Benjamin%20Hecht%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/benjamin-hooks/Benjamin%20Hooks%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/benjamin-paddock/benjamin-paddock/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/benjamin-spock/Benjamin%20Spock%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/benjamin-valvo/benjamin-valvo-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/bernard-brodie/bernard-brodie-final/view|GOV-PUBLIC|vault.fbi.gov
@@ -26551,10 +26556,12 @@ https://vault.fbi.gov/jesse-helms/Jesse%20Helms%20Part%2001/view|GOV-PUBLIC|vaul
 https://vault.fbi.gov/jimmy-hoffa/jimmy-hoffa-part-19/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/joan-crawford/Joan%20Crawford%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/joan-rivers/Joan%20Alexandra%20Rivers%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/joanne-coughlin/joanne-coughlin-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/joe-paterno/Joe%20Paterno%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/joel-hinrichs/Joel%20Hinrichs%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/john-adamson-donald-bolles/John%20Adamson%20-%20Donald%20Bolles%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/john-bayard-anderson/John%20Bayard%20Anderson%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/john-benson/john-benson-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/john-birch-society/john-birch-society-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/john-birch-society/john-birch-society-part-02-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/john-carson/john-carson-final/view|GOV-PUBLIC|vault.fbi.gov
@@ -27295,6 +27302,7 @@ https://vault.fbi.gov/privacy-policy-guide-1113pg/privacy-policy-guide-1113pg-pa
 https://vault.fbi.gov/proactive-disclosure|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/proactive-disclosure-list|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/procedures-for-the-collection-of-biological-material/Procedures%20for%20the%20Collection%20of%20Biological%20Material%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/project-slammer/project-slammer-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/protests-in-baltimore-maryland-2015/Protests%20in%20Baltimore%2C%20Maryland%2C%202015%2C%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/protests-in-baltimore-maryland-2015/videos-of-protests-in-baltimore-maryland-2015/mp4/05-01-2015%20Video%2003/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/protocols-of-learned-elders-of-zion/Protocols%20of%20Learned%20Elders%20of%20Zion%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
@@ -34689,6 +34697,7 @@ https://www.federalregister.gov/documents/2026/07/29/2026-15318/agency-informati
 https://www.federalregister.gov/documents/2026/08/11/2026-16365/geographic-targeting-order-imposing-recordkeeping-and-reporting-requirements-on-certain-financial|GOV-PUBLIC|Federal Register
 https://www.federalregister.gov/documents/2026/08/14/2026-16576/beneficial-ownership-information-reporting-requirement-revision|GOV-PUBLIC|Federal Register
 https://www.federalregister.gov/documents/2026/09/01/2026-17871/proposal-of-special-measure-regarding-banque-misr-uae-as-a-financial-institution-operating-outside|GOV-PUBLIC|Federal Register
+https://www.federalregister.gov/documents/2026/09/04/2026-18194/geographic-targeting-order-imposing-recordkeeping-and-reporting-requirements-on-certain-money|GOV-PUBLIC|Federal Register
 https://www.fincen.gov/1st-review-suspicious-activity-reporting-system-sars|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/2006-revisions-bank-secrecy-actanti-money-laundering-examination-manual-july-28-2006|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/about-fincen|GOV-PUBLIC|www.fincen.gov
@@ -35364,6 +35373,7 @@ https://www.fincen.gov/news/news-releases/fincen-host-innovation-hours-program-w
 https://www.fincen.gov/news/news-releases/fincen-host-webinar-beneficial-ownership-information-reporting-requirements|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-host-webinar-beneficial-ownership-information-reporting-requirements-0|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-identifies-9-billion-iranian-shadow-banking-activity-2024|GOV-PUBLIC|www.fincen.gov
+https://www.fincen.gov/news/news-releases/fincen-identifies-nearly-13-billion-linked-suspected-digital-asset-scams|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-identifies-virtual-currency-exchange-bitzlato-primary-money-laundering|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-implement-cisada-provision-seeks-us-banks-assistance-uncovering-iranian|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-implement-sar-acknowledgements-and-validations-bsa-e-filing-submissions|GOV-PUBLIC|www.fincen.gov
@@ -37007,6 +37017,7 @@ https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/f
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/geographic-targeting-order-imposing|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/geographic-targeting-order-imposing-0|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/geographic-targeting-order-imposing-1|GOV-PUBLIC|www.fincen.gov
+https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/geographic-targeting-order-imposing-on-certain-money|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/imposition-fifth-special-measure-against|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/imposition-special-measure-against|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/imposition-special-measure-against-0|GOV-PUBLIC|www.fincen.gov
@@ -37886,6 +37897,7 @@ https://www.govinfo.gov/content/pkg/FR-2026-07-29/pdf/2026-15318.pdf|GOV-PUBLIC|
 https://www.govinfo.gov/content/pkg/FR-2026-08-11/pdf/2026-16365.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/content/pkg/FR-2026-08-14/pdf/2026-16576.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/content/pkg/FR-2026-09-01/pdf/2026-17871.pdf|GOV-PUBLIC|Federal Register
+https://www.govinfo.gov/content/pkg/FR-2026-09-04/pdf/2026-18194.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/developers|GOV-PUBLIC|www.govinfo.gov
 https://www.govinfo.gov/developers/system-design|GOV-PUBLIC|www.govinfo.gov
 https://www.govinfo.gov/digital-preservation|GOV-PUBLIC|www.govinfo.gov
@@ -42419,6 +42431,7 @@ https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-february-2026|GO
 https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-january-2025|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-january-2026|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-july-2025|GOV-PUBLIC|www.justice.gov
+https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-july-2026|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-june-2025|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-june-2026|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-march-2025|GOV-PUBLIC|www.justice.gov
@@ -42434,6 +42447,7 @@ https://www.justice.gov/history/blog/artifact-spotlight-loan-national-museum-afr
 https://www.justice.gov/history/blog/celebrating-americas-250th-anniversary-historic-milestone|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/history/blog/celebrating-law-day-2026-foundation-justice-and-democracy|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/history/blog/new-chapter-us-department-justice-museum|GOV-PUBLIC|www.justice.gov
+https://www.justice.gov/history/blog/remembering-911-twenty-five-years-transformation-and-resolve|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/jm/criminal-resource-manual-1004-general-elements-offense|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/jm/criminal-resource-manual-1036-24-hours-rebuttable-presumption|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/jm/criminal-resource-manual-1101-199|GOV-PUBLIC|www.justice.gov
