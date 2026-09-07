@@ -33393,6 +33393,7 @@ https://www.fdic.gov/node/132111|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132191|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132221|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132241|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132286|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26481|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26486|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26491|GOV-PUBLIC|www.fdic.gov
@@ -43736,6 +43737,8 @@ https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-4.html|GOV-PUBLI
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-40.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-41.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-42.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-43.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-43a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-5.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-6.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-7.html|GOV-PUBLIC|www.occ.gov
@@ -44194,6 +44197,8 @@ https://www.occ.gov/news-issuances/federal-register/2026/91fr252114.pdf|GOV-PUBL
 https://www.occ.gov/news-issuances/federal-register/2026/91fr37234.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2026/91fr37840.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2026/91fr38246.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/federal-register/2026/91fr56004.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/federal-register/2026/91fr56074.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2026/91fr7163.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2026/91fr9977.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2026/96fr29340.pdf|GOV-PUBLIC|www.occ.gov
@@ -45547,6 +45552,8 @@ https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-7.html|GOV-PUB
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-70.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-72.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-72a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-73.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-74.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-7a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-8.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9.html|GOV-PUBLIC|www.occ.gov
@@ -46711,6 +46718,9 @@ https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1385.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1386.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1387.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1388.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1389.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1390.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/int1189.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/int1191.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/int1192.pdf|GOV-PUBLIC|www.occ.gov
@@ -46722,11 +46732,13 @@ https://www.occ.gov/topics/charters-and-licensing/public-comment/agora-national-
 https://www.occ.gov/topics/charters-and-licensing/public-comment/application-robinhood-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/capital-one-merger.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/catena-trust-bank-na.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/public-comment/dakota-national-trust-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/edx-markets-holding-company.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/enova-inter-inc-south-jordan-ut.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/lorum-national-trust-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/merger-app-columbia-bnk-and-atlantic-stewardship-bnk.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/merger-united-bank-into-peoples-united-bank-na.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/public-comment/oppfi-interim-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/payo-digital-bank-na.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/payward-national-trust-company.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/revolut-bank-us-na-stamford-ct.pdf|GOV-PUBLIC|www.occ.gov
@@ -47743,6 +47755,7 @@ https://www.occ.gov/topics/laws-and-regulations/interpretations-and-precedents/1
 https://www.occ.gov/topics/laws-and-regulations/interpretations-and-precedents/13_IL1179_090524_112124.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/laws-and-regulations/interpretations-and-precedents/cantero-vs-boa-jun-15-2021-occ-amicus-briefs.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/laws-and-regulations/interpretations-and-precedents/cantero-vs-hymes-nov-9-2019-occ-amicus-briefs.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/laws-and-regulations/interpretations-and-precedents/hastings-vs-td-bank-aug-2026.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/laws-and-regulations/interpretations-and-precedents/hymes-jun-15-2021-occ-amicus-briefs.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/laws-and-regulations/interpretations-and-precedents/iba-vs-raoul-may-22-2026-occ-amicus-brief.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/laws-and-regulations/interpretations-and-precedents/iba-vs-raoul-nd-iii-motion-file-suppl-amicus.pdf|GOV-PUBLIC|www.occ.gov
