@@ -13223,6 +13223,7 @@ https://ncua.gov/files/press-releases-news/paca-facts-2018-Q2.pdf|GOV-PUBLIC|ncu
 https://ncua.gov/files/press-releases-news/policy-statement-allowances-credit-losses.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/press-releases-news/politically-exposed-persons.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/press-releases-news/private-flood-submission-federal-register-notice.pdf|GOV-PUBLIC|ncua.gov
+https://ncua.gov/files/press-releases-news/proposed-2026-third-party-risk-management-tprm-guidance.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/press-releases-news/proposed-alternative-capital.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/press-releases-news/proposed-rule-bsa-sars.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/press-releases-news/quality-control-standards-avm.pdf|GOV-PUBLIC|ncua.gov
@@ -33454,6 +33455,9 @@ https://www.fdic.gov/node/132191|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132221|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132241|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132286|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132321|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132351|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132366|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26481|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26486|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26491|GOV-PUBLIC|www.fdic.gov
