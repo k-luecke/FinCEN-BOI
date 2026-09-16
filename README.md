@@ -37,7 +37,8 @@ FinCEN-BOI/
 ├── ownership-reconstruction/ # entities / people / relationships
 ├── policy-history/           # what the federal dataset was
 ├── deletion-record/          # dated ledger of the deletion
-├── manifest.jsonl            # append-only retrieval ledger
+├── manifest/                 # sharded append-only retrieval ledger
+│   └── part-*.jsonl          # each shard stays under GitHub's 100 MB cap
 ├── ledger.jsonl              # per-URL change ledger
 └── url-inventory.jsonl       # discovery inventory
 ```
@@ -49,9 +50,16 @@ What it does:
 - Fetches only explicitly seeded URLs on a fixed allowlist of public
   government (and related public-record) hosts.
 - Preserves the exact bytes served, content-addressed by SHA-256.
-- Appends one retrieval record per fetch to `manifest.jsonl` (URL, final
-  URL, timestamp, HTTP status, content type, length, hash, provenance).
+- Appends one retrieval record per fetch to the committed ledger
+  (`manifest/part-*.jsonl`; `--manifest manifest.jsonl` still reads
+  every shard). Each record stores URL, final URL, timestamp, HTTP
+  status, content type, length, hash, and provenance.
 - Rate-limits conservatively (default 2 s between requests).
+
+The committed ledger is sharded because GitHub rejects files over
+100 MB. `scripts/commit_state.sh` appends through `manifest_store.py`,
+which rotates parts at 80 MB and splits a leftover root
+`manifest.jsonl` on first use so scheduled crawls can push again.
 
 What it deliberately does **not** do:
 

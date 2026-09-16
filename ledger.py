@@ -36,33 +36,19 @@ import sys
 from collections import Counter, OrderedDict
 from pathlib import Path
 
+from manifest_store import iter_jsonl_records
+
 
 def load_manifest(path: Path) -> "OrderedDict[str, list[dict]]":
     by_url: "OrderedDict[str, list[dict]]" = OrderedDict()
 
-    with path.open("r", encoding="utf-8") as f:
-        for line_number, line in enumerate(f, 1):
-            line = line.strip()
+    for record in iter_jsonl_records(path):
+        url = record.get("url")
 
-            if not line:
-                continue
+        if not url:
+            continue
 
-            try:
-                record = json.loads(line)
-            except json.JSONDecodeError as exc:
-                print(
-                    f"WARN: skipping malformed manifest line "
-                    f"{line_number}: {exc}",
-                    file=sys.stderr,
-                )
-                continue
-
-            url = record.get("url")
-
-            if not url:
-                continue
-
-            by_url.setdefault(url, []).append(record)
+        by_url.setdefault(url, []).append(record)
 
     # Manifest lines are appended chronologically, but sort defensively
     # in case manifests from several machines were concatenated.

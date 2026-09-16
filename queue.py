@@ -46,6 +46,7 @@ from pathlib import Path
 
 from archive import parse_seed, sanitize_url
 from discover import seed_label, seed_provenance
+from manifest_store import iter_jsonl_records
 
 RETRYABLE = {"RATE_LIMITED", "TEMPORARY_ERROR"}
 NO_RETRY = {
@@ -168,34 +169,20 @@ def load_attempts(manifest: Path) -> dict[str, dict]:
 
     attempts: dict[str, dict] = {}
 
-    if not manifest.exists():
-        return attempts
+    for record in iter_jsonl_records(manifest):
+        url = sanitize_url(record.get("url", ""))
 
-    with manifest.open("r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
+        if not url:
+            continue
 
-            if not line:
-                continue
+        entry = attempts.setdefault(
+            url, {"count": 0, "last": None, "ever_archived": False}
+        )
+        entry["count"] += 1
+        entry["last"] = record
 
-            try:
-                record = json.loads(line)
-            except json.JSONDecodeError:
-                continue
-
-            url = sanitize_url(record.get("url", ""))
-
-            if not url:
-                continue
-
-            entry = attempts.setdefault(
-                url, {"count": 0, "last": None, "ever_archived": False}
-            )
-            entry["count"] += 1
-            entry["last"] = record
-
-            if record.get("sha256"):
-                entry["ever_archived"] = True
+        if record.get("sha256"):
+            entry["ever_archived"] = True
 
     return attempts
 

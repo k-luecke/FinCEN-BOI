@@ -46,6 +46,7 @@ from challenge_detector import (
     classify_response,
     source_family,
 )
+from manifest_store import iter_jsonl_records
 
 # Host-pattern evidence: a host shows a "tokenized challenge" pattern
 # when many small HTML "successes" exist and nearly every one has a
@@ -111,18 +112,10 @@ def atomic_write_jsonl(path: Path, rows: list[dict]) -> None:
 
 def load_latest_records(manifest: Path) -> dict[str, dict]:
     latest: dict[str, dict] = {}
-    with manifest.open("r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                record = json.loads(line)
-            except json.JSONDecodeError:
-                continue
-            url = record.get("url")
-            if url:
-                latest[url] = record
+    for record in iter_jsonl_records(manifest):
+        url = record.get("url")
+        if url:
+            latest[url] = record
     return latest
 
 

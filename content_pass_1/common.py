@@ -23,6 +23,7 @@ if "queue" not in sys.modules:
 
 import hashlib
 import json
+from pathlib import Path
 
 PASS_VERSION = "content-pass-1/1.0.0"
 
@@ -74,6 +75,16 @@ def text_disk_path(sha256: str) -> str:
 
 
 def read_jsonl(path):
+    path = str(path)
+    if Path(path).name == "manifest.jsonl":
+        from manifest_store import iter_jsonl_records
+
+        yield from iter_jsonl_records(path)
+        return
+
+    if not os.path.isfile(path):
+        return
+
     with open(path, "r", encoding="utf-8") as fh:
         for line in fh:
             line = line.strip()

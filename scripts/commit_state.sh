@@ -3,11 +3,16 @@
 # push, with bounded retry on push races.
 #
 # Replaces rebase-based commit steps: two runs appending to
-# manifest.jsonl from stale checkouts produce add/add or append/append
-# rebase conflicts (this killed the first bulk-crawl aggregate's
-# commit). Instead, at commit time we always start from origin/main's
-# current state files, re-append this run's records, rebuild derived
-# state, and push; on a push race we repeat against the newer main.
+# the committed ledger from stale checkouts produce add/add or
+# append/append rebase conflicts (this killed the first bulk-crawl
+# aggregate's commit). Instead, at commit time we always start from
+# origin/main's current state files, re-append this run's records,
+# rebuild derived state, and push; on a push race we repeat against
+# the newer main.
+#
+# The committed ledger is sharded under manifest/part-*.jsonl because
+# GitHub rejects any blob over 100 MB. append() splits a leftover
+# monolith on first use so scheduled crawls can push again.
 set -eu
 
 RUN_MANIFEST="${1:?usage: commit_state.sh <run-manifest.jsonl> <commit-message>}"
@@ -27,14 +32,18 @@ while :; do
   # (run-manifest, archive/) survive a hard reset.
   git reset --hard FETCH_HEAD
 
-  cat "$RUN_MANIFEST" >> manifest.jsonl
+  python3 -m manifest_store append "$RUN_MANIFEST"
   python3 ledger.py --manifest manifest.jsonl --out ledger.jsonl
   python3 queue.py --queue-out queue.jsonl --limit 0
   # METRICS_FLAGS may carry --release-verified when the caller has
   # confirmed durable release assets exist.
   python3 metrics.py ${METRICS_FLAGS:-}
 
-  git add manifest.jsonl ledger.jsonl queue.jsonl metrics.json
+  python3 -m manifest_store guard
+
+  git add manifest
+  git rm -f --ignore-unmatch manifest.jsonl
+  git add ledger.jsonl queue.jsonl metrics.json
   if git diff --cached --quiet; then
     echo "No state changes to commit."
     exit 0

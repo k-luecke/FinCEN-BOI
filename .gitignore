@@ -7,7 +7,8 @@ archive/
 # release assets, not committed to git history.
 derived/
 
-# Per-run manifests produced in CI before being appended to manifest.jsonl.
+# Per-run manifests produced in CI before being appended to the
+# sharded committed ledger under manifest/part-*.jsonl.
 run-manifest.jsonl
 run-manifest-*.jsonl
 
