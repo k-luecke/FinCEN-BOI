@@ -1,0 +1,22 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -q
+      - name: Size guard
+        # Allow the leftover root monolith until shard-manifest.yml or
+        # the next commit_state.sh split lands. Fail on shards / other
+        # JSONL that are already over the 95 MiB margin.
+        run: python3 -m manifest_store guard --allow-unsharded-monolith

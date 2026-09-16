@@ -23,9 +23,10 @@ import sys
 from pathlib import Path
 
 GITHUB_MAX_FILE_BYTES = 100 * 1024 * 1024
-# Leave headroom for one day's crawl plus a push-race retry append.
+# Rotate before GitHub's cap. 80 MiB leaves room for one day's crawl
+# plus a push-race retry; the guard fails the commit at 95 MiB.
 SHARD_MAX_BYTES = 80 * 1024 * 1024
-GUARD_BYTES = 90 * 1024 * 1024
+GUARD_BYTES = 95 * 1024 * 1024
 SHARD_DIRNAME = "manifest"
 SHARD_GLOB = "part-*.jsonl"
 DEFAULT_LEDGER = Path("manifest.jsonl")
@@ -215,16 +216,26 @@ def append(
 def oversized_paths(
     root: Path = Path("."),
     limit: int = GUARD_BYTES,
+    allow_unsharded_monolith: bool = False,
 ) -> list[tuple[Path, int]]:
     """Tracked-looking JSONL files that would fail a GitHub push."""
 
     hits: list[tuple[Path, int]] = []
-    candidates = [root / DEFAULT_LEDGER]
     directory = root / SHARD_DIRNAME
-    if directory.is_dir():
-        candidates.extend(sorted(directory.glob(SHARD_GLOB)))
+    shards = sorted(directory.glob(SHARD_GLOB)) if directory.is_dir() else []
+    candidates = list(shards)
     for extra in ("ledger.jsonl", "queue.jsonl", "url-inventory.jsonl"):
         candidates.append(root / extra)
+    monolith = root / DEFAULT_LEDGER
+    skip_monolith = allow_unsharded_monolith and not shards
+    if not skip_monolith:
+        candidates.append(monolith)
+    elif monolith.is_file():
+        print(
+            f"Pending split: {monolith} is {monolith.stat().st_size} bytes "
+            f"(unsharded monolith allowed for this check).",
+            file=sys.stderr,
+        )
     seen: set[Path] = set()
     for path in candidates:
         path = path.resolve()
@@ -237,8 +248,16 @@ def oversized_paths(
     return hits
 
 
-def guard(root: Path = Path("."), limit: int = GUARD_BYTES) -> int:
-    hits = oversized_paths(root, limit=limit)
+def guard(
+    root: Path = Path("."),
+    limit: int = GUARD_BYTES,
+    allow_unsharded_monolith: bool = False,
+) -> int:
+    hits = oversized_paths(
+        root,
+        limit=limit,
+        allow_unsharded_monolith=allow_unsharded_monolith,
+    )
     if not hits:
         print(f"Size guard passed (limit {limit} bytes).")
         return 0
@@ -271,6 +290,14 @@ def main(argv: list[str] | None = None) -> int:
     guard_p = sub.add_parser("guard", help="fail if JSONL files approach 100 MB")
     guard_p.add_argument("--root", default=".")
     guard_p.add_argument("--limit", type=int, default=GUARD_BYTES)
+    guard_p.add_argument(
+        "--allow-unsharded-monolith",
+        action="store_true",
+        help=(
+            "Do not fail on a leftover root manifest.jsonl when shards "
+            "do not exist yet (code-only PRs before the split commit)."
+        ),
+    )
 
     args = parser.parse_args(argv)
 
@@ -288,7 +315,11 @@ def main(argv: list[str] | None = None) -> int:
             print(path)
         return 0
     if args.cmd == "guard":
-        return guard(Path(args.root), limit=args.limit)
+        return guard(
+            Path(args.root),
+            limit=args.limit,
+            allow_unsharded_monolith=args.allow_unsharded_monolith,
+        )
     return 1
 
 

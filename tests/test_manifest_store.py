@@ -101,6 +101,26 @@ class ManifestStoreTest(unittest.TestCase):
             self.assertEqual(manifest_store.guard(root, limit=500), 1)
             self.assertEqual(manifest_store.guard(root, limit=5000), 0)
 
+    def test_guard_can_allow_unsharded_monolith(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "manifest.jsonl").write_bytes(b"x" * 1000)
+            self.assertEqual(
+                manifest_store.guard(
+                    root, limit=500, allow_unsharded_monolith=True
+                ),
+                0,
+            )
+            shard_dir = root / "manifest"
+            shard_dir.mkdir()
+            (shard_dir / "part-00001.jsonl").write_bytes(b"y" * 1000)
+            self.assertEqual(
+                manifest_store.guard(
+                    root, limit=500, allow_unsharded_monolith=True
+                ),
+                1,
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

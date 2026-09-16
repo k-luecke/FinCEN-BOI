@@ -7,6 +7,10 @@ archive/
 # release assets, not committed to git history.
 derived/
 
+# Historical monolith — GitHub's 100 MB cap. After the split commit,
+# do not recreate a root manifest.jsonl; the ledger lives in manifest/.
+/manifest.jsonl
+
 # Per-run manifests produced in CI before being appended to the
 # sharded committed ledger under manifest/part-*.jsonl.
 run-manifest.jsonl

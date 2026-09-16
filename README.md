@@ -132,8 +132,9 @@ manual dispatch). Each run:
    evidence that all records vanished), so the ledger isn't poisoned
    with false `REMOVED` entries.
 3. Verifies the run's objects against their hashes.
-4. Appends the run manifest to the committed `manifest.jsonl` and
-   rebuilds `ledger.jsonl`.
+4. Appends the run manifest onto `manifest/part-*.jsonl` (splitting a
+   leftover root `manifest.jsonl` on first use) and rebuilds
+   `ledger.jsonl`.
 5. Publishes the fetched bytes as GitHub Release assets
    (`objects-run-<id>`, no retention expiry; tar paths match
    `object_path` in the manifest) and commits the updated manifest and
@@ -157,7 +158,7 @@ jobs:
 2. Chunk jobs crawl and verify independently (`fail-fast: false`,
    `max-parallel: 4`) — one bad chunk doesn't kill the rest.
 3. An aggregate job merges every chunk manifest, re-verifies, appends
-   to `manifest.jsonl`, rebuilds `ledger.jsonl`, publishes the merged
+   onto `manifest/part-*.jsonl`, rebuilds `ledger.jsonl`, publishes the merged
    object store as a durable `objects-run-<id>` release, and commits.
    The content-addressed layout makes merging chunk object stores a
    simple union.
@@ -277,7 +278,7 @@ archive/
         ├── 01/
         ...
         └── ff/
-manifest.jsonl
+manifest/part-*.jsonl
 seeds.txt
 ```
 

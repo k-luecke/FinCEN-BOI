@@ -120,7 +120,7 @@ jobs:
       - name: Commit collection state
         # Merges this run's records onto the LATEST main at commit
         # time with bounded push retry — no rebase conflicts when
-        # concurrent runs also touch manifest.jsonl.
+        # concurrent runs also touch the committed ledger.
         env:
           METRICS_FLAGS: --release-verified
         run: >
