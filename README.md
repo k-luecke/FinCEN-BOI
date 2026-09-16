@@ -37,7 +37,8 @@ FinCEN-BOI/
 ├── ownership-reconstruction/ # entities / people / relationships
 ├── policy-history/           # what the federal dataset was
 ├── deletion-record/          # dated ledger of the deletion
-├── manifest.jsonl            # append-only retrieval ledger
+├── manifest/                 # sharded append-only retrieval ledger
+│   └── part-*.jsonl          # each shard stays under GitHub's 100 MB cap
 ├── ledger.jsonl              # per-URL change ledger
 └── url-inventory.jsonl       # discovery inventory
 ```
@@ -49,9 +50,16 @@ What it does:
 - Fetches only explicitly seeded URLs on a fixed allowlist of public
   government (and related public-record) hosts.
 - Preserves the exact bytes served, content-addressed by SHA-256.
-- Appends one retrieval record per fetch to `manifest.jsonl` (URL, final
-  URL, timestamp, HTTP status, content type, length, hash, provenance).
+- Appends one retrieval record per fetch to the committed ledger
+  (`manifest/part-*.jsonl`; `--manifest manifest.jsonl` still reads
+  every shard). Each record stores URL, final URL, timestamp, HTTP
+  status, content type, length, hash, and provenance.
 - Rate-limits conservatively (default 2 s between requests).
+
+The committed ledger is sharded because GitHub rejects files over
+100 MB. `scripts/commit_state.sh` appends through `manifest_store.py`,
+which rotates parts at 80 MB and splits a leftover root
+`manifest.jsonl` on first use so scheduled crawls can push again.
 
 What it deliberately does **not** do:
 
@@ -124,8 +132,9 @@ manual dispatch). Each run:
    evidence that all records vanished), so the ledger isn't poisoned
    with false `REMOVED` entries.
 3. Verifies the run's objects against their hashes.
-4. Appends the run manifest to the committed `manifest.jsonl` and
-   rebuilds `ledger.jsonl`.
+4. Appends the run manifest onto `manifest/part-*.jsonl` (splitting a
+   leftover root `manifest.jsonl` on first use) and rebuilds
+   `ledger.jsonl`.
 5. Publishes the fetched bytes as GitHub Release assets
    (`objects-run-<id>`, no retention expiry; tar paths match
    `object_path` in the manifest) and commits the updated manifest and
@@ -149,7 +158,7 @@ jobs:
 2. Chunk jobs crawl and verify independently (`fail-fast: false`,
    `max-parallel: 4`) — one bad chunk doesn't kill the rest.
 3. An aggregate job merges every chunk manifest, re-verifies, appends
-   to `manifest.jsonl`, rebuilds `ledger.jsonl`, publishes the merged
+   onto `manifest/part-*.jsonl`, rebuilds `ledger.jsonl`, publishes the merged
    object store as a durable `objects-run-<id>` release, and commits.
    The content-addressed layout makes merging chunk object stores a
    simple union.
@@ -269,7 +278,7 @@ archive/
         ├── 01/
         ...
         └── ff/
-manifest.jsonl
+manifest/part-*.jsonl
 seeds.txt
 ```
 

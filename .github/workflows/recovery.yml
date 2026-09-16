@@ -145,6 +145,8 @@ jobs:
             git reset FETCH_HEAD
             # Start shared state files from the freshest committed
             # version, then re-apply this run's records.
+            rm -rf manifest
+            git checkout FETCH_HEAD -- manifest 2>/dev/null || true
             for f in manifest.jsonl ledger.jsonl queue.jsonl metrics.json; do
               git checkout FETCH_HEAD -- "$f" 2>/dev/null || true
             done
@@ -158,15 +160,18 @@ jobs:
               recovery/recovery-links.jsonl
 
             if [ -s run-manifest-recovery.jsonl ]; then
-              cat run-manifest-recovery.jsonl >> manifest.jsonl
+              python3 -m manifest_store append run-manifest-recovery.jsonl
             fi
             python3 ledger.py --manifest manifest.jsonl --out ledger.jsonl
             python3 queue.py --queue-out queue.jsonl --limit 0
             python3 metrics.py ${RELEASE_VERIFIED:-}
             python3 recovery_report.py
             python3 coverage.py || true
+            python3 -m manifest_store guard
 
-            git add manifest.jsonl ledger.jsonl queue.jsonl metrics.json
+            git add manifest
+            git rm -f --ignore-unmatch manifest.jsonl
+            git add ledger.jsonl queue.jsonl metrics.json
             # Explicit paths only: `git add <dir>` also stages
             # deletions of files this run's stale worktree lacks,
             # which would silently remove files other work added to

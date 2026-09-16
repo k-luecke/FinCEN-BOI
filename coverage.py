@@ -22,6 +22,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from archive import normalized_host, sanitize_url
+from manifest_store import iter_jsonl_records
 
 # Discovery ceilings in effect when the inventory was built.
 SITEMAP_URL_CAP = 5000
@@ -125,19 +126,13 @@ def main() -> int:
     latest_success: dict[str, dict] = {}
     attempted = defaultdict(set)
 
-    if Path(args.manifest).exists():
-        with open(args.manifest, encoding="utf-8") as f:
-            for line in f:
-                if not line.strip():
-                    continue
+    for record in iter_jsonl_records(Path(args.manifest)):
+        url = sanitize_url(record.get("url", ""))
+        host = normalized_host(url)
+        attempted[host].add(url)
 
-                record = json.loads(line)
-                url = sanitize_url(record.get("url", ""))
-                host = normalized_host(url)
-                attempted[host].add(url)
-
-                if record.get("sha256"):
-                    latest_success[url] = record
+        if record.get("sha256"):
+            latest_success[url] = record
 
     per_host_sizes = defaultdict(list)
     per_host_archived = defaultdict(int)

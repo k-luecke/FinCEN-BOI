@@ -6,6 +6,8 @@ import json
 import sys
 from pathlib import Path
 
+from manifest_store import resolve_files
+
 
 def digest(path: Path) -> str:
     h = hashlib.sha256()
@@ -30,38 +32,43 @@ def main() -> int:
     failures = 0
     checked = 0
 
-    with open(args.manifest, "r", encoding="utf-8") as f:
-        for line_number, line in enumerate(f, 1):
-            record = json.loads(line)
+    line_number = 0
+    for file in resolve_files(args.manifest):
+        with file.open("r", encoding="utf-8") as handle:
+            for line in handle:
+                if not line.strip():
+                    continue
+                line_number += 1
+                record = json.loads(line)
 
-            expected = record.get("sha256")
-            object_path = record.get("object_path")
+                expected = record.get("sha256")
+                object_path = record.get("object_path")
 
-            # Failed retrieval records contain no object.
-            if not expected or not object_path:
-                continue
+                # Failed retrieval records contain no object.
+                if not expected or not object_path:
+                    continue
 
-            checked += 1
-            path = Path(object_path)
+                checked += 1
+                path = Path(object_path)
 
-            if not path.exists():
-                failures += 1
-                print(
-                    f"FAIL line {line_number}: "
-                    f"missing {object_path}"
-                )
-                continue
+                if not path.exists():
+                    failures += 1
+                    print(
+                        f"FAIL {file}:{line_number}: "
+                        f"missing {object_path}"
+                    )
+                    continue
 
-            actual = digest(path)
+                actual = digest(path)
 
-            if actual != expected:
-                failures += 1
-                print(
-                    f"FAIL line {line_number}: "
-                    f"{object_path}\n"
-                    f"  expected {expected}\n"
-                    f"  actual   {actual}"
-                )
+                if actual != expected:
+                    failures += 1
+                    print(
+                        f"FAIL {file}:{line_number}: "
+                        f"{object_path}\n"
+                        f"  expected {expected}\n"
+                        f"  actual   {actual}"
+                    )
 
     print(f"\nChecked: {checked}")
     print(f"Failures: {failures}")

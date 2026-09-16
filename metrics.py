@@ -22,6 +22,7 @@ from collections import Counter
 from pathlib import Path
 
 from archive import normalized_host
+from manifest_store import iter_jsonl_records
 
 
 def iter_jsonl(path: Path):
@@ -78,7 +79,7 @@ def main() -> int:
     by_host: Counter = Counter()
     by_provenance: Counter = Counter()
 
-    for record in iter_jsonl(Path(args.manifest)):
+    for record in iter_jsonl_records(Path(args.manifest)):
         raw_observations += 1
         url = record.get("url", "")
         attempted_urls.add(url)

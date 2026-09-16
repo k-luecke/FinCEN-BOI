@@ -48,6 +48,7 @@ from urllib.parse import quote, urlparse
 
 import archive
 from archive import DEFAULT_ALLOWED_HOSTS, fetch, sanitize_url, utc_now
+from manifest_store import iter_jsonl_records
 from challenge_detector import (
     DETECTOR_VERSION,
     validate_content,
@@ -161,19 +162,9 @@ class RecoveryRun:
         # manifest — lets us cross-reference already-archived official
         # mirrors without a single network request.
         self.manifest_success: dict[str, dict] = {}
-        manifest = Path(args.manifest)
-        if manifest.exists():
-            with manifest.open("r", encoding="utf-8") as f:
-                for line in f:
-                    line = line.strip()
-                    if not line:
-                        continue
-                    try:
-                        record = json.loads(line)
-                    except json.JSONDecodeError:
-                        continue
-                    if record.get("sha256"):
-                        self.manifest_success[record["url"]] = record
+        for record in iter_jsonl_records(Path(args.manifest)):
+            if record.get("sha256"):
+                self.manifest_success[record["url"]] = record
 
         self.fetches = 0
         self.last_fetch_by_host: dict[str, float] = {}

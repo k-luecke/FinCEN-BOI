@@ -1,6 +1,7 @@
 # Provenance vocabulary
 
-Every retrieval record in `manifest.jsonl` and every seed in `seeds.txt`
+Every retrieval record in the committed ledger (`manifest/part-*.jsonl`;
+`--manifest manifest.jsonl` still reads the full chronology) and every seed in `seeds.txt`
 carries one of the following provenance classifications.
 
 ## GOV-PUBLIC
