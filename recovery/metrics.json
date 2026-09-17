@@ -6,8 +6,8 @@
     "doj": {
       "ACCESS_RESTRICTED": 4,
       "NON_CONTENT_TECHNICAL_RESPONSE": 3,
-      "RECOVERED_WEB_ARCHIVE": 282,
-      "UNRESOLVED_CHALLENGE": 4085
+      "RECOVERED_WEB_ARCHIVE": 283,
+      "UNRESOLVED_CHALLENGE": 4084
     },
     "fbi": {
       "NON_CONTENT_TECHNICAL_RESPONSE": 2
@@ -39,8 +39,8 @@
       "UNRESOLVED_CHALLENGE": 166
     },
     "treasury": {
-      "ACCESS_RESTRICTED": 27,
-      "NON_CONTENT_TECHNICAL_RESPONSE": 33
+      "ACCESS_RESTRICTED": 28,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 38
     }
   },
   "by_host": {
@@ -57,8 +57,8 @@
       "NON_CONTENT_TECHNICAL_RESPONSE": 3
     },
     "home.treasury.gov": {
-      "ACCESS_RESTRICTED": 27,
-      "NON_CONTENT_TECHNICAL_RESPONSE": 7
+      "ACCESS_RESTRICTED": 28,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 12
     },
     "judiciary.house.gov": {
       "ACCESS_RESTRICTED": 1,
@@ -102,8 +102,8 @@
     "www.justice.gov": {
       "ACCESS_RESTRICTED": 4,
       "NON_CONTENT_TECHNICAL_RESPONSE": 3,
-      "RECOVERED_WEB_ARCHIVE": 282,
-      "UNRESOLVED_CHALLENGE": 4085
+      "RECOVERED_WEB_ARCHIVE": 283,
+      "UNRESOLVED_CHALLENGE": 4084
     },
     "www.ncua.gov": {
       "NON_CONTENT_TECHNICAL_RESPONSE": 1
@@ -120,38 +120,38 @@
       "NON_CONTENT_TECHNICAL_RESPONSE": 25
     }
   },
-  "challenge_observations": 6277,
-  "document_identities": 6277,
+  "challenge_observations": 6283,
+  "document_identities": 6283,
   "document_identity_coverage": {
-    "ACCESS_RESTRICTED": 118,
+    "ACCESS_RESTRICTED": 119,
     "ARCHIVED_CONTENT": 1,
-    "NON_CONTENT_TECHNICAL_RESPONSE": 1120,
+    "NON_CONTENT_TECHNICAL_RESPONSE": 1125,
     "RECOVERED_OFFICIAL_MIRROR": 317,
-    "RECOVERED_WEB_ARCHIVE": 282,
-    "UNRESOLVED_CHALLENGE": 4439
+    "RECOVERED_WEB_ARCHIVE": 283,
+    "UNRESOLVED_CHALLENGE": 4438
   },
-  "generated_at": "2026-08-29T14:52:09.110750+00:00",
-  "identities_resolved": 5930,
-  "recovery_links": 917,
+  "generated_at": "2026-09-17T14:40:45.499882+00:00",
+  "identities_resolved": 5936,
+  "recovery_links": 918,
   "recovery_links_by_method": {
     "federal_register_api": 317,
     "federal_register_api_inventory_crossref": 317,
     "ordinary_retry_probe": 1,
-    "wayback_cdx": 282
+    "wayback_cdx": 283
   },
   "recovery_links_by_relationship": {
-    "ARCHIVED_VERSION": 282,
+    "ARCHIVED_VERSION": 283,
     "DERIVED_REPRESENTATION": 317,
     "OFFICIAL_MIRROR": 317,
     "SAME_DOCUMENT": 1
   },
   "requested_url_coverage": {
-    "ACCESS_RESTRICTED": 118,
+    "ACCESS_RESTRICTED": 119,
     "ARCHIVED_CONTENT": 1,
-    "NON_CONTENT_TECHNICAL_RESPONSE": 1120,
+    "NON_CONTENT_TECHNICAL_RESPONSE": 1125,
     "RECOVERED_OFFICIAL_MIRROR": 317,
-    "RECOVERED_WEB_ARCHIVE": 282,
-    "UNRESOLVED_CHALLENGE": 4439
+    "RECOVERED_WEB_ARCHIVE": 283,
+    "UNRESOLVED_CHALLENGE": 4438
   },
   "semantics_note": "BOT_CHALLENGE / non-content captures are never counted as ARCHIVED_CONTENT. RECOVERED_* states preserve the distinction between original publisher and retrieval host; original challenge observations are retained.",
   "top_fingerprints": {
@@ -168,13 +168,13 @@
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2509": 49,
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2564": 58,
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2586": 63,
-    "ERROR_RESPONSE|http_status:403": 112,
+    "ERROR_RESPONSE|http_status:403": 113,
     "UNKNOWN_RESPONSE|detection_mode:metadata_only|expected_document_got_html": 1043
   },
-  "unresolved": 5677,
+  "unresolved": 5682,
   "unresolved_by_tier": {
     "0": 159,
-    "1": 2304,
-    "2": 3214
+    "1": 2305,
+    "2": 3218
   }
 }
