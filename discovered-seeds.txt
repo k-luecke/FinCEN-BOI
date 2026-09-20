@@ -13483,6 +13483,7 @@ https://ncua.gov/files/publications/analysis/quarterly-data-summary-2025-Q2.pdf|
 https://ncua.gov/files/publications/analysis/quarterly-data-summary-2025-Q3.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/analysis/quarterly-data-summary-2025-Q4.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/analysis/quarterly-data-summary-2026-Q1.pdf|GOV-PUBLIC|ncua.gov
+https://ncua.gov/files/publications/analysis/quarterly-data-summary-2026-Q2.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/analysis/quarterly-map-review-first-quarter-2016.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/analysis/quarterly-map-review-first-quarter-2017.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/analysis/quarterly-map-review-first-quarter-2018.pdf|GOV-PUBLIC|ncua.gov
@@ -14074,6 +14075,7 @@ https://ncua.gov/files/publications/regulation-supervision/esm/credit-union-meri
 https://ncua.gov/files/publications/regulation-supervision/esm/data-exchange-application-user-guide.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/regulation-supervision/esm/ncua-connect-admin-portal-user-guide.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/regulation-supervision/esm/self-guided-admin-portal-training.pdf|GOV-PUBLIC|ncua.gov
+https://ncua.gov/files/publications/regulation-supervision/faq-treatment-verifiable-digital-credentials-customer-identification-program-rule.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/regulation-supervision/final-risk-based-capital-rule-report.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/regulation-supervision/industry-webinar-material.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/regulation-supervision/onsite-exam-notification-letter.pdf|GOV-PUBLIC|ncua.gov
@@ -33520,6 +33522,9 @@ https://www.fdic.gov/node/132286|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132321|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132351|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132366|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132391|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132431|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132471|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26481|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26486|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26491|GOV-PUBLIC|www.fdic.gov
