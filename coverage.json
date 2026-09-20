@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T15:53:20.498435+00:00",
+  "generated_at": "2026-09-20T14:24:57.336068+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -112,7 +112,7 @@
     },
     {
       "host": "ncua.gov",
-      "urls_discovered": 9452,
+      "urls_discovered": 9454,
       "urls_attempted": 9768,
       "urls_archived": 9766,
       "non_content_captures": 0,
@@ -191,14 +191,14 @@
     {
       "host": "web.archive.org",
       "urls_discovered": 0,
-      "urls_attempted": 1148,
-      "urls_archived": 973,
+      "urls_attempted": 1213,
+      "urls_archived": 1005,
       "non_content_captures": 0,
-      "urls_with_content": 973,
+      "urls_with_content": 1005,
       "ceiling_hit": "no",
-      "bytes": 36501289,
+      "bytes": 36979118,
       "median_object_bytes": 253,
-      "p95_object_bytes": 100935,
+      "p95_object_bytes": 100929,
       "known_bulk_gaps": []
     },
     {
@@ -218,7 +218,7 @@
     },
     {
       "host": "www.fdic.gov",
-      "urls_discovered": 5023,
+      "urls_discovered": 5026,
       "urls_attempted": 17099,
       "urls_archived": 17095,
       "non_content_captures": 0,
@@ -278,7 +278,7 @@
       "non_content_captures": 0,
       "urls_with_content": 4181,
       "ceiling_hit": "no",
-      "bytes": 877440681,
+      "bytes": 877440659,
       "median_object_bytes": 34837,
       "p95_object_bytes": 819515,
       "known_bulk_gaps": []
@@ -291,7 +291,7 @@
       "non_content_captures": 54,
       "urls_with_content": 7619,
       "ceiling_hit": "no",
-      "bytes": 6715033982,
+      "bytes": 6715033974,
       "median_object_bytes": 93970,
       "p95_object_bytes": 5030953,
       "known_bulk_gaps": [
@@ -321,7 +321,7 @@
       "non_content_captures": 4367,
       "urls_with_content": 1413,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 192215621,
+      "bytes": 192215596,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101527,
       "known_bulk_gaps": []
