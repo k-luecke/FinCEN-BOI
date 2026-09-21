@@ -43259,6 +43259,7 @@ https://www.occ.gov/about/policies/pclia-wanalytics.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/about/policies/social-media-community-guidelines.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/about/policies/vulnerability-disclosure-policy.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/about/what-we-do/key-data-and-statistics/index-occ-and-federal-banking-system-at-a-glance.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/about/who-we-are/comptroller/community-bank-comeback.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/about/who-we-are/history/160th/160th-anniversary.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/about/who-we-are/history/evolution-of-bank-supervision/1863-1913/examiner-spotlight-eugene-wilson.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/about/who-we-are/history/evolution-of-bank-supervision/1863-1913/examiner-spotlight-john-burroughs.html|GOV-PUBLIC|www.occ.gov
@@ -43878,6 +43879,11 @@ https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-41.html|GOV-PUBL
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-42.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-43.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-43a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-44.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-44a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-45.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-46.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-47.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-5.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-6.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-7.html|GOV-PUBLIC|www.occ.gov
@@ -44338,6 +44344,8 @@ https://www.occ.gov/news-issuances/federal-register/2026/91fr37840.pdf|GOV-PUBLI
 https://www.occ.gov/news-issuances/federal-register/2026/91fr38246.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2026/91fr56004.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2026/91fr56074.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/federal-register/2026/91fr58009.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/federal-register/2026/91fr58536.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2026/91fr7163.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2026/91fr9977.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/federal-register/2026/96fr29340.pdf|GOV-PUBLIC|www.occ.gov
@@ -45619,6 +45627,11 @@ https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-64.html|GOV-PUB
 https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-64a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-71.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-71a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-75.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-75a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-77.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-77a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-77b.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-1.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-10.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-11.html|GOV-PUBLIC|www.occ.gov
@@ -45693,6 +45706,9 @@ https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-72.html|GOV-PU
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-72a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-73.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-74.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-76.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-78.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-79.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-7a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-8.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9.html|GOV-PUBLIC|www.occ.gov
@@ -46860,9 +46876,13 @@ https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1388.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1389.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1390.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1391.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1392.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1393.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/int1189.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/int1191.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/int1192.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/int1193.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/scl2026-01.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/scl2026-02.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/index-interpretations-and-decisions.html|GOV-PUBLIC|www.occ.gov
@@ -46882,6 +46902,7 @@ https://www.occ.gov/topics/charters-and-licensing/public-comment/payo-digital-ba
 https://www.occ.gov/topics/charters-and-licensing/public-comment/payward-national-trust-company.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/revolut-bank-us-na-stamford-ct.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/submitting-public-comment-on-licensing-applications.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/public-comment/texas-global-bank-trust-company-na.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/world-liberty-trust-company-n-a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2018/index-weekly-bulletin-2018.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2019/index-weekly-bulletin-2019.html|GOV-PUBLIC|www.occ.gov
@@ -47288,6 +47309,7 @@ https://www.occ.gov/topics/consumers-and-communities/community-affairs/resource-
 https://www.occ.gov/topics/consumers-and-communities/community-affairs/resource-directories/public-welfare-investments/at-a-glance-2nd-qtr-2020.xlsx|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/consumers-and-communities/community-affairs/resource-directories/public-welfare-investments/at-a-glance-2nd-qtr-2023.xlsx|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/consumers-and-communities/community-affairs/resource-directories/public-welfare-investments/at-a-glance-2nd-qtr-2024.xlsx|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/consumers-and-communities/community-affairs/resource-directories/public-welfare-investments/at-a-glance-2nd-qtr-2026.xlsx|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/consumers-and-communities/community-affairs/resource-directories/public-welfare-investments/at-a-glance-q1-2026.xlsx|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/consumers-and-communities/community-affairs/resource-directories/public-welfare-investments/common-part-24-questions.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/consumers-and-communities/community-affairs/resource-directories/public-welfare-investments/community-development-precedent-letters.html|GOV-PUBLIC|www.occ.gov
