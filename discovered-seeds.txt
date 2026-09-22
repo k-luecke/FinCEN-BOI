@@ -24947,6 +24947,7 @@ https://vault.fbi.gov/anna-chennault/Anna%20Chennault%20Part%2001%20%28Final%29/
 https://vault.fbi.gov/anna-may-wong/Anna%20May%20Wong%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/anomalous-health-incidents/anomalous-health-incidents-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/anomalous-health-incidents/anomalous-health-incidents-part-02/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/anomalous-health-incidents/anomalous-health-incidents-part-03/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/anonymous/anonymous-part-01-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/ansaru-allah-community/Ansaru%20Allah%20Community%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/anthony-accardo/Anthony%20Accardo%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
@@ -26049,6 +26050,7 @@ https://vault.fbi.gov/freeway-phantom/Freeway%20Phantom%20Part%2001%20%28Final%2
 https://vault.fbi.gov/frequently-requested|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/fritz-lang/Fritz%20Lang%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/fund-for-the-republic/fund-for-the-republic-final/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/fusion-energy-foundation/fusion-energy-foundation-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/fusion-gps/Fusion%20GPS%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/galileo-project/galileo-project-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/gamergate/Gamergate%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
@@ -27015,6 +27017,7 @@ https://vault.fbi.gov/matt-gaetz/matt-gaetz-part-03/view|GOV-PUBLIC|vault.fbi.go
 https://vault.fbi.gov/matt-gaetz/matt-gaetz-part-04/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/matt-gaetz/matt-gaetz-part-05/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/matt-gaetz/matt-gaetz-part-06/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/matt-gaetz/matt-gaetz-part-07/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/matteo-valvo/matteo-valvo-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/matteo-valvo/matteo-valvo-part-02-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/matthew-ianniello/matthew-ianniello-part-01/view|GOV-PUBLIC|vault.fbi.gov
