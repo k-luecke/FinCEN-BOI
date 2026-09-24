@@ -1,60 +1,60 @@
 {
   "access_restricted": 119,
-  "archived_content_urls": 139978,
+  "archived_content_urls": 140006,
   "archived_note": "archived_urls counts every URL with stored bytes; archived_content_urls excludes captures the challenge detector classified as bot challenges/interstitials/app shells (see recovery/)",
   "archived_urls": 145303,
   "attempted_urls": 147694,
   "by_host": {
-    "bsaaml.ffiec.gov": 20,
-    "bsaefiling.fincen.gov": 63,
+    "bsaaml.ffiec.gov": 21,
+    "bsaefiling.fincen.gov": 64,
     "congress.gov": 15,
     "fincen.gov": 21,
     "gao.gov": 2,
-    "home.treasury.gov": 12496,
-    "judiciary.house.gov": 1015,
+    "home.treasury.gov": 12497,
+    "judiciary.house.gov": 1016,
     "justice.gov": 2,
     "ncua.gov": 9775,
     "occ.gov": 5,
     "oig.treasury.gov": 264,
-    "oversight.house.gov": 17284,
+    "oversight.house.gov": 17285,
     "treasury.gov": 7,
-    "vault.fbi.gov": 9834,
+    "vault.fbi.gov": 9835,
     "web.archive.org": 2462,
-    "www.congress.gov": 99,
-    "www.fdic.gov": 17156,
-    "www.federalregister.gov": 2619,
-    "www.federalreserve.gov": 34,
-    "www.ffiec.gov": 31,
-    "www.fincen.gov": 6228,
-    "www.gao.gov": 9352,
-    "www.govinfo.gov": 19515,
-    "www.justice.gov": 14684,
-    "www.ncua.gov": 23,
-    "www.occ.gov": 16524,
+    "www.congress.gov": 100,
+    "www.fdic.gov": 17157,
+    "www.federalregister.gov": 2621,
+    "www.federalreserve.gov": 35,
+    "www.ffiec.gov": 32,
+    "www.fincen.gov": 6240,
+    "www.gao.gov": 9355,
+    "www.govinfo.gov": 19516,
+    "www.justice.gov": 14685,
+    "www.ncua.gov": 24,
+    "www.occ.gov": 16525,
     "www.sec.gov": 25017,
     "www.treasury.gov": 678
   },
   "by_provenance": {
-    "CONGRESS": 17119,
-    "GOV-PUBLIC": 145644,
+    "CONGRESS": 17122,
+    "GOV-PUBLIC": 145672,
     "WEB-ARCHIVE": 2462
   },
   "discovered_urls": 53302,
   "durability_note": "release assets verified this run",
   "durably_archived_urls": 145303,
-  "generated_at": "2026-09-23T15:48:56.921628+00:00",
+  "generated_at": "2026-09-24T12:02:05.655771+00:00",
   "graph_entities": 1014,
   "graph_people": 345,
   "ledger_change_types": {
     "ADDED": 135721,
-    "MODIFIED": 5894,
+    "MODIFIED": 5896,
     "REMOVED": 83,
     "UNAVAILABLE": 2391,
-    "UNCHANGED": 3605
+    "UNCHANGED": 3603
   },
   "manual_review": 222,
-  "modified_urls": 5894,
-  "non_content_technical_responses": 5325,
+  "modified_urls": 5896,
+  "non_content_technical_responses": 5297,
   "not_found_urls": 1440,
   "ownership_bearing_documents": 767,
   "queue_states": {
@@ -68,7 +68,7 @@
   },
   "queued_urls": 0,
   "rate_limited": 0,
-  "raw_observations": 165225,
+  "raw_observations": 165256,
   "recovery": {
     "challenge_observations": 6290,
     "document_identity_coverage": {
@@ -76,11 +76,11 @@
       "ARCHIVED_CONTENT": 1,
       "NON_CONTENT_TECHNICAL_RESPONSE": 1130,
       "RECOVERED_OFFICIAL_MIRROR": 319,
-      "RECOVERED_WEB_ARCHIVE": 526,
-      "UNRESOLVED_CHALLENGE": 4195
+      "RECOVERED_WEB_ARCHIVE": 554,
+      "UNRESOLVED_CHALLENGE": 4167
     },
     "recovery_links_by_relationship": {
-      "ARCHIVED_VERSION": 526,
+      "ARCHIVED_VERSION": 554,
       "DERIVED_REPRESENTATION": 319,
       "OFFICIAL_MIRROR": 319,
       "SAME_DOCUMENT": 1
@@ -90,17 +90,17 @@
       "ARCHIVED_CONTENT": 1,
       "NON_CONTENT_TECHNICAL_RESPONSE": 1130,
       "RECOVERED_OFFICIAL_MIRROR": 319,
-      "RECOVERED_WEB_ARCHIVE": 526,
-      "UNRESOLVED_CHALLENGE": 4195
+      "RECOVERED_WEB_ARCHIVE": 554,
+      "UNRESOLVED_CHALLENGE": 4167
     },
-    "unresolved": 5444
+    "unresolved": 5416
   },
   "robots_disallowed": 2,
   "temporary_errors": 611,
-  "total_bytes": 48292270198,
-  "unique_objects": 152551,
+  "total_bytes": 48293619666,
+  "unique_objects": 152571,
   "unresolved_entities": 384,
   "validated_graph_edges": 1220,
   "verification_note": "objects are hash-verified at capture (verify.py) before manifests merge; periodic re-verification via verify-archive workflow",
-  "verified_objects": 152551
+  "verified_objects": 152571
 }
