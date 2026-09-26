@@ -6,8 +6,8 @@
     "doj": {
       "ACCESS_RESTRICTED": 4,
       "NON_CONTENT_TECHNICAL_RESPONSE": 3,
-      "RECOVERED_WEB_ARCHIVE": 663,
-      "UNRESOLVED_CHALLENGE": 3704
+      "RECOVERED_WEB_ARCHIVE": 716,
+      "UNRESOLVED_CHALLENGE": 3651
     },
     "fbi": {
       "NON_CONTENT_TECHNICAL_RESPONSE": 2
@@ -102,8 +102,8 @@
     "www.justice.gov": {
       "ACCESS_RESTRICTED": 4,
       "NON_CONTENT_TECHNICAL_RESPONSE": 3,
-      "RECOVERED_WEB_ARCHIVE": 663,
-      "UNRESOLVED_CHALLENGE": 3704
+      "RECOVERED_WEB_ARCHIVE": 716,
+      "UNRESOLVED_CHALLENGE": 3651
     },
     "www.ncua.gov": {
       "NON_CONTENT_TECHNICAL_RESPONSE": 1
@@ -127,20 +127,20 @@
     "ARCHIVED_CONTENT": 1,
     "NON_CONTENT_TECHNICAL_RESPONSE": 1130,
     "RECOVERED_OFFICIAL_MIRROR": 319,
-    "RECOVERED_WEB_ARCHIVE": 663,
-    "UNRESOLVED_CHALLENGE": 4058
+    "RECOVERED_WEB_ARCHIVE": 716,
+    "UNRESOLVED_CHALLENGE": 4005
   },
-  "generated_at": "2026-09-25T17:15:05.754617+00:00",
+  "generated_at": "2026-09-26T16:22:46.840014+00:00",
   "identities_resolved": 5943,
-  "recovery_links": 1302,
+  "recovery_links": 1355,
   "recovery_links_by_method": {
     "federal_register_api": 319,
     "federal_register_api_inventory_crossref": 319,
     "ordinary_retry_probe": 1,
-    "wayback_cdx": 663
+    "wayback_cdx": 716
   },
   "recovery_links_by_relationship": {
-    "ARCHIVED_VERSION": 663,
+    "ARCHIVED_VERSION": 716,
     "DERIVED_REPRESENTATION": 319,
     "OFFICIAL_MIRROR": 319,
     "SAME_DOCUMENT": 1
@@ -150,8 +150,8 @@
     "ARCHIVED_CONTENT": 1,
     "NON_CONTENT_TECHNICAL_RESPONSE": 1130,
     "RECOVERED_OFFICIAL_MIRROR": 319,
-    "RECOVERED_WEB_ARCHIVE": 663,
-    "UNRESOLVED_CHALLENGE": 4058
+    "RECOVERED_WEB_ARCHIVE": 716,
+    "UNRESOLVED_CHALLENGE": 4005
   },
   "semantics_note": "BOT_CHALLENGE / non-content captures are never counted as ARCHIVED_CONTENT. RECOVERED_* states preserve the distinction between original publisher and retrieval host; original challenge observations are retained.",
   "top_fingerprints": {
@@ -163,7 +163,7 @@
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2443": 67,
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2454": 62,
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2476": 47,
-    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2487": 49,
+    "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2487": 50,
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2498": 49,
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2509": 48,
     "BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2564": 58,
@@ -171,10 +171,10 @@
     "ERROR_RESPONSE|http_status:403": 113,
     "UNKNOWN_RESPONSE|detection_mode:metadata_only|expected_document_got_html": 1048
   },
-  "unresolved": 5307,
+  "unresolved": 5254,
   "unresolved_by_tier": {
     "0": 159,
-    "1": 1925,
+    "1": 1872,
     "2": 3223
   }
 }
