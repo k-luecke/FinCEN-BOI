@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T16:22:50.532151+00:00",
+  "generated_at": "2026-09-27T15:05:48.084148+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -79,7 +79,7 @@
       "non_content_captures": 0,
       "urls_with_content": 12231,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3150868694,
+      "bytes": 3150868695,
       "median_object_bytes": 108847,
       "p95_object_bytes": 395077,
       "known_bulk_gaps": []
@@ -191,14 +191,14 @@
     {
       "host": "web.archive.org",
       "urls_discovered": 0,
-      "urls_attempted": 2184,
-      "urls_archived": 1795,
+      "urls_attempted": 2190,
+      "urls_archived": 1804,
       "non_content_captures": 0,
-      "urls_with_content": 1795,
+      "urls_with_content": 1804,
       "ceiling_hit": "no",
-      "bytes": 51502428,
+      "bytes": 51654719,
       "median_object_bytes": 250,
-      "p95_object_bytes": 100631,
+      "p95_object_bytes": 100629,
       "known_bulk_gaps": []
     },
     {
@@ -218,7 +218,7 @@
     },
     {
       "host": "www.fdic.gov",
-      "urls_discovered": 5028,
+      "urls_discovered": 5029,
       "urls_attempted": 17104,
       "urls_archived": 17100,
       "non_content_captures": 0,
@@ -278,7 +278,7 @@
       "non_content_captures": 0,
       "urls_with_content": 4181,
       "ceiling_hit": "no",
-      "bytes": 877439619,
+      "bytes": 877439637,
       "median_object_bytes": 34837,
       "p95_object_bytes": 819515,
       "known_bulk_gaps": []
@@ -291,7 +291,7 @@
       "non_content_captures": 54,
       "urls_with_content": 7619,
       "ceiling_hit": "no",
-      "bytes": 6715035301,
+      "bytes": 6715035302,
       "median_object_bytes": 93970,
       "p95_object_bytes": 5030953,
       "known_bulk_gaps": [
@@ -321,7 +321,7 @@
       "non_content_captures": 4367,
       "urls_with_content": 1413,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 192214255,
+      "bytes": 192214245,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101501,
       "known_bulk_gaps": []
