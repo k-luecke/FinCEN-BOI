@@ -6896,6 +6896,7 @@ https://home.treasury.gov/news/press-releases/sb0630|GOV-PUBLIC|home.treasury.go
 https://home.treasury.gov/news/press-releases/sb0631|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0632|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0633|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0634|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0004|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0013|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0014|GOV-PUBLIC|home.treasury.gov
@@ -29664,6 +29665,7 @@ https://www.fdic.gov/bank-failures/failed-bank-list/community-bank-and-trust-wes
 https://www.fdic.gov/bank-failures/failed-bank-list/first-national-bank-lindsay|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/bank-failures/failed-bank-list/kentland-federal-savings-and-loan-association|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/bank-failures/failed-bank-list/metropolitan-capital-bank-trust|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/bank-failures/failed-bank-list/nano-banc|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/bank-failures/failed-bank-list/pulaski-savings-bank|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/bank-failures/failed-bank-list/santa-anna-national-bank|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/bank-failures/failed-bank-list/small-business-bank|GOV-PUBLIC|www.fdic.gov
@@ -29932,7 +29934,9 @@ https://www.fdic.gov/consumer-resource-center/2026-06/safeguarding-nations-savin
 https://www.fdic.gov/consumer-resource-center/2026-06/safeguarding-nations-savings-deposit-insurance|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/2026-07/preparacion-financiera-para-jovenes|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/2026-07/youth-financial-readiness-trump-accounts-and-other-savings-tools|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/consumer-resource-center/2026-09/como-fortalecer-las-finanzas-de-su-pequena-empresa|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/2026-09/new-way-bring-reality-fairs-life|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/consumer-resource-center/2026-09/strengthening-your-small-business-finances|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/avoid-scams-while-shopping-online-bargains|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/back-school-financial-education-starts-families|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/2024-national-interagency-community-reinvestment-conference-new|GOV-PUBLIC|www.fdic.gov
@@ -30009,6 +30013,7 @@ https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-supporting-affor
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-supporting-affordable-housing-indiana-connecting-federal|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-supporting-disaster-recovery-north-carolina|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-supporting-small-businesses-virginia|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-supporting-veterans-and-military-small-businesses-texas|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-supporting-veterans-military-families-small-businesses|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-supporting-workforce-development-programs-and|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-tax-season-partnership-opportunities-volunteer-income|GOV-PUBLIC|www.fdic.gov
@@ -30048,6 +30053,7 @@ https://www.fdic.gov/consumer-resource-center/events/federal-deposit-insurance-c
 https://www.fdic.gov/consumer-resource-center/events/federal-deposit-insurance-corporation-fdic-hosts-southeast-michigan|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/financial-education-frontline-action-address-scams|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/future-bankers-and-financial-professionals-camp-ask-banker-session|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/consumer-resource-center/events/heirs-property-and-community-land-trust-texas-protecting-property|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/helping-community-college-students-build-more-secure-financial|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/how-organizations-use-fdics-how-money-smart-are-you-tool-strengthen|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/importance-financial-education-veterans-and-their-families|GOV-PUBLIC|www.fdic.gov
@@ -33591,6 +33597,8 @@ https://www.fdic.gov/node/132366|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132391|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132431|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132471|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132556|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132601|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26481|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26486|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26491|GOV-PUBLIC|www.fdic.gov
@@ -43950,6 +43958,7 @@ https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-44a.pdf|GOV-PUBL
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-45.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-46.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-47.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-48.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-5.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-6.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-7.html|GOV-PUBLIC|www.occ.gov
@@ -45777,6 +45786,7 @@ https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-78.html|GOV-PU
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-79.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-7a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-8.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-80.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/ppm-5310-3.pdf|GOV-PUBLIC|www.occ.gov
@@ -46467,9 +46477,11 @@ https://www.occ.gov/search.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/app-by-jp-morgan-chase-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/app-to-charter-signature-bridge-bank-na.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/app-to-charter-silicon-valley-bridge-bank-na.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/de-novo-chartering/index-de-novo-chartering.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/decision-letter-fifth-third-conversion.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/decision-letter-lending-club.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/agora-national-trust-bank-new-york-ny.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/builders-bank-trust.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/catena-trust-bank-na.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/coinbase-national-trust-company.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/dakota-national-trust.pdf|GOV-PUBLIC|www.occ.gov
@@ -46945,6 +46957,7 @@ https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1391.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1392.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1393.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/cd1394.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/int1189.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/int1191.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/2026/int1192.pdf|GOV-PUBLIC|www.occ.gov
@@ -46970,6 +46983,7 @@ https://www.occ.gov/topics/charters-and-licensing/public-comment/revolut-bank-us
 https://www.occ.gov/topics/charters-and-licensing/public-comment/submitting-public-comment-on-licensing-applications.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/texas-global-bank-trust-company-na.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/world-liberty-trust-company-n-a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/public-comment/zerohash-national-trust-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2018/index-weekly-bulletin-2018.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2019/index-weekly-bulletin-2019.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/weekly-bulletin/2019/wb-03242019-03302019.pdf|GOV-PUBLIC|www.occ.gov
@@ -48230,6 +48244,7 @@ https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-a
 https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-appeals/summaries/files/appeal-informal-enforcement-action-q3-2024.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-appeals/summaries/files/appeal-laws-regs-violations-ras-q4-2023.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-appeals/summaries/files/appeal-material-supervisory-determinations-2q-2017.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-appeals/summaries/files/appeal-matters-requiring-attention-q2-2025.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-appeals/summaries/files/appeal-matters-requiring-attention-q4-2024.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-appeals/summaries/files/appeal-matters-requiring-attention-third-quarter-2020.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-appeals/summaries/files/appeal-mra-violation-of-law-q3-2023.html|GOV-PUBLIC|www.occ.gov
