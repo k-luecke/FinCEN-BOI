@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T15:05:48.084148+00:00",
+  "generated_at": "2026-09-28T18:22:54.865305+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -73,15 +73,15 @@
     },
     {
       "host": "home.treasury.gov",
-      "urls_discovered": 9745,
-      "urls_attempted": 12288,
-      "urls_archived": 12231,
+      "urls_discovered": 9746,
+      "urls_attempted": 12289,
+      "urls_archived": 12232,
       "non_content_captures": 0,
-      "urls_with_content": 12231,
+      "urls_with_content": 12232,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3150868695,
+      "bytes": 3150937667,
       "median_object_bytes": 108847,
-      "p95_object_bytes": 395077,
+      "p95_object_bytes": 395014,
       "known_bulk_gaps": []
     },
     {
@@ -191,14 +191,14 @@
     {
       "host": "web.archive.org",
       "urls_discovered": 0,
-      "urls_attempted": 2190,
-      "urls_archived": 1804,
+      "urls_attempted": 2212,
+      "urls_archived": 1835,
       "non_content_captures": 0,
-      "urls_with_content": 1804,
+      "urls_with_content": 1835,
       "ceiling_hit": "no",
-      "bytes": 51654719,
+      "bytes": 52274943,
       "median_object_bytes": 250,
-      "p95_object_bytes": 100629,
+      "p95_object_bytes": 100611,
       "known_bulk_gaps": []
     },
     {
@@ -218,15 +218,15 @@
     },
     {
       "host": "www.fdic.gov",
-      "urls_discovered": 5029,
-      "urls_attempted": 17104,
-      "urls_archived": 17100,
+      "urls_discovered": 5036,
+      "urls_attempted": 17112,
+      "urls_archived": 17108,
       "non_content_captures": 0,
-      "urls_with_content": 17100,
+      "urls_with_content": 17108,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 1263690520,
-      "median_object_bytes": 68731,
-      "p95_object_bytes": 92270,
+      "bytes": 1264342853,
+      "median_object_bytes": 68732,
+      "p95_object_bytes": 92285,
       "known_bulk_gaps": []
     },
     {
@@ -278,7 +278,7 @@
       "non_content_captures": 0,
       "urls_with_content": 4181,
       "ceiling_hit": "no",
-      "bytes": 877439637,
+      "bytes": 877439593,
       "median_object_bytes": 34837,
       "p95_object_bytes": 819515,
       "known_bulk_gaps": []
@@ -291,7 +291,7 @@
       "non_content_captures": 54,
       "urls_with_content": 7619,
       "ceiling_hit": "no",
-      "bytes": 6715035302,
+      "bytes": 6715035325,
       "median_object_bytes": 93970,
       "p95_object_bytes": 5030953,
       "known_bulk_gaps": [
@@ -321,7 +321,7 @@
       "non_content_captures": 4367,
       "urls_with_content": 1413,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 192214245,
+      "bytes": 192214260,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101501,
       "known_bulk_gaps": []
@@ -334,22 +334,22 @@
       "non_content_captures": 0,
       "urls_with_content": 6,
       "ceiling_hit": "no",
-      "bytes": 1140146,
+      "bytes": 1140138,
       "median_object_bytes": 73871,
       "p95_object_bytes": 591447,
       "known_bulk_gaps": []
     },
     {
       "host": "www.occ.gov",
-      "urls_discovered": 5062,
-      "urls_attempted": 15509,
-      "urls_archived": 15504,
+      "urls_discovered": 5069,
+      "urls_attempted": 15516,
+      "urls_archived": 15511,
       "non_content_captures": 0,
-      "urls_with_content": 15504,
+      "urls_with_content": 15511,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3244636237,
-      "median_object_bytes": 60431,
-      "p95_object_bytes": 858228,
+      "bytes": 3248045762,
+      "median_object_bytes": 60433,
+      "p95_object_bytes": 858809,
       "known_bulk_gaps": []
     },
     {
