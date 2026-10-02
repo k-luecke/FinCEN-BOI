@@ -1,11 +1,11 @@
 # Recovery report — challenge-aware lawful recovery
 
-Generated 2026-10-01T18:37:13.145891+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
+Generated 2026-10-02T18:28:42.960592+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
 
 ## 1. Challenge / non-content responses
 
-- **6290** challenge/non-content observations across the corpus (latest observation per URL).
-- Requested-URL coverage states: UNRESOLVED_CHALLENGE: 3809, NON_CONTENT_TECHNICAL_RESPONSE: 1130, RECOVERED_WEB_ARCHIVE: 912, RECOVERED_OFFICIAL_MIRROR: 319, ACCESS_RESTRICTED: 119, ARCHIVED_CONTENT: 1
+- **6291** challenge/non-content observations across the corpus (latest observation per URL).
+- Requested-URL coverage states: UNRESOLVED_CHALLENGE: 3718, NON_CONTENT_TECHNICAL_RESPONSE: 1131, RECOVERED_WEB_ARCHIVE: 1003, RECOVERED_OFFICIAL_MIRROR: 319, ACCESS_RESTRICTED: 119, ARCHIVED_CONTENT: 1
 
 ## 2. Hosts generating them
 
@@ -27,24 +27,24 @@ Generated 2026-10-01T18:37:13.145891+00:00 from committed recovery state. No CAP
 | www.fincen.gov | NON_CONTENT_TECHNICAL_RESPONSE: 8, ACCESS_RESTRICTED: 5 |
 | www.gao.gov | UNRESOLVED_CHALLENGE: 53, ARCHIVED_CONTENT: 1, NON_CONTENT_TECHNICAL_RESPONSE: 1, ACCESS_RESTRICTED: 1 |
 | www.govinfo.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1054 |
-| www.justice.gov | UNRESOLVED_CHALLENGE: 3455, RECOVERED_WEB_ARCHIVE: 912, ACCESS_RESTRICTED: 4, NON_CONTENT_TECHNICAL_RESPONSE: 3 |
-| www.ncua.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
+| www.justice.gov | UNRESOLVED_CHALLENGE: 3364, RECOVERED_WEB_ARCHIVE: 1003, ACCESS_RESTRICTED: 4, NON_CONTENT_TECHNICAL_RESPONSE: 3 |
+| www.ncua.gov | NON_CONTENT_TECHNICAL_RESPONSE: 2 |
 | www.occ.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
 | www.sec.gov | UNRESOLVED_CHALLENGE: 166, NON_CONTENT_TECHNICAL_RESPONSE: 2, ACCESS_RESTRICTED: 1 |
 | www.treasury.gov | NON_CONTENT_TECHNICAL_RESPONSE: 25 |
 
 ## 3. Document identities
 
-- 6290 identities built; 5943 resolved via API metadata or URL-slug derivation.
-- Document-identity coverage: UNRESOLVED_CHALLENGE: 3809, NON_CONTENT_TECHNICAL_RESPONSE: 1130, RECOVERED_WEB_ARCHIVE: 912, RECOVERED_OFFICIAL_MIRROR: 319, ACCESS_RESTRICTED: 119, ARCHIVED_CONTENT: 1
+- 6291 identities built; 5944 resolved via API metadata or URL-slug derivation.
+- Document-identity coverage: UNRESOLVED_CHALLENGE: 3718, NON_CONTENT_TECHNICAL_RESPONSE: 1131, RECOVERED_WEB_ARCHIVE: 1003, RECOVERED_OFFICIAL_MIRROR: 319, ACCESS_RESTRICTED: 119, ARCHIVED_CONTENT: 1
 
 ## 4–7. Recovery outcomes
 
 - Same-agency recoveries (`SAME_DOCUMENT`): 1
 - Official government mirrors (`OFFICIAL_MIRROR`): 319
-- Public web archive (`ARCHIVED_VERSION`): 912
+- Public web archive (`ARCHIVED_VERSION`): 1003
 - Derived representations (API metadata records): 319
-- Still unresolved: **5058** (by tier: {0: 159, 1: 1676, 2: 3223})
+- Still unresolved: **4968** (by tier: {0: 160, 1: 1585, 2: 3223})
 
 ## 8. Highest-value challenged collections
 
@@ -52,7 +52,7 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 
 ## 9. DOJ
 
-- DOJ URL states: UNRESOLVED_CHALLENGE: 3455, RECOVERED_WEB_ARCHIVE: 912, ACCESS_RESTRICTED: 4, NON_CONTENT_TECHNICAL_RESPONSE: 3
+- DOJ URL states: UNRESOLVED_CHALLENGE: 3364, RECOVERED_WEB_ARCHIVE: 1003, ACCESS_RESTRICTED: 4, NON_CONTENT_TECHNICAL_RESPONSE: 3
 
 ## 10. Federal Register
 
@@ -71,7 +71,7 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 - `ERROR_RESPONSE|http_status:403` × 113
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2410` × 93
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2419` × 78
-- `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2443` × 67
+- `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2443` × 66
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2586` × 63
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2454` × 62
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2421` × 59
@@ -84,7 +84,7 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 
 ## 13. Most effective alternate routes
 
-- `wayback_cdx`: 912 links
+- `wayback_cdx`: 1003 links
 - `federal_register_api_inventory_crossref`: 319 links
 - `federal_register_api`: 319 links
 - `ordinary_retry_probe`: 1 links
