@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T18:28:46.792666+00:00",
+  "generated_at": "2026-10-03T16:56:02.088591+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -73,15 +73,15 @@
     },
     {
       "host": "home.treasury.gov",
-      "urls_discovered": 9759,
-      "urls_attempted": 12302,
-      "urls_archived": 12244,
+      "urls_discovered": 9762,
+      "urls_attempted": 12305,
+      "urls_archived": 12247,
       "non_content_captures": 0,
-      "urls_with_content": 12244,
+      "urls_with_content": 12247,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3151881705,
+      "bytes": 3152103638,
       "median_object_bytes": 108843,
-      "p95_object_bytes": 394420,
+      "p95_object_bytes": 394387,
       "known_bulk_gaps": []
     },
     {
@@ -191,14 +191,14 @@
     {
       "host": "web.archive.org",
       "urls_discovered": 0,
-      "urls_attempted": 2929,
-      "urls_archived": 2464,
+      "urls_attempted": 3206,
+      "urls_archived": 2633,
       "non_content_captures": 0,
-      "urls_with_content": 2464,
+      "urls_with_content": 2633,
       "ceiling_hit": "no",
-      "bytes": 67016395,
-      "median_object_bytes": 249,
-      "p95_object_bytes": 100388,
+      "bytes": 70491648,
+      "median_object_bytes": 248,
+      "p95_object_bytes": 100338,
       "known_bulk_gaps": []
     },
     {
@@ -218,21 +218,21 @@
     },
     {
       "host": "www.fdic.gov",
-      "urls_discovered": 5042,
-      "urls_attempted": 17118,
-      "urls_archived": 17114,
+      "urls_discovered": 5044,
+      "urls_attempted": 17120,
+      "urls_archived": 17116,
       "non_content_captures": 0,
-      "urls_with_content": 17114,
+      "urls_with_content": 17116,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 1264817302,
+      "bytes": 1264947170,
       "median_object_bytes": 68733,
-      "p95_object_bytes": 92281,
+      "p95_object_bytes": 92280,
       "known_bulk_gaps": []
     },
     {
       "host": "www.federalregister.gov",
-      "urls_discovered": 319,
-      "urls_attempted": 773,
+      "urls_discovered": 320,
+      "urls_attempted": 774,
       "urls_archived": 319,
       "non_content_captures": 0,
       "urls_with_content": 319,
@@ -278,7 +278,7 @@
       "non_content_captures": 0,
       "urls_with_content": 4183,
       "ceiling_hit": "no",
-      "bytes": 877503646,
+      "bytes": 877503634,
       "median_object_bytes": 34837,
       "p95_object_bytes": 819515,
       "known_bulk_gaps": []
@@ -291,7 +291,7 @@
       "non_content_captures": 54,
       "urls_with_content": 7619,
       "ceiling_hit": "no",
-      "bytes": 6715035072,
+      "bytes": 6715035056,
       "median_object_bytes": 93970,
       "p95_object_bytes": 5030953,
       "known_bulk_gaps": [
@@ -300,15 +300,15 @@
     },
     {
       "host": "www.govinfo.gov",
-      "urls_discovered": 501,
-      "urls_attempted": 18329,
-      "urls_archived": 18310,
+      "urls_discovered": 502,
+      "urls_attempted": 18330,
+      "urls_archived": 18311,
       "non_content_captures": 0,
-      "urls_with_content": 18310,
+      "urls_with_content": 18311,
       "ceiling_hit": "no",
-      "bytes": 16422047484,
+      "bytes": 16422546497,
       "median_object_bytes": 45655,
-      "p95_object_bytes": 1024101,
+      "p95_object_bytes": 1023940,
       "known_bulk_gaps": [
         "GovInfo bulk data collections (FR XML, CFR, court opinions)"
       ]
@@ -321,7 +321,7 @@
       "non_content_captures": 4367,
       "urls_with_content": 1413,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 192215081,
+      "bytes": 192215111,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101501,
       "known_bulk_gaps": []
