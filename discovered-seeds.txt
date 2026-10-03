@@ -6909,6 +6909,9 @@ https://home.treasury.gov/news/press-releases/sb0642|GOV-PUBLIC|home.treasury.go
 https://home.treasury.gov/news/press-releases/sb0643|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0644|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0645|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0646|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0647|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0648|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0004|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0013|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0014|GOV-PUBLIC|home.treasury.gov
@@ -29773,6 +29776,7 @@ https://www.fdic.gov/analysis/2023-01/implications-high-inflation-banking-outcom
 https://www.fdic.gov/analysis/2024-01/2023-summary-deposits-highlights|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/analysis/2024-01/us-industrial-transition-and-its-effect-metro-areas-and-community-banks|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/analysis/2026-02/bank-lending-nondepository-financial-institutions|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/analysis/2026-10/update-farm-bank-performance|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/analysis/findings-fdic-survey-bank-efforts-serve-unbanked-and-underbanked|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/asset-sales/events/cbt-26-sale-announcement|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/bank-failures/failed-bank-list/community-bank-and-trust-west-georgia|GOV-PUBLIC|www.fdic.gov
@@ -33719,6 +33723,7 @@ https://www.fdic.gov/node/132471|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132541|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132556|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132601|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132681|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26481|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26486|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26491|GOV-PUBLIC|www.fdic.gov
@@ -35028,6 +35033,7 @@ https://www.federalregister.gov/documents/2026/08/11/2026-16365/geographic-targe
 https://www.federalregister.gov/documents/2026/08/14/2026-16576/beneficial-ownership-information-reporting-requirement-revision|GOV-PUBLIC|Federal Register
 https://www.federalregister.gov/documents/2026/09/01/2026-17871/proposal-of-special-measure-regarding-banque-misr-uae-as-a-financial-institution-operating-outside|GOV-PUBLIC|Federal Register
 https://www.federalregister.gov/documents/2026/09/04/2026-18194/geographic-targeting-order-imposing-recordkeeping-and-reporting-requirements-on-certain-money|GOV-PUBLIC|Federal Register
+https://www.federalregister.gov/documents/2026/10/05/2026-20371/proposal-of-special-measure-prohibiting-the-transmittal-of-funds-regarding-transactions-involving|GOV-PUBLIC|Federal Register
 https://www.fincen.gov/1st-review-suspicious-activity-reporting-system-sars|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/2006-revisions-bank-secrecy-actanti-money-laundering-examination-manual-july-28-2006|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/about-fincen|GOV-PUBLIC|www.fincen.gov
@@ -38237,6 +38243,7 @@ https://www.govinfo.gov/content/pkg/FR-2026-08-11/pdf/2026-16365.pdf|GOV-PUBLIC|
 https://www.govinfo.gov/content/pkg/FR-2026-08-14/pdf/2026-16576.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/content/pkg/FR-2026-09-01/pdf/2026-17871.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/content/pkg/FR-2026-09-04/pdf/2026-18194.pdf|GOV-PUBLIC|Federal Register
+https://www.govinfo.gov/content/pkg/FR-2026-10-05/pdf/2026-20371.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/developers|GOV-PUBLIC|www.govinfo.gov
 https://www.govinfo.gov/developers/system-design|GOV-PUBLIC|www.govinfo.gov
 https://www.govinfo.gov/digital-preservation|GOV-PUBLIC|www.govinfo.gov
