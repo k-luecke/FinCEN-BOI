@@ -1,16 +1,16 @@
 {
   "access_restricted": 119,
-  "archived_content_urls": 142006,
+  "archived_content_urls": 142013,
   "archived_note": "archived_urls counts every URL with stored bytes; archived_content_urls excludes captures the challenge detector classified as bot challenges/interstitials/app shells (see recovery/)",
-  "archived_urls": 146787,
-  "attempted_urls": 149450,
+  "archived_urls": 146788,
+  "attempted_urls": 149451,
   "by_host": {
     "bsaaml.ffiec.gov": 31,
     "bsaefiling.fincen.gov": 74,
     "congress.gov": 30,
     "fincen.gov": 21,
     "gao.gov": 2,
-    "home.treasury.gov": 12526,
+    "home.treasury.gov": 12527,
     "judiciary.house.gov": 1026,
     "justice.gov": 2,
     "ncua.gov": 9785,
@@ -19,10 +19,10 @@
     "oversight.house.gov": 17295,
     "treasury.gov": 7,
     "vault.fbi.gov": 9979,
-    "web.archive.org": 5133,
+    "web.archive.org": 5243,
     "www.congress.gov": 110,
     "www.fdic.gov": 17185,
-    "www.federalregister.gov": 2643,
+    "www.federalregister.gov": 2644,
     "www.federalreserve.gov": 45,
     "www.ffiec.gov": 42,
     "www.fincen.gov": 6362,
@@ -36,72 +36,71 @@
   },
   "by_provenance": {
     "CONGRESS": 17152,
-    "GOV-PUBLIC": 146209,
-    "WEB-ARCHIVE": 5133
+    "GOV-PUBLIC": 146211,
+    "WEB-ARCHIVE": 5243
   },
   "discovered_urls": 53496,
   "durability_note": "release assets verified this run",
-  "durably_archived_urls": 146787,
-  "generated_at": "2026-10-04T15:10:55.200768+00:00",
+  "durably_archived_urls": 146788,
+  "generated_at": "2026-10-04T15:32:31.103172+00:00",
   "graph_entities": 1014,
   "graph_people": 345,
   "ledger_change_types": {
-    "ADDED": 137084,
+    "ADDED": 137085,
     "MODIFIED": 5891,
     "REMOVED": 201,
     "UNAVAILABLE": 2663,
     "UNCHANGED": 3611
   },
-  "manual_review": 459,
+  "manual_review": 569,
   "modified_urls": 5891,
-  "non_content_technical_responses": 4781,
+  "non_content_technical_responses": 4775,
   "not_found_urls": 1441,
   "ownership_bearing_documents": 767,
   "queue_states": {
     "ACCESS_RESTRICTED": 119,
-    "ARCHIVED": 142198,
-    "DISCOVERED": 1,
-    "MANUAL_REVIEW": 459,
+    "ARCHIVED": 142199,
+    "MANUAL_REVIEW": 569,
     "NON_CONTENT_TECHNICAL_RESPONSE": 4587,
     "NOT_FOUND": 1441,
     "ROBOTS_DISALLOWED": 2,
-    "TEMPORARY_ERROR": 644
+    "TEMPORARY_ERROR": 534
   },
-  "queued_urls": 1,
+  "queued_urls": 0,
   "rate_limited": 0,
-  "raw_observations": 168494,
+  "raw_observations": 168606,
   "recovery": {
-    "challenge_observations": 6290,
+    "challenge_observations": 6291,
     "document_identity_coverage": {
       "ACCESS_RESTRICTED": 119,
       "ARCHIVED_CONTENT": 1,
       "NON_CONTENT_TECHNICAL_RESPONSE": 1130,
-      "RECOVERED_OFFICIAL_MIRROR": 319,
-      "RECOVERED_WEB_ARCHIVE": 1070,
-      "UNRESOLVED_CHALLENGE": 3651
+      "RECOVERED_OFFICIAL_MIRROR": 320,
+      "RECOVERED_WEB_ARCHIVE": 1076,
+      "UNRESOLVED_CHALLENGE": 3645
     },
     "recovery_links_by_relationship": {
-      "ARCHIVED_VERSION": 1070,
-      "DERIVED_REPRESENTATION": 319,
-      "OFFICIAL_MIRROR": 319,
+      "ARCHIVED_VERSION": 1076,
+      "DERIVED_REPRESENTATION": 320,
+      "OFFICIAL_MIRROR": 320,
       "SAME_DOCUMENT": 1
     },
     "requested_url_coverage": {
       "ACCESS_RESTRICTED": 119,
       "ARCHIVED_CONTENT": 1,
       "NON_CONTENT_TECHNICAL_RESPONSE": 1130,
-      "RECOVERED_OFFICIAL_MIRROR": 319,
-      "RECOVERED_WEB_ARCHIVE": 1070,
-      "UNRESOLVED_CHALLENGE": 3651
+      "RECOVERED_OFFICIAL_MIRROR": 320,
+      "RECOVERED_WEB_ARCHIVE": 1076,
+      "UNRESOLVED_CHALLENGE": 3645
     },
-    "unresolved": 4900
+    "unresolved": 4894
   },
   "robots_disallowed": 2,
-  "temporary_errors": 644,
-  "total_bytes": 48345217230,
-  "unique_objects": 154264,
+  "temporary_errors": 534,
+  "total_bytes": 48345285762,
+  "unique_objects": 154265,
   "unresolved_entities": 384,
   "validated_graph_edges": 1220,
   "verification_note": "objects are hash-verified at capture (verify.py) before manifests merge; periodic re-verification via verify-archive workflow",
-  "verified_objects": 154264
+  "verified_objects": 154265
 }
