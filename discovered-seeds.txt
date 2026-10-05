@@ -44089,6 +44089,7 @@ https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-45.html|GOV-PUBL
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-46.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-47.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-48.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-49.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-5.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-6.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-7.html|GOV-PUBLIC|www.occ.gov
@@ -45917,6 +45918,12 @@ https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-79.html|GOV-PU
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-7a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-8.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-80.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-81.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-81a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-82.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-82a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-83.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-84.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/ppm-5310-3.pdf|GOV-PUBLIC|www.occ.gov
@@ -46462,6 +46469,7 @@ https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/dq223.xml|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/dq224.xml|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/dq225.xml|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/dq226.xml|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/dq319-xml.xml|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/dq320-xml.xml|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/dq321-xml.xml|GOV-PUBLIC|www.occ.gov
@@ -46491,6 +46499,7 @@ https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/pub-derivatives-quarterly-qtr2-2023.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/pub-derivatives-quarterly-qtr2-2024.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/pub-derivatives-quarterly-qtr2-2025.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/pub-derivatives-quarterly-qtr2-2026.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/pub-derivatives-quarterly-qtr3-2019.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/pub-derivatives-quarterly-qtr3-2020.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/pub-derivatives-quarterly-qtr3-2021.pdf|GOV-PUBLIC|www.occ.gov
@@ -46520,6 +46529,7 @@ https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/q2-2023-derivatives-quarterly.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/q2-2024-derivatives-quarterly.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/q2-2025-derivatives-quarterly.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/q2-2026-derivatives-quarterly.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/q3-2019-derivatives-quarterly.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/q3-2020-derivatives-quarterly.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/quarterly-report-on-bank-trading-and-derivatives-activities/files/q3-2021-derivatives-quarterly.html|GOV-PUBLIC|www.occ.gov
