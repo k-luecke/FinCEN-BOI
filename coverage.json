@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T15:10:57.446879+00:00",
+  "generated_at": "2026-10-05T19:58:41.614066+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -74,14 +74,14 @@
     {
       "host": "home.treasury.gov",
       "urls_discovered": 9763,
-      "urls_attempted": 12305,
-      "urls_archived": 12247,
+      "urls_attempted": 12306,
+      "urls_archived": 12248,
       "non_content_captures": 0,
-      "urls_with_content": 12247,
+      "urls_with_content": 12248,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3152103639,
-      "median_object_bytes": 108843,
-      "p95_object_bytes": 394387,
+      "bytes": 3152172169,
+      "median_object_bytes": 108842,
+      "p95_object_bytes": 394375,
       "known_bulk_gaps": []
     },
     {
@@ -191,14 +191,14 @@
     {
       "host": "web.archive.org",
       "urls_discovered": 0,
-      "urls_attempted": 3214,
-      "urls_archived": 2647,
+      "urls_attempted": 3239,
+      "urls_archived": 2692,
       "non_content_captures": 0,
-      "urls_with_content": 2647,
+      "urls_with_content": 2692,
       "ceiling_hit": "no",
-      "bytes": 70814089,
+      "bytes": 71854157,
       "median_object_bytes": 248,
-      "p95_object_bytes": 100335,
+      "p95_object_bytes": 100331,
       "known_bulk_gaps": []
     },
     {
@@ -278,7 +278,7 @@
       "non_content_captures": 0,
       "urls_with_content": 4183,
       "ceiling_hit": "no",
-      "bytes": 877503645,
+      "bytes": 877502916,
       "median_object_bytes": 34837,
       "p95_object_bytes": 819515,
       "known_bulk_gaps": []
@@ -291,7 +291,7 @@
       "non_content_captures": 54,
       "urls_with_content": 7619,
       "ceiling_hit": "no",
-      "bytes": 6715035057,
+      "bytes": 6715034885,
       "median_object_bytes": 93970,
       "p95_object_bytes": 5030953,
       "known_bulk_gaps": [
@@ -321,7 +321,7 @@
       "non_content_captures": 4367,
       "urls_with_content": 1413,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 192215092,
+      "bytes": 192215177,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101501,
       "known_bulk_gaps": []
@@ -341,15 +341,15 @@
     },
     {
       "host": "www.occ.gov",
-      "urls_discovered": 5069,
-      "urls_attempted": 15516,
-      "urls_archived": 15511,
+      "urls_discovered": 5079,
+      "urls_attempted": 15526,
+      "urls_archived": 15521,
       "non_content_captures": 0,
-      "urls_with_content": 15511,
+      "urls_with_content": 15521,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3248045762,
+      "bytes": 3252033760,
       "median_object_bytes": 60433,
-      "p95_object_bytes": 858809,
+      "p95_object_bytes": 859140,
       "known_bulk_gaps": []
     },
     {
