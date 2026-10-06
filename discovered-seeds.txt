@@ -6913,6 +6913,8 @@ https://home.treasury.gov/news/press-releases/sb0646|GOV-PUBLIC|home.treasury.go
 https://home.treasury.gov/news/press-releases/sb0647|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0648|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0649|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0650|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0651|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0004|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0013|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0014|GOV-PUBLIC|home.treasury.gov
@@ -19143,6 +19145,7 @@ https://ncua.gov/support-services/corporate-system-resolution/corporate-capital-
 https://ncua.gov/support-services/corporate-system-resolution/corporate-capital-distribution-process/march-2023-corporate-capital-credit-union-notification|GOV-PUBLIC|ncua.gov
 https://ncua.gov/support-services/corporate-system-resolution/corporate-capital-distribution-process/march-2024-corporate-capital-distributions|GOV-PUBLIC|ncua.gov
 https://ncua.gov/support-services/corporate-system-resolution/corporate-capital-distribution-process/march-2025-corporate-capital-distributions|GOV-PUBLIC|ncua.gov
+https://ncua.gov/support-services/corporate-system-resolution/corporate-capital-distribution-process/march-2026-corporate-capital-distributions|GOV-PUBLIC|ncua.gov
 https://ncua.gov/support-services/corporate-system-resolution/corporate-capital-distribution-process/september-2022-corporate-capital-credit-union-distributions|GOV-PUBLIC|ncua.gov
 https://ncua.gov/support-services/corporate-system-resolution/corporate-capital-distribution-process/september-2023-corporate-capital-distributions|GOV-PUBLIC|ncua.gov
 https://ncua.gov/support-services/corporate-system-resolution/corporate-capital-distribution-process/september-2024-corporate-capital-distributions|GOV-PUBLIC|ncua.gov
@@ -25049,6 +25052,7 @@ https://vault.fbi.gov/arctic-frost/arctic-frost-part-03/view|GOV-PUBLIC|vault.fb
 https://vault.fbi.gov/arctic-frost/arctic-frost-part-04/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/arctic-frost/arctic-frost-part-05/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/arctic-frost/arctic-frost-part-06/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/arctic-frost/arctic-frost-part-07/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/ardeshir-zahedi/Ardeshir%20Zahedi%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/aretha-franklin/Aretha%20Franklin%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/argentina-declassification-project/Amilcar%20Santucho%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
@@ -26837,6 +26841,8 @@ https://vault.fbi.gov/joseph-adonis/joseph-adonis-part-06/view|GOV-PUBLIC|vault.
 https://vault.fbi.gov/joseph-adonis/joseph-adonis-part-07-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/joseph-armone/joseph-armone-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/joseph-bisogno/joseph-bisogno-final/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/joseph-bisogno/joseph-bisogno-part-01/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/joseph-bisogno/joseph-bisogno-part-02-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/joseph-bonanno/Joseph%20Bonanno%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/joseph-bonanno/Joseph%20Bonanno%20Part%2002/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/joseph-bonanno/Joseph%20Bonanno%20Part%2003%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
@@ -35035,6 +35041,8 @@ https://www.federalregister.gov/documents/2026/08/14/2026-16576/beneficial-owner
 https://www.federalregister.gov/documents/2026/09/01/2026-17871/proposal-of-special-measure-regarding-banque-misr-uae-as-a-financial-institution-operating-outside|GOV-PUBLIC|Federal Register
 https://www.federalregister.gov/documents/2026/09/04/2026-18194/geographic-targeting-order-imposing-recordkeeping-and-reporting-requirements-on-certain-money|GOV-PUBLIC|Federal Register
 https://www.federalregister.gov/documents/2026/10/05/2026-20371/proposal-of-special-measure-prohibiting-the-transmittal-of-funds-regarding-transactions-involving|GOV-PUBLIC|Federal Register
+https://www.federalregister.gov/documents/2026/10/06/2026-20429/proposal-of-special-measure-regarding-convertible-virtual-currency-mixing-as-a-class-of-transactions|GOV-PUBLIC|Federal Register
+https://www.federalregister.gov/documents/2026/10/06/2026-20430/requirements-for-certain-transactions-involving-convertible-virtual-currency-or-digital-assets|GOV-PUBLIC|Federal Register
 https://www.fincen.gov/1st-review-suspicious-activity-reporting-system-sars|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/2006-revisions-bank-secrecy-actanti-money-laundering-examination-manual-july-28-2006|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/about-fincen|GOV-PUBLIC|www.fincen.gov
@@ -35587,6 +35595,7 @@ https://www.fincen.gov/news/news-releases/fincen-announces-recipients-its-law-en
 https://www.fincen.gov/news/news-releases/fincen-announces-release-manual-aid-examiners-money-services-businesses|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-announces-sar-acknowledgements-bsa-e-filing-submissions|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-announces-simplified-rules-reporting-suspicious-activity|GOV-PUBLIC|www.fincen.gov
+https://www.fincen.gov/news/news-releases/fincen-announces-withdrawals-proposed-digital-asset-related-rules|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-asks-financial-institutions-stay-alert-covid-19-vaccine-related-scams-and|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-assesses-1-million-penalty-and-seeks-bar-former-moneygram-executive|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-assesses-10000-civil-money-penalty-against-tampa-based-msb|GOV-PUBLIC|www.fincen.gov
@@ -37474,6 +37483,7 @@ https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/p
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/proposal-special-measure-regarding-0|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/proposal-special-measure-regarding-al-huda|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/proposal-special-measure-regarding-banque|GOV-PUBLIC|www.fincen.gov
+https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/proposal-special-measure-regarding-convertible-virtual-currency-mixing|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/proposal-special-measure-regarding-huione|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/proposal-special-measure-regarding-mbaer|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/proposed-amendment-bank-secrecy-act|GOV-PUBLIC|www.fincen.gov
@@ -37554,6 +37564,7 @@ https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/r
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/requirement-mutual-funds-report-suspicious|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/requirements-certain-transactions-0|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/requirements-certain-transactions-1|GOV-PUBLIC|www.fincen.gov
+https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/requirements-certain-transactions-convertible-virtual-currency|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/requirements-certain-transactions-involving|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/review-bank-secrecy-act-regulations-and|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/sharing-suspicious-activity-reports|GOV-PUBLIC|www.fincen.gov
@@ -38245,6 +38256,8 @@ https://www.govinfo.gov/content/pkg/FR-2026-08-14/pdf/2026-16576.pdf|GOV-PUBLIC|
 https://www.govinfo.gov/content/pkg/FR-2026-09-01/pdf/2026-17871.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/content/pkg/FR-2026-09-04/pdf/2026-18194.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/content/pkg/FR-2026-10-05/pdf/2026-20371.pdf|GOV-PUBLIC|Federal Register
+https://www.govinfo.gov/content/pkg/FR-2026-10-06/pdf/2026-20429.pdf|GOV-PUBLIC|Federal Register
+https://www.govinfo.gov/content/pkg/FR-2026-10-06/pdf/2026-20430.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/developers|GOV-PUBLIC|www.govinfo.gov
 https://www.govinfo.gov/developers/system-design|GOV-PUBLIC|www.govinfo.gov
 https://www.govinfo.gov/digital-preservation|GOV-PUBLIC|www.govinfo.gov
