@@ -1,33 +1,33 @@
 {
   "access_restricted": 119,
-  "archived_content_urls": 142118,
+  "archived_content_urls": 142139,
   "archived_note": "archived_urls counts every URL with stored bytes; archived_content_urls excludes captures the challenge detector classified as bot challenges/interstitials/app shells (see recovery/)",
-  "archived_urls": 146873,
-  "attempted_urls": 149506,
+  "archived_urls": 146884,
+  "attempted_urls": 149519,
   "by_host": {
     "bsaaml.ffiec.gov": 33,
     "bsaefiling.fincen.gov": 76,
     "congress.gov": 36,
     "fincen.gov": 21,
     "gao.gov": 2,
-    "home.treasury.gov": 12529,
+    "home.treasury.gov": 12531,
     "judiciary.house.gov": 1028,
     "justice.gov": 2,
-    "ncua.gov": 9785,
+    "ncua.gov": 9786,
     "occ.gov": 5,
     "oig.treasury.gov": 264,
     "oversight.house.gov": 17297,
     "treasury.gov": 7,
-    "vault.fbi.gov": 9981,
-    "web.archive.org": 5381,
+    "vault.fbi.gov": 9984,
+    "web.archive.org": 5419,
     "www.congress.gov": 112,
     "www.fdic.gov": 17187,
-    "www.federalregister.gov": 2649,
+    "www.federalregister.gov": 2652,
     "www.federalreserve.gov": 47,
     "www.ffiec.gov": 44,
-    "www.fincen.gov": 6386,
+    "www.fincen.gov": 6389,
     "www.gao.gov": 9412,
-    "www.govinfo.gov": 19529,
+    "www.govinfo.gov": 19531,
     "www.justice.gov": 14736,
     "www.ncua.gov": 36,
     "www.occ.gov": 16554,
@@ -36,40 +36,39 @@
   },
   "by_provenance": {
     "CONGRESS": 17158,
-    "GOV-PUBLIC": 146296,
-    "WEB-ARCHIVE": 5381
+    "GOV-PUBLIC": 146310,
+    "WEB-ARCHIVE": 5419
   },
   "discovered_urls": 53519,
   "durability_note": "release assets verified this run",
-  "durably_archived_urls": 146873,
-  "generated_at": "2026-10-06T16:51:06.998595+00:00",
+  "durably_archived_urls": 146884,
+  "generated_at": "2026-10-06T16:57:19.587159+00:00",
   "graph_entities": 1014,
   "graph_people": 345,
   "ledger_change_types": {
-    "ADDED": 137170,
+    "ADDED": 137181,
     "MODIFIED": 5894,
     "REMOVED": 201,
-    "UNAVAILABLE": 2633,
+    "UNAVAILABLE": 2635,
     "UNCHANGED": 3608
   },
-  "manual_review": 501,
+  "manual_review": 539,
   "modified_urls": 5894,
-  "non_content_technical_responses": 4755,
+  "non_content_technical_responses": 4745,
   "not_found_urls": 1441,
   "ownership_bearing_documents": 767,
   "queue_states": {
     "ACCESS_RESTRICTED": 119,
-    "ARCHIVED": 142284,
-    "DISCOVERED": 13,
-    "MANUAL_REVIEW": 501,
+    "ARCHIVED": 142295,
+    "MANUAL_REVIEW": 539,
     "NON_CONTENT_TECHNICAL_RESPONSE": 4587,
     "NOT_FOUND": 1441,
     "ROBOTS_DISALLOWED": 2,
-    "TEMPORARY_ERROR": 572
+    "TEMPORARY_ERROR": 536
   },
-  "queued_urls": 13,
+  "queued_urls": 0,
   "rate_limited": 0,
-  "raw_observations": 168835,
+  "raw_observations": 168887,
   "recovery": {
     "challenge_observations": 6291,
     "document_identity_coverage": {
@@ -77,11 +76,11 @@
       "ARCHIVED_CONTENT": 1,
       "NON_CONTENT_TECHNICAL_RESPONSE": 1130,
       "RECOVERED_OFFICIAL_MIRROR": 320,
-      "RECOVERED_WEB_ARCHIVE": 1096,
-      "UNRESOLVED_CHALLENGE": 3625
+      "RECOVERED_WEB_ARCHIVE": 1106,
+      "UNRESOLVED_CHALLENGE": 3615
     },
     "recovery_links_by_relationship": {
-      "ARCHIVED_VERSION": 1096,
+      "ARCHIVED_VERSION": 1106,
       "DERIVED_REPRESENTATION": 320,
       "OFFICIAL_MIRROR": 320,
       "SAME_DOCUMENT": 1
@@ -91,17 +90,17 @@
       "ARCHIVED_CONTENT": 1,
       "NON_CONTENT_TECHNICAL_RESPONSE": 1130,
       "RECOVERED_OFFICIAL_MIRROR": 320,
-      "RECOVERED_WEB_ARCHIVE": 1096,
-      "UNRESOLVED_CHALLENGE": 3625
+      "RECOVERED_WEB_ARCHIVE": 1106,
+      "UNRESOLVED_CHALLENGE": 3615
     },
-    "unresolved": 4874
+    "unresolved": 4864
   },
   "robots_disallowed": 2,
-  "temporary_errors": 572,
-  "total_bytes": 48353191290,
-  "unique_objects": 154393,
+  "temporary_errors": 536,
+  "total_bytes": 48353985754,
+  "unique_objects": 154404,
   "unresolved_entities": 384,
   "validated_graph_edges": 1220,
   "verification_note": "objects are hash-verified at capture (verify.py) before manifests merge; periodic re-verification via verify-archive workflow",
-  "verified_objects": 154393
+  "verified_objects": 154404
 }
