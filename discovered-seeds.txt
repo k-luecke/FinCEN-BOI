@@ -25306,6 +25306,8 @@ https://vault.fbi.gov/bombrob-and-operation-punchout/bombrob-operation-punchout-
 https://vault.fbi.gov/bombrob-and-operation-punchout/bombrob-operation-punchout-part-35/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/bombrob-and-operation-punchout/bombrob-operation-punchout-part-36/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/bombrob-and-operation-punchout/bombrob-operation-punchout-part-37/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/bombrob-and-operation-punchout/bombrob-operation-punchout-part-38/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/bombrob-and-operation-punchout/bombrob-operation-punchout-part-39/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/bombrob/BOMBROB%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/bombrob/BOMBROB%20Part%2002/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/bombrob/BOMBROB%20Part%2003/view|GOV-PUBLIC|vault.fbi.gov
