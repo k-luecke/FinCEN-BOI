@@ -1,13 +1,13 @@
 {
   "access_restricted": 119,
-  "archived_content_urls": 142332,
+  "archived_content_urls": 142336,
   "archived_note": "archived_urls counts every URL with stored bytes; archived_content_urls excludes captures the challenge detector classified as bot challenges/interstitials/app shells (see recovery/)",
-  "archived_urls": 147023,
-  "attempted_urls": 149672,
+  "archived_urls": 147027,
+  "attempted_urls": 149674,
   "by_host": {
     "bsaaml.ffiec.gov": 36,
     "bsaefiling.fincen.gov": 79,
-    "congress.gov": 36,
+    "congress.gov": 39,
     "fincen.gov": 21,
     "gao.gov": 2,
     "home.treasury.gov": 12535,
@@ -19,16 +19,16 @@
     "oversight.house.gov": 17300,
     "treasury.gov": 7,
     "vault.fbi.gov": 9989,
-    "web.archive.org": 5593,
+    "web.archive.org": 5606,
     "www.congress.gov": 115,
     "www.fdic.gov": 17191,
     "www.federalregister.gov": 2665,
     "www.federalreserve.gov": 50,
     "www.ffiec.gov": 47,
     "www.fincen.gov": 6425,
-    "www.gao.gov": 9421,
+    "www.gao.gov": 9424,
     "www.govinfo.gov": 19534,
-    "www.justice.gov": 14744,
+    "www.justice.gov": 14747,
     "www.ncua.gov": 39,
     "www.occ.gov": 16557,
     "www.sec.gov": 25018,
@@ -36,20 +36,20 @@
   },
   "by_provenance": {
     "CONGRESS": 17167,
-    "GOV-PUBLIC": 146410,
-    "WEB-ARCHIVE": 5593
+    "GOV-PUBLIC": 146419,
+    "WEB-ARCHIVE": 5606
   },
-  "discovered_urls": 53525,
+  "discovered_urls": 53531,
   "durability_note": "release assets verified this run",
-  "durably_archived_urls": 147023,
-  "generated_at": "2026-10-09T13:32:29.093998+00:00",
+  "durably_archived_urls": 147027,
+  "generated_at": "2026-10-09T16:40:00.061860+00:00",
   "graph_entities": 1014,
   "graph_people": 345,
   "ledger_change_types": {
-    "ADDED": 137319,
+    "ADDED": 137323,
     "MODIFIED": 5893,
     "REMOVED": 201,
-    "UNAVAILABLE": 2649,
+    "UNAVAILABLE": 2647,
     "UNCHANGED": 3610
   },
   "manual_review": 511,
@@ -59,16 +59,17 @@
   "ownership_bearing_documents": 767,
   "queue_states": {
     "ACCESS_RESTRICTED": 119,
-    "ARCHIVED": 142434,
+    "ARCHIVED": 142438,
+    "DISCOVERED": 6,
     "MANUAL_REVIEW": 511,
     "NON_CONTENT_TECHNICAL_RESPONSE": 4587,
     "NOT_FOUND": 1441,
     "ROBOTS_DISALLOWED": 2,
-    "TEMPORARY_ERROR": 578
+    "TEMPORARY_ERROR": 576
   },
-  "queued_urls": 0,
+  "queued_urls": 6,
   "rate_limited": 0,
-  "raw_observations": 169170,
+  "raw_observations": 169192,
   "recovery": {
     "challenge_observations": 6293,
     "document_identity_coverage": {
@@ -96,11 +97,11 @@
     "unresolved": 4810
   },
   "robots_disallowed": 2,
-  "temporary_errors": 578,
-  "total_bytes": 48360658770,
-  "unique_objects": 154599,
+  "temporary_errors": 576,
+  "total_bytes": 48360766848,
+  "unique_objects": 154607,
   "unresolved_entities": 384,
   "validated_graph_edges": 1220,
   "verification_note": "objects are hash-verified at capture (verify.py) before manifests merge; periodic re-verification via verify-archive workflow",
-  "verified_objects": 154599
+  "verified_objects": 154607
 }

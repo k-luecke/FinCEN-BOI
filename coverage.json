@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T19:26:46.817552+00:00",
+  "generated_at": "2026-10-09T16:40:04.080588+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -73,13 +73,13 @@
     },
     {
       "host": "home.treasury.gov",
-      "urls_discovered": 9766,
+      "urls_discovered": 9769,
       "urls_attempted": 12309,
       "urls_archived": 12251,
       "non_content_captures": 0,
       "urls_with_content": 12251,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3152387175,
+      "bytes": 3152387171,
       "median_object_bytes": 108840,
       "p95_object_bytes": 394342,
       "known_bulk_gaps": []
@@ -177,13 +177,13 @@
     },
     {
       "host": "vault.fbi.gov",
-      "urls_discovered": 5375,
+      "urls_discovered": 5378,
       "urls_attempted": 9936,
       "urls_archived": 9934,
       "non_content_captures": 0,
       "urls_with_content": 9934,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 333122828,
+      "bytes": 333123218,
       "median_object_bytes": 21928,
       "p95_object_bytes": 22449,
       "known_bulk_gaps": []
@@ -191,14 +191,14 @@
     {
       "host": "web.archive.org",
       "urls_discovered": 0,
-      "urls_attempted": 3404,
-      "urls_archived": 2853,
+      "urls_attempted": 3406,
+      "urls_archived": 2857,
       "non_content_captures": 0,
-      "urls_with_content": 2853,
+      "urls_with_content": 2857,
       "ceiling_hit": "no",
-      "bytes": 75121000,
+      "bytes": 75219317,
       "median_object_bytes": 247,
-      "p95_object_bytes": 100308,
+      "p95_object_bytes": 100306,
       "known_bulk_gaps": []
     },
     {
@@ -278,7 +278,7 @@
       "non_content_captures": 0,
       "urls_with_content": 4186,
       "ceiling_hit": "no",
-      "bytes": 877598064,
+      "bytes": 877598044,
       "median_object_bytes": 34831,
       "p95_object_bytes": 819515,
       "known_bulk_gaps": []
@@ -291,7 +291,7 @@
       "non_content_captures": 54,
       "urls_with_content": 7619,
       "ceiling_hit": "no",
-      "bytes": 6715034996,
+      "bytes": 6715034850,
       "median_object_bytes": 93970,
       "p95_object_bytes": 5030953,
       "known_bulk_gaps": [
@@ -321,7 +321,7 @@
       "non_content_captures": 4367,
       "urls_with_content": 1415,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 192382325,
+      "bytes": 192382079,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101522,
       "known_bulk_gaps": []
