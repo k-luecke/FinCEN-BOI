@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T18:05:47.920714+00:00",
+  "generated_at": "2026-10-11T18:01:35.590690+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -79,7 +79,7 @@
       "non_content_captures": 0,
       "urls_with_content": 12275,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3154564132,
+      "bytes": 3154564133,
       "median_object_bytes": 108828,
       "p95_object_bytes": 394062,
       "known_bulk_gaps": []
@@ -92,7 +92,7 @@
       "non_content_captures": 0,
       "urls_with_content": 988,
       "ceiling_hit": "no",
-      "bytes": 632521143,
+      "bytes": 632521144,
       "median_object_bytes": 184343,
       "p95_object_bytes": 1200637,
       "known_bulk_gaps": []
@@ -191,14 +191,14 @@
     {
       "host": "web.archive.org",
       "urls_discovered": 0,
-      "urls_attempted": 3604,
-      "urls_archived": 3032,
+      "urls_attempted": 3813,
+      "urls_archived": 3145,
       "non_content_captures": 0,
-      "urls_with_content": 3032,
+      "urls_with_content": 3145,
       "ceiling_hit": "no",
-      "bytes": 79116316,
-      "median_object_bytes": 247,
-      "p95_object_bytes": 100257,
+      "bytes": 81144907,
+      "median_object_bytes": 246,
+      "p95_object_bytes": 100231,
       "known_bulk_gaps": []
     },
     {
@@ -218,15 +218,15 @@
     },
     {
       "host": "www.fdic.gov",
-      "urls_discovered": 5045,
-      "urls_attempted": 17121,
-      "urls_archived": 17117,
+      "urls_discovered": 5046,
+      "urls_attempted": 17122,
+      "urls_archived": 17118,
       "non_content_captures": 0,
-      "urls_with_content": 17117,
+      "urls_with_content": 17118,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 1265007851,
+      "bytes": 1265101328,
       "median_object_bytes": 68733,
-      "p95_object_bytes": 92279,
+      "p95_object_bytes": 92292,
       "known_bulk_gaps": []
     },
     {
@@ -278,7 +278,7 @@
       "non_content_captures": 0,
       "urls_with_content": 4186,
       "ceiling_hit": "no",
-      "bytes": 877598043,
+      "bytes": 877598029,
       "median_object_bytes": 34831,
       "p95_object_bytes": 819515,
       "known_bulk_gaps": []
@@ -291,7 +291,7 @@
       "non_content_captures": 54,
       "urls_with_content": 7619,
       "ceiling_hit": "no",
-      "bytes": 6715034890,
+      "bytes": 6715034897,
       "median_object_bytes": 93970,
       "p95_object_bytes": 5030953,
       "known_bulk_gaps": [
@@ -321,7 +321,7 @@
       "non_content_captures": 4367,
       "urls_with_content": 1415,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 192381970,
+      "bytes": 192381972,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101522,
       "known_bulk_gaps": []
