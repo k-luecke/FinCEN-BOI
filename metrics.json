@@ -7,7 +7,7 @@
   "by_host": {
     "bsaaml.ffiec.gov": 39,
     "bsaefiling.fincen.gov": 82,
-    "congress.gov": 42,
+    "congress.gov": 45,
     "fincen.gov": 21,
     "gao.gov": 2,
     "home.treasury.gov": 12562,
@@ -19,16 +19,16 @@
     "oversight.house.gov": 17303,
     "treasury.gov": 7,
     "vault.fbi.gov": 9997,
-    "web.archive.org": 6130,
+    "web.archive.org": 6135,
     "www.congress.gov": 118,
     "www.fdic.gov": 17195,
     "www.federalregister.gov": 2675,
     "www.federalreserve.gov": 53,
     "www.ffiec.gov": 50,
     "www.fincen.gov": 6461,
-    "www.gao.gov": 9436,
+    "www.gao.gov": 9439,
     "www.govinfo.gov": 19537,
-    "www.justice.gov": 14756,
+    "www.justice.gov": 14759,
     "www.ncua.gov": 42,
     "www.occ.gov": 16560,
     "www.sec.gov": 25018,
@@ -36,13 +36,13 @@
   },
   "by_provenance": {
     "CONGRESS": 17176,
-    "GOV-PUBLIC": 146549,
-    "WEB-ARCHIVE": 6130
+    "GOV-PUBLIC": 146558,
+    "WEB-ARCHIVE": 6135
   },
   "discovered_urls": 53555,
   "durability_note": "release assets verified this run",
   "durably_archived_urls": 147345,
-  "generated_at": "2026-10-12T15:47:07.871855+00:00",
+  "generated_at": "2026-10-12T19:27:13.072044+00:00",
   "graph_entities": 1014,
   "graph_people": 345,
   "ledger_change_types": {
@@ -68,7 +68,7 @@
   },
   "queued_urls": 0,
   "rate_limited": 0,
-  "raw_observations": 169855,
+  "raw_observations": 169869,
   "recovery": {
     "challenge_observations": 6293,
     "document_identity_coverage": {
@@ -97,10 +97,10 @@
   },
   "robots_disallowed": 2,
   "temporary_errors": 655,
-  "total_bytes": 48372308575,
-  "unique_objects": 154982,
+  "total_bytes": 48372318197,
+  "unique_objects": 154986,
   "unresolved_entities": 384,
   "validated_graph_edges": 1220,
   "verification_note": "objects are hash-verified at capture (verify.py) before manifests merge; periodic re-verification via verify-archive workflow",
-  "verified_objects": 154982
+  "verified_objects": 154986
 }

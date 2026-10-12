@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T18:01:35.590690+00:00",
+  "generated_at": "2026-10-12T19:27:17.247841+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -79,7 +79,7 @@
       "non_content_captures": 0,
       "urls_with_content": 12275,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3154564133,
+      "bytes": 3154564131,
       "median_object_bytes": 108828,
       "p95_object_bytes": 394062,
       "known_bulk_gaps": []
@@ -92,7 +92,7 @@
       "non_content_captures": 0,
       "urls_with_content": 988,
       "ceiling_hit": "no",
-      "bytes": 632521144,
+      "bytes": 632521143,
       "median_object_bytes": 184343,
       "p95_object_bytes": 1200637,
       "known_bulk_gaps": []
@@ -278,7 +278,7 @@
       "non_content_captures": 0,
       "urls_with_content": 4186,
       "ceiling_hit": "no",
-      "bytes": 877598029,
+      "bytes": 877598066,
       "median_object_bytes": 34831,
       "p95_object_bytes": 819515,
       "known_bulk_gaps": []
@@ -291,7 +291,7 @@
       "non_content_captures": 54,
       "urls_with_content": 7619,
       "ceiling_hit": "no",
-      "bytes": 6715034897,
+      "bytes": 6715034889,
       "median_object_bytes": 93970,
       "p95_object_bytes": 5030953,
       "known_bulk_gaps": [
@@ -321,7 +321,7 @@
       "non_content_captures": 4367,
       "urls_with_content": 1415,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 192381972,
+      "bytes": 192382644,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101522,
       "known_bulk_gaps": []
