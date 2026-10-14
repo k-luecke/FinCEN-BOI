@@ -6921,6 +6921,8 @@ https://home.treasury.gov/news/press-releases/sb0653|GOV-PUBLIC|home.treasury.go
 https://home.treasury.gov/news/press-releases/sb0654|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0655|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0656|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0657|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0658|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0004|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0013|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0014|GOV-PUBLIC|home.treasury.gov
@@ -35301,6 +35303,7 @@ https://www.fincen.gov/news/enforcement-actions/matter-baltic-financial-services
 https://www.fincen.gov/news/enforcement-actions/matter-banco-de-chile-new-york-and-banco-de-chile-miami|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/enforcement-actions/matter-banco-popular-de-puerto-rico|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/enforcement-actions/matter-bancredito-international-bank-and-trust-corporation|GOV-PUBLIC|www.fincen.gov
+https://www.fincen.gov/news/enforcement-actions/matter-bank-america-na|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/enforcement-actions/matter-bank-mingo|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/enforcement-actions/matter-bankatlantic|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/enforcement-actions/matter-beach-bank|GOV-PUBLIC|www.fincen.gov
@@ -35636,6 +35639,7 @@ https://www.fincen.gov/news/news-releases/fincen-asks-financial-institutions-sta
 https://www.fincen.gov/news/news-releases/fincen-assesses-1-million-penalty-and-seeks-bar-former-moneygram-executive|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-assesses-10000-civil-money-penalty-against-tampa-based-msb|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-assesses-100000-civil-money-penalty-against-gyanendra-kumar-asre|GOV-PUBLIC|www.fincen.gov
+https://www.fincen.gov/news/news-releases/fincen-assesses-12-billion-penalty-against-bank-america|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-assesses-145-million-penalty-against-ubs-financial-services-anti-money|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-assesses-15-million-civil-money-penalty-against-kingdom-trust-company|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-assesses-25-million-civil-money-penalties-against-edward-e-street-and|GOV-PUBLIC|www.fincen.gov
