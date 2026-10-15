@@ -6923,6 +6923,7 @@ https://home.treasury.gov/news/press-releases/sb0655|GOV-PUBLIC|home.treasury.go
 https://home.treasury.gov/news/press-releases/sb0656|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0657|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0658|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0659|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0004|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0013|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0014|GOV-PUBLIC|home.treasury.gov
@@ -17186,6 +17187,7 @@ https://ncua.gov/newsroom/press-release/2026/ncua-announces-seventh-round-deregu
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-sixth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-tenth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-third-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
+https://ncua.gov/newsroom/press-release/2026/ncua-announces-twelfth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-awards-347-million-through-expanded-cdrlf-grants|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-board-approves-11-final-rules-deregulation-project|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-board-approves-final-rule-dependent-care-and-board-member-reimbursement|GOV-PUBLIC|ncua.gov
@@ -29372,6 +29374,7 @@ https://vault.fbi.gov/thomas-crooks/thomas-crooks-part-05/view|GOV-PUBLIC|vault.
 https://vault.fbi.gov/thomas-crooks/thomas-crooks-part-06/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/thomas-crooks/thomas-crooks-part-07/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/thomas-crooks/thomas-crooks-part-08/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/thomas-crooks/thomas-crooks-part-09/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/thomas-dalesandro-jr/Thomas%20D%20Alesandro%20Jr.%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/thomas-desimone-two-guns/Thomas%20DeSimone%20%28Two%20Guns%29%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/thomas-dillon/thomas-dillon/view|GOV-PUBLIC|vault.fbi.gov
@@ -42826,6 +42829,7 @@ https://www.justice.gov/criminal/criminal-icitap/blog/peru-icitap-strengthens-co
 https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-april-2025|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-april-2026|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-august-2025|GOV-PUBLIC|www.justice.gov
+https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-august-2026|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-february-2025|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-february-2026|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/enrd/blog/environmental-crimes-bulletin-january-2025|GOV-PUBLIC|www.justice.gov
@@ -43231,6 +43235,7 @@ https://www.justice.gov/oip/blog/new-releases-foiagov|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/oip/blog/new-search-feature-added-foiagov|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/oip/blog/new-search-tool-improves-foiagov-user-experience|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/oip/blog/new-suite-foia-training-resources-all-federal-employees|GOV-PUBLIC|www.justice.gov
+https://www.justice.gov/oip/blog/new-update-department-justice-guide-freedom-information-act|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/oip/blog/new-white-paper-cfo-council-technology-committee-working-group-now-available|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/oip/blog/new-white-paper-foia-data-chief-foia-officer-council-technology-committees-working-group|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/oip/blog/new-white-paper-foia-reference-model-chief-foia-officer-council-technology-committee-s|GOV-PUBLIC|www.justice.gov
@@ -43248,6 +43253,7 @@ https://www.justice.gov/oip/blog/oip-announces-foia-trainings-fiscal-year-2022-0
 https://www.justice.gov/oip/blog/oip-announces-new-additional-foia-trainings-dates-fiscal-year-2026|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/oip/blog/oip-announces-new-foia-training-dates-fiscal-year-2023|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/oip/blog/oip-announces-new-foia-training-dates-fiscal-year-2024|GOV-PUBLIC|www.justice.gov
+https://www.justice.gov/oip/blog/oip-announces-new-foia-training-dates-fiscal-year-2027|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/oip/blog/oip-announces-new-foia-training-dates-spring-and-summer|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/oip/blog/oip-announces-new-foia-trainings-dates-fiscal-year-2025|GOV-PUBLIC|www.justice.gov
 https://www.justice.gov/oip/blog/oip-announces-new-foia-trainings-dates-fiscal-year-2026|GOV-PUBLIC|www.justice.gov
