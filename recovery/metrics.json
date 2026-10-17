@@ -6,8 +6,8 @@
     "doj": {
       "ACCESS_RESTRICTED": 4,
       "NON_CONTENT_TECHNICAL_RESPONSE": 3,
-      "RECOVERED_WEB_ARCHIVE": 1554,
-      "UNRESOLVED_CHALLENGE": 2813
+      "RECOVERED_WEB_ARCHIVE": 1752,
+      "UNRESOLVED_CHALLENGE": 2614
     },
     "fbi": {
       "NON_CONTENT_TECHNICAL_RESPONSE": 2
@@ -102,8 +102,8 @@
     "www.justice.gov": {
       "ACCESS_RESTRICTED": 4,
       "NON_CONTENT_TECHNICAL_RESPONSE": 3,
-      "RECOVERED_WEB_ARCHIVE": 1554,
-      "UNRESOLVED_CHALLENGE": 2813
+      "RECOVERED_WEB_ARCHIVE": 1752,
+      "UNRESOLVED_CHALLENGE": 2614
     },
     "www.ncua.gov": {
       "NON_CONTENT_TECHNICAL_RESPONSE": 1
@@ -120,27 +120,27 @@
       "NON_CONTENT_TECHNICAL_RESPONSE": 25
     }
   },
-  "challenge_observations": 6293,
-  "document_identities": 6293,
+  "challenge_observations": 6292,
+  "document_identities": 6292,
   "document_identity_coverage": {
     "ACCESS_RESTRICTED": 119,
     "ARCHIVED_CONTENT": 1,
     "NON_CONTENT_TECHNICAL_RESPONSE": 1130,
     "RECOVERED_OFFICIAL_MIRROR": 322,
-    "RECOVERED_WEB_ARCHIVE": 1554,
-    "UNRESOLVED_CHALLENGE": 3167
+    "RECOVERED_WEB_ARCHIVE": 1752,
+    "UNRESOLVED_CHALLENGE": 2968
   },
-  "generated_at": "2026-10-16T16:44:13.492306+00:00",
-  "identities_resolved": 5946,
-  "recovery_links": 2199,
+  "generated_at": "2026-10-17T15:40:58.558591+00:00",
+  "identities_resolved": 5945,
+  "recovery_links": 2398,
   "recovery_links_by_method": {
     "federal_register_api": 322,
     "federal_register_api_inventory_crossref": 322,
     "ordinary_retry_probe": 1,
-    "wayback_cdx": 1554
+    "wayback_cdx": 1753
   },
   "recovery_links_by_relationship": {
-    "ARCHIVED_VERSION": 1554,
+    "ARCHIVED_VERSION": 1753,
     "DERIVED_REPRESENTATION": 322,
     "OFFICIAL_MIRROR": 322,
     "SAME_DOCUMENT": 1
@@ -150,8 +150,8 @@
     "ARCHIVED_CONTENT": 1,
     "NON_CONTENT_TECHNICAL_RESPONSE": 1130,
     "RECOVERED_OFFICIAL_MIRROR": 322,
-    "RECOVERED_WEB_ARCHIVE": 1554,
-    "UNRESOLVED_CHALLENGE": 3167
+    "RECOVERED_WEB_ARCHIVE": 1752,
+    "UNRESOLVED_CHALLENGE": 2968
   },
   "semantics_note": "BOT_CHALLENGE / non-content captures are never counted as ARCHIVED_CONTENT. RECOVERED_* states preserve the distinction between original publisher and retrieval host; original challenge observations are retained.",
   "top_fingerprints": {
@@ -171,10 +171,10 @@
     "ERROR_RESPONSE|http_status:403": 113,
     "UNKNOWN_RESPONSE|detection_mode:metadata_only|expected_document_got_html": 1048
   },
-  "unresolved": 4416,
+  "unresolved": 4217,
   "unresolved_by_tier": {
     "0": 159,
-    "1": 1034,
+    "1": 835,
     "2": 3223
   }
 }
