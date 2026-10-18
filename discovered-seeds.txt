@@ -29836,6 +29836,7 @@ https://www.fdic.gov/analysis/2026-02/bank-lending-nondepository-financial-insti
 https://www.fdic.gov/analysis/2026-10/update-farm-bank-performance|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/analysis/findings-fdic-survey-bank-efforts-serve-unbanked-and-underbanked|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/asset-sales/events/cbt-26-sale-announcement|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/asset-sales/events/cbt2-26-sale-announcement|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/bank-failures/failed-bank-list/community-bank-and-trust-west-georgia|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/bank-failures/failed-bank-list/first-national-bank-lindsay|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/bank-failures/failed-bank-list/kentland-federal-savings-and-loan-association|GOV-PUBLIC|www.fdic.gov
@@ -30121,6 +30122,7 @@ https://www.fdic.gov/consumer-resource-center/events/banking-connecticut-insured
 https://www.fdic.gov/consumer-resource-center/events/building-financial-empowerment-through-school-and-bank-partnerships|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/community-reinvestment-act-and-community-development-fundamentals|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/community-reinvestment-act-cra-training-fdic-supervised-banks|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/consumer-resource-center/events/creating-pathways-prosperity-connecting-dallas-small-businesses|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/empowering-youth-using-fdic-reality-fair-toolkit-build-real-world|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-and-bank-greater-milwaukee-host-promoting-economic-inclusion|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-and-coaction-host-northern-indiana-bank-alliance-relaunch|GOV-PUBLIC|www.fdic.gov
@@ -30214,6 +30216,7 @@ https://www.fdic.gov/consumer-resource-center/events/fdic-kansas-city-aei-host-f
 https://www.fdic.gov/consumer-resource-center/events/fdic-kansas-city-aei-host-workforce-development-programs-and|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-money-smart-homeownership-resources|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-money-smart-key-trends-shaping-financial-education-schools|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/consumer-resource-center/events/fdic-money-smart-older-adults-financial-preparedness-fraud-and|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-money-smart-strengthens-financial-skills-and-behaviors-key|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-money-smart-town-hall-national-disability-employment-awareness|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-occ-and-frb-kc-host-wyoming-banker-cra-roundtable|GOV-PUBLIC|www.fdic.gov
