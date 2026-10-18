@@ -1,11 +1,11 @@
 # Recovery report — challenge-aware lawful recovery
 
-Generated 2026-10-17T15:40:58.558591+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
+Generated 2026-10-18T16:02:18.081865+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
 
 ## 1. Challenge / non-content responses
 
 - **6292** challenge/non-content observations across the corpus (latest observation per URL).
-- Requested-URL coverage states: UNRESOLVED_CHALLENGE: 2968, RECOVERED_WEB_ARCHIVE: 1752, NON_CONTENT_TECHNICAL_RESPONSE: 1130, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 119, ARCHIVED_CONTENT: 1
+- Requested-URL coverage states: UNRESOLVED_CHALLENGE: 2855, RECOVERED_WEB_ARCHIVE: 1867, NON_CONTENT_TECHNICAL_RESPONSE: 1129, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 118, ARCHIVED_CONTENT: 1
 
 ## 2. Hosts generating them
 
@@ -27,7 +27,7 @@ Generated 2026-10-17T15:40:58.558591+00:00 from committed recovery state. No CAP
 | www.fincen.gov | NON_CONTENT_TECHNICAL_RESPONSE: 8, ACCESS_RESTRICTED: 5 |
 | www.gao.gov | UNRESOLVED_CHALLENGE: 53, ARCHIVED_CONTENT: 1, NON_CONTENT_TECHNICAL_RESPONSE: 1, ACCESS_RESTRICTED: 1 |
 | www.govinfo.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1054 |
-| www.justice.gov | UNRESOLVED_CHALLENGE: 2614, RECOVERED_WEB_ARCHIVE: 1752, ACCESS_RESTRICTED: 4, NON_CONTENT_TECHNICAL_RESPONSE: 3 |
+| www.justice.gov | UNRESOLVED_CHALLENGE: 2501, RECOVERED_WEB_ARCHIVE: 1867, ACCESS_RESTRICTED: 3, NON_CONTENT_TECHNICAL_RESPONSE: 2 |
 | www.ncua.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
 | www.occ.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
 | www.sec.gov | UNRESOLVED_CHALLENGE: 166, NON_CONTENT_TECHNICAL_RESPONSE: 2, ACCESS_RESTRICTED: 1 |
@@ -36,15 +36,15 @@ Generated 2026-10-17T15:40:58.558591+00:00 from committed recovery state. No CAP
 ## 3. Document identities
 
 - 6292 identities built; 5945 resolved via API metadata or URL-slug derivation.
-- Document-identity coverage: UNRESOLVED_CHALLENGE: 2968, RECOVERED_WEB_ARCHIVE: 1752, NON_CONTENT_TECHNICAL_RESPONSE: 1130, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 119, ARCHIVED_CONTENT: 1
+- Document-identity coverage: UNRESOLVED_CHALLENGE: 2855, RECOVERED_WEB_ARCHIVE: 1867, NON_CONTENT_TECHNICAL_RESPONSE: 1129, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 118, ARCHIVED_CONTENT: 1
 
 ## 4–7. Recovery outcomes
 
 - Same-agency recoveries (`SAME_DOCUMENT`): 1
 - Official government mirrors (`OFFICIAL_MIRROR`): 322
-- Public web archive (`ARCHIVED_VERSION`): 1753
+- Public web archive (`ARCHIVED_VERSION`): 1868
 - Derived representations (API metadata records): 322
-- Still unresolved: **4217** (by tier: {0: 159, 1: 835, 2: 3223})
+- Still unresolved: **4102** (by tier: {0: 159, 1: 743, 2: 3200})
 
 ## 8. Highest-value challenged collections
 
@@ -52,7 +52,7 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 
 ## 9. DOJ
 
-- DOJ URL states: UNRESOLVED_CHALLENGE: 2614, RECOVERED_WEB_ARCHIVE: 1752, ACCESS_RESTRICTED: 4, NON_CONTENT_TECHNICAL_RESPONSE: 3
+- DOJ URL states: UNRESOLVED_CHALLENGE: 2501, RECOVERED_WEB_ARCHIVE: 1867, ACCESS_RESTRICTED: 3, NON_CONTENT_TECHNICAL_RESPONSE: 2
 
 ## 10. Federal Register
 
@@ -84,14 +84,14 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 
 ## 13. Most effective alternate routes
 
-- `wayback_cdx`: 1753 links
+- `wayback_cdx`: 1868 links
 - `federal_register_api_inventory_crossref`: 322 links
 - `federal_register_api`: 322 links
 - `ordinary_retry_probe`: 1 links
 
 ## 14. Access-limited gaps
 
-- 119 URLs are access-restricted (401/403 without challenge markup). These are recorded as gaps and never evaded.
+- 118 URLs are access-restricted (401/403 without challenge markup). These are recorded as gaps and never evaded.
 
 ## 15. Retry posture
 
