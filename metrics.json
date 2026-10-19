@@ -1,9 +1,9 @@
 {
   "access_restricted": 119,
-  "archived_content_urls": 144606,
+  "archived_content_urls": 144731,
   "archived_note": "archived_urls counts every URL with stored bytes; archived_content_urls excludes captures the challenge detector classified as bot challenges/interstitials/app shells (see recovery/)",
-  "archived_urls": 148704,
-  "attempted_urls": 151542,
+  "archived_urls": 148715,
+  "attempted_urls": 151553,
   "by_host": {
     "bsaaml.ffiec.gov": 45,
     "bsaefiling.fincen.gov": 88,
@@ -19,88 +19,88 @@
     "oversight.house.gov": 17309,
     "treasury.gov": 7,
     "vault.fbi.gov": 10007,
-    "web.archive.org": 7975,
+    "web.archive.org": 8017,
     "www.congress.gov": 124,
-    "www.fdic.gov": 17204,
+    "www.fdic.gov": 17205,
     "www.federalregister.gov": 2687,
     "www.federalreserve.gov": 59,
     "www.ffiec.gov": 56,
     "www.fincen.gov": 6536,
     "www.gao.gov": 9457,
     "www.govinfo.gov": 19543,
-    "www.justice.gov": 14787,
+    "www.justice.gov": 14789,
     "www.ncua.gov": 48,
-    "www.occ.gov": 16579,
+    "www.occ.gov": 16589,
     "www.sec.gov": 25018,
     "www.treasury.gov": 678
   },
   "by_provenance": {
     "CONGRESS": 17194,
-    "GOV-PUBLIC": 146785,
-    "WEB-ARCHIVE": 7975
+    "GOV-PUBLIC": 146798,
+    "WEB-ARCHIVE": 8017
   },
-  "discovered_urls": 53595,
+  "discovered_urls": 53606,
   "durability_note": "release assets verified this run",
-  "durably_archived_urls": 148704,
-  "generated_at": "2026-10-18T16:02:17.844731+00:00",
+  "durably_archived_urls": 148715,
+  "generated_at": "2026-10-19T17:12:01.650780+00:00",
   "graph_entities": 1014,
   "graph_people": 345,
   "ledger_change_types": {
-    "ADDED": 138907,
-    "MODIFIED": 5888,
-    "REMOVED": 296,
+    "ADDED": 138918,
+    "MODIFIED": 5890,
+    "REMOVED": 294,
     "UNAVAILABLE": 2838,
     "UNCHANGED": 3613
   },
-  "manual_review": 700,
-  "modified_urls": 5888,
-  "non_content_technical_responses": 4098,
+  "manual_review": 742,
+  "modified_urls": 5890,
+  "non_content_technical_responses": 3984,
   "not_found_urls": 1442,
   "ownership_bearing_documents": 767,
   "queue_states": {
     "ACCESS_RESTRICTED": 119,
-    "ARCHIVED": 144116,
-    "MANUAL_REVIEW": 700,
-    "NON_CONTENT_TECHNICAL_RESPONSE": 4583,
+    "ARCHIVED": 144127,
+    "MANUAL_REVIEW": 742,
+    "NON_CONTENT_TECHNICAL_RESPONSE": 4585,
     "NOT_FOUND": 1442,
     "ROBOTS_DISALLOWED": 2,
-    "TEMPORARY_ERROR": 580
+    "TEMPORARY_ERROR": 536
   },
   "queued_urls": 0,
   "rate_limited": 0,
-  "raw_observations": 171954,
+  "raw_observations": 172009,
   "recovery": {
     "challenge_observations": 6292,
     "document_identity_coverage": {
-      "ACCESS_RESTRICTED": 119,
+      "ACCESS_RESTRICTED": 118,
       "ARCHIVED_CONTENT": 1,
-      "NON_CONTENT_TECHNICAL_RESPONSE": 1130,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1129,
       "RECOVERED_OFFICIAL_MIRROR": 322,
-      "RECOVERED_WEB_ARCHIVE": 1752,
-      "UNRESOLVED_CHALLENGE": 2968
+      "RECOVERED_WEB_ARCHIVE": 1867,
+      "UNRESOLVED_CHALLENGE": 2855
     },
     "recovery_links_by_relationship": {
-      "ARCHIVED_VERSION": 1753,
+      "ARCHIVED_VERSION": 1868,
       "DERIVED_REPRESENTATION": 322,
       "OFFICIAL_MIRROR": 322,
       "SAME_DOCUMENT": 1
     },
     "requested_url_coverage": {
-      "ACCESS_RESTRICTED": 119,
+      "ACCESS_RESTRICTED": 118,
       "ARCHIVED_CONTENT": 1,
-      "NON_CONTENT_TECHNICAL_RESPONSE": 1130,
+      "NON_CONTENT_TECHNICAL_RESPONSE": 1129,
       "RECOVERED_OFFICIAL_MIRROR": 322,
-      "RECOVERED_WEB_ARCHIVE": 1752,
-      "UNRESOLVED_CHALLENGE": 2968
+      "RECOVERED_WEB_ARCHIVE": 1867,
+      "UNRESOLVED_CHALLENGE": 2855
     },
-    "unresolved": 4217
+    "unresolved": 4102
   },
   "robots_disallowed": 2,
-  "temporary_errors": 580,
-  "total_bytes": 48419974375,
-  "unique_objects": 156464,
+  "temporary_errors": 536,
+  "total_bytes": 48434206155,
+  "unique_objects": 156477,
   "unresolved_entities": 384,
   "validated_graph_edges": 1220,
   "verification_note": "objects are hash-verified at capture (verify.py) before manifests merge; periodic re-verification via verify-archive workflow",
-  "verified_objects": 156464
+  "verified_objects": 156477
 }
