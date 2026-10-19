@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T16:02:21.945279+00:00",
+  "generated_at": "2026-10-19T19:07:56.853305+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -191,14 +191,14 @@
     {
       "host": "web.archive.org",
       "urls_discovered": 0,
-      "urls_attempted": 5204,
-      "urls_archived": 4464,
+      "urls_attempted": 5447,
+      "urls_archived": 4679,
       "non_content_captures": 0,
-      "urls_with_content": 4464,
+      "urls_with_content": 4679,
       "ceiling_hit": "no",
-      "bytes": 117720522,
+      "bytes": 127394594,
       "median_object_bytes": 244,
-      "p95_object_bytes": 100090,
+      "p95_object_bytes": 100320,
       "known_bulk_gaps": []
     },
     {
@@ -218,15 +218,15 @@
     },
     {
       "host": "www.fdic.gov",
-      "urls_discovered": 5049,
-      "urls_attempted": 17125,
-      "urls_archived": 17121,
+      "urls_discovered": 5050,
+      "urls_attempted": 17126,
+      "urls_archived": 17122,
       "non_content_captures": 0,
-      "urls_with_content": 17121,
+      "urls_with_content": 17122,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 1265350298,
+      "bytes": 1265447751,
       "median_object_bytes": 68734,
-      "p95_object_bytes": 92290,
+      "p95_object_bytes": 92303,
       "known_bulk_gaps": []
     },
     {
@@ -318,10 +318,10 @@
       "urls_discovered": 5008,
       "urls_attempted": 5793,
       "urls_archived": 5785,
-      "non_content_captures": 4365,
-      "urls_with_content": 1420,
+      "non_content_captures": 4364,
+      "urls_with_content": 1421,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 192740581,
+      "bytes": 192740577,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101576,
       "known_bulk_gaps": []
@@ -341,15 +341,15 @@
     },
     {
       "host": "www.occ.gov",
-      "urls_discovered": 5092,
-      "urls_attempted": 15539,
-      "urls_archived": 15534,
+      "urls_discovered": 5102,
+      "urls_attempted": 15549,
+      "urls_archived": 15544,
       "non_content_captures": 0,
-      "urls_with_content": 15534,
+      "urls_with_content": 15544,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3255694647,
-      "median_object_bytes": 60436,
-      "p95_object_bytes": 859677,
+      "bytes": 3269824025,
+      "median_object_bytes": 60441,
+      "p95_object_bytes": 861760,
       "known_bulk_gaps": []
     },
     {
