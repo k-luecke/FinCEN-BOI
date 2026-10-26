@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T16:24:47.198652+00:00",
+  "generated_at": "2026-10-26T18:48:28.928643+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -79,7 +79,7 @@
       "non_content_captures": 0,
       "urls_with_content": 12291,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3155835464,
+      "bytes": 3155835462,
       "median_object_bytes": 108818,
       "p95_object_bytes": 393904,
       "known_bulk_gaps": []
@@ -191,14 +191,14 @@
     {
       "host": "web.archive.org",
       "urls_discovered": 0,
-      "urls_attempted": 7006,
-      "urls_archived": 6066,
+      "urls_attempted": 7267,
+      "urls_archived": 6291,
       "non_content_captures": 0,
-      "urls_with_content": 6066,
+      "urls_with_content": 6291,
       "ceiling_hit": "no",
-      "bytes": 182820576,
+      "bytes": 188550950,
       "median_object_bytes": 243,
-      "p95_object_bytes": 101239,
+      "p95_object_bytes": 101176,
       "known_bulk_gaps": []
     },
     {
@@ -278,7 +278,7 @@
       "non_content_captures": 0,
       "urls_with_content": 4191,
       "ceiling_hit": "no",
-      "bytes": 877754822,
+      "bytes": 877754814,
       "median_object_bytes": 34828,
       "p95_object_bytes": 819515,
       "known_bulk_gaps": []
@@ -291,7 +291,7 @@
       "non_content_captures": 54,
       "urls_with_content": 7619,
       "ceiling_hit": "no",
-      "bytes": 6715031037,
+      "bytes": 6715031042,
       "median_object_bytes": 93970,
       "p95_object_bytes": 5030953,
       "known_bulk_gaps": [
@@ -321,7 +321,7 @@
       "non_content_captures": 4366,
       "urls_with_content": 1420,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 192837215,
+      "bytes": 192837209,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101573,
       "known_bulk_gaps": []
@@ -347,7 +347,7 @@
       "non_content_captures": 0,
       "urls_with_content": 15544,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3269824243,
+      "bytes": 3269823479,
       "median_object_bytes": 60441,
       "p95_object_bytes": 861760,
       "known_bulk_gaps": []
