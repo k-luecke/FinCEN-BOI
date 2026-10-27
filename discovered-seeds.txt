@@ -25647,6 +25647,7 @@ https://vault.fbi.gov/contract-15f06722c0000258/contract-15f06722c0000258-part-0
 https://vault.fbi.gov/contract-15f06722c0000258/contract-15f06722c0000258-part-02/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/contract-15f06722c0000258/contract-15f06722c0000258-part-03/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/contract-15f06722c0000258/contract-15f06722c0000258-part-04/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/contract-15f06722c0000258/contract-15f06722c0000258-part-05/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/contract-with-venntel/Contract%20with%20Venntel%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/contracting-for-legal-services-policy-directive-0308d/Contracting%20For%20Legal%20Services%20Policy%20Directive%200308D%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/cord-meyer/cord-meyer-final/view|GOV-PUBLIC|vault.fbi.gov
@@ -27530,6 +27531,8 @@ https://vault.fbi.gov/paul-john-knowles/Paul%20John%20Knowles%20Part%2001%20%28F
 https://vault.fbi.gov/paul-krassner/Paul%20Krassner%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/paul-laxalt/Paul%20Laxalt%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/paul-laxalt/Paul%20Laxalt%20Part%2002%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/paul-leveille/paul-leveille-part-01/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/paul-leveille/paul-leveille-part-02-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/paul-mccloskey/paul-mccloskey-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/paul-mccloskey/paul-mccloskey-part-02/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/paul-mccloskey/paul-mccloskey-part-03/view|GOV-PUBLIC|vault.fbi.gov
