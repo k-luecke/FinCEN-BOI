@@ -1,9 +1,9 @@
 {
   "access_restricted": 122,
-  "archived_content_urls": 148496,
+  "archived_content_urls": 148505,
   "archived_note": "archived_urls counts every URL with stored bytes; archived_content_urls excludes captures the challenge detector classified as bot challenges/interstitials/app shells (see recovery/)",
-  "archived_urls": 151354,
-  "attempted_urls": 154627,
+  "archived_urls": 151363,
+  "attempted_urls": 154636,
   "by_host": {
     "bsaaml.ffiec.gov": 56,
     "bsaefiling.fincen.gov": 99,
@@ -13,13 +13,13 @@
     "home.treasury.gov": 12599,
     "judiciary.house.gov": 1051,
     "justice.gov": 2,
-    "ncua.gov": 9801,
+    "ncua.gov": 9802,
     "occ.gov": 5,
     "oig.treasury.gov": 264,
     "oversight.house.gov": 17320,
     "treasury.gov": 7,
-    "vault.fbi.gov": 10047,
-    "web.archive.org": 12026,
+    "vault.fbi.gov": 10055,
+    "web.archive.org": 12192,
     "www.congress.gov": 135,
     "www.fdic.gov": 17220,
     "www.federalregister.gov": 2709,
@@ -36,39 +36,39 @@
   },
   "by_provenance": {
     "CONGRESS": 17227,
-    "GOV-PUBLIC": 147196,
-    "WEB-ARCHIVE": 12026
+    "GOV-PUBLIC": 147205,
+    "WEB-ARCHIVE": 12192
   },
-  "discovered_urls": 53663,
+  "discovered_urls": 53672,
   "durability_note": "release assets verified this run",
-  "durably_archived_urls": 151354,
-  "generated_at": "2026-10-30T13:14:22.681975+00:00",
+  "durably_archived_urls": 151363,
+  "generated_at": "2026-10-30T16:52:56.087739+00:00",
   "graph_entities": 1014,
   "graph_people": 345,
   "ledger_change_types": {
-    "ADDED": 141380,
+    "ADDED": 141389,
     "MODIFIED": 5892,
     "REMOVED": 470,
     "UNAVAILABLE": 3273,
     "UNCHANGED": 3612
   },
-  "manual_review": 1011,
+  "manual_review": 1177,
   "modified_urls": 5892,
   "non_content_technical_responses": 2858,
   "not_found_urls": 1442,
   "ownership_bearing_documents": 767,
   "queue_states": {
     "ACCESS_RESTRICTED": 122,
-    "ARCHIVED": 146762,
-    "MANUAL_REVIEW": 1011,
+    "ARCHIVED": 146771,
+    "MANUAL_REVIEW": 1177,
     "NON_CONTENT_TECHNICAL_RESPONSE": 4585,
     "NOT_FOUND": 1442,
     "ROBOTS_DISALLOWED": 2,
-    "TEMPORARY_ERROR": 703
+    "TEMPORARY_ERROR": 537
   },
   "queued_urls": 0,
   "rate_limited": 0,
-  "raw_observations": 176449,
+  "raw_observations": 176624,
   "recovery": {
     "challenge_observations": 6294,
     "document_identity_coverage": {
@@ -96,11 +96,11 @@
     "unresolved": 2979
   },
   "robots_disallowed": 2,
-  "temporary_errors": 703,
-  "total_bytes": 48538500276,
-  "unique_objects": 159332,
+  "temporary_errors": 537,
+  "total_bytes": 48538723574,
+  "unique_objects": 159341,
   "unresolved_entities": 384,
   "validated_graph_edges": 1220,
   "verification_note": "objects are hash-verified at capture (verify.py) before manifests merge; periodic re-verification via verify-archive workflow",
-  "verified_objects": 159332
+  "verified_objects": 159341
 }
