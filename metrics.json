@@ -1,60 +1,60 @@
 {
   "access_restricted": 122,
-  "archived_content_urls": 148401,
+  "archived_content_urls": 148496,
   "archived_note": "archived_urls counts every URL with stored bytes; archived_content_urls excludes captures the challenge detector classified as bot challenges/interstitials/app shells (see recovery/)",
   "archived_urls": 151354,
   "attempted_urls": 154627,
   "by_host": {
-    "bsaaml.ffiec.gov": 55,
-    "bsaefiling.fincen.gov": 98,
+    "bsaaml.ffiec.gov": 56,
+    "bsaefiling.fincen.gov": 99,
     "congress.gov": 45,
     "fincen.gov": 21,
     "gao.gov": 2,
-    "home.treasury.gov": 12598,
-    "judiciary.house.gov": 1050,
+    "home.treasury.gov": 12599,
+    "judiciary.house.gov": 1051,
     "justice.gov": 2,
     "ncua.gov": 9801,
     "occ.gov": 5,
     "oig.treasury.gov": 264,
-    "oversight.house.gov": 17319,
+    "oversight.house.gov": 17320,
     "treasury.gov": 7,
-    "vault.fbi.gov": 10046,
+    "vault.fbi.gov": 10047,
     "web.archive.org": 12026,
-    "www.congress.gov": 134,
-    "www.fdic.gov": 17219,
-    "www.federalregister.gov": 2707,
-    "www.federalreserve.gov": 69,
-    "www.ffiec.gov": 66,
-    "www.fincen.gov": 6658,
-    "www.gao.gov": 9487,
-    "www.govinfo.gov": 19553,
-    "www.justice.gov": 14833,
-    "www.ncua.gov": 58,
-    "www.occ.gov": 16599,
+    "www.congress.gov": 135,
+    "www.fdic.gov": 17220,
+    "www.federalregister.gov": 2709,
+    "www.federalreserve.gov": 70,
+    "www.ffiec.gov": 67,
+    "www.fincen.gov": 6670,
+    "www.gao.gov": 9490,
+    "www.govinfo.gov": 19554,
+    "www.justice.gov": 14834,
+    "www.ncua.gov": 59,
+    "www.occ.gov": 16600,
     "www.sec.gov": 25018,
     "www.treasury.gov": 678
   },
   "by_provenance": {
-    "CONGRESS": 17224,
-    "GOV-PUBLIC": 147168,
+    "CONGRESS": 17227,
+    "GOV-PUBLIC": 147196,
     "WEB-ARCHIVE": 12026
   },
   "discovered_urls": 53663,
   "durability_note": "release assets verified this run",
   "durably_archived_urls": 151354,
-  "generated_at": "2026-10-29T18:54:35.093633+00:00",
+  "generated_at": "2026-10-30T13:14:22.681975+00:00",
   "graph_entities": 1014,
   "graph_people": 345,
   "ledger_change_types": {
     "ADDED": 141380,
-    "MODIFIED": 5891,
+    "MODIFIED": 5892,
     "REMOVED": 470,
     "UNAVAILABLE": 3273,
-    "UNCHANGED": 3613
+    "UNCHANGED": 3612
   },
   "manual_review": 1011,
-  "modified_urls": 5891,
-  "non_content_technical_responses": 2953,
+  "modified_urls": 5892,
+  "non_content_technical_responses": 2858,
   "not_found_urls": 1442,
   "ownership_bearing_documents": 767,
   "queue_states": {
@@ -68,7 +68,7 @@
   },
   "queued_urls": 0,
   "rate_limited": 0,
-  "raw_observations": 176418,
+  "raw_observations": 176449,
   "recovery": {
     "challenge_observations": 6294,
     "document_identity_coverage": {
@@ -76,11 +76,11 @@
       "ARCHIVED_CONTENT": 1,
       "NON_CONTENT_TECHNICAL_RESPONSE": 1129,
       "RECOVERED_OFFICIAL_MIRROR": 322,
-      "RECOVERED_WEB_ARCHIVE": 2897,
-      "UNRESOLVED_CHALLENGE": 1824
+      "RECOVERED_WEB_ARCHIVE": 2992,
+      "UNRESOLVED_CHALLENGE": 1729
     },
     "recovery_links_by_relationship": {
-      "ARCHIVED_VERSION": 2898,
+      "ARCHIVED_VERSION": 2993,
       "DERIVED_REPRESENTATION": 322,
       "OFFICIAL_MIRROR": 322,
       "SAME_DOCUMENT": 1
@@ -90,17 +90,17 @@
       "ARCHIVED_CONTENT": 1,
       "NON_CONTENT_TECHNICAL_RESPONSE": 1129,
       "RECOVERED_OFFICIAL_MIRROR": 322,
-      "RECOVERED_WEB_ARCHIVE": 2897,
-      "UNRESOLVED_CHALLENGE": 1824
+      "RECOVERED_WEB_ARCHIVE": 2992,
+      "UNRESOLVED_CHALLENGE": 1729
     },
-    "unresolved": 3074
+    "unresolved": 2979
   },
   "robots_disallowed": 2,
   "temporary_errors": 703,
-  "total_bytes": 48537478826,
-  "unique_objects": 159316,
+  "total_bytes": 48538500276,
+  "unique_objects": 159332,
   "unresolved_entities": 384,
   "validated_graph_edges": 1220,
   "verification_note": "objects are hash-verified at capture (verify.py) before manifests merge; periodic re-verification via verify-archive workflow",
-  "verified_objects": 159316
+  "verified_objects": 159332
 }
