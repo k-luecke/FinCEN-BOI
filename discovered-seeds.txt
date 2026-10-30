@@ -17241,6 +17241,7 @@ https://ncua.gov/newsroom/press-release/2026/ncua-prohibits-five-individuals-par
 https://ncua.gov/newsroom/press-release/2026/ncua-prohibits-one-individual-participating-affairs-any-federally-insured-depository-institution|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-prohibits-three-individuals-participating-affairs-any-federally-insured-depository-institution|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-prohibits-two-individuals-participating-affairs-any-federally-insured-depository-institution|GOV-PUBLIC|ncua.gov
+https://ncua.gov/newsroom/press-release/2026/ncua-prohibits-two-individuals-participating-affairs-any-federally-insured-depository-institution-october-2026|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-proposes-rule-permitted-payment-stablecoin-issuer-applications|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-raises-america-250-flag-commemorate-nations-250th-anniversary|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-releases-2025-annual-report|GOV-PUBLIC|ncua.gov
@@ -24784,6 +24785,8 @@ https://vault.fbi.gov/FBI%20Domestic%20Investigations%20and%20Operations%20Guide
 https://vault.fbi.gov/FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29/fbi-domestic-investigations-and-operations-guide-diog-2011-version/%20FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29%202011%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29/fbi-domestic-investigations-and-operations-guide-diog-2011-version/%20FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29%202011%20Part%2002/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29/fbi-domestic-investigations-and-operations-guide-diog-2011-version/%20FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29%202011%20Part%2003%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29/fbi-domestic-investigations-and-operations-guide-diog-2011-version/%20FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29%202011%20Part%2003/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29/fbi-domestic-investigations-and-operations-guide-diog-2011-version/fbi-domestic-investigations-and-operations-guide-diog-2011-appendix-k-part-04-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29/fbi-domestic-investigations-and-operations-guide-diog-2013-version/FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29%202013%20Version%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29/fbi-domestic-investigations-and-operations-guide-diog-2021-version/FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29%202021%20Version%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29/fbi-domestic-investigations-and-operations-guide-diog-2021-version/FBI%20Domestic%20Investigations%20and%20Operations%20Guide%20%28DIOG%29%202021%20Version%20Part%2002/view|GOV-PUBLIC|vault.fbi.gov
@@ -25679,6 +25682,7 @@ https://vault.fbi.gov/courtney-cooper/courtney-cooper-part-06/view|GOV-PUBLIC|va
 https://vault.fbi.gov/courtney-cooper/courtney-cooper-part-07/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/courtney-cooper/courtney-cooper-part-08-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/crimes-against-children-and-human-trafficking-policy-guide-1157pg/Crimes%20Against%20Children%20and%20Human%20Trafficking%20Policy%20Guide%201157PG%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/crimes-against-children-policy-guide-0402pg/crimes-against-children-policy-guide-0402pg-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/criminal-justice-information-services-division-statement-of-authorities-and-responsibilities-0060d/Criminal%20Justice%20Information%20Services%20Division%20-%20Statement%20of%20Authorities%20and%20Responsibilities%200060D%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/crisis-intervention-program-policy-guide-0999pg/Crisis%20Intervention%20Program%20Policy%20Guide%200999PG%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/crossfire-hurricane-part-01/Crossfire%20Hurricane%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
@@ -27045,6 +27049,9 @@ https://vault.fbi.gov/larry-mills/Larry%20Mills%20Part%2001/view|GOV-PUBLIC|vaul
 https://vault.fbi.gov/larry-mills/Larry%20Mills%20Part%2002/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/larry-mills/Larry%20Mills%20Part%2003/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/larry-mills/Larry%20Mills%20Part%2004%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/larry-phillips-jr.-and-emil-matasareanu/larry-phillips-jr.-and-emil-matasareanu-part-01/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/larry-phillips-jr.-and-emil-matasareanu/larry-phillips-jr.-and-emil-matasareanu-part-02/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/larry-phillips-jr.-and-emil-matasareanu/larry-phillips-jr.-and-emil-matasareanu-part-03/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/laurence-duggan/laurence-duggan-part-01-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/lawrence-barcella/lawrence-barcella-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/lawrence-ferlinghetti/lawrence-ferlinghetti-part-01%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
@@ -29286,6 +29293,7 @@ https://vault.fbi.gov/special-counsel-mueller-investigation-records/special-coun
 https://vault.fbi.gov/special-counsel-mueller-investigation-records/special-counsel-mueller-investigation-records-part-54/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/special-counsel-mueller-investigation-records/special-counsel-mueller-investigation-records-part-55/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/special-counsel-mueller-investigation-records/special-counsel-mueller-investigation-records-part-56/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/special-counsel-mueller-investigation-records/special-counsel-mueller-investigation-records-part-57/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/special-intelligence-service/SIS%20History%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/special-intelligence-service/SIS%20History%20Part%2002/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/special-intelligence-service/SIS%20History%20Part%2003/view|GOV-PUBLIC|vault.fbi.gov
@@ -29636,6 +29644,7 @@ https://vault.fbi.gov/veterans-of-the-abraham-lincoln-brigade/veterans-of-the-ab
 https://vault.fbi.gov/veterans-of-the-abraham-lincoln-brigade/veterans-of-the-abraham-lincoln-brigade-part-41/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/veterans-of-the-abraham-lincoln-brigade/veterans-of-the-abraham-lincoln-brigade-part-42-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/vicky-white/vicky-white-final/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/victim-assistance-policy-guide-0505pg/victim-assistance-policy-guide-0505pg-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/victor-gold/Victor%20Gold%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/victor-gold/Victor%20Gold%20Part%2002%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/victor-marchetti/Victor%20Marchetti%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
