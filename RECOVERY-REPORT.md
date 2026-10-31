@@ -1,11 +1,11 @@
 # Recovery report — challenge-aware lawful recovery
 
-Generated 2026-10-30T18:43:02.025849+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
+Generated 2026-10-31T18:01:36.666152+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
 
 ## 1. Challenge / non-content responses
 
-- **6294** challenge/non-content observations across the corpus (latest observation per URL).
-- Requested-URL coverage states: RECOVERED_WEB_ARCHIVE: 3077, UNRESOLVED_CHALLENGE: 1644, NON_CONTENT_TECHNICAL_RESPONSE: 1129, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 121, ARCHIVED_CONTENT: 1
+- **6295** challenge/non-content observations across the corpus (latest observation per URL).
+- Requested-URL coverage states: RECOVERED_WEB_ARCHIVE: 3274, UNRESOLVED_CHALLENGE: 1465, NON_CONTENT_TECHNICAL_RESPONSE: 1129, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 104, ARCHIVED_CONTENT: 1
 
 ## 2. Hosts generating them
 
@@ -20,31 +20,31 @@ Generated 2026-10-30T18:43:02.025849+00:00 from committed recovery state. No CAP
 | ncua.gov | NON_CONTENT_TECHNICAL_RESPONSE: 7 |
 | treasury.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
 | vault.fbi.gov | NON_CONTENT_TECHNICAL_RESPONSE: 2 |
-| www.congress.gov | ACCESS_RESTRICTED: 59 |
+| www.congress.gov | ACCESS_RESTRICTED: 45, RECOVERED_WEB_ARCHIVE: 14 |
 | www.fdic.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
 | www.federalregister.gov | RECOVERED_OFFICIAL_MIRROR: 322, UNRESOLVED_CHALLENGE: 135 |
 | www.ffiec.gov | ACCESS_RESTRICTED: 14 |
 | www.fincen.gov | NON_CONTENT_TECHNICAL_RESPONSE: 8, ACCESS_RESTRICTED: 5 |
 | www.gao.gov | UNRESOLVED_CHALLENGE: 52, ACCESS_RESTRICTED: 4, ARCHIVED_CONTENT: 1, NON_CONTENT_TECHNICAL_RESPONSE: 1 |
 | www.govinfo.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1054 |
-| www.justice.gov | RECOVERED_WEB_ARCHIVE: 3077, UNRESOLVED_CHALLENGE: 1291, ACCESS_RESTRICTED: 3, NON_CONTENT_TECHNICAL_RESPONSE: 2 |
+| www.justice.gov | RECOVERED_WEB_ARCHIVE: 3260, UNRESOLVED_CHALLENGE: 1112, NON_CONTENT_TECHNICAL_RESPONSE: 1 |
 | www.ncua.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
-| www.occ.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
+| www.occ.gov | NON_CONTENT_TECHNICAL_RESPONSE: 2 |
 | www.sec.gov | UNRESOLVED_CHALLENGE: 166, NON_CONTENT_TECHNICAL_RESPONSE: 2, ACCESS_RESTRICTED: 1 |
 | www.treasury.gov | NON_CONTENT_TECHNICAL_RESPONSE: 25 |
 
 ## 3. Document identities
 
-- 6294 identities built; 5945 resolved via API metadata or URL-slug derivation.
-- Document-identity coverage: RECOVERED_WEB_ARCHIVE: 3077, UNRESOLVED_CHALLENGE: 1644, NON_CONTENT_TECHNICAL_RESPONSE: 1129, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 121, ARCHIVED_CONTENT: 1
+- 6295 identities built; 5946 resolved via API metadata or URL-slug derivation.
+- Document-identity coverage: RECOVERED_WEB_ARCHIVE: 3274, UNRESOLVED_CHALLENGE: 1465, NON_CONTENT_TECHNICAL_RESPONSE: 1129, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 104, ARCHIVED_CONTENT: 1
 
 ## 4–7. Recovery outcomes
 
 - Same-agency recoveries (`SAME_DOCUMENT`): 1
 - Official government mirrors (`OFFICIAL_MIRROR`): 322
-- Public web archive (`ARCHIVED_VERSION`): 3078
+- Public web archive (`ARCHIVED_VERSION`): 3275
 - Derived representations (API metadata records): 322
-- Still unresolved: **2894** (by tier: {0: 159, 1: 732, 2: 2003})
+- Still unresolved: **2698** (by tier: {0: 159, 1: 732, 2: 1807})
 
 ## 8. Highest-value challenged collections
 
@@ -52,7 +52,7 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 
 ## 9. DOJ
 
-- DOJ URL states: RECOVERED_WEB_ARCHIVE: 3077, UNRESOLVED_CHALLENGE: 1291, ACCESS_RESTRICTED: 3, NON_CONTENT_TECHNICAL_RESPONSE: 2
+- DOJ URL states: RECOVERED_WEB_ARCHIVE: 3260, UNRESOLVED_CHALLENGE: 1112, NON_CONTENT_TECHNICAL_RESPONSE: 1
 
 ## 10. Federal Register
 
@@ -61,7 +61,7 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 
 ## 11. Congress / GAO
 
-- Congress: ACCESS_RESTRICTED: 62
+- Congress: ACCESS_RESTRICTED: 48, RECOVERED_WEB_ARCHIVE: 14
 - GAO: UNRESOLVED_CHALLENGE: 52, ACCESS_RESTRICTED: 4, ARCHIVED_CONTENT: 1, NON_CONTENT_TECHNICAL_RESPONSE: 1
 
 ## 12. Challenge fingerprints observed
@@ -72,8 +72,8 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2410` × 90
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2419` × 76
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2443` × 67
-- `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2586` × 62
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2454` × 62
+- `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2586` × 61
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2421` × 60
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2564` × 57
 - `BOT_CHALLENGE|detection_mode:metadata_only|expected_document_body_missing|host_challenge_pattern|small_html_success:2432` × 55
@@ -84,14 +84,14 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 
 ## 13. Most effective alternate routes
 
-- `wayback_cdx`: 3078 links
+- `wayback_cdx`: 3275 links
 - `federal_register_api_inventory_crossref`: 322 links
 - `federal_register_api`: 322 links
 - `ordinary_retry_probe`: 1 links
 
 ## 14. Access-limited gaps
 
-- 121 URLs are access-restricted (401/403 without challenge markup). These are recorded as gaps and never evaded.
+- 104 URLs are access-restricted (401/403 without challenge markup). These are recorded as gaps and never evaded.
 
 ## 15. Retry posture
 
