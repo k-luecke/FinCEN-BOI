@@ -6938,6 +6938,10 @@ https://home.treasury.gov/news/press-releases/sb0666|GOV-PUBLIC|home.treasury.go
 https://home.treasury.gov/news/press-releases/sb0667|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0668|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0669|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0670|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0671|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0672|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0673|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0004|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0013|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0014|GOV-PUBLIC|home.treasury.gov
@@ -35617,6 +35621,7 @@ https://www.fincen.gov/news/news-releases/financial-action-task-force-identifies
 https://www.fincen.gov/news/news-releases/financial-action-task-force-identifies-jurisdictions-anti-money-laundering-3|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/financial-action-task-force-identifies-jurisdictions-anti-money-laundering-4|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/financial-action-task-force-identifies-jurisdictions-anti-money-laundering-5|GOV-PUBLIC|www.fincen.gov
+https://www.fincen.gov/news/news-releases/financial-action-task-force-identifies-jurisdictions-anti-money-laundering-6|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/financial-action-task-force-identifies-jurisdictions-anti-money-laundering-and|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/financial-action-task-force-identifies-jurisdictions-anti-money-laundering-and-0|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/financial-action-task-force-identifies-jurisdictions-anti-money-laundering-and-1|GOV-PUBLIC|www.fincen.gov
@@ -35861,6 +35866,7 @@ https://www.fincen.gov/news/news-releases/fincen-issues-advisory-iran-backed-ter
 https://www.fincen.gov/news/news-releases/fincen-issues-advisory-iranian-regimes-illicit-and-malign-activities-and|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-issues-advisory-kleptocracy-and-foreign-public-corruption|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-issues-advisory-medical-scams-related-covid-19-and-companion-notice|GOV-PUBLIC|www.fincen.gov
+https://www.fincen.gov/news/news-releases/fincen-issues-alert-and-notice-support-new-fraud-prevention-measures-minnesota|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-issues-alert-bulk-cash-smuggling-and-repatriation-mexico-based|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-issues-alert-counter-iranian-procurement-efforts-its-commercial-aviation|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-issues-alert-cross-border-funds-transfers-involving-illegal-aliens|GOV-PUBLIC|www.fincen.gov
