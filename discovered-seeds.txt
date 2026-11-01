@@ -13636,6 +13636,7 @@ https://ncua.gov/files/publications/budget/budget-justification-proposed-2023-20
 https://ncua.gov/files/publications/budget/budget-justification-proposed-2024-2025.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/budget/budget-justification-proposed-2025-2026.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/budget/budget-justification-proposed-2026-2027.pdf|GOV-PUBLIC|ncua.gov
+https://ncua.gov/files/publications/budget/budget-justification-proposed-2027-2028.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/budget/budget-line-item-detail-2019-2020.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/budget/budget-line-item-detail-2020-2021-v2.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/publications/budget/budget-line-item-detail-2021-2022.pdf|GOV-PUBLIC|ncua.gov
@@ -30228,6 +30229,7 @@ https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-building-financi
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-capital-and-capacity-community-development-forum|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-community-development-workshop-equity-equivalent|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-cra-training-fdic-supervised-banks-new-york-new-jersey|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-cra-webinar-fdic-supervised-banks-connecticut-maine|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-cra-webinar-fdic-supervised-banks-illinois-indiana|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-empowering-communities-through-financial-and|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-establishing-community-development-corporation-san-0|GOV-PUBLIC|www.fdic.gov
@@ -30308,6 +30310,7 @@ https://www.fdic.gov/consumer-resource-center/events/helping-community-college-s
 https://www.fdic.gov/consumer-resource-center/events/how-organizations-use-fdics-how-money-smart-are-you-tool-strengthen|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/importance-financial-education-veterans-and-their-families|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/joint-agencies-fdicfrbocc-present-economic-growth-and-regulatory|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/consumer-resource-center/events/leveraging-bank-nonprofit-and-government-partnerships-disaster|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/leveraging-fdic-money-smart-promote-financial-education|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/los-angeles-tri-annual-alliance-economic-inclusion-forum-disaster|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/low-income-housing-tax-credit-lihtc-101-bankers-wisconsin|GOV-PUBLIC|www.fdic.gov
@@ -30323,6 +30326,7 @@ https://www.fdic.gov/consumer-resource-center/events/money-smart-young-adults-tr
 https://www.fdic.gov/consumer-resource-center/events/national-town-hall-scams-older-adults-featuring-money-smart-older|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/nevada-housing-investing-rural-prosperity-forum|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/nyc-future-bankers-and-financial-professionals-camp-banker|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/consumer-resource-center/events/promoting-free-tax-preparation-low-and-moderate-income-families|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/regional-financial-institution-roundtable-future-bankers-and|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/regional-financial-institution-roundtable-future-bankers-and-0|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/tax-season-bankable-moments-partnership-opportunities-bank-and-vita|GOV-PUBLIC|www.fdic.gov
