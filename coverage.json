@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T17:26:58.674271+00:00",
+  "generated_at": "2026-11-02T19:51:45.382220+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -79,7 +79,7 @@
       "non_content_captures": 0,
       "urls_with_content": 12299,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3156456738,
+      "bytes": 3156456742,
       "median_object_bytes": 108810,
       "p95_object_bytes": 393836,
       "known_bulk_gaps": []
@@ -92,7 +92,7 @@
       "non_content_captures": 0,
       "urls_with_content": 988,
       "ceiling_hit": "no",
-      "bytes": 632527155,
+      "bytes": 632527156,
       "median_object_bytes": 184343,
       "p95_object_bytes": 1200637,
       "known_bulk_gaps": []
@@ -191,14 +191,14 @@
     {
       "host": "web.archive.org",
       "urls_discovered": 0,
-      "urls_attempted": 8937,
-      "urls_archived": 7817,
+      "urls_attempted": 8942,
+      "urls_archived": 7828,
       "non_content_captures": 0,
-      "urls_with_content": 7817,
+      "urls_with_content": 7828,
       "ceiling_hit": "no",
-      "bytes": 239886789,
+      "bytes": 240478359,
       "median_object_bytes": 242,
-      "p95_object_bytes": 101734,
+      "p95_object_bytes": 101753,
       "known_bulk_gaps": []
     },
     {
@@ -218,7 +218,7 @@
     },
     {
       "host": "www.fdic.gov",
-      "urls_discovered": 5057,
+      "urls_discovered": 5061,
       "urls_attempted": 17133,
       "urls_archived": 17129,
       "non_content_captures": 0,
@@ -278,7 +278,7 @@
       "non_content_captures": 0,
       "urls_with_content": 4193,
       "ceiling_hit": "no",
-      "bytes": 877830204,
+      "bytes": 877830237,
       "median_object_bytes": 34828,
       "p95_object_bytes": 819515,
       "known_bulk_gaps": []
@@ -321,9 +321,9 @@
       "non_content_captures": 4366,
       "urls_with_content": 1420,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 192839288,
+      "bytes": 192827567,
       "median_object_bytes": 2520,
-      "p95_object_bytes": 101573,
+      "p95_object_bytes": 101518,
       "known_bulk_gaps": []
     },
     {
@@ -341,13 +341,13 @@
     },
     {
       "host": "www.occ.gov",
-      "urls_discovered": 5102,
+      "urls_discovered": 5129,
       "urls_attempted": 15549,
       "urls_archived": 15544,
       "non_content_captures": 0,
       "urls_with_content": 15544,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3269824244,
+      "bytes": 3269823479,
       "median_object_bytes": 60441,
       "p95_object_bytes": 861760,
       "known_bulk_gaps": []

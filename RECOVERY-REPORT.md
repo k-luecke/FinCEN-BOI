@@ -1,11 +1,11 @@
 # Recovery report — challenge-aware lawful recovery
 
-Generated 2026-11-01T17:26:54.791230+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
+Generated 2026-11-02T19:51:41.452376+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
 
 ## 1. Challenge / non-content responses
 
 - **6294** challenge/non-content observations across the corpus (latest observation per URL).
-- Requested-URL coverage states: RECOVERED_WEB_ARCHIVE: 3330, UNRESOLVED_CHALLENGE: 1421, NON_CONTENT_TECHNICAL_RESPONSE: 1128, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 92, ARCHIVED_CONTENT: 1
+- Requested-URL coverage states: RECOVERED_WEB_ARCHIVE: 3335, UNRESOLVED_CHALLENGE: 1420, NON_CONTENT_TECHNICAL_RESPONSE: 1127, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 89, ARCHIVED_CONTENT: 1
 
 ## 2. Hosts generating them
 
@@ -20,12 +20,12 @@ Generated 2026-11-01T17:26:54.791230+00:00 from committed recovery state. No CAP
 | ncua.gov | NON_CONTENT_TECHNICAL_RESPONSE: 7 |
 | treasury.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
 | vault.fbi.gov | NON_CONTENT_TECHNICAL_RESPONSE: 2 |
-| www.congress.gov | ACCESS_RESTRICTED: 34, RECOVERED_WEB_ARCHIVE: 25 |
+| www.congress.gov | ACCESS_RESTRICTED: 31, RECOVERED_WEB_ARCHIVE: 28 |
 | www.fdic.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
 | www.federalregister.gov | RECOVERED_OFFICIAL_MIRROR: 322, UNRESOLVED_CHALLENGE: 135 |
 | www.ffiec.gov | ACCESS_RESTRICTED: 14 |
 | www.fincen.gov | NON_CONTENT_TECHNICAL_RESPONSE: 8, ACCESS_RESTRICTED: 5 |
-| www.gao.gov | RECOVERED_WEB_ARCHIVE: 38, UNRESOLVED_CHALLENGE: 15, ACCESS_RESTRICTED: 3, ARCHIVED_CONTENT: 1, NON_CONTENT_TECHNICAL_RESPONSE: 1 |
+| www.gao.gov | RECOVERED_WEB_ARCHIVE: 40, UNRESOLVED_CHALLENGE: 14, ACCESS_RESTRICTED: 3, ARCHIVED_CONTENT: 1 |
 | www.govinfo.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1054 |
 | www.justice.gov | RECOVERED_WEB_ARCHIVE: 3267, UNRESOLVED_CHALLENGE: 1105, NON_CONTENT_TECHNICAL_RESPONSE: 1 |
 | www.ncua.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
@@ -36,15 +36,15 @@ Generated 2026-11-01T17:26:54.791230+00:00 from committed recovery state. No CAP
 ## 3. Document identities
 
 - 6294 identities built; 5945 resolved via API metadata or URL-slug derivation.
-- Document-identity coverage: RECOVERED_WEB_ARCHIVE: 3330, UNRESOLVED_CHALLENGE: 1421, NON_CONTENT_TECHNICAL_RESPONSE: 1128, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 92, ARCHIVED_CONTENT: 1
+- Document-identity coverage: RECOVERED_WEB_ARCHIVE: 3335, UNRESOLVED_CHALLENGE: 1420, NON_CONTENT_TECHNICAL_RESPONSE: 1127, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 89, ARCHIVED_CONTENT: 1
 
 ## 4–7. Recovery outcomes
 
 - Same-agency recoveries (`SAME_DOCUMENT`): 1
 - Official government mirrors (`OFFICIAL_MIRROR`): 322
-- Public web archive (`ARCHIVED_VERSION`): 3331
+- Public web archive (`ARCHIVED_VERSION`): 3336
 - Derived representations (API metadata records): 322
-- Still unresolved: **2641** (by tier: {0: 159, 1: 732, 2: 1750})
+- Still unresolved: **2636** (by tier: {0: 159, 1: 732, 2: 1745})
 
 ## 8. Highest-value challenged collections
 
@@ -61,8 +61,8 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 
 ## 11. Congress / GAO
 
-- Congress: ACCESS_RESTRICTED: 37, RECOVERED_WEB_ARCHIVE: 25
-- GAO: RECOVERED_WEB_ARCHIVE: 38, UNRESOLVED_CHALLENGE: 15, ACCESS_RESTRICTED: 3, ARCHIVED_CONTENT: 1, NON_CONTENT_TECHNICAL_RESPONSE: 1
+- Congress: ACCESS_RESTRICTED: 34, RECOVERED_WEB_ARCHIVE: 28
+- GAO: RECOVERED_WEB_ARCHIVE: 40, UNRESOLVED_CHALLENGE: 14, ACCESS_RESTRICTED: 3, ARCHIVED_CONTENT: 1
 
 ## 12. Challenge fingerprints observed
 
@@ -84,14 +84,14 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 
 ## 13. Most effective alternate routes
 
-- `wayback_cdx`: 3331 links
+- `wayback_cdx`: 3336 links
 - `federal_register_api_inventory_crossref`: 322 links
 - `federal_register_api`: 322 links
 - `ordinary_retry_probe`: 1 links
 
 ## 14. Access-limited gaps
 
-- 92 URLs are access-restricted (401/403 without challenge markup). These are recorded as gaps and never evaded.
+- 89 URLs are access-restricted (401/403 without challenge markup). These are recorded as gaps and never evaded.
 
 ## 15. Retry posture
 
