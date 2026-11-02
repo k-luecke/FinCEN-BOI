@@ -30495,6 +30495,7 @@ https://www.fdic.gov/news/board-matters/2026/board-meeting-2026-07-31-3notation|
 https://www.fdic.gov/news/board-matters/2026/board-meeting-2026-08-27-3notation|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/board-matters/2026/board-meeting-2026-09-17-1open|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/board-matters/2026/board-meeting-2026-09-17-2closed|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/news/board-matters/2026/board-meeting-2026-10-30-3notation|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/campaigns/know-your-risk/social-toolkit.html|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/disaster/fiona.html|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/disaster/florence.html|GOV-PUBLIC|www.fdic.gov
@@ -33028,6 +33029,7 @@ https://www.fdic.gov/news/inactive-financial-institution-letters/2022/fil22008.h
 https://www.fdic.gov/news/inactive-financial-institution-letters/2022/fil22016.html|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/inactive-financial-institution-letters/2022/fil22036.html|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/inactive-financial-institution-letters/2022/fil22040.html|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/news/inactive-financial-institution-letters/2022/fil22053.html|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/inactive-financial-institution-letters/2022/fil22055.html|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/inactive-financial-institution-letters/2023/fdic-clarifying-supervisory-approach-regarding-supervisory|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/news/inactive-financial-institution-letters/2023/fil23001.html|GOV-PUBLIC|www.fdic.gov
@@ -33858,6 +33860,8 @@ https://www.fdic.gov/node/132601|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132681|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132706|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132856|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132891|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132921|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26481|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26486|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26491|GOV-PUBLIC|www.fdic.gov
@@ -44245,6 +44249,15 @@ https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-47.html|GOV-PUBL
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-48.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-49.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-5.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-50.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-51.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-52.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-52a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-52b.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-52c.xlsx|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-52d.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-52e.xlsx|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-53.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-6.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-7.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-8.html|GOV-PUBLIC|www.occ.gov
@@ -46092,6 +46105,14 @@ https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-90.html|GOV-PU
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-90a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-91.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-91a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-92.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-92a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-92b.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-92c.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-93.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-94.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-95.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-95a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/ppm-5310-3.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/ppm-5400-11.pdf|GOV-PUBLIC|www.occ.gov
@@ -46179,6 +46200,7 @@ https://www.occ.gov/news-issuances/speeches/2026/pub-speech-2026-4.pdf|GOV-PUBLI
 https://www.occ.gov/news-issuances/speeches/2026/pub-speech-2026-58a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/speeches/2026/pub-speech-2026-61a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/speeches/2026/pub-speech-2026-66.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/speeches/2026/pub-speech-2026-94.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/speeches/2026/pub-speech-flec-remarks-02-06-2026.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/forms/dodd-frank-act-stress-test/2020-dfast-final-instructions.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/forms/dodd-frank-act-stress-test/2020-dfast-templates.zip|GOV-PUBLIC|www.occ.gov
@@ -46531,6 +46553,7 @@ https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-s
 https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-statistics-reports/files/interest-rate-risk-statistics-report-fall-2023.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-statistics-reports/files/interest-rate-risk-statistics-report-fall-2024.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-statistics-reports/files/interest-rate-risk-statistics-report-fall-2025.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-statistics-reports/files/interest-rate-risk-statistics-report-fall-2026.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-statistics-reports/files/interest-rate-risk-statistics-report-spring-2021.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-statistics-reports/files/interest-rate-risk-statistics-report-spring-2022.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-statistics-reports/files/interest-rate-risk-statistics-report-spring-2023.html|GOV-PUBLIC|www.occ.gov
@@ -46543,6 +46566,7 @@ https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-s
 https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-statistics-reports/files/pub-interest-rate-risk-statistics-fall-2023.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-statistics-reports/files/pub-interest-rate-risk-statistics-fall-2024.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-statistics-reports/files/pub-interest-rate-risk-statistics-fall-2025.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-statistics-reports/files/pub-interest-rate-risk-statistics-fall-2026.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-statistics-reports/files/pub-interest-rate-risk-statistics-spring-2021.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-statistics-reports/files/pub-interest-rate-risk-statistics-spring-2022.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/interest-rate-risk-statistics-reports/files/pub-interest-rate-risk-statistics-spring-2023.pdf|GOV-PUBLIC|www.occ.gov
@@ -46796,6 +46820,7 @@ https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-appli
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/erebor-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/fifth-third-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/first-national-digital-currency-bank.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/gurufin-national-trust-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/index-digital-assets-licensing-applications.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/laser-digital-nat-trust-bank-ny.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/lorum-national-trust.pdf|GOV-PUBLIC|www.occ.gov
@@ -46807,6 +46832,7 @@ https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-appli
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/payward-national-trust-company.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/pnc-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/rain-national-trust-bank.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/ramp-national-trust-bank-ny.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/revolut-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/ripple-national-trust-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/world-liberty-trust-company.pdf|GOV-PUBLIC|www.occ.gov
@@ -46827,6 +46853,8 @@ https://www.occ.gov/topics/charters-and-licensing/financial-institution-lists/tr
 https://www.occ.gov/topics/charters-and-licensing/financial-institution-lists/trust-by-name.xlsx|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/financial-institution-lists/trust-by-state.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/financial-institution-lists/trust-by-state.xlsx|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/genius-act/community-bank-fact-sheet.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/genius-act/index-genius-act.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/1996/ca201.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/1996/ca202.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/1996/cd96-20.pdf|GOV-PUBLIC|www.occ.gov
@@ -47282,6 +47310,7 @@ https://www.occ.gov/topics/charters-and-licensing/interpretations-and-decisions/
 https://www.occ.gov/topics/charters-and-licensing/licensing-office-contacts.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/agora-national-trust-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/application-robinhood-bank.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/public-comment/avant-bank-national-association.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/builders-bank-and-trust-na.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/capital-one-merger.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/catena-trust-bank-na.pdf|GOV-PUBLIC|www.occ.gov
@@ -47295,6 +47324,7 @@ https://www.occ.gov/topics/charters-and-licensing/public-comment/oppfi-interim-b
 https://www.occ.gov/topics/charters-and-licensing/public-comment/payo-digital-bank-na.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/payward-national-trust-company.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/revolut-bank-us-na-stamford-ct.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/public-comment/sezzle-bank-national-association.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/submitting-public-comment-on-licensing-applications.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/texas-global-bank-trust-company-na.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/public-comment/world-liberty-trust-company-n-a.pdf|GOV-PUBLIC|www.occ.gov
@@ -48540,6 +48570,7 @@ https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-a
 https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-appeals/summaries/files/appeal-composite-component-ratings-q1-2025.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-appeals/summaries/files/appeal-composite-component-ratings-q4-2024.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-appeals/summaries/files/appeal-composite-component-ratings-ras1-q1-2024.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-appeals/summaries/files/appeal-composite-ratings-mra-q2-2026.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-appeals/summaries/files/appeal-composite-ratings-q3-2022.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-appeals/summaries/files/appeal-consumer-compliance-q2-2023.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/supervision-and-examination/dispute-resolution/bank-appeals/summaries/files/appeal-cra-rating-q1-2024.html|GOV-PUBLIC|www.occ.gov
