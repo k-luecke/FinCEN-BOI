@@ -1,6 +1,6 @@
 # Coverage report
 
-Generated 2026-11-03T17:18:49.658083+00:00 from committed inventory + manifest.
+Generated 2026-11-04T17:29:35.491806+00:00 from committed inventory + manifest.
 
 **Reading this table:** a host at the sitemap cap (5000 URLs/host) is bounded by *discovery budget*, not by the end of its collection — those rows are a first slice. Archive size is never a proxy for share-of-BOI preserved: the CTA-filed database is confidential and not publicly downloadable.
 
@@ -13,15 +13,15 @@ Generated 2026-11-03T17:18:49.658083+00:00 from committed inventory + manifest.
 | congress.gov | 0 | 3 | 0 | 0 | 0 | no | 0 | — | — |
 | fincen.gov | 0 | 9 | 6 | 0 | 6 | no | 199,724 | 32,778 | 35,808 |
 | gao.gov | 0 | 2 | 2 | 0 | 2 | no | 224,036 | 112,018 | 130,688 |
-| home.treasury.gov | 9,817 | 12,357 | 12,299 | 0 | 12,299 | YES — sitemap cap 5000/host | 3,156,456,740 | 108,810 | 393,836 |
+| home.treasury.gov | 9,821 | 12,360 | 12,302 | 0 | 12,302 | YES — sitemap cap 5000/host | 3,156,697,166 | 108,808 | 393,745 |
 | judiciary.house.gov | 0 | 994 | 988 | 0 | 988 | no | 632,527,081 | 184,343 | 1,200,637 |
 | justice.gov | 0 | 2 | 2 | 0 | 2 | no | 635,168 | 317,584 | 528,113 |
-| ncua.gov | 9,487 | 9,799 | 9,797 | 0 | 9,797 | YES — sitemap cap 5000/host | 2,989,026,404 | 61,349 | 1,085,836 |
+| ncua.gov | 9,488 | 9,803 | 9,801 | 0 | 9,801 | YES — sitemap cap 5000/host | 2,989,252,172 | 61,333 | 1,085,758 |
 | occ.gov | 0 | 5 | 5 | 0 | 5 | no | 836,766 | 78,416 | 461,953 |
 | oig.treasury.gov | 72 | 226 | 226 | 0 | 226 | no | 163,729,203 | 117,012 | 2,980,022 |
 | oversight.house.gov | 5,000 | 17,101 | 16,961 | 0 | 16,961 | YES — sitemap cap 5000/host | 1,169,368,370 | 60,377 | 68,003 |
 | treasury.gov | 0 | 3 | 2 | 0 | 2 | no | 303,046 | 151,523 | 178,677 |
-| vault.fbi.gov | 5,422 | 9,982 | 9,980 | 0 | 9,980 | YES — sitemap cap 5000/host | 334,028,162 | 21,928 | 22,448 |
+| vault.fbi.gov | 5,431 | 9,983 | 9,981 | 0 | 9,981 | YES — sitemap cap 5000/host | 334,049,313 | 21,928 | 22,448 |
 | web.archive.org | 0 | 8,942 | 7,830 | 0 | 7,830 | no | 240,478,365 | 242 | 101,753 |
 | www.congress.gov | 0 | 78 | 14 | 0 | 14 | no | 30,654,231 | 368,127 | 9,651,232 |
 | www.fdic.gov | 5,061 | 17,137 | 17,133 | 0 | 17,133 | YES — sitemap cap 5000/host | 1,266,290,912 | 68,734 | 92,310 |
@@ -31,7 +31,7 @@ Generated 2026-11-03T17:18:49.658083+00:00 from committed inventory + manifest.
 | www.fincen.gov | 2,897 | 4,881 | 4,193 | 0 | 4,193 | no | 877,830,212 | 34,828 | 819,515 |
 | www.gao.gov | 0 | 7,729 | 7,673 | 51 | 7,622 | no | 6,715,031,042 | 93,970 | 5,030,953 |
 | www.govinfo.gov | 504 | 18,332 | 18,313 | 0 | 18,313 | no | 16,422,981,560 | 45,656 | 1,023,618 |
-| www.justice.gov | 5,009 | 5,794 | 5,786 | 4,366 | 1,420 | YES — sitemap cap 5000/host | 192,827,904 | 2,520 | 101,518 |
+| www.justice.gov | 5,009 | 5,794 | 5,786 | 4,366 | 1,420 | YES — sitemap cap 5000/host | 192,826,544 | 2,520 | 101,518 |
 | www.ncua.gov | 0 | 6 | 6 | 0 | 6 | no | 1,140,252 | 73,871 | 591,447 |
 | www.occ.gov | 5,129 | 15,576 | 15,571 | 0 | 15,571 | YES — sitemap cap 5000/host | 3,288,537,827 | 60,459 | 864,114 |
 | www.sec.gov | 5,001 | 25,009 | 24,961 | 166 | 24,795 | YES — sitemap cap 5000/host | 12,124,987,528 | 56,093 | 742,779 |
