@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-04T17:29:35.491806+00:00",
+  "generated_at": "2026-11-05T17:37:39.397480+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -73,15 +73,15 @@
     },
     {
       "host": "home.treasury.gov",
-      "urls_discovered": 9821,
-      "urls_attempted": 12360,
-      "urls_archived": 12302,
+      "urls_discovered": 9823,
+      "urls_attempted": 12364,
+      "urls_archived": 12306,
       "non_content_captures": 0,
-      "urls_with_content": 12302,
+      "urls_with_content": 12306,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3156697166,
-      "median_object_bytes": 108808,
-      "p95_object_bytes": 393745,
+      "bytes": 3157021908,
+      "median_object_bytes": 108805,
+      "p95_object_bytes": 393449,
       "known_bulk_gaps": []
     },
     {
@@ -112,15 +112,15 @@
     },
     {
       "host": "ncua.gov",
-      "urls_discovered": 9488,
-      "urls_attempted": 9803,
-      "urls_archived": 9801,
+      "urls_discovered": 9489,
+      "urls_attempted": 9804,
+      "urls_archived": 9802,
       "non_content_captures": 0,
-      "urls_with_content": 9801,
+      "urls_with_content": 9802,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 2989252172,
-      "median_object_bytes": 61333,
-      "p95_object_bytes": 1085758,
+      "bytes": 2993831940,
+      "median_object_bytes": 61338,
+      "p95_object_bytes": 1086132,
       "known_bulk_gaps": []
     },
     {
@@ -177,13 +177,13 @@
     },
     {
       "host": "vault.fbi.gov",
-      "urls_discovered": 5431,
-      "urls_attempted": 9983,
-      "urls_archived": 9981,
+      "urls_discovered": 5432,
+      "urls_attempted": 9992,
+      "urls_archived": 9990,
       "non_content_captures": 0,
-      "urls_with_content": 9981,
+      "urls_with_content": 9990,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 334049313,
+      "bytes": 334248093,
       "median_object_bytes": 21928,
       "p95_object_bytes": 22448,
       "known_bulk_gaps": []
@@ -278,7 +278,7 @@
       "non_content_captures": 0,
       "urls_with_content": 4193,
       "ceiling_hit": "no",
-      "bytes": 877830212,
+      "bytes": 877830224,
       "median_object_bytes": 34828,
       "p95_object_bytes": 819515,
       "known_bulk_gaps": []
@@ -306,7 +306,7 @@
       "non_content_captures": 0,
       "urls_with_content": 18313,
       "ceiling_hit": "no",
-      "bytes": 16422981560,
+      "bytes": 16422981548,
       "median_object_bytes": 45656,
       "p95_object_bytes": 1023618,
       "known_bulk_gaps": [
@@ -321,9 +321,9 @@
       "non_content_captures": 4366,
       "urls_with_content": 1420,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 192826544,
+      "bytes": 192838265,
       "median_object_bytes": 2520,
-      "p95_object_bytes": 101518,
+      "p95_object_bytes": 101573,
       "known_bulk_gaps": []
     },
     {
