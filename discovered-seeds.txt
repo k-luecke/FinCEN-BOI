@@ -6949,6 +6949,8 @@ https://home.treasury.gov/news/press-releases/sb0676|GOV-PUBLIC|home.treasury.go
 https://home.treasury.gov/news/press-releases/sb0678|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0679|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0680|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0681|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0682|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0004|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0013|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0014|GOV-PUBLIC|home.treasury.gov
@@ -17222,6 +17224,7 @@ https://ncua.gov/newsroom/press-release/2026/ncua-announces-2026-leadership-team
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-eighth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-eleventh-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-fifth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
+https://ncua.gov/newsroom/press-release/2026/ncua-announces-fourteenth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-fourth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-ninth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-proposed-rule-permitted-payment-stablecoin-issuer-standards|GOV-PUBLIC|ncua.gov
@@ -26376,6 +26379,7 @@ https://vault.fbi.gov/gregory-scarpa-sr/Gregory%20Scarpa%2C%20Sr%20Part%2007/vie
 https://vault.fbi.gov/gregory-scarpa-sr/Gregory%20Scarpa%2C%20Sr%20Part%2008%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/grupo-21-de-marzo-march-21st-group/grupo-21-de-marzo-march-21st-group-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/guarino-moretti/Guarino%20Moretti%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/guidance-and-training-materials-for-eguardian-system/guidance-and-training-materials-for-eguardian-system-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/guy-burgess/guy-burgess-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/guy-molinari/Guy%20Molinari%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/harassment-policy-1038d/Harassment%20Policy%201038D%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
