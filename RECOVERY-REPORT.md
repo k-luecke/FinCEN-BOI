@@ -1,11 +1,11 @@
 # Recovery report — challenge-aware lawful recovery
 
-Generated 2026-11-06T16:55:44.463417+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
+Generated 2026-11-07T15:54:14.383353+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
 
 ## 1. Challenge / non-content responses
 
-- **6294** challenge/non-content observations across the corpus (latest observation per URL).
-- Requested-URL coverage states: RECOVERED_WEB_ARCHIVE: 3335, UNRESOLVED_CHALLENGE: 1419, NON_CONTENT_TECHNICAL_RESPONSE: 1127, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 90, ARCHIVED_CONTENT: 1
+- **6292** challenge/non-content observations across the corpus (latest observation per URL).
+- Requested-URL coverage states: RECOVERED_WEB_ARCHIVE: 3334, UNRESOLVED_CHALLENGE: 1419, NON_CONTENT_TECHNICAL_RESPONSE: 1127, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 89, ARCHIVED_CONTENT: 1
 
 ## 2. Hosts generating them
 
@@ -25,7 +25,7 @@ Generated 2026-11-06T16:55:44.463417+00:00 from committed recovery state. No CAP
 | www.federalregister.gov | RECOVERED_OFFICIAL_MIRROR: 322, UNRESOLVED_CHALLENGE: 135 |
 | www.ffiec.gov | ACCESS_RESTRICTED: 14 |
 | www.fincen.gov | NON_CONTENT_TECHNICAL_RESPONSE: 8, ACCESS_RESTRICTED: 5 |
-| www.gao.gov | RECOVERED_WEB_ARCHIVE: 40, UNRESOLVED_CHALLENGE: 13, ACCESS_RESTRICTED: 4, ARCHIVED_CONTENT: 1 |
+| www.gao.gov | RECOVERED_WEB_ARCHIVE: 39, UNRESOLVED_CHALLENGE: 13, ACCESS_RESTRICTED: 3, ARCHIVED_CONTENT: 1 |
 | www.govinfo.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1054 |
 | www.justice.gov | RECOVERED_WEB_ARCHIVE: 3267, UNRESOLVED_CHALLENGE: 1105, NON_CONTENT_TECHNICAL_RESPONSE: 1 |
 | www.ncua.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
@@ -35,8 +35,8 @@ Generated 2026-11-06T16:55:44.463417+00:00 from committed recovery state. No CAP
 
 ## 3. Document identities
 
-- 6294 identities built; 5945 resolved via API metadata or URL-slug derivation.
-- Document-identity coverage: RECOVERED_WEB_ARCHIVE: 3335, UNRESOLVED_CHALLENGE: 1419, NON_CONTENT_TECHNICAL_RESPONSE: 1127, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 90, ARCHIVED_CONTENT: 1
+- 6292 identities built; 5945 resolved via API metadata or URL-slug derivation.
+- Document-identity coverage: RECOVERED_WEB_ARCHIVE: 3334, UNRESOLVED_CHALLENGE: 1419, NON_CONTENT_TECHNICAL_RESPONSE: 1127, RECOVERED_OFFICIAL_MIRROR: 322, ACCESS_RESTRICTED: 89, ARCHIVED_CONTENT: 1
 
 ## 4–7. Recovery outcomes
 
@@ -44,7 +44,7 @@ Generated 2026-11-06T16:55:44.463417+00:00 from committed recovery state. No CAP
 - Official government mirrors (`OFFICIAL_MIRROR`): 322
 - Public web archive (`ARCHIVED_VERSION`): 3336
 - Derived representations (API metadata records): 322
-- Still unresolved: **2636** (by tier: {0: 159, 1: 732, 2: 1745})
+- Still unresolved: **2635** (by tier: {0: 159, 1: 732, 2: 1744})
 
 ## 8. Highest-value challenged collections
 
@@ -62,7 +62,7 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 ## 11. Congress / GAO
 
 - Congress: ACCESS_RESTRICTED: 34, RECOVERED_WEB_ARCHIVE: 28
-- GAO: RECOVERED_WEB_ARCHIVE: 40, UNRESOLVED_CHALLENGE: 13, ACCESS_RESTRICTED: 4, ARCHIVED_CONTENT: 1
+- GAO: RECOVERED_WEB_ARCHIVE: 39, UNRESOLVED_CHALLENGE: 13, ACCESS_RESTRICTED: 3, ARCHIVED_CONTENT: 1
 
 ## 12. Challenge fingerprints observed
 
@@ -91,7 +91,7 @@ Ranked by preservation tier of pending items — Tier 0 (FinCEN/BOI/CTA core) fi
 
 ## 14. Access-limited gaps
 
-- 90 URLs are access-restricted (401/403 without challenge markup). These are recorded as gaps and never evaded.
+- 89 URLs are access-restricted (401/403 without challenge markup). These are recorded as gaps and never evaded.
 
 ## 15. Retry posture
 

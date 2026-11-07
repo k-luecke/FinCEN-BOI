@@ -21,9 +21,9 @@
       "NON_CONTENT_TECHNICAL_RESPONSE": 19
     },
     "gao": {
-      "ACCESS_RESTRICTED": 4,
+      "ACCESS_RESTRICTED": 3,
       "ARCHIVED_CONTENT": 1,
-      "RECOVERED_WEB_ARCHIVE": 40,
+      "RECOVERED_WEB_ARCHIVE": 39,
       "UNRESOLVED_CHALLENGE": 13
     },
     "govinfo": {
@@ -92,9 +92,9 @@
       "NON_CONTENT_TECHNICAL_RESPONSE": 8
     },
     "www.gao.gov": {
-      "ACCESS_RESTRICTED": 4,
+      "ACCESS_RESTRICTED": 3,
       "ARCHIVED_CONTENT": 1,
-      "RECOVERED_WEB_ARCHIVE": 40,
+      "RECOVERED_WEB_ARCHIVE": 39,
       "UNRESOLVED_CHALLENGE": 13
     },
     "www.govinfo.gov": {
@@ -120,17 +120,17 @@
       "NON_CONTENT_TECHNICAL_RESPONSE": 25
     }
   },
-  "challenge_observations": 6294,
-  "document_identities": 6294,
+  "challenge_observations": 6292,
+  "document_identities": 6292,
   "document_identity_coverage": {
-    "ACCESS_RESTRICTED": 90,
+    "ACCESS_RESTRICTED": 89,
     "ARCHIVED_CONTENT": 1,
     "NON_CONTENT_TECHNICAL_RESPONSE": 1127,
     "RECOVERED_OFFICIAL_MIRROR": 322,
-    "RECOVERED_WEB_ARCHIVE": 3335,
+    "RECOVERED_WEB_ARCHIVE": 3334,
     "UNRESOLVED_CHALLENGE": 1419
   },
-  "generated_at": "2026-11-06T16:55:44.463417+00:00",
+  "generated_at": "2026-11-07T15:54:14.383353+00:00",
   "identities_resolved": 5945,
   "recovery_links": 3981,
   "recovery_links_by_method": {
@@ -146,11 +146,11 @@
     "SAME_DOCUMENT": 1
   },
   "requested_url_coverage": {
-    "ACCESS_RESTRICTED": 90,
+    "ACCESS_RESTRICTED": 89,
     "ARCHIVED_CONTENT": 1,
     "NON_CONTENT_TECHNICAL_RESPONSE": 1127,
     "RECOVERED_OFFICIAL_MIRROR": 322,
-    "RECOVERED_WEB_ARCHIVE": 3335,
+    "RECOVERED_WEB_ARCHIVE": 3334,
     "UNRESOLVED_CHALLENGE": 1419
   },
   "semantics_note": "BOT_CHALLENGE / non-content captures are never counted as ARCHIVED_CONTENT. RECOVERED_* states preserve the distinction between original publisher and retrieval host; original challenge observations are retained.",
@@ -171,10 +171,10 @@
     "ERROR_RESPONSE|http_status:403": 113,
     "UNKNOWN_RESPONSE|detection_mode:metadata_only|expected_document_got_html": 1048
   },
-  "unresolved": 2636,
+  "unresolved": 2635,
   "unresolved_by_tier": {
     "0": 159,
     "1": 732,
-    "2": 1745
+    "2": 1744
   }
 }
