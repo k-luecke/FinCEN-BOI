@@ -15564,6 +15564,7 @@ https://ncua.gov/news/events/2026/ncua-board-meeting-1|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/events/2026/ncua-board-meeting-2|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/events/2026/ncua-host-webinar-2026-supervisory-priorities|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/events/2026/public-budget-hearing-set-november-17|GOV-PUBLIC|ncua.gov
+https://ncua.gov/news/events/2027/comments-mbl-interim-final-rule-due-january-4|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/press-releases|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/annual-report/2024-annual-report|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/annual-report/2025-annual-report|GOV-PUBLIC|ncua.gov
@@ -33971,6 +33972,8 @@ https://www.fdic.gov/node/132706|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132856|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132891|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132921|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132981|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/132991|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26481|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26486|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26491|GOV-PUBLIC|www.fdic.gov
