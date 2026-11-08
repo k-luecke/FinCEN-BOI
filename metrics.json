@@ -39,10 +39,10 @@
     "GOV-PUBLIC": 147639,
     "WEB-ARCHIVE": 13369
   },
-  "discovered_urls": 53828,
-  "durability_note": "release assets verified this run",
-  "durably_archived_urls": 152303,
-  "generated_at": "2026-11-08T13:42:20.386760+00:00",
+  "discovered_urls": 53831,
+  "durability_note": "not verified this run \u2014 see releases for durable copies",
+  "durably_archived_urls": 0,
+  "generated_at": "2026-11-08T16:17:32.871472+00:00",
   "graph_entities": 1014,
   "graph_people": 345,
   "ledger_change_types": {
@@ -60,13 +60,14 @@
   "queue_states": {
     "ACCESS_RESTRICTED": 122,
     "ARCHIVED": 147714,
+    "DISCOVERED": 3,
     "MANUAL_REVIEW": 1114,
     "NON_CONTENT_TECHNICAL_RESPONSE": 4584,
     "NOT_FOUND": 1442,
     "ROBOTS_DISALLOWED": 2,
     "TEMPORARY_ERROR": 535
   },
-  "queued_urls": 0,
+  "queued_urls": 3,
   "rate_limited": 0,
   "raw_observations": 178262,
   "recovery": {

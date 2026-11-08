@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-07T15:54:18.297965+00:00",
+  "generated_at": "2026-11-08T16:17:35.750039+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -74,14 +74,14 @@
     {
       "host": "home.treasury.gov",
       "urls_discovered": 9828,
-      "urls_attempted": 12367,
-      "urls_archived": 12309,
+      "urls_attempted": 12371,
+      "urls_archived": 12313,
       "non_content_captures": 0,
-      "urls_with_content": 12309,
+      "urls_with_content": 12313,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3157265812,
-      "median_object_bytes": 108804,
-      "p95_object_bytes": 393227,
+      "bytes": 3157557504,
+      "median_object_bytes": 108795,
+      "p95_object_bytes": 392932,
       "known_bulk_gaps": []
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "host": "ncua.gov",
-      "urls_discovered": 9489,
+      "urls_discovered": 9490,
       "urls_attempted": 9805,
       "urls_archived": 9803,
       "non_content_captures": 0,
@@ -178,14 +178,14 @@
     {
       "host": "vault.fbi.gov",
       "urls_discovered": 5440,
-      "urls_attempted": 9995,
-      "urls_archived": 9993,
+      "urls_attempted": 10001,
+      "urls_archived": 9999,
       "non_content_captures": 0,
-      "urls_with_content": 9993,
+      "urls_with_content": 9999,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 334314953,
+      "bytes": 334449218,
       "median_object_bytes": 21928,
-      "p95_object_bytes": 22448,
+      "p95_object_bytes": 22450,
       "known_bulk_gaps": []
     },
     {
@@ -218,7 +218,7 @@
     },
     {
       "host": "www.fdic.gov",
-      "urls_discovered": 5062,
+      "urls_discovered": 5064,
       "urls_attempted": 17138,
       "urls_archived": 17134,
       "non_content_captures": 0,
@@ -273,13 +273,13 @@
     {
       "host": "www.fincen.gov",
       "urls_discovered": 2901,
-      "urls_attempted": 4881,
-      "urls_archived": 4193,
+      "urls_attempted": 4885,
+      "urls_archived": 4197,
       "non_content_captures": 0,
-      "urls_with_content": 4193,
+      "urls_with_content": 4197,
       "ceiling_hit": "no",
-      "bytes": 877833943,
-      "median_object_bytes": 34828,
+      "bytes": 877960141,
+      "median_object_bytes": 34821,
       "p95_object_bytes": 819515,
       "known_bulk_gaps": []
     },
@@ -316,14 +316,14 @@
     {
       "host": "www.justice.gov",
       "urls_discovered": 5011,
-      "urls_attempted": 5794,
-      "urls_archived": 5786,
+      "urls_attempted": 5796,
+      "urls_archived": 5788,
       "non_content_captures": 4366,
-      "urls_with_content": 1420,
+      "urls_with_content": 1422,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 192838649,
+      "bytes": 193070562,
       "median_object_bytes": 2520,
-      "p95_object_bytes": 101573,
+      "p95_object_bytes": 101597,
       "known_bulk_gaps": []
     },
     {
