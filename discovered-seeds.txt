@@ -35286,6 +35286,7 @@ https://www.federalregister.gov/documents/2026/09/04/2026-18194/geographic-targe
 https://www.federalregister.gov/documents/2026/10/05/2026-20371/proposal-of-special-measure-prohibiting-the-transmittal-of-funds-regarding-transactions-involving|GOV-PUBLIC|Federal Register
 https://www.federalregister.gov/documents/2026/10/06/2026-20429/proposal-of-special-measure-regarding-convertible-virtual-currency-mixing-as-a-class-of-transactions|GOV-PUBLIC|Federal Register
 https://www.federalregister.gov/documents/2026/10/06/2026-20430/requirements-for-certain-transactions-involving-convertible-virtual-currency-or-digital-assets|GOV-PUBLIC|Federal Register
+https://www.federalregister.gov/documents/2026/11/09/2026-22809/threshold-for-the-requirement-to-collect-retain-and-transmit-information-on-funds-transfers-and|GOV-PUBLIC|Federal Register
 https://www.fincen.gov/1st-review-suspicious-activity-reporting-system-sars|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/2006-revisions-bank-secrecy-actanti-money-laundering-examination-manual-july-28-2006|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/about-fincen|GOV-PUBLIC|www.fincen.gov
@@ -38512,6 +38513,7 @@ https://www.govinfo.gov/content/pkg/FR-2026-09-04/pdf/2026-18194.pdf|GOV-PUBLIC|
 https://www.govinfo.gov/content/pkg/FR-2026-10-05/pdf/2026-20371.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/content/pkg/FR-2026-10-06/pdf/2026-20429.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/content/pkg/FR-2026-10-06/pdf/2026-20430.pdf|GOV-PUBLIC|Federal Register
+https://www.govinfo.gov/content/pkg/FR-2026-11-09/pdf/2026-22809.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/developers|GOV-PUBLIC|www.govinfo.gov
 https://www.govinfo.gov/developers/system-design|GOV-PUBLIC|www.govinfo.gov
 https://www.govinfo.gov/digital-preservation|GOV-PUBLIC|www.govinfo.gov
@@ -44376,6 +44378,8 @@ https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-52c.xlsx|GOV-PUB
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-52d.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-52e.xlsx|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-53.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-54.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-55.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-6.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-7.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/bulletins/2026/bulletin-2026-8.html|GOV-PUBLIC|www.occ.gov
@@ -46123,6 +46127,7 @@ https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-75a.pdf|GOV-PUB
 https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-77.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-77a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-77b.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-ia-2026-98.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-1.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-10.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-11.html|GOV-PUBLIC|www.occ.gov
@@ -46231,6 +46236,9 @@ https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-93.html|GOV-PU
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-94.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-95.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-95a.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-96.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-97.html|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-97a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-9a.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/ppm-5310-3.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/news-issuances/news-releases/2026/ppm-5400-11.pdf|GOV-PUBLIC|www.occ.gov
@@ -46479,6 +46487,7 @@ https://www.occ.gov/publications-and-resources/publications/comptrollers-handboo
 https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/fair-lending/pub-ch-fair-lending-previous.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/foreword/index-foreword.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/home-mortgage-disclosure/pub-ch-home-mortgage-disclosure-previous.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/homeownership-counseling/pub-ch-homeownership-counseling.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/interest-rate-risk/pub-ch-interest-rate-risk-previous.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/internal-external-audits/index-internal-external-audits.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/publications-and-resources/publications/comptrollers-handbook/files/lending-loan-portfolio-risk-management/index-lending-loan-portfolio.html|GOV-PUBLIC|www.occ.gov
@@ -46938,6 +46947,7 @@ https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-appli
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/erebor-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/fifth-third-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/first-national-digital-currency-bank.pdf|GOV-PUBLIC|www.occ.gov
+https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/galaxy-national-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/gurufin-national-trust-bank.pdf|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/index-digital-assets-licensing-applications.html|GOV-PUBLIC|www.occ.gov
 https://www.occ.gov/topics/charters-and-licensing/digital-assets-licensing-applications/laser-digital-nat-trust-bank-ny.pdf|GOV-PUBLIC|www.occ.gov
