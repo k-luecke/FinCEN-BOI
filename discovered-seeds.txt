@@ -13036,6 +13036,7 @@ https://ncua.gov/files/foia/navy-federal-credit-union-fidelity-bond-provider-as-
 https://ncua.gov/files/foia/ncua-cfpb-memorandum-understanding.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/foia/pen-fed-certificate.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/foia/pen-fed-charter.pdf|GOV-PUBLIC|ncua.gov
+https://ncua.gov/files/foia/pen-fed-fom.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/foia/pentagon-federal-credit-union-charter.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/foia/pentagon-federal-credit-union-field-membership.pdf|GOV-PUBLIC|ncua.gov
 https://ncua.gov/files/foia/pentagon-federal-credit-union-insurance-certificate.pdf|GOV-PUBLIC|ncua.gov
@@ -25280,6 +25281,7 @@ https://vault.fbi.gov/automated-case-support-acs-system/automated-case-support-a
 https://vault.fbi.gov/automated-case-support-acs-system/automated-case-support-acs-system-part-05/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/automated-case-support-acs-system/automated-case-support-acs-system-part-06/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/automated-case-support-acs-system/automated-case-support-acs-system-part-07/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/automated-case-support-acs-system/automated-case-support-acs-system-part-08/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/awards-program-policy-guide-1095pg/Awards%20Program%20Policy%20Guide%201095PG%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/ayn-rand/Ayn%20Rand%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/baba-dass-part-01-of-01/Baba%20Dass%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
@@ -25522,6 +25524,7 @@ https://vault.fbi.gov/buford-pusser/Buford%20Pusser%20Part%2001%20%28Final%29/vi
 https://vault.fbi.gov/bureau-aviation-regulations-policy-directive-and-policy-guide/Bureau%20Aviation%20Regulations%20Policy%20Directive%20and%20Policy%20Guide%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/burisma-holdings/burisma-holdings-part-01-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/burl-ives/Burl%20Ives%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/burrhus-skinner/burrhus-skinner-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/burton-reynolds-jr/Burton%20Reynolds%20Jr.%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/burton-wheeler/burton-wheeler-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/burton-wheeler/burton-wheeler-part-02/view|GOV-PUBLIC|vault.fbi.gov
@@ -35287,6 +35290,7 @@ https://www.federalregister.gov/documents/2026/10/05/2026-20371/proposal-of-spec
 https://www.federalregister.gov/documents/2026/10/06/2026-20429/proposal-of-special-measure-regarding-convertible-virtual-currency-mixing-as-a-class-of-transactions|GOV-PUBLIC|Federal Register
 https://www.federalregister.gov/documents/2026/10/06/2026-20430/requirements-for-certain-transactions-involving-convertible-virtual-currency-or-digital-assets|GOV-PUBLIC|Federal Register
 https://www.federalregister.gov/documents/2026/11/09/2026-22809/threshold-for-the-requirement-to-collect-retain-and-transmit-information-on-funds-transfers-and|GOV-PUBLIC|Federal Register
+https://www.federalregister.gov/documents/2026/11/10/2026-22962/imposition-of-special-measure-prohibiting-the-transmittal-of-funds-involving-mexc-global|GOV-PUBLIC|Federal Register
 https://www.fincen.gov/1st-review-suspicious-activity-reporting-system-sars|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/2006-revisions-bank-secrecy-actanti-money-laundering-examination-manual-july-28-2006|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/about-fincen|GOV-PUBLIC|www.fincen.gov
@@ -36408,6 +36412,7 @@ https://www.fincen.gov/news/news-releases/readout-fincen-gathers-public-and-priv
 https://www.fincen.gov/news/news-releases/readout-fincen-holds-bilingual-beneficial-ownership-engagement-puerto-rico|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/readout-fincen-holds-engagement-eliminate-hospice-fraud-california|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/readout-fincen-holds-meeting-israels-financial-intelligence-unit|GOV-PUBLIC|www.fincen.gov
+https://www.fincen.gov/news/news-releases/readout-fincen-hosts-exchange-event-combat-overseas-scam-centers|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/readout-fincen-hosts-public-private-dialogue-countering-dprks-illicit-cyber|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/readout-fincen-hosts-public-private-dialogue-cyber-related-terrorism-financing|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/readout-fincen-hosts-regional-training-event-botswana-combat-money-laundering|GOV-PUBLIC|www.fincen.gov
@@ -38514,6 +38519,7 @@ https://www.govinfo.gov/content/pkg/FR-2026-10-05/pdf/2026-20371.pdf|GOV-PUBLIC|
 https://www.govinfo.gov/content/pkg/FR-2026-10-06/pdf/2026-20429.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/content/pkg/FR-2026-10-06/pdf/2026-20430.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/content/pkg/FR-2026-11-09/pdf/2026-22809.pdf|GOV-PUBLIC|Federal Register
+https://www.govinfo.gov/content/pkg/FR-2026-11-10/pdf/2026-22962.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/developers|GOV-PUBLIC|www.govinfo.gov
 https://www.govinfo.gov/developers/system-design|GOV-PUBLIC|www.govinfo.gov
 https://www.govinfo.gov/digital-preservation|GOV-PUBLIC|www.govinfo.gov
