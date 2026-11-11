@@ -6956,6 +6956,7 @@ https://home.treasury.gov/news/press-releases/sb0684|GOV-PUBLIC|home.treasury.go
 https://home.treasury.gov/news/press-releases/sb0685|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0686|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0687|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0688|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0004|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0013|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0014|GOV-PUBLIC|home.treasury.gov
@@ -26259,6 +26260,8 @@ https://vault.fbi.gov/forrest-fenn/forrest-fenn-part-01/view|GOV-PUBLIC|vault.fb
 https://vault.fbi.gov/forrest-fenn/forrest-fenn-part-02/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/forrest-fenn/forrest-fenn-part-03/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/forrest-fenn/forrest-fenn-part-04-final/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/fort-hood-shooting-on-april-2-2014/fort-hood-shooting-on-april-2-2014%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/fort-hood-shooting-on-april-2-2014/fort-hood-shooting-on-april-2-2014-part-02/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/fort-hood-shooting-on-april-2-2014/fort-hood-shooting-on-april-2-2014/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/fort-hood-shooting-on-november-5-2009/fort-hood-shooting-on-november-5-2009-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/fortney-stark/fortney-stark-part-01%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
@@ -26578,6 +26581,7 @@ https://vault.fbi.gov/herbert-hoover/herbert-hoover-final/view|GOV-PUBLIC|vault.
 https://vault.fbi.gov/herbet-lehman/herbet-lehman-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/herman-cain/Herman%20Cain%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/herman-geiger/Herman%20Geiger%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/herman-paster/herman-paster-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/herman-wouk/herman-wouk-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/high-visibility-memorandums/High%20Visibility%20Memorandums%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/high-visibility-memorandums/High%20Visibility%20Memorandums%20Part%2002%20/view|GOV-PUBLIC|vault.fbi.gov
@@ -27821,6 +27825,7 @@ https://vault.fbi.gov/records-regarding-the-review-of-the-investigative-holdings
 https://vault.fbi.gov/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein-part-12/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein-part-13/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein-part-14/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein-part-15/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/records-related-to-the-dismissal-of-fbi-director-comey/Records%20Related%20to%20the%20Dismissal%20of%20FBI%20Director%20Comey%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/records-related-to-the-dismissal-of-fbi-director-comey/Records%20Related%20to%20the%20Dismissal%20of%20FBI%20Director%20Comey%20Part%2002%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/red-lake-high-school-shooting/Red%20Lake%20High%20School%20Shooting%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
