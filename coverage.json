@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T17:16:53.820033+00:00",
+  "generated_at": "2026-11-11T17:26:04.625076+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -73,13 +73,13 @@
     },
     {
       "host": "home.treasury.gov",
-      "urls_discovered": 9828,
+      "urls_discovered": 9829,
       "urls_attempted": 12371,
       "urls_archived": 12313,
       "non_content_captures": 0,
       "urls_with_content": 12313,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3157557506,
+      "bytes": 3157557508,
       "median_object_bytes": 108795,
       "p95_object_bytes": 392932,
       "known_bulk_gaps": []
@@ -113,7 +113,7 @@
     {
       "host": "ncua.gov",
       "urls_discovered": 9491,
-      "urls_attempted": 9806,
+      "urls_attempted": 9807,
       "urls_archived": 9804,
       "non_content_captures": 0,
       "urls_with_content": 9804,
@@ -177,13 +177,13 @@
     },
     {
       "host": "vault.fbi.gov",
-      "urls_discovered": 5442,
-      "urls_attempted": 10001,
-      "urls_archived": 9999,
+      "urls_discovered": 5446,
+      "urls_attempted": 10003,
+      "urls_archived": 10001,
       "non_content_captures": 0,
-      "urls_with_content": 9999,
+      "urls_with_content": 10001,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 334449247,
+      "bytes": 334493768,
       "median_object_bytes": 21928,
       "p95_object_bytes": 22450,
       "known_bulk_gaps": []
@@ -232,14 +232,14 @@
     {
       "host": "www.federalregister.gov",
       "urls_discovered": 324,
-      "urls_attempted": 781,
-      "urls_archived": 323,
+      "urls_attempted": 783,
+      "urls_archived": 324,
       "non_content_captures": 0,
-      "urls_with_content": 323,
+      "urls_with_content": 324,
       "ceiling_hit": "no",
-      "bytes": 1692602,
-      "median_object_bytes": 4341,
-      "p95_object_bytes": 8302,
+      "bytes": 1696734,
+      "median_object_bytes": 4340,
+      "p95_object_bytes": 8292,
       "known_bulk_gaps": [
         "Full FR document XML via API (only FinCEN-agency docs enumerated)"
       ]
@@ -273,13 +273,13 @@
     {
       "host": "www.fincen.gov",
       "urls_discovered": 2902,
-      "urls_attempted": 4885,
-      "urls_archived": 4197,
+      "urls_attempted": 4886,
+      "urls_archived": 4198,
       "non_content_captures": 0,
-      "urls_with_content": 4197,
+      "urls_with_content": 4198,
       "ceiling_hit": "no",
-      "bytes": 877960915,
-      "median_object_bytes": 34821,
+      "bytes": 877994400,
+      "median_object_bytes": 34820,
       "p95_object_bytes": 819515,
       "known_bulk_gaps": []
     },
@@ -291,7 +291,7 @@
       "non_content_captures": 52,
       "urls_with_content": 7621,
       "ceiling_hit": "no",
-      "bytes": 6715033506,
+      "bytes": 6715033483,
       "median_object_bytes": 93970,
       "p95_object_bytes": 5030953,
       "known_bulk_gaps": [
@@ -301,14 +301,14 @@
     {
       "host": "www.govinfo.gov",
       "urls_discovered": 506,
-      "urls_attempted": 18333,
-      "urls_archived": 18314,
+      "urls_attempted": 18334,
+      "urls_archived": 18315,
       "non_content_captures": 0,
-      "urls_with_content": 18314,
+      "urls_with_content": 18315,
       "ceiling_hit": "no",
-      "bytes": 16423249640,
+      "bytes": 16423527250,
       "median_object_bytes": 45656,
-      "p95_object_bytes": 1023457,
+      "p95_object_bytes": 1023297,
       "known_bulk_gaps": [
         "GovInfo bulk data collections (FR XML, CFR, court opinions)"
       ]
@@ -321,7 +321,7 @@
       "non_content_captures": 4366,
       "urls_with_content": 1422,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 193071212,
+      "bytes": 193069823,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101597,
       "known_bulk_gaps": []
@@ -347,7 +347,7 @@
       "non_content_captures": 0,
       "urls_with_content": 15579,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3294422675,
+      "bytes": 3294422683,
       "median_object_bytes": 60461,
       "p95_object_bytes": 865119,
       "known_bulk_gaps": []
