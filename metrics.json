@@ -40,9 +40,9 @@
     "WEB-ARCHIVE": 13369
   },
   "discovered_urls": 53852,
-  "durability_note": "release assets verified this run",
-  "durably_archived_urls": 152326,
-  "generated_at": "2026-11-12T15:31:24.222620+00:00",
+  "durability_note": "not verified this run \u2014 see releases for durable copies",
+  "durably_archived_urls": 0,
+  "generated_at": "2026-11-12T17:43:44.789120+00:00",
   "graph_entities": 1014,
   "graph_people": 345,
   "ledger_change_types": {
