@@ -1,11 +1,11 @@
 # Recovery report — challenge-aware lawful recovery
 
-Generated 2026-11-13T17:22:02.649865+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
+Generated 2026-11-14T16:05:24.295094+00:00 from committed recovery state. No CAPTCHA solving, proxy/identity rotation, fingerprint spoofing, or rate-limit circumvention is used anywhere in this pipeline: challenged endpoints are routed around through lawful public representations, or recorded as unresolved.
 
 ## 1. Challenge / non-content responses
 
-- **6294** challenge/non-content observations across the corpus (latest observation per URL).
-- Requested-URL coverage states: RECOVERED_WEB_ARCHIVE: 3334, UNRESOLVED_CHALLENGE: 1419, NON_CONTENT_TECHNICAL_RESPONSE: 1127, RECOVERED_OFFICIAL_MIRROR: 324, ACCESS_RESTRICTED: 89, ARCHIVED_CONTENT: 1
+- **6295** challenge/non-content observations across the corpus (latest observation per URL).
+- Requested-URL coverage states: RECOVERED_WEB_ARCHIVE: 3334, UNRESOLVED_CHALLENGE: 1419, NON_CONTENT_TECHNICAL_RESPONSE: 1128, RECOVERED_OFFICIAL_MIRROR: 324, ACCESS_RESTRICTED: 89, ARCHIVED_CONTENT: 1
 
 ## 2. Hosts generating them
 
@@ -28,15 +28,15 @@ Generated 2026-11-13T17:22:02.649865+00:00 from committed recovery state. No CAP
 | www.gao.gov | RECOVERED_WEB_ARCHIVE: 39, UNRESOLVED_CHALLENGE: 13, ACCESS_RESTRICTED: 3, ARCHIVED_CONTENT: 1 |
 | www.govinfo.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1054 |
 | www.justice.gov | RECOVERED_WEB_ARCHIVE: 3267, UNRESOLVED_CHALLENGE: 1105, NON_CONTENT_TECHNICAL_RESPONSE: 1 |
-| www.ncua.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
+| www.ncua.gov | NON_CONTENT_TECHNICAL_RESPONSE: 2 |
 | www.occ.gov | NON_CONTENT_TECHNICAL_RESPONSE: 1 |
 | www.sec.gov | UNRESOLVED_CHALLENGE: 166, NON_CONTENT_TECHNICAL_RESPONSE: 2, ACCESS_RESTRICTED: 1 |
 | www.treasury.gov | NON_CONTENT_TECHNICAL_RESPONSE: 25 |
 
 ## 3. Document identities
 
-- 6294 identities built; 5947 resolved via API metadata or URL-slug derivation.
-- Document-identity coverage: RECOVERED_WEB_ARCHIVE: 3334, UNRESOLVED_CHALLENGE: 1419, NON_CONTENT_TECHNICAL_RESPONSE: 1127, RECOVERED_OFFICIAL_MIRROR: 324, ACCESS_RESTRICTED: 89, ARCHIVED_CONTENT: 1
+- 6295 identities built; 5948 resolved via API metadata or URL-slug derivation.
+- Document-identity coverage: RECOVERED_WEB_ARCHIVE: 3334, UNRESOLVED_CHALLENGE: 1419, NON_CONTENT_TECHNICAL_RESPONSE: 1128, RECOVERED_OFFICIAL_MIRROR: 324, ACCESS_RESTRICTED: 89, ARCHIVED_CONTENT: 1
 
 ## 4–7. Recovery outcomes
 
@@ -44,7 +44,7 @@ Generated 2026-11-13T17:22:02.649865+00:00 from committed recovery state. No CAP
 - Official government mirrors (`OFFICIAL_MIRROR`): 324
 - Public web archive (`ARCHIVED_VERSION`): 3336
 - Derived representations (API metadata records): 324
-- Still unresolved: **2635** (by tier: {0: 159, 1: 732, 2: 1744})
+- Still unresolved: **2636** (by tier: {0: 160, 1: 732, 2: 1744})
 
 ## 8. Highest-value challenged collections
 

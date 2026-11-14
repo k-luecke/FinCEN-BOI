@@ -31,7 +31,7 @@
     },
     "other": {
       "ACCESS_RESTRICTED": 18,
-      "NON_CONTENT_TECHNICAL_RESPONSE": 11
+      "NON_CONTENT_TECHNICAL_RESPONSE": 12
     },
     "sec": {
       "ACCESS_RESTRICTED": 1,
@@ -106,7 +106,7 @@
       "UNRESOLVED_CHALLENGE": 1105
     },
     "www.ncua.gov": {
-      "NON_CONTENT_TECHNICAL_RESPONSE": 1
+      "NON_CONTENT_TECHNICAL_RESPONSE": 2
     },
     "www.occ.gov": {
       "NON_CONTENT_TECHNICAL_RESPONSE": 1
@@ -120,18 +120,18 @@
       "NON_CONTENT_TECHNICAL_RESPONSE": 25
     }
   },
-  "challenge_observations": 6294,
-  "document_identities": 6294,
+  "challenge_observations": 6295,
+  "document_identities": 6295,
   "document_identity_coverage": {
     "ACCESS_RESTRICTED": 89,
     "ARCHIVED_CONTENT": 1,
-    "NON_CONTENT_TECHNICAL_RESPONSE": 1127,
+    "NON_CONTENT_TECHNICAL_RESPONSE": 1128,
     "RECOVERED_OFFICIAL_MIRROR": 324,
     "RECOVERED_WEB_ARCHIVE": 3334,
     "UNRESOLVED_CHALLENGE": 1419
   },
-  "generated_at": "2026-11-13T17:22:02.649865+00:00",
-  "identities_resolved": 5947,
+  "generated_at": "2026-11-14T16:05:24.295094+00:00",
+  "identities_resolved": 5948,
   "recovery_links": 3985,
   "recovery_links_by_method": {
     "federal_register_api": 324,
@@ -148,7 +148,7 @@
   "requested_url_coverage": {
     "ACCESS_RESTRICTED": 89,
     "ARCHIVED_CONTENT": 1,
-    "NON_CONTENT_TECHNICAL_RESPONSE": 1127,
+    "NON_CONTENT_TECHNICAL_RESPONSE": 1128,
     "RECOVERED_OFFICIAL_MIRROR": 324,
     "RECOVERED_WEB_ARCHIVE": 3334,
     "UNRESOLVED_CHALLENGE": 1419
@@ -171,9 +171,9 @@
     "ERROR_RESPONSE|http_status:403": 113,
     "UNKNOWN_RESPONSE|detection_mode:metadata_only|expected_document_got_html": 1048
   },
-  "unresolved": 2635,
+  "unresolved": 2636,
   "unresolved_by_tier": {
-    "0": 159,
+    "0": 160,
     "1": 732,
     "2": 1744
   }
