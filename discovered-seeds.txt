@@ -14907,6 +14907,7 @@ https://ncua.gov/news/board-meetings-agendas-results/board-agenda-november-16-20
 https://ncua.gov/news/board-meetings-agendas-results/board-agenda-november-16-2023-meeting/board-action-memorandum-charitable-donation-accounts-final-rule|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/board-meetings-agendas-results/board-agenda-november-17-2016-meeting|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/board-meetings-agendas-results/board-agenda-november-17-2022-meeting|GOV-PUBLIC|ncua.gov
+https://ncua.gov/news/board-meetings-agendas-results/board-agenda-november-17-2026-meeting|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/board-meetings-agendas-results/board-agenda-november-17-open-meeting|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/board-meetings-agendas-results/board-agenda-november-18-2015-closed-board-meeting|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/board-meetings-agendas-results/board-agenda-november-18-2021-meeting|GOV-PUBLIC|ncua.gov
@@ -15617,6 +15618,7 @@ https://ncua.gov/news/publication-search/operating-fund/april-2025-operating-fun
 https://ncua.gov/news/publication-search/operating-fund/april-2026-operating-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/operating-fund/august-2024-operating-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/operating-fund/august-2025-operating-fund-financial-highlights|GOV-PUBLIC|ncua.gov
+https://ncua.gov/news/publication-search/operating-fund/august-2026-operating-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/operating-fund/december-2025-operating-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/operating-fund/february-2024-operating-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/operating-fund/february-2025-operating-fund-financial-highlights|GOV-PUBLIC|ncua.gov
@@ -15649,6 +15651,7 @@ https://ncua.gov/news/publication-search/revolving-loan-fund/april-2025-revolvin
 https://ncua.gov/news/publication-search/revolving-loan-fund/april-2026-revolving-loan-fund|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/revolving-loan-fund/august-2024-revolving-loan-fund|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/revolving-loan-fund/august-2025-revolving-loan-fund|GOV-PUBLIC|ncua.gov
+https://ncua.gov/news/publication-search/revolving-loan-fund/august-2026-revolving-loan-fund|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/revolving-loan-fund/december-2025-revolving-loan-fund|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/revolving-loan-fund/february-2024-revolving-loan-fund|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/revolving-loan-fund/february-2025-revolving-loan-fund|GOV-PUBLIC|ncua.gov
@@ -15679,6 +15682,7 @@ https://ncua.gov/news/publication-search/share-insurance-fund/april-2025-share-i
 https://ncua.gov/news/publication-search/share-insurance-fund/april-2026-share-insurance-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/share-insurance-fund/august-2024-share-insurance-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/share-insurance-fund/august-2025-share-insurance-fund-financial-highlights|GOV-PUBLIC|ncua.gov
+https://ncua.gov/news/publication-search/share-insurance-fund/august-2026-share-insurance-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/share-insurance-fund/december-2025-share-insurance-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/share-insurance-fund/february-2024-share-insurance-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/share-insurance-fund/february-2025-share-insurance-fund-financial-highlights|GOV-PUBLIC|ncua.gov
@@ -17206,6 +17210,7 @@ https://ncua.gov/newsroom/press-release/2025/unilever-federal-credit-union-close
 https://ncua.gov/newsroom/press-release/2025/update-ncua-announces-new-date-public-budget-hearing|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/african-diaspora-federal-credit-union-closes|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/african-diaspora-federal-credit-union-closes/liquidation-notice|GOV-PUBLIC|ncua.gov
+https://ncua.gov/newsroom/press-release/2026/agencies-extend-comment-period-proposed-third-party-risk-management-guidance|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/agencies-issue-guidance-lending-individuals-not-legally-authorized-work-united-states|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/agencies-request-comment-anti-money-laundering-countering-financing-terrorism-proposed-rule|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/agencies-request-comment-customer-identification-program-requirements-permitted-payment-stablecoin|GOV-PUBLIC|ncua.gov
@@ -17234,6 +17239,7 @@ https://ncua.gov/newsroom/press-release/2026/ncua-announces-2026-leadership-team
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-eighth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-eleventh-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-fifth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
+https://ncua.gov/newsroom/press-release/2026/ncua-announces-four-final-rules|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-fourteenth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-fourth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-ninth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
@@ -17256,6 +17262,7 @@ https://ncua.gov/newsroom/press-release/2026/ncua-board-extends-loan-interest-ra
 https://ncua.gov/newsroom/press-release/2026/ncua-board-hold-meeting-april-9|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-board-hold-meeting-january-22|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-board-hold-meeting-june-24|GOV-PUBLIC|ncua.gov
+https://ncua.gov/newsroom/press-release/2026/ncua-board-hold-public-hearing-2027-2028-staff-draft-budget|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-chairman-joins-leaders-financial-literacy-roundtable|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-charters-accion-opportunity-federal-credit-union|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-charters-all-peoples-united-federal-credit-union|GOV-PUBLIC|ncua.gov
@@ -30361,6 +30368,7 @@ https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-expanding-afford
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-expanding-vita-partnerships-2027-tax-season-0|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-fall-aei-forum-promote-increased-banking-access-los|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-financial-institution-roundtable-intersection-health-and|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-financing-future-rural-minnesota-small-business-and|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-forum-promote-banking-access-through-financial-education|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-forum-promoting-savings-and-credit-building-secure|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-houston-alliance-economic-inclusion-pathways-capital-and|GOV-PUBLIC|www.fdic.gov
@@ -30372,6 +30380,7 @@ https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-leveraging-bank-
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-los-angeles-tri-annual-alliance-economic-inclusion-forum|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-maryland-small-business-access-capital-coppin-state|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-milwaukee-alliance-economic-inclusion-aei-webinar|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-mississippi-alliance-economic-inclusion-pathways-capital|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-national-forum-innovations-account-access-utilizing-core|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-national-webinar-tax-time-eitc-bankable-moments|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/fdic-hosts-overcoming-financial-barriers-persons-disabilities|GOV-PUBLIC|www.fdic.gov
@@ -33986,6 +33995,7 @@ https://www.fdic.gov/node/132891|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132921|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132981|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/132991|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/node/133041|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26481|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26486|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/node/26491|GOV-PUBLIC|www.fdic.gov
