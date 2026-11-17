@@ -6959,6 +6959,8 @@ https://home.treasury.gov/news/press-releases/sb0686|GOV-PUBLIC|home.treasury.go
 https://home.treasury.gov/news/press-releases/sb0687|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0688|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0689|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0690|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0691|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0004|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0013|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0014|GOV-PUBLIC|home.treasury.gov
@@ -27077,6 +27079,7 @@ https://vault.fbi.gov/joseph-nicholas-gallo/joseph-nicholas-gallo-part-04/view|G
 https://vault.fbi.gov/joseph-nicholas-gallo/joseph-nicholas-gallo-part-05/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/joseph-nicholas-gallo/joseph-nicholas-gallo-part-06/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/joseph-nicholas-gallo/joseph-nicholas-gallo-part-07-final/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/joseph-randazzo/joseph-randazzo-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/joseph-ratzinger/joseph-ratzinger-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/joseph-regino/joseph-regino-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/joseph-russo/joseph-russo-part-01/view|GOV-PUBLIC|vault.fbi.gov
@@ -27156,6 +27159,7 @@ https://vault.fbi.gov/laquan-mcdonald/laquan-mcdonald-part-05/view|GOV-PUBLIC|va
 https://vault.fbi.gov/laquan-mcdonald/laquan-mcdonald-part-06/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/laquan-mcdonald/laquan-mcdonald-part-07/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/laquan-mcdonald/laquan-mcdonald-part-08/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/laquan-mcdonald/laquan-mcdonald-part-09/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/larry-ashbrook/Larry%20Ashbrook%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/larry-bell/larry-bell-part-01-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/larry-flynt/larry-flynt-part-01/view|GOV-PUBLIC|vault.fbi.gov
@@ -27243,6 +27247,9 @@ https://vault.fbi.gov/lucien-conein/lucien-conein-final/view|GOV-PUBLIC|vault.fb
 https://vault.fbi.gov/lufthansa-heist/lufthansa-heist-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/lufthansa-heist/lufthansa-heist-part-02/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/lufthansa-heist/lufthansa-heist-part-03-final/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/lufthansa-heist/lufthansa-heist-part-03/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/lufthansa-heist/lufthansa-heist-part-04/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/lufthansa-heist/lufthansa-heist-part-05-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/luis-posada-carriles/Luis%20Posada%20Carriles%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/luis-posada-carriles/luis-posada-carriles-part-02-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/luke-perry-coy-perry-iii-1/luke-perry-coy-perry-iii-final/view|GOV-PUBLIC|vault.fbi.gov
@@ -27854,6 +27861,8 @@ https://vault.fbi.gov/redneck-revolt/redneck-revolt-part-03/view|GOV-PUBLIC|vaul
 https://vault.fbi.gov/redneck-revolt/redneck-revolt-part-04/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/redneck-revolt/redneck-revolt-part-05/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/redneck-revolt/redneck-revolt/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/reies-tijerina/reies-tijerina-part-01/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/reies-tijerina/reies-tijerina-part-02-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/rennard-davis/Rennard%20Davis%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/republic-of-new-africa/republic-of-new-africa-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/republic-of-new-africa/republic-of-new-africa-part-02/view|GOV-PUBLIC|vault.fbi.gov
