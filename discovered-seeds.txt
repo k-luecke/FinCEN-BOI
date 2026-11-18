@@ -17228,6 +17228,7 @@ https://ncua.gov/newsroom/press-release/2026/copper-glass-closes-omega-federal-c
 https://ncua.gov/newsroom/press-release/2026/copper-glass-closes-omega-federal-credit-union-assumes-loans-assets-shares/liquidation-notice|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/federal-prudential-regulators-ask-financial-institutions-detect-report-illicit-activity-related-illegal-aliens|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/fincen-issues-exceptive-relief-bank-secrecy-act-requirement-credit-unions|GOV-PUBLIC|ncua.gov
+https://ncua.gov/newsroom/press-release/2026/fincen-proposes-rulemaking-strengthen-customer-due-diligence-requirements|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/grant-funds-available-low-income-credit-unions-affected-hurricanes|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/hud-leads-interagency-rescission-2022-statement-special-purpose-credit-programs|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/jackson-area-federal-credit-union-closes-five-star-credit-union-assumes-members-and-shares|GOV-PUBLIC|ncua.gov
@@ -17241,6 +17242,7 @@ https://ncua.gov/newsroom/press-release/2026/ncua-announces-2026-leadership-team
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-eighth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-eleventh-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-fifth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
+https://ncua.gov/newsroom/press-release/2026/ncua-announces-final-rule-deregulation|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-four-final-rules|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-fourteenth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-fourth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
@@ -17682,6 +17684,7 @@ https://ncua.gov/newsroom/speech/2025/ncua-chairman-todd-m-harper-statement-tenu
 https://ncua.gov/newsroom/speech/2025/ncua-vice-chairman-kyle-s-hauptman-statement-ncuas-2025-annual-performance-plan|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/speech/2026/chairman-hauptmans-remarks-flec-public-meeting|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/speech/2026/chairman-kyle-hauptmans-statement-ffiecs-proposed-revisions-camels-rating-system|GOV-PUBLIC|ncua.gov
+https://ncua.gov/newsroom/speech/2026/ncua-chairman-john-crews-statements-2026-budget-hearing|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/speech/2026/ncua-chairman-kyle-s-hauptman-statements-april-2026-ncua-board-meeting|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/speech/2026/ncua-chairman-kyle-s-hauptman-statements-january-2026-ncua-board-meeting|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/speech/2026/ncua-chairman-kyle-s-hauptman-statements-june-2026-ncua-board-meeting|GOV-PUBLIC|ncua.gov
@@ -26150,6 +26153,7 @@ https://vault.fbi.gov/eugenio-martinez-careaga/eugenio-martinez-careaga-part-01/
 https://vault.fbi.gov/eugenio-martinez-careaga/eugenio-martinez-careaga-part-02-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/explanation-of-exemptions/explanation-of-exemptions|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/expungement-of-federal-bureau-of-investigation-records-from-investigative-case-files-policy-directive-1014d/Expungement%20of%20Federal%20Bureau%20of%20Investigation%20Records%20from%20Investigative%20Case%20Files%20Policy%20Directive%201014D%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/facial-recognition-technology-use-policy-directive-1276d/facial-recognition-technology-use-policy-directive-1276d-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/fair-play-for-cuba-committee/Fair%20Play%20for%20Cuba%20Committee%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/faisal-mohammad/Faisal%20Mohammad%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/faisal-mohammad/Faisal%20Mohammad%20Part%2002%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
@@ -27381,6 +27385,7 @@ https://vault.fbi.gov/marvin-sharp/Marvin%20Sharp%20Part%2001%20%28Final%29/view
 https://vault.fbi.gov/mary-hemingway/mary-hemingway-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/mary-kaufman/mary-kaufman-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/mary-kaufman/mary-kaufman-part-02-final/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/mary-shotwell-little/mary-shotwell-little-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/maryanne-trump-barry/maryanne-trump-barry-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/maryanne-trump-barry/maryanne-trump-barry-part-02/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/maryanne-trump-barry/maryanne-trump-barry-part-03-final/view|GOV-PUBLIC|vault.fbi.gov
@@ -30319,6 +30324,7 @@ https://www.fdic.gov/consumer-resource-center/2026-10/advancing-financial-educat
 https://www.fdic.gov/consumer-resource-center/2026-10/empoderando-estudiantes-en-tres-estados-mediante-el-programa-de|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/2026-10/empowering-learners-across-three-states-through-tailored-money|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/2026-10/fomento-de-la-educacion-financiera-para-el-futuro|GOV-PUBLIC|www.fdic.gov
+https://www.fdic.gov/consumer-resource-center/2026-11/introducing-updated-money-smart-small-business|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/avoid-scams-while-shopping-online-bargains|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/back-school-financial-education-starts-families|GOV-PUBLIC|www.fdic.gov
 https://www.fdic.gov/consumer-resource-center/events/2024-national-interagency-community-reinvestment-conference-new|GOV-PUBLIC|www.fdic.gov
@@ -37178,6 +37184,7 @@ https://www.fincen.gov/news/news-releases/fincen-issues-proposed-rule-postpone-e
 https://www.fincen.gov/news/news-releases/fincen-issues-proposed-rule-postpone-effective-date-investment-adviser-rule/|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-issues-proposed-rule-strengthen-and-modernize-financial-institutions|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-issues-proposed-rule-strengthen-and-modernize-financial-institutions/|GOV-PUBLIC|www.fincen.gov
+https://www.fincen.gov/news/news-releases/fincen-issues-proposed-rule-strengthen-customer-due-diligence-requirements-covered-financial-institutions/|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-issues-proposed-rule-suspicious-activity-report-sharing-pilot-program|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-issues-proposed-rule-suspicious-activity-report-sharing-pilot-program/|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/fincen-issues-report-informal-value-transfer-systems|GOV-PUBLIC|www.fincen.gov
@@ -40340,6 +40347,7 @@ https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/c
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/customer-due-diligence-requirements-4/|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/customer-due-diligence-requirements-5|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/customer-due-diligence-requirements-5/|GOV-PUBLIC|www.fincen.gov
+https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/customer-due-diligence-requirements-covered-financial-institutions/|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/customer-due-diligence-requirements/|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/customer-identification-programs-anti-0|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/resources/statutes-regulations/federal-register-notices/customer-identification-programs-anti-0/|GOV-PUBLIC|www.fincen.gov
