@@ -991,6 +991,7 @@ https://home.treasury.gov/data/us-international-reserve-position/11082024|GOV-PU
 https://home.treasury.gov/data/us-international-reserve-position/11102022|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/data/us-international-reserve-position/11102023|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/data/us-international-reserve-position/11122021|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/data/us-international-reserve-position/11132026|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/data/us-international-reserve-position/11142025|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/data/us-international-reserve-position/11152024|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/data/us-international-reserve-position/11172023|GOV-PUBLIC|home.treasury.gov
@@ -6961,6 +6962,11 @@ https://home.treasury.gov/news/press-releases/sb0688|GOV-PUBLIC|home.treasury.go
 https://home.treasury.gov/news/press-releases/sb0689|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0690|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sb0691|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0692|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0693|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0694|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0695|GOV-PUBLIC|home.treasury.gov
+https://home.treasury.gov/news/press-releases/sb0696|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0004|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0013|GOV-PUBLIC|home.treasury.gov
 https://home.treasury.gov/news/press-releases/sm0014|GOV-PUBLIC|home.treasury.gov
@@ -19183,6 +19189,7 @@ https://ncua.gov/regulation-supervision/regulatory-compliance-resources/risk-bas
 https://ncua.gov/regulation-supervision/regulatory-compliance-resources/risk-based-capital-rule-resources/risk-based-capital-faqs|GOV-PUBLIC|ncua.gov
 https://ncua.gov/regulation-supervision/regulatory-compliance-resources/risk-based-capital-rule-resources/risk-weights-glance|GOV-PUBLIC|ncua.gov
 https://ncua.gov/regulation-supervision/regulatory-compliance-resources/risk-based-capital-rule-resources/risk-weights-glance-comparison-fdic|GOV-PUBLIC|ncua.gov
+https://ncua.gov/regulation-supervision/regulatory-compliance-resources/super-intelligence-si|GOV-PUBLIC|ncua.gov
 https://ncua.gov/regulation-supervision/regulatory-reporting|GOV-PUBLIC|ncua.gov
 https://ncua.gov/regulation-supervision/regulatory-reporting/collection-examination-supervision-information|GOV-PUBLIC|ncua.gov
 https://ncua.gov/regulation-supervision/regulatory-reporting/corporate-credit-union-online|GOV-PUBLIC|ncua.gov
@@ -19198,6 +19205,8 @@ https://ncua.gov/regulation-supervision/rules-regulations/interpretive-rulings-p
 https://ncua.gov/regulation-supervision/rules-regulations/regulatory-review|GOV-PUBLIC|ncua.gov
 https://ncua.gov/regulation-supervision/supervisory-review-committee|GOV-PUBLIC|ncua.gov
 https://ncua.gov/regulation-supervision/supervisory-review-committee/appeal-decisions|GOV-PUBLIC|ncua.gov
+https://ncua.gov/si|GOV-PUBLIC|ncua.gov
+https://ncua.gov/si/ncua-artificial-intelligence-compliance-plan|GOV-PUBLIC|ncua.gov
 https://ncua.gov/site-map|GOV-PUBLIC|ncua.gov
 https://ncua.gov/subscribe|GOV-PUBLIC|ncua.gov
 https://ncua.gov/support-services|GOV-PUBLIC|ncua.gov
@@ -25192,6 +25201,7 @@ https://vault.fbi.gov/anna-may-wong/Anna%20May%20Wong%20Part%2001%20%28Final%29/
 https://vault.fbi.gov/anomalous-health-incidents/anomalous-health-incidents-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/anomalous-health-incidents/anomalous-health-incidents-part-02/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/anomalous-health-incidents/anomalous-health-incidents-part-03/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/anomalous-health-incidents/anomalous-health-incidents-part-04/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/anonymous/anonymous-part-01-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/ansaru-allah-community/Ansaru%20Allah%20Community%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/anthony-accardo/Anthony%20Accardo%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
@@ -27833,6 +27843,7 @@ https://vault.fbi.gov/records-mentioning-or-referring-to-records-removed-from-th
 https://vault.fbi.gov/records-mentioning-or-referring-to-records-removed-from-the-trump-white-house-and-stored-at-mar-a-lago/records-mentioning-or-referring-to-records-removed-from-the-trump-white-house-and-stored-at-mar-a-lago-part-08/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/records-mentioning-or-referring-to-records-removed-from-the-trump-white-house-and-stored-at-mar-a-lago/records-mentioning-or-referring-to-records-removed-from-the-trump-white-house-and-stored-at-mar-a-lago-part-09-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/records-on-prepublication-review-of-a-higher-loyalty-by-former-fbi-director-james-comey/Records%20on%20Prepublication%20Review%20of%20A%20Higher%20Loyalty%20by%20Former%20FBI%20Director%20James%20Comey%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/records-regarding-the-may-24-2023-meeting-between-former-special-counsel-jack-smith-and-former-fbi-director-wray/records-regarding-the-may-24-2023-meeting-between-former-special-counsel-jack-smith-and-former-fbi-director-wray-final/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein-part-01/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein-part-02/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein-part-03/view|GOV-PUBLIC|vault.fbi.gov
@@ -35325,6 +35336,7 @@ https://www.federalregister.gov/documents/2026/10/06/2026-20429/proposal-of-spec
 https://www.federalregister.gov/documents/2026/10/06/2026-20430/requirements-for-certain-transactions-involving-convertible-virtual-currency-or-digital-assets|GOV-PUBLIC|Federal Register
 https://www.federalregister.gov/documents/2026/11/09/2026-22809/threshold-for-the-requirement-to-collect-retain-and-transmit-information-on-funds-transfers-and|GOV-PUBLIC|Federal Register
 https://www.federalregister.gov/documents/2026/11/10/2026-22962/imposition-of-special-measure-prohibiting-the-transmittal-of-funds-involving-mexc-global|GOV-PUBLIC|Federal Register
+https://www.federalregister.gov/documents/2026/11/19/2026-23614/customer-due-diligence-requirements-for-covered-financial-institutions|GOV-PUBLIC|Federal Register
 https://www.fincen.gov/1st-review-suspicious-activity-reporting-system-sars|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/1st-review-suspicious-activity-reporting-system-sars/|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/2006-revisions-bank-secrecy-actanti-money-laundering-examination-manual-july-28-2006|GOV-PUBLIC|www.fincen.gov
@@ -41928,6 +41940,7 @@ https://www.govinfo.gov/content/pkg/FR-2026-10-06/pdf/2026-20429.pdf|GOV-PUBLIC|
 https://www.govinfo.gov/content/pkg/FR-2026-10-06/pdf/2026-20430.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/content/pkg/FR-2026-11-09/pdf/2026-22809.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/content/pkg/FR-2026-11-10/pdf/2026-22962.pdf|GOV-PUBLIC|Federal Register
+https://www.govinfo.gov/content/pkg/FR-2026-11-19/pdf/2026-23614.pdf|GOV-PUBLIC|Federal Register
 https://www.govinfo.gov/developers|GOV-PUBLIC|www.govinfo.gov
 https://www.govinfo.gov/developers/system-design|GOV-PUBLIC|www.govinfo.gov
 https://www.govinfo.gov/digital-preservation|GOV-PUBLIC|www.govinfo.gov
@@ -52717,6 +52730,7 @@ https://www.sec.gov/file/dera_formddata|GOV-PUBLIC|www.sec.gov
 https://www.sec.gov/file/dera_fourth-annual-conference-final-program-2017|GOV-PUBLIC|www.sec.gov
 https://www.sec.gov/file/dera_highlights-sec-nyu-dialogue-reviving-us-ipo-market|GOV-PUBLIC|www.sec.gov
 https://www.sec.gov/file/dera_highlights-sec-nyu-dialogue-securities-based-crowdfunding|GOV-PUBLIC|www.sec.gov
+https://www.sec.gov/file/dera_mutualfundrr|GOV-PUBLIC|www.sec.gov
 https://www.sec.gov/file/dera_regadatasets|GOV-PUBLIC|www.sec.gov
 https://www.sec.gov/file/dera_tfpchangesdatasettechnicalspecfication|GOV-PUBLIC|www.sec.gov
 https://www.sec.gov/file/dera_transactionfeepilotetfs_techspecs|GOV-PUBLIC|www.sec.gov
