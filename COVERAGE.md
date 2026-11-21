@@ -1,6 +1,6 @@
 # Coverage report
 
-Generated 2026-11-20T17:59:39.424153+00:00 from committed inventory + manifest.
+Generated 2026-11-21T16:56:23.456274+00:00 from committed inventory + manifest.
 
 **Reading this table:** a host at the sitemap cap (5000 URLs/host) is bounded by *discovery budget*, not by the end of its collection — those rows are a first slice. Archive size is never a proxy for share-of-BOI preserved: the CTA-filed database is confidential and not publicly downloadable.
 
@@ -13,27 +13,27 @@ Generated 2026-11-20T17:59:39.424153+00:00 from committed inventory + manifest.
 | congress.gov | 0 | 3 | 0 | 0 | 0 | no | 0 | — | — |
 | fincen.gov | 0 | 9 | 6 | 0 | 6 | no | 199,724 | 32,778 | 35,808 |
 | gao.gov | 0 | 2 | 2 | 0 | 2 | no | 224,036 | 112,018 | 130,688 |
-| home.treasury.gov | 9,839 | 12,382 | 12,324 | 0 | 12,324 | YES — sitemap cap 5000/host | 3,158,442,511 | 108,785 | 392,329 |
-| judiciary.house.gov | 0 | 994 | 988 | 0 | 988 | no | 632,526,580 | 184,343 | 1,200,637 |
+| home.treasury.gov | 9,840 | 12,382 | 12,324 | 0 | 12,324 | YES — sitemap cap 5000/host | 3,158,442,510 | 108,785 | 392,329 |
+| judiciary.house.gov | 0 | 994 | 988 | 0 | 988 | no | 632,526,583 | 184,343 | 1,200,637 |
 | justice.gov | 0 | 2 | 2 | 0 | 2 | no | 635,168 | 317,584 | 528,113 |
-| ncua.gov | 9,504 | 9,820 | 9,817 | 0 | 9,817 | YES — sitemap cap 5000/host | 2,994,745,380 | 61,349 | 1,085,836 |
+| ncua.gov | 9,508 | 9,820 | 9,817 | 0 | 9,817 | YES — sitemap cap 5000/host | 2,994,745,380 | 61,349 | 1,085,836 |
 | occ.gov | 0 | 5 | 5 | 0 | 5 | no | 836,766 | 78,416 | 461,953 |
-| oig.treasury.gov | 142 | 295 | 295 | 0 | 295 | no | 166,518,119 | 43,943 | 2,654,339 |
+| oig.treasury.gov | 142 | 296 | 296 | 0 | 296 | no | 166,543,366 | 43,763 | 2,654,059 |
 | oversight.house.gov | 5,000 | 17,101 | 16,961 | 0 | 16,961 | YES — sitemap cap 5000/host | 1,169,368,396 | 60,377 | 68,003 |
 | treasury.gov | 0 | 3 | 2 | 0 | 2 | no | 303,046 | 151,523 | 178,677 |
-| vault.fbi.gov | 5,461 | 10,020 | 10,018 | 0 | 10,018 | YES — sitemap cap 5000/host | 334,874,236 | 21,928 | 22,450 |
+| vault.fbi.gov | 5,467 | 10,022 | 10,020 | 0 | 10,020 | YES — sitemap cap 5000/host | 334,919,074 | 21,928 | 22,450 |
 | web.archive.org | 0 | 8,942 | 7,830 | 0 | 7,830 | no | 240,478,365 | 242 | 101,753 |
 | www.congress.gov | 0 | 78 | 14 | 0 | 14 | no | 30,654,231 | 368,127 | 9,651,232 |
-| www.fdic.gov | 5,073 | 17,144 | 17,140 | 0 | 17,140 | YES — sitemap cap 5000/host | 1,266,795,696 | 68,734 | 92,307 |
+| www.fdic.gov | 5,073 | 17,149 | 17,145 | 0 | 17,145 | YES — sitemap cap 5000/host | 1,267,158,431 | 68,735 | 92,306 |
 | www.federalregister.gov | 325 | 785 | 325 | 0 | 325 | no | 1,701,751 | 4,341 | 8,282 |
 | www.federalreserve.gov | 0 | 17 | 15 | 0 | 15 | no | 1,326,205 | 82,878 | 146,236 |
 | www.ffiec.gov | 0 | 14 | 0 | 0 | 0 | no | 0 | — | — |
 | www.fincen.gov | 6,276 | 8,260 | 7,572 | 0 | 7,572 | YES — sitemap cap 5000/host | 981,396,782 | 31,574 | 420,983 |
-| www.gao.gov | 0 | 7,729 | 7,673 | 52 | 7,621 | no | 6,715,027,236 | 93,970 | 5,030,953 |
+| www.gao.gov | 0 | 7,729 | 7,673 | 52 | 7,621 | no | 6,715,027,273 | 93,970 | 5,030,953 |
 | www.govinfo.gov | 507 | 18,335 | 18,316 | 0 | 18,316 | no | 16,423,861,542 | 45,656 | 1,023,136 |
-| www.justice.gov | 5,011 | 5,796 | 5,788 | 4,366 | 1,422 | YES — sitemap cap 5000/host | 193,070,676 | 2,520 | 101,597 |
-| www.ncua.gov | 0 | 6 | 6 | 0 | 6 | no | 1,140,242 | 73,871 | 591,447 |
-| www.occ.gov | 5,231 | 15,678 | 15,655 | 0 | 15,655 | YES — sitemap cap 5000/host | 3,308,327,871 | 60,481 | 863,821 |
+| www.justice.gov | 5,011 | 5,796 | 5,788 | 4,366 | 1,422 | YES — sitemap cap 5000/host | 193,070,345 | 2,520 | 101,597 |
+| www.ncua.gov | 0 | 6 | 6 | 0 | 6 | no | 1,140,089 | 73,871 | 591,447 |
+| www.occ.gov | 5,231 | 15,678 | 15,655 | 0 | 15,655 | YES — sitemap cap 5000/host | 3,308,328,649 | 60,481 | 863,821 |
 | www.sec.gov | 5,002 | 25,010 | 24,962 | 166 | 24,796 | YES — sitemap cap 5000/host | 12,125,044,306 | 56,093 | 742,776 |
 | www.treasury.gov | 0 | 602 | 95 | 0 | 95 | no | 10,978,323 | 110,609 | 186,860 |
 
