@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T16:56:23.456274+00:00",
+  "generated_at": "2026-11-22T17:22:41.138885+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -74,14 +74,14 @@
     {
       "host": "home.treasury.gov",
       "urls_discovered": 9840,
-      "urls_attempted": 12382,
-      "urls_archived": 12324,
+      "urls_attempted": 12383,
+      "urls_archived": 12325,
       "non_content_captures": 0,
-      "urls_with_content": 12324,
+      "urls_with_content": 12325,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3158442510,
+      "bytes": 3158519555,
       "median_object_bytes": 108785,
-      "p95_object_bytes": 392329,
+      "p95_object_bytes": 392325,
       "known_bulk_gaps": []
     },
     {
@@ -113,14 +113,14 @@
     {
       "host": "ncua.gov",
       "urls_discovered": 9508,
-      "urls_attempted": 9820,
-      "urls_archived": 9817,
+      "urls_attempted": 9824,
+      "urls_archived": 9821,
       "non_content_captures": 0,
-      "urls_with_content": 9817,
+      "urls_with_content": 9821,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 2994745380,
-      "median_object_bytes": 61349,
-      "p95_object_bytes": 1085836,
+      "bytes": 3001706572,
+      "median_object_bytes": 61359,
+      "p95_object_bytes": 1086152,
       "known_bulk_gaps": []
     },
     {
@@ -178,12 +178,12 @@
     {
       "host": "vault.fbi.gov",
       "urls_discovered": 5467,
-      "urls_attempted": 10022,
-      "urls_archived": 10020,
+      "urls_attempted": 10028,
+      "urls_archived": 10026,
       "non_content_captures": 0,
-      "urls_with_content": 10020,
+      "urls_with_content": 10026,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 334919074,
+      "bytes": 335048841,
       "median_object_bytes": 21928,
       "p95_object_bytes": 22450,
       "known_bulk_gaps": []
@@ -321,7 +321,7 @@
       "non_content_captures": 4366,
       "urls_with_content": 1422,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 193070345,
+      "bytes": 193070671,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101597,
       "known_bulk_gaps": []
