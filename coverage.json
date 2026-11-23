@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T17:22:41.138885+00:00",
+  "generated_at": "2026-11-23T21:39:55.382813+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -73,13 +73,13 @@
     },
     {
       "host": "home.treasury.gov",
-      "urls_discovered": 9840,
+      "urls_discovered": 9842,
       "urls_attempted": 12383,
       "urls_archived": 12325,
       "non_content_captures": 0,
       "urls_with_content": 12325,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3158519555,
+      "bytes": 3158519550,
       "median_object_bytes": 108785,
       "p95_object_bytes": 392325,
       "known_bulk_gaps": []
@@ -272,7 +272,7 @@
     },
     {
       "host": "www.fincen.gov",
-      "urls_discovered": 6276,
+      "urls_discovered": 6277,
       "urls_attempted": 8260,
       "urls_archived": 7572,
       "non_content_captures": 0,
@@ -291,7 +291,7 @@
       "non_content_captures": 52,
       "urls_with_content": 7621,
       "ceiling_hit": "no",
-      "bytes": 6715027273,
+      "bytes": 6715029215,
       "median_object_bytes": 93970,
       "p95_object_bytes": 5030953,
       "known_bulk_gaps": [
@@ -321,7 +321,7 @@
       "non_content_captures": 4366,
       "urls_with_content": 1422,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 193070671,
+      "bytes": 193071065,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101597,
       "known_bulk_gaps": []
@@ -341,13 +341,13 @@
     },
     {
       "host": "www.occ.gov",
-      "urls_discovered": 5231,
+      "urls_discovered": 5264,
       "urls_attempted": 15678,
       "urls_archived": 15655,
       "non_content_captures": 0,
       "urls_with_content": 15655,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3308328649,
+      "bytes": 3308327871,
       "median_object_bytes": 60481,
       "p95_object_bytes": 863821,
       "known_bulk_gaps": []
