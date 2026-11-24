@@ -17266,6 +17266,7 @@ https://ncua.gov/newsroom/press-release/2026/ncua-announces-sixth-round-deregula
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-tenth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-third-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-thirteenth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
+https://ncua.gov/newsroom/press-release/2026/ncua-announces-three-final-rules-deregulation|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-announces-twelfth-round-deregulation-proposals|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-awards-347-million-through-expanded-cdrlf-grants|GOV-PUBLIC|ncua.gov
 https://ncua.gov/newsroom/press-release/2026/ncua-board-approves-11-final-rules-deregulation-project|GOV-PUBLIC|ncua.gov
@@ -25437,6 +25438,8 @@ https://vault.fbi.gov/benjamin-crowninshield-bradlee/Benjamin%20Crowninshield%20
 https://vault.fbi.gov/benjamin-demartino/Benjamin%20DeMartino%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/benjamin-hecht/Benjamin%20Hecht%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/benjamin-hooks/Benjamin%20Hooks%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/benjamin-paddock/benjamin-paddock-part-01/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/benjamin-paddock/benjamin-paddock-part-02/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/benjamin-paddock/benjamin-paddock/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/benjamin-spock/Benjamin%20Spock%20Part%2001%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/benjamin-valvo/benjamin-valvo-final/view|GOV-PUBLIC|vault.fbi.gov
@@ -27873,6 +27876,7 @@ https://vault.fbi.gov/records-regarding-the-review-of-the-investigative-holdings
 https://vault.fbi.gov/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein-part-13/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein-part-14/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein-part-15/view|GOV-PUBLIC|vault.fbi.gov
+https://vault.fbi.gov/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein/records-regarding-the-review-of-the-investigative-holdings-related-to-jeffrey-epstein-part-16/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/records-related-to-the-dismissal-of-fbi-director-comey/Records%20Related%20to%20the%20Dismissal%20of%20FBI%20Director%20Comey%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/records-related-to-the-dismissal-of-fbi-director-comey/Records%20Related%20to%20the%20Dismissal%20of%20FBI%20Director%20Comey%20Part%2002%20%28Final%29/view|GOV-PUBLIC|vault.fbi.gov
 https://vault.fbi.gov/red-lake-high-school-shooting/Red%20Lake%20High%20School%20Shooting%20Part%2001/view|GOV-PUBLIC|vault.fbi.gov
