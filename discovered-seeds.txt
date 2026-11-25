@@ -15659,6 +15659,7 @@ https://ncua.gov/news/publication-search/operating-fund/october-2024-operating-f
 https://ncua.gov/news/publication-search/operating-fund/october-2025-operating-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/operating-fund/september-2024-operating-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/operating-fund/september-2025-operating-fund-financial-highlights|GOV-PUBLIC|ncua.gov
+https://ncua.gov/news/publication-search/operating-fund/september-2026-operating-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/overdrafts/observations-ncuas-new-data-non-sufficient-funds-and-overdraft-fees|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/plain-writing/2026-plain-writing-report|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/revolving-loan-fund/april-2024-revolving-loan-fund|GOV-PUBLIC|ncua.gov
@@ -15692,6 +15693,7 @@ https://ncua.gov/news/publication-search/revolving-loan-fund/october-2024-revolv
 https://ncua.gov/news/publication-search/revolving-loan-fund/october-2025-revolving-loan-fund|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/revolving-loan-fund/september-2024-revolving-loan-fund|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/revolving-loan-fund/september-2025-revolving-loan-fund|GOV-PUBLIC|ncua.gov
+https://ncua.gov/news/publication-search/revolving-loan-fund/september-2026-revolving-loan-fund|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/share-insurance-fund/april-2024-share-insurance-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/share-insurance-fund/april-2025-share-insurance-fund-financial-highlights|GOV-PUBLIC|ncua.gov
 https://ncua.gov/news/publication-search/share-insurance-fund/april-2026-share-insurance-fund-financial-highlights|GOV-PUBLIC|ncua.gov
@@ -38051,6 +38053,7 @@ https://www.fincen.gov/news/news-releases/suspicious-activity-reporting-regulati
 https://www.fincen.gov/news/news-releases/suspicious-activity-reporting-regulations-extended-casinos-and-card-clubs/|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/suspicious-activity-reporting-rule-broker-dealers-finalized|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/suspicious-activity-reporting-rule-broker-dealers-finalized/|GOV-PUBLIC|www.fincen.gov
+https://www.fincen.gov/news/news-releases/temporary-limited-exceptive-relief-certain-bank-secrecy-act-corporate-transparency-act-submissions/|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/third-quarter-reports-mortgage-fraud-slightly|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/third-quarter-reports-mortgage-fraud-slightly/|GOV-PUBLIC|www.fincen.gov
 https://www.fincen.gov/news/news-releases/treasury-acts-against-flow-dirty-money-colombia|GOV-PUBLIC|www.fincen.gov
