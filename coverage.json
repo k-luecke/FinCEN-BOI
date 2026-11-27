@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T19:15:59.845008+00:00",
+  "generated_at": "2026-11-27T19:09:48.258113+00:00",
   "discovery_ceilings": {
     "sitemap_urls_per_host": 5000,
     "sitemap_fetches_per_host": 50,
@@ -74,14 +74,14 @@
     {
       "host": "home.treasury.gov",
       "urls_discovered": 9843,
-      "urls_attempted": 12385,
-      "urls_archived": 12327,
+      "urls_attempted": 12386,
+      "urls_archived": 12328,
       "non_content_captures": 0,
-      "urls_with_content": 12327,
+      "urls_with_content": 12328,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 3158676617,
-      "median_object_bytes": 108784,
-      "p95_object_bytes": 392318,
+      "bytes": 3158769492,
+      "median_object_bytes": 108782,
+      "p95_object_bytes": 392314,
       "known_bulk_gaps": []
     },
     {
@@ -112,7 +112,7 @@
     },
     {
       "host": "ncua.gov",
-      "urls_discovered": 9511,
+      "urls_discovered": 9512,
       "urls_attempted": 9827,
       "urls_archived": 9824,
       "non_content_captures": 0,
@@ -218,7 +218,7 @@
     },
     {
       "host": "www.fdic.gov",
-      "urls_discovered": 5073,
+      "urls_discovered": 5080,
       "urls_attempted": 17149,
       "urls_archived": 17145,
       "non_content_captures": 0,
@@ -315,13 +315,13 @@
     },
     {
       "host": "www.justice.gov",
-      "urls_discovered": 5011,
+      "urls_discovered": 5012,
       "urls_attempted": 5796,
       "urls_archived": 5788,
       "non_content_captures": 4366,
       "urls_with_content": 1422,
       "ceiling_hit": "YES \u2014 sitemap cap 5000/host",
-      "bytes": 193070689,
+      "bytes": 193070706,
       "median_object_bytes": 2520,
       "p95_object_bytes": 101597,
       "known_bulk_gaps": []
